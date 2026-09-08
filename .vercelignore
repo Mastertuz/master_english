@@ -1,16 +1,17 @@
-# Исходники учебников и медиатеки: нужны только на компьютере преподавателя.
-# На сайт едет лишь то, что скопировано в public/.
-books
-video
-audio
-photos
+# Исходники учебников и медиатеки лежат в корне проекта и нужны только на
+# компьютере преподавателя. Слэш в начале обязателен: без него правило
+# вырезало бы и public/audio с public/video, откуда сайт берёт уроки.
+/books
+/video
+/audio
+/photos
 
 # Локальное окружение и служебные папки
-node_modules
-.next
-.next-verify
-.git
-.claude
-.agents
-.cursor
-.devin
+/node_modules
+/.next
+/.next-verify
+/.git
+/.claude
+/.agents
+/.cursor
+/.devin
