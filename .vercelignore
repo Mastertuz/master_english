@@ -1,0 +1,16 @@
+# Исходники учебников и медиатеки: нужны только на компьютере преподавателя.
+# На сайт едет лишь то, что скопировано в public/.
+books
+video
+audio
+photos
+
+# Локальное окружение и служебные папки
+node_modules
+.next
+.next-verify
+.git
+.claude
+.agents
+.cursor
+.devin
