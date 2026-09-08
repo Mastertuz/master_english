@@ -7,6 +7,7 @@ import {
   saveLessonAnswersAction,
 } from "@/app/actions/lesson-answers";
 import { ConfirmSubmit } from "@/components/ui/ConfirmSubmit";
+import { AnswerComment } from "@/components/students/AnswerComment";
 import { AudioPlayer } from "@/components/ui/AudioPlayer";
 import { VideoPlayer } from "@/components/ui/VideoPlayer";
 import { SpeakButton } from "@/components/ui/SpeakButton";
@@ -48,6 +49,7 @@ export function LessonBlocks({
   completed = false,
   canSeeHidden = false,
   isTeacher = false,
+  review,
 }: {
   blocks: LessonBlock[];
   /** Без него ответы не сохраняются: например, в предпросмотре */
@@ -65,6 +67,11 @@ export function LessonBlocks({
   canSeeHidden?: boolean;
   /** Преподавателю показываем образцы развёрнутых ответов */
   isTeacher?: boolean;
+  /**
+   * Проверка работы ученика: id ответа по ключу задания. В этом режиме
+   * задания только для чтения, зато под каждым можно написать комментарий.
+   */
+  review?: Record<string, string>;
 }) {
   // Показ правильных ответов пересоздаёт задания через key
   const [filled, setFilled] = useState(false);
@@ -350,7 +357,8 @@ export function LessonBlocks({
               blockIndex={index}
               answers={answers}
               status={status}
-              canSave={Boolean(lessonId)}
+              canSave={Boolean(lessonId) && !review}
+              review={review}
               comments={comments}
               filled={filled}
               onCheck={check}
@@ -384,7 +392,9 @@ export function LessonBlocks({
                     filled={filled}
                     initial={answers[taskKey(index, i, task)]}
                     kept={status[taskKey(index, i, task)]?.kept ?? false}
-                    canSave={Boolean(lessonId)}
+                    canSave={Boolean(lessonId) && !review}
+                    answerId={review?.[taskKey(index, i, task)]}
+                    review={Boolean(review)}
                     comment={comments[taskKey(index, i, task)] ?? ""}
                     onCheck={(value, ok) =>
                       check(taskKey(index, i, task), value, ok)
@@ -400,7 +410,7 @@ export function LessonBlocks({
         ),
       )}
 
-      {lessonId && allKeys.length > 0 ? (
+      {lessonId && allKeys.length > 0 && !review ? (
         <div className="card flex flex-wrap items-center justify-between gap-3 p-4">
           <p className="text-[14px] text-ink-600">
             {kept > 0
@@ -454,6 +464,7 @@ function TextbookPage({
   answers: saved,
   status,
   canSave,
+  review,
   comments,
   filled,
   onCheck,
@@ -466,6 +477,8 @@ function TextbookPage({
   answers: Record<string, { value: string; isCorrect: boolean }>;
   status: Record<string, Status>;
   canSave: boolean;
+  /** Проверка работы ученика: id ответа по ключу задания */
+  review?: Record<string, string>;
   comments: Record<string, string>;
   /** Показать правильные ответы — для повторения пройденного урока */
   filled: boolean;
@@ -610,7 +623,7 @@ function TextbookPage({
         ) : null}
       </div>
 
-      {notes.length > 0 ? (
+      {notes.length > 0 && !review ? (
         <div className="mt-3 space-y-1.5 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3">
           <p className="text-[12.5px] font-medium text-amber-800">
             Комментарий преподавателя
@@ -620,6 +633,45 @@ function TextbookPage({
               <b>{index + 1}.</b> {comment}
             </p>
           ))}
+        </div>
+      ) : null}
+
+      {review ? (
+        <div className="mt-3 space-y-3 rounded-xl border border-ink-200 bg-white px-4 py-3">
+          {placed.map(({ task, index }) => {
+            const key = taskKey(blockIndex, index, task);
+            const value = answers[index] ?? "";
+
+            return (
+              <div key={index} className="border-b border-ink-100 pb-3 last:border-0 last:pb-0">
+                <p className="text-[13.5px] text-ink-700">
+                  <b>{index + 1}.</b> ответ ученика:{" "}
+                  {value ? (
+                    <span
+                      className={
+                        isAnswerCorrect(value, task.answer)
+                          ? "text-emerald-700"
+                          : "text-rose-600"
+                      }
+                    >
+                      {value}
+                    </span>
+                  ) : (
+                    <span className="text-ink-400">пусто</span>
+                  )}
+                  {task.answer ? (
+                    <span className="text-ink-400"> · верно: {task.answer}</span>
+                  ) : null}
+                </p>
+                {review[key] ? (
+                  <AnswerComment
+                    answerId={review[key]}
+                    comment={comments[key] ?? ""}
+                  />
+                ) : null}
+              </div>
+            );
+          })}
         </div>
       ) : null}
 
@@ -717,6 +769,8 @@ function PracticeTask({
   kept = false,
   canSave = false,
   comment = "",
+  answerId,
+  review = false,
   onCheck,
   onKeep,
   onReset,
@@ -732,6 +786,9 @@ function PracticeTask({
   /** Есть ли куда сохранять: в предпросмотре кнопок нет */
   canSave?: boolean;
   comment?: string;
+  /** id ответа ученика — в режиме проверки под заданием появится поле */
+  answerId?: string;
+  review?: boolean;
   onCheck: (value: string, correct: boolean) => void;
   onKeep: () => void;
   onReset: () => void;
@@ -821,11 +878,21 @@ function PracticeTask({
         </div>
       )}
 
-      {comment ? (
+      {comment && !review ? (
         <p className="mt-3 rounded-xl border border-amber-200 bg-amber-50 px-3.5 py-2.5 text-[13.5px] text-amber-900">
           <span className="font-medium">Комментарий преподавателя: </span>
           {comment}
         </p>
+      ) : null}
+
+      {review ? (
+        answerId ? (
+          <AnswerComment answerId={answerId} comment={comment} />
+        ) : (
+          <p className="mt-3 text-[13.5px] text-ink-500">
+            Ученик пока не отвечал.
+          </p>
+        )
       ) : null}
 
       {checked ? (

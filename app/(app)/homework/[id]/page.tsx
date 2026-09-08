@@ -10,12 +10,28 @@ import { requireUser } from "@/lib/session";
 
 export default async function HomeworkPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ id: string }>;
+  searchParams: Promise<{ student?: string }>;
 }) {
   const { id } = await params;
+  const { student: studentId } = await searchParams;
   const user = await requireUser();
   const isAdmin = user.role === "ADMIN";
+
+  /**
+   * Режим проверки: преподаватель открыл работу из карточки ученика и видит
+   * его ответы вместо своих, а под каждым — оценку и комментарий.
+   */
+  const student =
+    isAdmin && studentId
+      ? await prisma.user.findUnique({
+          where: { id: studentId },
+          select: { id: true, firstName: true, lastName: true },
+        })
+      : null;
+  const readerId = student?.id ?? user.id;
 
   const homework = await prisma.homework.findUnique({
     where: { id },
@@ -33,8 +49,9 @@ export default async function HomeworkPage({
         orderBy: { order: "asc" },
         include: {
           answers: {
-            where: { userId: user.id },
+            where: { userId: readerId },
             select: {
+              id: true,
               value: true,
               isCorrect: true,
               grade: true,
@@ -53,14 +70,17 @@ export default async function HomeworkPage({
 
   const submitted = Boolean(
     await prisma.homeworkSubmission.findUnique({
-      where: { homeworkId_userId: { homeworkId: homework.id, userId: user.id } },
+      where: { homeworkId_userId: { homeworkId: homework.id, userId: readerId } },
       select: { id: true },
     }),
   );
 
-  const unseenComments = homework.tasks.filter(
-    (task) => task.answers[0]?.comment && !task.answers[0]?.commentSeenAt,
-  ).length;
+  // Отметка «комментарий прочитан» — только про свои ответы
+  const unseenComments = student
+    ? 0
+    : homework.tasks.filter(
+        (task) => task.answers[0]?.comment && !task.answers[0]?.commentSeenAt,
+      ).length;
 
   // Скрытые задания видит только преподаватель — с пометкой на карточке.
   // Ответы привязаны к id задания, поэтому убрать их из списка безопасно.
@@ -84,6 +104,10 @@ export default async function HomeworkPage({
     hidden: task.hidden,
     saved: task.answers[0] ?? null,
   }));
+
+  const studentName = student
+    ? `${student.firstName} ${student.lastName}`.trim()
+    : "";
 
   return (
     <div className="mx-auto max-w-3xl space-y-5">
@@ -110,6 +134,17 @@ export default async function HomeworkPage({
         ) : null}
       </div>
 
+      {student ? (
+        <div className="card flex flex-wrap items-center justify-between gap-3 border-amber-200 bg-amber-50/70 p-4">
+          <p className="text-[14px] text-amber-900">
+            Работа ученика: <b>{studentName}</b>. Ответы и оценки — его.
+          </p>
+          <Link href={`/students/${student.id}`} className="btn-ghost btn-sm">
+            ← К карточке ученика
+          </Link>
+        </div>
+      ) : null}
+
       <SeenOnView homeworkId={homework.id} unseen={unseenComments} />
 
       {tasks.length === 0 ? (
@@ -122,6 +157,7 @@ export default async function HomeworkPage({
           homeworkId={homework.id}
           submitted={submitted}
           canSeeHidden={isAdmin}
+          review={Boolean(student)}
         />
       )}
     </div>

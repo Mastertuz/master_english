@@ -10,6 +10,7 @@ import {
   submitHomeworkAction,
 } from "@/app/actions/lessons";
 import { ConfirmSubmit } from "@/components/ui/ConfirmSubmit";
+import { GradeForm } from "@/components/students/GradeForm";
 import { AudioPlayer } from "@/components/ui/AudioPlayer";
 import { isAnswerCorrect } from "@/lib/answer";
 
@@ -29,6 +30,8 @@ export type HomeworkTaskView = {
   /** Скрыто от ученика: попадает сюда только для преподавателя */
   hidden?: boolean;
   saved: {
+    /** id ответа — по нему преподаватель ставит оценку и пишет комментарий */
+    id: string;
     value: string;
     isCorrect: boolean | null;
     grade: number | null;
@@ -53,6 +56,7 @@ export function HomeworkRunner({
   submitted = false,
   readOnly = false,
   canSeeHidden = false,
+  review = false,
 }: {
   tasks: HomeworkTaskView[];
   homeworkId?: string;
@@ -61,6 +65,8 @@ export function HomeworkRunner({
   readOnly?: boolean;
   /** Преподавателю показываем и скрытые задания — с пометкой */
   canSeeHidden?: boolean;
+  /** Проверка работы ученика: ответы чужие, зато можно оценить и написать */
+  review?: boolean;
 }) {
   const router = useRouter();
 
@@ -97,8 +103,9 @@ export function HomeworkRunner({
   );
   const [, startTransition] = useTransition();
 
-  // После отправки задания только для чтения: работа ушла преподавателю
-  const locked = readOnly || submitted;
+  // После отправки задания только для чтения: работа ушла преподавателю.
+  // В режиме проверки — тем более: ответы принадлежат ученику
+  const locked = readOnly || submitted || review;
 
   /** Пустое состояние — им же начинается работа до отправки */
   function blank(): Record<string, Local> {
@@ -274,6 +281,7 @@ export function HomeworkRunner({
                   onReset={() => reset(task)}
                   onKeep={() => keep(task)}
                   canSeeHidden={canSeeHidden}
+                  review={review}
                 />
               ))}
             </div>
@@ -361,6 +369,7 @@ function TaskCard({
   onReset,
   onKeep,
   canSeeHidden,
+  review,
 }: {
   task: HomeworkTaskView;
   index: number;
@@ -371,6 +380,7 @@ function TaskCard({
   onReset: () => void;
   onKeep: () => void;
   canSeeHidden: boolean;
+  review: boolean;
 }) {
   const checked = local?.checked ?? false;
   const isCorrect = local?.isCorrect ?? null;
@@ -420,11 +430,23 @@ function TaskCard({
           className="field mt-3 resize-y bg-white"
         />
 
-        {task.saved?.comment ? (
+        {task.saved?.comment && !review ? (
           <div className="mt-3 rounded-xl bg-white px-3.5 py-2.5 text-[14px] text-ink-700">
             <span className="font-medium">Комментарий преподавателя: </span>
             {task.saved.comment}
           </div>
+        ) : null}
+
+        {review && task.saved ? (
+          <GradeForm
+            answerId={task.saved.id}
+            grade={task.saved.grade}
+            comment={task.saved.comment}
+          />
+        ) : null}
+
+        {review && !task.saved ? (
+          <p className="mt-3 text-[13.5px] text-ink-500">Ученик пока не отвечал.</p>
         ) : null}
 
         <div className="mt-3 flex flex-wrap items-center gap-2">
@@ -553,6 +575,19 @@ function TaskCard({
           {isCorrect ? "✓ Верно. " : `✕ Правильный ответ: ${task.answer}. `}
           {task.explanation}
         </div>
+      ) : null}
+
+      {review ? (
+        task.saved ? (
+          <GradeForm
+            answerId={task.saved.id}
+            grade={task.saved.grade}
+            comment={task.saved.comment}
+            withGrade={false}
+          />
+        ) : (
+          <p className="mt-3 text-[13.5px] text-ink-500">Ученик пока не отвечал.</p>
+        )
       ) : null}
 
       {checked && !readOnly ? (

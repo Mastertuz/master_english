@@ -14,10 +14,13 @@ import { requireUser } from "@/lib/session";
 
 export default async function LessonPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ id: string }>;
+  searchParams: Promise<{ student?: string }>;
 }) {
   const { id } = await params;
+  const { student: studentId } = await searchParams;
   const user = await requireUser();
   const isAdmin = user.role === "ADMIN";
 
@@ -47,10 +50,24 @@ export default async function LessonPage({
 
   const books = isAdmin ? await listBooks() : [];
 
+  /**
+   * Режим проверки: преподаватель открыл урок из карточки ученика. Тогда
+   * показываем ответы ученика, а не свои, и даём их прокомментировать.
+   */
+  const student =
+    isAdmin && studentId
+      ? await prisma.user.findUnique({
+          where: { id: studentId },
+          select: { id: true, firstName: true, lastName: true },
+        })
+      : null;
+  const readerId = student?.id ?? user.id;
+
   // Что ученик уже писал в заданиях урока — подставим в поля
   const previous = await prisma.lessonTaskAnswer.findMany({
-    where: { lessonId: lesson.id, userId: user.id },
+    where: { lessonId: lesson.id, userId: readerId },
     select: {
+      id: true,
       taskKey: true,
       value: true,
       isCorrect: true,
@@ -59,9 +76,9 @@ export default async function LessonPage({
       commentSeenAt: true,
     },
   });
-  const unseen = previous.filter(
-    (answer) => answer.comment && !answer.commentSeenAt,
-  ).length;
+  const unseen = student
+    ? 0
+    : previous.filter((answer) => answer.comment && !answer.commentSeenAt).length;
   // Возвращаем только те ответы, которые ученик сохранил сам: остальное —
   // черновик, и урок начинается с чистого листа. Комментарии показываем всегда.
   const comments = Object.fromEntries(
@@ -69,14 +86,22 @@ export default async function LessonPage({
       .filter((answer) => answer.comment)
       .map((answer) => [answer.taskKey, answer.comment]),
   );
+  // Преподавателю в режиме проверки показываем всё, что ученик написал,
+  // включая черновики: он их видел на экране, пока решал
   const answers = Object.fromEntries(
     previous
-      .filter((answer) => answer.saved)
+      .filter((answer) => answer.saved || student)
       .map((answer) => [
         answer.taskKey,
         { value: answer.value, isCorrect: answer.isCorrect },
       ]),
   );
+  const answerIds = Object.fromEntries(
+    previous.map((answer) => [answer.taskKey, answer.id]),
+  );
+  const studentName = student
+    ? `${student.firstName} ${student.lastName}`.trim()
+    : "";
 
   // Урок, отмеченный преподавателем как пройденный, можно открыть
   // с правильными ответами
@@ -207,6 +232,18 @@ export default async function LessonPage({
         </Link>
       ) : null}
 
+      {student ? (
+        <div className="card flex flex-wrap items-center justify-between gap-3 border-amber-200 bg-amber-50/70 p-4">
+          <p className="text-[14px] text-amber-900">
+            Урок с ответами ученика: <b>{studentName}</b>. Под заданиями можно
+            оставить комментарий.
+          </p>
+          <Link href={`/students/${student.id}`} className="btn-ghost btn-sm">
+            ← К карточке ученика
+          </Link>
+        </div>
+      ) : null}
+
       <SeenOnView lessonId={lesson.id} unseen={unseen} />
       <LessonBlocks
         blocks={blocks}
@@ -216,6 +253,7 @@ export default async function LessonPage({
         completed={completed}
         canSeeHidden={isAdmin}
         isTeacher={isAdmin}
+        review={student ? answerIds : undefined}
       />
 
       <section className="card overflow-hidden">

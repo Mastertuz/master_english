@@ -9,10 +9,13 @@ export function GradeForm({
   answerId,
   grade,
   comment,
+  withGrade = true,
 }: {
   answerId: string;
   grade: number | null;
   comment: string | null;
+  /** У заданий с автопроверкой оценка не нужна — только комментарий */
+  withGrade?: boolean;
 }) {
   const [state, action] = useActionState<LessonState, FormData>(
     gradeAnswerAction,
@@ -27,20 +30,26 @@ export function GradeForm({
         <Alert kind={state.ok ? "success" : "error"}>{state.message}</Alert>
       ) : null}
 
-      <div className="grid gap-2 sm:grid-cols-[90px_1fr_auto] sm:items-end">
-        <div>
-          <label className="label" htmlFor={`grade-${answerId}`}>
-            Оценка
-          </label>
-          <input
-            id={`grade-${answerId}`}
-            name="grade"
-            inputMode="numeric"
-            defaultValue={grade ?? ""}
-            placeholder="1–5"
-            className={`field ${state?.errors?.grade ? "field-error" : ""}`}
-          />
-        </div>
+      <div
+        className={`grid gap-2 sm:items-end ${
+          withGrade ? "sm:grid-cols-[90px_1fr_auto]" : "sm:grid-cols-[1fr_auto]"
+        }`}
+      >
+        {withGrade ? (
+          <div>
+            <label className="label" htmlFor={`grade-${answerId}`}>
+              Оценка
+            </label>
+            <input
+              id={`grade-${answerId}`}
+              name="grade"
+              inputMode="numeric"
+              defaultValue={grade ?? ""}
+              placeholder="1–5"
+              className={`field ${state?.errors?.grade ? "field-error" : ""}`}
+            />
+          </div>
+        ) : null}
         <div>
           <label className="label" htmlFor={`comment-${answerId}`}>
             Комментарий
@@ -54,7 +63,7 @@ export function GradeForm({
           />
         </div>
         <SubmitButton pendingLabel="…" className="btn-ghost">
-          Оценить
+          {withGrade ? "Оценить" : "Сохранить"}
         </SubmitButton>
       </div>
     </form>

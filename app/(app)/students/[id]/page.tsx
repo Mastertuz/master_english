@@ -378,20 +378,21 @@ export default async function StudentPage({
                 </p>
 
                 <div className="mt-3 flex flex-wrap gap-2">
+                  {/* Открываем в режиме проверки: с ответами этого ученика */}
                   <Link
-                    href={`/lessons/${lesson.id}`}
+                    href={`/lessons/${lesson.id}?student=${student.id}`}
                     prefetch
                     className="btn-ghost btn-sm"
                   >
-                    Урок
+                    Урок с ответами
                   </Link>
                   {lesson.homework ? (
                     <Link
-                      href={`/homework/${lesson.homework.id}`}
+                      href={`/homework/${lesson.homework.id}?student=${student.id}`}
                       prefetch
                       className="btn-ghost btn-sm"
                     >
-                      ДЗ
+                      ДЗ с ответами
                     </Link>
                   ) : null}
                   {lesson.tests.map((test) => (

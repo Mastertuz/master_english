@@ -289,9 +289,14 @@ export async function gradeAnswerAction(
 
   const answerId = str(formData, "answerId");
   const gradeRaw = str(formData, "grade");
-  const grade = Number(gradeRaw);
 
-  if (!/^\d+$/.test(gradeRaw) || grade < 1 || grade > 5) {
+  /**
+   * Оценка необязательна: у заданий с автопроверкой её не ставят, там нужен
+   * только комментарий. Пустое поле снимает и прежнюю оценку.
+   */
+  const grade = gradeRaw ? Number(gradeRaw) : null;
+
+  if (gradeRaw && (!/^\d+$/.test(gradeRaw) || grade! < 1 || grade! > 5)) {
     return {
       ok: false,
       message: "Оценка — число от 1 до 5",
@@ -323,7 +328,7 @@ export async function gradeAnswerAction(
     data: {
       grade,
       comment: comment || null,
-      gradedAt: new Date(),
+      gradedAt: grade === null ? null : new Date(),
       // Ученик ещё не видел эту проверку
       commentSeenAt: null,
     },
@@ -343,7 +348,11 @@ export async function gradeAnswerAction(
   }
 
   revalidatePath(`/students/${answer.userId}`);
-  return { ok: true, message: "Оценка выставлена" };
+  revalidatePath(`/homework/${answer.task.homework.id}`);
+  return {
+    ok: true,
+    message: grade === null ? "Комментарий сохранён" : "Оценка выставлена",
+  };
 }
 
 /* ─────────── Отправка домашней работы и сброс ответов ─────────── */
