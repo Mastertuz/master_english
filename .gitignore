@@ -39,3 +39,19 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# загруженные администратором файлы
+/public/uploads/*
+!/public/uploads/.gitkeep
+# файл используется в уроке — без него на сайте будет битая картинка
+!/public/uploads/c18b88b69bea42abc8175f93.jpg
+
+# отдельная папка сборки для проверок
+/.next-verify/
+
+# исходники учебников и медиа: в репозиторий не идут, на сайт попадает
+# только то, что скопировано в public/
+/books/
+/video/
+/audio/
+/photos/

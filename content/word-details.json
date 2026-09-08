@@ -1,0 +1,114 @@
+{
+  "_comment": "Определения, примеры, части речи и транскрипции, выверенные вручную. Нужны там, где Cambridge не знает фразу целиком (arrival hall), отдаёт не то значение (gate → часть забора, deposit → глагол) или помечает словосочетание как collocation. Значения отсюда имеют приоритет над найденными онлайн. Применяется скриптом npm run words:backfill.",
+  "arrival hall": {
+    "definition": "the large area in an airport where passengers come out after they have landed and collected their bags",
+    "example": "My parents were waiting for me in the arrival hall.",
+    "partOfSpeech": "noun"
+  },
+  "bell boy": {
+    "definition": "a hotel employee whose job is to carry guests' bags to and from their rooms",
+    "example": "The bell boy carried our suitcases up to the room.",
+    "partOfSpeech": "noun"
+  },
+  "business suite": {
+    "definition": "a large hotel room with a separate area where you can work or meet people",
+    "example": "The company booked a business suite for the meeting.",
+    "partOfSpeech": "noun"
+  },
+  "miss a bus": {
+    "definition": "to arrive too late to get on a bus",
+    "example": "I missed the bus this morning and had to walk to work.",
+    "partOfSpeech": "verb phrase",
+    "transcription": "/mɪs ə bʌs/"
+  },
+  "parking pass": {
+    "definition": "a card or ticket that allows you to leave your car in a particular car park",
+    "example": "Hotel guests can get a free parking pass at the front desk.",
+    "partOfSpeech": "noun"
+  },
+  "reception desk": {
+    "definition": "the desk near the entrance of a hotel where guests check in and ask for help",
+    "example": "Please leave your key at the reception desk when you go out.",
+    "partOfSpeech": "noun"
+  },
+  "return policy": {
+    "definition": "the rules of a shop about when and how you can bring back something you have bought",
+    "example": "Check the return policy before you buy the jacket.",
+    "partOfSpeech": "noun"
+  },
+  "wake up": {
+    "definition": "to stop sleeping",
+    "example": "I wake up at seven o'clock every morning.",
+    "partOfSpeech": "phrasal verb"
+  },
+  "leave home": {
+    "definition": "to go out of your house, especially at the start of the day",
+    "example": "I leave home at half past seven to catch the train.",
+    "partOfSpeech": "verb phrase"
+  },
+  "gate": {
+    "definition": "the place in an airport where you get on your plane",
+    "example": "The flight to Rome leaves from gate 12."
+  },
+  "connection": {
+    "definition": "a train, bus, or plane that leaves soon after another one arrives, so that you can continue your journey",
+    "example": "We had only 40 minutes to catch our connection in Paris."
+  },
+  "on time": {
+    "definition": "not late; at the time that was planned",
+    "example": "The train arrived exactly on time.",
+    "partOfSpeech": "phrase",
+    "transcription": "/ɑːn taɪm/"
+  },
+  "delayed": {
+    "definition": "happening later than planned",
+    "example": "Our flight was delayed by two hours because of the snow."
+  },
+  "card payment": {
+    "definition": "a payment you make with a bank card instead of cash",
+    "example": "Card payment is faster than counting out coins."
+  },
+  "medium": {
+    "definition": "of middle size, between small and large",
+    "example": "I'd like a medium T-shirt, please.",
+    "partOfSpeech": "adjective"
+  },
+  "exchange": {
+    "definition": "when you give back something you have bought and take a different thing instead",
+    "example": "The shop offered an exchange because the shirt was too small."
+  },
+  "boarding pass": {
+    "example": "Please show your boarding pass at the gate."
+  },
+  "cashier": {
+    "example": "The cashier gave me my change and a receipt."
+  },
+  "fitting room": {
+    "example": "Can I try these jeans on in the fitting room?"
+  },
+  "window seat": {
+    "example": "I always book a window seat so I can look out at the clouds."
+  },
+  "baggage claim": {
+    "example": "We waited for our suitcases at baggage claim."
+  },
+  "customs": {
+    "example": "We had nothing to declare, so we walked straight through customs.",
+    "transcription": "/ˈkʌs.təmz/"
+  },
+  "size": {
+    "example": "What size shoes do you wear?"
+  },
+  "aisle seat": {
+    "partOfSpeech": "noun"
+  },
+  "carry-on bag": {
+    "partOfSpeech": "noun"
+  },
+  "deposit": {
+    "partOfSpeech": "noun"
+  },
+  "amenities": {
+    "transcription": "/əˈmen.ə.t̬iz/"
+  }
+}

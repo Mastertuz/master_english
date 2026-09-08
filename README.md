@@ -1,36 +1,218 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Master English
 
-## Getting Started
+Платформа для изучения английского языка: уроки, личный словарь с данными из
+Cambridge Dictionary, три режима тренировки слов, домашние задания и тесты.
 
-First, run the development server:
+Стек: **Next.js 16** (App Router, Server Actions), **React 19**,
+**Prisma ORM 7** + PostgreSQL (Prisma Postgres), **Tailwind CSS 4**, TypeScript.
+
+---
+
+## Запуск
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install     # зависимости + генерация Prisma Client
+npm run setup   # generate + создание таблиц в БД + демо-данные
+npm run dev     # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+`npm run setup` можно разложить на шаги: `npx prisma generate`,
+`npm run db:push`, `npm run db:seed`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+> **Про Prisma 7.** В седьмой версии строка подключения больше не пишется в
+> `schema.prisma` — блок `datasource` содержит только `provider`, а URL живёт
+> в `prisma.config.ts` (`datasource: { url: env("DATABASE_URL") }`). Там же
+> `import "dotenv/config"`, потому что Prisma 7 не подхватывает `.env` сама.
+> Клиент создаётся с драйвер-адаптером: `new PrismaClient({ adapter })`
+> в `lib/prisma.ts`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Демо-аккаунты после `npm run db:seed`
 
-## Learn More
+| Роль | Логин | Пароль |
+| --- | --- | --- |
+| Администратор | `admin` | `admin123` |
+| Ученик | `student` | `student123` |
 
-To learn more about Next.js, take a look at the following resources:
+Пароли демонстрационные — смените их в профиле или в админке.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Если запускать без сида, **первый зарегистрировавшийся пользователь
+автоматически получает роль администратора**.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Что умеет
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Роли и уровни
+* **Ученик** — назначенные ему уроки, домашние задания, личный словарь,
+  тренировки и тесты. За каждым учеником закреплён уровень **CEFR**
+  (A1–C2), он виден в профиле и в шапке.
+* **Администратор** — библиотека уроков, вкладка «Ученики», проверка
+  развёрнутых ответов, управление аккаунтами, словарём и тестами.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Уроки
+Библиотека уроков общая: администратор создаёт урок один раз и назначает
+его нужным ученикам (вкладка «Ученики»). У урока есть номер, тема, цель,
+уровень, план занятия по минутам и указание, **по какому учебнику** он
+собран. Материал состоит из блоков: правила с формулами, интерактивные
+задания с объяснением ответа, лексика с озвучкой, аудирование с плеером,
+тексты на понимание и задания на говорение.
+
+Учебники лежат в папке `books/` в корне проекта; их названия
+подставляются подсказкой в поле «Учебник».
+
+### Домашние задания
+Задание состоит из упражнений пяти типов:
+
+| Тип | Как проверяется |
+| --- | --- |
+| Варианты ответа | автоматически, с объяснением |
+| Вписать ответ | автоматически, синонимы засчитываются |
+| Понимание текста | автоматически, текст показан рядом |
+| Аудирование | автоматически, есть плеер с перемоткой и скоростью |
+| Развёрнутый ответ | проверяет преподаватель, ставит оценку 1–5 |
+
+### Словарь
+Таблица со столбцами: слово (с транскрипцией, частью речи и озвучкой),
+перевод, пример употребления, определение и статистика. Ученик может
+**искать** слова в Cambridge, добавляет их в словарь преподаватель —
+вручную или автоматически при назначении урока.
+
+### Тренировка слов — три режима
+1. **Слово и перевод** — карточка с озвучкой, EN → RU или RU → EN.
+2. **Карточка-картинка** — фото, ответ по-английски. Картинки загружает
+   администратор файлом или ссылкой.
+3. **Слово по определению** — определение на английском или русском,
+   ответ всегда по-английски.
+
+На каждой карточке показана часть речи. В конце — статистика и разбор
+каждой ошибки: верный ответ, определение и пример употребления.
+
+Озвучка берёт mp3 из Cambridge, а если его нет — синтезирует речь,
+выбирая лучший голос из установленных в системе (`lib/speech.ts`).
+
+### Тесты
+Конструктор и автосборка теста из слов урока — только у администратора.
+После проверки показывается разбор ошибок. Со страницы теста есть
+кнопка возврата в урок.
+
+## Cambridge Dictionary — как это устроено
+
+У Cambridge **нет бесплатного публичного API**: ключ к
+`dictionary-api.cambridge.org` выдаётся по заявке на коммерческих условиях,
+а сам сайт отвечает ботам ошибкой 403.
+
+Поэтому `lib/dictionary.ts` работает по цепочке:
+
+1. **Кэш в БД** (`DictionaryCache`) — если слово уже искали, ответ мгновенный.
+2. **Cambridge Dictionary** — читаем страницу англо-русского словаря
+   (`/dictionary/english-russian/<word>`) с браузерными заголовками и
+   вынимаем определение, пример, транскрипцию, mp3-произношение и русский
+   перевод.
+3. **Резерв** — если Cambridge недоступен: [dictionaryapi.dev](https://dictionaryapi.dev)
+   для определения, примера и аудио + [MyMemory](https://mymemory.translated.net)
+   для перевода на русский.
+
+Любое поле можно поправить руками — в форме добавления и в окне
+редактирования слова.
+
+> Если у вас появится официальный ключ Cambridge, интеграцию достаточно
+> дописать одной функцией в `lib/dictionary.ts` — остальной код не изменится.
+
+---
+
+## Файлы: сканы страниц, картинки и аудио
+
+Скан страницы учебника, картинка к слову и запись для аудирования грузятся
+одной кнопкой «📎 Загрузить». Хранилище выбирается само:
+
+| Что в `.env` | Куда уходит файл |
+|---|---|
+| `UPLOADTHING_TOKEN` задан | напрямую в UploadThing, минуя наш сервер |
+| не задан | в `public/uploads` через `/api/upload` |
+
+Токен берётся в личном кабинете [uploadthing.com](https://uploadthing.com):
+создайте приложение и скопируйте `UPLOADTHING_TOKEN` в `.env`. Клиент
+спрашивает у сервера, какое хранилище включено, одним запросом при первой
+загрузке — второй переменной заводить не нужно.
+
+Локальный вариант годится для разработки и обычного сервера. На бессерверном
+хостинге (Vercel и подобные) он не подойдёт по двум причинам: файловая
+система между запросами не сохраняется, а тело запроса ограничено несколькими
+мегабайтами — часовая запись занятия туда просто не влезет. Поэтому для
+такого деплоя нужен UploadThing.
+
+Ограничения размера: картинки — 8 МБ, аудио — 64 МБ.
+
+---
+
+## Почта
+
+Пока в `.env` не заданы `SMTP_HOST` / `SMTP_USER` / `SMTP_PASSWORD`, код
+восстановления **печатается в консоль сервера** — этого достаточно для
+разработки. Как только переменные заданы, письма уходят через `nodemailer`.
+
+`SMTP_HOST` — это адрес почтового **сервера** (`smtp.gmail.com`,
+`smtp.yandex.ru`, `smtp.mail.ru`), а не ваш email; email идёт в `SMTP_USER`
+и `SMTP_FROM`. В качестве пароля — «пароль приложения», обычный пароль от
+почты не подойдёт. Порт 465 — SSL, 587 — STARTTLS (выбирается автоматически).
+
+Письма уходят в двух случаях: код восстановления пароля и новый комментарий
+преподавателя к работе ученика. Про комментарии пишем только один раз за
+цикл — пока ученик не открыл страницу и не прочитал замечание, следующие
+комментарии письмом не дублируются.
+
+Ссылки в письмах строятся из `APP_URL` (по умолчанию `http://localhost:3000`).
+При выкладке на домен задайте её в `.env`, иначе ученик получит ссылку на
+localhost.
+
+Проверить настройки, не заходя на сайт:
+
+```bash
+npm run mail:test                    # письмо на адрес из SMTP_USER
+npm run mail:test -- you@mail.ru     # на произвольный адрес
+```
+
+---
+
+## Перенос уроков из HTML
+
+Исходные уроки лежат в `content/lessons` (HTML), аудио — в `public/audio`.
+
+```bash
+npm run lessons:convert   # HTML → content/lessons/lessons.json
+npm run lessons:import    # JSON → база
+```
+
+Конвертер (`scripts/convert-lessons.py`) разбирает блоки, задания с
+атрибутами `data-answer` / `data-explain`, словарь, listening и домашние
+задания. Импорт идемпотентный: содержимое урока перезаписывается,
+ответы учеников не трогаются.
+
+## Структура
+
+```
+app/
+  page.tsx                     вход и регистрация
+  forgot/  reset/              восстановление пароля
+  (app)/                       всё, что за авторизацией (общий header)
+    dashboard/                 главная после входа
+    lessons/  lessons/[id]/    библиотека и карточка урока
+    homework/  homework/[id]/  домашние задания
+    dictionary/                словарь
+    training/  [mode]/         выбор режима и тренажёр
+    tests/  tests/[id]/        тесты
+    students/  students/[id]/  ученики (администратор)
+    profile/                   профиль
+    admin/  admin/users/[id]/  аккаунты и роли
+  actions/                     серверные экшены
+  api/dictionary/lookup/       поиск слова в Cambridge
+  api/upload/                  загрузка картинок и аудио
+components/                    UI: шапка с боковым меню, формы, тренажёр, плеер
+lib/                           prisma, сессии, пароли, словарь, речь, контент урока
+content/lessons/               исходные HTML-уроки и lessons.json
+books/                         учебники (PDF)
+public/audio/  public/uploads/ аудио уроков и загруженные файлы
+prisma/schema.prisma           схема БД
+scripts/                       конвертер уроков, импорт, диагностика, роли
+proxy.ts                       защита маршрутов (в Next.js 16 вместо middleware)
+```

@@ -1,0 +1,4074 @@
+{
+  "lessons": [
+    {
+      "topic": "A1/A2 review",
+      "goal": "проверить базу, повторить главные времена и подготовить переход к более свободной речи.",
+      "durationMin": 60,
+      "heroImage": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1100&q=80",
+      "timeline": [
+        {
+          "time": "0-10",
+          "title": "Speaking warm-up",
+          "note": "короткие ответы о себе."
+        },
+        {
+          "time": "10-25",
+          "title": "Grammar base",
+          "note": "to be, do/does, did."
+        },
+        {
+          "time": "25-40",
+          "title": "Practice",
+          "note": "задания после правил."
+        },
+        {
+          "time": "40-50",
+          "title": "Listening",
+          "note": "короткий текст."
+        },
+        {
+          "time": "50-57",
+          "title": "Speaking",
+          "note": "мини-монолог."
+        },
+        {
+          "time": "57-60",
+          "title": "Homework",
+          "note": "переход к уроку 1."
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "rule",
+          "title": "Правило 1: Present Simple для привычек",
+          "paragraphs": [
+            "Present Simple нужен, когда действие повторяется регулярно: every day, usually, often, sometimes. С he/she/it добавляем -s. В вопросах и отрицаниях используем do/does."
+          ],
+          "rules": [
+            "He/she/it + verb-s: She lives in Boston.",
+            "Does забирает -s на себя: Does she live here?",
+            "После don't/doesn't глагол без -s: He doesn't speak Spanish."
+          ],
+          "formulas": [
+            "I work · She works · Do you work? · Does she work? · She doesn't work"
+          ],
+          "examples": [],
+          "prompts": [],
+          "vocab": [],
+          "audioUrl": "",
+          "audioTitle": "",
+          "transcript": "",
+          "text": "",
+          "tasks": [
+            {
+              "id": "",
+              "kind": "choice",
+              "prompt": "Выберите: She ___ in a cafe.",
+              "options": [
+                "work",
+                "works",
+                "is work"
+              ],
+              "optionValues": [
+                "work",
+                "works",
+                "is work"
+              ],
+              "answer": "works",
+              "explanation": "She = he/she/it, поэтому в утверждении добавляем -s.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "",
+              "kind": "fill",
+              "prompt": "Впишите: Where ___ she live?",
+              "options": [],
+              "optionValues": [],
+              "answer": "does",
+              "explanation": "В вопросе с she нужен does, а основной глагол без -s.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "",
+              "kind": "choice",
+              "prompt": "Выберите: He ___ English at work.",
+              "options": [
+                "don't speak",
+                "doesn't speaks",
+                "doesn't speak"
+              ],
+              "optionValues": [
+                "don't speak",
+                "doesn't speaks",
+                "doesn't speak"
+              ],
+              "answer": "doesn't speak",
+              "explanation": "В отрицании с he используем doesn't + глагол без -s.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            }
+          ],
+          "imageUrl": ""
+        },
+        {
+          "kind": "rule",
+          "title": "Правило 2: Past Simple для завершенного прошлого",
+          "paragraphs": [
+            "Past Simple используем, когда действие закончилось и есть прошлое время: yesterday, last week, in 2024, two days ago."
+          ],
+          "rules": [
+            "Правильные глаголы получают -ed: visited, watched.",
+            "Неправильные нужно учить: go - went, buy - bought.",
+            "После did/didn't глагол в начальной форме."
+          ],
+          "formulas": [
+            "I visited · I went · Did you go? · I didn't go"
+          ],
+          "examples": [],
+          "prompts": [],
+          "vocab": [],
+          "audioUrl": "",
+          "audioTitle": "",
+          "transcript": "",
+          "text": "",
+          "tasks": [
+            {
+              "id": "",
+              "kind": "fill",
+              "prompt": "Впишите: I ___ to the cinema yesterday. (go)",
+              "options": [],
+              "optionValues": [],
+              "answer": "went",
+              "explanation": "Yesterday показывает Past Simple; go превращается в went.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "",
+              "kind": "choice",
+              "prompt": "Выберите: Did you ___ to school yesterday?",
+              "options": [
+                "went",
+                "go",
+                "going"
+              ],
+              "optionValues": [
+                "went",
+                "go",
+                "going"
+              ],
+              "answer": "go",
+              "explanation": "После did основной глагол возвращается в начальную форму.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            }
+          ],
+          "imageUrl": ""
+        },
+        {
+          "kind": "tasks",
+          "title": "Listening: daily routine",
+          "paragraphs": [
+            "Прочитайте текст вслух два раза. Первый раз - общий смысл, второй раз - детали."
+          ],
+          "rules": [],
+          "formulas": [],
+          "examples": [],
+          "prompts": [],
+          "vocab": [],
+          "audioUrl": "",
+          "audioTitle": "",
+          "transcript": "I usually start my day at seven thirty. I make coffee, check my messages and leave home at eight fifteen. Yesterday was different. I woke up late, so I took a taxi to work.",
+          "text": "",
+          "tasks": [
+            {
+              "id": "",
+              "kind": "choice",
+              "prompt": "Во сколько обычно начинается день?",
+              "options": [
+                "seven thirty",
+                "eight fifteen",
+                "nine"
+              ],
+              "optionValues": [
+                "seven thirty",
+                "eight fifteen",
+                "nine"
+              ],
+              "answer": "seven thirty",
+              "explanation": "В тексте сказано: I usually start my day at seven thirty.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            }
+          ],
+          "imageUrl": ""
+        },
+        {
+          "kind": "speaking",
+          "title": "Speaking",
+          "paragraphs": [
+            "Расскажите о своей обычной неделе и одном необычном дне в прошлом."
+          ],
+          "rules": [],
+          "formulas": [],
+          "examples": [
+            "Пример: I usually work from Monday to Friday. Last week I had a very busy day because I woke up late and missed my bus."
+          ],
+          "prompts": [],
+          "vocab": [],
+          "audioUrl": "",
+          "audioTitle": "",
+          "transcript": "",
+          "text": "",
+          "tasks": [],
+          "imageUrl": "",
+          "sample": "I usually get up at seven and go to work by bus. On weekdays I work from nine to six, and in the evening I walk with my dog or watch a series. At the weekend I meet my friends or visit my parents.\n\nLast month I had an unusual day. I got up at four in the morning and drove to the mountains with my sister. We walked for six hours, took a lot of photos and came home very late. I was tired, but it was a great day."
+        },
+        {
+          "kind": "vocab",
+          "title": "Vocabulary",
+          "paragraphs": [],
+          "rules": [],
+          "formulas": [],
+          "examples": [],
+          "prompts": [],
+          "vocab": [
+            {
+              "en": "usually",
+              "ru": "обычно"
+            },
+            {
+              "en": "wake up",
+              "ru": "просыпаться"
+            },
+            {
+              "en": "miss a bus",
+              "ru": "опоздать на автобус"
+            },
+            {
+              "en": "leave home",
+              "ru": "выходить из дома"
+            }
+          ],
+          "audioUrl": "",
+          "audioTitle": "",
+          "transcript": "",
+          "text": "",
+          "tasks": [],
+          "imageUrl": ""
+        }
+      ],
+      "words": [
+        {
+          "english": "usually",
+          "russian": "обычно"
+        },
+        {
+          "english": "wake up",
+          "russian": "просыпаться"
+        },
+        {
+          "english": "miss a bus",
+          "russian": "опоздать на автобус"
+        },
+        {
+          "english": "leave home",
+          "russian": "выходить из дома"
+        }
+      ],
+      "number": 0,
+      "level": "A1",
+      "bookTitle": "Essential Grammar in Use, R. Murphy",
+      "bookRef": "Units 1-14, Present Simple и Past Simple",
+      "description": "Пробное занятие: повторяем базовые времена перед началом курса",
+      "homework": {
+        "title": "A1/A2 review",
+        "intro": "Закрепите базовые времена и подготовьте короткий ответ о целях.",
+        "tasks": [
+          {
+            "section": "1. Writing: routine and past",
+            "kind": "TEACHER",
+            "prompt": "Напишите 8 предложений: 4 о своей обычной неделе и 4 о прошлых выходных.",
+            "options": [],
+            "optionValues": [],
+            "answer": "",
+            "explanation": "I usually start work at 9. I often study English in the evening. Last weekend I met my friend. We went to a cafe.",
+            "rule": "",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "2. Questions",
+            "kind": "TEACHER",
+            "prompt": "Составьте 8 вопросов: 3 с do, 3 с does, 2 с did.",
+            "options": [],
+            "optionValues": [],
+            "answer": "",
+            "explanation": "",
+            "rule": "",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "3. Speaking preparation",
+            "kind": "TEACHER",
+            "prompt": "Подготовьте устный ответ на тему: Why do I want to improve my English?",
+            "options": [],
+            "optionValues": [],
+            "answer": "",
+            "explanation": "",
+            "rule": "",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          }
+        ]
+      }
+    },
+    {
+      "topic": "Airport & first arrival",
+      "goal": "уверенно спросить дорогу, понять простое объявление и объяснить, что происходит сейчас и что происходит обычно.",
+      "durationMin": 60,
+      "heroImage": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1100&q=80",
+      "timeline": [
+        {
+          "time": "0-7",
+          "title": "Warm-up",
+          "note": "вопросы про аэропорт"
+        },
+        {
+          "time": "7-22",
+          "title": "Grammar 1",
+          "note": "Present Simple vs Continuous"
+        },
+        {
+          "time": "22-32",
+          "title": "Grammar 2",
+          "note": "polite requests"
+        },
+        {
+          "time": "32-42",
+          "title": "Vocabulary",
+          "note": "airport words"
+        },
+        {
+          "time": "42-52",
+          "title": "Listening",
+          "note": "announcement and details"
+        },
+        {
+          "time": "52-60",
+          "title": "Speaking",
+          "note": "arrival role play"
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "speaking",
+          "title": "Warm-up: первая ситуация в аэропорту",
+          "paragraphs": [
+            "Ответьте устно на русском или английском, затем повторите ответ только на английском."
+          ],
+          "rules": [],
+          "formulas": [],
+          "examples": [
+            "Пример: At the airport people check in, show a passport, go through security and find their gate."
+          ],
+          "prompts": [
+            "What do people do before a flight?",
+            "What can be stressful at the airport?",
+            "What do you need to ask at the airport?",
+            "What documents do you show?"
+          ],
+          "vocab": [],
+          "audioUrl": "",
+          "audioTitle": "",
+          "transcript": "",
+          "text": "",
+          "tasks": [],
+          "imageUrl": "",
+          "sample": "1 Before a flight people check in online, pack their suitcase and come to the airport about two hours early.\n2 The queues and the security check can be stressful, and sometimes the flight is delayed.\n3 At the airport I usually ask where the check-in desk is, how much hand luggage I can take and where my gate is.\n4 You show your passport and your boarding pass, and at the border you may also show your visa or your return ticket."
+        },
+        {
+          "kind": "rule",
+          "title": "Правило 1: Present Simple и Present Continuous",
+          "paragraphs": [
+            "Present Simple нужен для привычек, фактов, расписаний и регулярных действий. Present Continuous нужен для действия сейчас или временной ситуации."
+          ],
+          "rules": [
+            "Usually, often, sometimes, every day часто требуют Present Simple.",
+            "Now, right now, at the moment, today, this week часто требуют Present Continuous.",
+            "С расписаниями транспорта часто используем Present Simple: The plane leaves at 7.",
+            "В вопросах Present Simple нужен do/does: Do you travel often? Does she need a visa?"
+          ],
+          "formulas": [
+            "I usually travel with one suitcase. · Today I am carrying two bags. · The flight leaves at 9:30.",
+            "Памятка: \nPresent Simple = verb / verb+s (for he, she, it)\nPresent Continuous = am/is/are + verb + ing\nExamples: I usually travel by plane. · I am checking in now. · The flight leaves at 9:30."
+          ],
+          "examples": [],
+          "prompts": [],
+          "vocab": [],
+          "audioUrl": "",
+          "audioTitle": "",
+          "transcript": "",
+          "text": "",
+          "tasks": [
+            {
+              "id": "",
+              "kind": "choice",
+              "prompt": "Выберите: The flight ___ at 9:30.",
+              "options": [
+                "leaves",
+                "is leaving",
+                "leave",
+                "leaving"
+              ],
+              "optionValues": [
+                "leaves",
+                "is leaving",
+                "leave",
+                "leaving"
+              ],
+              "answer": "leaves",
+              "explanation": "Это расписание рейса, поэтому используем Present Simple: leaves.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "",
+              "kind": "fill",
+              "prompt": "Впишите: I ___ at the gate right now. (wait)",
+              "options": [],
+              "optionValues": [],
+              "answer": "am waiting",
+              "explanation": "Right now показывает действие в момент речи: am/is/are + verb-ing.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "",
+              "kind": "fill",
+              "prompt": "Впишите порядок слов: How often ___ by plane?",
+              "options": [],
+              "optionValues": [],
+              "answer": "do you usually travel",
+              "explanation": "Это вопрос о привычке, поэтому Present Simple: do + you + usually + verb.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "",
+              "kind": "choice",
+              "prompt": "Выберите: Look! They ___ passports at the desk.",
+              "options": [
+                "check",
+                "are checking",
+                "checks",
+                "checked"
+              ],
+              "optionValues": [
+                "check",
+                "are checking",
+                "checks",
+                "checked"
+              ],
+              "answer": "are checking",
+              "explanation": "Look! показывает действие сейчас, поэтому Present Continuous.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            }
+          ],
+          "imageUrl": ""
+        },
+        {
+          "kind": "tasks",
+          "title": "Правило 2: вежливые просьбы",
+          "paragraphs": [
+            "Could you...? - просьба к человеку. Can I...? - вы просите разрешение или услугу для себя. После can/could глагол идет без to."
+          ],
+          "rules": [],
+          "formulas": [],
+          "examples": [],
+          "prompts": [],
+          "vocab": [],
+          "audioUrl": "",
+          "audioTitle": "",
+          "transcript": "",
+          "text": "",
+          "tasks": [
+            {
+              "id": "",
+              "kind": "fill",
+              "prompt": "Переведите \"Можете пожалуйста повторить?\": ___ that, please?",
+              "options": [],
+              "optionValues": [],
+              "answer": "could you repeat",
+              "explanation": "Could you repeat...? - вежливая просьба повторить информацию.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "",
+              "kind": "fill",
+              "prompt": "Переведите \"Могу ли я сесть у окна?\": ___ a window seat, please?",
+              "options": [],
+              "optionValues": [],
+              "answer": "can i have",
+              "explanation": "Can I have...? подходит, когда вы просите место, билет, чек или документ.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "",
+              "kind": "fill",
+              "prompt": "Переведите \"Где находится выдача багажа\": ___ the baggage claim?",
+              "options": [],
+              "optionValues": [],
+              "answer": "where can i find",
+              "explanation": "Для вопроса о месте используем Where can I find...?",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            }
+          ],
+          "imageUrl": ""
+        },
+        {
+          "kind": "vocab",
+          "title": "Лексика: airport words",
+          "paragraphs": [
+            "Составьте 5 фраз с could/can и 5 предложений в Present Simple/Continuous."
+          ],
+          "rules": [],
+          "formulas": [],
+          "examples": [],
+          "prompts": [],
+          "vocab": [
+            {
+              "en": "boarding pass",
+              "ru": "посадочный талон"
+            },
+            {
+              "en": "baggage claim",
+              "ru": "выдача багажа"
+            },
+            {
+              "en": "customs",
+              "ru": "таможня"
+            },
+            {
+              "en": "gate",
+              "ru": "выход на посадку"
+            },
+            {
+              "en": "aisle seat",
+              "ru": "место у прохода"
+            },
+            {
+              "en": "window seat",
+              "ru": "место у окна"
+            },
+            {
+              "en": "delayed",
+              "ru": "задержан"
+            },
+            {
+              "en": "on time",
+              "ru": "по расписанию"
+            },
+            {
+              "en": "security check",
+              "ru": "проверка безопасности"
+            },
+            {
+              "en": "carry-on bag",
+              "ru": "ручная кладь"
+            },
+            {
+              "en": "arrival hall",
+              "ru": "зал прилета"
+            },
+            {
+              "en": "connection",
+              "ru": "пересадка"
+            }
+          ],
+          "audioUrl": "",
+          "audioTitle": "",
+          "transcript": "",
+          "text": "",
+          "tasks": [],
+          "imageUrl": ""
+        },
+        {
+          "kind": "listening",
+          "title": "Listening: объявление",
+          "paragraphs": [
+            "Как выполнять: сначала прослушайте аудио и ответьте на вопросы ниже. Откройте текст диалогов только для проверки. Ответы в пустые линии на картинке вписывать не нужно."
+          ],
+          "rules": [],
+          "formulas": [],
+          "examples": [],
+          "prompts": [],
+          "vocab": [],
+          "audioUrl": "/audio/track-002.mp3",
+          "audioTitle": "Open World audio: Track 002",
+          "transcript": "",
+          "text": "",
+          "tasks": [
+            {
+              "id": "",
+              "kind": "choice",
+              "prompt": "1. Where are Ben and Jim?",
+              "options": [
+                "a) At a sports centre.",
+                "b) In an English class.",
+                "c) On holiday."
+              ],
+              "optionValues": [
+                "a",
+                "b",
+                "c"
+              ],
+              "answer": "a",
+              "explanation": "В диалоге A Ben и Jim встречаются в спортивном центре: упоминается basketball club и five-a-side football.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "",
+              "kind": "choice",
+              "prompt": "2. What is the second person's name?",
+              "options": [
+                "a) Ben.",
+                "b) Jim.",
+                "c) Mr Robinson."
+              ],
+              "optionValues": [
+                "ben",
+                "jim",
+                "mr robinson"
+              ],
+              "answer": "jim",
+              "explanation": "Ben спрашивает имя, а Jim отвечает: My name is Jim.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "",
+              "kind": "choice",
+              "prompt": "3. What sport do they talk about?",
+              "options": [
+                "a) Basketball.",
+                "b) Five-a-side football.",
+                "c) Tennis."
+              ],
+              "optionValues": [
+                "basketball",
+                "five-a-side football",
+                "tennis"
+              ],
+              "answer": "five-a-side football",
+              "explanation": "Jim уточняет, что это не basketball club, а five-a-side football.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "",
+              "kind": "choice",
+              "prompt": "4. Where are the people in dialogue B from?",
+              "options": [
+                "a) Britain.",
+                "b) Canada.",
+                "c) The USA."
+              ],
+              "optionValues": [
+                "british",
+                "canadian",
+                "american"
+              ],
+              "answer": "canadian",
+              "explanation": "В диалоге B люди говорят: We are Canadian.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "",
+              "kind": "choice",
+              "prompt": "5. What is the English teacher's name?",
+              "options": [
+                "a) Mr Robinson.",
+                "b) Ben.",
+                "c) Jim."
+              ],
+              "optionValues": [
+                "mr robinson",
+                "ben",
+                "jim"
+              ],
+              "answer": "mr robinson",
+              "explanation": "В диалоге C имя английского учителя - Mr Robinson.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "",
+              "kind": "choice",
+              "prompt": "6. Who is new?",
+              "options": [
+                "a) The teacher.",
+                "b) The student.",
+                "c) Ben."
+              ],
+              "optionValues": [
+                "the teacher",
+                "the student",
+                "ben"
+              ],
+              "answer": "the student",
+              "explanation": "В конце диалога C выясняется, что собеседник - новый студент.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            }
+          ],
+          "imageUrl": ""
+        },
+        {
+          "kind": "tasks",
+          "title": "Reading: airport announcement",
+          "paragraphs": [
+            "Прочитайте текст и найдите информацию о gate, времени посадки и документах.",
+            "Ответьте на вопросы по тексту. В заданиях с полем впишите ответ полностью, а в заданиях с вариантами выберите один ответ."
+          ],
+          "rules": [],
+          "formulas": [],
+          "examples": [],
+          "prompts": [],
+          "vocab": [],
+          "audioUrl": "",
+          "audioTitle": "",
+          "transcript": "Attention, passengers on flight 247 to New York. The departure gate has changed. Please go to gate B12. Boarding will start in twenty minutes. Keep your boarding pass and passport ready. If you have a large carry-on bag, please speak to a member of staff. The flight is on time today. Families with small children can board first. Other passengers should wait near the gate. Thank you for your patience. We hope you have a pleasant flight.",
+          "text": "",
+          "tasks": [
+            {
+              "id": "",
+              "kind": "fill",
+              "prompt": "1. What is the new departure gate?",
+              "options": [],
+              "optionValues": [],
+              "answer": "b12",
+              "explanation": "В объявлении сказано: Please go to gate B12.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "",
+              "kind": "choice",
+              "prompt": "2. When will boarding start?",
+              "options": [
+                "a) Ten minutes.",
+                "b) Twenty minutes.",
+                "c) One hour.",
+                "d) Tomorrow."
+              ],
+              "optionValues": [
+                "ten minutes",
+                "twenty minutes",
+                "one hour",
+                "tomorrow"
+              ],
+              "answer": "twenty minutes",
+              "explanation": "Boarding will start in twenty minutes.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "",
+              "kind": "choice",
+              "prompt": "3. Is the flight on time today?",
+              "options": [
+                "a) Yes.",
+                "b) No."
+              ],
+              "optionValues": [
+                "yes",
+                "no"
+              ],
+              "answer": "yes",
+              "explanation": "В объявлении сказано: The flight is on time today.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "",
+              "kind": "fill",
+              "prompt": "4. Who can board first?",
+              "options": [],
+              "optionValues": [],
+              "answer": "families with small children",
+              "explanation": "Families with small children can board first.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "",
+              "kind": "fill",
+              "prompt": "5. What two documents should passengers keep ready?",
+              "options": [],
+              "optionValues": [],
+              "answer": "boarding pass and passport",
+              "explanation": "Пассажиры должны держать boarding pass and passport ready.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            }
+          ],
+          "imageUrl": ""
+        },
+        {
+          "kind": "speaking",
+          "title": "Диалог: asking for help",
+          "paragraphs": [
+            "Passenger: Excuse me, could you help me?",
+            "Staff: Of course. What do you need?",
+            "Passenger: Where can I find baggage claim?",
+            "Staff: Go straight ahead and turn left after customs.",
+            "Passenger: Thank you. Can I buy a SIM card here?",
+            "Staff: Yes, there is a small shop near the arrival hall.",
+            "Разыграйте диалог 2 раза: сначала по тексту, затем замените baggage claim на taxi stand, restroom, SIM card shop."
+          ],
+          "rules": [],
+          "formulas": [],
+          "examples": [],
+          "prompts": [],
+          "vocab": [],
+          "audioUrl": "",
+          "audioTitle": "",
+          "transcript": "",
+          "text": "",
+          "tasks": [],
+          "imageUrl": "",
+          "sample": "Passenger: Excuse me, could you help me?\nStaff: Of course. What do you need?\nPassenger: Where can I find the taxi stand?\nStaff: Go straight ahead, and it is outside exit B, on your right.\nPassenger: Thank you. Can I buy a SIM card here?\nStaff: Yes, there is a small shop near the arrival hall.\nPassenger: Great. And where is the restroom?\nStaff: It's just behind you, next to the information desk.\nPassenger: Thanks a lot for your help!"
+        },
+        {
+          "kind": "speaking",
+          "title": "Монолог: first arrival",
+          "paragraphs": [
+            "Скажите 8-10 предложений. Используйте Present Simple для привычек и Present Continuous для ситуации сейчас."
+          ],
+          "rules": [],
+          "formulas": [],
+          "examples": [
+            "Пример начала: I usually feel calm when I travel, but today I am feeling nervous. I am looking for baggage claim now. I need to buy a SIM card because I want to call my friend."
+          ],
+          "prompts": [
+            "How do you usually feel when you travel?",
+            "What are you doing now at the airport?",
+            "Where are you going first?",
+            "What do you need to buy?",
+            "What are you looking for?",
+            "How do you feel today?"
+          ],
+          "vocab": [],
+          "audioUrl": "",
+          "audioTitle": "",
+          "transcript": "",
+          "text": "",
+          "tasks": [],
+          "imageUrl": "",
+          "sample": "I usually feel nervous when I travel, because I don't like big airports. Right now I am standing near the baggage claim and I am waiting for my suitcase. First I am going to the information desk to ask about the train to the city. Then I need to buy a SIM card and some water, because my phone has no internet here. I am also looking for a place to change money. Today I feel tired after the flight, but I am happy: this is my first time in this country."
+        }
+      ],
+      "words": [
+        {
+          "english": "boarding pass",
+          "russian": "посадочный талон"
+        },
+        {
+          "english": "baggage claim",
+          "russian": "выдача багажа"
+        },
+        {
+          "english": "customs",
+          "russian": "таможня"
+        },
+        {
+          "english": "gate",
+          "russian": "выход на посадку"
+        },
+        {
+          "english": "aisle seat",
+          "russian": "место у прохода"
+        },
+        {
+          "english": "window seat",
+          "russian": "место у окна"
+        },
+        {
+          "english": "delayed",
+          "russian": "задержан"
+        },
+        {
+          "english": "on time",
+          "russian": "по расписанию"
+        },
+        {
+          "english": "security check",
+          "russian": "проверка безопасности"
+        },
+        {
+          "english": "carry-on bag",
+          "russian": "ручная кладь"
+        },
+        {
+          "english": "arrival hall",
+          "russian": "зал прилета"
+        },
+        {
+          "english": "connection",
+          "russian": "пересадка"
+        }
+      ],
+      "number": 1,
+      "level": "A2",
+      "bookTitle": "Open World Key (A2), Cambridge",
+      "bookRef": "Unit 1, аудио Track 002",
+      "description": "Первое прибытие: аэропорт, документы, объявления и Present Simple / Continuous",
+      "homework": {
+        "title": "Airport English",
+        "intro": "Закрепляем airport vocabulary, Present Simple/Continuous, вежливые просьбы и вопросы на паспортном контроле.",
+        "tasks": [
+          {
+            "section": "1. Grammar: choose the form",
+            "kind": "CHOICE",
+            "prompt": "My sister ___ at security now.",
+            "options": [
+              "waits",
+              "is waiting",
+              "wait",
+              "waiting"
+            ],
+            "optionValues": [
+              "waits",
+              "is waiting",
+              "wait",
+              "waiting"
+            ],
+            "answer": "is waiting",
+            "explanation": "Now показывает действие сейчас, поэтому Present Continuous: is waiting.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "1. Grammar: choose the form",
+            "kind": "CHOICE",
+            "prompt": "I usually ___ with one carry-on bag.",
+            "options": [
+              "am travelling",
+              "travels",
+              "travel",
+              "traveling"
+            ],
+            "optionValues": [
+              "am travelling",
+              "travels",
+              "travel",
+              "traveling"
+            ],
+            "answer": "travel",
+            "explanation": "Usually показывает привычку, поэтому Present Simple: I usually travel.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "1. Grammar: choose the form",
+            "kind": "FILL",
+            "prompt": "Задайте вопрос “В какое время вылетает ваш рейс?”: What time ___?",
+            "options": [],
+            "optionValues": [],
+            "answer": "does your flight leave",
+            "explanation": "Для he/she/it или существительного в вопросе Present Simple используем does + subject + verb.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "2. Vocabulary check",
+            "kind": "CHOICE",
+            "prompt": "Посадочный талон:",
+            "options": [
+              "customs",
+              "boarding pass",
+              "arrival hall",
+              "connection"
+            ],
+            "optionValues": [
+              "customs",
+              "boarding pass",
+              "arrival hall",
+              "connection"
+            ],
+            "answer": "boarding pass",
+            "explanation": "Boarding pass - документ/талон, который показывают при посадке.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "2. Vocabulary check",
+            "kind": "CHOICE",
+            "prompt": "Ручная кладь:",
+            "options": [
+              "carry-on bag",
+              "receipt",
+              "deposit",
+              "gate"
+            ],
+            "optionValues": [
+              "carry-on bag",
+              "receipt",
+              "deposit",
+              "gate"
+            ],
+            "answer": "carry-on bag",
+            "explanation": "Carry-on bag - сумка, которую берут с собой в салон.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "2. Vocabulary check",
+            "kind": "CHOICE",
+            "prompt": "Выдача багажа:",
+            "options": [
+              "baggage claim",
+              "customs",
+              "gate",
+              "connection"
+            ],
+            "optionValues": [
+              "baggage claim",
+              "customs",
+              "gate",
+              "connection"
+            ],
+            "answer": "baggage claim",
+            "explanation": "Baggage claim - место, где пассажиры получают багаж после прилета.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "2. Vocabulary check",
+            "kind": "CHOICE",
+            "prompt": "Проверка безопасности:",
+            "options": [
+              "security check",
+              "arrival hall",
+              "boarding pass",
+              "carry-on bag"
+            ],
+            "optionValues": [
+              "security check",
+              "arrival hall",
+              "boarding pass",
+              "carry-on bag"
+            ],
+            "answer": "security check",
+            "explanation": "Security check - проверка безопасности перед посадкой.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "3. Listening: customs questions",
+            "kind": "LISTENING",
+            "prompt": "Who asks the questions?",
+            "options": [
+              "the passenger",
+              "the officer",
+              "the brother",
+              "the pilot"
+            ],
+            "optionValues": [
+              "the passenger",
+              "the officer",
+              "the brother",
+              "the pilot"
+            ],
+            "answer": "the officer",
+            "explanation": "Вопросы задает officer, потому что он проверяет паспорт и цель поездки.",
+            "audioUrl": "/audio/airport-customs.mp3",
+            "transcript": "Officer: Hello madam. Can I see your passport please? Passenger: Passport, yes. Officer: I'm going to ask you some questions. Are you travelling alone? Passenger: Yes, I'm alone. Officer: Is it your first time in Canada? Have you ever visited Canada before? Passenger: No, first time. Officer: Are you travelling for work, study or leisure? Passenger: I don't understand. Officer: I mean, are you here to study, work or for fun, leisure time? Passenger: Oh, to see my brother. Officer: Leisure then. Where will you be staying, in a hotel or someone's home? Passenger: My brother's house. Officer: What is the duration of your stay? Passenger: Two weeks. Officer: Do you have medical insurance? Passenger: Yes, I have insurance. Officer: Great. Welcome to Canada.",
+            "text": ""
+          },
+          {
+            "section": "3. Listening: customs questions",
+            "kind": "LISTENING",
+            "prompt": "How is the woman travelling?",
+            "options": [],
+            "optionValues": [],
+            "answer": "alone",
+            "explanation": "Пассажирка отвечает: Yes, I'm alone. Значит, она путешествует одна.",
+            "audioUrl": "/audio/airport-customs.mp3",
+            "transcript": "Officer: Hello madam. Can I see your passport please? Passenger: Passport, yes. Officer: I'm going to ask you some questions. Are you travelling alone? Passenger: Yes, I'm alone. Officer: Is it your first time in Canada? Have you ever visited Canada before? Passenger: No, first time. Officer: Are you travelling for work, study or leisure? Passenger: I don't understand. Officer: I mean, are you here to study, work or for fun, leisure time? Passenger: Oh, to see my brother. Officer: Leisure then. Where will you be staying, in a hotel or someone's home? Passenger: My brother's house. Officer: What is the duration of your stay? Passenger: Two weeks. Officer: Do you have medical insurance? Passenger: Yes, I have insurance. Officer: Great. Welcome to Canada.",
+            "text": ""
+          },
+          {
+            "section": "3. Listening: customs questions",
+            "kind": "LISTENING",
+            "prompt": "Прослушайте запись и выберите ответ: Has she visited Canada before?",
+            "options": [
+              "yes, many times",
+              "No. It is her first time.",
+              "yes, last year",
+              "for two weeks"
+            ],
+            "optionValues": [
+              "yes, many times",
+              "first time",
+              "last year",
+              "two weeks"
+            ],
+            "answer": "No. It is her first time.",
+            "explanation": "На вопрос Have you ever visited Canada before? она отвечает: No, first time.",
+            "audioUrl": "/audio/airport-customs.mp3",
+            "transcript": "Officer: Hello madam. Can I see your passport please? Passenger: Passport, yes. Officer: I'm going to ask you some questions. Are you travelling alone? Passenger: Yes, I'm alone. Officer: Is it your first time in Canada? Have you ever visited Canada before? Passenger: No, first time. Officer: Are you travelling for work, study or leisure? Passenger: I don't understand. Officer: I mean, are you here to study, work or for fun, leisure time? Passenger: Oh, to see my brother. Officer: Leisure then. Where will you be staying, in a hotel or someone's home? Passenger: My brother's house. Officer: What is the duration of your stay? Passenger: Two weeks. Officer: Do you have medical insurance? Passenger: Yes, I have insurance. Officer: Great. Welcome to Canada.",
+            "text": ""
+          },
+          {
+            "section": "3. Listening: customs questions",
+            "kind": "LISTENING",
+            "prompt": "What is the purpose of her trip?",
+            "options": [
+              "work",
+              "study",
+              "leisure",
+              "business"
+            ],
+            "optionValues": [
+              "work",
+              "study",
+              "leisure",
+              "business"
+            ],
+            "answer": "leisure",
+            "explanation": "Она едет увидеть брата, поэтому officer относит цель поездки к leisure.",
+            "audioUrl": "/audio/airport-customs.mp3",
+            "transcript": "Officer: Hello madam. Can I see your passport please? Passenger: Passport, yes. Officer: I'm going to ask you some questions. Are you travelling alone? Passenger: Yes, I'm alone. Officer: Is it your first time in Canada? Have you ever visited Canada before? Passenger: No, first time. Officer: Are you travelling for work, study or leisure? Passenger: I don't understand. Officer: I mean, are you here to study, work or for fun, leisure time? Passenger: Oh, to see my brother. Officer: Leisure then. Where will you be staying, in a hotel or someone's home? Passenger: My brother's house. Officer: What is the duration of your stay? Passenger: Two weeks. Officer: Do you have medical insurance? Passenger: Yes, I have insurance. Officer: Great. Welcome to Canada.",
+            "text": ""
+          },
+          {
+            "section": "3. Listening: customs questions",
+            "kind": "LISTENING",
+            "prompt": "Where will she be staying?",
+            "options": [],
+            "optionValues": [],
+            "answer": "her brother's house",
+            "explanation": "Она говорит: My brother's house. Значит, она будет жить у брата.",
+            "audioUrl": "/audio/airport-customs.mp3",
+            "transcript": "Officer: Hello madam. Can I see your passport please? Passenger: Passport, yes. Officer: I'm going to ask you some questions. Are you travelling alone? Passenger: Yes, I'm alone. Officer: Is it your first time in Canada? Have you ever visited Canada before? Passenger: No, first time. Officer: Are you travelling for work, study or leisure? Passenger: I don't understand. Officer: I mean, are you here to study, work or for fun, leisure time? Passenger: Oh, to see my brother. Officer: Leisure then. Where will you be staying, in a hotel or someone's home? Passenger: My brother's house. Officer: What is the duration of your stay? Passenger: Two weeks. Officer: Do you have medical insurance? Passenger: Yes, I have insurance. Officer: Great. Welcome to Canada.",
+            "text": ""
+          },
+          {
+            "section": "3. Listening: customs questions",
+            "kind": "LISTENING",
+            "prompt": "What is the duration of her stay?",
+            "options": [
+              "one week",
+              "two weeks",
+              "two months",
+              "one day"
+            ],
+            "optionValues": [
+              "one week",
+              "two weeks",
+              "two months",
+              "one day"
+            ],
+            "answer": "two weeks",
+            "explanation": "На вопрос about duration она отвечает: Two weeks.",
+            "audioUrl": "/audio/airport-customs.mp3",
+            "transcript": "Officer: Hello madam. Can I see your passport please? Passenger: Passport, yes. Officer: I'm going to ask you some questions. Are you travelling alone? Passenger: Yes, I'm alone. Officer: Is it your first time in Canada? Have you ever visited Canada before? Passenger: No, first time. Officer: Are you travelling for work, study or leisure? Passenger: I don't understand. Officer: I mean, are you here to study, work or for fun, leisure time? Passenger: Oh, to see my brother. Officer: Leisure then. Where will you be staying, in a hotel or someone's home? Passenger: My brother's house. Officer: What is the duration of your stay? Passenger: Two weeks. Officer: Do you have medical insurance? Passenger: Yes, I have insurance. Officer: Great. Welcome to Canada.",
+            "text": ""
+          },
+          {
+            "section": "3. Listening: customs questions",
+            "kind": "LISTENING",
+            "prompt": "What document or protection does the officer ask about at the end?",
+            "options": [],
+            "optionValues": [],
+            "answer": "medical insurance",
+            "explanation": "Officer спрашивает: Do you have medical insurance? Passenger отвечает: Yes, I have insurance.",
+            "audioUrl": "/audio/airport-customs.mp3",
+            "transcript": "Officer: Hello madam. Can I see your passport please? Passenger: Passport, yes. Officer: I'm going to ask you some questions. Are you travelling alone? Passenger: Yes, I'm alone. Officer: Is it your first time in Canada? Have you ever visited Canada before? Passenger: No, first time. Officer: Are you travelling for work, study or leisure? Passenger: I don't understand. Officer: I mean, are you here to study, work or for fun, leisure time? Passenger: Oh, to see my brother. Officer: Leisure then. Where will you be staying, in a hotel or someone's home? Passenger: My brother's house. Officer: What is the duration of your stay? Passenger: Two weeks. Officer: Do you have medical insurance? Passenger: Yes, I have insurance. Officer: Great. Welcome to Canada.",
+            "text": ""
+          },
+          {
+            "section": "4A. Reading: airport conversations",
+            "kind": "READING",
+            "prompt": "Where does Maria arrive?",
+            "options": [],
+            "optionValues": [],
+            "answer": "toronto",
+            "explanation": "Первое предложение говорит: Maria arrives at the airport in Toronto.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": "Maria arrives at the airport in Toronto in the morning. She feels excited because it is her first trip to Canada. At passport control, the officer asks to see her passport. He also asks if she is travelling alone. Maria says that she is alone and that she is visiting her brother. The officer asks if she is travelling for work, study or leisure. Maria does not understand the word leisure at first. The officer explains that leisure means fun time or free time. Maria says she will stay at her brother's house. She plans to stay for two weeks. She has medical insurance and shows the document on her phone. After the questions, the officer smiles and welcomes her to Canada."
+          },
+          {
+            "section": "4A. Reading: airport conversations",
+            "kind": "READING",
+            "prompt": "Who is Maria visiting?",
+            "options": [
+              "her friend",
+              "her brother",
+              "her teacher",
+              "her parents"
+            ],
+            "optionValues": [
+              "her friend",
+              "her brother",
+              "her teacher",
+              "her parents"
+            ],
+            "answer": "her brother",
+            "explanation": "В тексте сказано: she is visiting her brother.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": "Maria arrives at the airport in Toronto in the morning. She feels excited because it is her first trip to Canada. At passport control, the officer asks to see her passport. He also asks if she is travelling alone. Maria says that she is alone and that she is visiting her brother. The officer asks if she is travelling for work, study or leisure. Maria does not understand the word leisure at first. The officer explains that leisure means fun time or free time. Maria says she will stay at her brother's house. She plans to stay for two weeks. She has medical insurance and shows the document on her phone. After the questions, the officer smiles and welcomes her to Canada."
+          },
+          {
+            "section": "4A. Reading: airport conversations",
+            "kind": "READING",
+            "prompt": "Which word means free time or fun time?",
+            "options": [],
+            "optionValues": [],
+            "answer": "leisure",
+            "explanation": "Officer объясняет, что leisure значит free time или fun time.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": "Maria arrives at the airport in Toronto in the morning. She feels excited because it is her first trip to Canada. At passport control, the officer asks to see her passport. He also asks if she is travelling alone. Maria says that she is alone and that she is visiting her brother. The officer asks if she is travelling for work, study or leisure. Maria does not understand the word leisure at first. The officer explains that leisure means fun time or free time. Maria says she will stay at her brother's house. She plans to stay for two weeks. She has medical insurance and shows the document on her phone. After the questions, the officer smiles and welcomes her to Canada."
+          },
+          {
+            "section": "4A. Reading: airport conversations",
+            "kind": "READING",
+            "prompt": "How long does she plan to stay?",
+            "options": [
+              "two days",
+              "two weeks",
+              "two months",
+              "one week"
+            ],
+            "optionValues": [
+              "two days",
+              "two weeks",
+              "two months",
+              "one week"
+            ],
+            "answer": "two weeks",
+            "explanation": "В тексте сказано: She plans to stay for two weeks.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": "Maria arrives at the airport in Toronto in the morning. She feels excited because it is her first trip to Canada. At passport control, the officer asks to see her passport. He also asks if she is travelling alone. Maria says that she is alone and that she is visiting her brother. The officer asks if she is travelling for work, study or leisure. Maria does not understand the word leisure at first. The officer explains that leisure means fun time or free time. Maria says she will stay at her brother's house. She plans to stay for two weeks. She has medical insurance and shows the document on her phone. After the questions, the officer smiles and welcomes her to Canada."
+          },
+          {
+            "section": "4A. Reading: airport conversations",
+            "kind": "READING",
+            "prompt": "What does she show on her phone?",
+            "options": [],
+            "optionValues": [],
+            "answer": "medical insurance",
+            "explanation": "В тексте сказано, что she has medical insurance and shows the document on her phone.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": "Maria arrives at the airport in Toronto in the morning. She feels excited because it is her first trip to Canada. At passport control, the officer asks to see her passport. He also asks if she is travelling alone. Maria says that she is alone and that she is visiting her brother. The officer asks if she is travelling for work, study or leisure. Maria does not understand the word leisure at first. The officer explains that leisure means fun time or free time. Maria says she will stay at her brother's house. She plans to stay for two weeks. She has medical insurance and shows the document on her phone. After the questions, the officer smiles and welcomes her to Canada."
+          },
+          {
+            "section": "4B. Writing: airport help message",
+            "kind": "TEACHER",
+            "prompt": "Напишите сообщение другу: вы прилетели, прошли passport control, ищете багаж и хотите купить SIM card. Минимум 45 слов. Используйте 6 слов из урока и 2 вежливые просьбы.",
+            "options": [],
+            "optionValues": [],
+            "answer": "",
+            "explanation": "Hi! I am at the airport now. I passed passport control and I am waiting near baggage claim. I usually travel with one carry-on bag, but today I have two bags. Could you call me in ten minutes? Can I use your address for the taxi app?",
+            "rule": "Минимум 45 слов",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "5. Speaking preparation",
+            "kind": "TEACHER",
+            "prompt": "Подготовьте монолог “My first arrival in the USA”. Минимум 10 предложений. Запишите ключевые фразы в поле.",
+            "options": [],
+            "optionValues": [],
+            "answer": "",
+            "explanation": "I arrive in the USA in the afternoon. I feel excited, but I am a little nervous. I go through passport control. The officer asks me some questions. I say that I am travelling for leisure. I am going to stay at my friend's house. Then I look for baggage claim. I buy a SIM card in the arrival hall. I call my friend. Then I take a taxi to my hotel.",
+            "rule": "Минимум 60 слов",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          }
+        ]
+      }
+    },
+    {
+      "topic": "Hotel check-in",
+      "goal": "забронировать номер, уточнить условия и рассказать о планах в новой стране.",
+      "durationMin": 60,
+      "heroImage": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1100&q=80",
+      "timeline": [
+        {
+          "time": "0-10",
+          "title": "Questions",
+          "note": "ответы с прошлого урока"
+        },
+        {
+          "time": "10-18",
+          "title": "Review",
+          "note": "airport phrases"
+        },
+        {
+          "time": "18-31",
+          "title": "Grammar 1",
+          "note": "Present Perfect"
+        },
+        {
+          "time": "31-40",
+          "title": "Grammar 2",
+          "note": "going to / would like"
+        },
+        {
+          "time": "40-50",
+          "title": "Listening",
+          "note": "hotel check-in"
+        },
+        {
+          "time": "50-60",
+          "title": "Speaking",
+          "note": "role play"
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "tasks",
+          "title": "Ответы на вопросы с прошлого занятия",
+          "paragraphs": [
+            "Разбираем слова через значение, произношение и понятную схему.",
+            "Короткие гласные: /ɪ/ - короткое “и”, пример sit ; /e/ - “э”, пример bed ; /æ/ - широкий звук между “э” и “а”, пример cat ; /ʌ/ - короткое “а”, но глубже, пример cup ; /ʊ/ - короткое “у”, пример book ; /ə/ - очень слабое безударное “э/а”, почти проглатывается, пример about .",
+            "Долгие гласные: /iː/ - длинное “ии”, пример see ; /ɑː/ - длинное открытое “а”, пример car ; /ɔː/ - длинное “о”, пример door ; /uː/ - длинное “уу”, пример blue ; /ɜː/ - длинное “ё/э” без точной русской пары, пример turn .",
+            "Дифтонги: /eɪ/ - “эй”, пример day ; /aɪ/ - “ай”, пример line ; /ɔɪ/ - “ой”, пример boy ; /aʊ/ - “ау”, пример now ; /əʊ/ BrE или /oʊ/ AmE - “оу”, пример go ; /eə/ - “эа”, пример chair ; /ɪə/ - “иэ/иа”, пример near ; /ʊə/ - “уэ/уа”, пример tour .",
+            "Понятные согласные: /p/ - “п”, пример pen ; /b/ - “б”, пример bag ; /t/ - “т”, пример tea ; /d/ - “д”, пример day ; /k/ - “к”, пример key ; /g/ - “г”, пример go ; /f/ - “ф”, пример five ; /v/ - “в”, пример very ; /s/ - “с”, пример see ; /z/ - “з”, пример zoo ; /m/ - “м”, пример man ; /n/ - “н”, пример name ; /l/ - “л”, пример line ; /h/ - легкое “х”, пример hotel ; /r/ - английское “р”, не раскатываем, пример room ; /w/ - губной звук между “у” и “в”, пример we ; /j/ - “й”, пример yes .",
+            "Особые согласные: /θ/ - без голоса, язык между зубами, примерно “с” с языком между зубами, пример think ; /ð/ - с голосом, примерно “з” с языком между зубами, пример this ; /ʃ/ - “ш”, пример she ; /ʒ/ - “ж”, пример vision ; /tʃ/ - “ч”, пример check ; /dʒ/ - “дж”, пример job ; /ŋ/ - носовой “н” в конце слова, пример sing , отдельное “г” не добавляем.",
+            "Как тренировать: сначала найдите ударение, затем прочитайте звуки слева направо, не ориентируясь на написание слова. Если есть /ə/, произносите его очень слабо. Если есть /ː/, тяните звук. Если видите /θ/ или /ð/, поставьте кончик языка между зубами.",
+            "enormous AmE /ɪˈnɔːr.məs/ · BrE /ɪˈnɔː.məs/ · читаем: и-НОР-мэс - огромный, очень большой. big /bɪɡ/ ( биг ) - обычное “большой”, large /lɑːrdʒ/ ( лардж ) - более нейтральное/формальное “крупный”, enormous - “намного больше нормы”.",
+            "Схема: big bag ( биг бэг ) = большая сумка · large airport ( лардж ЭР-порт ) = крупный аэропорт · enormous airport ( и-НОР-мэс ЭР-порт ) = огромный аэропорт.",
+            "connection AmE /kəˈnek.ʃən/ · BrE /kəˈnek.ʃən/ · читаем: кэ-НЭК-шэн - пересадка, связь. Правило чтения: -tion в конце слова обычно читается как /ʃən/ ( шэн ): station ( СТЭЙ-шэн ), information ( ин-фэ-МЭЙ-шэн ), reservation ( ре-зэр-ВЭЙ-шэн ).",
+            "departure AmE /dɪˈpɑːr.tʃɚ/ · BrE /dɪˈpɑː.tʃə/ · читаем: ди-ПАР-чэр - отправление, вылет. Ударение на второй слог: de-PAR-ture. Буква t перед -ure часто звучит как /tʃ/ ( ч ): departure ( ди-ПАР-чэр ), future ( ФЬЮ-чэр ), picture ( ПИК-чэр ).",
+            "line /laɪn/ ( лайн ) - очередь как группа людей: There is a long line. turn AmE /tɝːn/ · BrE /tɜːn/ ( тёрн ) - очередь как право действовать сейчас: It's my turn.",
+            "staff AmE /stæf/ ( стэф ) · BrE /stɑːf/ ( стааф ) - персонал, сотрудники. stuff /stʌf/ ( стаф ) - вещи, штуки. Главное отличие в гласном: staff = /æ/ или /ɑː/, stuff = /ʌ/.",
+            "patience /ˈpeɪ.ʃəns/ ( ПЭЙ-шэнс ) - терпение. Ударение на первый слог. Часть tien звучит как /ʃ/ ( ш ): patience ( ПЭЙ-шэнс ), patient ( ПЭЙ-шэнт )."
+          ],
+          "rules": [],
+          "formulas": [],
+          "examples": [
+            "Как читать транскрипцию IPA: транскрипция показывает не буквы, а звуки. AmE - американский вариант, BrE - британский. Знак ˈ стоит перед ударным слогом, например /həˈtel/ = ударение на /tel/. Знак ː означает долгий звук: /iː/, /ɑː/, /ɔː/ нужно тянуть дольше."
+          ],
+          "prompts": [],
+          "vocab": [],
+          "audioUrl": "",
+          "audioTitle": "",
+          "transcript": "",
+          "text": "",
+          "tasks": [
+            {
+              "id": "",
+              "kind": "choice",
+              "prompt": "The new airport is ___ : it is three times bigger than the old one.",
+              "options": [
+                "big",
+                "large",
+                "enormous",
+                "small"
+              ],
+              "optionValues": [
+                "big",
+                "large",
+                "enormous",
+                "small"
+              ],
+              "answer": "enormous",
+              "explanation": "Enormous сильнее, чем big/large: это “огромный”.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "",
+              "kind": "choice",
+              "prompt": "В каком слове окончание -tion читается как /shun/?",
+              "options": [
+                "turn",
+                "connection",
+                "staff",
+                "large"
+              ],
+              "optionValues": [
+                "turn",
+                "connection",
+                "staff",
+                "large"
+              ],
+              "answer": "connection",
+              "explanation": "В слове connection окончание -tion читается как /shun/.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "",
+              "kind": "fill",
+              "prompt": "Вставьте нужное слово: The hotel ___ helped us with the bags.",
+              "options": [],
+              "optionValues": [],
+              "answer": "staff",
+              "explanation": "Staff - персонал. Stuff - вещи.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            }
+          ],
+          "imageUrl": ""
+        },
+        {
+          "kind": "tasks",
+          "title": "Повторение урока 1",
+          "paragraphs": [
+            "Повторяем airport vocabulary, Present Simple/Continuous и вежливые просьбы."
+          ],
+          "rules": [],
+          "formulas": [],
+          "examples": [],
+          "prompts": [],
+          "vocab": [],
+          "audioUrl": "",
+          "audioTitle": "",
+          "transcript": "",
+          "text": "",
+          "tasks": [
+            {
+              "id": "",
+              "kind": "fill",
+              "prompt": "Попросите повторить сказанное: ___ that, please?",
+              "options": [],
+              "optionValues": [],
+              "answer": "could you repeat",
+              "explanation": "Это вежливая просьба повторить информацию.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "",
+              "kind": "fill",
+              "prompt": "Как по-английски сказать “выдача багажа”?",
+              "options": [],
+              "optionValues": [],
+              "answer": "baggage claim",
+              "explanation": "Baggage claim - зона выдачи багажа после прилета.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "",
+              "kind": "fill",
+              "prompt": "Вставьте нужную форму глагола: I ___ at the gate right now. (wait)",
+              "options": [],
+              "optionValues": [],
+              "answer": "am waiting",
+              "explanation": "Right now показывает действие сейчас: am + verb-ing.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            }
+          ],
+          "imageUrl": ""
+        },
+        {
+          "kind": "rule",
+          "title": "Правило 1: Present Perfect для опыта",
+          "paragraphs": [
+            "Present Perfect нужен, когда говорим об опыте без точного времени. Если после этого называем конкретное время, переходим в Past Simple ."
+          ],
+          "rules": [
+            "Форма: have/has + V3.",
+            "Ever - “когда-нибудь” в вопросах: Have you ever tried Thai food?",
+            "Never - “никогда”: I have never driven a car abroad.",
+            "Yesterday, last year, in 2024 - Past Simple."
+          ],
+          "formulas": [
+            "Have you ever + V3: Have you ever flown business class? · Yes, I have. I flew to Madrid in 2023."
+          ],
+          "examples": [],
+          "prompts": [],
+          "vocab": [],
+          "audioUrl": "",
+          "audioTitle": "",
+          "transcript": "",
+          "text": "",
+          "tasks": [
+            {
+              "id": "",
+              "kind": "fill",
+              "prompt": "Впишите: ___ a hotel online? (book)",
+              "options": [],
+              "optionValues": [],
+              "answer": "have you ever booked",
+              "explanation": "Опыт без точного времени: Have you ever + V3.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "",
+              "kind": "choice",
+              "prompt": "I have ___ in a hostel once.",
+              "options": [
+                "stay",
+                "stayed",
+                "staying",
+                "stays"
+              ],
+              "optionValues": [
+                "stay",
+                "stayed",
+                "staying",
+                "stays"
+              ],
+              "answer": "stayed",
+              "explanation": "Stay - stayed - stayed. После have нужен V3.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "",
+              "kind": "fill",
+              "prompt": "I ___ a room yesterday. (book)",
+              "options": [],
+              "optionValues": [],
+              "answer": "booked",
+              "explanation": "Yesterday - точное время, поэтому Past Simple.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            }
+          ],
+          "imageUrl": ""
+        },
+        {
+          "kind": "rule",
+          "title": "Правило 2: going to и would like",
+          "paragraphs": [
+            "Be going to показывает план. Would like звучит вежливо в отеле, магазине, аэропорту и кафе."
+          ],
+          "rules": [],
+          "formulas": [
+            "am / is / are going to + глагол: We are going to arrive late tonight. · would like + существительное: She would like a table by the window."
+          ],
+          "examples": [],
+          "prompts": [],
+          "vocab": [],
+          "audioUrl": "",
+          "audioTitle": "",
+          "transcript": "",
+          "text": "",
+          "tasks": [
+            {
+              "id": "",
+              "kind": "fill",
+              "prompt": "I ___ for three nights. (stay)",
+              "options": [],
+              "optionValues": [],
+              "answer": "am going to stay",
+              "explanation": "План: be going to + verb. С I форма be = am.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "",
+              "kind": "choice",
+              "prompt": "I ___ a quiet room, please.",
+              "options": [
+                "want",
+                "would like",
+                "am liking",
+                "liked"
+              ],
+              "optionValues": [
+                "want",
+                "would like",
+                "am liking",
+                "liked"
+              ],
+              "answer": "would like",
+              "explanation": "Would like - вежливая замена want.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            }
+          ],
+          "imageUrl": ""
+        },
+        {
+          "kind": "vocab",
+          "title": "Лексика: hotel and booking",
+          "paragraphs": [],
+          "rules": [],
+          "formulas": [],
+          "examples": [],
+          "prompts": [],
+          "vocab": [
+            {
+              "en": "reservation",
+              "ru": "бронь"
+            },
+            {
+              "en": "booking",
+              "ru": "бронирование"
+            },
+            {
+              "en": "reception desk",
+              "ru": "стойка регистрации"
+            },
+            {
+              "en": "single room",
+              "ru": "одноместный номер"
+            },
+            {
+              "en": "business suite",
+              "ru": "бизнес-люкс"
+            },
+            {
+              "en": "available",
+              "ru": "доступный"
+            },
+            {
+              "en": "deposit",
+              "ru": "залог"
+            },
+            {
+              "en": "access code",
+              "ru": "код доступа"
+            },
+            {
+              "en": "amenities",
+              "ru": "удобства"
+            },
+            {
+              "en": "front desk",
+              "ru": "ресепшен"
+            },
+            {
+              "en": "parking pass",
+              "ru": "пропуск на парковку"
+            },
+            {
+              "en": "bell boy",
+              "ru": "носильщик"
+            }
+          ],
+          "audioUrl": "",
+          "audioTitle": "",
+          "transcript": "",
+          "text": "",
+          "tasks": [],
+          "imageUrl": ""
+        },
+        {
+          "kind": "listening",
+          "title": "Listening: hotel check-in",
+          "paragraphs": [
+            "Сначала слушайте без текста и отметьте: имя гостя, тип комнаты, срок проживания, что предлагает receptionist и номер комнаты. Транскрипция спрятана: откройте ее только после первой проверки ответов."
+          ],
+          "rules": [],
+          "formulas": [],
+          "examples": [],
+          "prompts": [],
+          "vocab": [],
+          "audioUrl": "/audio/hotel-checkin-1.mp3",
+          "audioTitle": "Checking in at the Hotel",
+          "transcript": "Angelo: Hello sir, how may I help you? Tony: Yes, I have a reservation for tonight. Angelo: Okay, may I have your name please? Tony: My name is Tony McKay. Angelo: Hello Mr. McKay. You reserved a single room for four nights? Tony: Yes, that's correct. Angelo: May I see some form of ID please? Tony: Yes, here you are. Angelo: Thanks Mr. McKay. I need a credit card to put on file in case you use the mini bar. Tony: Okay, here you are. Angelo: Thanks. Would you like to upgrade to a deluxe room for only twenty dollars per night? Tony: What does the deluxe room include? Angelo: The deluxe room includes breakfast, and you can use the gym. Tony: That sounds great. Yes, I'll upgrade. Angelo: Okay, can you please sign here? Tony: Yes, no problem. Thanks a lot. Angelo: You are in room 2407. Please take the elevators on the right. Breakfast is from six to nine a.m. Tony: That's great. Thank you very much.",
+          "text": "",
+          "tasks": [
+            {
+              "id": "",
+              "kind": "fill",
+              "prompt": "What is the guest's name?",
+              "options": [],
+              "optionValues": [],
+              "answer": "tony mckay",
+              "explanation": "Гость говорит: My name is Tony McKay.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "",
+              "kind": "choice",
+              "prompt": "What type of room did Tony reserve?",
+              "options": [
+                "single room",
+                "double room",
+                "deluxe room",
+                "family room"
+              ],
+              "optionValues": [
+                "single room",
+                "double room",
+                "deluxe room",
+                "family room"
+              ],
+              "answer": "single room",
+              "explanation": "Angelo уточняет: You reserved a single room for four nights?",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "",
+              "kind": "fill",
+              "prompt": "How long is Tony staying?",
+              "options": [],
+              "optionValues": [],
+              "answer": "four nights",
+              "explanation": "Tony confirms a single room for four nights.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "",
+              "kind": "choice",
+              "prompt": "What does Angelo need to put on file?",
+              "options": [
+                "passport",
+                "credit card",
+                "boarding pass",
+                "receipt"
+              ],
+              "optionValues": [
+                "passport",
+                "credit card",
+                "boarding pass",
+                "receipt"
+              ],
+              "answer": "credit card",
+              "explanation": "Angelo asks for a credit card to put on file in case Tony uses the mini bar.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "",
+              "kind": "fill",
+              "prompt": "How much is the deluxe room upgrade?",
+              "options": [],
+              "optionValues": [],
+              "answer": "twenty dollars per night",
+              "explanation": "Upgrade costs twenty dollars per night.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "",
+              "kind": "choice",
+              "prompt": "What does the deluxe room include?",
+              "options": [
+                "breakfast and gym",
+                "parking and taxi",
+                "dinner and pool",
+                "mini bar and lunch"
+              ],
+              "optionValues": [
+                "breakfast and gym",
+                "parking and taxi",
+                "dinner and pool",
+                "mini bar and lunch"
+              ],
+              "answer": "breakfast and gym",
+              "explanation": "The deluxe room includes breakfast, and Tony can use the gym.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "",
+              "kind": "fill",
+              "prompt": "What is Tony's room number?",
+              "options": [],
+              "optionValues": [],
+              "answer": "room 2407",
+              "explanation": "Angelo says: You are in room 2407.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "",
+              "kind": "choice",
+              "prompt": "When is breakfast?",
+              "options": [
+                "six to nine",
+                "seven to ten",
+                "eight to eleven",
+                "nine to twelve"
+              ],
+              "optionValues": [
+                "six to nine",
+                "seven to ten",
+                "eight to eleven",
+                "nine to twelve"
+              ],
+              "answer": "six to nine",
+              "explanation": "Breakfast is from six to nine a.m.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            }
+          ],
+          "imageUrl": ""
+        },
+        {
+          "kind": "reading",
+          "title": "Reading: checking into a hotel in the USA",
+          "paragraphs": [
+            "Это отдельный текст для чтения. Прочитайте его вслух, затем ответьте на вопросы ниже."
+          ],
+          "rules": [],
+          "formulas": [],
+          "examples": [],
+          "prompts": [],
+          "vocab": [],
+          "audioUrl": "",
+          "audioTitle": "",
+          "transcript": "",
+          "text": "Lena arrives at a hotel in Chicago after a long flight. She goes to the reception desk and says that she has a reservation. The receptionist asks for her name and checks the booking system. Lena reserved a single room for three nights. The receptionist asks for her passport and a credit card for the deposit. Lena asks if breakfast is included in the price. The receptionist says that breakfast is from seven to ten on the first floor. Lena also asks for the Wi-Fi password because she needs to call her family. The receptionist gives her a key card and explains how to find the elevator. Lena's room is on the fifth floor near the end of the corridor. She thanks the receptionist and goes upstairs. In the evening, she is going to rest and plan her first day in the city.",
+          "tasks": [
+            {
+              "id": "",
+              "kind": "fill",
+              "prompt": "Where is the hotel?",
+              "options": [],
+              "optionValues": [],
+              "answer": "chicago",
+              "explanation": "В первом предложении сказано: Lena arrives at a hotel in Chicago.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "",
+              "kind": "choice",
+              "prompt": "How long is Lena staying?",
+              "options": [
+                "one night",
+                "three nights",
+                "four nights",
+                "two weeks"
+              ],
+              "optionValues": [
+                "one night",
+                "three nights",
+                "four nights",
+                "two weeks"
+              ],
+              "answer": "three nights",
+              "explanation": "Lena reserved a single room for three nights.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "",
+              "kind": "fill",
+              "prompt": "What two things does the receptionist ask for?",
+              "options": [],
+              "optionValues": [],
+              "answer": "passport and credit card",
+              "explanation": "Receptionist asks for her passport and a credit card for the deposit.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "",
+              "kind": "choice",
+              "prompt": "When is breakfast?",
+              "options": [
+                "six to nine",
+                "seven to ten",
+                "eight to eleven",
+                "ten to twelve"
+              ],
+              "optionValues": [
+                "six to nine",
+                "seven to ten",
+                "eight to eleven",
+                "ten to twelve"
+              ],
+              "answer": "seven to ten",
+              "explanation": "Breakfast is from seven to ten on the first floor.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "",
+              "kind": "fill",
+              "prompt": "Which floor is Lena's room on?",
+              "options": [],
+              "optionValues": [],
+              "answer": "fifth floor",
+              "explanation": "Lena's room is on the fifth floor near the end of the corridor.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            }
+          ],
+          "imageUrl": ""
+        },
+        {
+          "kind": "speaking",
+          "title": "Диалог и speaking",
+          "paragraphs": [
+            "Guest: Hi, I have a reservation under the name Ivanova.",
+            "Receptionist: Let me check. Could I have some form of ID, please?",
+            "Guest: Sure. I would also like to ask about Wi-Fi.",
+            "Receptionist: Here is your access code. Your room is on the sixth floor.",
+            "Guest: Thank you. Is breakfast included?",
+            "Receptionist: Yes, and if you need anything, call the front desk.",
+            "Сделайте check-in в отеле. Обязательно спросите про Wi-Fi, breakfast, deposit, room number и directions to the room."
+          ],
+          "rules": [],
+          "formulas": [],
+          "examples": [],
+          "prompts": [],
+          "vocab": [],
+          "audioUrl": "",
+          "audioTitle": "",
+          "transcript": "",
+          "text": "",
+          "tasks": [],
+          "imageUrl": "",
+          "sample": "Guest: Good evening. I have a reservation under the name Petrov.\nReceptionist: Let me check. Yes, a single room for three nights. Could I have your passport, please?\nGuest: Here you are. Do you need a deposit?\nReceptionist: Yes, fifty dollars for the mini bar. Could I take a credit card?\nGuest: Of course. Could I have the Wi-Fi access code as well?\nReceptionist: Here it is. Your room is 402, on the fourth floor.\nGuest: Is breakfast included?\nReceptionist: Yes, from seven to ten in the restaurant on the ground floor.\nGuest: And how do I get to the elevator?\nReceptionist: Go past the front desk and turn right. Enjoy your stay!"
+        }
+      ],
+      "words": [
+        {
+          "english": "reservation",
+          "russian": "бронь"
+        },
+        {
+          "english": "booking",
+          "russian": "бронирование"
+        },
+        {
+          "english": "reception desk",
+          "russian": "стойка регистрации"
+        },
+        {
+          "english": "single room",
+          "russian": "одноместный номер"
+        },
+        {
+          "english": "business suite",
+          "russian": "бизнес-люкс"
+        },
+        {
+          "english": "available",
+          "russian": "доступный"
+        },
+        {
+          "english": "deposit",
+          "russian": "залог"
+        },
+        {
+          "english": "access code",
+          "russian": "код доступа"
+        },
+        {
+          "english": "amenities",
+          "russian": "удобства"
+        },
+        {
+          "english": "front desk",
+          "russian": "ресепшен"
+        },
+        {
+          "english": "parking pass",
+          "russian": "пропуск на парковку"
+        },
+        {
+          "english": "bell boy",
+          "russian": "носильщик"
+        }
+      ],
+      "number": 2,
+      "level": "B1",
+      "bookTitle": "Empower B1 Student's Book, Cambridge",
+      "bookRef": "Unit 2, Present Perfect и планы",
+      "description": "Бронирование отеля, опыт путешествий, планы и общение на ресепшене",
+      "homework": {
+        "title": "Hotel check-in",
+        "intro": "Закрепляем Present Perfect, Past Simple, going to, hotel vocabulary и понимание диалога на ресепшене.",
+        "tasks": [
+          {
+            "section": "1. Grammar: Present Perfect or Past Simple",
+            "kind": "FILL",
+            "prompt": "Впишите вопрос в Present Perfect из слов (you, ever, stay): ___ in a hotel abroad?",
+            "options": [],
+            "optionValues": [],
+            "answer": "have you ever stayed",
+            "explanation": "Ever + опыт без точного времени: Have you ever + V3.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "1. Grammar: Present Perfect or Past Simple",
+            "kind": "CHOICE",
+            "prompt": "Выберите верную форму глагола: I ___ a room last night.",
+            "options": [
+              "have booked",
+              "booked",
+              "booking",
+              "books"
+            ],
+            "optionValues": [
+              "have booked",
+              "booked",
+              "booking",
+              "books"
+            ],
+            "answer": "booked",
+            "explanation": "Last night - точное время в прошлом, поэтому Past Simple.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "1. Grammar: Present Perfect or Past Simple",
+            "kind": "FILL",
+            "prompt": "Впишите сказуемое в Present Perfect с never (use): I ___ a hotel key card before.",
+            "options": [],
+            "optionValues": [],
+            "answer": "have never used",
+            "explanation": "Never с опытом: have never + V3.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "1. Grammar: Present Perfect or Past Simple",
+            "kind": "FILL",
+            "prompt": "Впишите глагол в Past Simple (pay): Yesterday I ___ a deposit.",
+            "options": [],
+            "optionValues": [],
+            "answer": "paid",
+            "explanation": "В конкретной ситуации прошлого используем Past Simple: paid.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "2. Plans and polite requests",
+            "kind": "FILL",
+            "prompt": "Впишите план с конструкцией be going to (check in): I ___ at 3 p.m.",
+            "options": [],
+            "optionValues": [],
+            "answer": "am going to check in",
+            "explanation": "План: be going to + verb. С I используем am.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "2. Plans and polite requests",
+            "kind": "CHOICE",
+            "prompt": "Выберите вежливую форму просьбы: I ___ a room away from the street.",
+            "options": [
+              "would like",
+              "wanting",
+              "am like",
+              "liked"
+            ],
+            "optionValues": [
+              "would like",
+              "wanting",
+              "am like",
+              "liked"
+            ],
+            "answer": "would like",
+            "explanation": "Would like - вежливо в отеле: I would like a quiet room.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "2. Plans and polite requests",
+            "kind": "FILL",
+            "prompt": "Впишите начало вежливой просьбы с could (I, have): ___ the Wi-Fi access code, please?",
+            "options": [],
+            "optionValues": [],
+            "answer": "could i have",
+            "explanation": "Could I have...? - вежливая просьба получить что-то.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "2A. Hotel vocabulary",
+            "kind": "FILL",
+            "prompt": "Переведите на английский (2 слова, первое на r): стойка регистрации в отеле",
+            "options": [],
+            "optionValues": [],
+            "answer": "reception desk",
+            "explanation": "Reception desk - стойка регистрации.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "2A. Hotel vocabulary",
+            "kind": "FILL",
+            "prompt": "Переведите на английский (2 слова): одноместный номер",
+            "options": [],
+            "optionValues": [],
+            "answer": "single room",
+            "explanation": "Single room - одноместный номер.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "2A. Hotel vocabulary",
+            "kind": "FILL",
+            "prompt": "Переведите на английский (2 слова): бизнес-люкс, номер для деловых поездок",
+            "options": [],
+            "optionValues": [],
+            "answer": "business suite",
+            "explanation": "Business suite - номер повышенного класса для деловых поездок.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "2A. Hotel vocabulary",
+            "kind": "FILL",
+            "prompt": "Переведите на английский (2 слова): код доступа, например к Wi-Fi",
+            "options": [],
+            "optionValues": [],
+            "answer": "access code",
+            "explanation": "Access code - код доступа, например к Wi-Fi.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "2A. Hotel vocabulary",
+            "kind": "FILL",
+            "prompt": "Переведите на английский (2 слова, первое на f): ресепшен, куда звонят из номера",
+            "options": [],
+            "optionValues": [],
+            "answer": "front desk",
+            "explanation": "Front desk - ресепшен, куда можно позвонить из номера.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "3. Listening: hotel check-in",
+            "kind": "LISTENING",
+            "prompt": "Прослушайте запись и впишите ответ по-английски — имя и фамилия: What is the guest's name?",
+            "options": [],
+            "optionValues": [],
+            "answer": "tony mckay",
+            "explanation": "Tony говорит: My name is Tony McKay.",
+            "audioUrl": "/audio/hotel-checkin-1.mp3",
+            "transcript": "Angelo: Hello sir, how may I help you? Tony: Yes, I have a reservation for tonight. Angelo: Okay, may I have your name please? Tony: My name is Tony McKay. Angelo: Hello Mr. McKay. You reserved a single room for four nights? Tony: Yes, that's correct. Angelo: May I see some form of ID please? Tony: Yes, here you are. Angelo: Thanks Mr. McKay. I need a credit card to put on file in case you use the mini bar. Tony: Okay, here you are. Angelo: Thanks. Would you like to upgrade to a deluxe room for only twenty dollars per night? Tony: What does the deluxe room include? Angelo: The deluxe room includes breakfast, and you can use the gym. Tony: That sounds great. Yes, I'll upgrade. Angelo: Okay, can you please sign here? Tony: Yes, no problem. Thanks a lot. Angelo: You are in room 2407. Please take the elevators on the right. Breakfast is from six to nine a.m. Tony: That's great. Thank you very much.",
+            "text": ""
+          },
+          {
+            "section": "3. Listening: hotel check-in",
+            "kind": "LISTENING",
+            "prompt": "Прослушайте запись и выберите ответ: What is the receptionist's name?",
+            "options": [
+              "Tony",
+              "Angelo",
+              "McKay",
+              "Sir"
+            ],
+            "optionValues": [
+              "tony",
+              "angelo",
+              "mckay",
+              "sir"
+            ],
+            "answer": "angelo",
+            "explanation": "Receptionist's name is Angelo. Это имя стоит перед его репликами.",
+            "audioUrl": "/audio/hotel-checkin-1.mp3",
+            "transcript": "Angelo: Hello sir, how may I help you? Tony: Yes, I have a reservation for tonight. Angelo: Okay, may I have your name please? Tony: My name is Tony McKay. Angelo: Hello Mr. McKay. You reserved a single room for four nights? Tony: Yes, that's correct. Angelo: May I see some form of ID please? Tony: Yes, here you are. Angelo: Thanks Mr. McKay. I need a credit card to put on file in case you use the mini bar. Tony: Okay, here you are. Angelo: Thanks. Would you like to upgrade to a deluxe room for only twenty dollars per night? Tony: What does the deluxe room include? Angelo: The deluxe room includes breakfast, and you can use the gym. Tony: That sounds great. Yes, I'll upgrade. Angelo: Okay, can you please sign here? Tony: Yes, no problem. Thanks a lot. Angelo: You are in room 2407. Please take the elevators on the right. Breakfast is from six to nine a.m. Tony: That's great. Thank you very much.",
+            "text": ""
+          },
+          {
+            "section": "3. Listening: hotel check-in",
+            "kind": "LISTENING",
+            "prompt": "Прослушайте запись и выберите ответ: What type of room did Tony reserve?",
+            "options": [
+              "double room",
+              "single room",
+              "deluxe room",
+              "suite"
+            ],
+            "optionValues": [
+              "double room",
+              "single room",
+              "deluxe room",
+              "suite"
+            ],
+            "answer": "single room",
+            "explanation": "Angelo говорит: You reserved a single room for four nights?",
+            "audioUrl": "/audio/hotel-checkin-1.mp3",
+            "transcript": "Angelo: Hello sir, how may I help you? Tony: Yes, I have a reservation for tonight. Angelo: Okay, may I have your name please? Tony: My name is Tony McKay. Angelo: Hello Mr. McKay. You reserved a single room for four nights? Tony: Yes, that's correct. Angelo: May I see some form of ID please? Tony: Yes, here you are. Angelo: Thanks Mr. McKay. I need a credit card to put on file in case you use the mini bar. Tony: Okay, here you are. Angelo: Thanks. Would you like to upgrade to a deluxe room for only twenty dollars per night? Tony: What does the deluxe room include? Angelo: The deluxe room includes breakfast, and you can use the gym. Tony: That sounds great. Yes, I'll upgrade. Angelo: Okay, can you please sign here? Tony: Yes, no problem. Thanks a lot. Angelo: You are in room 2407. Please take the elevators on the right. Breakfast is from six to nine a.m. Tony: That's great. Thank you very much.",
+            "text": ""
+          },
+          {
+            "section": "3. Listening: hotel check-in",
+            "kind": "LISTENING",
+            "prompt": "Прослушайте запись и впишите ответ по-английски (число + nights): How long is Tony staying?",
+            "options": [],
+            "optionValues": [],
+            "answer": "four nights, 4 nights",
+            "explanation": "Tony confirms that he reserved a single room for four nights.",
+            "audioUrl": "/audio/hotel-checkin-1.mp3",
+            "transcript": "Angelo: Hello sir, how may I help you? Tony: Yes, I have a reservation for tonight. Angelo: Okay, may I have your name please? Tony: My name is Tony McKay. Angelo: Hello Mr. McKay. You reserved a single room for four nights? Tony: Yes, that's correct. Angelo: May I see some form of ID please? Tony: Yes, here you are. Angelo: Thanks Mr. McKay. I need a credit card to put on file in case you use the mini bar. Tony: Okay, here you are. Angelo: Thanks. Would you like to upgrade to a deluxe room for only twenty dollars per night? Tony: What does the deluxe room include? Angelo: The deluxe room includes breakfast, and you can use the gym. Tony: That sounds great. Yes, I'll upgrade. Angelo: Okay, can you please sign here? Tony: Yes, no problem. Thanks a lot. Angelo: You are in room 2407. Please take the elevators on the right. Breakfast is from six to nine a.m. Tony: That's great. Thank you very much.",
+            "text": ""
+          },
+          {
+            "section": "3. Listening: hotel check-in",
+            "kind": "LISTENING",
+            "prompt": "Прослушайте запись и выберите ответ: What does Angelo need to put on file?",
+            "options": [
+              "passport",
+              "credit card",
+              "boarding pass",
+              "room key"
+            ],
+            "optionValues": [
+              "passport",
+              "credit card",
+              "boarding pass",
+              "room key"
+            ],
+            "answer": "credit card",
+            "explanation": "Angelo needs a credit card to put on file in case Tony uses the mini bar.",
+            "audioUrl": "/audio/hotel-checkin-1.mp3",
+            "transcript": "Angelo: Hello sir, how may I help you? Tony: Yes, I have a reservation for tonight. Angelo: Okay, may I have your name please? Tony: My name is Tony McKay. Angelo: Hello Mr. McKay. You reserved a single room for four nights? Tony: Yes, that's correct. Angelo: May I see some form of ID please? Tony: Yes, here you are. Angelo: Thanks Mr. McKay. I need a credit card to put on file in case you use the mini bar. Tony: Okay, here you are. Angelo: Thanks. Would you like to upgrade to a deluxe room for only twenty dollars per night? Tony: What does the deluxe room include? Angelo: The deluxe room includes breakfast, and you can use the gym. Tony: That sounds great. Yes, I'll upgrade. Angelo: Okay, can you please sign here? Tony: Yes, no problem. Thanks a lot. Angelo: You are in room 2407. Please take the elevators on the right. Breakfast is from six to nine a.m. Tony: That's great. Thank you very much.",
+            "text": ""
+          },
+          {
+            "section": "3. Listening: hotel check-in",
+            "kind": "LISTENING",
+            "prompt": "Прослушайте запись и впишите цену по-английски словами, а не цифрами: How much is the upgrade to a deluxe room?",
+            "options": [],
+            "optionValues": [],
+            "answer": "twenty dollars per night, twenty dollars a night, twenty dollars, 20 dollars per night",
+            "explanation": "Angelo says the deluxe room upgrade is only twenty dollars per night.",
+            "audioUrl": "/audio/hotel-checkin-1.mp3",
+            "transcript": "Angelo: Hello sir, how may I help you? Tony: Yes, I have a reservation for tonight. Angelo: Okay, may I have your name please? Tony: My name is Tony McKay. Angelo: Hello Mr. McKay. You reserved a single room for four nights? Tony: Yes, that's correct. Angelo: May I see some form of ID please? Tony: Yes, here you are. Angelo: Thanks Mr. McKay. I need a credit card to put on file in case you use the mini bar. Tony: Okay, here you are. Angelo: Thanks. Would you like to upgrade to a deluxe room for only twenty dollars per night? Tony: What does the deluxe room include? Angelo: The deluxe room includes breakfast, and you can use the gym. Tony: That sounds great. Yes, I'll upgrade. Angelo: Okay, can you please sign here? Tony: Yes, no problem. Thanks a lot. Angelo: You are in room 2407. Please take the elevators on the right. Breakfast is from six to nine a.m. Tony: That's great. Thank you very much.",
+            "text": ""
+          },
+          {
+            "section": "3. Listening: hotel check-in",
+            "kind": "LISTENING",
+            "prompt": "Прослушайте запись и выберите ответ: What does the deluxe room include?",
+            "options": [
+              "breakfast and gym",
+              "parking and lunch",
+              "airport transfer",
+              "dinner and spa"
+            ],
+            "optionValues": [
+              "breakfast and gym",
+              "parking and lunch",
+              "airport transfer",
+              "dinner and spa"
+            ],
+            "answer": "breakfast and gym",
+            "explanation": "The deluxe room includes breakfast, and the guest can use the gym.",
+            "audioUrl": "/audio/hotel-checkin-1.mp3",
+            "transcript": "Angelo: Hello sir, how may I help you? Tony: Yes, I have a reservation for tonight. Angelo: Okay, may I have your name please? Tony: My name is Tony McKay. Angelo: Hello Mr. McKay. You reserved a single room for four nights? Tony: Yes, that's correct. Angelo: May I see some form of ID please? Tony: Yes, here you are. Angelo: Thanks Mr. McKay. I need a credit card to put on file in case you use the mini bar. Tony: Okay, here you are. Angelo: Thanks. Would you like to upgrade to a deluxe room for only twenty dollars per night? Tony: What does the deluxe room include? Angelo: The deluxe room includes breakfast, and you can use the gym. Tony: That sounds great. Yes, I'll upgrade. Angelo: Okay, can you please sign here? Tony: Yes, no problem. Thanks a lot. Angelo: You are in room 2407. Please take the elevators on the right. Breakfast is from six to nine a.m. Tony: That's great. Thank you very much.",
+            "text": ""
+          },
+          {
+            "section": "3. Listening: hotel check-in",
+            "kind": "LISTENING",
+            "prompt": "Прослушайте запись и впишите номер комнаты цифрами: What is Tony's room number?",
+            "options": [],
+            "optionValues": [],
+            "answer": "room 2407, 2407",
+            "explanation": "Angelo says: You are in room 2407.",
+            "audioUrl": "/audio/hotel-checkin-1.mp3",
+            "transcript": "Angelo: Hello sir, how may I help you? Tony: Yes, I have a reservation for tonight. Angelo: Okay, may I have your name please? Tony: My name is Tony McKay. Angelo: Hello Mr. McKay. You reserved a single room for four nights? Tony: Yes, that's correct. Angelo: May I see some form of ID please? Tony: Yes, here you are. Angelo: Thanks Mr. McKay. I need a credit card to put on file in case you use the mini bar. Tony: Okay, here you are. Angelo: Thanks. Would you like to upgrade to a deluxe room for only twenty dollars per night? Tony: What does the deluxe room include? Angelo: The deluxe room includes breakfast, and you can use the gym. Tony: That sounds great. Yes, I'll upgrade. Angelo: Okay, can you please sign here? Tony: Yes, no problem. Thanks a lot. Angelo: You are in room 2407. Please take the elevators on the right. Breakfast is from six to nine a.m. Tony: That's great. Thank you very much.",
+            "text": ""
+          },
+          {
+            "section": "3. Listening: hotel check-in",
+            "kind": "LISTENING",
+            "prompt": "Прослушайте запись и выберите ответ: When is breakfast?",
+            "options": [
+              "six to nine",
+              "seven to ten",
+              "eight to eleven",
+              "nine to twelve"
+            ],
+            "optionValues": [
+              "six to nine",
+              "seven to ten",
+              "eight to eleven",
+              "nine to twelve"
+            ],
+            "answer": "six to nine",
+            "explanation": "Breakfast is from six to nine a.m.",
+            "audioUrl": "/audio/hotel-checkin-1.mp3",
+            "transcript": "Angelo: Hello sir, how may I help you? Tony: Yes, I have a reservation for tonight. Angelo: Okay, may I have your name please? Tony: My name is Tony McKay. Angelo: Hello Mr. McKay. You reserved a single room for four nights? Tony: Yes, that's correct. Angelo: May I see some form of ID please? Tony: Yes, here you are. Angelo: Thanks Mr. McKay. I need a credit card to put on file in case you use the mini bar. Tony: Okay, here you are. Angelo: Thanks. Would you like to upgrade to a deluxe room for only twenty dollars per night? Tony: What does the deluxe room include? Angelo: The deluxe room includes breakfast, and you can use the gym. Tony: That sounds great. Yes, I'll upgrade. Angelo: Okay, can you please sign here? Tony: Yes, no problem. Thanks a lot. Angelo: You are in room 2407. Please take the elevators on the right. Breakfast is from six to nine a.m. Tony: That's great. Thank you very much.",
+            "text": ""
+          },
+          {
+            "section": "4A. Reading: checking into a hotel",
+            "kind": "READING",
+            "prompt": "Прочитайте текст выше и впишите ответ по-английски одним словом: What does Mark leave with the porter?",
+            "options": [],
+            "optionValues": [],
+            "answer": "luggage, his luggage",
+            "explanation": "В тексте: Mark leaves his luggage with the porter. Luggage - багаж.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": "Mark checks into a small hotel in Boston after a long train journey. At the reception desk the receptionist finds his booking for a double room and explains that check-in starts at two o'clock, so the room is not ready yet. Mark leaves his luggage with the porter and goes out for a coffee. When he comes back, the receptionist gives him a key card for room 512 and takes a deposit of fifty dollars for the mini bar. Mark asks for a late check-out, because his flight leaves in the evening. The hotel can do that for free, but only until one o'clock. Breakfast is served in the lobby restaurant from six thirty to nine thirty. Mark takes the elevator and finally goes to his room."
+          },
+          {
+            "section": "4A. Reading: checking into a hotel",
+            "kind": "READING",
+            "prompt": "Прочитайте текст выше и выберите ответ: What room did Mark book?",
+            "options": [
+              "single room",
+              "double room",
+              "business suite",
+              "family room"
+            ],
+            "optionValues": [],
+            "answer": "double room",
+            "explanation": "Администратор находит бронь: his booking for a double room.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": "Mark checks into a small hotel in Boston after a long train journey. At the reception desk the receptionist finds his booking for a double room and explains that check-in starts at two o'clock, so the room is not ready yet. Mark leaves his luggage with the porter and goes out for a coffee. When he comes back, the receptionist gives him a key card for room 512 and takes a deposit of fifty dollars for the mini bar. Mark asks for a late check-out, because his flight leaves in the evening. The hotel can do that for free, but only until one o'clock. Breakfast is served in the lobby restaurant from six thirty to nine thirty. Mark takes the elevator and finally goes to his room."
+          },
+          {
+            "section": "4A. Reading: checking into a hotel",
+            "kind": "READING",
+            "prompt": "Прочитайте текст выше и впишите ответ по-английски одним словом: What does the receptionist take for the mini bar?",
+            "options": [],
+            "optionValues": [],
+            "answer": "deposit, a deposit",
+            "explanation": "В тексте: takes a deposit of fifty dollars for the mini bar. Deposit - залог.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": "Mark checks into a small hotel in Boston after a long train journey. At the reception desk the receptionist finds his booking for a double room and explains that check-in starts at two o'clock, so the room is not ready yet. Mark leaves his luggage with the porter and goes out for a coffee. When he comes back, the receptionist gives him a key card for room 512 and takes a deposit of fifty dollars for the mini bar. Mark asks for a late check-out, because his flight leaves in the evening. The hotel can do that for free, but only until one o'clock. Breakfast is served in the lobby restaurant from six thirty to nine thirty. Mark takes the elevator and finally goes to his room."
+          },
+          {
+            "section": "4A. Reading: checking into a hotel",
+            "kind": "READING",
+            "prompt": "Прочитайте текст выше и впишите ответ по-английски двумя словами: What does Mark ask for because his flight leaves in the evening?",
+            "options": [],
+            "optionValues": [],
+            "answer": "late check-out, late checkout, a late check-out",
+            "explanation": "Он просит late check-out - поздний выезд, чтобы остаться в номере до вечернего рейса.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": "Mark checks into a small hotel in Boston after a long train journey. At the reception desk the receptionist finds his booking for a double room and explains that check-in starts at two o'clock, so the room is not ready yet. Mark leaves his luggage with the porter and goes out for a coffee. When he comes back, the receptionist gives him a key card for room 512 and takes a deposit of fifty dollars for the mini bar. Mark asks for a late check-out, because his flight leaves in the evening. The hotel can do that for free, but only until one o'clock. Breakfast is served in the lobby restaurant from six thirty to nine thirty. Mark takes the elevator and finally goes to his room."
+          },
+          {
+            "section": "4A. Reading: checking into a hotel",
+            "kind": "READING",
+            "prompt": "Прочитайте текст выше и выберите ответ: When is breakfast served?",
+            "options": [
+              "six to nine",
+              "six thirty to nine thirty",
+              "seven to ten",
+              "seven thirty to ten thirty"
+            ],
+            "optionValues": [],
+            "answer": "six thirty to nine thirty",
+            "explanation": "Breakfast is served in the lobby restaurant from six thirty to nine thirty.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": "Mark checks into a small hotel in Boston after a long train journey. At the reception desk the receptionist finds his booking for a double room and explains that check-in starts at two o'clock, so the room is not ready yet. Mark leaves his luggage with the porter and goes out for a coffee. When he comes back, the receptionist gives him a key card for room 512 and takes a deposit of fifty dollars for the mini bar. Mark asks for a late check-out, because his flight leaves in the evening. The hotel can do that for free, but only until one o'clock. Breakfast is served in the lobby restaurant from six thirty to nine thirty. Mark takes the elevator and finally goes to his room."
+          },
+          {
+            "section": "4B. Writing: booking email",
+            "kind": "TEACHER",
+            "prompt": "Напишите на английском письмо в отель с просьбой забронировать номер, минимум 55 слов. Укажите в письме: дату заезда и число ночей, тип номера, два вопроса отелю и одну вежливую просьбу с would like.",
+            "options": [],
+            "optionValues": [],
+            "answer": "",
+            "explanation": "Hello, I would like to book a non-smoking single room for three nights from May 14. I am going to arrive at about 8 p.m. Is breakfast included in the price? Do you need a deposit before arrival? I would like a quiet room away from the elevator, if possible. Thank you.",
+            "rule": "Минимум 55 слов",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "5. Speaking preparation",
+            "kind": "TEACHER",
+            "prompt": "Подготовьте на английском монолог из 10 предложений: расскажите про свой прошлый опыт проживания в отеле (Present Perfect и Past Simple) и про планы на следующую поездку (be going to, would like).",
+            "options": [],
+            "optionValues": [],
+            "answer": "",
+            "explanation": "I have stayed in different hotels, but I have never stayed in a hotel in the USA. Last year I booked a small room near the city center. The room was clean, but it was noisy. Next time I am going to ask for a quiet room. I would like breakfast included. I am going to check in online. I will ask about the deposit. I will keep the receipt. I want to feel confident at reception. I am going to ask for the Wi-Fi access code.",
+            "rule": "Минимум 65 слов",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          }
+        ]
+      }
+    },
+    {
+      "topic": "Everyday English: meeting people",
+      "goal": "Уверенно здороваться, поддерживать интерес к словам собеседника и заканчивать разговор",
+      "durationMin": 60,
+      "heroImage": "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?auto=format&fit=crop&w=1100&q=80",
+      "timeline": [
+        {
+          "time": "0–7",
+          "title": "Повторение",
+          "note": "Заселение в отель: грамматика и лексика урока 2"
+        },
+        {
+          "time": "7–12",
+          "title": "Разогрев",
+          "note": "Как здороваются в разных странах"
+        },
+        {
+          "time": "12–25",
+          "title": "Видео Part 1",
+          "note": "Rachel встречает Annie, задания true/false"
+        },
+        {
+          "time": "25–37",
+          "title": "Полезные фразы",
+          "note": "Приветствие и showing interest"
+        },
+        {
+          "time": "37–50",
+          "title": "Видео Part 2",
+          "note": "Разговор в кафе, вопросы по содержанию"
+        },
+        {
+          "time": "50–60",
+          "title": "Говорение",
+          "note": "Две ролевые карточки"
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "rule",
+          "title": "Повторение урока 2: заселение в отель",
+          "paragraphs": [
+            "Разомнёмся на материале прошлого занятия, а потом перейдём к новой теме."
+          ],
+          "rules": [
+            "Present Perfect - опыт без точного времени: I have stayed in this hotel twice. Ever и never стоят перед V3.",
+            "Past Simple - конкретный момент в прошлом: Yesterday I booked a room.",
+            "Be going to - заранее принятый план: I am going to check in at three.",
+            "Вежливая просьба: Could I have ...? и I would like ..."
+          ],
+          "formulas": [],
+          "examples": [],
+          "prompts": [],
+          "vocab": [],
+          "audioUrl": "",
+          "audioTitle": "",
+          "videoUrl": "",
+          "videoTitle": "",
+          "subtitlesUrl": "",
+          "sample": "",
+          "transcript": "",
+          "imageUrl": "",
+          "hidden": false,
+          "text": "",
+          "tasks": [
+            {
+              "id": "1c-rev-1",
+              "kind": "choice",
+              "prompt": "Выберите верную форму глагола: I ___ in this hotel twice.",
+              "options": [
+                "have stayed",
+                "stayed",
+                "am staying",
+                "was staying"
+              ],
+              "optionValues": [
+                "have stayed",
+                "stayed",
+                "am staying",
+                "was staying"
+              ],
+              "answer": "have stayed",
+              "explanation": "Опыт без точного времени - Present Perfect: have + V3.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1c-rev-2",
+              "kind": "fill",
+              "prompt": "Впишите глагол в Past Simple (book): Yesterday I ___ a single room online.",
+              "options": [],
+              "optionValues": [],
+              "answer": "booked",
+              "explanation": "Yesterday - точное время в прошлом, поэтому Past Simple: booked.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1c-rev-3",
+              "kind": "fill",
+              "prompt": "Впишите план с конструкцией be going to (ask): I ___ for a late check-out.",
+              "options": [],
+              "optionValues": [],
+              "answer": "am going to ask, i am going to ask, i'm going to ask",
+              "explanation": "План на будущее: be going to + инфинитив. С I используем am.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1c-rev-4",
+              "kind": "choice",
+              "prompt": "Выберите вежливую просьбу на ресепшене:",
+              "options": [
+                "Could I have the Wi-Fi code, please?",
+                "Give me the Wi-Fi code.",
+                "I want the Wi-Fi code.",
+                "You give me the Wi-Fi code?"
+              ],
+              "optionValues": [
+                "could i have",
+                "give me",
+                "i want",
+                "you give me"
+              ],
+              "answer": "could i have",
+              "explanation": "Could I have ...? - вежливая просьба. Give me и I want звучат резко.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1c-rev-5",
+              "kind": "fill",
+              "prompt": "Переведите на английский (2 слова): стойка регистрации в отеле",
+              "options": [],
+              "optionValues": [],
+              "answer": "reception desk, front desk",
+              "explanation": "Reception desk или front desk - стойка, где заселяют гостей.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1c-rev-6",
+              "kind": "fill",
+              "prompt": "Переведите на английский: залог за номер",
+              "options": [],
+              "optionValues": [],
+              "answer": "deposit, a deposit",
+              "explanation": "Deposit - залог, который отель берёт при заселении.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            }
+          ]
+        },
+        {
+          "kind": "speaking",
+          "title": "Разогрев: как мы здороваемся",
+          "paragraphs": [
+            "Обсудите с преподавателем: что вы обычно говорите и делаете при встрече. Отвечайте по-английски, полными предложениями."
+          ],
+          "rules": [],
+          "formulas": [],
+          "examples": [],
+          "prompts": [
+            "In your country, what do you normally say and do when you first meet somebody new?",
+            "And what do you say and do when you meet someone you know well?",
+            "Do people in your country hug, kiss or shake hands?"
+          ],
+          "vocab": [],
+          "audioUrl": "",
+          "audioTitle": "",
+          "videoUrl": "",
+          "videoTitle": "",
+          "subtitlesUrl": "",
+          "transcript": "",
+          "imageUrl": "",
+          "hidden": false,
+          "text": "",
+          "tasks": [],
+          "sample": "1 When I first meet somebody new, I usually say 'Hi, nice to meet you' and shake hands. With young people we often just say hello and smile.\n2 When I meet a friend I know well, I say 'Long time no see! How are you?' and we hug.\n3 In my country men usually shake hands, and close friends and family kiss on the cheek. At work we normally only say hello."
+        },
+        {
+          "kind": "video",
+          "title": "Видео Part 1: Rachel meets Annie",
+          "paragraphs": [
+            "Посмотрите первую часть без субтитров и решите, верны ли утверждения. Если нужно, включите субтитры кнопкой в плеере и посмотрите ещё раз."
+          ],
+          "rules": [],
+          "formulas": [],
+          "examples": [],
+          "prompts": [],
+          "vocab": [],
+          "audioUrl": "",
+          "audioTitle": "",
+          "videoUrl": "/video/empower/unit1/part-1.mp4",
+          "videoTitle": "Empower B1 · Unit 1C · Part 1",
+          "subtitlesUrl": "/video/empower/unit1/part-1.vtt",
+          "transcript": "Annie?\nRachel!\nLong time no see! How are you?\nI'm great.\nWhat a lovely surprise!\nGreat to see you!\nYeah! You too.\nWhen did we last see each other?\nOh, I think it was about...\nsix years ago!\nSo ... where are you living these days?\nOh, not far from here...\nI live on Hampton Street...\nDo you know it?\nYes, I do. That's really close to the centre.\nMmm. How about you?\nWe live on Compton Road.\nOh - how nice!\nMy name's Mark, by the way.\nHi. Nice to meet you.\nNice to meet you, too.\nSorry, yes - Mark's my husband!\nHusband - wow!\nThat's fantastic news.\nWhen did you get married?\nSix months ago.\nEight months ago.\nIt was six, Mark.\nWell, congratulations!\nI want to know all the details!\nLook - I'm going to the café down the street now...\n...to meet Leo, my boyfriend.\nWould you both like to come?\nYeah, that sounds good.\nBrilliant!\nLet's go.",
+          "imageUrl": "",
+          "hidden": false,
+          "text": "",
+          "tasks": [
+            {
+              "id": "1c-v1-1",
+              "kind": "choice",
+              "prompt": "Верно или нет: The last time Rachel and Annie saw each other was six years ago.",
+              "options": [
+                "True",
+                "False"
+              ],
+              "optionValues": [
+                "true",
+                "false"
+              ],
+              "answer": "true",
+              "explanation": "Rachel говорит: I think it was about six years ago.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1c-v1-2",
+              "kind": "choice",
+              "prompt": "Верно или нет: Annie lives a long way from the town centre.",
+              "options": [
+                "True",
+                "False"
+              ],
+              "optionValues": [
+                "true",
+                "false"
+              ],
+              "answer": "false",
+              "explanation": "Annie живёт на Hampton Street, и Rachel отвечает: that's really close to the centre.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1c-v1-3",
+              "kind": "choice",
+              "prompt": "Верно или нет: Rachel and Mark got married a year ago.",
+              "options": [
+                "True",
+                "False"
+              ],
+              "optionValues": [
+                "true",
+                "false"
+              ],
+              "answer": "false",
+              "explanation": "Они поженились six months ago - полгода назад, а не год.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1c-v1-4",
+              "kind": "choice",
+              "prompt": "Верно или нет: Annie has a boyfriend.",
+              "options": [
+                "True",
+                "False"
+              ],
+              "optionValues": [
+                "true",
+                "false"
+              ],
+              "answer": "true",
+              "explanation": "Annie говорит: to meet Leo, my boyfriend.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1c-v1-5",
+              "kind": "choice",
+              "prompt": "Верно или нет: Rachel, Mark and Annie decide to go to a restaurant together.",
+              "options": [
+                "True",
+                "False"
+              ],
+              "optionValues": [
+                "true",
+                "false"
+              ],
+              "answer": "false",
+              "explanation": "Они идут в café down the street, а не в ресторан.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            }
+          ]
+        },
+        {
+          "kind": "rule",
+          "title": "Полезные фразы: приветствие",
+          "paragraphs": [
+            "Слова для пропусков: meet you · no see · to see you · by the way · are you · these days"
+          ],
+          "rules": [
+            "Long time no see! - Сколько лет, сколько зим! Так говорят тому, кого давно не видели.",
+            "How are you? - стандартный вопрос при встрече со знакомым.",
+            "Great to see you! - о знакомом. Nice to meet you - только о новом человеке, при первом знакомстве.",
+            "Where are you living these days? - these days значит «сейчас, в последнее время».",
+            "My name's Mark, by the way. - by the way («кстати») помогает представиться посреди разговора."
+          ],
+          "formulas": [],
+          "examples": [],
+          "prompts": [],
+          "vocab": [],
+          "audioUrl": "/audio/empower/unit1/track-01-15.mp3",
+          "audioTitle": "Track 01.15 · Greeting people",
+          "videoUrl": "",
+          "videoTitle": "",
+          "subtitlesUrl": "",
+          "transcript": "",
+          "imageUrl": "",
+          "hidden": false,
+          "text": "",
+          "tasks": [
+            {
+              "id": "1c-g-1",
+              "kind": "fill",
+              "prompt": "Впишите пропуск (2 слова): Long time ___!",
+              "options": [],
+              "optionValues": [],
+              "answer": "no see",
+              "explanation": "Long time no see! - устойчивая фраза о долгой разлуке.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1c-g-2",
+              "kind": "fill",
+              "prompt": "Впишите пропуск (2 слова): How ___?",
+              "options": [],
+              "optionValues": [],
+              "answer": "are you",
+              "explanation": "How are you? - как дела.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1c-g-3",
+              "kind": "fill",
+              "prompt": "Впишите пропуск (3 слова): Great ___!",
+              "options": [],
+              "optionValues": [],
+              "answer": "to see you",
+              "explanation": "Great to see you! - рад тебя видеть; так говорят знакомому.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1c-g-4",
+              "kind": "fill",
+              "prompt": "Впишите пропуск (2 слова): Where are you living ___?",
+              "options": [],
+              "optionValues": [],
+              "answer": "these days",
+              "explanation": "These days - сейчас, в последнее время.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1c-g-5",
+              "kind": "fill",
+              "prompt": "Впишите пропуск (3 слова): My name's Mark, ___.",
+              "options": [],
+              "optionValues": [],
+              "answer": "by the way",
+              "explanation": "By the way - кстати.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1c-g-6",
+              "kind": "fill",
+              "prompt": "Впишите пропуск (2 слова): Nice to ___.",
+              "options": [],
+              "optionValues": [],
+              "answer": "meet you",
+              "explanation": "Nice to meet you - приятно познакомиться, о новом человеке.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            }
+          ]
+        },
+        {
+          "kind": "rule",
+          "title": "Как показать интерес к словам собеседника",
+          "paragraphs": [
+            "Прилагательные для пропусков: fantastic · lovely · good · nice"
+          ],
+          "rules": [
+            "What a + прилагательное + существительное! - What a lovely surprise!",
+            "How + прилагательное! - How nice!",
+            "That's + прилагательное + news. - That's fantastic news.",
+            "That sounds + прилагательное. - That sounds good."
+          ],
+          "formulas": [],
+          "examples": [],
+          "prompts": [],
+          "vocab": [],
+          "audioUrl": "/audio/empower/unit1/track-01-17.mp3",
+          "audioTitle": "Track 01.17 · Showing interest",
+          "videoUrl": "",
+          "videoTitle": "",
+          "subtitlesUrl": "",
+          "transcript": "",
+          "imageUrl": "",
+          "hidden": false,
+          "text": "",
+          "tasks": [
+            {
+              "id": "1c-i-1",
+              "kind": "fill",
+              "prompt": "Впишите прилагательное: I'm great. What a ___ surprise!",
+              "options": [],
+              "optionValues": [],
+              "answer": "lovely",
+              "explanation": "What a lovely surprise! - какой приятный сюрприз.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1c-i-2",
+              "kind": "fill",
+              "prompt": "Впишите прилагательное: We live on Compton Road. - Oh, how ___!",
+              "options": [],
+              "optionValues": [],
+              "answer": "nice",
+              "explanation": "How nice! - как здорово! После how идёт только прилагательное.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1c-i-3",
+              "kind": "fill",
+              "prompt": "Впишите прилагательное: Mark's my husband! - Husband, wow! That's ___ news.",
+              "options": [],
+              "optionValues": [],
+              "answer": "fantastic",
+              "explanation": "That's fantastic news - отличная новость.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1c-i-4",
+              "kind": "fill",
+              "prompt": "Впишите прилагательное: Would you both like to come? - Yeah, that sounds ___.",
+              "options": [],
+              "optionValues": [],
+              "answer": "good",
+              "explanation": "That sounds good - звучит здорово.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            }
+          ]
+        },
+        {
+          "kind": "rule",
+          "title": "Произношение: ударение во фразе",
+          "paragraphs": [],
+          "rules": [
+            "Ударение падает на слова, которые несут информацию: существительные, глаголы, прилагательные, числительные.",
+            "Служебные слова (артикли, предлоги, вспомогательные глаголы) обычно безударны и произносятся быстро."
+          ],
+          "formulas": [],
+          "examples": [
+            "I THINK it was about SIX YEARS ago!",
+            "I LIVE on HAMPton Street.",
+            "MARK's my HUSband!"
+          ],
+          "prompts": [],
+          "vocab": [],
+          "audioUrl": "/audio/empower/unit1/track-01-18.mp3",
+          "audioTitle": "Track 01.18 · Sentence stress",
+          "videoUrl": "",
+          "videoTitle": "",
+          "subtitlesUrl": "",
+          "transcript": "",
+          "imageUrl": "",
+          "hidden": false,
+          "text": "",
+          "tasks": [
+            {
+              "id": "1c-p-1",
+              "kind": "choice",
+              "prompt": "Прослушайте запись и выберите: какие слова звучат громче и дольше?",
+              "options": [
+                "grammar words (a, on, was, to)",
+                "words that give information",
+                "the last word of every sentence",
+                "all words equally"
+              ],
+              "optionValues": [
+                "grammar words",
+                "words that give information",
+                "the last word",
+                "all words equally"
+              ],
+              "answer": "words that give information",
+              "explanation": "Ударение получают слова, которые несут смысл: think, six years, live, Hampton Street.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1c-p-2",
+              "kind": "fill",
+              "prompt": "Прослушайте запись и впишите пропущенное ударное слово: My name's Mark, by the ___.",
+              "options": [],
+              "optionValues": [],
+              "answer": "way",
+              "explanation": "My name's Mark, by the way. Ударение падает на Mark и way.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            }
+          ]
+        },
+        {
+          "kind": "video",
+          "title": "Видео Part 2: в кафе",
+          "paragraphs": [
+            "Rachel, Mark и Annie пришли в кафе. Посмотрите вторую часть и ответьте на вопросы по-английски."
+          ],
+          "rules": [],
+          "formulas": [],
+          "examples": [],
+          "prompts": [],
+          "vocab": [],
+          "audioUrl": "",
+          "audioTitle": "",
+          "videoUrl": "/video/empower/unit1/part-2.mp4",
+          "videoTitle": "Empower B1 · Unit 1C · Part 2",
+          "subtitlesUrl": "/video/empower/unit1/part-2.vtt",
+          "transcript": "Do you play much sport?\nNot really.\nI occasionally watch the rugby on TV ...\n...but I'm not a big sports fan.\nDid you see the match at the weekend?\nOh, not sport again!\nSo, have you got any exciting plans for next week?\nWell, er...\nNo, not really.\nJust work.\nI've got a lot to do in the shop this week...\n...because we're going to a wedding next weekend.\nOh, the shop? What do you do?\nI'm a florist.\nWhat a great job! Where's the shop?\nNot far from here. I'll show you some time.\nThat would be great!\nAnd are you the manager, or...\nWell, not really...\n...it's my shop.\nWow. That's amazing!\nSo you're a businesswoman!\nDo you work on your own?\nNo, I have someone to help.\nTina. She comes in for a few hours every day.\nOh, that's good.\nHow about you? What do you do?\nOh, marketing. Boring!\nSame as Mark...\nHe works in marketing.\nOh, I'm sorry.\nI find it boring.\nDo you have any plans for the weekend?\nActually, yes. I'm going to visit my brother, Dan.\nOh, I remember Dan. How is he?\nHe's fine. He's married now.\nTo Martina.\nAnyway, we really must go.\nI need to get back to the shop.\nYeah, of course.\nIt was really nice to meet you.\nYeah, you too.\nNice to meet you, Mark.\nIt was great to see you again, Annie.\nYeah! We must meet up soon!\nDefinitely!\nActually...\n...it's Leo's birthday in a couple of weeks.\nPerhaps we could meet then.\nOK, great. I'll give you a call.\nAnd say hello to Dan for me!",
+          "imageUrl": "",
+          "hidden": false,
+          "text": "",
+          "tasks": [
+            {
+              "id": "1c-v2-1",
+              "kind": "fill",
+              "prompt": "Впишите ответ по-английски: Where are Rachel and Mark going next weekend?",
+              "options": [],
+              "optionValues": [],
+              "answer": "to a wedding, a wedding, wedding",
+              "explanation": "Rachel говорит: we're going to a wedding next weekend.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1c-v2-2",
+              "kind": "fill",
+              "prompt": "Впишите ответ по-английски: What job does Rachel do?",
+              "options": [],
+              "optionValues": [],
+              "answer": "florist, a florist, she is a florist, she's a florist",
+              "explanation": "Rachel says: I'm a florist - она флорист, и магазин принадлежит ей.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1c-v2-3",
+              "kind": "fill",
+              "prompt": "Впишите имя: Who helps Rachel at the shop?",
+              "options": [],
+              "optionValues": [],
+              "answer": "tina, her name is tina",
+              "explanation": "Tina. She comes in for a few hours every day.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1c-v2-4",
+              "kind": "choice",
+              "prompt": "Выберите ответ: What does Annie say about her job in marketing?",
+              "options": [
+                "she finds it boring",
+                "she loves it",
+                "she wants a new job",
+                "she works on her own"
+              ],
+              "optionValues": [
+                "she finds it boring",
+                "she loves it",
+                "she wants a new job",
+                "she works on her own"
+              ],
+              "answer": "she finds it boring",
+              "explanation": "Annie: Oh, marketing. Boring! I find it boring.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1c-v2-5",
+              "kind": "choice",
+              "prompt": "Выберите ответ: What does Mark do?",
+              "options": [
+                "he is a florist",
+                "he works in marketing",
+                "he is a shop manager",
+                "he is a teacher"
+              ],
+              "optionValues": [
+                "he is a florist",
+                "he works in marketing",
+                "he is a shop manager",
+                "he is a teacher"
+              ],
+              "answer": "he works in marketing",
+              "explanation": "Annie говорит: Same as Mark - he works in marketing.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1c-v2-6",
+              "kind": "choice",
+              "prompt": "Выберите ответ: What is Annie doing at the weekend?",
+              "options": [
+                "visiting her brother",
+                "going to a wedding",
+                "working in the shop",
+                "meeting Leo's family"
+              ],
+              "optionValues": [
+                "visiting her brother",
+                "going to a wedding",
+                "working in the shop",
+                "meeting Leo's family"
+              ],
+              "answer": "visiting her brother",
+              "explanation": "Annie: I'm going to visit my brother, Dan.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1c-v2-7",
+              "kind": "choice",
+              "prompt": "Выберите ответ: Why do Rachel and Mark leave?",
+              "options": [
+                "rachel has to get back to the shop",
+                "they are late for the wedding",
+                "annie has to work",
+                "the cafe is closing"
+              ],
+              "optionValues": [
+                "rachel has to get back to the shop",
+                "they are late for the wedding",
+                "annie has to work",
+                "the cafe is closing"
+              ],
+              "answer": "rachel has to get back to the shop",
+              "explanation": "Rachel: we really must go. I need to get back to the shop.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1c-v2-8",
+              "kind": "choice",
+              "prompt": "Выберите ответ: What does Annie suggest before they leave?",
+              "options": [
+                "meeting for leo's birthday",
+                "going to the shop together",
+                "having dinner tomorrow",
+                "calling dan"
+              ],
+              "optionValues": [
+                "meeting for leo's birthday",
+                "going to the shop together",
+                "having dinner tomorrow",
+                "calling dan"
+              ],
+              "answer": "meeting for leo's birthday",
+              "explanation": "Annie: it's Leo's birthday in a couple of weeks. Perhaps we could meet then.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            }
+          ]
+        },
+        {
+          "kind": "rule",
+          "title": "Полезные фразы: как закончить разговор",
+          "paragraphs": [],
+          "rules": [
+            "We really must go. - Нам правда пора.",
+            "It was really nice to meet you. - новому знакомому.",
+            "It was great to see you again. - тому, кого знали раньше.",
+            "We must meet up soon! - Надо встретиться поскорее.",
+            "Say hello to Dan for me! - Передай Дэну привет."
+          ],
+          "formulas": [],
+          "examples": [],
+          "prompts": [],
+          "vocab": [],
+          "audioUrl": "/audio/empower/unit1/track-01-20.mp3",
+          "audioTitle": "Track 01.20 · Ending conversations",
+          "videoUrl": "",
+          "videoTitle": "",
+          "subtitlesUrl": "",
+          "transcript": "",
+          "imageUrl": "",
+          "hidden": false,
+          "text": "",
+          "tasks": [
+            {
+              "id": "1c-e-1",
+              "kind": "fill",
+              "prompt": "Впишите глагол: We really must ___.",
+              "options": [],
+              "optionValues": [],
+              "answer": "go",
+              "explanation": "We really must go - нам пора идти.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1c-e-2",
+              "kind": "fill",
+              "prompt": "Впишите глагол: It was really nice to ___ you.",
+              "options": [],
+              "optionValues": [],
+              "answer": "meet",
+              "explanation": "Meet - о человеке, с которым познакомились только что.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1c-e-3",
+              "kind": "fill",
+              "prompt": "Впишите глагол: It was great to ___ you again, Annie.",
+              "options": [],
+              "optionValues": [],
+              "answer": "see",
+              "explanation": "See - о том, кого знали раньше; поэтому рядом стоит again.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1c-e-4",
+              "kind": "fill",
+              "prompt": "Впишите 2 слова: Yeah! We must ___ ___ soon.",
+              "options": [],
+              "optionValues": [],
+              "answer": "meet up",
+              "explanation": "Meet up - встретиться, увидеться.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1c-e-5",
+              "kind": "fill",
+              "prompt": "Впишите глагол: ___ hello to Dan for me!",
+              "options": [],
+              "optionValues": [],
+              "answer": "say",
+              "explanation": "Say hello to somebody for me - передать привет.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            }
+          ]
+        },
+        {
+          "kind": "speaking",
+          "title": "Говорение: разыграйте две встречи",
+          "paragraphs": [
+            "Карточка 1. Вы идёте по улице и встречаете старого друга: поздоровайтесь, расскажите новость (вы нашли новую работу), выслушайте новости друга и попрощайтесь.",
+            "Карточка 2. Вы впервые знакомитесь с коллегой: представьтесь, скажите, что ваш офис в здании C, выслушайте собеседника и попрощайтесь."
+          ],
+          "rules": [],
+          "formulas": [],
+          "examples": [],
+          "prompts": [
+            "Say hello and use a greeting phrase from the lesson.",
+            "Give your news and reply to your partner's news with What a ...! / How ...! / That sounds ...",
+            "Ask where your partner lives and works these days.",
+            "End the conversation politely: We really must go / It was really nice to meet you."
+          ],
+          "vocab": [],
+          "audioUrl": "",
+          "audioTitle": "",
+          "videoUrl": "",
+          "videoTitle": "",
+          "subtitlesUrl": "",
+          "transcript": "",
+          "imageUrl": "",
+          "hidden": false,
+          "text": "",
+          "tasks": [],
+          "sample": "Карточка 1\nA: Marta? Long time no see! How are you?\nB: I'm great, thanks. What a lovely surprise! Where are you living these days?\nA: Not far from here, on Green Street. And I've got some news: I've got a new job.\nB: Oh, how nice! What do you do now?\nA: I work in a flower shop in the centre.\nB: That sounds great! Listen, I really must go, I'm late for a meeting.\nA: No problem. It was great to see you again!\nB: You too. We must meet up soon!\n\nКарточка 2\nA: Hi. My name's Anna, by the way. I work in building C.\nB: Nice to meet you, Anna. I'm Pavel, I've just started in marketing.\nA: Nice to meet you too. How do you like the office?\nB: It's big, but everybody is very friendly.\nA: That's good news. Anyway, I really must go — my meeting starts in five minutes.\nB: Of course. It was really nice to meet you!\nA: You too. See you around!"
+        }
+      ],
+      "words": [
+        {
+          "english": "long time no see",
+          "russian": "сколько лет, сколько зим",
+          "partOfSpeech": "phrase",
+          "example": "Long time no see! How are you?",
+          "definition": "used when you meet someone you have not seen for a long time"
+        },
+        {
+          "english": "by the way",
+          "russian": "кстати",
+          "partOfSpeech": "phrase",
+          "example": "My name's Mark, by the way.",
+          "definition": "used to add something to the conversation"
+        },
+        {
+          "english": "these days",
+          "russian": "сейчас, в наши дни",
+          "partOfSpeech": "phrase",
+          "example": "Where are you living these days?",
+          "definition": "at the present time, in contrast to the past"
+        },
+        {
+          "english": "nice to meet you",
+          "russian": "приятно познакомиться",
+          "partOfSpeech": "phrase",
+          "example": "Hi. Nice to meet you.",
+          "definition": "polite phrase used when you meet somebody for the first time"
+        },
+        {
+          "english": "great to see you",
+          "russian": "рад тебя видеть",
+          "partOfSpeech": "phrase",
+          "example": "Great to see you! Yeah, you too.",
+          "definition": "friendly phrase used when you meet somebody you already know"
+        },
+        {
+          "english": "surprise",
+          "russian": "сюрприз, неожиданность",
+          "partOfSpeech": "noun",
+          "example": "What a lovely surprise!",
+          "definition": "an event you did not expect"
+        },
+        {
+          "english": "that sounds good",
+          "russian": "звучит здорово",
+          "partOfSpeech": "phrase",
+          "example": "Yeah, that sounds good.",
+          "definition": "used to accept a suggestion"
+        },
+        {
+          "english": "meet up",
+          "russian": "встретиться",
+          "partOfSpeech": "verb",
+          "example": "We must meet up soon!",
+          "definition": "to meet somebody by arrangement"
+        },
+        {
+          "english": "florist",
+          "russian": "флорист, продавец цветов",
+          "partOfSpeech": "noun",
+          "example": "I'm a florist and it's my shop.",
+          "definition": "a person who sells flowers"
+        },
+        {
+          "english": "boring",
+          "russian": "скучный",
+          "partOfSpeech": "adjective",
+          "example": "Oh, marketing. Boring!",
+          "definition": "not interesting"
+        },
+        {
+          "english": "wedding",
+          "russian": "свадьба",
+          "partOfSpeech": "noun",
+          "example": "We're going to a wedding next weekend.",
+          "definition": "a marriage ceremony"
+        },
+        {
+          "english": "give somebody a call",
+          "russian": "позвонить кому-то",
+          "partOfSpeech": "phrase",
+          "example": "OK, great. I'll give you a call.",
+          "definition": "to telephone somebody"
+        }
+      ],
+      "number": 3,
+      "level": "B1",
+      "bookTitle": "Cambridge Empower B1 (2nd edition)",
+      "bookRef": "Student's Book, Unit 1C «It was really nice to meet you», с. 12–13",
+      "description": "Приветствия, small talk и вежливое завершение разговора по видео и аудио Empower.",
+      "homework": {
+        "title": "Домашнее задание к уроку 3",
+        "intro": "Empower B1, Unit 1C: приветствия, интерес к словам собеседника и вежливое завершение разговора.",
+        "tasks": [
+          {
+            "section": "1. Приветствие и знакомство",
+            "kind": "FILL",
+            "prompt": "Впишите пропуск (2 слова): вы встретили друга, которого не видели пять лет. Long time ___!",
+            "options": [],
+            "optionValues": [],
+            "answer": "no see",
+            "explanation": "Long time no see! - сколько лет, сколько зим.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "1. Приветствие и знакомство",
+            "kind": "CHOICE",
+            "prompt": "Выберите фразу для человека, которого видите впервые: ___",
+            "options": [
+              "Nice to meet you.",
+              "Great to see you again!",
+              "Long time no see!",
+              "How have you been?"
+            ],
+            "optionValues": [],
+            "answer": "Nice to meet you.",
+            "explanation": "Nice to meet you - только при первом знакомстве. Great to see you again - о старом знакомом.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "1. Приветствие и знакомство",
+            "kind": "FILL",
+            "prompt": "Впишите пропуск (2 слова): вы спрашиваете, где человек живёт сейчас. Where are you living ___?",
+            "options": [],
+            "optionValues": [],
+            "answer": "these days",
+            "explanation": "These days - сейчас, в последнее время.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "1. Приветствие и знакомство",
+            "kind": "FILL",
+            "prompt": "Впишите пропуск (3 слова): вы представляетесь посреди разговора. My name's Anna, ___.",
+            "options": [],
+            "optionValues": [],
+            "answer": "by the way",
+            "explanation": "By the way - кстати; помогает вставить своё имя в разговор.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "1. Приветствие и знакомство",
+            "kind": "CHOICE",
+            "prompt": "Выберите верный ответ на реплику Nice to meet you.",
+            "options": [
+              "Nice to meet you too.",
+              "Long time no see!",
+              "See you later.",
+              "I'm fine, thanks."
+            ],
+            "optionValues": [],
+            "answer": "Nice to meet you too.",
+            "explanation": "На Nice to meet you отвечают Nice to meet you, too.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "2. Как показать интерес",
+            "kind": "FILL",
+            "prompt": "Впишите пропуск (1 слово): ваш друг говорит, что женился. Wow! That's fantastic ___!",
+            "options": [],
+            "optionValues": [],
+            "answer": "news",
+            "explanation": "That's fantastic news - отличная новость.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "2. Как показать интерес",
+            "kind": "CHOICE",
+            "prompt": "Выберите верную реакцию: I live near the sea. - ___",
+            "options": [
+              "How nice!",
+              "What a nice!",
+              "How a nice!",
+              "What nice!"
+            ],
+            "optionValues": [],
+            "answer": "How nice!",
+            "explanation": "После how идёт только прилагательное: How nice! А What a ...! требует существительного.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "2. Как показать интерес",
+            "kind": "FILL",
+            "prompt": "Впишите пропуск (1 слово): Would you like to come with us? - Yeah, that ___ good.",
+            "options": [],
+            "optionValues": [],
+            "answer": "sounds",
+            "explanation": "That sounds good - звучит здорово; так принимают приглашение.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "2. Как показать интерес",
+            "kind": "CHOICE",
+            "prompt": "Выберите верный порядок слов: вы удивлены приятной встрече.",
+            "options": [
+              "What a lovely surprise!",
+              "How a lovely surprise!",
+              "What lovely a surprise!",
+              "How lovely surprise!"
+            ],
+            "optionValues": [],
+            "answer": "What a lovely surprise!",
+            "explanation": "What a + прилагательное + существительное: What a lovely surprise!",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "3. Как закончить разговор",
+            "kind": "FILL",
+            "prompt": "Впишите глагол: вам пора уходить. We really must ___.",
+            "options": [],
+            "optionValues": [],
+            "answer": "go",
+            "explanation": "We really must go - нам правда пора.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "3. Как закончить разговор",
+            "kind": "CHOICE",
+            "prompt": "Выберите фразу для прощания с человеком, с которым вы только что познакомились.",
+            "options": [
+              "It was really nice to meet you.",
+              "It was great to see you again.",
+              "Long time no see!",
+              "Say hello to Dan for me!"
+            ],
+            "optionValues": [],
+            "answer": "It was really nice to meet you.",
+            "explanation": "Meet - о новом знакомстве, see again - о старом знакомом.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "3. Как закончить разговор",
+            "kind": "FILL",
+            "prompt": "Впишите 2 слова: вы предлагаете встретиться снова. We must ___ ___ soon!",
+            "options": [],
+            "optionValues": [],
+            "answer": "meet up",
+            "explanation": "Meet up - встретиться, увидеться.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "3. Как закончить разговор",
+            "kind": "FILL",
+            "prompt": "Впишите глагол: вы просите передать привет общему знакомому. ___ hello to Dan for me!",
+            "options": [],
+            "optionValues": [],
+            "answer": "say",
+            "explanation": "Say hello to somebody for me - передай привет.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "4. Аудирование: встреча на улице",
+            "kind": "LISTENING",
+            "prompt": "Прослушайте запись и впишите ответ по-английски: How long is it since Rachel and Annie last saw each other?",
+            "options": [],
+            "optionValues": [],
+            "answer": "six years, 6 years, six years ago, 6 years ago, about six years",
+            "explanation": "Rachel: I think it was about six years ago.",
+            "audioUrl": "/audio/empower/unit1/track-01-14.mp3",
+            "transcript": "Rachel: Annie? Annie: Rachel! Long time no see! How are you? Rachel: I'm great. What a lovely surprise! Great to see you! Annie: Yeah! You too. When did we last see each other? Rachel: Oh, I think it was about six years ago! Annie: So, where are you living these days? Rachel: Oh, not far from here. I live on Hampton Street. Do you know it? Annie: Yes, I do. That's really close to the centre. How about you? Rachel: We live on Compton Road. Annie: Oh, how nice! Mark: My name's Mark, by the way. Annie: Hi. Nice to meet you. Mark: Nice to meet you, too. Rachel: Sorry, yes - Mark's my husband! Annie: Husband, wow! That's fantastic news. When did you get married? Rachel: Six months ago. Annie: Well, congratulations! I'm going to the café down the street now to meet Leo, my boyfriend. Would you both like to come? Rachel: Yeah, that sounds good.",
+            "text": ""
+          },
+          {
+            "section": "4. Аудирование: встреча на улице",
+            "kind": "LISTENING",
+            "prompt": "Прослушайте запись и выберите ответ: Who is Mark?",
+            "options": [
+              "rachel's husband",
+              "annie's brother",
+              "rachel's colleague",
+              "annie's boyfriend"
+            ],
+            "optionValues": [],
+            "answer": "rachel's husband",
+            "explanation": "Rachel говорит: Mark's my husband.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "4. Аудирование: встреча на улице",
+            "kind": "LISTENING",
+            "prompt": "Прослушайте запись и впишите название улицы: Which street does Rachel live on?",
+            "options": [],
+            "optionValues": [],
+            "answer": "hampton street, hampton, on hampton street",
+            "explanation": "Rachel: I live on Hampton Street.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "4. Аудирование: встреча на улице",
+            "kind": "LISTENING",
+            "prompt": "Прослушайте запись и выберите ответ: When did Rachel and Mark get married?",
+            "options": [
+              "six months ago",
+              "six years ago",
+              "a year ago",
+              "last week"
+            ],
+            "optionValues": [],
+            "answer": "six months ago",
+            "explanation": "Rachel отвечает: six months ago.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "4. Аудирование: встреча на улице",
+            "kind": "LISTENING",
+            "prompt": "Прослушайте запись и впишите имя: Who is Annie going to meet at the café?",
+            "options": [],
+            "optionValues": [],
+            "answer": "leo, her boyfriend leo",
+            "explanation": "Annie: I'm going to the café to meet Leo, my boyfriend.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "5. Чтение: small talk",
+            "kind": "READING",
+            "prompt": "Прочитайте текст выше и выберите ответ: What do people in Britain and the USA usually talk about first?",
+            "options": [
+              "the situation they are in",
+              "their salary",
+              "their family problems",
+              "their religion"
+            ],
+            "optionValues": [],
+            "answer": "the situation they are in",
+            "explanation": "В тексте: it is normal to start with the situation you are in - погода, еда, музыка.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": "Small talk is the short, friendly conversation people have before a meeting, at a party or while they are waiting for a train. In Britain and the USA it is normal to start with the situation you are in: the weather, the food or the music. Then you can ask a simple question about the other person: Where are you living these days? What do you do? Good listeners do not only ask questions. They also show interest with short phrases like How nice! or That sounds great, so the other person knows they are listening. Personal questions about money, age or religion are a bad idea with somebody you have just met. When you want to leave, do not just walk away. Say I really must go and then It was nice to meet you."
+          },
+          {
+            "section": "5. Чтение: small talk",
+            "kind": "READING",
+            "prompt": "Прочитайте текст выше и впишите ответ по-английски (2 слова): What do good listeners use to show interest?",
+            "options": [],
+            "optionValues": [],
+            "answer": "short phrases, phrases",
+            "explanation": "В тексте: They also show interest with short phrases like How nice!",
+            "audioUrl": "",
+            "transcript": "",
+            "text": "Small talk is the short, friendly conversation people have before a meeting, at a party or while they are waiting for a train. In Britain and the USA it is normal to start with the situation you are in: the weather, the food or the music. Then you can ask a simple question about the other person: Where are you living these days? What do you do? Good listeners do not only ask questions. They also show interest with short phrases like How nice! or That sounds great, so the other person knows they are listening. Personal questions about money, age or religion are a bad idea with somebody you have just met. When you want to leave, do not just walk away. Say I really must go and then It was nice to meet you."
+          },
+          {
+            "section": "5. Чтение: small talk",
+            "kind": "READING",
+            "prompt": "Прочитайте текст выше и выберите ответ: Which topic is a bad idea with somebody you have just met?",
+            "options": [
+              "money",
+              "the weather",
+              "music",
+              "food"
+            ],
+            "optionValues": [],
+            "answer": "money",
+            "explanation": "В тексте: Personal questions about money, age or religion are a bad idea.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": "Small talk is the short, friendly conversation people have before a meeting, at a party or while they are waiting for a train. In Britain and the USA it is normal to start with the situation you are in: the weather, the food or the music. Then you can ask a simple question about the other person: Where are you living these days? What do you do? Good listeners do not only ask questions. They also show interest with short phrases like How nice! or That sounds great, so the other person knows they are listening. Personal questions about money, age or religion are a bad idea with somebody you have just met. When you want to leave, do not just walk away. Say I really must go and then It was nice to meet you."
+          },
+          {
+            "section": "5. Чтение: small talk",
+            "kind": "READING",
+            "prompt": "Прочитайте текст выше и впишите пропуск по тексту (1 слово): when you want to leave, say I really ___ go.",
+            "options": [],
+            "optionValues": [],
+            "answer": "must",
+            "explanation": "В тексте: Say I really must go and then It was nice to meet you.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": "Small talk is the short, friendly conversation people have before a meeting, at a party or while they are waiting for a train. In Britain and the USA it is normal to start with the situation you are in: the weather, the food or the music. Then you can ask a simple question about the other person: Where are you living these days? What do you do? Good listeners do not only ask questions. They also show interest with short phrases like How nice! or That sounds great, so the other person knows they are listening. Personal questions about money, age or religion are a bad idea with somebody you have just met. When you want to leave, do not just walk away. Say I really must go and then It was nice to meet you."
+          },
+          {
+            "section": "6. Письмо: сообщение старому другу",
+            "kind": "TEACHER",
+            "prompt": "Напишите на английском сообщение другу, которого не видели несколько лет, минимум 60 слов. Используйте: приветствие (Long time no see / Great to see you), два вопроса о его жизни сейчас (these days), одну свою новость и предложение встретиться (We must meet up soon).",
+            "options": [],
+            "optionValues": [],
+            "answer": "",
+            "explanation": "Hi Sasha! Long time no see! How are you these days? I often think about our university years. I have got some news: I have changed my job and now I work in a small flower shop in the centre. What about you? Where are you living now, and what do you do? My sister says you have got married - that's fantastic news! We must meet up soon. I'm free at the weekend, so give me a call. Say hello to your parents for me!",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "7. Говорение: две встречи",
+            "kind": "TEACHER",
+            "prompt": "Подготовьте на английском два коротких диалога по 6-8 реплик. Первый: вы встретили старого друга на улице (поздоровайтесь, обменяйтесь новостями, покажите интерес фразами What a ...! / How ...! / That sounds ..., попрощайтесь). Второй: вы впервые знакомитесь с новым коллегой (представьтесь, расскажите, чем занимаетесь, задайте вопрос, попрощайтесь).",
+            "options": [],
+            "optionValues": [],
+            "answer": "",
+            "explanation": "A: Nina? B: Marta! Long time no see! How are you? A: I'm great. What a lovely surprise! Where are you living these days? B: Not far from here, on Green Street. A: Oh, how nice! B: Listen, I really must go, I'm late for a meeting. It was great to see you again! A: You too. We must meet up soon. Say hello to Dan for me!",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          }
+        ]
+      }
+    }
+  ],
+  "tests": [
+    {
+      "title": "Универсальный тест уровня A2",
+      "description": "30 вопросов на грамматику и лексику уровня A2",
+      "level": "A2",
+      "questions": [
+        {
+          "text": "Выберите правильную форму: My parents ___ at home now.",
+          "options": [
+            "is",
+            "are",
+            "am",
+            "be"
+          ],
+          "correct": 1,
+          "explanation": "Тема: to be. Правильный вариант — «are»."
+        },
+        {
+          "text": "Выберите вопрос: ___ your brother a student?",
+          "options": [
+            "Is",
+            "Are",
+            "Do",
+            "Does"
+          ],
+          "correct": 0,
+          "explanation": "Тема: to be. Правильный вариант — «Is»."
+        },
+        {
+          "text": "Выберите правильный вариант: She ___ to work by bus every day.",
+          "options": [
+            "go",
+            "goes",
+            "is going",
+            "went"
+          ],
+          "correct": 1,
+          "explanation": "Тема: present simple. Правильный вариант — «goes»."
+        },
+        {
+          "text": "Выберите вопрос: Where ___ he live?",
+          "options": [
+            "do",
+            "does",
+            "is",
+            "did"
+          ],
+          "correct": 1,
+          "explanation": "Тема: present simple. Правильный вариант — «does»."
+        },
+        {
+          "text": "Выберите отрицание: I ___ meat.",
+          "options": [
+            "doesn't eat",
+            "don't eat",
+            "am not eat",
+            "didn't eats"
+          ],
+          "correct": 1,
+          "explanation": "Тема: present simple negative. Правильный вариант — «don't eat»."
+        },
+        {
+          "text": "Выберите форму: Look! It ___ outside.",
+          "options": [
+            "rains",
+            "is raining",
+            "rain",
+            "rained"
+          ],
+          "correct": 1,
+          "explanation": "Тема: present continuous. Правильный вариант — «is raining»."
+        },
+        {
+          "text": "Выберите форму: They ___ a film at the moment.",
+          "options": [
+            "watch",
+            "watches",
+            "are watching",
+            "watched"
+          ],
+          "correct": 2,
+          "explanation": "Тема: present continuous. Правильный вариант — «are watching»."
+        },
+        {
+          "text": "Выберите вариант: I usually ___ coffee, but today I ___ tea.",
+          "options": [
+            "drink / am drinking",
+            "am drinking / drink",
+            "drinks / drinking",
+            "drink / drink"
+          ],
+          "correct": 0,
+          "explanation": "Тема: present contrast. Правильный вариант — «drink / am drinking»."
+        },
+        {
+          "text": "Выберите Past Simple: We ___ to the museum last Sunday.",
+          "options": [
+            "go",
+            "went",
+            "gone",
+            "are going"
+          ],
+          "correct": 1,
+          "explanation": "Тема: past simple. Правильный вариант — «went»."
+        },
+        {
+          "text": "Выберите форму после did: Did you ___ the email?",
+          "options": [
+            "sent",
+            "send",
+            "sending",
+            "sends"
+          ],
+          "correct": 1,
+          "explanation": "Тема: past simple. Правильный вариант — «send»."
+        },
+        {
+          "text": "Выберите отрицание: He ___ the meeting yesterday.",
+          "options": [
+            "didn't attend",
+            "didn't attended",
+            "doesn't attend",
+            "wasn't attend"
+          ],
+          "correct": 0,
+          "explanation": "Тема: past negative. Правильный вариант — «didn't attend»."
+        },
+        {
+          "text": "Выберите третью форму: Have you ever ___ sushi?",
+          "options": [
+            "try",
+            "tried",
+            "trying",
+            "tries"
+          ],
+          "correct": 1,
+          "explanation": "Тема: present perfect. Правильный вариант — «tried»."
+        },
+        {
+          "text": "Выберите маркер: I haven't finished it ___.",
+          "options": [
+            "already",
+            "yet",
+            "yesterday",
+            "ago"
+          ],
+          "correct": 1,
+          "explanation": "Тема: present perfect. Правильный вариант — «yet»."
+        },
+        {
+          "text": "Выберите вариант: I ___ Paris in 2022.",
+          "options": [
+            "have visited",
+            "visited",
+            "visit",
+            "am visiting"
+          ],
+          "correct": 1,
+          "explanation": "Тема: past/perfect contrast. Правильный вариант — «visited»."
+        },
+        {
+          "text": "Выберите план: We ___ visit our friends tomorrow. We have tickets.",
+          "options": [
+            "will",
+            "are going to",
+            "did",
+            "have"
+          ],
+          "correct": 1,
+          "explanation": "Тема: future. Правильный вариант — «are going to»."
+        },
+        {
+          "text": "Выберите спонтанное решение: It's cold. I ___ close the window.",
+          "options": [
+            "am going to",
+            "will",
+            "did",
+            "can"
+          ],
+          "correct": 1,
+          "explanation": "Тема: future. Правильный вариант — «will»."
+        },
+        {
+          "text": "Выберите совет: You ___ sleep more.",
+          "options": [
+            "should",
+            "mustn't",
+            "can't",
+            "did"
+          ],
+          "correct": 0,
+          "explanation": "Тема: modals. Правильный вариант — «should»."
+        },
+        {
+          "text": "Выберите запрет: You ___ park here.",
+          "options": [
+            "should",
+            "mustn't",
+            "can",
+            "could"
+          ],
+          "correct": 1,
+          "explanation": "Тема: modals. Правильный вариант — «mustn't»."
+        },
+        {
+          "text": "Выберите сравнительную степень: This test is ___ than the last one.",
+          "options": [
+            "easy",
+            "easier",
+            "more easy",
+            "the easiest"
+          ],
+          "correct": 1,
+          "explanation": "Тема: comparatives. Правильный вариант — «easier»."
+        },
+        {
+          "text": "Выберите превосходную степень: This is ___ restaurant in the area.",
+          "options": [
+            "good",
+            "better",
+            "the best",
+            "best than"
+          ],
+          "correct": 2,
+          "explanation": "Тема: superlatives. Правильный вариант — «the best»."
+        },
+        {
+          "text": "Выберите слово: There isn't ___ milk in the fridge.",
+          "options": [
+            "some",
+            "any",
+            "many",
+            "a"
+          ],
+          "correct": 1,
+          "explanation": "Тема: quantity. Правильный вариант — «any»."
+        },
+        {
+          "text": "Выберите слово: How ___ money do you need?",
+          "options": [
+            "many",
+            "much",
+            "any",
+            "some"
+          ],
+          "correct": 1,
+          "explanation": "Тема: quantity. Правильный вариант — «much»."
+        },
+        {
+          "text": "Выберите артикль: I saw ___ interesting film yesterday.",
+          "options": [
+            "a",
+            "an",
+            "the",
+            "-"
+          ],
+          "correct": 1,
+          "explanation": "Тема: articles. Правильный вариант — «an»."
+        },
+        {
+          "text": "Выберите предлог: I usually go to work ___ 9 o'clock.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "to"
+          ],
+          "correct": 2,
+          "explanation": "Тема: prepositions. Правильный вариант — «at»."
+        },
+        {
+          "text": "Выберите предлог: My birthday is ___ May.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "for"
+          ],
+          "correct": 0,
+          "explanation": "Тема: prepositions. Правильный вариант — «in»."
+        },
+        {
+          "text": "Выберите вежливую просьбу: ___ you help me, please?",
+          "options": [
+            "Should",
+            "Could",
+            "Must",
+            "Did"
+          ],
+          "correct": 1,
+          "explanation": "Тема: functions. Правильный вариант — «Could»."
+        },
+        {
+          "text": "Выберите подходящее слово: I need to ___ a hotel for our trip.",
+          "options": [
+            "book",
+            "cook",
+            "borrow",
+            "miss"
+          ],
+          "correct": 0,
+          "explanation": "Тема: vocabulary. Правильный вариант — «book»."
+        },
+        {
+          "text": "Выберите подходящее слово: If you are ill, you should see a ___.",
+          "options": [
+            "driver",
+            "doctor",
+            "waiter",
+            "manager"
+          ],
+          "correct": 1,
+          "explanation": "Тема: vocabulary. Правильный вариант — «doctor»."
+        },
+        {
+          "text": "Прочитайте: Tom is going to Manchester on Friday because he has a job interview there. Why is Tom going to Manchester?",
+          "options": [
+            "to visit family",
+            "to have an interview",
+            "to study English",
+            "to buy a car"
+          ],
+          "correct": 1,
+          "explanation": "Тема: reading. Правильный вариант — «to have an interview»."
+        },
+        {
+          "text": "Прочитайте: Sarah usually works from home, but this week she is working in the office because her manager is visiting. Where is Sarah working this week?",
+          "options": [
+            "at home",
+            "in the office",
+            "in a cafe",
+            "at school"
+          ],
+          "correct": 1,
+          "explanation": "Тема: reading. Правильный вариант — «in the office»."
+        }
+      ]
+    }
+  ]
+}

@@ -1,26 +1,206 @@
 @import "tailwindcss";
 
+@theme {
+  --color-ink-50: #f8fafc;
+  --color-ink-100: #f1f5f9;
+  --color-ink-200: #e2e8f0;
+  --color-ink-300: #cbd5e1;
+  --color-ink-400: #94a3b8;
+  --color-ink-500: #64748b;
+  --color-ink-600: #475569;
+  --color-ink-700: #334155;
+  --color-ink-800: #1e293b;
+  --color-ink-900: #0f172a;
+
+  --color-brand-50: #eef2ff;
+  --color-brand-100: #e0e7ff;
+  --color-brand-200: #c7d2fe;
+  --color-brand-400: #818cf8;
+  --color-brand-500: #6366f1;
+  --color-brand-600: #4f46e5;
+  --color-brand-700: #4338ca;
+  /* Наведение на фирменную кнопку: в светлой теме темнее, в тёмной светлее */
+  --color-brand-hover: #4338ca;
+
+  /* Затемнение под модальными окнами — тёмное в обеих темах */
+  --color-overlay: oklch(0.13 0.03 265 / 0.45);
+
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/*
+ * Тёмная тема. Все утилиты Tailwind ссылаются на переменные цвета
+ * (bg-white → var(--color-white)), поэтому достаточно переопределить сами
+ * переменные — размечать каждый компонент классами dark: не нужно.
+ *
+ * Шкала ink переворачивается: ink-50 был самым светлым фоном, стал самым
+ * тёмным; ink-900 был цветом текста, стал почти белым. Пары «светлая
+ * подложка + тёмный текст» (bg-emerald-50 + text-emerald-700) тоже
+ * меняются местами по яркости.
+ *
+ * Атрибут ставит инлайн-скрипт в app/layout.tsx до первой отрисовки.
+ */
+[data-theme="dark"] {
+  color-scheme: dark;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-white: #151b26;
+
+  --color-ink-50: #1b2231;
+  --color-ink-100: #212a3a;
+  --color-ink-200: #2b3547;
+  --color-ink-300: #3a465c;
+  --color-ink-400: #8b98ad;
+  --color-ink-500: #a3aec0;
+  --color-ink-600: #bcc5d4;
+  --color-ink-700: #d3dae5;
+  --color-ink-800: #e6ebf2;
+  --color-ink-900: #f4f7fb;
+
+  --color-brand-50: #1e2547;
+  --color-brand-100: #262f57;
+  --color-brand-200: #33407a;
+  --color-brand-700: #a5b4fc;
+  --color-brand-hover: #6366f1;
+
+  --color-emerald-50: #10281f;
+  --color-emerald-100: #163528;
+  --color-emerald-600: #34d399;
+  --color-emerald-700: #6ee7b7;
+  --color-emerald-800: #a7f3d0;
+
+  --color-rose-50: #2b1620;
+  --color-rose-100: #3a1a26;
+  --color-rose-200: #4d2333;
+  --color-rose-300: #6b2f43;
+  --color-rose-500: #fb7185;
+  --color-rose-600: #fda4af;
+  --color-rose-700: #fecdd3;
+  --color-rose-800: #ffe4e6;
+
+  --color-amber-50: #2a2010;
+  --color-amber-100: #362a14;
+  --color-amber-200: #4a3a1c;
+  --color-amber-300: #5e4a24;
+  --color-amber-700: #fcd34d;
+  --color-amber-800: #fde68a;
+  --color-amber-900: #fef3c7;
+
+  --color-sky-50: #0e2233;
+  --color-sky-100: #132c40;
+  --color-sky-700: #7dd3fc;
+
+  --color-violet-50: #1f1a3d;
+  --color-violet-100: #272049;
+  --color-violet-700: #c4b5fd;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(1100px 520px at 12% -8%, #eef2ff 0%, transparent 60%),
+    radial-gradient(900px 480px at 92% 0%, #ecfeff 0%, transparent 55%),
+    #f8fafc;
+  color: var(--color-ink-800);
+  min-height: 100dvh;
+}
+
+[data-theme="dark"] body {
+  background:
+    radial-gradient(1100px 520px at 12% -8%, #1b2350 0%, transparent 60%),
+    radial-gradient(900px 480px at 92% 0%, #10303a 0%, transparent 55%),
+    #0d121b;
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border border-ink-200 bg-white/85 shadow-sm backdrop-blur;
+  }
+
+  .field {
+    @apply w-full rounded-xl border border-ink-200 bg-white px-3.5 py-2.5 text-[15px]
+      text-ink-900 outline-none transition
+      placeholder:text-ink-400
+      focus:border-brand-500 focus:ring-4 focus:ring-brand-500/12;
+  }
+
+  .field-error {
+    @apply border-rose-400 focus:border-rose-500 focus:ring-rose-500/12;
+  }
+
+  .label {
+    @apply mb-1.5 block text-[13px] font-medium text-ink-600;
+  }
+
+  .hint {
+    @apply mt-1.5 text-[12.5px] text-rose-600;
+  }
+
+  .btn,
+  .btn-primary,
+  .btn-ghost,
+  .btn-danger {
+    @apply inline-flex cursor-pointer items-center justify-center gap-2 rounded-xl
+      px-4 py-2.5 text-[15px] font-medium transition
+      disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .btn-primary {
+    @apply bg-brand-600 text-white shadow-sm hover:bg-brand-hover
+      focus-visible:ring-4 focus-visible:ring-brand-500/25;
+  }
+
+  /* Подложка модальных окон: тёмная и в светлой теме, и в тёмной */
+  .overlay {
+    background-color: var(--color-overlay);
+  }
+}
+
+/* Иконка переключателя темы — выбирается стилями, а не состоянием React */
+[data-theme="dark"] .theme-light-only,
+:root:not([data-theme="dark"]) .theme-dark-only {
+  display: none;
+}
+
+@layer components {
+
+  .btn-ghost {
+    @apply border border-ink-200 bg-white text-ink-700 hover:bg-ink-50;
+  }
+
+  .btn-danger {
+    @apply border border-rose-200 bg-rose-50 text-rose-700 hover:bg-rose-100;
+  }
+
+  .btn-sm {
+    @apply px-3 py-1.5 text-[13.5px];
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full px-2.5 py-1
+      text-[12.5px] font-medium;
+  }
+
+  .page-title {
+    @apply text-2xl font-semibold tracking-tight text-ink-900 sm:text-3xl;
+  }
+}
+
+/* Плавное появление карточек */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.rise {
+  animation: rise 0.28s ease-out both;
 }

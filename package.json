@@ -6,21 +6,47 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "db:push": "PRISMA_HIDE_UPDATE_MESSAGE=1 prisma db push",
+    "db:migrate": "PRISMA_HIDE_UPDATE_MESSAGE=1 prisma migrate dev --name init",
+    "db:seed": "tsx prisma/seed.ts",
+    "words:backfill": "tsx --env-file=.env scripts/backfill-word-details.ts",
+    "words:refresh": "tsx --env-file=.env scripts/backfill-word-details.ts --refresh",
+    "db:studio": "PRISMA_HIDE_UPDATE_MESSAGE=1 prisma studio",
+    "postinstall": "PRISMA_HIDE_UPDATE_MESSAGE=1 prisma generate",
+    "setup": "PRISMA_HIDE_UPDATE_MESSAGE=1 prisma generate && PRISMA_HIDE_UPDATE_MESSAGE=1 prisma db push && npm run db:seed",
+    "mail:test": "tsx scripts/test-mail.ts",
+    "db:check": "tsx scripts/db-check.ts",
+    "role": "tsx scripts/set-role.ts",
+    "lessons:convert": "python3 scripts/convert-lessons.py",
+    "lessons:import": "tsx scripts/import-lessons.ts",
+    "lessons:import:one": "tsx scripts/import-lessons.ts --lesson=0",
+    "tests:restore": "tsx scripts/import-lessons.ts --tests-only",
+    "db:reset-content": "tsx scripts/reset-content.ts"
   },
   "dependencies": {
+    "@prisma/adapter-pg": "7.10.0",
+    "@prisma/client": "7.10.0",
+    "@uploadthing/react": "^7.3.3",
+    "dotenv": "^17.4.2",
     "next": "16.3.4",
+    "nodemailer": "^7.0.9",
+    "pg": "^8.23.0",
     "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "react-dom": "19.2.8",
+    "uploadthing": "^7.7.4"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
+    "@types/pg": "^8.23.1",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.3.4",
+    "prisma": "7.10.0",
     "tailwindcss": "^4",
+    "tsx": "^4.23.13",
     "typescript": "^5"
   }
 }

@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Универсальный тест A2</title>
+  <style>
+    :root {
+      --ink: #1e2732;
+      --muted: #657282;
+      --line: #d8e1e8;
+      --paper: #fbfcfd;
+      --panel: #ffffff;
+      --blue: #2563eb;
+      --blue-ink: #1d4ed8;
+      --teal: #0f766e;
+      --red: #be123c;
+      --amber: #b45309;
+      --green: #15803d;
+      --shadow: 0 18px 45px rgba(40, 59, 85, .12);
+      --radius: 8px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.5;
+    }
+
+    button, input { font: inherit; }
+
+    .hero {
+      min-height: 58vh;
+      display: grid;
+      align-items: end;
+      padding: 42px min(5vw, 64px);
+      color: #fff;
+      background:
+        linear-gradient(90deg, rgba(15, 35, 51, .92), rgba(15, 35, 51, .56), rgba(15, 35, 51, .18)),
+        url("https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1800&q=80") center / cover;
+    }
+
+    .hero-inner { max-width: 840px; padding-bottom: 20px; }
+
+    .eyebrow {
+      color: #bfe8ff;
+      font-size: 12px;
+      font-weight: 850;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(38px, 7vw, 76px);
+      line-height: .98;
+      letter-spacing: 0;
+    }
+
+    .hero p {
+      max-width: 680px;
+      margin: 18px 0 24px;
+      color: rgba(255,255,255,.86);
+      font-size: 18px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 11px 16px;
+      border: 1px solid var(--blue);
+      border-radius: var(--radius);
+      background: var(--blue);
+      color: #fff;
+      text-decoration: none;
+      cursor: pointer;
+      font-weight: 850;
+    }
+
+    .button.secondary {
+      background: rgba(255,255,255,.1);
+      border-color: rgba(255,255,255,.35);
+      color: #fff;
+      backdrop-filter: blur(8px);
+    }
+
+    .section {
+      padding: 42px min(5vw, 64px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 18px;
+      align-items: end;
+      margin-bottom: 20px;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-size: clamp(26px, 4vw, 42px);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .section-heading p {
+      margin: 10px 0 0;
+      max-width: 760px;
+      color: var(--muted);
+    }
+
+    .time-chip {
+      justify-self: start;
+      padding: 7px 10px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      color: var(--teal);
+      font-size: 13px;
+      font-weight: 850;
+      white-space: nowrap;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 330px;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .test-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .question {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: 0 8px 26px rgba(43, 62, 89, .06);
+    }
+
+    .question p {
+      margin: 0 0 12px;
+      font-weight: 850;
+    }
+
+    .radio-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .radio-list label {
+      display: flex;
+      gap: 9px;
+      align-items: center;
+      min-height: 40px;
+      padding: 9px 10px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    input[type="radio"] { accent-color: var(--blue); }
+    .question.correct { border-color: rgba(21, 128, 61, .42); }
+    .question.wrong { border-color: rgba(190, 18, 60, .38); }
+
+    .feedback {
+      min-height: 22px;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 750;
+    }
+
+    .panel {
+      position: sticky;
+      top: 18px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: 0 8px 26px rgba(43, 62, 89, .06);
+    }
+
+    .panel h3 { margin: 0 0 10px; }
+
+    .meter {
+      height: 12px;
+      overflow: hidden;
+      margin: 14px 0;
+      border-radius: 999px;
+      background: #e8eef3;
+    }
+
+    .meter span {
+      display: block;
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--red), var(--amber), var(--green));
+      transition: width .3s ease;
+    }
+
+    .score {
+      margin: 8px 0;
+      color: var(--blue);
+      font-size: 54px;
+      line-height: 1;
+      font-weight: 900;
+    }
+
+    .muted { color: var(--muted); font-weight: 750; }
+
+    .result {
+      margin-top: 18px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: 0 8px 26px rgba(43, 62, 89, .06);
+    }
+
+    .result h3 { margin: 0 0 8px; }
+    .result p { margin: 0; color: var(--muted); }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .skill {
+      min-height: 116px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+    }
+
+    .skill b { display: block; margin-bottom: 7px; color: var(--blue); }
+    .skill span { color: var(--muted); font-size: 14px; }
+
+    @media (max-width: 980px) {
+      .layout { grid-template-columns: 1fr; }
+      .panel { position: static; }
+      .skills { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 680px) {
+      .hero, .section { padding-inline: 18px; }
+      .section-heading,
+      .radio-list,
+      .skills { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">Universal A2 placement test · 30 questions</div>
+      <h1>Универсальный тест уровня A2</h1>
+     
+      <div class="hero-actions">
+        <a class="button" href="#test">Начать тест</a>
+        <a class="button secondary" href="index.html">Вернуться к уроку</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="section-heading">
+      <div>
+        <h2>Что проверяет тест</h2>
+        <p>Это не экзамен, а быстрый срез. Хороший результат означает, что можно работать на A2 и постепенно двигаться к B1. Низкий результат показывает, какие темы нужно повторить первыми.</p>
+      </div>
+      <span class="time-chip">20-30 минут</span>
+    </div>
+
+    <div class="skills">
+      <div class="skill"><b>Grammar</b><span>to be, Present/Past Simple, Continuous, Present Perfect, future forms, modals.</span></div>
+      <div class="skill"><b>Vocabulary</b><span>повседневные темы: работа, город, путешествия, еда, покупки, здоровье.</span></div>
+      <div class="skill"><b>Functions</b><span>совет, запрет, просьба, планы, опыт, сравнение, количество.</span></div>
+      <div class="skill"><b>Reading</b><span>понимание короткого текста и выбор точной информации.</span></div>
+    </div>
+  </section>
+
+  <section class="section" id="test">
+    <div class="section-heading">
+      <div>
+        <h2>Тест</h2>
+        <p>Выберите один правильный вариант в каждом вопросе. После проверки страница покажет общий результат и темы, которые стоит повторить.</p>
+      </div>
+      <span class="time-chip">30 вопросов</span>
+    </div>
+
+    <div class="layout">
+      <form class="test-list" id="testForm"></form>
+
+      <aside class="panel">
+        <h3>Результат</h3>
+        <button class="button" type="button" id="checkTest" style="width:100%;">Проверить тест</button>
+        <div class="meter" aria-hidden="true"><span id="scoreMeter"></span></div>
+        <div class="score" id="scoreText">0/30</div>
+        <p class="muted" id="levelText">Результат появится после проверки.</p>
+        <button class="button" type="button" id="clearTest" style="width:100%;margin-top:12px;background:#fff;color:var(--ink);border-color:var(--line);">Очистить ответы</button>
+      </aside>
+    </div>
+
+    <div class="result" id="feedbackPanel">
+      <h3>Рекомендации</h3>
+      <p>После проверки здесь появится оценка уровня и список приоритетных тем.</p>
+    </div>
+  </section>
+
+  <script>
+    const questions = [
+      { skill: "to be", q: "Выберите правильную форму: My parents ___ at home now.", options: ["is", "are", "am", "be"], answer: "are" },
+      { skill: "to be", q: "Выберите вопрос: ___ your brother a student?", options: ["Is", "Are", "Do", "Does"], answer: "Is" },
+      { skill: "present simple", q: "Выберите правильный вариант: She ___ to work by bus every day.", options: ["go", "goes", "is going", "went"], answer: "goes" },
+      { skill: "present simple", q: "Выберите вопрос: Where ___ he live?", options: ["do", "does", "is", "did"], answer: "does" },
+      { skill: "present simple negative", q: "Выберите отрицание: I ___ meat.", options: ["doesn't eat", "don't eat", "am not eat", "didn't eats"], answer: "don't eat" },
+      { skill: "present continuous", q: "Выберите форму: Look! It ___ outside.", options: ["rains", "is raining", "rain", "rained"], answer: "is raining" },
+      { skill: "present continuous", q: "Выберите форму: They ___ a film at the moment.", options: ["watch", "watches", "are watching", "watched"], answer: "are watching" },
+      { skill: "present contrast", q: "Выберите вариант: I usually ___ coffee, but today I ___ tea.", options: ["drink / am drinking", "am drinking / drink", "drinks / drinking", "drink / drink"], answer: "drink / am drinking" },
+      { skill: "past simple", q: "Выберите Past Simple: We ___ to the museum last Sunday.", options: ["go", "went", "gone", "are going"], answer: "went" },
+      { skill: "past simple", q: "Выберите форму после did: Did you ___ the email?", options: ["sent", "send", "sending", "sends"], answer: "send" },
+      { skill: "past negative", q: "Выберите отрицание: He ___ the meeting yesterday.", options: ["didn't attend", "didn't attended", "doesn't attend", "wasn't attend"], answer: "didn't attend" },
+      { skill: "present perfect", q: "Выберите третью форму: Have you ever ___ sushi?", options: ["try", "tried", "trying", "tries"], answer: "tried" },
+      { skill: "present perfect", q: "Выберите маркер: I haven't finished it ___.", options: ["already", "yet", "yesterday", "ago"], answer: "yet" },
+      { skill: "past/perfect contrast", q: "Выберите вариант: I ___ Paris in 2022.", options: ["have visited", "visited", "visit", "am visiting"], answer: "visited" },
+      { skill: "future", q: "Выберите план: We ___ visit our friends tomorrow. We have tickets.", options: ["will", "are going to", "did", "have"], answer: "are going to" },
+      { skill: "future", q: "Выберите спонтанное решение: It's cold. I ___ close the window.", options: ["am going to", "will", "did", "can"], answer: "will" },
+      { skill: "modals", q: "Выберите совет: You ___ sleep more.", options: ["should", "mustn't", "can't", "did"], answer: "should" },
+      { skill: "modals", q: "Выберите запрет: You ___ park here.", options: ["should", "mustn't", "can", "could"], answer: "mustn't" },
+      { skill: "comparatives", q: "Выберите сравнительную степень: This test is ___ than the last one.", options: ["easy", "easier", "more easy", "the easiest"], answer: "easier" },
+      { skill: "superlatives", q: "Выберите превосходную степень: This is ___ restaurant in the area.", options: ["good", "better", "the best", "best than"], answer: "the best" },
+      { skill: "quantity", q: "Выберите слово: There isn't ___ milk in the fridge.", options: ["some", "any", "many", "a"], answer: "any" },
+      { skill: "quantity", q: "Выберите слово: How ___ money do you need?", options: ["many", "much", "any", "some"], answer: "much" },
+      { skill: "articles", q: "Выберите артикль: I saw ___ interesting film yesterday.", options: ["a", "an", "the", "-"], answer: "an" },
+      { skill: "prepositions", q: "Выберите предлог: I usually go to work ___ 9 o'clock.", options: ["in", "on", "at", "to"], answer: "at" },
+      { skill: "prepositions", q: "Выберите предлог: My birthday is ___ May.", options: ["in", "on", "at", "for"], answer: "in" },
+      { skill: "functions", q: "Выберите вежливую просьбу: ___ you help me, please?", options: ["Should", "Could", "Must", "Did"], answer: "Could" },
+      { skill: "vocabulary", q: "Выберите подходящее слово: I need to ___ a hotel for our trip.", options: ["book", "cook", "borrow", "miss"], answer: "book" },
+      { skill: "vocabulary", q: "Выберите подходящее слово: If you are ill, you should see a ___.", options: ["driver", "doctor", "waiter", "manager"], answer: "doctor" },
+      { skill: "reading", q: "Прочитайте: Tom is going to Manchester on Friday because he has a job interview there. Why is Tom going to Manchester?", options: ["to visit family", "to have an interview", "to study English", "to buy a car"], answer: "to have an interview" },
+      { skill: "reading", q: "Прочитайте: Sarah usually works from home, but this week she is working in the office because her manager is visiting. Where is Sarah working this week?", options: ["at home", "in the office", "in a cafe", "at school"], answer: "in the office" }
+    ];
+
+    const form = document.getElementById("testForm");
+
+    function explainQuestion(item) {
+      const explanations = {
+        "to be": "Глагол to be выбирается по подлежащему: I am, he/she/it is, we/you/they are.",
+        "present simple": "Present Simple используем для привычек и регулярных действий; с he/she/it добавляем -s, а в вопросах используем does.",
+        "present simple negative": "В отрицании Present Simple используем don't/doesn't + глагол без окончания -s.",
+        "present continuous": "Present Continuous описывает действие сейчас: am/is/are + verb-ing.",
+        "present contrast": "Usually показывает привычку, а today показывает временную ситуацию сейчас.",
+        "past simple": "Past Simple нужен для завершенного действия в прошлом; многие частые глаголы имеют неправильную форму.",
+        "past negative": "В отрицании Past Simple используем didn't + начальная форма глагола.",
+        "present perfect": "Present Perfect строится как have/has + V3; yet обычно используется в отрицаниях и вопросах.",
+        "past/perfect contrast": "Если есть точное прошлое время, например in 2022, используем Past Simple.",
+        "future": "Going to показывает план, а will часто используется для спонтанного решения.",
+        "modals": "Should выражает совет, mustn't выражает запрет.",
+        "comparatives": "Для сравнения используем сравнительную степень: easier, bigger, more interesting.",
+        "superlatives": "Для превосходной степени используем the + -est или the most + adjective.",
+        "quantity": "Much используется с неисчисляемыми существительными, many - с исчисляемыми; any часто стоит в отрицаниях.",
+        "articles": "An ставим перед словом, которое начинается с гласного звука.",
+        "prepositions": "At используем со временем на часах, in - с месяцами и более длинными периодами.",
+        "functions": "Could you...? - вежливая форма просьбы.",
+        "vocabulary": "Здесь проверяется значение слова в бытовом контексте.",
+        "reading": "Ответ нужно брать прямо из текста, не додумывая лишнюю информацию."
+      };
+      return explanations[item.skill] || "Ответ выбирается по правилу этой темы.";
+    }
+
+    function renderTest() {
+      form.innerHTML = "";
+      questions.forEach((item, index) => {
+        const block = document.createElement("fieldset");
+        block.className = "question";
+        block.innerHTML = `<p>${index + 1}. ${item.q}</p><div class="radio-list"></div><div class="feedback" aria-live="polite"></div>`;
+        const list = block.querySelector(".radio-list");
+        item.options.forEach(option => {
+          const id = `q${index}_${option.replace(/[^a-z0-9]+/gi, "-")}`;
+          const label = document.createElement("label");
+          label.setAttribute("for", id);
+          label.innerHTML = `<input id="${id}" type="radio" name="q${index}" value="${option}"> ${option}`;
+          list.appendChild(label);
+        });
+        form.appendChild(block);
+      });
+    }
+
+    function checkTest() {
+      let score = 0;
+      const weak = [];
+      const blocks = document.querySelectorAll(".question");
+
+      questions.forEach((item, index) => {
+        const selected = document.querySelector(`input[name="q${index}"]:checked`);
+        const ok = selected && selected.value === item.answer;
+        blocks[index].classList.remove("correct", "wrong");
+        const feedback = blocks[index].querySelector(".feedback");
+        if (!selected) {
+          if (feedback) feedback.textContent = "";
+          return;
+        }
+
+        blocks[index].classList.add(ok ? "correct" : "wrong");
+        if (feedback) {
+          feedback.textContent = ok
+            ? "Верно. " + explainQuestion(item)
+            : "Неверно. Правильный ответ: " + item.answer + ". " + explainQuestion(item);
+        }
+        if (ok) score += 1;
+        if (!ok) weak.push(item.skill);
+      });
+
+      const percent = Math.round(score / questions.length * 100);
+      const uniqueWeak = [...new Set(weak)].slice(0, 8);
+
+      document.getElementById("scoreText").textContent = `${score}/30`;
+      document.getElementById("scoreMeter").style.width = `${percent}%`;
+
+      let level = "";
+      let feedback = "";
+
+      if (score >= 26) {
+        level = "A2 подтвержден уверенно.";
+        feedback = "Можно начинать сильный A2/B1 bridge: больше speaking, listening, longer answers, vocabulary expansion и уверенное различение времен.";
+      } else if (score >= 21) {
+        level = "A2 подтвержден, но есть точечные пробелы.";
+        feedback = "Рекомендуется 2-4 урока точечного повторения. Приоритетные темы: " + uniqueWeak.join(", ") + ".";
+      } else if (score >= 15) {
+        level = "A1+ / слабый A2.";
+        feedback = "Нужно укрепить базу перед полноценным A2. Приоритет: Present/Past Simple, вопросы, отрицания, модальные глаголы и базовая лексика.";
+      } else {
+        level = "A2 пока не подтвержден.";
+        feedback = "Лучше начать с системного повторения A1, затем перейти к A2 после стабилизации базовых времен и простых вопросов.";
+      }
+
+      document.getElementById("levelText").textContent = level;
+      document.getElementById("feedbackPanel").innerHTML = `<h3>Рекомендации</h3><p>${feedback}</p>`;
+    }
+
+    function clearTest() {
+      document.querySelectorAll("input[type='radio']").forEach(input => input.checked = false);
+      document.querySelectorAll(".question").forEach(block => block.classList.remove("correct", "wrong"));
+      document.querySelectorAll(".question .feedback").forEach(feedback => feedback.textContent = "");
+      document.getElementById("scoreText").textContent = "0/30";
+      document.getElementById("scoreMeter").style.width = "0%";
+      document.getElementById("levelText").textContent = "Результат появится после проверки.";
+      document.getElementById("feedbackPanel").innerHTML = "<h3>Рекомендации</h3><p>После проверки здесь появится оценка уровня и список приоритетных тем.</p>";
+    }
+
+    document.getElementById("checkTest").addEventListener("click", checkTest);
+    document.getElementById("clearTest").addEventListener("click", clearTest);
+    renderTest();
+  </script>
+</body>
+</html>

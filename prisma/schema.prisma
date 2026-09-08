@@ -1,0 +1,402 @@
+// Схема базы данных Master English
+// Строка подключения задаётся в prisma.config.ts (Prisma 7)
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+/// Роль аккаунта
+enum Role {
+  ADMIN
+  STUDENT
+}
+
+/// Уровень владения английским по шкале CEFR
+enum Level {
+  A1
+  A2
+  B1
+  B2
+  C1
+  C2
+}
+
+/// Режим тренировки слов
+enum TrainingMode {
+  TRANSLATE // слово + озвучка → вписать перевод
+  IMAGE // картинка → вписать слово по-английски
+  DEFINITION // определение → вписать слово
+}
+
+/// Направление перевода в тренировке
+enum Direction {
+  EN_RU
+  RU_EN
+}
+
+/// Тип задания в домашней работе
+enum TaskKind {
+  CHOICE // варианты ответа, автопроверка
+  FILL // вписать ответ, автопроверка
+  READING // текст + вопросы на понимание, автопроверка
+  LISTENING // аудио + вопросы, автопроверка
+  TEACHER // развёрнутый ответ, проверяет преподаватель
+}
+
+model User {
+  id        String   @id @default(cuid())
+  login     String   @unique
+  /// Необязательна: аккаунт ученика преподаватель может завести без почты.
+  /// Без неё не работают восстановление пароля и письма о комментариях.
+  email     String?  @unique
+  firstName String
+  /// Необязательна: у ученика может быть указано только имя
+  lastName  String   @default("")
+  password  String // scrypt-хеш, см. lib/password.ts
+  role      Role     @default(STUDENT)
+  level     Level? // уровень английского, ставит администратор
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  sessions            Session[]
+  resetCodes          PasswordResetCode[]
+  assignments         LessonAssignment[]
+  authoredLessons     Lesson[]             @relation("LessonAuthor")
+  words               Word[]
+  tests               Test[]
+  attempts            TrainingAttempt[]
+  homeworkAnswers     HomeworkAnswer[]
+  testResults         TestAttempt[]
+  testAssignments     TestAssignment[]
+  lessonTaskAnswers   LessonTaskAnswer[]
+  homeworkSubmissions HomeworkSubmission[]
+
+  @@index([role])
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  token     String   @unique
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+}
+
+model PasswordResetCode {
+  id        String    @id @default(cuid())
+  code      String
+  userId    String
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  usedAt    DateTime?
+  createdAt DateTime  @default(now())
+
+  @@index([userId])
+}
+
+/// Урок — общий для всех, ученикам выдаётся назначением
+model Lesson {
+  id          String   @id @default(cuid())
+  number      Int      @unique
+  topic       String
+  description String   @default("")
+  /// Цель урока одной фразой
+  goal        String   @default("")
+  durationMin Int      @default(60)
+  level       Level    @default(A2)
+  /// На основе какого учебника собран урок
+  bookTitle   String   @default("")
+  /// Конкретное место в учебнике: юнит, страница, трек
+  bookRef     String   @default("")
+  heroImage   String   @default("")
+  /// Тайминг занятия: [{ time, title, note }]
+  timeline    Json?
+  /// Содержимое урока: массив блоков, см. lib/lesson-content.ts
+  blocks      Json?
+  authorId    String?
+  author      User?    @relation("LessonAuthor", fields: [authorId], references: [id], onDelete: SetNull)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  assignments LessonAssignment[]
+  words       LessonWord[]
+  homework    Homework?
+  tests       Test[]
+  taskAnswers LessonTaskAnswer[]
+
+  @@index([level])
+}
+
+/// Ответ ученика на задание внутри урока — в том числе на поле поверх скана.
+/// Задания живут в Lesson.blocks (JSON), поэтому ссылаемся на них ключом:
+/// собственным id задания, а для старых уроков — позицией «блок-задание».
+model LessonTaskAnswer {
+  id            String    @id @default(cuid())
+  lessonId      String
+  lesson        Lesson    @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  userId        String
+  user          User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  taskKey       String
+  value         String    @default("")
+  isCorrect     Boolean   @default(false)
+  /// Комментарий преподавателя к этому ответу
+  comment       String    @default("")
+  commentedAt   DateTime?
+  /// Когда ученик его увидел; null — комментарий новый
+  commentSeenAt DateTime?
+  /// Ученик сохранил ответ сам: при следующем заходе он не сбрасывается.
+  /// Несохранённые ответы — черновик, как и в домашней работе.
+  saved         Boolean   @default(false)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  @@unique([lessonId, userId, taskKey])
+  @@index([userId])
+  @@index([lessonId])
+}
+
+/// Закрепление урока за учеником
+model LessonAssignment {
+  id          String    @id @default(cuid())
+  lessonId    String
+  lesson      Lesson    @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  userId      String
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  assignedAt  DateTime  @default(now())
+  /// Преподаватель отметил урок пройденным; тогда ученик может открыть
+  /// его с правильными ответами и повторить материал
+  completedAt DateTime?
+
+  @@unique([lessonId, userId])
+  @@index([userId])
+}
+
+/// Словарь урока — общий, копируется ученику при назначении
+model LessonWord {
+  id            String @id @default(cuid())
+  lessonId      String
+  lesson        Lesson @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  english       String
+  russian       String
+  partOfSpeech  String @default("")
+  transcription String @default("")
+  example       String @default("")
+  definition    String @default("")
+  /// Определение на русском — для тренировки «по определению»
+  definitionRu  String @default("")
+  audioUrl      String @default("")
+  imageUrl      String @default("")
+  order         Int    @default(0)
+
+  copies Word[]
+
+  @@unique([lessonId, english])
+  @@index([lessonId])
+}
+
+/// Домашняя работа, отправленная учеником на проверку.
+/// До отправки ответы при каждом заходе начинаются с чистого листа,
+/// после отправки сохраняются и больше не сбрасываются сами.
+model HomeworkSubmission {
+  id          String   @id @default(cuid())
+  homeworkId  String
+  homework    Homework @relation(fields: [homeworkId], references: [id], onDelete: Cascade)
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  submittedAt DateTime @default(now())
+
+  @@unique([homeworkId, userId])
+  @@index([userId])
+}
+
+model Homework {
+  id        String    @id @default(cuid())
+  lessonId  String    @unique
+  lesson    Lesson    @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  title     String
+  intro     String    @default("")
+  dueDate   DateTime?
+  createdAt DateTime  @default(now())
+
+  tasks       HomeworkTask[]
+  submissions HomeworkSubmission[]
+}
+
+model HomeworkTask {
+  id          String   @id @default(cuid())
+  homeworkId  String
+  homework    Homework @relation(fields: [homeworkId], references: [id], onDelete: Cascade)
+  order       Int      @default(0)
+  /// Заголовок группы заданий, например «1. Grammar: choose the form»
+  section     String   @default("")
+  kind        TaskKind
+  prompt      String
+  /// Текст для заданий на понимание прочитанного
+  text        String   @default("")
+  audioUrl    String   @default("")
+  transcript  String   @default("")
+  options     String[]
+  /// Правильный ответ; варианты можно перечислить через запятую
+  answer      String   @default("")
+  /// Почему этот ответ верный
+  explanation String   @default("")
+  /// Правило, на которое опирается задание
+  rule        String   @default("")
+  /// Скрыто от ученика: задание видит только преподаватель
+  hidden      Boolean  @default(false)
+
+  answers HomeworkAnswer[]
+
+  @@index([homeworkId])
+}
+
+model HomeworkAnswer {
+  id            String       @id @default(cuid())
+  taskId        String
+  task          HomeworkTask @relation(fields: [taskId], references: [id], onDelete: Cascade)
+  userId        String
+  user          User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  value         String       @default("")
+  /// Для заданий с автопроверкой
+  isCorrect     Boolean?
+  /// Для заданий, которые проверяет преподаватель
+  grade         Int?
+  comment       String?
+  /// Когда ученик увидел комментарий; null — комментарий новый
+  commentSeenAt DateTime?
+  /// Ученик сохранил ответ до отправки работы: при следующем заходе
+  /// такой ответ не сбрасывается. Несохранённые ответы — черновик.
+  saved         Boolean      @default(false)
+  answeredAt    DateTime     @default(now())
+  gradedAt      DateTime?
+
+  @@unique([taskId, userId])
+  @@index([userId])
+}
+
+/// Личный словарь ученика
+model Word {
+  id            String @id @default(cuid())
+  english       String
+  russian       String
+  example       String @default("")
+  definition    String @default("")
+  definitionRu  String @default("")
+  transcription String @default("")
+  partOfSpeech  String @default("")
+  audioUrl      String @default("")
+  imageUrl      String @default("")
+  source        String @default("manual") // manual | cambridge | fallback | lesson
+
+  userId       String
+  user         User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lessonWordId String?
+  lessonWord   LessonWord? @relation(fields: [lessonWordId], references: [id], onDelete: SetNull)
+
+  correctCount  Int       @default(0)
+  wrongCount    Int       @default(0)
+  lastTrainedAt DateTime?
+
+  createdAt DateTime          @default(now())
+  updatedAt DateTime          @updatedAt
+  attempts  TrainingAttempt[]
+
+  @@unique([userId, english])
+  @@index([userId])
+}
+
+model TrainingAttempt {
+  id        String       @id @default(cuid())
+  userId    String
+  user      User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  wordId    String
+  word      Word         @relation(fields: [wordId], references: [id], onDelete: Cascade)
+  mode      TrainingMode
+  direction Direction    @default(EN_RU)
+  isCorrect Boolean
+  answer    String       @default("")
+  createdAt DateTime     @default(now())
+
+  @@index([userId, createdAt])
+}
+
+model Test {
+  id          String   @id @default(cuid())
+  title       String
+  description String   @default("")
+  level       Level?
+  authorId    String?
+  author      User?    @relation(fields: [authorId], references: [id], onDelete: SetNull)
+  lessonId    String?
+  lesson      Lesson?  @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  createdAt   DateTime @default(now())
+
+  questions   Question[]
+  attempts    TestAttempt[]
+  assignments TestAssignment[]
+
+  @@index([lessonId])
+  @@index([level])
+}
+
+/// Тест, выданный конкретному ученику отдельно от урока
+model TestAssignment {
+  id         String   @id @default(cuid())
+  testId     String
+  test       Test     @relation(fields: [testId], references: [id], onDelete: Cascade)
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  assignedAt DateTime @default(now())
+
+  @@unique([testId, userId])
+  @@index([userId])
+}
+
+model Question {
+  id          String   @id @default(cuid())
+  testId      String
+  test        Test     @relation(fields: [testId], references: [id], onDelete: Cascade)
+  text        String
+  options     String[]
+  correct     Int
+  explanation String   @default("")
+  order       Int      @default(0)
+
+  @@index([testId])
+}
+
+model TestAttempt {
+  id         String   @id @default(cuid())
+  testId     String
+  test       Test     @relation(fields: [testId], references: [id], onDelete: Cascade)
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  score      Int
+  total      Int
+  finishedAt DateTime @default(now())
+
+  @@index([userId])
+  @@index([testId])
+}
+
+/// Кэш ответов Cambridge Dictionary / резервных словарных API
+model DictionaryCache {
+  id            String   @id @default(cuid())
+  word          String   @unique
+  russian       String   @default("")
+  definition    String   @default("")
+  example       String   @default("")
+  transcription String   @default("")
+  partOfSpeech  String   @default("")
+  audioUrl      String   @default("")
+  source        String   @default("cambridge")
+  payload       Json?
+  fetchedAt     DateTime @default(now())
+}
