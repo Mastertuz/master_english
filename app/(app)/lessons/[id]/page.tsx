@@ -251,7 +251,9 @@ export default async function LessonPage({
         answers={answers}
         comments={comments}
         completed={completed}
-        canSeeHidden={isAdmin}
+        // При проверке работы скрытые блоки не показываем: ученик их не
+        // видел, и проверять в них нечего
+        canSeeHidden={isAdmin && !student}
         isTeacher={isAdmin}
         review={student ? answerIds : undefined}
       />

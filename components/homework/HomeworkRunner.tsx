@@ -410,6 +410,9 @@ function TaskCard({
             <span className="chip bg-emerald-100 text-emerald-800">
               Оценка: {task.saved.grade}
             </span>
+          ) : task.saved?.comment ? (
+            // Преподаватель ответил комментарием без оценки — работа проверена
+            <span className="chip bg-emerald-100 text-emerald-800">Проверено</span>
           ) : readOnly ? (
             <span className="chip bg-brand-50 text-brand-700">На проверке</span>
           ) : kept ? (

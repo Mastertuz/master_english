@@ -82,11 +82,15 @@ export default async function HomeworkPage({
         (task) => task.answers[0]?.comment && !task.answers[0]?.commentSeenAt,
       ).length;
 
-  // Скрытые задания видит только преподаватель — с пометкой на карточке.
-  // Ответы привязаны к id задания, поэтому убрать их из списка безопасно.
-  const visible = isAdmin
-    ? homework.tasks
-    : homework.tasks.filter((task) => !task.hidden);
+  /**
+   * Скрытые задания видит только преподаватель — с пометкой на карточке.
+   * Но при проверке работы их убираем: ученик их не видел и не решал,
+   * значит и проверять там нечего.
+   */
+  const visible =
+    isAdmin && !student
+      ? homework.tasks
+      : homework.tasks.filter((task) => !task.hidden);
 
   const tasks: HomeworkTaskView[] = visible.map((task) => ({
     id: task.id,
