@@ -127,15 +127,18 @@ export function HomeworkRunner({
     return [...map.entries()];
   }, [tasks]);
 
-  const auto = tasks.filter(
-    (task) => task.kind !== "TEACHER" && !task.hidden,
-  );
-  const answered = auto.filter((task) => state[task.id]?.checked).length;
-  const correct = auto.filter((task) => state[task.id]?.isCorrect === true).length;
-
-  // Для сохранения считаем все ответы, в том числе развёрнутые
+  /**
+   * Считаем все задания, которые видит ученик, включая развёрнутые ответы:
+   * иначе счётчик расходится с карточкой урока и списком работ. «Верно»
+   * при этом только про автопроверку — развёрнутый ответ проверяет человек.
+   */
   const visible = tasks.filter((task) => !task.hidden);
-  const answeredAll = visible.filter((task) => state[task.id]?.checked).length;
+  const answered = visible.filter((task) => state[task.id]?.checked).length;
+  const correct = visible.filter(
+    (task) => task.kind !== "TEACHER" && state[task.id]?.isCorrect === true,
+  ).length;
+
+  const answeredAll = answered;
   const keptAll = visible.filter((task) => state[task.id]?.kept).length;
 
   function update(id: string, patch: Partial<Local>) {
@@ -218,15 +221,15 @@ export function HomeworkRunner({
 
   return (
     <div className="space-y-5">
-      {auto.length > 0 ? (
+      {visible.length > 0 ? (
         <div className="card sticky top-[72px] z-30 flex flex-wrap items-center justify-between gap-3 p-4">
           <p className="text-[14px] text-ink-600">
-            Выполнено {answered} из {auto.length} · верно {correct}
+            Выполнено {answered} из {visible.length} · верно {correct}
           </p>
           <div className="h-1.5 w-40 overflow-hidden rounded-full bg-ink-200">
             <div
               className="h-full rounded-full bg-brand-500 transition-all"
-              style={{ width: `${(answered / Math.max(auto.length, 1)) * 100}%` }}
+              style={{ width: `${(answered / Math.max(visible.length, 1)) * 100}%` }}
             />
           </div>
         </div>
@@ -316,7 +319,7 @@ export function HomeworkRunner({
             {submitted ? null : (
               <button
                 type="button"
-                disabled={answered === 0 && auto.length > 0}
+                disabled={answered === 0 && visible.length > 0}
                 onClick={() =>
                   startTransition(async () => {
                     await submitHomeworkAction(homeworkId);

@@ -56,9 +56,8 @@ export default async function HomeworkListPage() {
         <div className="grid gap-4 sm:grid-cols-2">
           {homework.map((item) => {
             /**
-             * Считаем ровно то же, что показывает сама работа: задания с
-             * автопроверкой, кроме скрытых. Развёрнутые ответы идут отдельной
-             * строкой «на проверке».
+             * Считаем ровно то же, что показывает сама работа: все задания,
+             * которые видит ученик. «Верно» — только про автопроверку.
              */
             const submitted = item.submissions.length > 0;
 
@@ -66,13 +65,14 @@ export default async function HomeworkListPage() {
             const kept = (answer?: { saved: boolean }) =>
               Boolean(answer) && (submitted || answer!.saved);
 
-            const auto = item.tasks.filter(
-              (task) => task.kind !== "TEACHER" && !task.hidden,
-            );
-            const total = auto.length;
-            const done = auto.filter((task) => kept(task.answers[0])).length;
-            const correct = auto.filter(
-              (task) => kept(task.answers[0]) && task.answers[0]?.isCorrect === true,
+            const visible = item.tasks.filter((task) => !task.hidden);
+            const total = visible.length;
+            const done = visible.filter((task) => kept(task.answers[0])).length;
+            const correct = visible.filter(
+              (task) =>
+                task.kind !== "TEACHER" &&
+                kept(task.answers[0]) &&
+                task.answers[0]?.isCorrect === true,
             ).length;
             const waiting = item.tasks.filter(
               (task) =>
@@ -82,10 +82,6 @@ export default async function HomeworkListPage() {
                 task.answers[0]?.grade == null,
             ).length;
 
-            // Бывает работа из одних развёрнутых ответов — «0 из 0» там ни о чём
-            const open = item.tasks.filter(
-              (task) => task.kind === "TEACHER" && !task.hidden,
-            ).length;
 
             return (
               <Link
@@ -118,16 +114,10 @@ export default async function HomeworkListPage() {
                 <div className="mt-3">
                   <div className="mb-1.5 flex justify-between text-[12.5px] text-ink-500">
                     <span>
-                      {total > 0
-                        ? `Выполнено ${done} из ${total}`
-                        : `Развёрнутых ответов: ${open}`}
+                      Выполнено {done} из {total}
                     </span>
                     <span>
-                      {total > 0
-                        ? `верно ${correct}`
-                        : waiting > 0
-                          ? `на проверке ${waiting}`
-                          : ""}
+                      {waiting > 0 ? `на проверке ${waiting}` : `верно ${correct}`}
                     </span>
                   </div>
                   <div className="h-1.5 overflow-hidden rounded-full bg-ink-200">

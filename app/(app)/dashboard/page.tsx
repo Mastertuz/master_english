@@ -67,7 +67,6 @@ export default async function DashboardPage() {
       where: {
         homework: { lesson: scope },
         hidden: false,
-        kind: { not: "TEACHER" },
         OR: [
           { answers: { none: { userId: user.id } } },
           {

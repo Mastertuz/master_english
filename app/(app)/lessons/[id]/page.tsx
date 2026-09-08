@@ -36,7 +36,12 @@ export default async function LessonPage({
         },
       },
       homework: {
-        select: { id: true, title: true, _count: { select: { tasks: true } } },
+        select: {
+          id: true,
+          title: true,
+          // Считаем отдельно: ученику скрытые задания не достаются
+          tasks: { select: { hidden: true } },
+        },
       },
       assignments: {
         where: { userId: user.id },
@@ -102,6 +107,11 @@ export default async function LessonPage({
   const studentName = student
     ? `${student.firstName} ${student.lastName}`.trim()
     : "";
+
+  // Сколько заданий увидит ученик и сколько от него скрыто
+  const homeworkTasks = lesson.homework?.tasks ?? [];
+  const hiddenTasks = homeworkTasks.filter((task) => task.hidden).length;
+  const openTasks = homeworkTasks.length - hiddenTasks;
 
   // Урок, отмеченный преподавателем как пройденный, можно открыть
   // с правильными ответами
@@ -225,7 +235,8 @@ export default async function LessonPage({
               {lesson.homework.title}
             </p>
             <p className="text-[13.5px] text-ink-500">
-              Заданий: {lesson.homework._count.tasks}
+              Заданий: {openTasks}
+              {isAdmin && hiddenTasks > 0 ? ` · скрыто ${hiddenTasks}` : ""}
             </p>
           </div>
           <span className="text-ink-400">→</span>
