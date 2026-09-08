@@ -58,10 +58,23 @@ export default async function DashboardPage() {
       take: 3,
       select: { id: true, number: true, topic: true, level: true },
     }),
+    /**
+     * Невыполненные задания считаем так же, как счётчик внутри работы:
+     * только автопроверяемые и не скрытые, а черновик за ответ не идёт —
+     * он пропадёт при следующем заходе.
+     */
     prisma.homeworkTask.count({
       where: {
         homework: { lesson: scope },
-        answers: { none: { userId: user.id } },
+        hidden: false,
+        kind: { not: "TEACHER" },
+        OR: [
+          { answers: { none: { userId: user.id } } },
+          {
+            answers: { some: { userId: user.id, saved: false } },
+            homework: { submissions: { none: { userId: user.id } } },
+          },
+        ],
       },
     }),
   ]);

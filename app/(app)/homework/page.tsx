@@ -17,18 +17,21 @@ export default async function HomeworkListPage() {
       intro: true,
       lesson: { select: { id: true, number: true, topic: true, level: true } },
       // Скрытые задания в счётчик ученика не идут — он их не видит
-      _count: {
-        select: { tasks: isAdmin ? true : { where: { hidden: false } } },
-      },
       tasks: {
         where: isAdmin ? {} : { hidden: false },
         select: {
           kind: true,
+          hidden: true,
           answers: {
             where: { userId: user.id },
-            select: { isCorrect: true, grade: true },
+            select: { isCorrect: true, grade: true, saved: true },
           },
         },
+      },
+      // Отправленная работа сохранена целиком, флаг saved у ответов не нужен
+      submissions: {
+        where: { userId: user.id },
+        select: { id: true },
       },
     },
   });
@@ -52,18 +55,36 @@ export default async function HomeworkListPage() {
       ) : (
         <div className="grid gap-4 sm:grid-cols-2">
           {homework.map((item) => {
-            const total = item._count.tasks;
-            const done = item.tasks.filter(
-              (task) => task.answers.length > 0,
-            ).length;
-            const correct = item.tasks.filter(
-              (task) => task.answers[0]?.isCorrect === true,
+            /**
+             * Считаем ровно то же, что показывает сама работа: задания с
+             * автопроверкой, кроме скрытых. Развёрнутые ответы идут отдельной
+             * строкой «на проверке».
+             */
+            const submitted = item.submissions.length > 0;
+
+            /** Черновик пропадёт при следующем заходе, поэтому за ответ не считаем */
+            const kept = (answer?: { saved: boolean }) =>
+              Boolean(answer) && (submitted || answer!.saved);
+
+            const auto = item.tasks.filter(
+              (task) => task.kind !== "TEACHER" && !task.hidden,
+            );
+            const total = auto.length;
+            const done = auto.filter((task) => kept(task.answers[0])).length;
+            const correct = auto.filter(
+              (task) => kept(task.answers[0]) && task.answers[0]?.isCorrect === true,
             ).length;
             const waiting = item.tasks.filter(
               (task) =>
                 task.kind === "TEACHER" &&
-                task.answers.length > 0 &&
+                !task.hidden &&
+                kept(task.answers[0]) &&
                 task.answers[0]?.grade == null,
+            ).length;
+
+            // Бывает работа из одних развёрнутых ответов — «0 из 0» там ни о чём
+            const open = item.tasks.filter(
+              (task) => task.kind === "TEACHER" && !task.hidden,
             ).length;
 
             return (
@@ -97,9 +118,17 @@ export default async function HomeworkListPage() {
                 <div className="mt-3">
                   <div className="mb-1.5 flex justify-between text-[12.5px] text-ink-500">
                     <span>
-                      Выполнено {done} из {total}
+                      {total > 0
+                        ? `Выполнено ${done} из ${total}`
+                        : `Развёрнутых ответов: ${open}`}
                     </span>
-                    <span>верно {correct}</span>
+                    <span>
+                      {total > 0
+                        ? `верно ${correct}`
+                        : waiting > 0
+                          ? `на проверке ${waiting}`
+                          : ""}
+                    </span>
                   </div>
                   <div className="h-1.5 overflow-hidden rounded-full bg-ink-200">
                     <div
