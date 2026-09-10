@@ -3730,6 +3730,2329 @@
           }
         ]
       }
+    },
+    {
+      "number": 4,
+      "topic": "Skills for writing: письмо другу",
+      "description": "Учимся поддерживать связь и писать личное письмо без ошибок.",
+      "goal": "Написать письмо другу о себе и проверить его на четыре типа ошибок",
+      "level": "B1",
+      "durationMin": 60,
+      "bookTitle": "Cambridge Empower B1 (2nd edition)",
+      "bookRef": "Student's Book, Unit 1D «I'm sending you some photos», с. 14–15",
+      "heroImage": "",
+      "timeline": [
+        {
+          "time": "0–7",
+          "title": "Повторение",
+          "note": "Фразы знакомства и прощания из урока 3"
+        },
+        {
+          "time": "7–14",
+          "title": "Разогрев",
+          "note": "Как мы поддерживаем связь"
+        },
+        {
+          "time": "14–24",
+          "title": "Фразы",
+          "note": "keep in touch, hear from, have a chat"
+        },
+        {
+          "time": "24–36",
+          "title": "Аудирование",
+          "note": "Nina и Chris, Track 01.21"
+        },
+        {
+          "time": "36–48",
+          "title": "Чтение",
+          "note": "Три письма Саймона из Испании"
+        },
+        {
+          "time": "48–60",
+          "title": "Письмо",
+          "note": "Проверка на ошибки и своё письмо"
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "rule",
+          "title": "Повторение урока 3: встреча и прощание",
+          "paragraphs": [
+            "Разомнёмся на фразах прошлого занятия, а потом перейдём к письмам."
+          ],
+          "rules": [
+            "Long time no see! - тому, кого давно не видели. Nice to meet you - только при первом знакомстве.",
+            "Показать интерес: What a + прилагательное + существительное! · How + прилагательное! · That sounds + прилагательное.",
+            "Закончить разговор: We really must go. · It was really nice to meet you. · We must meet up soon!"
+          ],
+          "formulas": [],
+          "examples": [],
+          "prompts": [],
+          "vocab": [],
+          "audioUrl": "",
+          "audioTitle": "",
+          "videoUrl": "",
+          "videoTitle": "",
+          "subtitlesUrl": "",
+          "sample": "",
+          "transcript": "",
+          "imageUrl": "",
+          "hidden": false,
+          "text": "",
+          "tasks": [
+            {
+              "id": "1d-rev-1",
+              "kind": "fill",
+              "prompt": "Впишите пропуск (2 слова): вы встретили друга через несколько лет. Long time ___!",
+              "options": [],
+              "optionValues": [],
+              "answer": "no see",
+              "explanation": "Long time no see! - сколько лет, сколько зим.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1d-rev-2",
+              "kind": "choice",
+              "prompt": "Выберите фразу для человека, с которым знакомитесь впервые:",
+              "options": [
+                "Nice to meet you.",
+                "Great to see you again!",
+                "Long time no see!",
+                "See you soon!"
+              ],
+              "optionValues": [
+                "nice to meet you",
+                "great to see you again",
+                "long time no see",
+                "see you soon"
+              ],
+              "answer": "nice to meet you",
+              "explanation": "Nice to meet you - при знакомстве. Great to see you again - о старом знакомом.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1d-rev-3",
+              "kind": "fill",
+              "prompt": "Впишите прилагательное: I've got a new job. - Oh, that's ___ news!",
+              "options": [],
+              "optionValues": [],
+              "answer": "fantastic, great, wonderful",
+              "explanation": "That's fantastic news - отличная новость.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1d-rev-4",
+              "kind": "fill",
+              "prompt": "Впишите 2 слова: вы предлагаете встретиться снова. We must ___ ___ soon!",
+              "options": [],
+              "optionValues": [],
+              "answer": "meet up",
+              "explanation": "Meet up - встретиться, увидеться.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1d-rev-5",
+              "kind": "fill",
+              "prompt": "Впишите пропуск (2 слова): вы спрашиваете, где человек живёт сейчас. Where are you living ___?",
+              "options": [],
+              "optionValues": [],
+              "answer": "these days",
+              "explanation": "These days - сейчас, в последнее время.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            }
+          ]
+        },
+        {
+          "kind": "speaking",
+          "title": "Разогрев: как мы поддерживаем связь",
+          "paragraphs": [
+            "Обсудите с преподавателем по-английски. Отвечайте полными предложениями."
+          ],
+          "rules": [],
+          "formulas": [],
+          "examples": [],
+          "prompts": [
+            "How often do you keep in touch with friends and family: always, often, sometimes or rarely?",
+            "Do you prefer to call, send messages or meet for a chat?",
+            "Who do you send photos to? Who hardly ever hears from you?",
+            "'You don't have to keep in touch with people all the time.' Do you agree?"
+          ],
+          "vocab": [],
+          "audioUrl": "",
+          "audioTitle": "",
+          "videoUrl": "",
+          "videoTitle": "",
+          "subtitlesUrl": "",
+          "sample": "I keep in touch with my family almost every day: I call my mother in the evening and send my sister funny photos. With friends it is different - I often send messages, but we hardly ever call. I prefer to meet for a chat, because it is more fun to tell your news face to face. I agree that you don't have to keep in touch all the time: with good friends you can talk about everything when you finally meet.",
+          "transcript": "",
+          "imageUrl": "",
+          "hidden": false,
+          "text": "",
+          "tasks": []
+        },
+        {
+          "kind": "rule",
+          "title": "Полезные фразы: keeping in touch",
+          "paragraphs": [
+            "Слова для пропусков: touch · text · heard · chat · touch"
+          ],
+          "rules": [
+            "get in touch with somebody - связаться с кем-то: I can't seem to get in touch with you.",
+            "keep in touch with somebody - поддерживать связь: I keep in touch with my family every week.",
+            "get a text / an email from somebody - получить сообщение: Did you get my last text?",
+            "hear from somebody - получать вести: We haven't heard from you for a long time.",
+            "have a chat - поболтать: Don't you ever phone them to have a chat?"
+          ],
+          "formulas": [],
+          "examples": [],
+          "prompts": [],
+          "vocab": [],
+          "audioUrl": "",
+          "audioTitle": "",
+          "videoUrl": "",
+          "videoTitle": "",
+          "subtitlesUrl": "",
+          "sample": "",
+          "transcript": "",
+          "imageUrl": "",
+          "hidden": false,
+          "text": "",
+          "tasks": [
+            {
+              "id": "1d-p-1",
+              "kind": "fill",
+              "prompt": "Впишите пропуск (1 слово): I can't seem to get in ___ with you. Call me!",
+              "options": [],
+              "optionValues": [],
+              "answer": "touch",
+              "explanation": "Get in touch with somebody - связаться с кем-то.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1d-p-2",
+              "kind": "fill",
+              "prompt": "Впишите пропуск (1 слово): Did you get my last ___?",
+              "options": [],
+              "optionValues": [],
+              "answer": "text, message",
+              "explanation": "Get a text - получить сообщение.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1d-p-3",
+              "kind": "fill",
+              "prompt": "Впишите пропуск (1 слово): Are you OK? We haven't ___ from you for a long time.",
+              "options": [],
+              "optionValues": [],
+              "answer": "heard",
+              "explanation": "Hear from somebody - получать от кого-то вести.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1d-p-4",
+              "kind": "fill",
+              "prompt": "Впишите пропуск (1 слово): Don't you ever phone your parents to have a ___?",
+              "options": [],
+              "optionValues": [],
+              "answer": "chat",
+              "explanation": "Have a chat - поболтать.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1d-p-5",
+              "kind": "choice",
+              "prompt": "Выберите наречие: I ___ phone my parents - maybe once a year.",
+              "options": [
+                "hardly ever",
+                "always",
+                "usually",
+                "often"
+              ],
+              "optionValues": [
+                "hardly ever",
+                "always",
+                "usually",
+                "often"
+              ],
+              "answer": "hardly ever",
+              "explanation": "Hardly ever - почти никогда.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            }
+          ]
+        },
+        {
+          "kind": "listening",
+          "title": "Аудирование: Nina и Chris о связи с близкими",
+          "paragraphs": [
+            "Послушайте разговор и ответьте на вопросы по-английски. Транскрипция ниже - откройте её только после проверки."
+          ],
+          "rules": [],
+          "formulas": [],
+          "examples": [],
+          "prompts": [],
+          "vocab": [],
+          "audioUrl": "/audio/empower/unit1/track-01-21.mp3",
+          "audioTitle": "Track 01.21 · Keeping in touch",
+          "videoUrl": "",
+          "videoTitle": "",
+          "subtitlesUrl": "",
+          "sample": "",
+          "transcript": "Chris: So, are you good about keeping in touch with people? Nina: Er, not really. I always plan to write to people, but then I forget. I send emails to my parents sometimes, about once a month, but more often I get emails from them saying, 'Are you OK? We haven't heard from you for a long time.' Then I always send them a quick email and tell them what I'm doing. How about you? Chris: Oh, I like keeping in touch. I think it's important to keep in touch with your family. I write emails to my parents sometimes, but I also phone or Skype. I phone my mother every weekend. Nina: Every weekend! Chris: Yes, she gets worried about me and she wants to know what I'm doing. Nina: I hardly ever phone my parents. I wait until I go and see them and talk to them then. Chris: Don't you ever phone them to have a chat? Nina: No, I only phone if it's something important. You don't have to be in touch with people all the time. Chris: What about friends? Surely you keep in touch with friends? Nina: Not very much; maybe I should do. I send texts or messages sometimes, but that's about all. I always think if you have good friends, you can talk about everything when you meet. It's more fun to tell people your news when you can have a real conversation. Chris: Oh well, I often send messages to people so they know I'm thinking about them. And sometimes, when I have a particularly good photo, I send it to everyone by email.",
+          "imageUrl": "",
+          "hidden": false,
+          "text": "",
+          "tasks": [
+            {
+              "id": "1d-l-1",
+              "kind": "choice",
+              "prompt": "Прослушайте запись и выберите ответ: Who is better at keeping in touch?",
+              "options": [
+                "Chris",
+                "Nina",
+                "both of them",
+                "neither of them"
+              ],
+              "optionValues": [
+                "chris",
+                "nina",
+                "both of them",
+                "neither of them"
+              ],
+              "answer": "chris",
+              "explanation": "Chris звонит маме каждые выходные и часто пишет сообщения, а Nina - редко.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1d-l-2",
+              "kind": "choice",
+              "prompt": "Прослушайте запись и выберите ответ: Why doesn't Nina send many emails?",
+              "options": [
+                "she forgets",
+                "she has no computer",
+                "she doesn't like her family",
+                "she is too busy at work"
+              ],
+              "optionValues": [
+                "she forgets",
+                "she has no computer",
+                "she doesn't like her family",
+                "she is too busy at work"
+              ],
+              "answer": "she forgets",
+              "explanation": "Nina: I always plan to write to people, but then I forget.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1d-l-3",
+              "kind": "fill",
+              "prompt": "Прослушайте запись и впишите ответ по-английски: How often does Chris phone his mother?",
+              "options": [],
+              "optionValues": [],
+              "answer": "every weekend, once a week",
+              "explanation": "Chris: I phone my mother every weekend.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1d-l-4",
+              "kind": "choice",
+              "prompt": "Прослушайте запись и выберите ответ: Why does Chris phone his mother so often?",
+              "options": [
+                "she gets worried about him",
+                "she is ill",
+                "she lives alone",
+                "he needs money"
+              ],
+              "optionValues": [
+                "she gets worried about him",
+                "she is ill",
+                "she lives alone",
+                "he needs money"
+              ],
+              "answer": "she gets worried about him",
+              "explanation": "Chris: she gets worried about me and she wants to know what I'm doing.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1d-l-5",
+              "kind": "choice",
+              "prompt": "Прослушайте запись и выберите ответ: When does Nina prefer to tell her friends her news?",
+              "options": [
+                "when they meet",
+                "by email",
+                "on the phone",
+                "in a group chat"
+              ],
+              "optionValues": [
+                "when they meet",
+                "by email",
+                "on the phone",
+                "in a group chat"
+              ],
+              "answer": "when they meet",
+              "explanation": "Nina: it's more fun to tell people your news when you can have a real conversation.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1d-l-6",
+              "kind": "choice",
+              "prompt": "Прослушайте запись и выберите ответ: When does Chris send photos by email?",
+              "options": [
+                "when he has a particularly good photo",
+                "every evening",
+                "only on holiday",
+                "when somebody asks him"
+              ],
+              "optionValues": [
+                "when he has a particularly good photo",
+                "every evening",
+                "only on holiday",
+                "when somebody asks him"
+              ],
+              "answer": "when he has a particularly good photo",
+              "explanation": "Chris: when I have a particularly good photo, I send it to everyone by email.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            }
+          ]
+        },
+        {
+          "kind": "reading",
+          "title": "Чтение: три письма Саймона из Испании",
+          "paragraphs": [
+            "Simon учится в Саламанке и пишет трём разным людям. Прочитайте письма и ответьте на вопросы."
+          ],
+          "rules": [],
+          "formulas": [],
+          "examples": [],
+          "prompts": [],
+          "vocab": [],
+          "audioUrl": "",
+          "audioTitle": "",
+          "videoUrl": "",
+          "videoTitle": "",
+          "subtitlesUrl": "",
+          "sample": "",
+          "transcript": "",
+          "imageUrl": "",
+          "hidden": false,
+          "text": "Письмо 1\nHope you're both well and are enjoying the summer. I'm in Salamanca, in Spain. This is a photo I took of the old centre. It's a beautiful old city, as you can see - and really big! It has an incredible mix of old, historical places and new, trendy areas. As you know, I'm learning Spanish at the moment. I'm taking a two-month Spanish course here, so my Spanish is slowly improving. The classes are very good, and we also watch Spanish films. It's pretty hot here, but it's nice and cool in the evenings. Love to all, Simon\n\nПисьмо 2\nHow's it going? Are you having a good time in Berlin? Here are some photos of my group on the Spanish course. We're all from different countries, so we usually speak English when we're together - not very good for my Spanish! Anyway, I'm having a great time here, and the time's going much too quickly. There are a lot of good cafes here, and we usually all go out at night together. What's Berlin like? Send me some photos! See you back at college next month. Simon\n\nПисьмо 3\nI'm sending you some photos of the family I'm staying with in Salamanca. They've got a daughter the same age as you (her name's Blanca). She speaks English quite well, but we usually speak Spanish together. She introduced me to some of her friends, and I speak Spanish with them, too ... some of the time, not always! How's your job in the supermarket? Hope you're not working too hard and are saving a lot of money! See you next week. Love, Simon xx",
+          "tasks": [
+            {
+              "id": "1d-r-1",
+              "kind": "choice",
+              "prompt": "Прочитайте письма выше и выберите ответ: Who is email 2 for?",
+              "options": [
+                "his friend Blake",
+                "his uncle and aunt",
+                "his younger sister Mika",
+                "his Spanish teacher"
+              ],
+              "optionValues": [
+                "his friend blake",
+                "his uncle and aunt",
+                "his younger sister mika",
+                "his spanish teacher"
+              ],
+              "answer": "his friend blake",
+              "explanation": "Во втором письме Simon спрашивает про Берлин и колледж - так пишут другу.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1d-r-2",
+              "kind": "choice",
+              "prompt": "Прочитайте письма выше и выберите ответ: Who is email 3 for?",
+              "options": [
+                "his younger sister Mika",
+                "his friend Blake",
+                "his uncle and aunt",
+                "his host family"
+              ],
+              "optionValues": [
+                "his younger sister mika",
+                "his friend blake",
+                "his uncle and aunt",
+                "his host family"
+              ],
+              "answer": "his younger sister mika",
+              "explanation": "В третьем письме Simon спрашивает про работу в супермаркете и подписывается Love, Simon xx.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1d-r-3",
+              "kind": "fill",
+              "prompt": "Прочитайте письма выше и впишите ответ по-английски одним словом: Which city is Simon writing from?",
+              "options": [],
+              "optionValues": [],
+              "answer": "salamanca",
+              "explanation": "I'm in Salamanca, in Spain.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1d-r-4",
+              "kind": "fill",
+              "prompt": "Прочитайте письма выше и впишите ответ по-английски (2 слова): How long is Simon's Spanish course?",
+              "options": [],
+              "optionValues": [],
+              "answer": "two months, two month, 2 months",
+              "explanation": "I'm taking a two-month Spanish course here.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1d-r-5",
+              "kind": "choice",
+              "prompt": "Прочитайте письма выше и выберите ответ: What does Simon say about his Spanish?",
+              "options": [
+                "it is slowly improving",
+                "it is perfect now",
+                "he has stopped learning",
+                "he only speaks English"
+              ],
+              "optionValues": [
+                "it is slowly improving",
+                "it is perfect now",
+                "he has stopped learning",
+                "he only speaks english"
+              ],
+              "answer": "it is slowly improving",
+              "explanation": "My Spanish is slowly improving - в письме дяде и тёте.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1d-r-6",
+              "kind": "fill",
+              "prompt": "Прочитайте письма выше и впишите имя: Who is the daughter of Simon's host family?",
+              "options": [],
+              "optionValues": [],
+              "answer": "blanca",
+              "explanation": "They've got a daughter the same age as you (her name's Blanca).",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            }
+          ]
+        },
+        {
+          "kind": "rule",
+          "title": "Письмо: как проверить себя на ошибки",
+          "paragraphs": [
+            "Перед отправкой письма проверьте четыре вещи: грамматику, орфографию, пунктуацию и заглавные буквы."
+          ],
+          "rules": [
+            "Грамматика: Present Continuous = be + verb-ing. I having a great time → I'm having a great time.",
+            "Орфография: fotos → photos, corse → course, diferent → different, countrys → countries (слово на -y во множественном числе даёт -ies).",
+            "Пунктуация: на месте пропущенной буквы ставим апостроф. youre → you're, im → I'm.",
+            "Заглавные буквы: имена, страны и города пишутся с большой буквы. spain → Spain, spanish → Spanish."
+          ],
+          "formulas": [],
+          "examples": [],
+          "prompts": [],
+          "vocab": [],
+          "audioUrl": "",
+          "audioTitle": "",
+          "videoUrl": "",
+          "videoTitle": "",
+          "subtitlesUrl": "",
+          "sample": "",
+          "transcript": "",
+          "imageUrl": "",
+          "hidden": false,
+          "text": "",
+          "tasks": [
+            {
+              "id": "1d-w-1",
+              "kind": "fill",
+              "prompt": "Исправьте ошибку и впишите верный вариант (2 слова): I having a great time here.",
+              "options": [],
+              "optionValues": [],
+              "answer": "i'm having, i am having",
+              "explanation": "Present Continuous: be + verb-ing → I'm having.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1d-w-2",
+              "kind": "fill",
+              "prompt": "Исправьте орфографию и впишите верное слово: Here are some fotos of my group.",
+              "options": [],
+              "optionValues": [],
+              "answer": "photos",
+              "explanation": "Правильное написание - photos.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1d-w-3",
+              "kind": "fill",
+              "prompt": "Исправьте орфографию и впишите верное слово: We're all from different countrys.",
+              "options": [],
+              "optionValues": [],
+              "answer": "countries",
+              "explanation": "Слово на -y во множественном числе меняет y на -ies: country → countries.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1d-w-4",
+              "kind": "choice",
+              "prompt": "Выберите верно записанное предложение:",
+              "options": [
+                "I'm in Salamanca, in Spain.",
+                "i'm in salamanca, in spain.",
+                "Im in Salamanca, in Spain.",
+                "I'm in salamanca, in spain."
+              ],
+              "optionValues": [
+                "correct",
+                "no capital letters",
+                "no apostrophe",
+                "city without capital"
+              ],
+              "answer": "correct",
+              "explanation": "Имя города и страны - с заглавной буквы, в I'm нужен апостроф.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1d-w-5",
+              "kind": "fill",
+              "prompt": "Исправьте пунктуацию и впишите верное слово: Hope youre both well.",
+              "options": [],
+              "optionValues": [],
+              "answer": "you're",
+              "explanation": "На месте пропущенной буквы ставим апостроф: you're.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            }
+          ]
+        },
+        {
+          "kind": "speaking",
+          "title": "Письмо другу: пишем сами",
+          "paragraphs": [
+            "Напишите письмо другу или родственнику, которого давно не видели. Расскажите: как у вас дела, что нового (где вы живёте, с кем проводите время), чем занимаетесь сейчас.",
+            "Перед отправкой проверьте письмо по четырём пунктам: грамматика, орфография, пунктуация, заглавные буквы."
+          ],
+          "rules": [],
+          "formulas": [],
+          "examples": [],
+          "prompts": [
+            "Start friendly: Hi Anna! How's it going?",
+            "Say how you are and what is new.",
+            "Use the Present Continuous for what you are doing these days.",
+            "Ask your reader two questions and finish: See you soon! / Love, ..."
+          ],
+          "vocab": [],
+          "audioUrl": "",
+          "audioTitle": "",
+          "videoUrl": "",
+          "videoTitle": "",
+          "subtitlesUrl": "",
+          "sample": "Hi Anna!\nHow's it going? We haven't been in touch for ages, so I'm sending you some news and a couple of photos.\nI'm in Kazan now - I moved here in August. The city is beautiful: it has an incredible mix of old, historical places and new, trendy areas.\nI'm working in a small flower shop and I'm learning English at the moment, so my English is slowly improving.\nWhat about you? Are you still living in Moscow? How's your new job?\nWrite soon and send me some photos!\nLove,\nMarina",
+          "transcript": "",
+          "imageUrl": "",
+          "hidden": false,
+          "text": "",
+          "tasks": []
+        }
+      ],
+      "words": [
+        {
+          "english": "keep in touch",
+          "russian": "поддерживать связь",
+          "partOfSpeech": "phrase",
+          "example": "I keep in touch with my family every week.",
+          "definition": "to continue to communicate with somebody"
+        },
+        {
+          "english": "get in touch",
+          "russian": "связаться",
+          "partOfSpeech": "phrase",
+          "example": "I can't seem to get in touch with you.",
+          "definition": "to make contact with somebody"
+        },
+        {
+          "english": "hear from somebody",
+          "russian": "получать вести от кого-то",
+          "partOfSpeech": "phrase",
+          "example": "We haven't heard from you for a long time.",
+          "definition": "to get a letter, message or call from somebody"
+        },
+        {
+          "english": "text",
+          "russian": "сообщение, писать сообщение",
+          "partOfSpeech": "noun",
+          "example": "Did you get my last text?",
+          "definition": "a written message sent from one phone to another"
+        },
+        {
+          "english": "have a chat",
+          "russian": "поболтать",
+          "partOfSpeech": "phrase",
+          "example": "Don't you ever phone them to have a chat?",
+          "definition": "to have a friendly informal conversation"
+        },
+        {
+          "english": "hardly ever",
+          "russian": "почти никогда",
+          "partOfSpeech": "phrase",
+          "example": "I hardly ever phone my parents.",
+          "definition": "almost never"
+        },
+        {
+          "english": "improve",
+          "russian": "улучшаться",
+          "partOfSpeech": "verb",
+          "example": "My Spanish is slowly improving.",
+          "definition": "to get better"
+        },
+        {
+          "english": "trendy",
+          "russian": "модный, современный",
+          "partOfSpeech": "adjective",
+          "example": "The city has a lot of new, trendy areas.",
+          "definition": "very fashionable at the moment"
+        },
+        {
+          "english": "historical",
+          "russian": "исторический",
+          "partOfSpeech": "adjective",
+          "example": "It has an incredible mix of old, historical places.",
+          "definition": "connected with the past"
+        },
+        {
+          "english": "incredible",
+          "russian": "невероятный",
+          "partOfSpeech": "adjective",
+          "example": "It's an incredible mix of old and new.",
+          "definition": "very good, large or surprising"
+        },
+        {
+          "english": "introduce",
+          "russian": "знакомить, представлять",
+          "partOfSpeech": "verb",
+          "example": "She introduced me to some of her friends.",
+          "definition": "to tell people each other's names when they meet"
+        },
+        {
+          "english": "save money",
+          "russian": "копить деньги",
+          "partOfSpeech": "phrase",
+          "example": "Hope you're saving a lot of money!",
+          "definition": "to keep money to use later"
+        }
+      ],
+      "homework": {
+        "title": "Домашнее задание к уроку 4",
+        "intro": "Empower B1, Unit 1D: фразы про общение, письмо другу и проверка на ошибки.",
+        "tasks": [
+          {
+            "section": "1. Фразы: keeping in touch",
+            "kind": "FILL",
+            "prompt": "Впишите пропуск (1 слово): I can't get in ___ with Sasha - he never answers his phone.",
+            "options": [],
+            "optionValues": [],
+            "answer": "touch",
+            "explanation": "Get in touch with somebody - связаться с кем-то.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "1. Фразы: keeping in touch",
+            "kind": "FILL",
+            "prompt": "Впишите пропуск (1 слово): We haven't ___ from you for a long time. Are you OK?",
+            "options": [],
+            "optionValues": [],
+            "answer": "heard",
+            "explanation": "Hear from somebody - получать вести от кого-то.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "1. Фразы: keeping in touch",
+            "kind": "CHOICE",
+            "prompt": "Выберите ответ: как сказать «мы почти никогда не созваниваемся»?",
+            "options": [
+              "we hardly ever call each other",
+              "we always call each other",
+              "we usually call each other",
+              "we never don't call each other"
+            ],
+            "optionValues": [],
+            "answer": "we hardly ever call each other",
+            "explanation": "Hardly ever - почти никогда.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "1. Фразы: keeping in touch",
+            "kind": "FILL",
+            "prompt": "Впишите пропуск (1 слово): Do you want to meet for a coffee and have a ___?",
+            "options": [],
+            "optionValues": [],
+            "answer": "chat",
+            "explanation": "Have a chat - поболтать.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "1. Фразы: keeping in touch",
+            "kind": "CHOICE",
+            "prompt": "Выберите верное предложение о переписке:",
+            "options": [
+              "Did you get my last text?",
+              "Did you got my last text?",
+              "Do you got my last text?",
+              "Are you get my last text?"
+            ],
+            "optionValues": [],
+            "answer": "did you get my last text?",
+            "explanation": "Get a text - получить сообщение; вопрос в Past Simple строится с did.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "2. Письмо без ошибок",
+            "kind": "FILL",
+            "prompt": "Исправьте грамматику и впишите верный вариант (2 слова): I having a great time in Salamanca.",
+            "options": [],
+            "optionValues": [],
+            "answer": "i'm having, i am having",
+            "explanation": "Present Continuous: be + verb-ing.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "2. Письмо без ошибок",
+            "kind": "FILL",
+            "prompt": "Исправьте орфографию и впишите верное слово: Here are some fotos of my group.",
+            "options": [],
+            "optionValues": [],
+            "answer": "photos",
+            "explanation": "Правильное написание - photos.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "2. Письмо без ошибок",
+            "kind": "FILL",
+            "prompt": "Исправьте орфографию и впишите верное слово: We're from six different countrys.",
+            "options": [],
+            "optionValues": [],
+            "answer": "countries",
+            "explanation": "Слово на -y во множественном числе даёт -ies.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "2. Письмо без ошибок",
+            "kind": "FILL",
+            "prompt": "Исправьте пунктуацию и впишите верное слово: Hope youre both well.",
+            "options": [],
+            "optionValues": [],
+            "answer": "you're",
+            "explanation": "На месте пропущенной буквы ставится апостроф.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "2. Письмо без ошибок",
+            "kind": "CHOICE",
+            "prompt": "Выберите предложение, записанное без ошибок:",
+            "options": [
+              "I'm in Salamanca and I'm learning Spanish.",
+              "im in Salamanca and im learning spanish.",
+              "I'm in salamanca and I'm learning spanish.",
+              "Im in Salamanca and I'm learning Spanish."
+            ],
+            "optionValues": [],
+            "answer": "I'm in Salamanca and I'm learning Spanish.",
+            "explanation": "Названия городов, стран и языков пишутся с заглавной буквы, в I'm нужен апостроф.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "3. Аудирование: Nina и Chris",
+            "kind": "LISTENING",
+            "prompt": "Прослушайте запись и выберите ответ: Who is better at keeping in touch?",
+            "options": [
+              "Chris",
+              "Nina",
+              "both of them",
+              "neither of them"
+            ],
+            "optionValues": [],
+            "answer": "chris",
+            "explanation": "Chris звонит маме каждые выходные и часто пишет сообщения.",
+            "audioUrl": "/audio/empower/unit1/track-01-21.mp3",
+            "transcript": "Chris: So, are you good about keeping in touch with people? Nina: Er, not really. I always plan to write to people, but then I forget. I send emails to my parents sometimes, about once a month. Chris: I like keeping in touch. I phone my mother every weekend. Nina: I hardly ever phone my parents. I send texts or messages sometimes, but that's about all. It's more fun to tell people your news when you can have a real conversation. Chris: I often send messages to people so they know I'm thinking about them. And sometimes, when I have a particularly good photo, I send it to everyone by email.",
+            "text": ""
+          },
+          {
+            "section": "3. Аудирование: Nina и Chris",
+            "kind": "LISTENING",
+            "prompt": "Прослушайте запись и впишите ответ по-английски (2 слова): How often does Chris phone his mother?",
+            "options": [],
+            "optionValues": [],
+            "answer": "every weekend, once a week",
+            "explanation": "Chris: I phone my mother every weekend.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "3. Аудирование: Nina и Chris",
+            "kind": "LISTENING",
+            "prompt": "Прослушайте запись и выберите ответ: How often does Nina email her parents?",
+            "options": [
+              "about once a month",
+              "every day",
+              "twice a week",
+              "never"
+            ],
+            "optionValues": [],
+            "answer": "about once a month",
+            "explanation": "Nina: I send emails to my parents sometimes, about once a month.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "3. Аудирование: Nina и Chris",
+            "kind": "LISTENING",
+            "prompt": "Прослушайте запись и выберите ответ: When does Nina prefer to tell her news?",
+            "options": [
+              "when she meets people",
+              "in a long email",
+              "on the phone",
+              "in a group chat"
+            ],
+            "optionValues": [],
+            "answer": "when she meets people",
+            "explanation": "Nina: it's more fun to tell people your news when you can have a real conversation.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "4. Чтение: как люди общаются",
+            "kind": "READING",
+            "prompt": "Прочитайте текст выше и выберите ответ: What is the problem with short messages?",
+            "options": [
+              "they say very little",
+              "they are expensive",
+              "they take a long time",
+              "nobody reads them"
+            ],
+            "optionValues": [],
+            "answer": "they say very little",
+            "explanation": "В тексте: Short messages are quick and easy, but they say very little.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": "People keep in touch in very different ways. Some send a message every day, others write a long email once a month. Short messages are quick and easy, but they say very little: 'How are you?' - 'Fine, you?' A phone call takes more time, and that is why many people like it: you hear the voice and you can have a real chat. Photos work well too, because one picture can show a new city, a new flat or a new haircut without any words. Some people hardly ever write first, but they always answer. That doesn't mean they don't care - they simply prefer to talk when they meet. The important thing is to find a way that works for both of you, and to say sorry when you disappear for a few weeks."
+          },
+          {
+            "section": "4. Чтение: как люди общаются",
+            "kind": "READING",
+            "prompt": "Прочитайте текст выше и впишите ответ по-английски (2 слова): Why do many people like a phone call?",
+            "options": [],
+            "optionValues": [],
+            "answer": "the voice, real chat, a real chat",
+            "explanation": "В тексте: you hear the voice and you can have a real chat.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": "People keep in touch in very different ways. Some send a message every day, others write a long email once a month. Short messages are quick and easy, but they say very little: 'How are you?' - 'Fine, you?' A phone call takes more time, and that is why many people like it: you hear the voice and you can have a real chat. Photos work well too, because one picture can show a new city, a new flat or a new haircut without any words. Some people hardly ever write first, but they always answer. That doesn't mean they don't care - they simply prefer to talk when they meet. The important thing is to find a way that works for both of you, and to say sorry when you disappear for a few weeks."
+          },
+          {
+            "section": "4. Чтение: как люди общаются",
+            "kind": "READING",
+            "prompt": "Прочитайте текст выше и выберите ответ: What does the text say about people who never write first?",
+            "options": [
+              "they still care about you",
+              "they are always angry",
+              "they have no phone",
+              "they never answer"
+            ],
+            "optionValues": [],
+            "answer": "they still care about you",
+            "explanation": "В тексте: That doesn't mean they don't care - they simply prefer to talk when they meet.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": "People keep in touch in very different ways. Some send a message every day, others write a long email once a month. Short messages are quick and easy, but they say very little: 'How are you?' - 'Fine, you?' A phone call takes more time, and that is why many people like it: you hear the voice and you can have a real chat. Photos work well too, because one picture can show a new city, a new flat or a new haircut without any words. Some people hardly ever write first, but they always answer. That doesn't mean they don't care - they simply prefer to talk when they meet. The important thing is to find a way that works for both of you, and to say sorry when you disappear for a few weeks."
+          },
+          {
+            "section": "4. Чтение: как люди общаются",
+            "kind": "READING",
+            "prompt": "Прочитайте текст выше и впишите ответ по-английски одним словом: What can one picture show without any words?",
+            "options": [],
+            "optionValues": [],
+            "answer": "a new city, new city, city, a new flat",
+            "explanation": "В тексте: one picture can show a new city, a new flat or a new haircut without any words.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": "People keep in touch in very different ways. Some send a message every day, others write a long email once a month. Short messages are quick and easy, but they say very little: 'How are you?' - 'Fine, you?' A phone call takes more time, and that is why many people like it: you hear the voice and you can have a real chat. Photos work well too, because one picture can show a new city, a new flat or a new haircut without any words. Some people hardly ever write first, but they always answer. That doesn't mean they don't care - they simply prefer to talk when they meet. The important thing is to find a way that works for both of you, and to say sorry when you disappear for a few weeks."
+          },
+          {
+            "section": "5. Письмо",
+            "kind": "TEACHER",
+            "prompt": "Напишите на английском письмо другу или родственнику, которого давно не видели, минимум 60 слов. Расскажите: как у вас дела, что нового (где живёте, с кем проводите время), чем занимаетесь сейчас. Задайте два вопроса. Перед отправкой проверьте грамматику, орфографию, пунктуацию и заглавные буквы.",
+            "options": [],
+            "optionValues": [],
+            "answer": "",
+            "explanation": "Hi Nastya! How's it going? We haven't been in touch for ages. I'm in Kazan now - I moved here in August and I'm renting a small flat near the centre. The city is beautiful: it has an old kremlin and a lot of new, trendy cafes. I'm working in a bookshop and I'm learning English at the moment, so my English is slowly improving. What about you? Are you still working at the school? When can we meet? Write soon! Love, Marina",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "5. Письмо",
+            "kind": "TEACHER",
+            "prompt": "Найдите в своём письме из задания выше два места, где легко ошибиться, и объясните по-русски, что вы проверили: грамматику, орфографию, пунктуацию или заглавные буквы.",
+            "options": [],
+            "optionValues": [],
+            "answer": "",
+            "explanation": "Проверил Present Continuous: сначала написал 'I working in a bookshop', добавил 'am'. Проверил заглавные буквы в названиях: Kazan, English - оба с большой буквы. Ещё проверил апостроф в 'How's it going?' и написание слова 'beautiful'.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          }
+        ]
+      }
+    },
+    {
+      "number": 5,
+      "topic": "We had an adventure: рассказ о поездке",
+      "description": "Past Simple, окончание -ed и лексика путешествий на истории «Yes Man».",
+      "goal": "Рассказать о прошлой поездке и расспросить собеседника о его отпуске",
+      "level": "B1",
+      "durationMin": 60,
+      "bookTitle": "Cambridge Empower B1 (2nd edition)",
+      "bookRef": "Student's Book, Unit 2A «We had an adventure», с. 18–19",
+      "heroImage": "",
+      "timeline": [
+        {
+          "time": "0–6",
+          "title": "Повторение",
+          "note": "Письмо другу из урока 4"
+        },
+        {
+          "time": "6–12",
+          "title": "Разогрев",
+          "note": "Отпуск и новые впечатления"
+        },
+        {
+          "time": "12–24",
+          "title": "Чтение",
+          "note": "Yes Man: Day 1 и Day 2"
+        },
+        {
+          "time": "24–34",
+          "title": "Грамматика 1",
+          "note": "Past Simple, утверждение"
+        },
+        {
+          "time": "34–42",
+          "title": "Аудирование",
+          "note": "Водные лыжи, Track 02.01"
+        },
+        {
+          "time": "42–52",
+          "title": "Грамматика 2",
+          "note": "Отрицание, вопросы и -ed"
+        },
+        {
+          "time": "52–60",
+          "title": "Говорение",
+          "note": "Рассказ о своей поездке"
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "rule",
+          "title": "Повторение урока 4: письмо другу",
+          "paragraphs": [
+            "Быстро вспомним прошлое занятие и перейдём к рассказу о поездках."
+          ],
+          "rules": [
+            "keep in touch / get in touch with somebody · hear from somebody · have a chat",
+            "Перед отправкой письма проверяем: грамматику, орфографию, пунктуацию и заглавные буквы."
+          ],
+          "formulas": [],
+          "examples": [],
+          "prompts": [],
+          "vocab": [],
+          "audioUrl": "",
+          "audioTitle": "",
+          "videoUrl": "",
+          "videoTitle": "",
+          "subtitlesUrl": "",
+          "sample": "",
+          "transcript": "",
+          "imageUrl": "",
+          "hidden": false,
+          "text": "",
+          "tasks": [
+            {
+              "id": "2a-rev-1",
+              "kind": "fill",
+              "prompt": "Впишите пропуск (1 слово): We haven't ___ from you for a long time.",
+              "options": [],
+              "optionValues": [],
+              "answer": "heard",
+              "explanation": "Hear from somebody - получать вести.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "2a-rev-2",
+              "kind": "fill",
+              "prompt": "Впишите пропуск (1 слово): I can't get in ___ with Anna - she never answers.",
+              "options": [],
+              "optionValues": [],
+              "answer": "touch",
+              "explanation": "Get in touch with somebody - связаться.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "2a-rev-3",
+              "kind": "fill",
+              "prompt": "Исправьте ошибку и впишите верный вариант (2 слова): I having a great time in Spain.",
+              "options": [],
+              "optionValues": [],
+              "answer": "i'm having, i am having",
+              "explanation": "Present Continuous: be + verb-ing.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "2a-rev-4",
+              "kind": "choice",
+              "prompt": "Выберите верно записанное предложение:",
+              "options": [
+                "I'm learning Spanish in Spain.",
+                "im learning spanish in spain.",
+                "I'm learning spanish in Spain.",
+                "Im learning Spanish in spain."
+              ],
+              "optionValues": [
+                "correct",
+                "no capitals and no apostrophe",
+                "language without capital",
+                "no apostrophe"
+              ],
+              "answer": "correct",
+              "explanation": "Названия стран и языков пишутся с заглавной буквы, в I'm нужен апостроф.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            }
+          ]
+        },
+        {
+          "kind": "speaking",
+          "title": "Разогрев: отпуск и новые впечатления",
+          "paragraphs": [
+            "Ответьте по-английски полными предложениями."
+          ],
+          "rules": [],
+          "formulas": [],
+          "examples": [],
+          "prompts": [
+            "Where do you like to go on holiday?",
+            "Do you like to try new things on holiday? What?",
+            "Can you think of any kind of holiday you wouldn't enjoy?",
+            "Can you think of a time when you were surprised you enjoyed something?"
+          ],
+          "vocab": [],
+          "audioUrl": "",
+          "audioTitle": "",
+          "videoUrl": "",
+          "videoTitle": "",
+          "subtitlesUrl": "",
+          "sample": "I usually go to the mountains, because I don't like hot weather and crowded beaches. On holiday I like to try new food and simple new activities - last summer I tried horse riding for the first time. I wouldn't enjoy a holiday on a big cruise ship: too many people and nowhere to walk. I was really surprised when I enjoyed a cooking class in Georgia - I thought it would be boring, but it was the best day of the trip.",
+          "transcript": "",
+          "imageUrl": "",
+          "hidden": false,
+          "text": "",
+          "tasks": []
+        },
+        {
+          "kind": "reading",
+          "title": "Чтение: Yes Man changed my life",
+          "paragraphs": [
+            "Ричард прочитал книгу Дэнни Уоллеса и решил неделю отвечать «да» на любой вопрос. Прочитайте, что из этого вышло."
+          ],
+          "rules": [],
+          "formulas": [],
+          "examples": [],
+          "prompts": [],
+          "vocab": [],
+          "audioUrl": "",
+          "audioTitle": "",
+          "videoUrl": "",
+          "videoTitle": "",
+          "subtitlesUrl": "",
+          "sample": "",
+          "transcript": "",
+          "imageUrl": "",
+          "hidden": false,
+          "text": "Yes Man is the best book I've ever read. It's the true story of a year in the life of author Danny Wallace. Before Danny Wallace became the 'Yes Man', his life was boring and he felt old. So he decided to make things more exciting. He started saying 'yes' to every question people asked him. And he did it for a whole year. From the day he started, it completely changed his life, and he had all kinds of adventures. It's a fantastic story. When I finished the book, I wanted to change my life like Danny Wallace. So I took a holiday from work and became a 'Yes Man' for a week. This is what happened.\n\nDAY 1. I started on Saturday morning. At 10 am, I got my first question. I saw a poster in the window of a travel agent's. It said, 'Tired?' (Yes - I slept badly the night before, so I was tired.) Under this, it said, 'Do you need a holiday?' (Yes, definitely.) So I went in. The travel agent asked me where I wanted to go. But before I could answer, she said, 'Somewhere hot?' I don't like hot weather, but I said, 'Yes.' 'A beach holiday? Maybe in Greece?' I don't like the beach. I prefer cities. But I said, 'Yes.' 'What kind of accommodation? A hotel? Or a ...' I hate hotels, but before she could continue, I said, 'Yes.' Five minutes later, everything was ready. My flight was the next day.\n\nDAY 2. I arrived at my hotel on the island of Zante at lunchtime. It was very, very hot. I just wanted to check in and unpack my suitcase, but the receptionist said, 'We have a minibus to the beach in ten minutes. Do you want to go?' You know the answer I gave her. It was about 40C at the beach. Luckily, I brought suntan lotion. A man came towards me: 'Sunglasses? Do you want sunglasses?' I had some in my bag, but I said, 'Yes.' Five minutes later, another man came: 'Beautiful hat, sir?' I tried not to look at him. Three hours later, I had two pairs of sunglasses, three hats, a watch and a woman's necklace. It was difficult to carry all my new things back to the minibus. I decided: no trips tomorrow, just rest. When I got back, the receptionist asked, 'Did you like the beach?' I didn't, but I said, 'Yes.' 'Oh, there's a water skiing course tomorrow. Do you want me to book a place for you?' I can't swim very well, and I don't like the sea. I wanted to cry ...",
+          "tasks": [
+            {
+              "id": "2a-r-1",
+              "kind": "choice",
+              "prompt": "Прочитайте текст выше и выберите ответ: What is Danny Wallace's book about?",
+              "options": [
+                "a year of saying yes to every question",
+                "a year of travelling around Greece",
+                "a year without money",
+                "a year of learning languages"
+              ],
+              "optionValues": [
+                "a year of saying yes to every question",
+                "a year of travelling around greece",
+                "a year without money",
+                "a year of learning languages"
+              ],
+              "answer": "a year of saying yes to every question",
+              "explanation": "Danny started saying 'yes' to every question people asked him, and he did it for a whole year.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "2a-r-2",
+              "kind": "fill",
+              "prompt": "Прочитайте текст выше и впишите ответ по-английски (2 слова): How long did Richard become a 'Yes Man' for?",
+              "options": [],
+              "optionValues": [],
+              "answer": "a week, one week",
+              "explanation": "I took a holiday from work and became a 'Yes Man' for a week.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "2a-r-3",
+              "kind": "choice",
+              "prompt": "Прочитайте текст выше и выберите ответ: Why did Richard go into the travel agent's?",
+              "options": [
+                "the poster asked him questions",
+                "he wanted a beach holiday",
+                "his friend worked there",
+                "he was looking for a hotel"
+              ],
+              "optionValues": [
+                "the poster asked him questions",
+                "he wanted a beach holiday",
+                "his friend worked there",
+                "he was looking for a hotel"
+              ],
+              "answer": "the poster asked him questions",
+              "explanation": "Постер спрашивал 'Tired?' и 'Do you need a holiday?' - на оба вопроса Ричард ответил 'да'.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "2a-r-4",
+              "kind": "fill",
+              "prompt": "Прочитайте текст выше и впишите название острова: Where did Richard stay?",
+              "options": [],
+              "optionValues": [],
+              "answer": "zante",
+              "explanation": "I arrived at my hotel on the island of Zante at lunchtime.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "2a-r-5",
+              "kind": "choice",
+              "prompt": "Прочитайте текст выше и выберите ответ: Did he book the kind of holiday he usually likes?",
+              "options": [
+                "no - he prefers cities and hates hotels",
+                "yes - he loves beach holidays",
+                "yes - he always goes to Greece",
+                "no - he wanted to stay at home"
+              ],
+              "optionValues": [
+                "no - he prefers cities and hates hotels",
+                "yes - he loves beach holidays",
+                "yes - he always goes to greece",
+                "no - he wanted to stay at home"
+              ],
+              "answer": "no - he prefers cities and hates hotels",
+              "explanation": "Он не любит жару, пляж и отели, но на все вопросы отвечал 'да'.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "2a-r-6",
+              "kind": "fill",
+              "prompt": "Прочитайте текст выше и впишите ответ по-английски (2 слова): What did Richard bring to the beach that was really useful?",
+              "options": [],
+              "optionValues": [],
+              "answer": "suntan lotion",
+              "explanation": "Luckily, I brought suntan lotion.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            }
+          ]
+        },
+        {
+          "kind": "rule",
+          "title": "Правило 1: Past Simple, утверждение",
+          "paragraphs": [
+            "Past Simple рассказывает о законченных действиях в прошлом. Правильные глаголы получают -ed, неправильные меняют форму."
+          ],
+          "rules": [
+            "Правильные глаголы: start - started, decide - decided, ask - asked, change - changed, want - wanted, arrive - arrived.",
+            "Неправильные: become - became, feel - felt, do - did, have - had, get - got, see - saw, sleep - slept, go - went, give - gave, take - took, win - won, spend - spent.",
+            "Форма одинакова для всех лиц: I went, she went, they went."
+          ],
+          "formulas": [
+            "I worked as a waiter for a day. · I spent a day fishing. · I won a dancing competition."
+          ],
+          "examples": [],
+          "prompts": [],
+          "vocab": [],
+          "audioUrl": "",
+          "audioTitle": "",
+          "videoUrl": "",
+          "videoTitle": "",
+          "subtitlesUrl": "",
+          "sample": "",
+          "transcript": "",
+          "imageUrl": "",
+          "hidden": false,
+          "text": "",
+          "tasks": [
+            {
+              "id": "2a-g1-1",
+              "kind": "fill",
+              "prompt": "Впишите глагол в Past Simple (work): I ___ as a waiter for a day, for no money.",
+              "options": [],
+              "optionValues": [],
+              "answer": "worked",
+              "explanation": "Правильный глагол: work - worked.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "2a-g1-2",
+              "kind": "fill",
+              "prompt": "Впишите глагол в Past Simple (spend): I ___ a day fishing with five Greek fishermen.",
+              "options": [],
+              "optionValues": [],
+              "answer": "spent",
+              "explanation": "Неправильный глагол: spend - spent.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "2a-g1-3",
+              "kind": "fill",
+              "prompt": "Впишите глагол в Past Simple (stay): I ___ at a beach party until six in the morning.",
+              "options": [],
+              "optionValues": [],
+              "answer": "stayed",
+              "explanation": "Правильный глагол: stay - stayed.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "2a-g1-4",
+              "kind": "fill",
+              "prompt": "Впишите глагол в Past Simple (win): I ___ a dancing competition.",
+              "options": [],
+              "optionValues": [],
+              "answer": "won",
+              "explanation": "Неправильный глагол: win - won.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "2a-g1-5",
+              "kind": "fill",
+              "prompt": "Впишите глагол в Past Simple (take): I ___ the same boat trip three times.",
+              "options": [],
+              "optionValues": [],
+              "answer": "took",
+              "explanation": "Неправильный глагол: take - took.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "2a-g1-6",
+              "kind": "fill",
+              "prompt": "Впишите глагол в Past Simple (go): I ___ swimming at midnight.",
+              "options": [],
+              "optionValues": [],
+              "answer": "went",
+              "explanation": "Неправильный глагол: go - went.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            }
+          ]
+        },
+        {
+          "kind": "listening",
+          "title": "Аудирование: день третий, водные лыжи",
+          "paragraphs": [
+            "Послушайте рассказ Ричарда о третьем дне и решите, верны ли утверждения."
+          ],
+          "rules": [],
+          "formulas": [],
+          "examples": [],
+          "prompts": [],
+          "vocab": [],
+          "audioUrl": "/audio/empower/unit2/track-02-01.mp3",
+          "audioTitle": "Track 02.01 · Day 3",
+          "videoUrl": "",
+          "videoTitle": "",
+          "subtitlesUrl": "",
+          "sample": "",
+          "transcript": "Day 3. Richard: So, the next morning, we started with some water skiing practice on the beach. First, they showed us how to stand up on the skis and then how to fall off safely. The lesson took about an hour, and then we were ready to go out to sea. There were five other people in my group, who were all very excited. But not me - I was really worried. The instructor looked at me and said, 'Do you want to go first?' and then everyone looked at me. I felt sick but I said, 'Yes'. Ten seconds after I started, I fell over. I tried again. And I fell over again. Then the third time, something amazing suddenly happened. I didn't fall over. And I found out that I love water skiing. The ten minutes in the water passed very quickly and I didn't want to stop! When we got back to the hotel, the receptionist asked me, 'So, did you enjoy the water skiing course?' I said, 'Yes' which, for the first time, was the truth. And then later on that evening I had a drink in the bar with the other water skiers.",
+          "imageUrl": "",
+          "hidden": false,
+          "text": "",
+          "tasks": [
+            {
+              "id": "2a-l1-1",
+              "kind": "choice",
+              "prompt": "Верно или нет: The class began with a lesson before they went out to sea.",
+              "options": [
+                "True",
+                "False"
+              ],
+              "optionValues": [
+                "true",
+                "false"
+              ],
+              "answer": "true",
+              "explanation": "Сначала была часовая тренировка на берегу, потом выход в море.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "2a-l1-2",
+              "kind": "choice",
+              "prompt": "Верно или нет: Richard felt fine when they went out on the boat.",
+              "options": [
+                "True",
+                "False"
+              ],
+              "optionValues": [
+                "true",
+                "false"
+              ],
+              "answer": "false",
+              "explanation": "Он говорит: I was really worried и I felt sick.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "2a-l1-3",
+              "kind": "choice",
+              "prompt": "Верно или нет: He found it difficult to stand up on the water skis.",
+              "options": [
+                "True",
+                "False"
+              ],
+              "optionValues": [
+                "true",
+                "false"
+              ],
+              "answer": "true",
+              "explanation": "Он дважды падал и только с третьего раза удержался.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "2a-l1-4",
+              "kind": "choice",
+              "prompt": "Верно или нет: He hated water skiing.",
+              "options": [
+                "True",
+                "False"
+              ],
+              "optionValues": [
+                "true",
+                "false"
+              ],
+              "answer": "false",
+              "explanation": "I found out that I love water skiing.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "2a-l1-5",
+              "kind": "choice",
+              "prompt": "Верно или нет: When he got back to the hotel, he went straight to bed.",
+              "options": [
+                "True",
+                "False"
+              ],
+              "optionValues": [
+                "true",
+                "false"
+              ],
+              "answer": "false",
+              "explanation": "Вечером он выпил в баре с другими лыжниками.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            }
+          ]
+        },
+        {
+          "kind": "rule",
+          "title": "Правило 2: Past Simple, отрицание и вопросы",
+          "paragraphs": [
+            "В отрицании и вопросе смысловой глагол возвращается в начальную форму, а прошедшее время показывает did."
+          ],
+          "rules": [
+            "Обычные глаголы: I didn't like the mosquitoes. · Did you have a good week?",
+            "Глагол be отдельный: Some of my experiences weren't very good. · What was your favourite thing?",
+            "Вопросительное слово ставим перед did/was: What did you buy? · Where were you?"
+          ],
+          "formulas": [
+            "did + подлежащее + инфинитив: Did you enjoy the course? · didn't + инфинитив: I didn't fall over."
+          ],
+          "examples": [],
+          "prompts": [],
+          "vocab": [],
+          "audioUrl": "",
+          "audioTitle": "",
+          "videoUrl": "",
+          "videoTitle": "",
+          "subtitlesUrl": "",
+          "sample": "",
+          "transcript": "",
+          "imageUrl": "",
+          "hidden": false,
+          "text": "",
+          "tasks": [
+            {
+              "id": "2a-g2-1",
+              "kind": "fill",
+              "prompt": "Впишите пропуск (1 слово): Some of my experiences ___ very good.",
+              "options": [],
+              "optionValues": [],
+              "answer": "weren't, were not",
+              "explanation": "Множественное число с be в отрицании: weren't.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "2a-g2-2",
+              "kind": "fill",
+              "prompt": "Впишите пропуск (1 слово): I ___ like the mosquitoes that bit me.",
+              "options": [],
+              "optionValues": [],
+              "answer": "didn't, did not",
+              "explanation": "Отрицание обычного глагола: didn't + инфинитив.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "2a-g2-3",
+              "kind": "fill",
+              "prompt": "Впишите пропуск (1 слово): ___ you have a good week?",
+              "options": [],
+              "optionValues": [],
+              "answer": "did",
+              "explanation": "Вопрос с обычным глаголом: Did you have ...?",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "2a-g2-4",
+              "kind": "fill",
+              "prompt": "Впишите пропуск (1 слово): What ___ your favourite thing?",
+              "options": [],
+              "optionValues": [],
+              "answer": "was",
+              "explanation": "Вопрос с be в единственном числе: What was ...?",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "2a-g2-5",
+              "kind": "choice",
+              "prompt": "Выберите верный вопрос о прошлом:",
+              "options": [
+                "Did you go to the beach?",
+                "Did you went to the beach?",
+                "Were you go to the beach?",
+                "Do you went to the beach?"
+              ],
+              "optionValues": [
+                "did you go to the beach?",
+                "did you went to the beach?",
+                "were you go to the beach?",
+                "do you went to the beach?"
+              ],
+              "answer": "did you go to the beach?",
+              "explanation": "После did глагол стоит в начальной форме: Did you go ...?",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            }
+          ]
+        },
+        {
+          "kind": "rule",
+          "title": "Произношение: окончание -ed",
+          "paragraphs": [
+            "Окончание -ed читается тремя способами. Лишний слог появляется только после звуков /t/ и /d/."
+          ],
+          "rules": [
+            "После /t/ и /d/ добавляется слог /ɪd/: wanted, needed, decided, started, waited, included, ended.",
+            "После глухих согласных читается /t/: looked, watched, stopped, asked.",
+            "После звонких согласных и гласных читается /d/: played, changed, arrived, smiled, believed."
+          ],
+          "formulas": [],
+          "examples": [],
+          "prompts": [],
+          "vocab": [],
+          "audioUrl": "/audio/empower/unit2/track-02-05.mp3",
+          "audioTitle": "Track 02.05 · -ed endings",
+          "videoUrl": "",
+          "videoTitle": "",
+          "subtitlesUrl": "",
+          "sample": "",
+          "transcript": "",
+          "imageUrl": "",
+          "hidden": false,
+          "text": "",
+          "tasks": [
+            {
+              "id": "2a-p-1",
+              "kind": "choice",
+              "prompt": "Прослушайте запись и выберите слово, где -ed даёт лишний слог:",
+              "options": [
+                "needed",
+                "played",
+                "changed",
+                "asked"
+              ],
+              "optionValues": [
+                "needed",
+                "played",
+                "changed",
+                "asked"
+              ],
+              "answer": "needed",
+              "explanation": "Needed = need + /ɪd/: основа кончается на /d/.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "2a-p-2",
+              "kind": "choice",
+              "prompt": "Выберите слово, где -ed НЕ добавляет слога:",
+              "options": [
+                "watched",
+                "waited",
+                "included",
+                "ended"
+              ],
+              "optionValues": [
+                "watched",
+                "waited",
+                "included",
+                "ended"
+              ],
+              "answer": "watched",
+              "explanation": "Watched читается одним слогом: /wɒtʃt/.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "2a-p-3",
+              "kind": "fill",
+              "prompt": "Впишите звук, который появляется после /t/ и /d/ (2 буквы, как в слове needed):",
+              "options": [],
+              "optionValues": [],
+              "answer": "id, ɪd",
+              "explanation": "После /t/ и /d/ окончание читается как отдельный слог /ɪd/.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            }
+          ]
+        },
+        {
+          "kind": "vocab",
+          "title": "Лексика: tourism",
+          "paragraphs": [],
+          "rules": [],
+          "formulas": [],
+          "examples": [],
+          "prompts": [],
+          "vocab": [
+            {
+              "en": "travel agent's",
+              "ru": "турагентство"
+            },
+            {
+              "en": "accommodation",
+              "ru": "жильё, размещение"
+            },
+            {
+              "en": "suntan lotion",
+              "ru": "крем от загара"
+            },
+            {
+              "en": "souvenir",
+              "ru": "сувенир"
+            },
+            {
+              "en": "sightseeing",
+              "ru": "осмотр достопримечательностей"
+            },
+            {
+              "en": "boat trip",
+              "ru": "прогулка на лодке"
+            },
+            {
+              "en": "water skiing",
+              "ru": "водные лыжи"
+            },
+            {
+              "en": "suitcase",
+              "ru": "чемодан"
+            },
+            {
+              "en": "adventure",
+              "ru": "приключение"
+            },
+            {
+              "en": "experience",
+              "ru": "впечатление, опыт"
+            }
+          ],
+          "audioUrl": "",
+          "audioTitle": "",
+          "videoUrl": "",
+          "videoTitle": "",
+          "subtitlesUrl": "",
+          "sample": "",
+          "transcript": "",
+          "imageUrl": "",
+          "hidden": false,
+          "text": "",
+          "tasks": []
+        },
+        {
+          "kind": "listening",
+          "title": "Аудирование: последний день",
+          "paragraphs": [
+            "Послушайте рассказ о последнем дне и ответьте на вопросы."
+          ],
+          "rules": [],
+          "formulas": [],
+          "examples": [],
+          "prompts": [],
+          "vocab": [],
+          "audioUrl": "/audio/empower/unit2/track-02-02.mp3",
+          "audioTitle": "Track 02.02 · Day 7",
+          "videoUrl": "",
+          "videoTitle": "",
+          "subtitlesUrl": "",
+          "sample": "",
+          "transcript": "Day Seven. Richard: On the last day of the holiday, I couldn't wait for midnight. At 12 o'clock, I could stop answering 'yes' to every question. The week had been fun, but I wanted some control of my life again! That evening, I went for one last dinner with some of my new friends. 'So, did you have a good week?' one of them asked me. 'Yes,' I said. 'What was your favourite thing?' she asked. And do you know what? I couldn't really answer her. There were so many things I had enjoyed. I worked as a waiter for a day - I didn't get any money for it, but I made friends with some interesting people who came to eat at the restaurant. I also spent a day fishing with five Greek fishermen and caught several fish. I stayed at a beach party until six in the morning. Oh, and I won a dancing competition! Of course, some of my experiences weren't very good. I took the same boat trip three times. I went swimming at midnight - actually, I liked the swimming, but I didn't like the mosquitoes that bit me when I got out of the sea. And I spent over 200 euros on souvenirs that I hate! It was great to try new things. But I was glad the week was nearly finished.",
+          "imageUrl": "",
+          "hidden": false,
+          "text": "",
+          "tasks": [
+            {
+              "id": "2a-l2-1",
+              "kind": "choice",
+              "prompt": "Прослушайте запись и выберите ответ: What did Richard win?",
+              "options": [
+                "a dancing competition",
+                "a boat trip",
+                "a free dinner",
+                "a pair of sunglasses"
+              ],
+              "optionValues": [
+                "a dancing competition",
+                "a boat trip",
+                "a free dinner",
+                "a pair of sunglasses"
+              ],
+              "answer": "a dancing competition",
+              "explanation": "I won a dancing competition!",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "2a-l2-2",
+              "kind": "fill",
+              "prompt": "Прослушайте запись и впишите ответ по-английски (2 слова): What job did Richard do for a day, for no money?",
+              "options": [],
+              "optionValues": [],
+              "answer": "a waiter, waiter",
+              "explanation": "I worked as a waiter for a day - I didn't get any money for it.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "2a-l2-3",
+              "kind": "choice",
+              "prompt": "Прослушайте запись и выберите ответ: What didn't he like about swimming at midnight?",
+              "options": [
+                "the mosquitoes",
+                "the cold water",
+                "the dark",
+                "the long walk"
+              ],
+              "optionValues": [
+                "the mosquitoes",
+                "the cold water",
+                "the dark",
+                "the long walk"
+              ],
+              "answer": "the mosquitoes",
+              "explanation": "I liked the swimming, but I didn't like the mosquitoes that bit me.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "2a-l2-4",
+              "kind": "fill",
+              "prompt": "Прослушайте запись и впишите сумму цифрами: How much did he spend on souvenirs he hates?",
+              "options": [],
+              "optionValues": [],
+              "answer": "200, 200 euros, over 200 euros",
+              "explanation": "I spent over 200 euros on souvenirs that I hate.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            }
+          ]
+        },
+        {
+          "kind": "speaking",
+          "title": "Говорение: расскажите о своей поездке",
+          "paragraphs": [
+            "Вспомните поездку, которая вам понравилась, и расскажите о ней в Past Simple."
+          ],
+          "rules": [],
+          "formulas": [],
+          "examples": [],
+          "prompts": [
+            "When did you go and where did you go?",
+            "Who did you go with? How long did you go for?",
+            "What kind of accommodation did you stay in?",
+            "Did you do any sightseeing? Who did you meet?",
+            "Did you bring back any souvenirs? What went wrong?"
+          ],
+          "vocab": [],
+          "audioUrl": "",
+          "audioTitle": "",
+          "videoUrl": "",
+          "videoTitle": "",
+          "subtitlesUrl": "",
+          "sample": "Two years ago I went to Georgia with my sister. We went for ten days in September, because it wasn't too hot then. We stayed in a small guest house in Tbilisi - it wasn't expensive and the family cooked breakfast for us. We did a lot of sightseeing: we walked around the old town, took a cable car and visited two museums. On the third day we met a group of students from Poland and spent the evening with them. I brought back some wine and a small carpet as souvenirs. One thing went wrong: we missed our train to Batumi, so we had to take a taxi and it cost a lot. But it was a great trip and I would like to go there again.",
+          "transcript": "",
+          "imageUrl": "",
+          "hidden": false,
+          "text": "",
+          "tasks": []
+        }
+      ],
+      "words": [
+        {
+          "english": "adventure",
+          "russian": "приключение",
+          "partOfSpeech": "noun",
+          "example": "He had all kinds of adventures.",
+          "definition": "an unusual, exciting and sometimes dangerous experience"
+        },
+        {
+          "english": "travel agent's",
+          "russian": "турагентство",
+          "partOfSpeech": "noun",
+          "example": "I saw a poster in the window of a travel agent's.",
+          "definition": "a shop where you can book holidays and flights"
+        },
+        {
+          "english": "accommodation",
+          "russian": "жильё, размещение",
+          "partOfSpeech": "noun",
+          "example": "What kind of accommodation do you want?",
+          "definition": "a place where you live or stay"
+        },
+        {
+          "english": "suntan lotion",
+          "russian": "крем от загара",
+          "partOfSpeech": "noun",
+          "example": "Luckily, I brought suntan lotion.",
+          "definition": "a cream you put on your skin in the sun"
+        },
+        {
+          "english": "souvenir",
+          "russian": "сувенир",
+          "partOfSpeech": "noun",
+          "example": "I spent 200 euros on souvenirs that I hate.",
+          "definition": "something you buy to remember a place"
+        },
+        {
+          "english": "sightseeing",
+          "russian": "осмотр достопримечательностей",
+          "partOfSpeech": "noun",
+          "example": "Did you do any sightseeing?",
+          "definition": "visiting interesting places as a tourist"
+        },
+        {
+          "english": "boat trip",
+          "russian": "прогулка на лодке",
+          "partOfSpeech": "noun",
+          "example": "I took the same boat trip three times.",
+          "definition": "a short journey on a boat for pleasure"
+        },
+        {
+          "english": "water skiing",
+          "russian": "водные лыжи",
+          "partOfSpeech": "noun",
+          "example": "There's a water skiing course tomorrow.",
+          "definition": "the sport of moving on water on skis, pulled by a boat"
+        },
+        {
+          "english": "suitcase",
+          "russian": "чемодан",
+          "partOfSpeech": "noun",
+          "example": "I wanted to unpack my suitcase.",
+          "definition": "a large bag with a handle for your clothes when you travel"
+        },
+        {
+          "english": "experience",
+          "russian": "впечатление, опыт",
+          "partOfSpeech": "noun",
+          "example": "Some of my experiences weren't very good.",
+          "definition": "something that happens to you and that you learn from"
+        },
+        {
+          "english": "fall over",
+          "russian": "упасть",
+          "partOfSpeech": "verb",
+          "example": "Ten seconds after I started, I fell over.",
+          "definition": "to fall to the ground"
+        },
+        {
+          "english": "luckily",
+          "russian": "к счастью",
+          "partOfSpeech": "adverb",
+          "example": "Luckily, I brought suntan lotion.",
+          "definition": "it is lucky that something happened"
+        }
+      ],
+      "homework": {
+        "title": "Домашнее задание к уроку 5",
+        "intro": "Empower B1, Unit 2A: Past Simple, окончание -ed и лексика путешествий.",
+        "tasks": [
+          {
+            "section": "1. Past Simple: утверждение",
+            "kind": "FILL",
+            "prompt": "Впишите глагол в Past Simple (start): I ___ my holiday on Saturday morning.",
+            "options": [],
+            "optionValues": [],
+            "answer": "started",
+            "explanation": "Правильный глагол: start - started.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "1. Past Simple: утверждение",
+            "kind": "FILL",
+            "prompt": "Впишите глагол в Past Simple (go): Last summer we ___ to Greece.",
+            "options": [],
+            "optionValues": [],
+            "answer": "went",
+            "explanation": "Неправильный глагол: go - went.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "1. Past Simple: утверждение",
+            "kind": "FILL",
+            "prompt": "Впишите глагол в Past Simple (buy): She ___ two hats and a watch at the beach.",
+            "options": [],
+            "optionValues": [],
+            "answer": "bought",
+            "explanation": "Неправильный глагол: buy - bought.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "1. Past Simple: утверждение",
+            "kind": "CHOICE",
+            "prompt": "Выберите верную форму: We ___ at a small hotel near the sea.",
+            "options": [
+              "stayed",
+              "stay",
+              "staied",
+              "was stay"
+            ],
+            "optionValues": [],
+            "answer": "stayed",
+            "explanation": "Правильный глагол: stay - stayed.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "1. Past Simple: утверждение",
+            "kind": "FILL",
+            "prompt": "Впишите глагол в Past Simple (take): He ___ the same boat trip three times.",
+            "options": [],
+            "optionValues": [],
+            "answer": "took",
+            "explanation": "Неправильный глагол: take - took.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "2. Past Simple: отрицание и вопросы",
+            "kind": "FILL",
+            "prompt": "Впишите пропуск (1 слово): I ___ like the mosquitoes at the beach.",
+            "options": [],
+            "optionValues": [],
+            "answer": "didn't, did not",
+            "explanation": "Отрицание обычного глагола: didn't + инфинитив.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "2. Past Simple: отрицание и вопросы",
+            "kind": "FILL",
+            "prompt": "Впишите пропуск (1 слово): ___ you have a good week in Zante?",
+            "options": [],
+            "optionValues": [],
+            "answer": "did",
+            "explanation": "Вопрос с обычным глаголом начинается с did.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "2. Past Simple: отрицание и вопросы",
+            "kind": "FILL",
+            "prompt": "Впишите пропуск (1 слово): What ___ your favourite day of the holiday?",
+            "options": [],
+            "optionValues": [],
+            "answer": "was",
+            "explanation": "Вопрос с глаголом be в единственном числе: What was ...?",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "2. Past Simple: отрицание и вопросы",
+            "kind": "CHOICE",
+            "prompt": "Выберите верно построенный вопрос:",
+            "options": [
+              "Where did you go last summer?",
+              "Where did you went last summer?",
+              "Where you went last summer?",
+              "Where were you go last summer?"
+            ],
+            "optionValues": [],
+            "answer": "where did you go last summer?",
+            "explanation": "После did глагол стоит в начальной форме.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "2. Past Simple: отрицание и вопросы",
+            "kind": "CHOICE",
+            "prompt": "Выберите верное отрицание: Some of my experiences ___ very good.",
+            "options": [
+              "weren't",
+              "wasn't",
+              "didn't",
+              "don't"
+            ],
+            "optionValues": [],
+            "answer": "weren't",
+            "explanation": "Множественное число с be: weren't.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "3. Произношение: окончание -ed",
+            "kind": "CHOICE",
+            "prompt": "Выберите слово, где -ed читается как отдельный слог /ɪd/:",
+            "options": [
+              "decided",
+              "played",
+              "arrived",
+              "looked"
+            ],
+            "optionValues": [],
+            "answer": "decided",
+            "explanation": "После /d/ окончание даёт лишний слог: decided.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "3. Произношение: окончание -ed",
+            "kind": "CHOICE",
+            "prompt": "Выберите слово, где -ed НЕ добавляет слога:",
+            "options": [
+              "stopped",
+              "waited",
+              "included",
+              "ended"
+            ],
+            "optionValues": [],
+            "answer": "stopped",
+            "explanation": "Stopped читается одним слогом: /stɒpt/.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "3. Произношение: окончание -ed",
+            "kind": "FILL",
+            "prompt": "Впишите два согласных звука, после которых -ed произносится как отдельный слог:",
+            "options": [],
+            "optionValues": [],
+            "answer": "t and d, d and t, t d, d t, /t/ and /d/",
+            "explanation": "Лишний слог появляется только после /t/ и /d/.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "4. Лексика: tourism",
+            "kind": "FILL",
+            "prompt": "Переведите на английский одним словом: сувенир",
+            "options": [],
+            "optionValues": [],
+            "answer": "souvenir, a souvenir",
+            "explanation": "Souvenir - сувенир.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "4. Лексика: tourism",
+            "kind": "FILL",
+            "prompt": "Переведите на английский одним словом: жильё, размещение в поездке",
+            "options": [],
+            "optionValues": [],
+            "answer": "accommodation",
+            "explanation": "Accommodation - жильё, где вы останавливаетесь.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "4. Лексика: tourism",
+            "kind": "FILL",
+            "prompt": "Переведите на английский (2 слова): крем от загара",
+            "options": [],
+            "optionValues": [],
+            "answer": "suntan lotion",
+            "explanation": "Suntan lotion - крем от загара.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "4. Лексика: tourism",
+            "kind": "CHOICE",
+            "prompt": "Выберите слово: осмотр достопримечательностей",
+            "options": [
+              "sightseeing",
+              "accommodation",
+              "boat trip",
+              "adventure"
+            ],
+            "optionValues": [],
+            "answer": "sightseeing",
+            "explanation": "Sightseeing - осмотр достопримечательностей.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "5. Чтение: поездка в Турцию",
+            "kind": "READING",
+            "prompt": "Прочитайте текст выше и выберите ответ: Why did they visit museums on the first two days?",
+            "options": [
+              "the weather was bad",
+              "the beach was closed",
+              "they don't like the sea",
+              "the hotel was far away"
+            ],
+            "optionValues": [],
+            "answer": "the weather was bad",
+            "explanation": "В тексте: The weather wasn't very good in the first two days - it rained a lot.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": "Anna and her brother went to Turkey last May. It was their first holiday together, and they didn't book a package tour: they found a small hotel online and bought cheap flights. The weather wasn't very good in the first two days - it rained a lot - so they visited two museums and a big market instead of the beach. On the third day the sun came out. They took a boat trip along the coast, ate fish in a small village and swam in the sea. Anna didn't want to buy souvenirs, but her brother bought a carpet and spent almost all his money. On the last evening they met a family from Poland and talked until midnight. The flight home was at six in the morning, so they didn't sleep at all. Anna was tired, but she says it was the best week of the year."
+          },
+          {
+            "section": "5. Чтение: поездка в Турцию",
+            "kind": "FILL",
+            "prompt": "Прочитайте текст выше и впишите ответ по-английски (2 слова): What did they do on the third day, when the sun came out?",
+            "options": [],
+            "optionValues": [],
+            "answer": "a boat trip, boat trip, took a boat trip",
+            "explanation": "В тексте: They took a boat trip along the coast.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": "Anna and her brother went to Turkey last May. It was their first holiday together, and they didn't book a package tour: they found a small hotel online and bought cheap flights. The weather wasn't very good in the first two days - it rained a lot - so they visited two museums and a big market instead of the beach. On the third day the sun came out. They took a boat trip along the coast, ate fish in a small village and swam in the sea. Anna didn't want to buy souvenirs, but her brother bought a carpet and spent almost all his money. On the last evening they met a family from Poland and talked until midnight. The flight home was at six in the morning, so they didn't sleep at all. Anna was tired, but she says it was the best week of the year."
+          },
+          {
+            "section": "5. Чтение: поездка в Турцию",
+            "kind": "CHOICE",
+            "prompt": "Прочитайте текст выше и выберите ответ: What did Anna's brother buy?",
+            "options": [
+              "a carpet",
+              "sunglasses",
+              "a hat",
+              "a watch"
+            ],
+            "optionValues": [],
+            "answer": "a carpet",
+            "explanation": "В тексте: her brother bought a carpet and spent almost all his money.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": "Anna and her brother went to Turkey last May. It was their first holiday together, and they didn't book a package tour: they found a small hotel online and bought cheap flights. The weather wasn't very good in the first two days - it rained a lot - so they visited two museums and a big market instead of the beach. On the third day the sun came out. They took a boat trip along the coast, ate fish in a small village and swam in the sea. Anna didn't want to buy souvenirs, but her brother bought a carpet and spent almost all his money. On the last evening they met a family from Poland and talked until midnight. The flight home was at six in the morning, so they didn't sleep at all. Anna was tired, but she says it was the best week of the year."
+          },
+          {
+            "section": "5. Чтение: поездка в Турцию",
+            "kind": "FILL",
+            "prompt": "Прочитайте текст выше и впишите ответ по-английски одним словом: Why didn't they sleep before the flight home?",
+            "options": [],
+            "optionValues": [],
+            "answer": "poland, the family, talking, they talked until midnight",
+            "explanation": "Они познакомились с семьёй из Польши и проговорили до полуночи, а рейс был в шесть утра.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": "Anna and her brother went to Turkey last May. It was their first holiday together, and they didn't book a package tour: they found a small hotel online and bought cheap flights. The weather wasn't very good in the first two days - it rained a lot - so they visited two museums and a big market instead of the beach. On the third day the sun came out. They took a boat trip along the coast, ate fish in a small village and swam in the sea. Anna didn't want to buy souvenirs, but her brother bought a carpet and spent almost all his money. On the last evening they met a family from Poland and talked until midnight. The flight home was at six in the morning, so they didn't sleep at all. Anna was tired, but she says it was the best week of the year."
+          },
+          {
+            "section": "6. Письмо: рассказ о поездке",
+            "kind": "TEACHER",
+            "prompt": "Напишите на английском рассказ о своей поездке в Past Simple, минимум 70 слов. Ответьте: когда и куда вы ездили, с кем, где жили, что делали, что пошло не так и что вы привезли.",
+            "options": [],
+            "optionValues": [],
+            "answer": "",
+            "explanation": "Last September I went to Georgia with my sister. We stayed in a small guest house in Tbilisi for ten days. Every morning the family cooked breakfast for us. We walked around the old town, took a cable car and visited two museums. On the third day we met a group of students from Poland and spent the evening with them. One thing went wrong: we missed our train to Batumi, so we took an expensive taxi. I brought back some wine and a small carpet. It was a great trip.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "7. Говорение: два вопроса другу",
+            "kind": "TEACHER",
+            "prompt": "Подготовьте на английском 8 вопросов в Past Simple, которые вы зададите другу о его последнем отпуске. Используйте did, was и were.",
+            "options": [],
+            "optionValues": [],
+            "answer": "",
+            "explanation": "When did you go? Where did you go? Who did you go with? How long did you stay? What kind of accommodation did you stay in? Was the weather good? Did you do any sightseeing? Were the people friendly? Did you bring back any souvenirs?",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          }
+        ]
+      }
     }
   ],
   "tests": [
@@ -4067,6 +6390,299 @@
           ],
           "correct": 1,
           "explanation": "Тема: reading. Правильный вариант — «in the office»."
+        }
+      ]
+    },
+    {
+      "title": "Тест по юниту 1: Empower B1",
+      "description": "26 вопросов по разделу Review and extension: вопросы, Present Simple и Continuous, прилагательные и наречия, wordpower like, фразы знакомства и письмо.",
+      "level": "B1",
+      "questions": [
+        {
+          "text": "Put the words in order: night / did / go / out / you / last ?",
+          "options": [
+            "You did go out last night?",
+            "Did go you out last night?",
+            "Did you went out last night?",
+            "Did you go out last night?"
+          ],
+          "correct": 3,
+          "explanation": "Вопрос в Past Simple: did + подлежащее + глагол в начальной форме."
+        },
+        {
+          "text": "Put the words in order: where / you / last / weekend / go / did ?",
+          "options": [
+            "Where did you go last weekend?",
+            "Where go did you last weekend?",
+            "Where did you went last weekend?",
+            "Where you did go last weekend?"
+          ],
+          "correct": 0,
+          "explanation": "Вопросительное слово идёт перед did."
+        },
+        {
+          "text": "Put the words in order: kinds of / like / you / what / do / TV programmes ?",
+          "options": [
+            "What kinds of TV programmes do you like?",
+            "What kinds of TV programmes you like?",
+            "Do you like what kinds of TV programmes?",
+            "What do you like kinds of TV programmes?"
+          ],
+          "correct": 0,
+          "explanation": "Present Simple: What + существительное + do + подлежащее + глагол."
+        },
+        {
+          "text": "Put the words in order: you / how / play / sport / often / do ?",
+          "options": [
+            "How do you often play sport?",
+            "How often you do play sport?",
+            "Do you how often play sport?",
+            "How often do you play sport?"
+          ],
+          "correct": 3,
+          "explanation": "How often ставится в начало, дальше идёт вспомогательный глагол do."
+        },
+        {
+          "text": "Put the words in order: tired / you / are / today ?",
+          "options": [
+            "You are tired today?",
+            "Are you tired today?",
+            "Are tired you today?",
+            "Do you tired today?"
+          ],
+          "correct": 1,
+          "explanation": "С прилагательным используется глагол be: Are you tired?"
+        },
+        {
+          "text": "Choose the correct form: You ___ (not call) very often!",
+          "options": [
+            "don't call",
+            "aren't calling",
+            "not call",
+            "doesn't call"
+          ],
+          "correct": 0,
+          "explanation": "Регулярность (very often) - Present Simple: don't call."
+        },
+        {
+          "text": "Choose the correct form: I ___ (work) really hard at university at the moment.",
+          "options": [
+            "am work",
+            "work",
+            "works",
+            "'m working"
+          ],
+          "correct": 3,
+          "explanation": "At the moment - Present Continuous: I'm working."
+        },
+        {
+          "text": "Choose the correct form: I never ___ (have) time to call!",
+          "options": [
+            "'m having",
+            "have",
+            "am have",
+            "has"
+          ],
+          "correct": 1,
+          "explanation": "Слово never указывает на привычку - Present Simple."
+        },
+        {
+          "text": "Choose the correct form: Your sister ___ (call) me every weekend.",
+          "options": [
+            "call",
+            "are calling",
+            "calls",
+            "is calling"
+          ],
+          "correct": 2,
+          "explanation": "Every weekend - Present Simple, третье лицо: calls."
+        },
+        {
+          "text": "Choose the correct form: We ___ (talk) now, but the world ___ (change), Mum!",
+          "options": [
+            "talk / is changing",
+            "'re talking / is changing",
+            "talk / changes",
+            "'re talking / changes"
+          ],
+          "correct": 1,
+          "explanation": "Оба действия происходят сейчас - Present Continuous."
+        },
+        {
+          "text": "Complete the sentence: The film was a___ at the beginning, but I didn't like the ending.",
+          "options": [
+            "all right",
+            "awful",
+            "delicious",
+            "boring"
+          ],
+          "correct": 0,
+          "explanation": "All right - «нормально, неплохо»; по смыслу подходит начало фильма."
+        },
+        {
+          "text": "Complete the sentence: We ate some really d___ food at the party.",
+          "options": [
+            "delicious",
+            "perfect",
+            "awful",
+            "strange"
+          ],
+          "correct": 0,
+          "explanation": "Delicious - очень вкусный."
+        },
+        {
+          "text": "Complete the sentence: This summer, the weather here was h___ - it rained all the time.",
+          "options": [
+            "perfect",
+            "trendy",
+            "horrible",
+            "delicious"
+          ],
+          "correct": 2,
+          "explanation": "Horrible - ужасный: дождь шёл всё время."
+        },
+        {
+          "text": "Choose the correct adverb: I ___ love football.",
+          "options": [
+            "absolutely",
+            "fairly",
+            "quite",
+            "particularly"
+          ],
+          "correct": 0,
+          "explanation": "Absolutely усиливает сильные глаголы: absolutely love."
+        },
+        {
+          "text": "Choose the correct adverb: My parents live abroad. I ___ see them.",
+          "options": [
+            "always",
+            "absolutely",
+            "rarely",
+            "particularly"
+          ],
+          "correct": 2,
+          "explanation": "Родители живут за границей - значит видятся редко: rarely."
+        },
+        {
+          "text": "Choose the correct adverb: I love all sports, but tennis is ___ good.",
+          "options": [
+            "rarely",
+            "usually",
+            "especially",
+            "fairly"
+          ],
+          "correct": 2,
+          "explanation": "Especially выделяет один пример из общего ряда."
+        },
+        {
+          "text": "What does 'like' mean here: I've got a jacket like yours.",
+          "options": [
+            "similar to",
+            "for example",
+            "if you want",
+            "what was your opinion of"
+          ],
+          "correct": 0,
+          "explanation": "Like здесь значит «похожий на»."
+        },
+        {
+          "text": "What does 'like' mean here: We can go for a walk later if you like.",
+          "options": [
+            "if you want",
+            "what was your opinion of",
+            "for example",
+            "similar to"
+          ],
+          "correct": 0,
+          "explanation": "If you like - «если хочешь»."
+        },
+        {
+          "text": "Complete: A: We went to that new restaurant yesterday. B: ___ it ___?",
+          "options": [
+            "How did / like",
+            "What did / like",
+            "How was / like",
+            "What was / like"
+          ],
+          "correct": 3,
+          "explanation": "What was it like? - «Ну и как оно?»"
+        },
+        {
+          "text": "Complete with look like or sound like: You don't ___ your sister. She's very tall.",
+          "options": [
+            "like look",
+            "looks like",
+            "look like",
+            "sound like"
+          ],
+          "correct": 2,
+          "explanation": "О внешности говорят look like."
+        },
+        {
+          "text": "Complete with look like or sound like: It ___ their first song. I really like it!",
+          "options": [
+            "is looking like",
+            "looks like",
+            "sound like",
+            "sounds like"
+          ],
+          "correct": 3,
+          "explanation": "О звучании песни - sounds like, третье лицо единственного числа."
+        },
+        {
+          "text": "Which phrase do you use with somebody you have just met?",
+          "options": [
+            "It was really nice to meet you.",
+            "Long time no see!",
+            "Say hello to Dan for me!",
+            "It was great to see you again."
+          ],
+          "correct": 0,
+          "explanation": "Meet - о новом знакомстве; see again - о старом знакомом."
+        },
+        {
+          "text": "Complete the reply: Mark's my husband! - Husband, wow! That's ___ news.",
+          "options": [
+            "fantastic a",
+            "a fantastic",
+            "fantastic",
+            "fantastically"
+          ],
+          "correct": 2,
+          "explanation": "That's + прилагательное + news."
+        },
+        {
+          "text": "Complete: Long time ___! How are you?",
+          "options": [
+            "no see",
+            "don't see",
+            "no seeing",
+            "not see"
+          ],
+          "correct": 0,
+          "explanation": "Long time no see! - устойчивая фраза."
+        },
+        {
+          "text": "Which sentence is written correctly?",
+          "options": [
+            "im in Salamanca and im learning spanish.",
+            "Im in Salamanca and I'm learning Spanish.",
+            "I'm in Salamanca and I'm learning Spanish.",
+            "I'm in salamanca and I'm learning spanish."
+          ],
+          "correct": 2,
+          "explanation": "Города и языки - с заглавной буквы, в I'm нужен апостроф."
+        },
+        {
+          "text": "Find the correct spelling:",
+          "options": [
+            "diferent countrys",
+            "diferent countries",
+            "different countries",
+            "different countrys"
+          ],
+          "correct": 2,
+          "explanation": "Different с двумя f, country во множественном числе - countries."
         }
       ]
     }
