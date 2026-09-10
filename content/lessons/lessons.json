@@ -3427,11 +3427,11 @@
           {
             "section": "1. Приветствие и знакомство",
             "kind": "FILL",
-            "prompt": "Впишите пропуск (2 слова): вы спрашиваете, чем человек занимается сейчас. What are you doing ___ ___?",
+            "prompt": "Впишите пропуск (2 слова): вы отвечаете на вопрос о работе. I'm working from home ___ ___.",
             "options": [],
             "optionValues": [],
             "answer": "these days",
-            "explanation": "These days - сейчас, в последнее время.",
+            "explanation": "These days - сейчас, в последнее время; ставится в конце предложения.",
             "audioUrl": "",
             "transcript": "",
             "text": ""
@@ -3577,76 +3577,6 @@
             "text": ""
           },
           {
-            "section": "4. Аудирование: встреча на улице",
-            "kind": "LISTENING",
-            "prompt": "Прослушайте запись и впишите ответ по-английски: How long is it since Rachel and Annie last saw each other?",
-            "options": [],
-            "optionValues": [],
-            "answer": "six years, 6 years, six years ago, 6 years ago, about six years",
-            "explanation": "Rachel: I think it was about six years ago.",
-            "audioUrl": "/audio/empower/unit1/track-01-14.mp3",
-            "transcript": "Rachel: Annie? Annie: Rachel! Long time no see! How are you? Rachel: I'm great. What a lovely surprise! Great to see you! Annie: Yeah! You too. When did we last see each other? Rachel: Oh, I think it was about six years ago! Annie: So, where are you living these days? Rachel: Oh, not far from here. I live on Hampton Street. Do you know it? Annie: Yes, I do. That's really close to the centre. How about you? Rachel: We live on Compton Road. Annie: Oh, how nice! Mark: My name's Mark, by the way. Annie: Hi. Nice to meet you. Mark: Nice to meet you, too. Rachel: Sorry, yes - Mark's my husband! Annie: Husband, wow! That's fantastic news. When did you get married? Rachel: Six months ago. Annie: Well, congratulations! I'm going to the café down the street now to meet Leo, my boyfriend. Would you both like to come? Rachel: Yeah, that sounds good.",
-            "text": ""
-          },
-          {
-            "section": "4. Аудирование: встреча на улице",
-            "kind": "LISTENING",
-            "prompt": "Прослушайте запись и выберите ответ: Who is Mark?",
-            "options": [
-              "rachel's husband",
-              "annie's brother",
-              "rachel's colleague",
-              "annie's boyfriend"
-            ],
-            "optionValues": [],
-            "answer": "rachel's husband",
-            "explanation": "Rachel говорит: Mark's my husband.",
-            "audioUrl": "",
-            "transcript": "",
-            "text": ""
-          },
-          {
-            "section": "4. Аудирование: встреча на улице",
-            "kind": "LISTENING",
-            "prompt": "Прослушайте запись и впишите название улицы: Which street does Rachel live on?",
-            "options": [],
-            "optionValues": [],
-            "answer": "hampton street, hampton, on hampton street",
-            "explanation": "Rachel: I live on Hampton Street.",
-            "audioUrl": "",
-            "transcript": "",
-            "text": ""
-          },
-          {
-            "section": "4. Аудирование: встреча на улице",
-            "kind": "LISTENING",
-            "prompt": "Прослушайте запись и выберите ответ: When did Rachel and Mark get married?",
-            "options": [
-              "six months ago",
-              "six years ago",
-              "a year ago",
-              "last week"
-            ],
-            "optionValues": [],
-            "answer": "six months ago",
-            "explanation": "Rachel отвечает: six months ago.",
-            "audioUrl": "",
-            "transcript": "",
-            "text": ""
-          },
-          {
-            "section": "4. Аудирование: встреча на улице",
-            "kind": "LISTENING",
-            "prompt": "Прослушайте запись и впишите имя: Who is Annie going to meet at the café?",
-            "options": [],
-            "optionValues": [],
-            "answer": "leo, her boyfriend leo",
-            "explanation": "Annie: I'm going to the café to meet Leo, my boyfriend.",
-            "audioUrl": "",
-            "transcript": "",
-            "text": ""
-          },
-          {
             "section": "5. Чтение: small talk",
             "kind": "READING",
             "prompt": "Прочитайте текст выше и выберите ответ: What do people in Britain and the USA usually talk about first?",
@@ -3724,6 +3654,86 @@
             "optionValues": [],
             "answer": "",
             "explanation": "A: Nina? B: Marta! Long time no see! How are you? A: I'm great. What a lovely surprise! Where are you living these days? B: Not far from here, on Green Street. A: Oh, how nice! B: Listen, I really must go, I'm late for a meeting. It was great to see you again! A: You too. We must meet up soon. Say hello to Dan for me!",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "3. Аудирование: разговоры на вечеринке",
+            "kind": "LISTENING",
+            "prompt": "Прослушайте запись и выберите ответ: How does the second speaker know Ana?",
+            "options": [
+              "they studied together at university",
+              "they are neighbours",
+              "they work at the same bank",
+              "they met at the cinema"
+            ],
+            "optionValues": [],
+            "answer": "they studied together at university",
+            "explanation": "B: We were at university together. We did the same course.",
+            "audioUrl": "/audio/empower/unit1/track-01-01.mp3",
+            "transcript": "Разговор 1. A: It's a nice day today. B: Yes, it's a perfect day for a birthday party. It's great that so many people are here. A: So, how do you know Ana? B: We were at university together. We did the same course. A: Oh right. What did you study? B: English Literature. And you? How do you know Ana? A: I'm her neighbour. I live in the house next door. B: Really? It's a lovely street. Разговор 2. C: How's the food? D: It's great. The pizza is delicious. It's always nice to get good food at a party. So, do you live near here? C: Yeah, I live down by the river. You know those flats. D: Oh yeah! The new ones. They're expensive! How much rent do you pay? C: Not much. It's not so expensive. D: So what do you do? C: I work for a bank. D: So, how much do you earn? C: Erm, is that... sorry, I just have to speak to my friend. Разговор 3. E: What do you think of the party? F: Yeah, it's great. It's really nice to meet all of Ana's friends. You? E: It's all right, but the music is a bit boring. E: I like your T-shirt. Is it for a football team? F: No! At least I don't think so! E: So, do you play any sports? F: No, not really. I don't really like sport. E: Well, what do you like then? F: I prefer reading, or watching films. F: I might go to the cinema after the party. There's a new film about a man who goes to Peru. E: Yeah, I saw that last week. F: Oh. What was it like? E: It's an awful film. Really boring. F: OK, I'd like to see it anyway. E: No, I don't think so. F: Oh, thanks a lot!",
+            "text": ""
+          },
+          {
+            "section": "3. Аудирование: разговоры на вечеринке",
+            "kind": "LISTENING",
+            "prompt": "Прослушайте запись и впишите ответ по-английски одним словом: What did she study at university?",
+            "options": [],
+            "optionValues": [],
+            "answer": "english literature, literature, english",
+            "explanation": "B: English Literature.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "3. Аудирование: разговоры на вечеринке",
+            "kind": "LISTENING",
+            "prompt": "Прослушайте запись и выберите ответ: Why does the speaker in conversation 2 walk away?",
+            "options": [
+              "the questions are too personal",
+              "the food is terrible",
+              "he does not speak English",
+              "the music is too loud"
+            ],
+            "optionValues": [],
+            "answer": "the questions are too personal",
+            "explanation": "Его спрашивают про размер аренды и зарплату - это слишком личные вопросы для small talk.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "3. Аудирование: разговоры на вечеринке",
+            "kind": "LISTENING",
+            "prompt": "Прослушайте запись и выберите ответ: Which two questions are a bad idea with a new person?",
+            "options": [
+              "how much rent do you pay and how much do you earn",
+              "how do you know Ana and what do you do",
+              "how's the food and do you live near here",
+              "do you play any sports and what do you like"
+            ],
+            "optionValues": [],
+            "answer": "how much rent do you pay and how much do you earn",
+            "explanation": "Вопросы о деньгах - про аренду и зарплату - в small talk считаются невежливыми.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "3. Аудирование: разговоры на вечеринке",
+            "kind": "LISTENING",
+            "prompt": "Прослушайте запись и выберите ответ: What does speaker E say about the film?",
+            "options": [
+              "it's an awful film",
+              "it's the best film of the year",
+              "he wants to see it again",
+              "he has not seen it"
+            ],
+            "optionValues": [],
+            "answer": "it's an awful film",
+            "explanation": "E: It's an awful film. Really boring - и этим портит собеседнику настроение.",
             "audioUrl": "",
             "transcript": "",
             "text": ""
@@ -4627,74 +4637,6 @@
             "text": ""
           },
           {
-            "section": "3. Аудирование: Nina и Chris",
-            "kind": "LISTENING",
-            "prompt": "Прослушайте запись и выберите ответ: How does Chris usually contact his parents?",
-            "options": [
-              "he writes emails and phones them",
-              "he only sends texts",
-              "he visits them every weekend",
-              "he writes letters by post"
-            ],
-            "optionValues": [],
-            "answer": "he writes emails and phones them",
-            "explanation": "Chris: I write emails to my parents sometimes, but I also phone or Skype.",
-            "audioUrl": "/audio/empower/unit1/track-01-21.mp3",
-            "transcript": "Chris: So, are you good about keeping in touch with people? Nina: Er, not really. I always plan to write to people, but then I forget. I send emails to my parents sometimes, about once a month. Chris: I like keeping in touch. I phone my mother every weekend. Nina: I hardly ever phone my parents. I send texts or messages sometimes, but that's about all. It's more fun to tell people your news when you can have a real conversation. Chris: I often send messages to people so they know I'm thinking about them. And sometimes, when I have a particularly good photo, I send it to everyone by email.",
-            "text": ""
-          },
-          {
-            "section": "3. Аудирование: Nina и Chris",
-            "kind": "LISTENING",
-            "prompt": "Прослушайте запись и выберите ответ: When does Nina phone her parents?",
-            "options": [
-              "only when it's something important",
-              "every evening",
-              "every Sunday morning",
-              "when she needs money"
-            ],
-            "optionValues": [],
-            "answer": "only when it's something important",
-            "explanation": "Nina: I only phone if it's something important.",
-            "audioUrl": "",
-            "transcript": "",
-            "text": ""
-          },
-          {
-            "section": "3. Аудирование: Nina и Chris",
-            "kind": "LISTENING",
-            "prompt": "Прослушайте запись и выберите ответ: How often does Nina email her parents?",
-            "options": [
-              "about once a month",
-              "every day",
-              "twice a week",
-              "never"
-            ],
-            "optionValues": [],
-            "answer": "about once a month",
-            "explanation": "Nina: I send emails to my parents sometimes, about once a month.",
-            "audioUrl": "",
-            "transcript": "",
-            "text": ""
-          },
-          {
-            "section": "3. Аудирование: Nina и Chris",
-            "kind": "LISTENING",
-            "prompt": "Прослушайте запись и выберите ответ: When does Nina prefer to tell her news?",
-            "options": [
-              "when she meets people",
-              "in a long email",
-              "on the phone",
-              "in a group chat"
-            ],
-            "optionValues": [],
-            "answer": "when she meets people",
-            "explanation": "Nina: it's more fun to tell people your news when you can have a real conversation.",
-            "audioUrl": "",
-            "transcript": "",
-            "text": ""
-          },
-          {
             "section": "4. Чтение: как люди общаются",
             "kind": "READING",
             "prompt": "Прочитайте текст выше и выберите ответ: What is the problem with short messages?",
@@ -4772,6 +4714,69 @@
             "optionValues": [],
             "answer": "",
             "explanation": "Проверил Present Continuous: сначала написал 'I working in a bookshop', добавил 'am'. Проверил заглавные буквы в названиях: Kazan, English - оба с большой буквы. Ещё проверил апостроф в 'How's it going?' и написание слова 'beautiful'.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "3. Аудирование: как люди общаются",
+            "kind": "LISTENING",
+            "prompt": "Прослушайте запись и выберите ответ: How did Tara's boyfriend end their relationship?",
+            "options": [
+              "by text message",
+              "by email",
+              "in a phone call",
+              "face to face"
+            ],
+            "optionValues": [],
+            "answer": "by text message",
+            "explanation": "Tara: my ex-boyfriend told me he didn't want to see me any more - by text message!",
+            "audioUrl": "/audio/empower/unit1/track-01-09.mp3",
+            "transcript": "Tara: Last year, my ex-boyfriend told me he didn't want to see me any more - by text message! What kind of person does that? It was horrible. I called him for days, but he didn't answer. It made me feel like I wasn't important to him at all. Magda: When I want to plan something, I generally just send a text. It's the same when I cancel plans - a text message is easier. You don't need to give a long explanation or have a difficult conversation. Chris: Birthdays are different now. I hardly ever get cards or presents from friends, or even my brother, and no one calls. Everyone just writes 'Happy Birthday' on my wall on Facebook. It's not very friendly, in my opinion. Mike: My daughter is travelling around South America at the moment. She's writing a blog so we know what she's doing. But she rarely calls. And I'd love to get a postcard or a letter sometimes.",
+            "text": ""
+          },
+          {
+            "section": "3. Аудирование: как люди общаются",
+            "kind": "LISTENING",
+            "prompt": "Прослушайте запись и выберите ответ: Why does Magda prefer to send a text when she cancels plans?",
+            "options": [
+              "she doesn't have to give a long explanation",
+              "she has no phone credit",
+              "her friends never answer calls",
+              "she writes very slowly"
+            ],
+            "optionValues": [],
+            "answer": "she doesn't have to give a long explanation",
+            "explanation": "Magda: You don't need to give a long explanation or have a difficult conversation.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "3. Аудирование: как люди общаются",
+            "kind": "LISTENING",
+            "prompt": "Прослушайте запись и впишите ответ по-английски одним словом: What does Chris get on his birthday now instead of cards and calls?",
+            "options": [],
+            "optionValues": [],
+            "answer": "messages, facebook messages, facebook, wall posts",
+            "explanation": "Chris: Everyone just writes 'Happy Birthday' on my wall on Facebook.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "3. Аудирование: как люди общаются",
+            "kind": "LISTENING",
+            "prompt": "Прослушайте запись и выберите ответ: What would Mike like to get from his daughter?",
+            "options": [
+              "a postcard or a letter",
+              "a video call every week",
+              "photos from the blog",
+              "a present from South America"
+            ],
+            "optionValues": [],
+            "answer": "a postcard or a letter",
+            "explanation": "Mike: I'd love to get a postcard or a letter sometimes.",
             "audioUrl": "",
             "transcript": "",
             "text": ""
@@ -6052,6 +6057,64 @@
             "optionValues": [],
             "answer": "",
             "explanation": "When did you go? Where did you go? Who did you go with? How long did you stay? What kind of accommodation did you stay in? Was the weather good? Did you do any sightseeing? Were the people friendly? Did you bring back any souvenirs?",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "6. Аудирование: три недели в поездке",
+            "kind": "LISTENING",
+            "prompt": "Прослушайте запись и впишите ответ по-английски (2 слова): How long did they go away for?",
+            "options": [],
+            "optionValues": [],
+            "answer": "three weeks, 3 weeks",
+            "explanation": "1 We went away on holiday for three weeks.",
+            "audioUrl": "/audio/empower/unit2/track-02-08.mp3",
+            "transcript": "1 We went away on holiday for three weeks. 2 We needed to get a visa from the embassy before we travelled. 3 We also exchanged some money at the bank. 4 We booked all of our accommodation online. 5 When we arrived, we checked into our luxury hotel and unpacked our luggage. 6 We did some sightseeing. The castles and gardens were gorgeous! 7 We bought souvenirs for our friends and family. 8 The second week we checked out of our hotel and stayed in a hostel. It was cheap and friendly. 9 The third week we stayed on a campsite by the beach. 10 We had a great adventure and we didn't want to come home.",
+            "text": ""
+          },
+          {
+            "section": "6. Аудирование: три недели в поездке",
+            "kind": "LISTENING",
+            "prompt": "Прослушайте запись и выберите ответ: What did they need to get from the embassy?",
+            "options": [
+              "a visa",
+              "a guidebook",
+              "an insurance card",
+              "a train ticket"
+            ],
+            "optionValues": [],
+            "answer": "a visa",
+            "explanation": "2 We needed to get a visa from the embassy before we travelled.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "6. Аудирование: три недели в поездке",
+            "kind": "LISTENING",
+            "prompt": "Прослушайте запись и выберите ответ: Where did they stay in the second week?",
+            "options": [
+              "in a hostel",
+              "in a luxury hotel",
+              "on a campsite",
+              "with friends"
+            ],
+            "optionValues": [],
+            "answer": "in a hostel",
+            "explanation": "8 The second week we checked out of our hotel and stayed in a hostel.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "6. Аудирование: три недели в поездке",
+            "kind": "LISTENING",
+            "prompt": "Прослушайте запись и впишите ответ по-английски (2 слова): Where did they stay in the third week?",
+            "options": [],
+            "optionValues": [],
+            "answer": "a campsite, on a campsite, campsite",
+            "explanation": "9 The third week we stayed on a campsite by the beach.",
             "audioUrl": "",
             "transcript": "",
             "text": ""
