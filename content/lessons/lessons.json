@@ -3398,11 +3398,11 @@
           {
             "section": "1. Приветствие и знакомство",
             "kind": "FILL",
-            "prompt": "Впишите пропуск (2 слова): вы встретили друга, которого не видели пять лет. Long time ___!",
+            "prompt": "Впишите пропуск (1 слово): друг говорит Long time no see! Вы отвечаете: I'm great. What a lovely ___!",
             "options": [],
             "optionValues": [],
-            "answer": "no see",
-            "explanation": "Long time no see! - сколько лет, сколько зим.",
+            "answer": "surprise",
+            "explanation": "What a lovely surprise! - какой приятный сюрприз.",
             "audioUrl": "",
             "transcript": "",
             "text": ""
@@ -3427,7 +3427,7 @@
           {
             "section": "1. Приветствие и знакомство",
             "kind": "FILL",
-            "prompt": "Впишите пропуск (2 слова): вы спрашиваете, где человек живёт сейчас. Where are you living ___?",
+            "prompt": "Впишите пропуск (2 слова): вы спрашиваете, чем человек занимается сейчас. What are you doing ___ ___?",
             "options": [],
             "optionValues": [],
             "answer": "these days",
@@ -3439,11 +3439,11 @@
           {
             "section": "1. Приветствие и знакомство",
             "kind": "FILL",
-            "prompt": "Впишите пропуск (3 слова): вы представляетесь посреди разговора. My name's Anna, ___.",
+            "prompt": "Впишите пропуск (3 слова): вы вспомнили новость в конце разговора. Oh, ___ ___ ___ - Nina says hello!",
             "options": [],
             "optionValues": [],
             "answer": "by the way",
-            "explanation": "By the way - кстати; помогает вставить своё имя в разговор.",
+            "explanation": "By the way - кстати; помогает вставить мысль в разговор.",
             "audioUrl": "",
             "transcript": "",
             "text": ""
@@ -3526,11 +3526,11 @@
           {
             "section": "3. Как закончить разговор",
             "kind": "FILL",
-            "prompt": "Впишите глагол: вам пора уходить. We really must ___.",
+            "prompt": "Впишите 2 слова: вы опаздываете и вежливо заканчиваете разговор. I'm sorry, but I really ___ ___.",
             "options": [],
             "optionValues": [],
-            "answer": "go",
-            "explanation": "We really must go - нам правда пора.",
+            "answer": "must go, have to go",
+            "explanation": "I really must go - мне правда пора.",
             "audioUrl": "",
             "transcript": "",
             "text": ""
@@ -3555,11 +3555,11 @@
           {
             "section": "3. Как закончить разговор",
             "kind": "FILL",
-            "prompt": "Впишите 2 слова: вы предлагаете встретиться снова. We must ___ ___ soon!",
+            "prompt": "Впишите глагол: вы зовёте на кофе на следующей неделе. Let's ___ up next week for a coffee.",
             "options": [],
             "optionValues": [],
-            "answer": "meet up",
-            "explanation": "Meet up - встретиться, увидеться.",
+            "answer": "meet",
+            "explanation": "Meet up - встретиться; после let's глагол стоит в начальной форме.",
             "audioUrl": "",
             "transcript": "",
             "text": ""
@@ -3567,11 +3567,11 @@
           {
             "section": "3. Как закончить разговор",
             "kind": "FILL",
-            "prompt": "Впишите глагол: вы просите передать привет общему знакомому. ___ hello to Dan for me!",
+            "prompt": "Впишите пропуск (1 слово): вы передаёте привет родителям друга. Say hello to your parents ___ me!",
             "options": [],
             "optionValues": [],
-            "answer": "say",
-            "explanation": "Say hello to somebody for me - передай привет.",
+            "answer": "for",
+            "explanation": "Say hello to somebody FOR me - передай привет от меня.",
             "audioUrl": "",
             "transcript": "",
             "text": ""
@@ -4494,11 +4494,11 @@
           {
             "section": "1. Фразы: keeping in touch",
             "kind": "FILL",
-            "prompt": "Впишите пропуск (1 слово): I can't get in ___ with Sasha - he never answers his phone.",
+            "prompt": "Впишите глагол (1 слово): It's important to ___ in touch with old friends.",
             "options": [],
             "optionValues": [],
-            "answer": "touch",
-            "explanation": "Get in touch with somebody - связаться с кем-то.",
+            "answer": "keep, stay",
+            "explanation": "Keep in touch - поддерживать связь; get in touch - связаться один раз.",
             "audioUrl": "",
             "transcript": "",
             "text": ""
@@ -4506,11 +4506,11 @@
           {
             "section": "1. Фразы: keeping in touch",
             "kind": "FILL",
-            "prompt": "Впишите пропуск (1 слово): We haven't ___ from you for a long time. Are you OK?",
+            "prompt": "Впишите глагол в нужной форме (hear): I ___ from Anna last week - she's fine.",
             "options": [],
             "optionValues": [],
             "answer": "heard",
-            "explanation": "Hear from somebody - получать вести от кого-то.",
+            "explanation": "Hear from somebody - получать вести; в прошедшем времени heard.",
             "audioUrl": "",
             "transcript": "",
             "text": ""
@@ -4535,11 +4535,11 @@
           {
             "section": "1. Фразы: keeping in touch",
             "kind": "FILL",
-            "prompt": "Впишите пропуск (1 слово): Do you want to meet for a coffee and have a ___?",
+            "prompt": "Впишите пропуск (1 слово): We had a long ___ about her new job.",
             "options": [],
             "optionValues": [],
             "answer": "chat",
-            "explanation": "Have a chat - поболтать.",
+            "explanation": "Have a chat - поболтать; здесь существительное после long.",
             "audioUrl": "",
             "transcript": "",
             "text": ""
@@ -4564,11 +4564,11 @@
           {
             "section": "2. Письмо без ошибок",
             "kind": "FILL",
-            "prompt": "Исправьте грамматику и впишите верный вариант (2 слова): I having a great time in Salamanca.",
+            "prompt": "Исправьте грамматику и впишите верную форму глагола (1 слово): She speak English quite well.",
             "options": [],
             "optionValues": [],
-            "answer": "i'm having, i am having",
-            "explanation": "Present Continuous: be + verb-ing.",
+            "answer": "speaks",
+            "explanation": "Present Simple, третье лицо единственного числа: she speaks.",
             "audioUrl": "",
             "transcript": "",
             "text": ""
@@ -4576,11 +4576,11 @@
           {
             "section": "2. Письмо без ошибок",
             "kind": "FILL",
-            "prompt": "Исправьте орфографию и впишите верное слово: Here are some fotos of my group.",
+            "prompt": "Исправьте орфографию и впишите верное слово: I'm taking a two-month Spanish corse.",
             "options": [],
             "optionValues": [],
-            "answer": "photos",
-            "explanation": "Правильное написание - photos.",
+            "answer": "course",
+            "explanation": "Правильное написание - course.",
             "audioUrl": "",
             "transcript": "",
             "text": ""
@@ -4588,11 +4588,11 @@
           {
             "section": "2. Письмо без ошибок",
             "kind": "FILL",
-            "prompt": "Исправьте орфографию и впишите верное слово: We're from six different countrys.",
+            "prompt": "Исправьте орфографию и впишите верное слово: We're all from diferent countries.",
             "options": [],
             "optionValues": [],
-            "answer": "countries",
-            "explanation": "Слово на -y во множественном числе даёт -ies.",
+            "answer": "different",
+            "explanation": "Different пишется с двумя f.",
             "audioUrl": "",
             "transcript": "",
             "text": ""
@@ -4600,11 +4600,11 @@
           {
             "section": "2. Письмо без ошибок",
             "kind": "FILL",
-            "prompt": "Исправьте пунктуацию и впишите верное слово: Hope youre both well.",
+            "prompt": "Исправьте пунктуацию и впишите верное слово: Im in Salamanca until August.",
             "options": [],
             "optionValues": [],
-            "answer": "you're",
-            "explanation": "На месте пропущенной буквы ставится апостроф.",
+            "answer": "i'm",
+            "explanation": "На месте пропущенной буквы ставим апостроф: I'm.",
             "audioUrl": "",
             "transcript": "",
             "text": ""
@@ -4629,16 +4629,16 @@
           {
             "section": "3. Аудирование: Nina и Chris",
             "kind": "LISTENING",
-            "prompt": "Прослушайте запись и выберите ответ: Who is better at keeping in touch?",
+            "prompt": "Прослушайте запись и выберите ответ: How does Chris usually contact his parents?",
             "options": [
-              "Chris",
-              "Nina",
-              "both of them",
-              "neither of them"
+              "he writes emails and phones them",
+              "he only sends texts",
+              "he visits them every weekend",
+              "he writes letters by post"
             ],
             "optionValues": [],
-            "answer": "chris",
-            "explanation": "Chris звонит маме каждые выходные и часто пишет сообщения.",
+            "answer": "he writes emails and phones them",
+            "explanation": "Chris: I write emails to my parents sometimes, but I also phone or Skype.",
             "audioUrl": "/audio/empower/unit1/track-01-21.mp3",
             "transcript": "Chris: So, are you good about keeping in touch with people? Nina: Er, not really. I always plan to write to people, but then I forget. I send emails to my parents sometimes, about once a month. Chris: I like keeping in touch. I phone my mother every weekend. Nina: I hardly ever phone my parents. I send texts or messages sometimes, but that's about all. It's more fun to tell people your news when you can have a real conversation. Chris: I often send messages to people so they know I'm thinking about them. And sometimes, when I have a particularly good photo, I send it to everyone by email.",
             "text": ""
@@ -4646,11 +4646,16 @@
           {
             "section": "3. Аудирование: Nina и Chris",
             "kind": "LISTENING",
-            "prompt": "Прослушайте запись и впишите ответ по-английски (2 слова): How often does Chris phone his mother?",
-            "options": [],
+            "prompt": "Прослушайте запись и выберите ответ: When does Nina phone her parents?",
+            "options": [
+              "only when it's something important",
+              "every evening",
+              "every Sunday morning",
+              "when she needs money"
+            ],
             "optionValues": [],
-            "answer": "every weekend, once a week",
-            "explanation": "Chris: I phone my mother every weekend.",
+            "answer": "only when it's something important",
+            "explanation": "Nina: I only phone if it's something important.",
             "audioUrl": "",
             "transcript": "",
             "text": ""
@@ -5750,11 +5755,11 @@
           {
             "section": "1. Past Simple: утверждение",
             "kind": "FILL",
-            "prompt": "Впишите глагол в Past Simple (go): Last summer we ___ to Greece.",
+            "prompt": "Впишите глагол в Past Simple (fly): Last April we ___ to Rome for four days.",
             "options": [],
             "optionValues": [],
-            "answer": "went",
-            "explanation": "Неправильный глагол: go - went.",
+            "answer": "flew",
+            "explanation": "Неправильный глагол: fly - flew.",
             "audioUrl": "",
             "transcript": "",
             "text": ""
@@ -5791,11 +5796,11 @@
           {
             "section": "1. Past Simple: утверждение",
             "kind": "FILL",
-            "prompt": "Впишите глагол в Past Simple (take): He ___ the same boat trip three times.",
+            "prompt": "Впишите глагол в Past Simple (see): From the boat we ___ dolphins and an old castle.",
             "options": [],
             "optionValues": [],
-            "answer": "took",
-            "explanation": "Неправильный глагол: take - took.",
+            "answer": "saw",
+            "explanation": "Неправильный глагол: see - saw.",
             "audioUrl": "",
             "transcript": "",
             "text": ""
@@ -5803,7 +5808,7 @@
           {
             "section": "2. Past Simple: отрицание и вопросы",
             "kind": "FILL",
-            "prompt": "Впишите пропуск (1 слово): I ___ like the mosquitoes at the beach.",
+            "prompt": "Впишите пропуск (1 слово): We ___ book a hotel - we stayed with friends.",
             "options": [],
             "optionValues": [],
             "answer": "didn't, did not",
@@ -5815,7 +5820,7 @@
           {
             "section": "2. Past Simple: отрицание и вопросы",
             "kind": "FILL",
-            "prompt": "Впишите пропуск (1 слово): ___ you have a good week in Zante?",
+            "prompt": "Впишите пропуск (1 слово): ___ they enjoy the boat trip along the coast?",
             "options": [],
             "optionValues": [],
             "answer": "did",
@@ -5827,11 +5832,11 @@
           {
             "section": "2. Past Simple: отрицание и вопросы",
             "kind": "FILL",
-            "prompt": "Впишите пропуск (1 слово): What ___ your favourite day of the holiday?",
+            "prompt": "Впишите пропуск (1 слово): Where ___ you last summer? - In Turkey.",
             "options": [],
             "optionValues": [],
-            "answer": "was",
-            "explanation": "Вопрос с глаголом be в единственном числе: What was ...?",
+            "answer": "were",
+            "explanation": "Вопрос с be во множественном числе и с you: Where were you?",
             "audioUrl": "",
             "transcript": "",
             "text": ""
@@ -5856,16 +5861,16 @@
           {
             "section": "2. Past Simple: отрицание и вопросы",
             "kind": "CHOICE",
-            "prompt": "Выберите верное отрицание: Some of my experiences ___ very good.",
+            "prompt": "Выберите верное отрицание: The rooms ___ clean, so we changed the hotel.",
             "options": [
               "weren't",
               "wasn't",
               "didn't",
-              "don't"
+              "hadn't"
             ],
             "optionValues": [],
             "answer": "weren't",
-            "explanation": "Множественное число с be: weren't.",
+            "explanation": "Множественное число с be в отрицании: weren't.",
             "audioUrl": "",
             "transcript": "",
             "text": ""
