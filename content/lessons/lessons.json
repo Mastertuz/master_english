@@ -4811,8 +4811,8 @@
     {
       "number": 5,
       "topic": "We had an adventure: рассказ о поездке",
-      "description": "Past Simple, окончание -ed и лексика путешествий на истории «Yes Man».",
-      "goal": "Рассказать о прошлой поездке и расспросить собеседника о его отпуске",
+      "description": "Past Continuous и Past Simple в рассказе о поездке, слабые формы was / were и лексика путешествий на истории «Yes Man».",
+      "goal": "Рассказать историю о поездке: что происходило и что случилось, - и расспросить собеседника",
       "level": "B1",
       "durationMin": 60,
       "bookTitle": "Cambridge Empower B1 (2nd edition)",
@@ -4837,7 +4837,7 @@
         {
           "time": "24–34",
           "title": "Грамматика 1",
-          "note": "Past Simple, утверждение"
+          "note": "Past Continuous: фон истории"
         },
         {
           "time": "34–42",
@@ -4847,12 +4847,12 @@
         {
           "time": "42–52",
           "title": "Грамматика 2",
-          "note": "Отрицание, вопросы и -ed"
+          "note": "when и while, слабые формы was / were"
         },
         {
           "time": "52–60",
           "title": "Говорение",
-          "note": "Рассказ о своей поездке"
+          "note": "История о своей поездке"
         }
       ],
       "blocks": [
@@ -5097,17 +5097,19 @@
         },
         {
           "kind": "rule",
-          "title": "Правило 1: Past Simple, утверждение",
+          "title": "Правило 1: Past Continuous — что происходило в тот момент",
           "paragraphs": [
-            "Past Simple рассказывает о законченных действиях в прошлом. Правильные глаголы получают -ed, неправильные меняют форму."
+            "Past Simple говорит, что случилось. Past Continuous рисует картину вокруг: что уже происходило в тот момент. Именно так начинаются хорошие истории о поездках."
           ],
           "rules": [
-            "Правильные глаголы: start - started, decide - decided, ask - asked, change - changed, want - wanted, arrive - arrived.",
-            "Неправильные: become - became, feel - felt, do - did, have - had, get - got, see - saw, sleep - slept, go - went, give - gave, take - took, win - won, spend - spent.",
-            "Форма одинакова для всех лиц: I went, she went, they went."
+            "Форма: was / were + глагол с -ing. I / he / she / it was sitting · you / we / they were sitting.",
+            "Действие в процессе в конкретный момент прошлого: At 10 am I was standing in front of a travel agent's.",
+            "Фон истории: It was very hot, the sun was shining and people were swimming in the sea.",
+            "Отрицание и вопрос: I wasn't listening. · What were you doing at midnight? · Was she waiting for you?",
+            "Глаголы состояния (like, love, know, want, need, have в значении «иметь») в Continuous не ставим: I didn't like the beach, а не I wasn't liking."
           ],
           "formulas": [
-            "I worked as a waiter for a day. · I spent a day fishing. · I won a dancing competition."
+            "was / were + verb-ing: The receptionist was smiling. · wasn't / weren't + verb-ing: We weren't sleeping. · Was / Were + подлежащее + verb-ing? Were they waiting?"
           ],
           "examples": [],
           "prompts": [],
@@ -5124,73 +5126,83 @@
           "text": "",
           "tasks": [
             {
-              "id": "2a-g1-1",
+              "id": "2a-pc-1",
               "kind": "fill",
-              "prompt": "Впишите глагол в Past Simple (work): I ___ as a waiter for a day, for no money.",
+              "prompt": "Впишите глагол в Past Continuous (stand): At 10 am on Saturday, I ___ in front of a travel agent's.",
               "options": [],
               "optionValues": [],
-              "answer": "worked",
-              "explanation": "Правильный глагол: work - worked.",
+              "answer": "was standing",
+              "explanation": "Действие в процессе в конкретный момент: was + standing.",
               "x": -1,
               "y": -1,
               "w": 0
             },
             {
-              "id": "2a-g1-2",
+              "id": "2a-pc-2",
               "kind": "fill",
-              "prompt": "Впишите глагол в Past Simple (spend): I ___ a day fishing with five Greek fishermen.",
+              "prompt": "Впишите глагол в Past Continuous (shine): It was 40°C at the beach and the sun ___.",
               "options": [],
               "optionValues": [],
-              "answer": "spent",
-              "explanation": "Неправильный глагол: spend - spent.",
+              "answer": "was shining",
+              "explanation": "Фон истории - Past Continuous: the sun was shining.",
               "x": -1,
               "y": -1,
               "w": 0
             },
             {
-              "id": "2a-g1-3",
+              "id": "2a-pc-3",
               "kind": "fill",
-              "prompt": "Впишите глагол в Past Simple (stay): I ___ at a beach party until six in the morning.",
+              "prompt": "Впишите отрицание в Past Continuous (listen): The travel agent ___ to me, so she booked a beach holiday.",
               "options": [],
               "optionValues": [],
-              "answer": "stayed",
-              "explanation": "Правильный глагол: stay - stayed.",
+              "answer": "wasn't listening, was not listening",
+              "explanation": "Отрицание: wasn't + глагол с -ing.",
               "x": -1,
               "y": -1,
               "w": 0
             },
             {
-              "id": "2a-g1-4",
+              "id": "2a-pc-4",
               "kind": "fill",
-              "prompt": "Впишите глагол в Past Simple (win): I ___ a dancing competition.",
+              "prompt": "Составьте вопрос в Past Continuous из слов (you, do): What ___ at midnight on the last day?",
               "options": [],
               "optionValues": [],
-              "answer": "won",
-              "explanation": "Неправильный глагол: win - won.",
+              "answer": "were you doing",
+              "explanation": "Вопрос: were + подлежащее + глагол с -ing: What were you doing?",
               "x": -1,
               "y": -1,
               "w": 0
             },
             {
-              "id": "2a-g1-5",
-              "kind": "fill",
-              "prompt": "Впишите глагол в Past Simple (take): I ___ the same boat trip three times.",
-              "options": [],
-              "optionValues": [],
-              "answer": "took",
-              "explanation": "Неправильный глагол: take - took.",
+              "id": "2a-pc-5",
+              "kind": "choice",
+              "prompt": "Выберите верный вариант — помните про глаголы состояния: I ___ the beach, but I said 'Yes'.",
+              "options": [
+                "didn't like",
+                "wasn't liking",
+                "weren't liking",
+                "didn't liking"
+              ],
+              "optionValues": [
+                "didn't like",
+                "wasn't liking",
+                "weren't liking",
+                "didn't liking"
+              ],
+              "answer": "didn't like",
+              "explanation": "Like - глагол состояния, в Continuous его не ставим: didn't like.",
               "x": -1,
               "y": -1,
               "w": 0
             },
             {
-              "id": "2a-g1-6",
+              "id": "2a-pc-6",
               "kind": "fill",
-              "prompt": "Впишите глагол в Past Simple (go): I ___ swimming at midnight.",
+              "prompt": "Впишите глагол в Past Continuous (smile): When I asked about their plans, all my new friends ___ at me.",
               "options": [],
               "optionValues": [],
-              "answer": "went",
-              "explanation": "Неправильный глагол: go - went.",
+              "answer": "were smiling",
+              "explanation": "Friends - множественное число: were + smiling. Так в записи: They were all smiling at me.",
               "x": -1,
               "y": -1,
               "w": 0
@@ -5313,98 +5325,121 @@
         },
         {
           "kind": "rule",
-          "title": "Правило 2: Past Simple, отрицание и вопросы",
+          "title": "Правило 2: when и while — прерванное действие",
           "paragraphs": [
-            "В отрицании и вопросе смысловой глагол возвращается в начальную форму, а прошедшее время показывает did."
+            "Когда длинное действие прерывается коротким, длинное ставим в Past Continuous, а короткое - в Past Simple. Прослушайте примеры из учебника."
           ],
           "rules": [
-            "Обычные глаголы: I didn't like the mosquitoes. · Did you have a good week?",
-            "Глагол be отдельный: Some of my experiences weren't very good. · What was your favourite thing?",
-            "Вопросительное слово ставим перед did/was: What did you buy? · Where were you?"
+            "Длинное действие (Past Continuous) + короткое, которое его прервало (Past Simple): I was lying on the beach when a man came towards me.",
+            "while + длинное действие: While I was swimming, a mosquito bit me. when + короткое действие: I was reading when the phone rang.",
+            "Два длинных действия одновременно - оба в Past Continuous: While Richard was skiing, his friends were watching from the boat.",
+            "Цепочка коротких действий одно за другим - только Past Simple: He stood up, fell over and tried again.",
+            "Если часть с when / while стоит первой, после неё ставим запятую: While we were waiting, it started to rain.",
+            "during + существительное, while + подлежащее и глагол: during the flight, но while we were flying."
           ],
-          "formulas": [
-            "did + подлежащее + инфинитив: Did you enjoy the course? · didn't + инфинитив: I didn't fall over."
-          ],
+          "formulas": [],
           "examples": [],
           "prompts": [],
           "vocab": [],
-          "audioUrl": "",
-          "audioTitle": "",
+          "audioUrl": "/audio/empower/unit2/track-02-12.mp3",
+          "audioTitle": "Track 02.12 · Past Continuous и Past Simple в одной фразе",
           "videoUrl": "",
           "videoTitle": "",
           "subtitlesUrl": "",
           "sample": "",
-          "transcript": "",
+          "transcript": "1 It was raining when I left the house. 2 When I boarded the plane, all the other passengers were waiting for me. 3 I was reading my book when one of the flight attendants spoke to me. 4 I was sitting on the toilet when the turbulence started.",
           "imageUrl": "",
           "hidden": false,
           "text": "",
           "tasks": [
             {
-              "id": "2a-g2-1",
+              "id": "2a-ww-1",
               "kind": "fill",
-              "prompt": "Впишите пропуск (1 слово): Some of my experiences ___ very good.",
+              "prompt": "Длинное действие или короткое? Впишите глагол в нужном времени (lie): I ___ on the beach when a man with sunglasses came towards me.",
               "options": [],
               "optionValues": [],
-              "answer": "weren't, were not",
-              "explanation": "Множественное число с be в отрицании: weren't.",
+              "answer": "was lying",
+              "explanation": "Лежал долго - Past Continuous; подошёл - короткое действие, Past Simple.",
               "x": -1,
               "y": -1,
               "w": 0
             },
             {
-              "id": "2a-g2-2",
+              "id": "2a-ww-2",
               "kind": "fill",
-              "prompt": "Впишите пропуск (1 слово): I ___ like the mosquitoes that bit me.",
+              "prompt": "Впишите глагол в нужном времени (bite): While I was swimming at midnight, a mosquito ___ me.",
               "options": [],
               "optionValues": [],
-              "answer": "didn't, did not",
-              "explanation": "Отрицание обычного глагола: didn't + инфинитив.",
+              "answer": "bit",
+              "explanation": "Укус - короткое действие, прервавшее плавание: Past Simple, bite - bit.",
               "x": -1,
               "y": -1,
               "w": 0
             },
             {
-              "id": "2a-g2-3",
+              "id": "2a-ww-3",
               "kind": "fill",
-              "prompt": "Впишите пропуск (1 слово): ___ you have a good week?",
+              "prompt": "Впишите глагол в нужном времени (ski): While Richard ___, his friends were taking photos from the boat.",
               "options": [],
               "optionValues": [],
-              "answer": "did",
-              "explanation": "Вопрос с обычным глаголом: Did you have ...?",
+              "answer": "was skiing",
+              "explanation": "Два длинных действия одновременно - оба в Past Continuous.",
               "x": -1,
               "y": -1,
               "w": 0
             },
             {
-              "id": "2a-g2-4",
-              "kind": "fill",
-              "prompt": "Впишите пропуск (1 слово): What ___ your favourite thing?",
-              "options": [],
-              "optionValues": [],
-              "answer": "was",
-              "explanation": "Вопрос с be в единственном числе: What was ...?",
-              "x": -1,
-              "y": -1,
-              "w": 0
-            },
-            {
-              "id": "2a-g2-5",
+              "id": "2a-ww-4",
               "kind": "choice",
-              "prompt": "Выберите верный вопрос о прошлом:",
+              "prompt": "Выберите союз — короткое действие прерывает длинное: I was reading the poster ___ the travel agent opened the door.",
               "options": [
-                "Did you go to the beach?",
-                "Did you went to the beach?",
-                "Were you go to the beach?",
-                "Do you went to the beach?"
+                "when",
+                "while",
+                "during",
+                "and"
               ],
               "optionValues": [
-                "did you go to the beach?",
-                "did you went to the beach?",
-                "were you go to the beach?",
-                "do you went to the beach?"
+                "when",
+                "while",
+                "during",
+                "and"
               ],
-              "answer": "did you go to the beach?",
-              "explanation": "После did глагол стоит в начальной форме: Did you go ...?",
+              "answer": "when",
+              "explanation": "Перед коротким действием ставим when. While - перед длинным.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "2a-ww-5",
+              "kind": "choice",
+              "prompt": "Выберите верное предложение о цепочке действий:",
+              "options": [
+                "He stood up, fell over and tried again.",
+                "He was standing up, was falling over and was trying again.",
+                "He stood up, was falling over and tried again.",
+                "He was stand up, fell over and tried again."
+              ],
+              "optionValues": [
+                "correct",
+                "all continuous",
+                "mixed",
+                "wrong form"
+              ],
+              "answer": "correct",
+              "explanation": "Действия идут одно за другим - все в Past Simple.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "2a-ww-6",
+              "kind": "fill",
+              "prompt": "Впишите начало предложения в Past Continuous из слов (we, walk): ___ to the minibus when we saw the sea.",
+              "options": [],
+              "optionValues": [],
+              "answer": "we were walking",
+              "explanation": "Длинное действие, которое прервалось: we were walking.",
               "x": -1,
               "y": -1,
               "w": 0
@@ -5413,82 +5448,93 @@
         },
         {
           "kind": "rule",
-          "title": "Произношение: окончание -ed",
+          "title": "Произношение: слабые и сильные формы was и were",
           "paragraphs": [
-            "Окончание -ed читается тремя способами. Лишний слог появляется только после звуков /t/ и /d/."
+            "В быстрой речи was и were почти проглатываются, а в кратких ответах и отрицаниях звучат полностью. Прослушайте запись и повторите за диктором."
           ],
           "rules": [
-            "После /t/ и /d/ добавляется слог /ɪd/: wanted, needed, decided, started, waited, included, ended.",
-            "После глухих согласных читается /t/: looked, watched, stopped, asked.",
-            "После звонких согласных и гласных читается /d/: played, changed, arrived, smiled, believed."
+            "В утверждении и в начале вопроса - слабая форма: was /wəz/, were /wə/. I was /wəz/ driving to work. Were /wə/ they travelling by train?",
+            "В кратком ответе, в конце фразы - сильная форма: Yes, she was /wɒz/. Yes, they were /wɜː/.",
+            "Отрицания всегда звучат полностью и с ударением: wasn't /ˈwɒznt/, weren't /wɜːnt/.",
+            "Главное ударение в Past Continuous падает на смысловой глагол: I was DRIving to work. We weren't WATCHing."
           ],
           "formulas": [],
           "examples": [],
           "prompts": [],
           "vocab": [],
-          "audioUrl": "/audio/empower/unit2/track-02-05.mp3",
-          "audioTitle": "Track 02.05 · -ed endings",
+          "audioUrl": "/audio/empower/unit2/track-02-13.mp3",
+          "audioTitle": "Track 02.13 · was и were",
           "videoUrl": "",
           "videoTitle": "",
           "subtitlesUrl": "",
           "sample": "",
-          "transcript": "",
+          "transcript": "I was driving to work. You were standing on the platform. He wasn't listening. We weren't watching. Was she waiting for you? Yes, she was. No, she wasn't. Were they travelling by train? Yes, they were. No, they weren't.",
           "imageUrl": "",
           "hidden": false,
           "text": "",
           "tasks": [
             {
-              "id": "2a-p-1",
+              "id": "2a-wf-1",
               "kind": "choice",
-              "prompt": "Прослушайте запись и выберите слово, где -ed даёт лишний слог:",
+              "prompt": "Прослушайте запись: как звучит was в предложении I was driving to work?",
               "options": [
-                "needed",
-                "played",
-                "changed",
-                "asked"
+                "коротко и слабо /wəz/",
+                "полно и с ударением /wɒz/",
+                "как пишется, /was/",
+                "его не слышно совсем"
               ],
               "optionValues": [
-                "needed",
-                "played",
-                "changed",
-                "asked"
+                "weak",
+                "strong",
+                "as written",
+                "silent"
               ],
-              "answer": "needed",
-              "explanation": "Needed = need + /ɪd/: основа кончается на /d/.",
+              "answer": "weak",
+              "explanation": "В утверждении was безударное и слабое: /wəz/.",
               "x": -1,
               "y": -1,
               "w": 0
             },
             {
-              "id": "2a-p-2",
+              "id": "2a-wf-2",
               "kind": "choice",
-              "prompt": "Выберите слово, где -ed НЕ добавляет слога:",
+              "prompt": "В какой фразе was звучит сильно, /wɒz/?",
               "options": [
-                "watched",
-                "waited",
-                "included",
-                "ended"
+                "Yes, she was.",
+                "I was driving.",
+                "She was waiting.",
+                "It was raining."
               ],
               "optionValues": [
-                "watched",
-                "waited",
-                "included",
-                "ended"
+                "short answer",
+                "statement 1",
+                "statement 2",
+                "statement 3"
               ],
-              "answer": "watched",
-              "explanation": "Watched читается одним слогом: /wɒtʃt/.",
+              "answer": "short answer",
+              "explanation": "В кратком ответе was стоит в конце и звучит полностью: Yes, she was.",
               "x": -1,
               "y": -1,
               "w": 0
             },
             {
-              "id": "2a-p-3",
-              "kind": "fill",
-              "prompt": "Впишите звук, который появляется после /t/ и /d/ (2 буквы, как в слове needed):",
-              "options": [],
-              "optionValues": [],
-              "answer": "id, ɪd",
-              "explanation": "После /t/ и /d/ окончание читается как отдельный слог /ɪd/.",
+              "id": "2a-wf-3",
+              "kind": "choice",
+              "prompt": "Какие слова звучат с ударением во фразе We weren't watching?",
+              "options": [
+                "weren't и watching",
+                "только we",
+                "только weren't",
+                "ни одно слово"
+              ],
+              "optionValues": [
+                "negative and main verb",
+                "subject",
+                "only negative",
+                "none"
+              ],
+              "answer": "negative and main verb",
+              "explanation": "Отрицание weren't всегда сильное, а главное ударение - на смысловом глаголе watching.",
               "x": -1,
               "y": -1,
               "w": 0
@@ -5653,17 +5699,17 @@
           "kind": "speaking",
           "title": "Говорение: расскажите о своей поездке",
           "paragraphs": [
-            "Вспомните поездку, которая вам понравилась, и расскажите о ней в Past Simple."
+            "Вспомните поездку, которая вам понравилась, и расскажите о ней: что случилось - в Past Simple, что происходило в тот момент - в Past Continuous."
           ],
           "rules": [],
           "formulas": [],
           "examples": [],
           "prompts": [
-            "When did you go and where did you go?",
-            "Who did you go with? How long did you go for?",
+            "When did you go and where did you go? Who did you go with?",
             "What kind of accommodation did you stay in?",
-            "Did you do any sightseeing? Who did you meet?",
-            "Did you bring back any souvenirs? What went wrong?"
+            "Describe one moment: what was the weather like? What were people doing around you?",
+            "Did anything go wrong? What were you doing when it happened?",
+            "Did you bring back any souvenirs?"
           ],
           "vocab": [],
           "audioUrl": "",
@@ -5671,7 +5717,7 @@
           "videoUrl": "",
           "videoTitle": "",
           "subtitlesUrl": "",
-          "sample": "Two years ago I went to Georgia with my sister. We went for ten days in September, because it wasn't too hot then. We stayed in a small guest house in Tbilisi - it wasn't expensive and the family cooked breakfast for us. We did a lot of sightseeing: we walked around the old town, took a cable car and visited two museums. On the third day we met a group of students from Poland and spent the evening with them. I brought back some wine and a small carpet as souvenirs. One thing went wrong: we missed our train to Batumi, so we had to take a taxi and it cost a lot. But it was a great trip and I would like to go there again.",
+          "sample": "Two years ago I went to Georgia with my sister. We stayed in a small guest house in Tbilisi - the family cooked breakfast for us every morning. I remember our first evening very well: it was warm, the sun was going down and people were sitting in cafes along the river. One thing went wrong: we were walking to the station when my sister realised she didn't have her passport. We ran back to the guest house and missed our train to Batumi, so we took an expensive taxi. While we were driving, the driver was telling us stories about his village - it was the best part of the day. I brought back some wine and a small carpet.",
           "transcript": "",
           "imageUrl": "",
           "hidden": false,
@@ -5770,185 +5816,203 @@
         "intro": "Empower B1, Unit 2A: Past Simple, окончание -ed и лексика путешествий.",
         "tasks": [
           {
-            "section": "1. Past Simple: утверждение",
+            "section": "1. Past Continuous: что происходило",
             "kind": "FILL",
-            "prompt": "Впишите глагол в Past Simple (start): I ___ my holiday on Saturday morning.",
+            "prompt": "Впишите глагол в Past Continuous (read): At 9 pm my sister ___ a guidebook in our hotel room.",
+            "options": [],
+            "optionValues": [],
+            "answer": "was reading",
+            "explanation": "Действие в процессе в конкретный момент: was + reading.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": "",
+            "rule": ""
+          },
+          {
+            "section": "1. Past Continuous: что происходило",
+            "kind": "FILL",
+            "prompt": "Впишите глагол в Past Continuous (rain): When we arrived in London, it ___.",
+            "options": [],
+            "optionValues": [],
+            "answer": "was raining",
+            "explanation": "Фон истории, погода в тот момент - Past Continuous.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": "",
+            "rule": ""
+          },
+          {
+            "section": "1. Past Continuous: что происходило",
+            "kind": "FILL",
+            "prompt": "Впишите отрицание в Past Continuous (wait): The taxi ___ for us at the airport, so we took a bus.",
+            "options": [],
+            "optionValues": [],
+            "answer": "wasn't waiting, was not waiting",
+            "explanation": "Отрицание: wasn't + глагол с -ing.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": "",
+            "rule": ""
+          },
+          {
+            "section": "1. Past Continuous: что происходило",
+            "kind": "FILL",
+            "prompt": "Составьте вопрос в Past Continuous из слов (they, go): Where ___ when you met them?",
+            "options": [],
+            "optionValues": [],
+            "answer": "were they going",
+            "explanation": "Вопрос: were + подлежащее + глагол с -ing.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": "",
+            "rule": ""
+          },
+          {
+            "section": "1. Past Continuous: что происходило",
+            "kind": "CHOICE",
+            "prompt": "Выберите верный вариант — помните про глаголы состояния: We ___ a map, so we asked a police officer.",
+            "options": [
+              "didn't have",
+              "weren't having",
+              "wasn't having",
+              "didn't having"
+            ],
+            "optionValues": [],
+            "answer": "didn't have",
+            "explanation": "Have в значении «иметь» - глагол состояния, в Continuous его не ставим.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": "",
+            "rule": ""
+          },
+          {
+            "section": "2. When или while: прерванное действие",
+            "kind": "FILL",
+            "prompt": "Впишите глагол в нужном времени (drive): We ___ to the airport when the car broke down.",
+            "options": [],
+            "optionValues": [],
+            "answer": "were driving",
+            "explanation": "Ехали долго - Past Continuous; сломалась - короткое действие, Past Simple.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": "",
+            "rule": ""
+          },
+          {
+            "section": "2. When или while: прерванное действие",
+            "kind": "FILL",
+            "prompt": "Впишите глагол в нужном времени (start): While we were having lunch on the terrace, it ___ to rain.",
             "options": [],
             "optionValues": [],
             "answer": "started",
-            "explanation": "Правильный глагол: start - started.",
+            "explanation": "Дождь начался - короткое действие, прервавшее обед: Past Simple.",
             "audioUrl": "",
             "transcript": "",
-            "text": ""
+            "text": "",
+            "rule": ""
           },
           {
-            "section": "1. Past Simple: утверждение",
-            "kind": "FILL",
-            "prompt": "Впишите глагол в Past Simple (fly): Last April we ___ to Rome for four days.",
-            "options": [],
-            "optionValues": [],
-            "answer": "flew",
-            "explanation": "Неправильный глагол: fly - flew.",
-            "audioUrl": "",
-            "transcript": "",
-            "text": ""
-          },
-          {
-            "section": "1. Past Simple: утверждение",
-            "kind": "FILL",
-            "prompt": "Впишите глагол в Past Simple (buy): She ___ two hats and a watch at the beach.",
-            "options": [],
-            "optionValues": [],
-            "answer": "bought",
-            "explanation": "Неправильный глагол: buy - bought.",
-            "audioUrl": "",
-            "transcript": "",
-            "text": ""
-          },
-          {
-            "section": "1. Past Simple: утверждение",
+            "section": "2. When или while: прерванное действие",
             "kind": "CHOICE",
-            "prompt": "Выберите верную форму: We ___ at a small hotel near the sea.",
+            "prompt": "Выберите верное слово: ___ we were visiting the castle, my phone rang.",
             "options": [
-              "stayed",
-              "stay",
-              "staied",
-              "was stay"
+              "While",
+              "During",
+              "Meanwhile",
+              "After"
             ],
             "optionValues": [],
-            "answer": "stayed",
-            "explanation": "Правильный глагол: stay - stayed.",
+            "answer": "While",
+            "explanation": "После while идёт подлежащее и глагол; during ставится только перед существительным: during the visit.",
             "audioUrl": "",
             "transcript": "",
-            "text": ""
+            "text": "",
+            "rule": ""
           },
           {
-            "section": "1. Past Simple: утверждение",
-            "kind": "FILL",
-            "prompt": "Впишите глагол в Past Simple (see): From the boat we ___ dolphins and an old castle.",
-            "options": [],
-            "optionValues": [],
-            "answer": "saw",
-            "explanation": "Неправильный глагол: see - saw.",
-            "audioUrl": "",
-            "transcript": "",
-            "text": ""
-          },
-          {
-            "section": "2. Past Simple: отрицание и вопросы",
-            "kind": "FILL",
-            "prompt": "Впишите пропуск (1 слово): We ___ book a hotel - we stayed with friends.",
-            "options": [],
-            "optionValues": [],
-            "answer": "didn't, did not",
-            "explanation": "Отрицание обычного глагола: didn't + инфинитив.",
-            "audioUrl": "",
-            "transcript": "",
-            "text": ""
-          },
-          {
-            "section": "2. Past Simple: отрицание и вопросы",
-            "kind": "FILL",
-            "prompt": "Впишите пропуск (1 слово): ___ they enjoy the boat trip along the coast?",
-            "options": [],
-            "optionValues": [],
-            "answer": "did",
-            "explanation": "Вопрос с обычным глаголом начинается с did.",
-            "audioUrl": "",
-            "transcript": "",
-            "text": ""
-          },
-          {
-            "section": "2. Past Simple: отрицание и вопросы",
-            "kind": "FILL",
-            "prompt": "Впишите пропуск (1 слово): Where ___ you last summer? - In Turkey.",
-            "options": [],
-            "optionValues": [],
-            "answer": "were",
-            "explanation": "Вопрос с be во множественном числе и с you: Where were you?",
-            "audioUrl": "",
-            "transcript": "",
-            "text": ""
-          },
-          {
-            "section": "2. Past Simple: отрицание и вопросы",
+            "section": "2. When или while: прерванное действие",
             "kind": "CHOICE",
-            "prompt": "Выберите верно построенный вопрос:",
+            "prompt": "Выберите верное предложение о действиях, которые шли одно за другим:",
             "options": [
-              "Where did you go last summer?",
-              "Where did you went last summer?",
-              "Where you went last summer?",
-              "Where were you go last summer?"
+              "We landed and then took a taxi to the hotel.",
+              "We were landing and then were taking a taxi to the hotel.",
+              "We landed and then were taking a taxi to the hotel.",
+              "We was landing and then took a taxi to the hotel."
             ],
             "optionValues": [],
-            "answer": "where did you go last summer?",
-            "explanation": "После did глагол стоит в начальной форме.",
+            "answer": "We landed and then took a taxi to the hotel.",
+            "explanation": "Цепочка коротких действий - только Past Simple.",
             "audioUrl": "",
             "transcript": "",
-            "text": ""
+            "text": "",
+            "rule": ""
           },
           {
-            "section": "2. Past Simple: отрицание и вопросы",
-            "kind": "CHOICE",
-            "prompt": "Выберите верное отрицание: The rooms ___ clean, so we changed the hotel.",
-            "options": [
-              "weren't",
-              "wasn't",
-              "didn't",
-              "hadn't"
-            ],
-            "optionValues": [],
-            "answer": "weren't",
-            "explanation": "Множественное число с be в отрицании: weren't.",
-            "audioUrl": "",
-            "transcript": "",
-            "text": ""
-          },
-          {
-            "section": "3. Произношение: окончание -ed",
-            "kind": "CHOICE",
-            "prompt": "Выберите слово, где -ed читается как отдельный слог /ɪd/:",
-            "options": [
-              "decided",
-              "played",
-              "arrived",
-              "looked"
-            ],
-            "optionValues": [],
-            "answer": "decided",
-            "explanation": "После /d/ окончание даёт лишний слог: decided.",
-            "audioUrl": "",
-            "transcript": "",
-            "text": ""
-          },
-          {
-            "section": "3. Произношение: окончание -ed",
-            "kind": "CHOICE",
-            "prompt": "Выберите слово, где -ed НЕ добавляет слога:",
-            "options": [
-              "stopped",
-              "waited",
-              "included",
-              "ended"
-            ],
-            "optionValues": [],
-            "answer": "stopped",
-            "explanation": "Stopped читается одним слогом: /stɒpt/.",
-            "audioUrl": "",
-            "transcript": "",
-            "text": ""
-          },
-          {
-            "section": "3. Произношение: окончание -ed",
+            "section": "2. When или while: прерванное действие",
             "kind": "FILL",
-            "prompt": "Впишите два согласных звука, после которых -ed произносится как отдельный слог:",
+            "prompt": "Впишите глагол в нужном времени (sleep): My brother ___ when the plane landed, so I woke him up.",
             "options": [],
             "optionValues": [],
-            "answer": "t and d, d and t, t d, d t, /t/ and /d/",
-            "explanation": "Лишний слог появляется только после /t/ и /d/.",
+            "answer": "was sleeping",
+            "explanation": "Спал долго - Past Continuous; самолёт приземлился - короткое действие.",
             "audioUrl": "",
             "transcript": "",
-            "text": ""
+            "text": "",
+            "rule": ""
+          },
+          {
+            "section": "3. Произношение: was и were",
+            "kind": "CHOICE",
+            "prompt": "Прослушайте запись: как звучит was в предложении It was raining?",
+            "options": [
+              "коротко и слабо (wəz)",
+              "полно и с ударением (wɒz)",
+              "как пишется (was)",
+              "его не слышно"
+            ],
+            "optionValues": [],
+            "answer": "коротко и слабо (wəz)",
+            "explanation": "В утверждении was безударное и слабое.",
+            "audioUrl": "/audio/empower/unit2/track-02-14.mp3",
+            "transcript": "1 It was raining. 2 It wasn't raining. 3 Was it raining? 4 We were driving fast. 5 We weren't driving fast. 6 Were we driving fast?",
+            "text": "",
+            "rule": ""
+          },
+          {
+            "section": "3. Произношение: was и were",
+            "kind": "CHOICE",
+            "prompt": "Прослушайте запись: в каком случае were звучит полностью (wɜː)?",
+            "options": [
+              "в кратком ответе в конце фразы",
+              "в начале вопроса",
+              "в утверждении перед глаголом с -ing",
+              "никогда"
+            ],
+            "optionValues": [],
+            "answer": "в кратком ответе в конце фразы",
+            "explanation": "Сильная форма звучит в кратком ответе: Yes, we were. В начале вопроса were слабое.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": "",
+            "rule": ""
+          },
+          {
+            "section": "3. Произношение: was и were",
+            "kind": "CHOICE",
+            "prompt": "Прослушайте запись: как звучит weren't в We weren't driving fast?",
+            "options": [
+              "сильно и с ударением",
+              "слабо и без ударения",
+              "как were без изменений",
+              "его не слышно"
+            ],
+            "optionValues": [],
+            "answer": "сильно и с ударением",
+            "explanation": "Отрицания wasn't и weren't всегда звучат полностью и с ударением.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": "",
+            "rule": ""
           },
           {
             "section": "4. Лексика: tourism",
@@ -5960,7 +6024,8 @@
             "explanation": "Souvenir - сувенир.",
             "audioUrl": "",
             "transcript": "",
-            "text": ""
+            "text": "",
+            "rule": ""
           },
           {
             "section": "4. Лексика: tourism",
@@ -5972,7 +6037,8 @@
             "explanation": "Accommodation - жильё, где вы останавливаетесь.",
             "audioUrl": "",
             "transcript": "",
-            "text": ""
+            "text": "",
+            "rule": ""
           },
           {
             "section": "4. Лексика: tourism",
@@ -5984,7 +6050,8 @@
             "explanation": "Suntan lotion - крем от загара.",
             "audioUrl": "",
             "transcript": "",
-            "text": ""
+            "text": "",
+            "rule": ""
           },
           {
             "section": "4. Лексика: tourism",
@@ -6001,7 +6068,8 @@
             "explanation": "Sightseeing - осмотр достопримечательностей.",
             "audioUrl": "",
             "transcript": "",
-            "text": ""
+            "text": "",
+            "rule": ""
           },
           {
             "section": "5. Чтение: поездка в Турцию",
@@ -6018,7 +6086,8 @@
             "explanation": "В тексте: The weather wasn't very good in the first two days - it rained a lot.",
             "audioUrl": "",
             "transcript": "",
-            "text": "Anna and her brother went to Turkey last May. It was their first holiday together, and they didn't book a package tour: they found a small hotel online and bought cheap flights. The weather wasn't very good in the first two days - it rained a lot - so they visited two museums and a big market instead of the beach. On the third day the sun came out. They took a boat trip along the coast, ate fish in a small village and swam in the sea. Anna didn't want to buy souvenirs, but her brother bought a carpet and spent almost all his money. On the last evening they met a family from Poland and talked until midnight. The flight home was at six in the morning, so they didn't sleep at all. Anna was tired, but she says it was the best week of the year."
+            "text": "Anna and her brother went to Turkey last May. It was their first holiday together, and they didn't book a package tour: they found a small hotel online and bought cheap flights. The weather wasn't very good in the first two days - it rained a lot - so they visited two museums and a big market instead of the beach. On the third day the sun came out. They took a boat trip along the coast, ate fish in a small village and swam in the sea. Anna didn't want to buy souvenirs, but her brother bought a carpet and spent almost all his money. On the last evening they met a family from Poland and talked until midnight. The flight home was at six in the morning, so they didn't sleep at all. Anna was tired, but she says it was the best week of the year.",
+            "rule": ""
           },
           {
             "section": "5. Чтение: поездка в Турцию",
@@ -6030,7 +6099,8 @@
             "explanation": "В тексте: They took a boat trip along the coast.",
             "audioUrl": "",
             "transcript": "",
-            "text": "Anna and her brother went to Turkey last May. It was their first holiday together, and they didn't book a package tour: they found a small hotel online and bought cheap flights. The weather wasn't very good in the first two days - it rained a lot - so they visited two museums and a big market instead of the beach. On the third day the sun came out. They took a boat trip along the coast, ate fish in a small village and swam in the sea. Anna didn't want to buy souvenirs, but her brother bought a carpet and spent almost all his money. On the last evening they met a family from Poland and talked until midnight. The flight home was at six in the morning, so they didn't sleep at all. Anna was tired, but she says it was the best week of the year."
+            "text": "Anna and her brother went to Turkey last May. It was their first holiday together, and they didn't book a package tour: they found a small hotel online and bought cheap flights. The weather wasn't very good in the first two days - it rained a lot - so they visited two museums and a big market instead of the beach. On the third day the sun came out. They took a boat trip along the coast, ate fish in a small village and swam in the sea. Anna didn't want to buy souvenirs, but her brother bought a carpet and spent almost all his money. On the last evening they met a family from Poland and talked until midnight. The flight home was at six in the morning, so they didn't sleep at all. Anna was tired, but she says it was the best week of the year.",
+            "rule": ""
           },
           {
             "section": "5. Чтение: поездка в Турцию",
@@ -6047,7 +6117,8 @@
             "explanation": "В тексте: her brother bought a carpet and spent almost all his money.",
             "audioUrl": "",
             "transcript": "",
-            "text": "Anna and her brother went to Turkey last May. It was their first holiday together, and they didn't book a package tour: they found a small hotel online and bought cheap flights. The weather wasn't very good in the first two days - it rained a lot - so they visited two museums and a big market instead of the beach. On the third day the sun came out. They took a boat trip along the coast, ate fish in a small village and swam in the sea. Anna didn't want to buy souvenirs, but her brother bought a carpet and spent almost all his money. On the last evening they met a family from Poland and talked until midnight. The flight home was at six in the morning, so they didn't sleep at all. Anna was tired, but she says it was the best week of the year."
+            "text": "Anna and her brother went to Turkey last May. It was their first holiday together, and they didn't book a package tour: they found a small hotel online and bought cheap flights. The weather wasn't very good in the first two days - it rained a lot - so they visited two museums and a big market instead of the beach. On the third day the sun came out. They took a boat trip along the coast, ate fish in a small village and swam in the sea. Anna didn't want to buy souvenirs, but her brother bought a carpet and spent almost all his money. On the last evening they met a family from Poland and talked until midnight. The flight home was at six in the morning, so they didn't sleep at all. Anna was tired, but she says it was the best week of the year.",
+            "rule": ""
           },
           {
             "section": "5. Чтение: поездка в Турцию",
@@ -6059,31 +6130,8 @@
             "explanation": "Они познакомились с семьёй из Польши и проговорили до полуночи, а рейс был в шесть утра.",
             "audioUrl": "",
             "transcript": "",
-            "text": "Anna and her brother went to Turkey last May. It was their first holiday together, and they didn't book a package tour: they found a small hotel online and bought cheap flights. The weather wasn't very good in the first two days - it rained a lot - so they visited two museums and a big market instead of the beach. On the third day the sun came out. They took a boat trip along the coast, ate fish in a small village and swam in the sea. Anna didn't want to buy souvenirs, but her brother bought a carpet and spent almost all his money. On the last evening they met a family from Poland and talked until midnight. The flight home was at six in the morning, so they didn't sleep at all. Anna was tired, but she says it was the best week of the year."
-          },
-          {
-            "section": "6. Письмо: рассказ о поездке",
-            "kind": "TEACHER",
-            "prompt": "Напишите на английском рассказ о своей поездке в Past Simple, минимум 70 слов. Ответьте: когда и куда вы ездили, с кем, где жили, что делали, что пошло не так и что вы привезли.",
-            "options": [],
-            "optionValues": [],
-            "answer": "",
-            "explanation": "Last September I went to Georgia with my sister. We stayed in a small guest house in Tbilisi for ten days. Every morning the family cooked breakfast for us. We walked around the old town, took a cable car and visited two museums. On the third day we met a group of students from Poland and spent the evening with them. One thing went wrong: we missed our train to Batumi, so we took an expensive taxi. I brought back some wine and a small carpet. It was a great trip.",
-            "audioUrl": "",
-            "transcript": "",
-            "text": ""
-          },
-          {
-            "section": "7. Говорение: два вопроса другу",
-            "kind": "TEACHER",
-            "prompt": "Подготовьте на английском 8 вопросов в Past Simple, которые вы зададите другу о его последнем отпуске. Используйте did, was и were.",
-            "options": [],
-            "optionValues": [],
-            "answer": "",
-            "explanation": "When did you go? Where did you go? Who did you go with? How long did you stay? What kind of accommodation did you stay in? Was the weather good? Did you do any sightseeing? Were the people friendly? Did you bring back any souvenirs?",
-            "audioUrl": "",
-            "transcript": "",
-            "text": ""
+            "text": "Anna and her brother went to Turkey last May. It was their first holiday together, and they didn't book a package tour: they found a small hotel online and bought cheap flights. The weather wasn't very good in the first two days - it rained a lot - so they visited two museums and a big market instead of the beach. On the third day the sun came out. They took a boat trip along the coast, ate fish in a small village and swam in the sea. Anna didn't want to buy souvenirs, but her brother bought a carpet and spent almost all his money. On the last evening they met a family from Poland and talked until midnight. The flight home was at six in the morning, so they didn't sleep at all. Anna was tired, but she says it was the best week of the year.",
+            "rule": ""
           },
           {
             "section": "6. Аудирование: три недели в поездке",
@@ -6095,7 +6143,8 @@
             "explanation": "1 We went away on holiday for three weeks.",
             "audioUrl": "/audio/empower/unit2/track-02-08.mp3",
             "transcript": "1 We went away on holiday for three weeks. 2 We needed to get a visa from the embassy before we travelled. 3 We also exchanged some money at the bank. 4 We booked all of our accommodation online. 5 When we arrived, we checked into our luxury hotel and unpacked our luggage. 6 We did some sightseeing. The castles and gardens were gorgeous! 7 We bought souvenirs for our friends and family. 8 The second week we checked out of our hotel and stayed in a hostel. It was cheap and friendly. 9 The third week we stayed on a campsite by the beach. 10 We had a great adventure and we didn't want to come home.",
-            "text": ""
+            "text": "",
+            "rule": ""
           },
           {
             "section": "6. Аудирование: три недели в поездке",
@@ -6112,7 +6161,8 @@
             "explanation": "2 We needed to get a visa from the embassy before we travelled.",
             "audioUrl": "",
             "transcript": "",
-            "text": ""
+            "text": "",
+            "rule": ""
           },
           {
             "section": "6. Аудирование: три недели в поездке",
@@ -6129,7 +6179,8 @@
             "explanation": "8 The second week we checked out of our hotel and stayed in a hostel.",
             "audioUrl": "",
             "transcript": "",
-            "text": ""
+            "text": "",
+            "rule": ""
           },
           {
             "section": "6. Аудирование: три недели в поездке",
@@ -6141,7 +6192,34 @@
             "explanation": "9 The third week we stayed on a campsite by the beach.",
             "audioUrl": "",
             "transcript": "",
-            "text": ""
+            "text": "",
+            "rule": ""
+          },
+          {
+            "section": "7. Письмо: рассказ о поездке",
+            "kind": "TEACHER",
+            "prompt": "Напишите на английском рассказ о своей поездке, минимум 70 слов. Используйте Past Simple (что случилось) и Past Continuous (что происходило в тот момент), хотя бы одно предложение с when и одно с while. Расскажите: когда и куда вы ездили, с кем, где жили, что пошло не так и что вы делали, когда это случилось.",
+            "options": [],
+            "optionValues": [],
+            "answer": "",
+            "explanation": "Last September I went to Georgia with my sister. We stayed in a small guest house in Tbilisi. On the first evening we were walking along the river when we met a group of students from Poland, and we spent the whole evening with them. One thing went wrong: while we were waiting for our train to Batumi, my sister realised she didn't have her passport. We ran back and missed the train, so we took an expensive taxi. It was still a great trip.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": "",
+            "rule": "Минимум 70 слов"
+          },
+          {
+            "section": "8. Говорение: расспросите друга о поездке",
+            "kind": "TEACHER",
+            "prompt": "Подготовьте на английском 8 вопросов другу о его последнем отпуске: 5 в Past Simple (did, was, were) и 3 в Past Continuous (What were you doing when...? Was it raining when...?). На уроке вы зададите их вслух, а преподаватель ответит.",
+            "options": [],
+            "optionValues": [],
+            "answer": "",
+            "explanation": "Where did you go? Who did you go with? How long did you stay? Was the hotel good? Did you bring back any souvenirs? What were you doing when you took this photo? Was it raining when you arrived? What were people doing on the beach?",
+            "audioUrl": "",
+            "transcript": "",
+            "text": "",
+            "rule": "5 вопросов в Past Simple, 3 в Past Continuous"
           }
         ]
       }
