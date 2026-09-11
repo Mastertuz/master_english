@@ -4160,7 +4160,7 @@
           "kind": "reading",
           "title": "Чтение: три письма Саймона из Испании",
           "paragraphs": [
-            "Simon учится в Саламанке и пишет трём разным людям. Прочитайте письма и ответьте на вопросы."
+            "Simon учится в Саламанке и пишет трём людям: другу Блейку (они учатся в одном колледже, сейчас Блейк на каникулах в Германии), дяде и тёте (им он пишет сразу обоим) и младшей сестре Мике (летом она подрабатывает). Имён в письмах нет — определите адресата по подсказкам в тексте, затем ответьте на остальные вопросы."
           ],
           "rules": [],
           "formulas": [],
@@ -4179,23 +4179,45 @@
           "text": "Письмо 1\nHope you're both well and are enjoying the summer. I'm in Salamanca, in Spain. This is a photo I took of the old centre. It's a beautiful old city, as you can see - and really big! It has an incredible mix of old, historical places and new, trendy areas. As you know, I'm learning Spanish at the moment. I'm taking a two-month Spanish course here, so my Spanish is slowly improving. The classes are very good, and we also watch Spanish films. It's pretty hot here, but it's nice and cool in the evenings. Love to all, Simon\n\nПисьмо 2\nHow's it going? Are you having a good time in Berlin? Here are some photos of my group on the Spanish course. We're all from different countries, so we usually speak English when we're together - not very good for my Spanish! Anyway, I'm having a great time here, and the time's going much too quickly. There are a lot of good cafes here, and we usually all go out at night together. What's Berlin like? Send me some photos! See you back at college next month. Simon\n\nПисьмо 3\nI'm sending you some photos of the family I'm staying with in Salamanca. They've got a daughter the same age as you (her name's Blanca). She speaks English quite well, but we usually speak Spanish together. She introduced me to some of her friends, and I speak Spanish with them, too ... some of the time, not always! How's your job in the supermarket? Hope you're not working too hard and are saving a lot of money! See you next week. Love, Simon xx",
           "tasks": [
             {
-              "id": "1d-r-1",
+              "id": "1d-r-0",
               "kind": "choice",
-              "prompt": "Прочитайте письма выше и выберите ответ: Who is email 2 for?",
+              "prompt": "Определите адресата по подсказкам в тексте: Who is email 1 for?",
               "options": [
                 "his friend Blake",
                 "his uncle and aunt",
-                "his younger sister Mika",
-                "his Spanish teacher"
+                "his Spanish teacher",
+                "his younger sister Mika"
               ],
               "optionValues": [
                 "his friend blake",
                 "his uncle and aunt",
+                "his spanish teacher",
+                "his younger sister mika"
+              ],
+              "answer": "his uncle and aunt",
+              "explanation": "Подсказки: Hope you're both well и Love to all — Simon пишет сразу двоим. Это дядя и тётя.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "1d-r-1",
+              "kind": "choice",
+              "prompt": "Определите адресата по подсказкам в тексте: Who is email 2 for?",
+              "options": [
+                "his younger sister Mika",
+                "his Spanish teacher",
+                "his friend Blake",
+                "his uncle and aunt"
+              ],
+              "optionValues": [
                 "his younger sister mika",
-                "his spanish teacher"
+                "his spanish teacher",
+                "his friend blake",
+                "his uncle and aunt"
               ],
               "answer": "his friend blake",
-              "explanation": "Во втором письме Simon спрашивает про Берлин и колледж - так пишут другу.",
+              "explanation": "Подсказки: Are you having a good time in Berlin? и See you back at college next month — друг по колледжу, который сейчас в Германии. Это Блейк.",
               "x": -1,
               "y": -1,
               "w": 0
@@ -4203,21 +4225,21 @@
             {
               "id": "1d-r-2",
               "kind": "choice",
-              "prompt": "Прочитайте письма выше и выберите ответ: Who is email 3 for?",
+              "prompt": "Определите адресата по подсказкам в тексте: Who is email 3 for?",
               "options": [
-                "his younger sister Mika",
-                "his friend Blake",
                 "his uncle and aunt",
-                "his host family"
+                "his younger sister Mika",
+                "his Spanish teacher",
+                "his friend Blake"
               ],
               "optionValues": [
-                "his younger sister mika",
-                "his friend blake",
                 "his uncle and aunt",
-                "his host family"
+                "his younger sister mika",
+                "his spanish teacher",
+                "his friend blake"
               ],
               "answer": "his younger sister mika",
-              "explanation": "В третьем письме Simon спрашивает про работу в супермаркете и подписывается Love, Simon xx.",
+              "explanation": "Подсказки: How's your job in the supermarket? — летняя подработка, и у хозяев дочь the same age as you — адресат молодой. Это сестра Мика.",
               "x": -1,
               "y": -1,
               "w": 0
