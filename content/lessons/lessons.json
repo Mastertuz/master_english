@@ -4811,7 +4811,7 @@
     {
       "number": 5,
       "topic": "We had an adventure: рассказ о поездке",
-      "description": "Past Continuous и Past Simple в рассказе о поездке, слабые формы was / were и лексика путешествий на истории «Yes Man».",
+      "description": "Past Continuous и Past Simple в рассказе о поездке, прилагательные на -ed и -ing и лексика путешествий на истории «Yes Man».",
       "goal": "Рассказать историю о поездке: что происходило и что случилось, - и расспросить собеседника",
       "level": "B1",
       "durationMin": 60,
@@ -4847,7 +4847,7 @@
         {
           "time": "42–52",
           "title": "Грамматика 2",
-          "note": "when и while, слабые формы was / were"
+          "note": "when и while, прилагательные на -ed / -ing"
         },
         {
           "time": "52–60",
@@ -5450,93 +5450,134 @@
         },
         {
           "kind": "rule",
-          "title": "Произношение: слабые и сильные формы was и were",
+          "title": "Правило 3: прилагательные на -ed и -ing — bored или boring",
           "paragraphs": [
-            "В быстрой речи was и were почти проглатываются, а в кратких ответах и отрицаниях звучат полностью. Прослушайте запись и повторите за диктором."
+            "Рассказывая о поездке, мы описываем и события, и свои чувства. У многих прилагательных для этого две формы — на -ing и на -ed, и их путают даже на уровне B1."
           ],
           "rules": [
-            "В утверждении и в начале вопроса - слабая форма: was /wəz/, were /wə/. I was /wəz/ driving to work. Were /wə/ they travelling by train?",
-            "В кратком ответе, в конце фразы - сильная форма: Yes, she was /wɒz/. Yes, they were /wɜː/.",
-            "Отрицания всегда звучат полностью и с ударением: wasn't /ˈwɒznt/, weren't /wɜːnt/.",
-            "Главное ударение в Past Continuous падает на смысловой глагол: I was DRIving to work. We weren't WATCHing."
+            "-ing описывает то, что вызывает чувство, — вещь, событие, человека: The flight was boring. Water skiing is exciting.",
+            "-ed описывает, что чувствует человек: I was bored on the flight. Richard was excited after the lesson.",
+            "Как проверить: спросите себя, кто что чувствует. Чувствует человек — нужен -ed: I'm interested in history, потому что the museum is interesting.",
+            "Частые пары: tired / tiring, worried / worrying, surprised / surprising, disappointed / disappointing, exhausted / exhausting, amazed / amazing, frightened / frightening, relaxed / relaxing.",
+            "Осторожно: I'm boring — «я скучный человек», а I'm bored — «мне скучно»."
           ],
-          "formulas": [],
-          "examples": [],
+          "formulas": [
+            "что-то ...ing → человек ...ed\nThe trip was tiring, so we were tired.\nThe news was surprising, and everyone was surprised."
+          ],
+          "examples": [
+            "В истории Ричарда: перед уроком водных лыж he was really worried, первые попытки были frustrating, а потом случилось something amazing — и он был amazed."
+          ],
           "prompts": [],
           "vocab": [],
-          "audioUrl": "/audio/empower/unit2/track-02-13.mp3",
-          "audioTitle": "Track 02.13 · was и were",
+          "audioUrl": "",
+          "audioTitle": "",
           "videoUrl": "",
           "videoTitle": "",
           "subtitlesUrl": "",
           "sample": "",
-          "transcript": "I was driving to work. You were standing on the platform. He wasn't listening. We weren't watching. Was she waiting for you? Yes, she was. No, she wasn't. Were they travelling by train? Yes, they were. No, they weren't.",
+          "transcript": "",
           "imageUrl": "",
           "hidden": false,
           "text": "",
           "tasks": [
             {
-              "id": "2a-wf-1",
+              "id": "2a-adj-1",
               "kind": "choice",
-              "prompt": "Прослушайте запись: как звучит was в предложении I was driving to work?",
+              "prompt": "Выберите прилагательное: The beach party lasted until 6 am. It was ___, but I loved it.",
               "options": [
-                "коротко и слабо /wəz/",
-                "полно и с ударением /wɒz/",
-                "как пишется, /was/",
-                "его не слышно совсем"
+                "tiring",
+                "tired",
+                "tire",
+                "tiredly"
               ],
               "optionValues": [
-                "weak",
-                "strong",
-                "as written",
-                "silent"
+                "tiring",
+                "tired",
+                "tire",
+                "tiredly"
               ],
-              "answer": "weak",
-              "explanation": "В утверждении was безударное и слабое: /wəz/.",
+              "answer": "tiring",
+              "explanation": "Вечеринка сама вызывает усталость - описываем событие, нужен -ing.",
               "x": -1,
               "y": -1,
               "w": 0
             },
             {
-              "id": "2a-wf-2",
+              "id": "2a-adj-2",
               "kind": "choice",
-              "prompt": "В какой фразе was звучит сильно, /wɒz/?",
+              "prompt": "Выберите прилагательное: After three hours in the sun, Richard was really ___.",
               "options": [
-                "Yes, she was.",
-                "I was driving.",
-                "She was waiting.",
-                "It was raining."
+                "exhausted",
+                "exhausting",
+                "exhaust",
+                "exhaustion"
               ],
               "optionValues": [
-                "short answer",
-                "statement 1",
-                "statement 2",
-                "statement 3"
+                "exhausted",
+                "exhausting",
+                "exhaust",
+                "exhaustion"
               ],
-              "answer": "short answer",
-              "explanation": "В кратком ответе was стоит в конце и звучит полностью: Yes, she was.",
+              "answer": "exhausted",
+              "explanation": "Речь о том, что чувствует человек, - нужен -ed.",
               "x": -1,
               "y": -1,
               "w": 0
             },
             {
-              "id": "2a-wf-3",
+              "id": "2a-adj-3",
+              "kind": "fill",
+              "prompt": "Впишите прилагательное с нужным окончанием (amaze): On the third try something ___ happened: I didn't fall over!",
+              "options": [],
+              "optionValues": [],
+              "answer": "amazing",
+              "explanation": "Something описывает событие, которое удивляет, - нужен -ing.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "2a-adj-4",
+              "kind": "fill",
+              "prompt": "Впишите прилагательное с нужным окончанием (worry): Before the lesson Richard was really ___.",
+              "options": [],
+              "optionValues": [],
+              "answer": "worried",
+              "explanation": "Это чувство человека - нужен -ed. Буква y перед -ed меняется на i: worry - worried.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "2a-adj-5",
               "kind": "choice",
-              "prompt": "Какие слова звучат с ударением во фразе We weren't watching?",
+              "prompt": "Что значит фраза I'm boring?",
               "options": [
-                "weren't и watching",
-                "только we",
-                "только weren't",
-                "ни одно слово"
+                "я скучный человек",
+                "мне скучно",
+                "мне интересно",
+                "я устал"
               ],
               "optionValues": [
-                "negative and main verb",
-                "subject",
-                "only negative",
-                "none"
+                "boring person",
+                "feel bored",
+                "interested",
+                "tired"
               ],
-              "answer": "negative and main verb",
-              "explanation": "Отрицание weren't всегда сильное, а главное ударение - на смысловом глаголе watching.",
+              "answer": "boring person",
+              "explanation": "С -ing прилагательное описывает самого человека: я скучный. «Мне скучно» - I'm bored.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "2a-adj-6",
+              "kind": "fill",
+              "prompt": "Впишите прилагательное с нужным окончанием (disappoint): It rained all week — the holiday was really ___.",
+              "options": [],
+              "optionValues": [],
+              "answer": "disappointing",
+              "explanation": "Отпуск разочаровывает - описываем событие, нужен -ing.",
               "x": -1,
               "y": -1,
               "w": 0
@@ -5963,54 +6004,44 @@
             "rule": ""
           },
           {
-            "section": "3. Произношение: was и were",
+            "section": "3. Прилагательные на -ed и -ing",
             "kind": "CHOICE",
-            "prompt": "Прослушайте запись: как звучит was в предложении It was raining?",
+            "prompt": "Выберите прилагательное: The museum tour was two hours long and nobody asked any questions. It was really ___.",
             "options": [
-              "коротко и слабо (wəz)",
-              "полно и с ударением (wɒz)",
-              "как пишется (was)",
-              "его не слышно"
+              "boring",
+              "bored",
+              "bore",
+              "boredom"
             ],
             "optionValues": [],
-            "answer": "коротко и слабо (wəz)",
-            "explanation": "В утверждении was безударное и слабое.",
-            "audioUrl": "/audio/empower/unit2/track-02-14.mp3",
-            "transcript": "1 It was raining. 2 It wasn't raining. 3 Was it raining? 4 We were driving fast. 5 We weren't driving fast. 6 Were we driving fast?",
-            "text": "",
-            "rule": ""
-          },
-          {
-            "section": "3. Произношение: was и were",
-            "kind": "CHOICE",
-            "prompt": "Прослушайте запись: в каком случае were звучит полностью (wɜː)?",
-            "options": [
-              "в кратком ответе в конце фразы",
-              "в начале вопроса",
-              "в утверждении перед глаголом с -ing",
-              "никогда"
-            ],
-            "optionValues": [],
-            "answer": "в кратком ответе в конце фразы",
-            "explanation": "Сильная форма звучит в кратком ответе: Yes, we were. В начале вопроса were слабое.",
+            "answer": "boring",
+            "explanation": "Экскурсия сама наводит скуку - описываем событие, нужен -ing.",
             "audioUrl": "",
             "transcript": "",
             "text": "",
             "rule": ""
           },
           {
-            "section": "3. Произношение: was и were",
-            "kind": "CHOICE",
-            "prompt": "Прослушайте запись: как звучит weren't в We weren't driving fast?",
-            "options": [
-              "сильно и с ударением",
-              "слабо и без ударения",
-              "как were без изменений",
-              "его не слышно"
-            ],
+            "section": "3. Прилагательные на -ed и -ing",
+            "kind": "FILL",
+            "prompt": "Впишите прилагательное с нужным окончанием (relax): We spent a ___ day on the beach and read our books.",
+            "options": [],
             "optionValues": [],
-            "answer": "сильно и с ударением",
-            "explanation": "Отрицания wasn't и weren't всегда звучат полностью и с ударением.",
+            "answer": "relaxing",
+            "explanation": "День сам по себе расслабляющий - описываем событие, нужен -ing.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": "",
+            "rule": ""
+          },
+          {
+            "section": "3. Прилагательные на -ed и -ing",
+            "kind": "FILL",
+            "prompt": "Впишите прилагательное с нужным окончанием (frighten): The turbulence was terrible and all the passengers were ___.",
+            "options": [],
+            "optionValues": [],
+            "answer": "frightened",
+            "explanation": "Пассажиры испытывают страх - это чувство человека, нужен -ed.",
             "audioUrl": "",
             "transcript": "",
             "text": "",
@@ -6200,11 +6231,11 @@
           {
             "section": "7. Письмо: рассказ о поездке",
             "kind": "TEACHER",
-            "prompt": "Напишите на английском рассказ о своей поездке, минимум 70 слов. Используйте Past Simple (что случилось) и Past Continuous (что происходило в тот момент), хотя бы одно предложение с when и одно с while. Расскажите: когда и куда вы ездили, с кем, где жили, что пошло не так и что вы делали, когда это случилось.",
+            "prompt": "Напишите на английском рассказ о своей поездке, минимум 70 слов. Используйте Past Simple (что случилось) и Past Continuous (что происходило в тот момент), хотя бы одно предложение с when и одно с while, а также два прилагательных из пары на -ed и -ing (например, tiring и tired). Расскажите: когда и куда вы ездили, с кем, где жили, что пошло не так и что вы делали, когда это случилось.",
             "options": [],
             "optionValues": [],
             "answer": "",
-            "explanation": "Last September I went to Georgia with my sister. We stayed in a small guest house in Tbilisi. On the first evening we were walking along the river when we met a group of students from Poland, and we spent the whole evening with them. One thing went wrong: while we were waiting for our train to Batumi, my sister realised she didn't have her passport. We ran back and missed the train, so we took an expensive taxi. It was still a great trip.",
+            "explanation": "Last September I went to Georgia with my sister. We stayed in a small guest house in Tbilisi. On the first evening we were walking along the river when we met a group of students from Poland, and we spent the whole evening with them. One thing went wrong: while we were waiting for our train to Batumi, my sister realised she didn't have her passport. We ran back and missed the train, so we took an expensive taxi. The journey was long and tiring, and we were really tired when we arrived, but the sea was amazing. It was a great trip.",
             "audioUrl": "",
             "transcript": "",
             "text": "",
