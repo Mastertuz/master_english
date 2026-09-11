@@ -4567,11 +4567,11 @@
           {
             "section": "1. Фразы: keeping in touch",
             "kind": "FILL",
-            "prompt": "Впишите пропуск (1 слово): We had a long ___ about her new job.",
+            "prompt": "Впишите существительное со значением «разговор, болтовня» (1 слово): We had a long ___ about her new job.",
             "options": [],
             "optionValues": [],
             "answer": "chat",
-            "explanation": "Have a chat - поболтать; здесь существительное после long.",
+            "explanation": "Chat - дружеский разговор, болтовня. Как в уроке: have a chat - поболтать.",
             "audioUrl": "",
             "transcript": "",
             "text": ""
@@ -4596,11 +4596,11 @@
           {
             "section": "2. Письмо без ошибок",
             "kind": "FILL",
-            "prompt": "Исправьте грамматику и впишите верную форму глагола (1 слово): She speak English quite well.",
+            "prompt": "Ошибка в форме глагола. Впишите глагол в правильной форме: She ___ English quite well. (speak)",
             "options": [],
             "optionValues": [],
             "answer": "speaks",
-            "explanation": "Present Simple, третье лицо единственного числа: she speaks.",
+            "explanation": "Подлежащее she, время Present Simple - к глаголу добавляется -s: she speaks.",
             "audioUrl": "",
             "transcript": "",
             "text": ""
@@ -4608,11 +4608,11 @@
           {
             "section": "2. Письмо без ошибок",
             "kind": "FILL",
-            "prompt": "Исправьте орфографию и впишите верное слово: I'm taking a two-month Spanish corse.",
+            "prompt": "Ошибка в написании слова. Впишите слово правильно: I'm taking a two-month Spanish ___. (corse)",
             "options": [],
             "optionValues": [],
             "answer": "course",
-            "explanation": "Правильное написание - course.",
+            "explanation": "Правильное написание - course (курс).",
             "audioUrl": "",
             "transcript": "",
             "text": ""
@@ -4620,7 +4620,7 @@
           {
             "section": "2. Письмо без ошибок",
             "kind": "FILL",
-            "prompt": "Исправьте орфографию и впишите верное слово: We're all from diferent countries.",
+            "prompt": "Ошибка в написании слова. Впишите слово правильно: We're all from ___ countries. (diferent)",
             "options": [],
             "optionValues": [],
             "answer": "different",
@@ -4632,11 +4632,11 @@
           {
             "section": "2. Письмо без ошибок",
             "kind": "FILL",
-            "prompt": "Исправьте пунктуацию и впишите верное слово: Im in Salamanca until August.",
+            "prompt": "В слове пропущен апостроф. Впишите слово правильно: ___ in Salamanca until August. (Im)",
             "options": [],
             "optionValues": [],
             "answer": "i'm",
-            "explanation": "На месте пропущенной буквы ставим апостроф: I'm.",
+            "explanation": "I'm - сокращение от I am. На месте пропущенной буквы a ставится апостроф.",
             "audioUrl": "",
             "transcript": "",
             "text": ""
@@ -4644,7 +4644,7 @@
           {
             "section": "2. Письмо без ошибок",
             "kind": "CHOICE",
-            "prompt": "Выберите предложение, записанное без ошибок:",
+            "prompt": "Выберите предложение без ошибок в заглавных буквах и апострофах:",
             "options": [
               "I'm in Salamanca and I'm learning Spanish.",
               "im in Salamanca and im learning spanish.",
@@ -4653,7 +4653,7 @@
             ],
             "optionValues": [],
             "answer": "I'm in Salamanca and I'm learning Spanish.",
-            "explanation": "Названия городов, стран и языков пишутся с заглавной буквы, в I'm нужен апостроф.",
+            "explanation": "Названия городов и языков пишутся с заглавной буквы (Salamanca, Spanish), в I'm нужен апостроф.",
             "audioUrl": "",
             "transcript": "",
             "text": ""
@@ -4717,28 +4717,30 @@
             "text": "People keep in touch in very different ways. Some send a message every day, others write a long email once a month. Short messages are quick and easy, but they say very little: 'How are you?' - 'Fine, you?' A phone call takes more time, and that is why many people like it: you hear the voice and you can have a real chat. Photos work well too, because one picture can show a new city, a new flat or a new haircut without any words. Some people hardly ever write first, but they always answer. That doesn't mean they don't care - they simply prefer to talk when they meet. The important thing is to find a way that works for both of you, and to say sorry when you disappear for a few weeks."
           },
           {
-            "section": "5. Письмо",
+            "section": "5. Говорение: звонок старому другу",
             "kind": "TEACHER",
-            "prompt": "Напишите на английском письмо другу или родственнику, которого давно не видели, минимум 60 слов. Расскажите: как у вас дела, что нового (где живёте, с кем проводите время), чем занимаетесь сейчас. Задайте два вопроса. Перед отправкой проверьте грамматику, орфографию, пунктуацию и заглавные буквы.",
+            "prompt": "Подготовьте устный рассказ на английском на 1–1,5 минуты: вы звоните другу, которого давно не видели. Расскажите, как у вас дела, что нового (где живёте, с кем проводите время), чем занимаетесь сейчас, и задайте другу два вопроса. Используйте keep in touch, these days, hear from. Здесь запишите план - 6–8 ключевых фраз, - а сам рассказ проговорите вслух на следующем уроке.",
             "options": [],
             "optionValues": [],
             "answer": "",
-            "explanation": "Hi Nastya! How's it going? We haven't been in touch for ages. I'm in Kazan now - I moved here in August and I'm renting a small flat near the centre. The city is beautiful: it has an old kremlin and a lot of new, trendy cafes. I'm working in a bookshop and I'm learning English at the moment, so my English is slowly improving. What about you? Are you still working at the school? When can we meet? Write soon! Love, Marina",
+            "explanation": "Hi Nastya, it's Marina! Long time no see - we haven't kept in touch for ages. I'm fine, thanks. I moved to Kazan in August and I'm renting a small flat near the centre. These days I'm working in a bookshop and I'm learning English, so my English is slowly improving. I spend a lot of time with my new colleagues - they're really friendly. What about you? Are you still working at the school? When can we meet? I'd love to hear from you more often!",
             "audioUrl": "",
             "transcript": "",
-            "text": ""
+            "text": "",
+            "rule": "План из 6–8 фраз"
           },
           {
-            "section": "5. Письмо",
+            "section": "5. Говорение: звонок старому другу",
             "kind": "TEACHER",
-            "prompt": "Найдите в своём письме из задания выше два места, где легко ошибиться, и объясните по-русски, что вы проверили: грамматику, орфографию, пунктуацию или заглавные буквы.",
+            "prompt": "Подготовьтесь устно ответить на вопросы собеседника: How often do you keep in touch with your family? Who do you usually call? Do you prefer messages or phone calls - why? When did you last hear from an old friend? Запишите по 1–2 предложения на каждый вопрос, а на уроке ответьте на них вслух, не подглядывая.",
             "options": [],
             "optionValues": [],
             "answer": "",
-            "explanation": "Проверил Present Continuous: сначала написал 'I working in a bookshop', добавил 'am'. Проверил заглавные буквы в названиях: Kazan, English - оба с большой буквы. Ещё проверил апостроф в 'How's it going?' и написание слова 'beautiful'.",
+            "explanation": "I keep in touch with my family every day - I usually call my mum in the evening. I prefer phone calls, because you can hear the voice and have a real chat; messages are quick, but they say very little. I last heard from my school friend Olya last week - she sent me photos from her holiday.",
             "audioUrl": "",
             "transcript": "",
-            "text": ""
+            "text": "",
+            "rule": "4 вопроса, по 1–2 предложения"
           },
           {
             "section": "3. Аудирование: как люди общаются",
