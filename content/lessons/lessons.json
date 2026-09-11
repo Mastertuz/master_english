@@ -5331,13 +5331,15 @@
           ],
           "rules": [
             "Длинное действие (Past Continuous) + короткое, которое его прервало (Past Simple): I was lying on the beach when a man came towards me.",
-            "while + длинное действие: While I was swimming, a mosquito bit me. when + короткое действие: I was reading when the phone rang.",
             "Два длинных действия одновременно - оба в Past Continuous: While Richard was skiing, his friends were watching from the boat.",
             "Цепочка коротких действий одно за другим - только Past Simple: He stood up, fell over and tried again.",
             "Если часть с when / while стоит первой, после неё ставим запятую: While we were waiting, it started to rain.",
             "during + существительное, while + подлежащее и глагол: during the flight, но while we were flying."
           ],
-          "formulas": [],
+          "formulas": [
+            "Чем отличаются when и while\n\nwhile — «пока, в то время как». Ставится перед ДЛИННЫМ действием в Past Continuous:\n    While I was swimming, a mosquito bit me.\n\nwhen — «когда, в тот момент». Обычно ставится перед КОРОТКИМ действием в Past Simple:\n    I was swimming when a mosquito bit me.\n\nЭто одна и та же ситуация, просто с разных сторон: while показывает, что длилось, when — что в этот момент случилось.\nПодсказка: while ≈ «пока длилось», when ≈ «в тот момент, когда».",
+            "Когда подходит только одно из двух\n\n• Два длинных действия одновременно — while: While I was cooking, my sister was setting the table.\n• Одно действие сразу после другого — только when, оба глагола в Past Simple: When I got to the hotel, I called my mum.\n• Перед коротким действием while не ставят: I was reading when the phone rang, но не «… while the phone rang».\n• Перед длинным действием when тоже можно: When I was swimming, a mosquito bit me — это не ошибка."
+          ],
           "examples": [],
           "prompts": [],
           "vocab": [],
