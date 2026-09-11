@@ -3427,11 +3427,11 @@
           {
             "section": "1. Приветствие и знакомство",
             "kind": "FILL",
-            "prompt": "Впишите пропуск (2 слова): вы отвечаете на вопрос о работе. I'm working from home ___ ___.",
+            "prompt": "Впишите 2 слова со значением «сейчас, в последнее время»: I'm working from home ___ ___.",
             "options": [],
             "optionValues": [],
             "answer": "these days",
-            "explanation": "These days - сейчас, в последнее время; ставится в конце предложения.",
+            "explanation": "These days - сейчас, в последнее время. Ставится в конце предложения: I'm working from home these days.",
             "audioUrl": "",
             "transcript": "",
             "text": ""
@@ -3468,11 +3468,11 @@
           {
             "section": "2. Как показать интерес",
             "kind": "FILL",
-            "prompt": "Впишите пропуск (1 слово): ваш друг говорит, что женился. Wow! That's fantastic ___!",
+            "prompt": "Перестройте реакцию по схеме What a + прилагательное + существительное (4 слова): The party is really lovely! → ___ ___ ___ ___!",
             "options": [],
             "optionValues": [],
-            "answer": "news",
-            "explanation": "That's fantastic news - отличная новость.",
+            "answer": "what a lovely party",
+            "explanation": "What a + прилагательное + существительное: What a lovely party! Артикль a обязателен, потому что party - исчисляемое.",
             "audioUrl": "",
             "transcript": "",
             "text": ""
@@ -3480,16 +3480,33 @@
           {
             "section": "2. Как показать интерес",
             "kind": "CHOICE",
-            "prompt": "Выберите верную реакцию: I live near the sea. - ___",
+            "prompt": "Друг говорит: I've passed my driving test! Выберите реакцию без ошибки:",
             "options": [
-              "How nice!",
-              "What a nice!",
-              "How a nice!",
-              "What nice!"
+              "That's fantastic news!",
+              "That's a fantastic news!",
+              "What a fantastic news!",
+              "How fantastic news!"
             ],
             "optionValues": [],
-            "answer": "How nice!",
-            "explanation": "После how идёт только прилагательное: How nice! А What a ...! требует существительного.",
+            "answer": "That's fantastic news!",
+            "explanation": "News - неисчисляемое слово, поэтому без артикля a: That's fantastic news! А в схеме What a ...! нужно исчисляемое существительное.",
+            "audioUrl": "",
+            "transcript": "",
+            "text": ""
+          },
+          {
+            "section": "2. Как показать интерес",
+            "kind": "CHOICE",
+            "prompt": "Друг говорит: My flight was cancelled and I lost my bag. Какая реакция уместна?",
+            "options": [
+              "Oh no! How awful!",
+              "How nice!",
+              "That sounds great!",
+              "What a lovely surprise!"
+            ],
+            "optionValues": [],
+            "answer": "Oh no! How awful!",
+            "explanation": "Интерес показывают и к плохим новостям: How + прилагательное с отрицательным смыслом. How nice! или That sounds great! здесь прозвучали бы как насмешка.",
             "audioUrl": "",
             "transcript": "",
             "text": ""
@@ -3497,28 +3514,11 @@
           {
             "section": "2. Как показать интерес",
             "kind": "FILL",
-            "prompt": "Впишите пропуск (1 слово): Would you like to come with us? - Yeah, that ___ good.",
+            "prompt": "Друг предлагает: Let's go to the beach on Sunday. Вам нравится идея - ответьте по схеме That sounds + прилагательное (3 слова):",
             "options": [],
             "optionValues": [],
-            "answer": "sounds",
-            "explanation": "That sounds good - звучит здорово; так принимают приглашение.",
-            "audioUrl": "",
-            "transcript": "",
-            "text": ""
-          },
-          {
-            "section": "2. Как показать интерес",
-            "kind": "CHOICE",
-            "prompt": "Выберите верный порядок слов: вы удивлены приятной встрече.",
-            "options": [
-              "What a lovely surprise!",
-              "How a lovely surprise!",
-              "What lovely a surprise!",
-              "How lovely surprise!"
-            ],
-            "optionValues": [],
-            "answer": "What a lovely surprise!",
-            "explanation": "What a + прилагательное + существительное: What a lovely surprise!",
+            "answer": "that sounds great, that sounds good, that sounds lovely, that sounds fantastic, that sounds nice, that sounds perfect, that sounds wonderful",
+            "explanation": "That sounds + прилагательное - так соглашаются с предложением: That sounds great! После sounds идёт прилагательное, а не наречие (не greatly).",
             "audioUrl": "",
             "transcript": "",
             "text": ""
@@ -3659,7 +3659,7 @@
             "text": ""
           },
           {
-            "section": "3. Аудирование: разговоры на вечеринке",
+            "section": "4. Аудирование: разговоры на вечеринке",
             "kind": "LISTENING",
             "prompt": "Прослушайте запись и выберите ответ: How does the second speaker know Ana?",
             "options": [
@@ -3676,7 +3676,7 @@
             "text": ""
           },
           {
-            "section": "3. Аудирование: разговоры на вечеринке",
+            "section": "4. Аудирование: разговоры на вечеринке",
             "kind": "LISTENING",
             "prompt": "Прослушайте запись и впишите ответ по-английски одним словом: What did she study at university?",
             "options": [],
@@ -3688,7 +3688,7 @@
             "text": ""
           },
           {
-            "section": "3. Аудирование: разговоры на вечеринке",
+            "section": "4. Аудирование: разговоры на вечеринке",
             "kind": "LISTENING",
             "prompt": "Прослушайте запись и выберите ответ: Why does the speaker in conversation 2 walk away?",
             "options": [
@@ -3705,7 +3705,7 @@
             "text": ""
           },
           {
-            "section": "3. Аудирование: разговоры на вечеринке",
+            "section": "4. Аудирование: разговоры на вечеринке",
             "kind": "LISTENING",
             "prompt": "Прослушайте запись и выберите ответ: Which two questions are a bad idea with a new person?",
             "options": [
@@ -3722,7 +3722,7 @@
             "text": ""
           },
           {
-            "section": "3. Аудирование: разговоры на вечеринке",
+            "section": "4. Аудирование: разговоры на вечеринке",
             "kind": "LISTENING",
             "prompt": "Прослушайте запись и выберите ответ: What does speaker E say about the film?",
             "options": [
