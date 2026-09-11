@@ -6597,295 +6597,328 @@
       ]
     },
     {
-      "title": "Тест по юниту 1: Empower B1",
-      "description": "26 вопросов по разделу Review and extension: вопросы, Present Simple и Continuous, прилагательные и наречия, wordpower like, фразы знакомства и письмо.",
+      "title": "Тест по урокам 3–5: Empower B1",
+      "description": "29 вопросов по пройденным урокам: знакомство и интерес к собеседнику (урок 3), общение и письмо без ошибок (урок 4), Past Continuous, when и while, прилагательные на -ed и -ing и лексика путешествий (урок 5).",
       "level": "B1",
       "questions": [
         {
-          "text": "Put the words in order: night / did / go / out / you / last ?",
+          "text": "Which phrase do you use with an old friend you haven't seen for years?",
           "options": [
-            "You did go out last night?",
-            "Did go you out last night?",
-            "Did you went out last night?",
-            "Did you go out last night?"
-          ],
-          "correct": 3,
-          "explanation": "Вопрос в Past Simple: did + подлежащее + глагол в начальной форме."
-        },
-        {
-          "text": "Put the words in order: where / you / last / weekend / go / did ?",
-          "options": [
-            "Where did you go last weekend?",
-            "Where go did you last weekend?",
-            "Where did you went last weekend?",
-            "Where you did go last weekend?"
-          ],
-          "correct": 0,
-          "explanation": "Вопросительное слово идёт перед did."
-        },
-        {
-          "text": "Put the words in order: kinds of / like / you / what / do / TV programmes ?",
-          "options": [
-            "What kinds of TV programmes do you like?",
-            "What kinds of TV programmes you like?",
-            "Do you like what kinds of TV programmes?",
-            "What do you like kinds of TV programmes?"
-          ],
-          "correct": 0,
-          "explanation": "Present Simple: What + существительное + do + подлежащее + глагол."
-        },
-        {
-          "text": "Put the words in order: you / how / play / sport / often / do ?",
-          "options": [
-            "How do you often play sport?",
-            "How often you do play sport?",
-            "Do you how often play sport?",
-            "How often do you play sport?"
-          ],
-          "correct": 3,
-          "explanation": "How often ставится в начало, дальше идёт вспомогательный глагол do."
-        },
-        {
-          "text": "Put the words in order: tired / you / are / today ?",
-          "options": [
-            "You are tired today?",
-            "Are you tired today?",
-            "Are tired you today?",
-            "Do you tired today?"
-          ],
-          "correct": 1,
-          "explanation": "С прилагательным используется глагол be: Are you tired?"
-        },
-        {
-          "text": "Choose the correct form: You ___ (not call) very often!",
-          "options": [
-            "don't call",
-            "aren't calling",
-            "not call",
-            "doesn't call"
-          ],
-          "correct": 0,
-          "explanation": "Регулярность (very often) - Present Simple: don't call."
-        },
-        {
-          "text": "Choose the correct form: I ___ (work) really hard at university at the moment.",
-          "options": [
-            "am work",
-            "work",
-            "works",
-            "'m working"
-          ],
-          "correct": 3,
-          "explanation": "At the moment - Present Continuous: I'm working."
-        },
-        {
-          "text": "Choose the correct form: I never ___ (have) time to call!",
-          "options": [
-            "'m having",
-            "have",
-            "am have",
-            "has"
-          ],
-          "correct": 1,
-          "explanation": "Слово never указывает на привычку - Present Simple."
-        },
-        {
-          "text": "Choose the correct form: Your sister ___ (call) me every weekend.",
-          "options": [
-            "call",
-            "are calling",
-            "calls",
-            "is calling"
-          ],
-          "correct": 2,
-          "explanation": "Every weekend - Present Simple, третье лицо: calls."
-        },
-        {
-          "text": "Choose the correct form: We ___ (talk) now, but the world ___ (change), Mum!",
-          "options": [
-            "talk / is changing",
-            "'re talking / is changing",
-            "talk / changes",
-            "'re talking / changes"
-          ],
-          "correct": 1,
-          "explanation": "Оба действия происходят сейчас - Present Continuous."
-        },
-        {
-          "text": "Complete the sentence: The film was a___ at the beginning, but I didn't like the ending.",
-          "options": [
-            "all right",
-            "awful",
-            "delicious",
-            "boring"
-          ],
-          "correct": 0,
-          "explanation": "All right - «нормально, неплохо»; по смыслу подходит начало фильма."
-        },
-        {
-          "text": "Complete the sentence: We ate some really d___ food at the party.",
-          "options": [
-            "delicious",
-            "perfect",
-            "awful",
-            "strange"
-          ],
-          "correct": 0,
-          "explanation": "Delicious - очень вкусный."
-        },
-        {
-          "text": "Complete the sentence: This summer, the weather here was h___ - it rained all the time.",
-          "options": [
-            "perfect",
-            "trendy",
-            "horrible",
-            "delicious"
-          ],
-          "correct": 2,
-          "explanation": "Horrible - ужасный: дождь шёл всё время."
-        },
-        {
-          "text": "Choose the correct adverb: I ___ love football.",
-          "options": [
-            "absolutely",
-            "fairly",
-            "quite",
-            "particularly"
-          ],
-          "correct": 0,
-          "explanation": "Absolutely усиливает сильные глаголы: absolutely love."
-        },
-        {
-          "text": "Choose the correct adverb: My parents live abroad. I ___ see them.",
-          "options": [
-            "always",
-            "absolutely",
-            "rarely",
-            "particularly"
-          ],
-          "correct": 2,
-          "explanation": "Родители живут за границей - значит видятся редко: rarely."
-        },
-        {
-          "text": "Choose the correct adverb: I love all sports, but tennis is ___ good.",
-          "options": [
-            "rarely",
-            "usually",
-            "especially",
-            "fairly"
-          ],
-          "correct": 2,
-          "explanation": "Especially выделяет один пример из общего ряда."
-        },
-        {
-          "text": "What does 'like' mean here: I've got a jacket like yours.",
-          "options": [
-            "similar to",
-            "for example",
-            "if you want",
-            "what was your opinion of"
-          ],
-          "correct": 0,
-          "explanation": "Like здесь значит «похожий на»."
-        },
-        {
-          "text": "What does 'like' mean here: We can go for a walk later if you like.",
-          "options": [
-            "if you want",
-            "what was your opinion of",
-            "for example",
-            "similar to"
-          ],
-          "correct": 0,
-          "explanation": "If you like - «если хочешь»."
-        },
-        {
-          "text": "Complete: A: We went to that new restaurant yesterday. B: ___ it ___?",
-          "options": [
-            "How did / like",
-            "What did / like",
-            "How was / like",
-            "What was / like"
-          ],
-          "correct": 3,
-          "explanation": "What was it like? - «Ну и как оно?»"
-        },
-        {
-          "text": "Complete with look like or sound like: You don't ___ your sister. She's very tall.",
-          "options": [
-            "like look",
-            "looks like",
-            "look like",
-            "sound like"
-          ],
-          "correct": 2,
-          "explanation": "О внешности говорят look like."
-        },
-        {
-          "text": "Complete with look like or sound like: It ___ their first song. I really like it!",
-          "options": [
-            "is looking like",
-            "looks like",
-            "sound like",
-            "sounds like"
-          ],
-          "correct": 3,
-          "explanation": "О звучании песни - sounds like, третье лицо единственного числа."
-        },
-        {
-          "text": "Which phrase do you use with somebody you have just met?",
-          "options": [
-            "It was really nice to meet you.",
+            "See you later.",
+            "Nice to meet you.",
             "Long time no see!",
-            "Say hello to Dan for me!",
-            "It was great to see you again."
-          ],
-          "correct": 0,
-          "explanation": "Meet - о новом знакомстве; see again - о старом знакомом."
-        },
-        {
-          "text": "Complete the reply: Mark's my husband! - Husband, wow! That's ___ news.",
-          "options": [
-            "fantastic a",
-            "a fantastic",
-            "fantastic",
-            "fantastically"
+            "How do you do?"
           ],
           "correct": 2,
-          "explanation": "That's + прилагательное + news."
+          "explanation": "Long time no see! говорят тому, кого давно не видели. Nice to meet you - только при первом знакомстве."
         },
         {
-          "text": "Complete: Long time ___! How are you?",
+          "text": "Complete: My name's Olga, ___ the way.",
           "options": [
-            "no see",
-            "don't see",
-            "no seeing",
-            "not see"
+            "on",
+            "at",
+            "in",
+            "by"
+          ],
+          "correct": 3,
+          "explanation": "By the way - «кстати»: так представляются посреди разговора."
+        },
+        {
+          "text": "Complete the reaction: We're moving to Spain! — Wow, ___ exciting!",
+          "options": [
+            "how",
+            "what a",
+            "what",
+            "that"
           ],
           "correct": 0,
-          "explanation": "Long time no see! - устойчивая фраза."
+          "explanation": "How + прилагательное без существительного: How exciting!"
         },
         {
-          "text": "Which sentence is written correctly?",
+          "text": "Your friend says: I've found a new flat near the park. Choose the correct reaction.",
           "options": [
-            "im in Salamanca and im learning spanish.",
-            "Im in Salamanca and I'm learning Spanish.",
-            "I'm in Salamanca and I'm learning Spanish.",
-            "I'm in salamanca and I'm learning spanish."
+            "What a great!",
+            "What great place!",
+            "What a great place!",
+            "How a great place!"
           ],
           "correct": 2,
-          "explanation": "Города и языки - с заглавной буквы, в I'm нужен апостроф."
+          "explanation": "What a + прилагательное + исчисляемое существительное: What a great place!"
+        },
+        {
+          "text": "Complete the reply: Let's have dinner on Friday. — That sounds ___.",
+          "options": [
+            "better",
+            "goodly",
+            "well",
+            "good"
+          ],
+          "correct": 3,
+          "explanation": "После sounds ставится прилагательное: That sounds good. Well - наречие."
+        },
+        {
+          "text": "You met Tom for the first time at a party. You are leaving. What do you say?",
+          "options": [
+            "Say hello to Tom for me!",
+            "It was great to see you again.",
+            "Long time no see!",
+            "It was really nice to meet you."
+          ],
+          "correct": 3,
+          "explanation": "Meet - о новом знакомстве. See you again - о человеке, которого вы знали раньше."
+        },
+        {
+          "text": "What does 'meet up' mean in: Let's meet up when you're back from your holiday?",
+          "options": [
+            "попрощаться",
+            "познакомиться впервые",
+            "встретиться по договорённости",
+            "поздороваться на улице"
+          ],
+          "correct": 2,
+          "explanation": "Meet up - встретиться, увидеться по договорённости. Познакомиться впервые - meet somebody for the first time."
+        },
+        {
+          "text": "Complete: Say hello to Anna ___ me!",
+          "options": [
+            "to",
+            "for",
+            "from",
+            "with"
+          ],
+          "correct": 1,
+          "explanation": "Say hello to somebody for me - передай привет от меня."
+        },
+        {
+          "text": "Which words are usually stressed in an English sentence?",
+          "options": [
+            "only the first word",
+            "articles and prepositions",
+            "words that carry information: nouns, main verbs, adjectives",
+            "only the last word"
+          ],
+          "correct": 2,
+          "explanation": "Ударение получают слова, которые несут смысл. Служебные слова звучат быстро и слабо."
+        },
+        {
+          "text": "Complete: I try to ___ in touch with my old school friends.",
+          "options": [
+            "do",
+            "take",
+            "make",
+            "keep"
+          ],
+          "correct": 3,
+          "explanation": "Keep in touch - поддерживать связь."
+        },
+        {
+          "text": "Complete: Did you ___ my message yesterday?",
+          "options": [
+            "do",
+            "get",
+            "make",
+            "take"
+          ],
+          "correct": 1,
+          "explanation": "Get a message / a text - получить сообщение."
+        },
+        {
+          "text": "Complete: I haven't ___ from Max since the summer.",
+          "options": [
+            "said",
+            "told",
+            "heard",
+            "listened"
+          ],
+          "correct": 2,
+          "explanation": "Hear from somebody - получать вести от кого-то."
+        },
+        {
+          "text": "What does 'have a chat' mean?",
+          "options": [
+            "поспорить",
+            "написать письмо",
+            "позвонить по делу",
+            "поболтать"
+          ],
+          "correct": 3,
+          "explanation": "Have a chat - дружеский разговор, болтовня."
+        },
+        {
+          "text": "Choose the correct adverb: I ___ send letters — maybe once a year.",
+          "options": [
+            "usually",
+            "always",
+            "hardly ever",
+            "often"
+          ],
+          "correct": 2,
+          "explanation": "Hardly ever - почти никогда."
         },
         {
           "text": "Find the correct spelling:",
           "options": [
-            "diferent countrys",
-            "diferent countries",
-            "different countries",
-            "different countrys"
+            "two cityes",
+            "two citties",
+            "two cities",
+            "two citys"
           ],
           "correct": 2,
-          "explanation": "Different с двумя f, country во множественном числе - countries."
+          "explanation": "Слово на согласную + y во множественном числе меняет y на -ies: city - cities."
+        },
+        {
+          "text": "Choose the sentence with correct punctuation:",
+          "options": [
+            "Were staying with a family.",
+            "Wer'e staying with a family.",
+            "We're staying with a family.",
+            "We,re staying with a family."
+          ],
+          "correct": 2,
+          "explanation": "We're = we are. Апостроф стоит на месте пропущенной буквы a."
+        },
+        {
+          "text": "Choose the sentence with correct capital letters:",
+          "options": [
+            "Next month I'm going to Paris to learn French.",
+            "next month I'm going to paris to learn french.",
+            "Next Month I'm going to Paris to learn french.",
+            "Next month I'm going to paris to learn French."
+          ],
+          "correct": 0,
+          "explanation": "С заглавной буквы: начало предложения, названия городов и языков. Month - обычное слово."
+        },
+        {
+          "text": "Find the correct sentence:",
+          "options": [
+            "She are working in a café these days.",
+            "She working in a café these days.",
+            "She is working in a café these days.",
+            "She is work in a café these days."
+          ],
+          "correct": 2,
+          "explanation": "Present Continuous: be + глагол с -ing. С she - is working."
+        },
+        {
+          "text": "Complete: At 8 pm yesterday we ___ dinner in a small restaurant.",
+          "options": [
+            "was having",
+            "were having",
+            "have had",
+            "are having"
+          ],
+          "correct": 1,
+          "explanation": "Действие в процессе в конкретный момент прошлого: were + having."
+        },
+        {
+          "text": "Complete: What ___ when the lights went out?",
+          "options": [
+            "was you doing",
+            "did you doing",
+            "were you doing",
+            "are you doing"
+          ],
+          "correct": 2,
+          "explanation": "Вопрос в Past Continuous: were + подлежащее + глагол с -ing."
+        },
+        {
+          "text": "Choose the correct sentence:",
+          "options": [
+            "I didn't knew the way to the hotel.",
+            "I didn't know the way to the hotel.",
+            "I weren't knowing the way to the hotel.",
+            "I wasn't knowing the way to the hotel."
+          ],
+          "correct": 1,
+          "explanation": "Know - глагол состояния, в Continuous не ставится. После didn't - начальная форма."
+        },
+        {
+          "text": "Complete: ___ I was taking a photo, a monkey stole my sunglasses.",
+          "options": [
+            "Then",
+            "During",
+            "While",
+            "Meanwhile"
+          ],
+          "correct": 2,
+          "explanation": "While + подлежащее и глагол в Past Continuous - длинное действие, которое прервали."
+        },
+        {
+          "text": "Complete: I was sleeping ___ the alarm went off.",
+          "options": [
+            "when",
+            "while",
+            "during",
+            "meanwhile"
+          ],
+          "correct": 0,
+          "explanation": "Перед коротким действием, которое прервало длинное, ставим when."
+        },
+        {
+          "text": "Complete: ___ the flight, I watched two films.",
+          "options": [
+            "During",
+            "While",
+            "Meanwhile",
+            "When"
+          ],
+          "correct": 0,
+          "explanation": "During ставится перед существительным: during the flight. While - перед подлежащим и глаголом."
+        },
+        {
+          "text": "Choose the correct sentence about actions that happened one after another:",
+          "options": [
+            "I was get up, had a shower and left the hotel.",
+            "I got up, had a shower and left the hotel.",
+            "I got up, was having a shower and left the hotel.",
+            "I was getting up, was having a shower and was leaving the hotel."
+          ],
+          "correct": 1,
+          "explanation": "Цепочка коротких действий по очереди - только Past Simple."
+        },
+        {
+          "text": "Complete: The museum was really ___. I loved it!",
+          "options": [
+            "interesting",
+            "interestingly",
+            "interest",
+            "interested"
+          ],
+          "correct": 0,
+          "explanation": "Музей вызывает интерес - описываем вещь, нужен -ing."
+        },
+        {
+          "text": "Complete: I was ___ when the hotel gave us a free upgrade.",
+          "options": [
+            "surprising",
+            "surprised",
+            "surprisingly",
+            "surprise"
+          ],
+          "correct": 1,
+          "explanation": "Речь о том, что чувствует человек, - нужен -ed."
+        },
+        {
+          "text": "Where can you book a holiday with flights and a hotel?",
+          "options": [
+            "at a travel agent's",
+            "at a campsite",
+            "at the reception desk",
+            "at a souvenir shop"
+          ],
+          "correct": 0,
+          "explanation": "Travel agent's - турагентство."
+        },
+        {
+          "text": "What do you put on your skin at the beach?",
+          "options": [
+            "accommodation",
+            "souvenir",
+            "sightseeing",
+            "suntan lotion"
+          ],
+          "correct": 3,
+          "explanation": "Suntan lotion - крем от загара."
         }
       ]
     }
