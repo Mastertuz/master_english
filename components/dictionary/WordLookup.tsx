@@ -2,14 +2,13 @@
 
 import { useState } from "react";
 import { Alert } from "@/components/ui/Field";
-import { SpeakButton } from "@/components/ui/SpeakButton";
-import type { LookupResult } from "@/lib/dictionary";
-import { partOfSpeechRu } from "@/lib/part-of-speech";
+import type { SensesResult } from "@/lib/dictionary";
+import { SenseCard } from "./SenseCard";
 
 /** Поиск слова в Cambridge — без добавления в словарь (режим ученика) */
 export function WordLookup() {
   const [query, setQuery] = useState("");
-  const [found, setFound] = useState<LookupResult | null>(null);
+  const [result, setResult] = useState<SensesResult | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
@@ -19,11 +18,11 @@ export function WordLookup() {
 
     setLoading(true);
     setError(null);
-    setFound(null);
+    setResult(null);
 
     try {
       const response = await fetch(
-        `/api/dictionary/lookup?word=${encodeURIComponent(word)}`,
+        `/api/dictionary/senses?word=${encodeURIComponent(word)}`,
       );
       const data = await response.json();
 
@@ -31,7 +30,7 @@ export function WordLookup() {
         setError(data.error ?? "Слово не найдено");
         return;
       }
-      setFound(data as LookupResult);
+      setResult(data as SensesResult);
     } catch {
       setError("Не удалось связаться со словарём. Проверьте интернет.");
     } finally {
@@ -43,7 +42,8 @@ export function WordLookup() {
     <div className="card p-5">
       <h2 className="text-[15px] font-semibold text-ink-900">Найти слово</h2>
       <p className="mt-1 text-[13.5px] text-ink-500">
-        Перевод, определение, пример и произношение из Cambridge Dictionary
+        Все значения слова с переводом, определением, примером и
+        произношением из Cambridge Dictionary
       </p>
 
       <div className="mt-4 flex flex-col gap-2 sm:flex-row">
@@ -56,7 +56,7 @@ export function WordLookup() {
               void lookup();
             }
           }}
-          placeholder="например, achieve"
+          placeholder="например, book"
           autoComplete="off"
           className="field flex-1"
         />
@@ -70,9 +70,9 @@ export function WordLookup() {
           type="button"
           onClick={lookup}
           disabled={loading}
-          className="btn-primary sm:w-40"
+          className="btn-primary sm:w-44"
         >
-          {loading ? "Ищем…" : "🔍 Найти"}
+          {loading ? "Ищем…" : "🔍 Найти слово"}
         </button>
       </div>
 
@@ -82,51 +82,21 @@ export function WordLookup() {
         </div>
       ) : null}
 
-      {found ? (
-        <div className="mt-4 rounded-xl border border-ink-200 bg-white p-4">
-          <div className="flex items-start gap-3">
-            <SpeakButton text={found.word} size="lg" />
-            <div className="min-w-0 flex-1">
-              <p className="text-[19px] font-semibold text-ink-900">
-                {found.word}
-                {found.transcription ? (
-                  <span className="ml-2 text-[14px] font-normal text-ink-400">
-                    {found.transcription}
-                  </span>
-                ) : null}
-                {found.partOfSpeech ? (
-                  <span className="ml-2 rounded bg-ink-100 px-1.5 py-0.5 text-[12px] font-normal text-ink-500">
-                    {partOfSpeechRu(found.partOfSpeech)}
-                  </span>
-                ) : null}
-              </p>
-
-              {found.russian ? (
-                <p className="mt-1 text-[15px] text-ink-700">{found.russian}</p>
-              ) : null}
-
-              {found.definition ? (
-                <p className="mt-2 text-[14px] leading-relaxed text-ink-600">
-                  {found.definition}
-                </p>
-              ) : null}
-
-              {found.example ? (
-                <p className="mt-2 text-[14px] italic text-ink-500">
-                  {found.example}
-                </p>
-              ) : null}
-
-              <p className="mt-3 text-[12.5px] text-ink-400">
-                Источник:{" "}
-                {found.source === "cambridge"
-                  ? "Cambridge Dictionary"
-                  : "резервный словарь"}
-                . Чтобы слово попало в тренировки, попросите преподавателя
-                добавить его в ваш словарь.
-              </p>
-            </div>
-          </div>
+      {result ? (
+        <div className="mt-4 space-y-2">
+          <p className="text-[13.5px] text-ink-500">
+            Найдено значений: {result.senses.length}
+            {result.source === "cambridge"
+              ? " · Cambridge Dictionary"
+              : " · резервный словарь"}
+          </p>
+          {result.senses.map((sense, index) => (
+            <SenseCard key={index} sense={sense} />
+          ))}
+          <p className="text-[12.5px] text-ink-400">
+            Чтобы слово попало в тренировки, попросите преподавателя добавить
+            его в ваш словарь.
+          </p>
         </div>
       ) : null}
     </div>

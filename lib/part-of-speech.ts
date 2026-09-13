@@ -32,8 +32,18 @@ const RU: Record<string, string> = {
   abbreviation: "сокращение",
 };
 
-/** Русское название части речи; неизвестное значение возвращаем как есть. */
+/**
+ * Русское название части речи; неизвестное значение возвращаем как есть.
+ * Слово с несколькими значениями хранит список: «noun, verb» →
+ * «существительное, глагол».
+ */
 export function partOfSpeechRu(value: string): string {
+  const parts = value.split(",").map((part) => part.trim()).filter(Boolean);
+  if (parts.length > 1) return parts.map(single).join(", ");
+  return single(value);
+}
+
+function single(value: string): string {
   const key = value.trim().toLowerCase();
   if (!key) return "";
 

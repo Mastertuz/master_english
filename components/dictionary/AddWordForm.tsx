@@ -1,13 +1,34 @@
 "use client";
 
-import { useActionState, useEffect, useRef, useState } from "react";
+import { useActionState, useEffect, useMemo, useRef, useState } from "react";
 import { addWordAction, type WordState } from "@/app/actions/words";
 import { Alert } from "@/components/ui/Field";
 import { SubmitButton } from "@/components/ui/SubmitButton";
 import { UploadField } from "@/components/ui/UploadField";
-import type { LookupResult } from "@/lib/dictionary";
+import type { DictionarySense, SensesResult } from "@/lib/dictionary";
+import { SenseCard } from "./SenseCard";
 
 export type WordOwner = { id: string; name: string };
+
+/**
+ * Выбранные значения складываем в одну карточку. У ученика слово хранится
+ * один раз, поэтому «book — книга» и «book — бронировать» нельзя завести
+ * отдельно; а перевод через запятую тренировка засчитывает любой.
+ */
+function mergeSenses(senses: DictionarySense[]) {
+  const unique = (values: string[], separator: string) =>
+    [...new Set(values.map((value) => value.trim()).filter(Boolean))].join(separator);
+
+  return {
+    word: senses[0]?.word ?? "",
+    russian: unique(senses.map((sense) => sense.russian), ", "),
+    partOfSpeech: unique(senses.map((sense) => sense.partOfSpeech), ", "),
+    definition: unique(senses.map((sense) => sense.definition), "; "),
+    example: senses.find((sense) => sense.example)?.example ?? "",
+    transcription: senses.find((sense) => sense.transcription)?.transcription ?? "",
+    audioUrl: senses.find((sense) => sense.audioUrl)?.audioUrl ?? "",
+  };
+}
 
 /** Добавление слова — только для администратора */
 export function AddWordForm({ owners }: { owners: WordOwner[] }) {
@@ -17,7 +38,8 @@ export function AddWordForm({ owners }: { owners: WordOwner[] }) {
   );
 
   const [english, setEnglish] = useState("");
-  const [found, setFound] = useState<LookupResult | null>(null);
+  const [result, setResult] = useState<SensesResult | null>(null);
+  const [selected, setSelected] = useState<number[]>([]);
   const [lookupError, setLookupError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [open, setOpen] = useState(false);
@@ -33,11 +55,19 @@ export function AddWordForm({ owners }: { owners: WordOwner[] }) {
 
     handled.current = state;
     setOpen(false);
-    setFound(null);
+    setResult(null);
+    setSelected([]);
     setEnglish("");
     setLookupError(null);
     setSaved((value) => value + 1);
   }, [state]);
+
+  const merged = useMemo(() => {
+    const chosen = selected
+      .map((index) => result?.senses[index])
+      .filter((sense): sense is DictionarySense => Boolean(sense));
+    return chosen.length ? mergeSenses(chosen) : null;
+  }, [selected, result]);
 
   async function lookup() {
     const query = english.trim();
@@ -45,11 +75,12 @@ export function AddWordForm({ owners }: { owners: WordOwner[] }) {
 
     setLoading(true);
     setLookupError(null);
-    setFound(null);
+    setResult(null);
+    setSelected([]);
 
     try {
       const response = await fetch(
-        `/api/dictionary/lookup?word=${encodeURIComponent(query)}`,
+        `/api/dictionary/senses?word=${encodeURIComponent(query)}`,
       );
       const data = await response.json();
 
@@ -57,8 +88,13 @@ export function AddWordForm({ owners }: { owners: WordOwner[] }) {
         setLookupError(data.error ?? "Не удалось найти слово");
         return;
       }
-      setFound(data as LookupResult);
-      setOpen(true);
+
+      const found = data as SensesResult;
+      setResult(found);
+      // Первое значение отмечаем сразу: чаще всего нужно именно оно
+      setSelected(found.senses.length ? [0] : []);
+      // Cambridge приводит слово к начальной форме: booked → book
+      if (found.senses[0]?.word) setEnglish(found.senses[0].word);
     } catch {
       setLookupError("Не удалось связаться со словарём. Проверьте интернет.");
     } finally {
@@ -66,14 +102,24 @@ export function AddWordForm({ owners }: { owners: WordOwner[] }) {
     }
   }
 
-  const key = `${saved}-${found?.word ?? ""}`;
+  function toggle(index: number) {
+    setSelected((prev) =>
+      prev.includes(index)
+        ? prev.filter((item) => item !== index)
+        : [...prev, index].sort((a, b) => a - b),
+    );
+  }
+
+  // Поля пересоздаются, когда меняется выбор значений
+  const key = `${saved}-${result?.word ?? ""}-${selected.join(".")}`;
 
   return (
     <form action={action} className="card p-5" noValidate>
       <h2 className="text-[15px] font-semibold text-ink-900">Добавить слово</h2>
       <p className="mt-1 text-[13.5px] text-ink-500">
-        Введите слово и нажмите «Найти» — перевод, определение, пример и
-        произношение подтянутся из Cambridge Dictionary.
+        Введите слово и нажмите «Найти слово» — появятся все его значения из
+        Cambridge Dictionary. Отметьте нужные и добавьте, заполнять поля
+        вручную не нужно.
       </p>
 
       <div className="mt-4 flex flex-col gap-2 sm:flex-row">
@@ -81,7 +127,14 @@ export function AddWordForm({ owners }: { owners: WordOwner[] }) {
           name="english"
           value={english}
           onChange={(event) => setEnglish(event.target.value)}
-          placeholder="например, achieve"
+          onKeyDown={(event) => {
+            // Enter ищет слово, а не отправляет пустую форму
+            if (event.key === "Enter") {
+              event.preventDefault();
+              void lookup();
+            }
+          }}
+          placeholder="например, book"
           autoComplete="off"
           className={`field flex-1 ${state?.errors?.english ? "field-error" : ""}`}
         />
@@ -89,9 +142,9 @@ export function AddWordForm({ owners }: { owners: WordOwner[] }) {
           type="button"
           onClick={lookup}
           disabled={loading}
-          className="btn-ghost sm:w-40"
+          className="btn-ghost sm:w-44"
         >
-          {loading ? "Ищем…" : "🔍 Найти"}
+          {loading ? "Ищем…" : "🔍 Найти слово"}
         </button>
       </div>
 
@@ -105,16 +158,64 @@ export function AddWordForm({ owners }: { owners: WordOwner[] }) {
         </div>
       ) : null}
 
-      {found ? (
-        <div className="mt-3">
-          <Alert kind="info">
-            Найдено в{" "}
-            {found.source === "cambridge"
-              ? "Cambridge Dictionary"
-              : "резервном словаре"}
-            {found.transcription ? ` · ${found.transcription}` : ""}
-            {found.partOfSpeech ? ` · ${found.partOfSpeech}` : ""}
-          </Alert>
+      {result ? (
+        <div className="mt-4 space-y-2">
+          <p className="text-[13.5px] text-ink-500">
+            Найдено значений: {result.senses.length}
+            {result.senses.length > 1
+              ? " · можно выбрать несколько — они сложатся в одну карточку"
+              : ""}
+            {result.source === "cambridge" ? "" : " · резервный словарь"}
+          </p>
+
+          {result.senses.map((sense, index) => (
+            <SenseCard
+              key={index}
+              sense={sense}
+              selected={selected.includes(index)}
+              onToggle={() => toggle(index)}
+            />
+          ))}
+
+          <div className="rounded-xl bg-ink-50 px-4 py-3">
+            {merged ? (
+              <p className="text-[14px] text-ink-700">
+                В словарь попадёт: <b>{merged.word}</b> —{" "}
+                {merged.russian || (
+                  <span className="text-rose-600">перевод нужно вписать</span>
+                )}
+              </p>
+            ) : (
+              <p className="text-[14px] text-ink-500">
+                Отметьте хотя бы одно значение.
+              </p>
+            )}
+
+            <div className="mt-3 flex flex-wrap gap-2">
+              {merged?.russian ? (
+                <SubmitButton pendingLabel="Добавляем…" className="btn-primary">
+                  ➕ Добавить в словарь
+                </SubmitButton>
+              ) : merged ? (
+                <button
+                  type="button"
+                  onClick={() => setOpen(true)}
+                  className="btn-primary"
+                >
+                  Вписать перевод и добавить
+                </button>
+              ) : null}
+              {merged ? (
+                <button
+                  type="button"
+                  onClick={() => setOpen((value) => !value)}
+                  className="btn-ghost"
+                >
+                  {open ? "Скрыть поля" : "Изменить перед добавлением"}
+                </button>
+              ) : null}
+            </div>
+          </div>
         </div>
       ) : null}
 
@@ -124,13 +225,15 @@ export function AddWordForm({ owners }: { owners: WordOwner[] }) {
         </div>
       ) : null}
 
-      <button
-        type="button"
-        onClick={() => setOpen((value) => !value)}
-        className="mt-4 text-[13.5px] font-medium text-brand-600 hover:text-brand-700"
-      >
-        {open ? "Свернуть поля" : "Заполнить поля вручную ▾"}
-      </button>
+      {result ? null : (
+        <button
+          type="button"
+          onClick={() => setOpen((value) => !value)}
+          className="mt-4 text-[13.5px] font-medium text-brand-600 hover:text-brand-700"
+        >
+          {open ? "Свернуть поля" : "Заполнить поля вручную ▾"}
+        </button>
+      )}
 
       <div className={`mt-4 grid gap-4 ${open ? "" : "hidden"}`}>
         {owners.length > 0 ? (
@@ -149,21 +252,22 @@ export function AddWordForm({ owners }: { owners: WordOwner[] }) {
           </div>
         ) : null}
 
-        <div className="grid gap-4 sm:grid-cols-[1fr_160px]">
+        <div className="grid gap-4 sm:grid-cols-[1fr_200px]">
           <Row
             label="Перевод на русский"
             name="russian"
             key={`ru-${key}`}
-            defaultValue={found?.russian ?? ""}
+            defaultValue={merged?.russian ?? ""}
             error={state?.errors?.russian}
-            placeholder="достигать"
+            placeholder="книга, бронировать"
+            hint="Несколько переводов — через запятую, тренировка примет любой"
           />
           <Row
             label="Часть речи"
             name="partOfSpeech"
             key={`pos-${key}`}
-            defaultValue={found?.partOfSpeech ?? ""}
-            placeholder="verb"
+            defaultValue={merged?.partOfSpeech ?? ""}
+            placeholder="noun, verb"
           />
         </div>
 
@@ -171,22 +275,22 @@ export function AddWordForm({ owners }: { owners: WordOwner[] }) {
           label="Пример использования"
           name="example"
           key={`ex-${key}`}
-          defaultValue={found?.example ?? ""}
-          placeholder="She achieved her goal."
+          defaultValue={merged?.example ?? ""}
+          placeholder="I've just read a great book."
           textarea
         />
         <Row
           label="Определение (англ.)"
           name="definition"
           key={`def-${key}`}
-          defaultValue={found?.definition ?? ""}
-          placeholder="to succeed in finishing something"
+          defaultValue={merged?.definition ?? ""}
+          placeholder="a written text that can be published"
           textarea
         />
         <Row
           label="Определение по-русски"
           name="definitionRu"
-          placeholder="добиться результата, к которому стремился"
+          placeholder="напечатанный текст, который можно издать"
           hint="Используется в тренировке «слово по определению»"
           textarea
         />
@@ -194,8 +298,8 @@ export function AddWordForm({ owners }: { owners: WordOwner[] }) {
           label="Транскрипция"
           name="transcription"
           key={`ipa-${key}`}
-          defaultValue={found?.transcription ?? ""}
-          placeholder="/əˈtʃiːv/"
+          defaultValue={merged?.transcription ?? ""}
+          placeholder="/bʊk/"
         />
 
         <UploadField
@@ -210,15 +314,22 @@ export function AddWordForm({ owners }: { owners: WordOwner[] }) {
         type="hidden"
         name="audioUrl"
         key={`audio-${key}`}
-        defaultValue={found?.audioUrl ?? ""}
+        defaultValue={merged?.audioUrl ?? ""}
       />
-      <input type="hidden" name="source" value={found?.source ?? "manual"} />
+      <input
+        type="hidden"
+        name="source"
+        value={merged ? (result?.source ?? "cambridge") : "manual"}
+      />
 
-      <div className="mt-5">
-        <SubmitButton pendingLabel="Добавляем…" className="btn-primary">
-          Добавить в словарь
-        </SubmitButton>
-      </div>
+      {/* Без результата поиска или с открытыми полями — обычная кнопка внизу */}
+      {!result || open ? (
+        <div className="mt-5">
+          <SubmitButton pendingLabel="Добавляем…" className="btn-primary">
+            Добавить в словарь
+          </SubmitButton>
+        </div>
+      ) : null}
     </form>
   );
 }
