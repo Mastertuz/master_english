@@ -146,6 +146,8 @@ export type OgeVariant = {
     criteria: Criterion[];
     rules: string[];
     plan: string[];
+    /** Шаблон письма: готовые фразы для каждой части */
+    template: { part: string; phrases: string }[];
     sample: string;
     strategy: Strategy;
   };

@@ -800,6 +800,24 @@ export const demo2027: OgeVariant = {
       "Завершающая фраза: Best wishes, (отдельная строка, запятая)",
       "Подпись — только имя: Anna",
     ],
+    template: [
+      { part: "Обращение", phrases: "Dear Ben," },
+      {
+        part: "Благодарность за письмо",
+        phrases:
+          "Thank you for your recent e-mail / message. I was very glad to hear from you again!",
+      },
+      {
+        part: "Переход к ответам на вопросы",
+        phrases: "As for your questions, … / You asked me about…",
+      },
+      {
+        part: "Завершение и надежда на контакт",
+        phrases: "I guess that’s all for now. Write back soon. / Hope to hear from you soon.",
+      },
+      { part: "Завершающая фраза", phrases: "Best wishes, / All the best, / Yours," },
+      { part: "Подпись — только имя", phrases: "Alina" },
+    ],
     sample:
       "Dear Mary,\n\nThanks for your email! I was really glad to hear from you.\n\nYou asked me about small Russian towns. I would recommend visiting Suzdal and Myshkin. Suzdal is full of old churches and wooden houses, and Myshkin has an amazing Mouse Museum.\n\nAs for travelling, I think the best way to see Russia is by train, because it is comfortable and you can enjoy the views from the window.\n\nPersonally, I would prefer to live in a small town. Life there is calm, the air is fresh and people are friendly, although a big city offers more opportunities.\n\nSorry, I have to go now. Write back soon!\n\nBest wishes,\nAnna",
     strategy: {

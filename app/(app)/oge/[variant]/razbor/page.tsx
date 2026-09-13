@@ -315,6 +315,36 @@ export default async function RazborPage({
             </div>
           </div>
 
+          <div className="rounded-xl border border-brand-200 bg-brand-50/50 p-4">
+            <p className="text-[12.5px] font-semibold uppercase tracking-wide text-brand-700">
+              Шаблон письма
+            </p>
+            <p className="mt-1 text-[13.5px] text-ink-600">
+              Каждая часть — с новой строки. Имя в обращении берите из письма-стимула
+              (в этом варианте — Mary), подпись — только своё имя. Через «/»
+              даны варианты: выберите один.
+            </p>
+            <ol className="mt-3 space-y-2">
+              {writing.template.map((line, index) => (
+                <li
+                  key={line.part}
+                  className="grid gap-x-3 gap-y-0.5 rounded-lg bg-white/60 px-3 py-2 sm:grid-cols-[14rem_minmax(0,1fr)]"
+                >
+                  <span className="text-[13px] text-ink-500">
+                    {index + 1}. {line.part}
+                  </span>
+                  <span className="break-words text-[14.5px] font-medium text-ink-900">
+                    {line.phrases}
+                  </span>
+                </li>
+              ))}
+            </ol>
+            <p className="mt-3 text-[13px] text-ink-500">
+              Ответы на три вопроса пишите между 3-й и 4-й частями — отдельными
+              абзацами.
+            </p>
+          </div>
+
           <StrategyCard strategy={writing.strategy} />
 
           {reveal ? (
