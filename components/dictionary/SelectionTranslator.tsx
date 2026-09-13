@@ -124,6 +124,9 @@ export function SelectionTranslator() {
     request.current?.abort();
     current.current = "";
     setSelected(null);
+    // Снимаем выделение: иначе проверка после отпускания кнопки мыши
+    // (или selectionchange) нашла бы то же слово и открыла окно снова
+    window.getSelection()?.removeAllRanges();
   }, []);
 
   const open = useCallback(async (next: Selected) => {
@@ -194,6 +197,12 @@ export function SelectionTranslator() {
     };
     const onPointerUp = (event: PointerEvent) => {
       pointerDown = false;
+      // Нажатия внутри окна (крестик, «Добавить», другие значения) —
+      // не новое выделение, проверять нечего
+      if (insidePanel(event)) {
+        touchStart = null;
+        return;
+      }
       if (event.pointerType === "touch" && touchStart && !insidePanel(event)) {
         const moved = Math.hypot(event.clientX - touchStart.x, event.clientY - touchStart.y);
         touchStart = null;
