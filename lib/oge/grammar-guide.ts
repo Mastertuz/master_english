@@ -42,7 +42,6 @@ export type GrammarGuide = {
   sections: GuideSection[];
   walkthrough: GuideWalkthrough;
   mistakes: string[];
-  source: { title: string; url: string };
 };
 
 export const grammarGuide: GrammarGuide = {
@@ -520,8 +519,4 @@ export const grammarGuide: GrammarGuide = {
     "Дописали the, который уже стоит перед пропуском: the the largest.",
     "Ошиблись в написании: twelveth, secound, childs, womens, stoped.",
   ],
-  source: {
-    title: "«Вся грамматика для ОГЭ по английскому» — Алина Максимова, Умскул",
-    url: "https://www.youtube.com/watch?v=CdAtjDXZdMQ",
-  },
 };

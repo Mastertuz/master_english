@@ -200,19 +200,6 @@ export function GrammarGuideView({
           ))}
         </ul>
       </div>
-
-      <p className="text-[12.5px] text-ink-400">
-        Разбор составлен по видео и его расшифровке:{" "}
-        <a
-          href={guide.source.url}
-          target="_blank"
-          rel="noreferrer"
-          className="text-brand-700 hover:underline"
-        >
-          {guide.source.title}
-        </a>
-        .
-      </p>
     </div>
   );
 }
