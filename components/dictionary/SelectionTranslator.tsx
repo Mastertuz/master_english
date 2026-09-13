@@ -19,7 +19,8 @@ type Found = {
   machineRussian?: string;
 };
 
-type Selected = { text: string; sentence: string; rect: DOMRect };
+/** range — копия выделения: по нему окно едет за словом при прокрутке */
+type Selected = { text: string; sentence: string; rect: DOMRect; range: Range };
 
 type Load =
   | { status: "loading" }
@@ -94,7 +95,12 @@ function readSelection(panel: HTMLElement | null): Selected | null {
   const rect = range.getBoundingClientRect();
   if (!rect.width && !rect.height) return null;
 
-  return { text: text.replace(/’/g, "'"), sentence: sentenceAround(range), rect };
+  return {
+    text: text.replace(/’/g, "'"),
+    sentence: sentenceAround(range),
+    rect,
+    range: range.cloneRange(),
+  };
 }
 
 /**
@@ -159,19 +165,44 @@ export function SelectionTranslator() {
 
   useEffect(() => {
     let timer: ReturnType<typeof setTimeout> | undefined;
+    let frame = 0;
     let pointerDown = false;
+    // Где началось касание: тап закрывает окно, а прокрутка пальцем — нет
+    let touchStart: { x: number; y: number } | null = null;
 
     const check = () => {
       const next = readSelection(panel.current);
       if (next) void open(next);
     };
 
+    const insidePanel = (event: Event) =>
+      Boolean(panel.current?.contains(event.target as Node));
+
     const onPointerDown = (event: PointerEvent) => {
       pointerDown = true;
-      if (!panel.current?.contains(event.target as Node)) close();
+      if (event.pointerType === "touch") {
+        touchStart = { x: event.clientX, y: event.clientY };
+        return;
+      }
+      // Полоса прокрутки страницы — тоже прокрутка, окно не закрываем
+      const onScrollbar =
+        event.target === document.documentElement ||
+        event.clientX >= document.documentElement.clientWidth;
+      if (onScrollbar) return;
+      // Мышью: клик мимо окна закрывает его (и начинает новое выделение)
+      if (!insidePanel(event)) close();
     };
-    const onPointerUp = () => {
+    const onPointerUp = (event: PointerEvent) => {
       pointerDown = false;
+      if (event.pointerType === "touch" && touchStart && !insidePanel(event)) {
+        const moved = Math.hypot(event.clientX - touchStart.x, event.clientY - touchStart.y);
+        touchStart = null;
+        // Короткий тап мимо окна — закрыть; если было выделение, check откроет снова
+        if (moved < 10 && !readSelection(panel.current)) {
+          close();
+          return;
+        }
+      }
       clearTimeout(timer);
       timer = setTimeout(check, 10);
     };
@@ -184,23 +215,34 @@ export function SelectionTranslator() {
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") close();
     };
-    const onScroll = (event: Event) => {
-      if (panel.current?.contains(event.target as Node)) return;
-      close();
+    // Прокрутка не закрывает окно: оно едет за выделенным словом.
+    // Пересчёт — не чаще раза за кадр
+    const follow = (event: Event) => {
+      if (event.type === "scroll" && insidePanel(event)) return;
+      if (frame) return;
+      frame = requestAnimationFrame(() => {
+        frame = 0;
+        setSelected((current) =>
+          current ? { ...current, rect: current.range.getBoundingClientRect() } : current,
+        );
+      });
     };
 
     document.addEventListener("pointerdown", onPointerDown);
     document.addEventListener("pointerup", onPointerUp);
     document.addEventListener("selectionchange", onSelectionChange);
     document.addEventListener("keydown", onKeyDown);
-    window.addEventListener("scroll", onScroll, { capture: true, passive: true });
+    window.addEventListener("scroll", follow, { capture: true, passive: true });
+    window.addEventListener("resize", follow);
     return () => {
       clearTimeout(timer);
+      cancelAnimationFrame(frame);
       document.removeEventListener("pointerdown", onPointerDown);
       document.removeEventListener("pointerup", onPointerUp);
       document.removeEventListener("selectionchange", onSelectionChange);
       document.removeEventListener("keydown", onKeyDown);
-      window.removeEventListener("scroll", onScroll, { capture: true });
+      window.removeEventListener("scroll", follow, { capture: true });
+      window.removeEventListener("resize", follow);
     };
   }, [open, close]);
 
@@ -310,8 +352,9 @@ export function SelectionTranslator() {
         <button
           type="button"
           onClick={close}
-          aria-label="Закрыть"
-          className="flex h-8 w-8 shrink-0 cursor-pointer items-center justify-center rounded-lg text-ink-400 transition hover:bg-ink-100 hover:text-ink-700"
+          aria-label="Закрыть перевод"
+          title="Закрыть (Esc)"
+          className="flex h-8 w-8 shrink-0 cursor-pointer items-center justify-center rounded-lg border border-ink-200 bg-ink-50 text-[15px] font-semibold text-ink-600 transition hover:border-rose-300 hover:bg-rose-50 hover:text-rose-600"
         >
           ✕
         </button>
