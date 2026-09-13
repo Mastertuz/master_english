@@ -10,8 +10,10 @@ function Table({ table, caption }: { table: GuideTable; caption?: string }) {
         <table className="w-full min-w-[480px] text-left text-[13.5px]">
           <thead className="bg-ink-50 text-ink-600">
             <tr>
-              {table.head.map((cell) => (
-                <th key={cell} className="px-3 py-2 font-medium">
+              {/* Ключ — позиция: в заголовках бывают одинаковые подписи
+                  («Единственное | Множественное | Единственное | Множественное») */}
+              {table.head.map((cell, column) => (
+                <th key={column} className="px-3 py-2 font-medium">
                   {cell}
                 </th>
               ))}
