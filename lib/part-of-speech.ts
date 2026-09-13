@@ -43,6 +43,37 @@ export function partOfSpeechRu(value: string): string {
   return single(value);
 }
 
+// Оканчиваются на -s, но это единственное число
+const SINGULAR_S = new Set([
+  "news", "series", "species", "means", "gas", "bus", "lens", "bias", "atlas",
+  "canvas", "chaos", "iris", "cactus", "virus", "bonus", "status", "campus",
+  "boss", "glass", "dress", "class", "address", "business", "success",
+  "physics", "mathematics", "economics", "politics", "athletics", "gymnastics",
+]);
+// Множественное число без -s
+const PLURAL_IRREGULAR = new Set([
+  "people", "children", "men", "women", "teeth", "feet", "mice", "geese",
+  "police", "cattle", "data",
+]);
+
+/**
+ * Число существительного для подсказки в тренировке: «crutch» и «customs»
+ * пишутся по-разному, и без подсказки по картинке не угадать форму.
+ * Для других частей речи — пустая строка.
+ */
+export function nounNumber(english: string, partOfSpeech: string): "singular" | "plural" | "" {
+  const pos = partOfSpeech.toLowerCase();
+  if (!/\bnoun\b/.test(pos) || /\bphrase\b/.test(pos)) return "";
+  if (/\bplural\b/.test(pos)) return "plural";
+
+  const last = english.trim().toLowerCase().split(/\s+/).pop() ?? "";
+  if (!last || last.endsWith("'s")) return "singular";
+  if (PLURAL_IRREGULAR.has(last)) return "plural";
+  if (SINGULAR_S.has(last)) return "singular";
+  if (/(ss|us|is|ous|ness|ics)$/.test(last)) return "singular";
+  return /s$/.test(last) ? "plural" : "singular";
+}
+
 function single(value: string): string {
   const key = value.trim().toLowerCase();
   if (!key) return "";

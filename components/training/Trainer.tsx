@@ -5,7 +5,7 @@ import { useMemo, useState } from "react";
 import { recordAttemptAction } from "@/app/actions/words";
 import { SpeakButton } from "@/components/ui/SpeakButton";
 import { isAnswerCorrect, shuffle } from "@/lib/answer";
-import { partOfSpeechRu } from "@/lib/part-of-speech";
+import { nounNumber, partOfSpeechRu } from "@/lib/part-of-speech";
 
 export type TrainingWord = {
   id: string;
@@ -70,7 +70,11 @@ export function Trainer({
   }
 
   const current = deck[index];
-  const partOfSpeech = current ? partOfSpeechRu(current.partOfSpeech) : "";
+  const number = current ? nounNumber(current.english, current.partOfSpeech) : "";
+  // «(мн. ч.)» у plural noun уходит в отдельную плашку с числом
+  const partOfSpeech = current
+    ? partOfSpeechRu(current.partOfSpeech).replace(" (мн. ч.)", "")
+    : "";
 
   const task = useMemo(() => {
     if (!current) return null;
@@ -262,9 +266,7 @@ export function Trainer({
             ) : null}
             {partOfSpeech ? (
               <p className="mt-2">
-                <span className="chip bg-ink-100 text-ink-600">
-                  {partOfSpeech}
-                </span>
+                <PosChips partOfSpeech={partOfSpeech} number={number} />
               </p>
             ) : null}
             {task.speakable ? (
@@ -278,9 +280,7 @@ export function Trainer({
         {/* В режиме с картинкой слова на экране нет — часть речи показываем отдельно */}
         {mode === "IMAGE" && partOfSpeech ? (
           <p className="mb-3 text-center">
-            <span className="chip bg-ink-100 text-ink-600">
-              {partOfSpeech}
-            </span>
+            <PosChips partOfSpeech={partOfSpeech} number={number} />
           </p>
         ) : null}
 
@@ -540,5 +540,27 @@ function EmptyState({ text }: { text: string }) {
         </Link>
       </div>
     </div>
+  );
+}
+
+/** Часть речи и, для существительного, число — в каком виде писать ответ */
+function PosChips({
+  partOfSpeech,
+  number,
+}: {
+  partOfSpeech: string;
+  number: "singular" | "plural" | "";
+}) {
+  return (
+    <span className="inline-flex flex-wrap justify-center gap-1.5">
+      <span className="chip bg-ink-100 text-ink-600">{partOfSpeech}</span>
+      {number ? (
+        <span
+          className={`chip ${number === "plural" ? "bg-amber-100 text-amber-800" : "bg-sky-100 text-sky-700"}`}
+        >
+          {number === "plural" ? "множественное число" : "единственное число"}
+        </span>
+      ) : null}
+    </span>
   );
 }
