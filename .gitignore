@@ -56,3 +56,5 @@ next-env.d.ts
 /audio/
 /photos/
 /oge/
+# личные списки слов преподавателя для импорта в словарь
+/my-dictionary/
