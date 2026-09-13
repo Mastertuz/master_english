@@ -134,7 +134,13 @@ export type OgeVariant = {
   };
 
   grammar: {
-    part20: { intro: string; lines: GapLine[]; strategy: Strategy };
+    part20: {
+      intro: string;
+      lines: GapLine[];
+      strategy: Strategy;
+      /** Какие задания варианта относятся к темам разбора (id темы → номера) */
+      guideTasks?: Record<string, number[]>;
+    };
     part29: { intro: string; lines: GapLine[]; strategy: Strategy };
   };
 

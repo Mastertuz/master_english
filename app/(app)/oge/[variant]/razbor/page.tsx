@@ -7,7 +7,9 @@ import {
   StrategyCard,
   Transcript,
 } from "@/components/oge/Razbor";
+import { GrammarGuideView } from "@/components/oge/GrammarGuide";
 import { AudioPlayer } from "@/components/ui/AudioPlayer";
+import { grammarGuide } from "@/lib/oge/grammar-guide";
 import { SeekButton, Timecodes } from "@/components/ui/SeekButton";
 import { getVariant, requireOgeUser } from "@/lib/oge";
 import { countWords, gapItems, MARK_SCALE } from "@/lib/oge/scoring";
@@ -260,6 +262,11 @@ export default async function RazborPage({
         <h2 className="text-xl font-semibold text-ink-900">
           Раздел 3. Грамматика и лексика · 15 баллов
         </h2>
+
+        <GrammarGuideView
+          guide={grammarGuide}
+          taskLinks={reveal ? grammar.part20.guideTasks ?? null : null}
+        />
 
         <Block title="Задания 20–28 · грамматика, по 1 баллу" intro={grammar.part20.intro}>
           <StrategyCard strategy={grammar.part20.strategy} />
