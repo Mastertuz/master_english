@@ -8,6 +8,12 @@ import {
   Transcript,
 } from "@/components/oge/Razbor";
 import { GrammarGuideView } from "@/components/oge/GrammarGuide";
+import {
+  HomelandIdeasView,
+  LetterPhrasesView,
+  MonologueBankView,
+  VocabularyView,
+} from "@/components/oge/Materials";
 import { AudioPlayer } from "@/components/ui/AudioPlayer";
 import { grammarGuide } from "@/lib/oge/grammar-guide";
 import { SeekButton, Timecodes } from "@/components/ui/SeekButton";
@@ -23,6 +29,7 @@ const TOC = [
   { id: "grammar", label: "Грамматика и лексика · 20–34" },
   { id: "writing", label: "Письмо · 35" },
   { id: "speaking", label: "Устная часть · 1–3" },
+  { id: "vocabulary", label: "Лексика по темам и слова-ловушки" },
 ];
 
 function option(options: string[], answer: string) {
@@ -352,6 +359,8 @@ export default async function RazborPage({
             </p>
           </div>
 
+          <LetterPhrasesView />
+
           <StrategyCard strategy={writing.strategy} />
 
           {reveal ? (
@@ -488,7 +497,19 @@ export default async function RazborPage({
               </div>
             </div>
           ) : null}
+
+          <MonologueBankView />
+          <HomelandIdeasView />
         </Block>
+      </section>
+
+      {/* ─────────────────────── Лексика и слова-ловушки ─────────────────────── */}
+
+      <section id="vocabulary" className="scroll-mt-24 space-y-4">
+        <h2 className="text-xl font-semibold text-ink-900">
+          Лексика по темам и слова-ловушки
+        </h2>
+        <VocabularyView />
       </section>
 
       {!reveal ? <Locked href={examHref} /> : null}
