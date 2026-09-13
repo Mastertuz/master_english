@@ -40,7 +40,9 @@ export function WordLookup() {
 
   return (
     <div className="card p-5">
-      <h2 className="text-[15px] font-semibold text-ink-900">Найти слово</h2>
+      <h2 className="text-[15px] font-semibold text-ink-900">
+        🌐 Поиск в Cambridge Dictionary
+      </h2>
       <p className="mt-1 text-[13.5px] text-ink-500">
         Все значения слова с переводом, определением, примером и
         произношением из Cambridge Dictionary
@@ -72,7 +74,7 @@ export function WordLookup() {
           disabled={loading}
           className="btn-primary sm:w-44"
         >
-          {loading ? "Ищем…" : "🔍 Найти слово"}
+          {loading ? "Ищем…" : "🔍 Найти в Cambridge"}
         </button>
       </div>
 

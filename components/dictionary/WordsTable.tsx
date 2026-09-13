@@ -16,6 +16,11 @@ import { UploadField } from "@/components/ui/UploadField";
 const ALL = "ALL";
 const OWN = "OWN";
 
+/** Для поиска по словарю: регистр и «ё» не важны */
+function normalize(text: string): string {
+  return text.toLowerCase().replace(/ё/g, "е").trim();
+}
+
 export type WordRow = {
   id: string;
   english: string;
@@ -44,6 +49,8 @@ export function WordsTable({
 
   // Фильтр по теме урока: ALL — все слова, OWN — добавленные вручную
   const [topic, setTopic] = useState<string>(ALL);
+  // Поиск по уже добавленным словам — работает вместе с фильтром по теме
+  const [query, setQuery] = useState("");
 
   const topics = useMemo(() => {
     const map = new Map<number, string>();
@@ -56,10 +63,22 @@ export function WordsTable({
   const own = words.filter((word) => !word.lesson).length;
 
   const visible = useMemo(() => {
-    if (topic === ALL) return words;
-    if (topic === OWN) return words.filter((word) => !word.lesson);
-    return words.filter((word) => String(word.lesson?.number) === topic);
-  }, [words, topic]);
+    const byTopic =
+      topic === ALL
+        ? words
+        : topic === OWN
+          ? words.filter((word) => !word.lesson)
+          : words.filter((word) => String(word.lesson?.number) === topic);
+
+    const needle = normalize(query);
+    if (!needle) return byTopic;
+
+    return byTopic.filter((word) =>
+      [word.english, word.russian, word.definition, word.example, word.transcription].some(
+        (field) => normalize(field).includes(needle),
+      ),
+    );
+  }, [words, topic, query]);
 
   return (
     <div className="card overflow-hidden">
@@ -67,8 +86,36 @@ export function WordsTable({
         <h2 className="text-[15px] font-semibold text-ink-900">Мой словарь</h2>
         <p className="text-[13px] text-ink-500">
           {words.length} {plural(words.length, "слово", "слова", "слов")}
-          {topic === ALL ? "" : ` · показано ${visible.length}`}
+          {topic === ALL && !query.trim() ? "" : ` · показано ${visible.length}`}
         </p>
+
+        {words.length > 0 ? (
+          <div className="mt-3">
+            <label className="label" htmlFor="dictionary-search">
+              🔎 Поиск по моему словарю
+            </label>
+            <div className="flex gap-2">
+              <input
+                id="dictionary-search"
+                type="search"
+                value={query}
+                onChange={(event) => setQuery(event.target.value)}
+                placeholder="слово, перевод, определение или пример"
+                autoComplete="off"
+                className="field flex-1"
+              />
+              {query ? (
+                <button
+                  type="button"
+                  onClick={() => setQuery("")}
+                  className="btn-ghost shrink-0"
+                >
+                  Сбросить
+                </button>
+              ) : null}
+            </div>
+          </div>
+        ) : null}
 
         {topics.length > 0 ? (
           <div className="mt-3 flex flex-wrap gap-2">
@@ -104,9 +151,21 @@ export function WordsTable({
           добавит их вручную.
         </p>
       ) : visible.length === 0 ? (
-        <p className="p-8 text-center text-[14px] text-ink-500">
-          В этой теме слов нет.
-        </p>
+        <div className="p-8 text-center text-[14px] text-ink-500">
+          {query.trim() ? (
+            <>
+              <p>
+                По запросу «{query.trim()}» в словаре ничего не найдено
+                {topic === ALL ? "" : " в выбранной теме"}.
+              </p>
+              <p className="mt-1 text-[13px]">
+                Слово можно найти в Cambridge Dictionary — поиск выше.
+              </p>
+            </>
+          ) : (
+            <p>В этой теме слов нет.</p>
+          )}
+        </div>
       ) : (
         <div className="overflow-x-auto">
           <table className="w-full min-w-[860px] text-left text-[14px]">

@@ -115,7 +115,9 @@ export function AddWordForm({ owners }: { owners: WordOwner[] }) {
 
   return (
     <form action={action} className="card p-5" noValidate>
-      <h2 className="text-[15px] font-semibold text-ink-900">Добавить слово</h2>
+      <h2 className="text-[15px] font-semibold text-ink-900">
+        🌐 Поиск в Cambridge Dictionary и добавление слова
+      </h2>
       <p className="mt-1 text-[13.5px] text-ink-500">
         Введите слово и нажмите «Найти слово» — появятся все его значения из
         Cambridge Dictionary. Отметьте нужные и добавьте, заполнять поля
@@ -144,7 +146,7 @@ export function AddWordForm({ owners }: { owners: WordOwner[] }) {
           disabled={loading}
           className="btn-ghost sm:w-44"
         >
-          {loading ? "Ищем…" : "🔍 Найти слово"}
+          {loading ? "Ищем…" : "🔍 Найти в Cambridge"}
         </button>
       </div>
 
