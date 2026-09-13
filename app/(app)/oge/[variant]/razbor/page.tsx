@@ -8,10 +8,11 @@ import {
   Transcript,
 } from "@/components/oge/Razbor";
 import { AudioPlayer } from "@/components/ui/AudioPlayer";
+import { SeekButton, Timecodes } from "@/components/ui/SeekButton";
 import { getVariant, requireOgeUser } from "@/lib/oge";
 import { countWords, gapItems, MARK_SCALE } from "@/lib/oge/scoring";
 import { STRUCTURE } from "@/lib/oge/summary";
-import type { GapLine, Matching } from "@/lib/oge/types";
+import type { Explanation, GapLine, Matching } from "@/lib/oge/types";
 import { prisma } from "@/lib/prisma";
 
 const TOC = [
@@ -24,10 +25,6 @@ const TOC = [
 
 function option(options: string[], answer: string) {
   return `${answer}) ${options[Number(answer) - 1] ?? ""}`;
-}
-
-function time(seconds: number) {
-  return `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, "0")}`;
 }
 
 export default async function RazborPage({
@@ -49,8 +46,14 @@ export default async function RazborPage({
           select: { submittedAt: true },
         });
 
-  // Ученику ответы открываются только после отправки варианта
-  const reveal = user.role === "ADMIN" || Boolean(attempt?.submittedAt);
+  const isAdmin = user.role === "ADMIN";
+  // Ученику ответы открываются только после отправки варианта,
+  // а тексты аудиозаписей не открываются вовсе — они для преподавателя
+  const reveal = isAdmin || Boolean(attempt?.submittedAt);
+  const withRule = (key: number | string, explanation: Explanation): Explanation => ({
+    ...explanation,
+    rule: variant.rules[String(key)] ?? explanation.rule,
+  });
   const examHref = `/oge/${variant.id}`;
   const { listening, reading, grammar, writing, speaking } = variant;
 
@@ -116,11 +119,7 @@ export default async function RazborPage({
         {reveal ? (
           <div className="card space-y-2 p-5">
             <AudioPlayer src={listening.audioUrl} title="Запись к заданиям 1–11" />
-            <p className="text-[13px] text-ink-500">
-              {listening.marks
-                .map((mark) => `${mark.label} — с ${time(mark.at)}`)
-                .join(" · ")}
-            </p>
+            <Timecodes src={listening.audioUrl} items={listening.marks} />
           </div>
         ) : null}
 
@@ -128,22 +127,27 @@ export default async function RazborPage({
           <StrategyCard strategy={listening.part1.strategy} />
           {reveal ? (
             <>
+              <Timecodes src={listening.audioUrl} items={listening.part1.timecodes} />
               {listening.part1.questions.map((question) => (
                 <AnswerCard
                   key={question.n}
                   n={question.n}
                   title={question.prompt}
                   answer={option(question.options, question.answer)}
-                  explanation={question.explanation}
+                  explanation={withRule(question.n, question.explanation)}
                 />
               ))}
-              {listening.part1.transcripts.map((item) => (
-                <Transcript
-                  key={item.title}
-                  title={`Текст записи · ${item.title}`}
-                  text={item.text}
-                />
-              ))}
+              {isAdmin
+                ? listening.part1.transcripts.map((item) => (
+                    <Transcript
+                      key={item.title}
+                      title={`🔑 Текст записи · ${item.title}`}
+                      text={item.text}
+                      src={listening.audioUrl}
+                      at={item.at}
+                    />
+                  ))
+                : null}
             </>
           ) : null}
         </Block>
@@ -156,14 +160,23 @@ export default async function RazborPage({
           <StrategyCard strategy={listening.part5.strategy} />
           {reveal ? (
             <>
-              <MatchingAnswers task={listening.part5} label="Говорящий" />
-              {listening.part5.transcripts.map((item) => (
-                <Transcript
-                  key={item.title}
-                  title={`Текст записи · ${item.title}`}
-                  text={item.text}
-                />
-              ))}
+              <Timecodes src={listening.audioUrl} items={listening.part5.timecodes} />
+              <MatchingAnswers
+                task={listening.part5}
+                label="Говорящий"
+                rules={variant.rules}
+              />
+              {isAdmin
+                ? listening.part5.transcripts.map((item) => (
+                    <Transcript
+                      key={item.title}
+                      title={`🔑 Текст записи · ${item.title}`}
+                      text={item.text}
+                      src={listening.audioUrl}
+                      at={item.at}
+                    />
+                  ))
+                : null}
             </>
           ) : null}
         </Block>
@@ -172,19 +185,24 @@ export default async function RazborPage({
           <StrategyCard strategy={listening.part6.strategy} />
           {reveal ? (
             <>
+              <Timecodes src={listening.audioUrl} items={listening.part6.timecodes} />
               {listening.part6.rows.map((row) => (
                 <AnswerCard
                   key={row.n}
                   n={row.n}
                   title={row.label}
                   answer={row.answer.split(";").join(" / ")}
-                  explanation={row.explanation}
+                  explanation={withRule(row.n, row.explanation)}
                 />
               ))}
-              <Transcript
-                title="Текст записи · интервью"
-                text={listening.part6.transcript}
-              />
+              {isAdmin ? (
+                <Transcript
+                  title="🔑 Текст записи · интервью"
+                  text={listening.part6.transcript}
+                  src={listening.audioUrl}
+                  at={listening.part6.transcriptAt}
+                />
+              ) : null}
             </>
           ) : null}
         </Block>
@@ -203,7 +221,7 @@ export default async function RazborPage({
           <StrategyCard strategy={reading.part12.strategy} />
           {reveal ? (
             <>
-              <MatchingAnswers task={reading.part12} label="Текст" />
+              <MatchingAnswers task={reading.part12} label="Текст" rules={variant.rules} />
               <Transcript
                 title="Тексты A–F"
                 text={reading.part12.texts
@@ -224,7 +242,7 @@ export default async function RazborPage({
                   n={statement.n}
                   title={statement.prompt}
                   answer={option(statement.options, statement.answer)}
-                  explanation={statement.explanation}
+                  explanation={withRule(statement.n, statement.explanation)}
                 />
               ))}
               <Transcript
@@ -245,12 +263,12 @@ export default async function RazborPage({
 
         <Block title="Задания 20–28 · грамматика, по 1 баллу" intro={grammar.part20.intro}>
           <StrategyCard strategy={grammar.part20.strategy} />
-          {reveal ? <GapAnswers lines={grammar.part20.lines} /> : null}
+          {reveal ? <GapAnswers lines={grammar.part20.lines} rules={variant.rules} /> : null}
         </Block>
 
         <Block title="Задания 29–34 · словообразование, по 1 баллу" intro={grammar.part29.intro}>
           <StrategyCard strategy={grammar.part29.strategy} />
-          {reveal ? <GapAnswers lines={grammar.part29.lines} /> : null}
+          {reveal ? <GapAnswers lines={grammar.part29.lines} rules={variant.rules} /> : null}
         </Block>
       </section>
 
@@ -349,11 +367,36 @@ export default async function RazborPage({
           {reveal ? (
             <>
               <AudioPlayer src={speaking.audioUrl} title="Запись телефонного опроса" />
+              <div className="flex flex-wrap items-center gap-1.5">
+                <span className="mr-1 text-[12.5px] text-ink-500">Таймкоды:</span>
+                {speaking.task2.questions.map((question, index) => (
+                  <SeekButton
+                    key={question.start}
+                    src={speaking.audioUrl}
+                    at={question.start}
+                    label={`Вопрос ${index + 1}`}
+                  />
+                ))}
+              </div>
+              {isAdmin ? (
+                <Transcript
+                  title="🔑 Транскрипция опроса"
+                  text={[
+                    speaking.task2.introText,
+                    ...speaking.task2.questions.map(
+                      (question) => `Electronic assistant: ${question.text}\nStudent: …`,
+                    ),
+                    speaking.task2.outroText,
+                  ].join("\n\n")}
+                  src={speaking.audioUrl}
+                  at={0}
+                />
+              ) : null}
               {speaking.task2.questions.map((question, index) => (
                 <AnswerCard
                   key={question.text}
                   n={index + 1}
-                  title={question.text}
+                  title={isAdmin ? question.text : `Вопрос ${index + 1}`}
                   answer="полный ответ"
                   explanation={{
                     proof: question.sample,
@@ -433,7 +476,15 @@ function OptionList({ options }: { options: string[] }) {
   );
 }
 
-function MatchingAnswers({ task, label }: { task: Matching; label: string }) {
+function MatchingAnswers({
+  task,
+  label,
+  rules,
+}: {
+  task: Matching;
+  label: string;
+  rules: Record<string, string>;
+}) {
   return (
     <>
       <div className="overflow-x-auto">
@@ -471,7 +522,10 @@ function MatchingAnswers({ task, label }: { task: Matching; label: string }) {
             n={`${task.n}${letter}`}
             title={`${label} ${letter}`}
             answer={`${digit} — ${task.options[Number(digit) - 1]}`}
-            explanation={explanation}
+            explanation={{
+              ...explanation,
+              rule: rules[`${task.n}${letter}`] ?? explanation.rule,
+            }}
           />
         ) : null;
       })}
@@ -486,7 +540,13 @@ function MatchingAnswers({ task, label }: { task: Matching; label: string }) {
   );
 }
 
-function GapAnswers({ lines }: { lines: GapLine[] }) {
+function GapAnswers({
+  lines,
+  rules,
+}: {
+  lines: GapLine[];
+  rules: Record<string, string>;
+}) {
   return (
     <>
       {gapItems(lines).map((gap) => (
@@ -501,7 +561,10 @@ function GapAnswers({ lines }: { lines: GapLine[] }) {
             </>
           }
           answer={gap.answer.split(";").join(" / ")}
-          explanation={gap.explanation}
+          explanation={{
+            ...gap.explanation,
+            rule: rules[String(gap.n)] ?? gap.explanation.rule,
+          }}
         />
       ))}
     </>

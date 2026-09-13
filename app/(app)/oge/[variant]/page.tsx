@@ -15,6 +15,7 @@ import {
   WRITING_MAX,
 } from "@/lib/oge/scoring";
 import { STATUS_LABEL, STATUS_STYLE, summarize } from "@/lib/oge/summary";
+import { teacherNotes } from "@/lib/oge/teacher";
 import { examView } from "@/lib/oge/view";
 import { prisma } from "@/lib/prisma";
 
@@ -191,6 +192,7 @@ export default async function OgeVariantPage({
           initialRecordings={recordings}
           readOnly={readOnly}
           checks={checks}
+          teacher={user.role === "ADMIN" ? teacherNotes(variant) : null}
           savedAt={attempt?.updatedAt.toISOString() ?? null}
         />
       ) : null}

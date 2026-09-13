@@ -1,3 +1,4 @@
+import { SeekButton } from "@/components/ui/SeekButton";
 import type { Criterion, Explanation, Strategy } from "@/lib/oge/types";
 
 /** Что проверяет задание, как его выполнять и где ошибаются */
@@ -38,6 +39,12 @@ export function ExplanationView({ explanation }: { explanation: Explanation }) {
         </blockquote>
       ) : null}
       <p className="text-ink-800">{explanation.why}</p>
+      {explanation.rule ? (
+        <p className="rounded-lg bg-brand-50/70 px-3 py-2 text-ink-800">
+          <span className="font-semibold text-brand-700">Правило: </span>
+          {explanation.rule}
+        </p>
+      ) : null}
       {explanation.trap ? (
         <p className="text-ink-600">
           <span className="font-semibold text-amber-700">Ловушка: </span>
@@ -76,12 +83,30 @@ export function AnswerCard({
   );
 }
 
-export function Transcript({ title, text }: { title: string; text: string }) {
+/** Текст записи; с src и at — ещё и таймкод, где он звучит */
+export function Transcript({
+  title,
+  text,
+  src,
+  at,
+  open = false,
+}: {
+  title: string;
+  text: string;
+  src?: string;
+  at?: number;
+  open?: boolean;
+}) {
   return (
-    <details className="rounded-xl border border-ink-200 bg-ink-50/60 px-4 py-2">
+    <details open={open} className="rounded-xl border border-ink-200 bg-ink-50/60 px-4 py-2">
       <summary className="cursor-pointer text-[14px] font-medium text-ink-700">
         {title}
       </summary>
+      {src && at !== undefined ? (
+        <div className="mt-2">
+          <SeekButton src={src} at={at} label="слушать с этого места" />
+        </div>
+      ) : null}
       <p className="mt-2 whitespace-pre-wrap pb-2 text-[14px] leading-relaxed text-ink-700">
         {text}
       </p>

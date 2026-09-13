@@ -1,3 +1,4 @@
+import { demo2027Rules } from "./demo-2027-rules";
 import type { OgeVariant } from "./types";
 
 /**
@@ -11,6 +12,8 @@ export const demo2027: OgeVariant = {
   subtitle:
     "Официальный демонстрационный вариант ФИПИ: письменная часть (аудирование, чтение, грамматика и лексика, письмо) и устная часть",
 
+  rules: demo2027Rules,
+
   /* ─────────────────────────── Раздел 1. Аудирование ─────────────────────────── */
 
   listening: {
@@ -22,6 +25,17 @@ export const demo2027: OgeVariant = {
     ],
 
     part1: {
+      timecodes: [
+        { label: "Инструкция", at: 0 },
+        { label: "Text A", at: 100 },
+        { label: "Text B", at: 137 },
+        { label: "Text C", at: 175 },
+        { label: "Text D", at: 224 },
+        { label: "Text A · 2-й раз", at: 298 },
+        { label: "Text B · 2-й раз", at: 335 },
+        { label: "Text C · 2-й раз", at: 373 },
+        { label: "Text D · 2-й раз", at: 423 },
+      ],
       intro:
         "Вы услышите четыре коротких текста, обозначенных буквами A, B, C, D. В заданиях 1–4 выберите вариант ответа 1, 2 или 3. Вы услышите запись дважды.",
       questions: [
@@ -86,18 +100,22 @@ export const demo2027: OgeVariant = {
       transcripts: [
         {
           title: "Text A",
+          at: 100,
           text: "Hi, everyone! I’d like to give you some advice on our hiking holiday. Tomorrow, I’ll be waiting for you at the railway station at 8 am. It’s hot… but, anyway, don’t go with bare legs. Our route goes through bushes and rocky hills. Wear comfortable jeans or sport trousers – if you don’t want your legs to be scratched and mosquito-bitten. Do not forget water, but don’t take much food. We’ll be taking breaks at places equipped with barbeques where we can enjoy baked and grilled food.",
         },
         {
           title: "Text B",
+          at: 137,
           text: "Hi, Steve! It’s Mary. I’ve already ordered a cherry cake for mum’s birthday so don’t worry about it. Now I’m in the shopping centre looking for a present for mum. From both of us. I’ve found nothing except a large indoor plant in a ceramic pot. At first, I wanted to buy her an umbrella, but they all had an awful flower print, which I think she won’t like. As for the green plant – she’s always liked things like that. If you agree, I’ll pay and order the delivery. Bye!",
         },
         {
           title: "Text C",
+          at: 175,
           text: "Max: You are always busy at weekends, Nancy. What’s wrong?\nNancy: Nothing, Max. I just have to help my mum in her vet clinic. They are doing some renovations there.\nMax: Oh, yeah. A small family business always requires time and effort! Are you going to work as a vet too? Together with your mum?\nNancy: She’d be happy! My sister is allergic to cats, dogs and whatever. So, I’m mum’s only hope of taking over the clinic which she’s so proud of. But...\nMax: Don’t tell me you don’t like animals!\nNancy: Of course, I do! But I’ve always dreamed of a career in professional sports, which can’t be combined with running a clinic.\nMax: No, it can’t.",
         },
         {
           title: "Text D",
+          at: 224,
           text: "Alice: It’s almost lunch time. Are you hungry, Ron?\nRon: No, Alice, not really. Though I wouldn’t mind some pancakes with strawberry jam.\nAlice: I wouldn’t mind pancakes either but sorry – we’ve got neither eggs nor milk to make them. What we can make is either spaghetti or sandwiches with ham and cheese.\nRon: You know what I’ll choose, don’t you?\nAlice: Oh, yeah! I know that you’re happy to eat spaghetti three times a day. Ok. I’ll have it too, so as not to cook anything else. Would you like your spaghetti with some sauce or with salad?\nRon: With tomato sauce, please.\nAlice: It would be nice of you to help me set the table.",
         },
       ],
@@ -118,6 +136,20 @@ export const demo2027: OgeVariant = {
 
     part5: {
       n: 5,
+      timecodes: [
+        { label: "Инструкция", at: 494 },
+        { label: "Ведущий", at: 561 },
+        { label: "Speaker A", at: 577 },
+        { label: "Speaker B", at: 616 },
+        { label: "Speaker C", at: 652 },
+        { label: "Speaker D", at: 697 },
+        { label: "Speaker E", at: 735 },
+        { label: "A · 2-й раз", at: 813 },
+        { label: "B · 2-й раз", at: 852 },
+        { label: "C · 2-й раз", at: 888 },
+        { label: "D · 2-й раз", at: 933 },
+        { label: "E · 2-й раз", at: 971 },
+      ],
       intro:
         "Вы готовите тематическую радиопередачу с высказываниями пяти разных людей A–E. Подберите к каждому высказыванию рубрику из списка 1–6. Каждую рубрику используйте только один раз, одна рубрика лишняя. Вы услышите запись дважды.",
       letters: ["A", "B", "C", "D", "E"],
@@ -166,22 +198,27 @@ export const demo2027: OgeVariant = {
       transcripts: [
         {
           title: "Speaker A",
+          at: 577,
           text: "Don’t get me wrong, I love watching films on a big screen, but the rest of the experience is pretty awful. Just imagine. You’re in the cinema, ready to see the film and someone next to you has a bag of popcorn or a bag of sweets. So they open it up halfway through the film and, to make things worse, they start chewing loudly. That drives me mad. Or even worse, they talk on their cell phones through the entire movie and start kicking the back of my chair, accidentally or otherwise.",
         },
         {
           title: "Speaker B",
+          at: 616,
           text: "There are different ways to choose a good film to watch. Personally, I always read the official reviews on the Internet. I believe the things that professional critics say about the plot, the acting and the shooting. If they say the film is worth seeing, I go and see it. Apart from that, I rely on my friends’ opinions, as our tastes in films are quite similar. They know what genres I like and which I don’t. In most cases these recommendations are more than enough for me.",
         },
         {
           title: "Speaker C",
+          at: 652,
           text: "I am sure that it is one of the most celebrated films in the entire history of filmmaking. A great all-time classic! It has everything that makes it just fantastic: a talented director, a perfect cast, a great soundtrack, a touching story, you name it. The shooting and acting are superb! It’s not an epic, nor a horror, but a drama that will suit most viewers’ tastes. It is absolutely essential to watch it at least once. Personally, I watch it every time I feel sad or disappointed. It just lifts up my mood.",
         },
         {
           title: "Speaker D",
+          at: 697,
           text: "I am a great cinema and film fan. However, there are some genres I never watch. Like, I don’t watch horror films. They seem to be all about the scare factor and in most cases, they don’t have a good story or plot. You’ll never see me watching an action film, either. They are almost always the same. The good guys try to save the world. No special characters, nothing that makes me interested in the story. And I am not interested in seeing fights and car races for hours and hours.",
         },
         {
           title: "Speaker E",
+          at: 735,
           text: "I don’t like going to the cinema. I haven’t been there almost 10 years. I don’t do well sitting and doing one thing for an hour and a half – I don’t feel safe. Plus, I can’t make myself pay for a ticket, and spend that much money on snacks, only to sit in the dark and focus on one thing. When I’m in my room or in the kitchen, I can do other things while I’m watching a movie, like having a snack or making dinner. Then I can pause it any time I need, so it’s really convenient.",
         },
       ],
@@ -202,6 +239,13 @@ export const demo2027: OgeVariant = {
     },
 
     part6: {
+      timecodes: [
+        { label: "Инструкция", at: 1034 },
+        { label: "Интервью", at: 1103 },
+        { label: "Интервью · 2-й раз", at: 1268 },
+        { label: "Конец записи", at: 1434 },
+      ],
+      transcriptAt: 1103,
       intro:
         "Вы помогаете другу, юному радиожурналисту, проанализировать интервью. Прослушайте запись и заполните таблицу: не более одного слова (без артиклей) из прозвучавшего текста. Числа записывайте буквами. Вы услышите запись дважды.",
       rows: [
@@ -822,6 +866,10 @@ export const demo2027: OgeVariant = {
       instruction:
         "Task 2. You are going to take part in a telephone survey. You have to answer six questions. Give full answers to the questions. Remember that you have 40 seconds to answer each question.",
       answerSec: 40,
+      introText:
+        "Electronic assistant: Hello! It’s the electronic assistant of The TeenWeb. We kindly ask you to take part in our survey. We would like to find out how teenagers feel about their homework. Please answer six questions. The survey is anonymous – you don’t have to give your name. So, let’s get started.",
+      outroText:
+        "Electronic assistant: This is the end of the survey. Thank you very much for your cooperation.",
       questions: [
         {
           text: "How many lessons do you usually have?",

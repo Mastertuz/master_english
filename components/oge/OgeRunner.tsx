@@ -8,9 +8,14 @@ import {
 } from "@/app/actions/oge";
 import { AudioPlayer } from "@/components/ui/AudioPlayer";
 import { ConfirmSubmit } from "@/components/ui/ConfirmSubmit";
+import { Timecodes } from "@/components/ui/SeekButton";
+import { formatTime } from "@/lib/audio-seek";
 import { countWords, RECORDING_KEYS, type OgeAnswers } from "@/lib/oge/scoring";
+import type { TeacherNote, TeacherNotes } from "@/lib/oge/teacher";
+import type { TimedTranscript } from "@/lib/oge/types";
 import type { ExamGapLine, ExamView } from "@/lib/oge/view";
 import { ExamTimer } from "./ExamTimer";
+import { ExplanationView, Transcript } from "./Razbor";
 import {
   Recorder,
   type RecorderHandle,
@@ -39,6 +44,8 @@ type Ctx = {
   update: (key: string, value: string) => void;
   readOnly: boolean;
   checks: CheckMap | null;
+  /** Ответы, правила и тексты записей — только у преподавателя */
+  teacher: TeacherNotes | null;
 };
 
 function writtenKeys(exam: ExamView): Record<Exclude<Tab, "speaking">, string[]> {
@@ -71,6 +78,7 @@ export function OgeRunner({
   initialRecordings,
   readOnly,
   checks,
+  teacher,
   savedAt,
 }: {
   exam: ExamView;
@@ -79,6 +87,8 @@ export function OgeRunner({
   /** Работа отправлена или её открыл учитель — менять ничего нельзя */
   readOnly: boolean;
   checks: CheckMap | null;
+  /** Объяснения и тексты записей для администратора; ученику — null */
+  teacher: TeacherNotes | null;
   savedAt: string | null;
 }) {
   const [tab, setTab] = useState<Tab>("listening");
@@ -154,7 +164,7 @@ export function OgeRunner({
     });
   }
 
-  const ctx: Ctx = { answers, update, readOnly, checks };
+  const ctx: Ctx = { answers, update, readOnly, checks, teacher };
   const keys = writtenKeys(exam);
   const filled = (list: string[]) =>
     list.filter((key) => (answers[key] ?? "").trim()).length;
@@ -230,6 +240,7 @@ export function OgeRunner({
       <SpeakingTab
         exam={exam}
         readOnly={readOnly}
+        teacher={teacher}
         recordings={recordings}
         onRecording={setRecording}
         hidden={tab !== "speaking"}
@@ -346,6 +357,64 @@ function Verdict({ points, max }: { points: number; max: number }) {
   );
 }
 
+/** Блок, который видит только преподаватель */
+function TeacherBox({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="rounded-xl border border-amber-200 bg-amber-50/50 p-3 text-[14px] leading-relaxed text-ink-800">
+      <p className="mb-1 text-[12.5px] font-semibold text-amber-700">
+        🔑 Для преподавателя · {title}
+      </p>
+      {children}
+    </div>
+  );
+}
+
+/** Верный ответ с объяснением: почему, по какому правилу, где ловушка */
+function TeacherNoteView({ note, label }: { note?: TeacherNote; label?: string }) {
+  if (!note) return null;
+  return (
+    <div className="mt-3 rounded-xl border border-amber-200 bg-amber-50/50 p-3">
+      <p className="text-[12.5px] font-semibold text-amber-700">
+        🔑 Для преподавателя{label ? ` · ${label}` : ""} · верный ответ:{" "}
+        <span className="text-emerald-700">{note.answer}</span>
+      </p>
+      <ExplanationView explanation={note.explanation} />
+    </div>
+  );
+}
+
+/** Тексты записей с таймкодами — только преподавателю */
+function TeacherTranscripts({
+  src,
+  items,
+}: {
+  src: string;
+  items?: TimedTranscript[];
+}) {
+  if (!items?.length) return null;
+  return (
+    <TeacherBox title="транскрипция записи">
+      <div className="mt-2 space-y-2">
+        {items.map((item) => (
+          <Transcript
+            key={item.title}
+            title={`${item.title} · ${formatTime(item.at)}`}
+            text={item.text}
+            src={src}
+            at={item.at}
+          />
+        ))}
+      </div>
+    </TeacherBox>
+  );
+}
+
 function SectionCard({
   title,
   note,
@@ -432,6 +501,8 @@ function Choice({
           );
         })}
       </div>
+
+      <TeacherNoteView note={ctx.teacher?.answers[key]} />
     </div>
   );
 }
@@ -523,6 +594,24 @@ function MatchingTable({
           </tbody>
         </table>
       </div>
+
+      {ctx.teacher ? (
+        <div>
+          {letters.map((letter) => (
+            <TeacherNoteView
+              key={letter}
+              label={`${rowLabel} ${letter}`}
+              note={ctx.teacher?.answers[`${n}${letter}`]}
+            />
+          ))}
+          {ctx.teacher.extras[String(n)] ? (
+            <p className="mt-3 rounded-xl border border-amber-200 bg-amber-50/50 p-3 text-[14px] text-ink-700">
+              <b className="text-amber-700">🔑 Лишний вариант:</b>{" "}
+              {ctx.teacher.extras[String(n)]}
+            </p>
+          ) : null}
+        </div>
+      ) : null}
     </div>
   );
 }
@@ -573,6 +662,11 @@ function GapText({ ctx, lines }: { ctx: Ctx; lines: ExamGapLine[] }) {
             <span className="chip h-fit justify-self-start bg-ink-100 font-semibold tracking-wide text-ink-800 sm:justify-self-end">
               {line.word}
             </span>
+            {ctx.teacher ? (
+              <div className="sm:col-span-2">
+                <TeacherNoteView note={ctx.teacher.answers[String(line.n)]} />
+              </div>
+            ) : null}
           </div>
         ) : (
           <p key={index} className="px-3 text-[14.5px] leading-relaxed text-ink-600">
@@ -590,8 +684,6 @@ type TabProps = { exam: ExamView; ctx: Ctx; hidden: boolean };
 
 function ListeningTab({ exam, ctx, hidden }: TabProps) {
   const { listening } = exam;
-  const time = (seconds: number) =>
-    `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, "0")}`;
 
   return (
     <section hidden={hidden} className="space-y-5">
@@ -600,20 +692,22 @@ function ListeningTab({ exam, ctx, hidden }: TabProps) {
         note="Рекомендуемое время — 30 минут. На экзамене запись идёт без остановок: каждый текст звучит дважды, паузы на ответ уже внутри записи."
       >
         <AudioPlayer src={listening.audioUrl} title="Запись к заданиям 1–11" />
-        <p className="text-[13px] text-ink-500">
-          {listening.marks
-            .map((mark) => `${mark.label} — с ${time(mark.at)}`)
-            .join(" · ")}
-        </p>
+        <Timecodes src={listening.audioUrl} items={listening.marks} />
       </SectionCard>
 
       <SectionCard title="Задания 1–4" note={listening.part1.intro}>
+        <Timecodes src={listening.audioUrl} items={listening.part1.timecodes} />
         {listening.part1.questions.map((question) => (
           <Choice key={question.n} ctx={ctx} {...question} />
         ))}
+        <TeacherTranscripts
+          src={listening.audioUrl}
+          items={ctx.teacher?.transcripts.part1}
+        />
       </SectionCard>
 
       <SectionCard title="Задание 5" note={listening.part5.intro}>
+        <Timecodes src={listening.audioUrl} items={listening.part5.timecodes} />
         <MatchingTable
           ctx={ctx}
           n={listening.part5.n}
@@ -622,9 +716,14 @@ function ListeningTab({ exam, ctx, hidden }: TabProps) {
           rowLabel="Говорящий"
           cellLabel="Рубрика"
         />
+        <TeacherTranscripts
+          src={listening.audioUrl}
+          items={ctx.teacher?.transcripts.part5}
+        />
       </SectionCard>
 
       <SectionCard title="Задания 6–11" note={listening.part6.intro}>
+        <Timecodes src={listening.audioUrl} items={listening.part6.timecodes} />
         <div className="divide-y divide-ink-100 rounded-xl border border-ink-200">
           {listening.part6.rows.map((row) => (
             <div
@@ -635,9 +734,18 @@ function ListeningTab({ exam, ctx, hidden }: TabProps) {
                 <TaskNumber n={row.n} /> {row.label}
               </p>
               <WordAnswer ctx={ctx} n={row.n} />
+              {ctx.teacher ? (
+                <div className="w-full">
+                  <TeacherNoteView note={ctx.teacher.answers[String(row.n)]} />
+                </div>
+              ) : null}
             </div>
           ))}
         </div>
+        <TeacherTranscripts
+          src={listening.audioUrl}
+          items={ctx.teacher?.transcripts.part6}
+        />
       </SectionCard>
     </section>
   );
@@ -788,6 +896,17 @@ function WritingTab({ exam, ctx, hidden }: TabProps) {
             className="field min-h-[22rem] leading-relaxed"
           />
         </div>
+
+        {ctx.teacher ? (
+          <TeacherBox title={`план и образец ответа (${countWords(ctx.teacher.writing.sample)} слов)`}>
+            <ol className="mt-1 list-decimal space-y-0.5 pl-5 text-[13.5px] text-ink-700">
+              {ctx.teacher.writing.plan.map((step) => (
+                <li key={step}>{step}</li>
+              ))}
+            </ol>
+            <p className="mt-3 whitespace-pre-wrap">{ctx.teacher.writing.sample}</p>
+          </TeacherBox>
+        ) : null}
       </SectionCard>
     </section>
   );
@@ -796,12 +915,14 @@ function WritingTab({ exam, ctx, hidden }: TabProps) {
 function SpeakingTab({
   exam,
   readOnly,
+  teacher,
   recordings,
   onRecording,
   hidden,
 }: {
   exam: ExamView;
   readOnly: boolean;
+  teacher: TeacherNotes | null;
   recordings: Record<string, RecordingInfo>;
   onRecording: (key: string, recording: RecordingInfo | null) => void;
   hidden: boolean;
@@ -823,6 +944,17 @@ function SpeakingTab({
         <blockquote className="rounded-xl bg-ink-50/80 p-5 text-[15.5px] leading-relaxed text-ink-900">
           {speaking.task1.text}
         </blockquote>
+        {teacher ? (
+          <TeacherBox title="трудные места для чтения вслух">
+            <ul className="mt-1 space-y-0.5 text-[13.5px]">
+              {teacher.speaking.hardWords.map((item) => (
+                <li key={item.word}>
+                  <b>{item.word}</b> — {item.tip}
+                </li>
+              ))}
+            </ul>
+          </TeacherBox>
+        ) : null}
         <Recorder
           variantId={exam.id}
           taskKey="s1"
@@ -847,6 +979,16 @@ function SpeakingTab({
           </label>
         ) : null}
 
+        {teacher ? (
+          <TeacherBox title="транскрипция опроса">
+            <p>{teacher.speaking.task2.intro}</p>
+            <p className="mt-1 text-[13px] text-ink-500">
+              Дальше — шесть вопросов, текст каждого под его записью.
+            </p>
+            <p className="mt-1">{teacher.speaking.task2.outro}</p>
+          </TeacherBox>
+        ) : null}
+
         <div className="space-y-3">
           {speaking.task2.questions.map((question, index) => {
             const key = `s2-${index + 1}`;
@@ -865,11 +1007,16 @@ function SpeakingTab({
                       }
                     }}
                   />
-                  <details className="text-[13.5px] text-ink-500" open={readOnly}>
-                    <summary className="cursor-pointer">Текст вопроса</summary>
-                    <p className="mt-1 text-ink-800">{question.text}</p>
-                  </details>
                 </div>
+                {/* На экзамене вопрос звучит только в записи — текст видит учитель */}
+                {teacher ? (
+                  <TeacherBox title={`вопрос ${index + 1} и образец ответа`}>
+                    <p className="font-medium text-ink-900">{question.text}</p>
+                    <p className="mt-1 text-ink-700">
+                      {teacher.speaking.task2.samples[index]}
+                    </p>
+                  </TeacherBox>
+                ) : null}
                 <Recorder
                   ref={(handle) => {
                     recorders.current[key] = handle;
@@ -906,6 +1053,15 @@ function SpeakingTab({
           readOnly={readOnly}
           onChange={(recording) => onRecording("s3", recording)}
         />
+        {teacher ? (
+          <TeacherBox title="образец монолога">
+            <div className="space-y-1">
+              {teacher.speaking.task3Sample.split("\n").map((line) => (
+                <p key={line}>{line}</p>
+              ))}
+            </div>
+          </TeacherBox>
+        ) : null}
       </SectionCard>
     </section>
   );

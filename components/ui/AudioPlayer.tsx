@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { AUDIO_SEEK_EVENT, type AudioSeekDetail } from "@/lib/audio-seek";
 
 /** Длительность бывает NaN или Infinity, пока метаданные не прочитаны */
 function safeDuration(value: number): number {
@@ -76,6 +77,28 @@ export function AudioPlayer({
     const audio = audioRef.current;
     if (audio) audio.playbackRate = rate;
   }, [rate]);
+
+  // Таймкоды на странице (SeekButton) перематывают плеер с тем же src
+  useEffect(() => {
+    const onSeek = (event: Event) => {
+      const { src: target, at } = (event as CustomEvent<AudioSeekDetail>).detail;
+      const audio = audioRef.current;
+      if (!audio || target !== src) return;
+
+      const go = () => {
+        audio.currentTime = at;
+        setCurrent(at);
+      };
+      if (audio.readyState >= 1) go();
+      else audio.addEventListener("loadedmetadata", go, { once: true });
+
+      // play() — прямо в обработчике нажатия, иначе Safari не включит звук
+      void audio.play();
+    };
+
+    window.addEventListener(AUDIO_SEEK_EVENT, onSeek);
+    return () => window.removeEventListener(AUDIO_SEEK_EVENT, onSeek);
+  }, [src]);
 
   function toggle() {
     const audio = audioRef.current;

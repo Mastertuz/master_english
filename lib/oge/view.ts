@@ -27,6 +27,7 @@ export function examView(variant: OgeVariant) {
       audioUrl: listening.audioUrl,
       marks: listening.marks,
       part1: {
+        timecodes: listening.part1.timecodes,
         intro: listening.part1.intro,
         questions: listening.part1.questions.map(({ n, prompt, options }) => ({
           n,
@@ -36,11 +37,13 @@ export function examView(variant: OgeVariant) {
       },
       part5: {
         n: listening.part5.n,
+        timecodes: listening.part5.timecodes,
         intro: listening.part5.intro,
         letters: listening.part5.letters,
         options: listening.part5.options,
       },
       part6: {
+        timecodes: listening.part6.timecodes,
         intro: listening.part6.intro,
         rows: listening.part6.rows.map(({ n, label }) => ({ n, label })),
       },

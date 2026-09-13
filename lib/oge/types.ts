@@ -12,7 +12,15 @@ export type Explanation = {
   why: string;
   /** На какой вариант чаще всего ошибаются и почему он не подходит */
   trap?: string;
+  /** Правило, по которому выбирается ответ (подставляется из OgeVariant.rules) */
+  rule?: string;
 };
+
+/** Место в аудиозаписи: секунды от начала */
+export type Timecode = { label: string; at: number };
+
+/** Текст записи и где он звучит в первый раз */
+export type TimedTranscript = { title: string; text: string; at: number };
 
 export type ChoiceQuestion = {
   n: number;
@@ -81,25 +89,32 @@ export type OgeVariant = {
   id: string;
   title: string;
   subtitle: string;
+  /** Правило к каждому заданию по его ключу: «1», «5A», «12F», «20» */
+  rules: Record<string, string>;
 
   listening: {
     audioUrl: string;
-    /** Где в записи начинается каждое задание — секунды от начала */
-    marks: { label: string; at: number }[];
+    /** Где в записи начинается каждое задание */
+    marks: Timecode[];
     part1: {
+      /** Тексты A–D, первое и второе прослушивание */
+      timecodes: Timecode[];
       intro: string;
       questions: ChoiceQuestion[];
-      transcripts: { title: string; text: string }[];
+      transcripts: TimedTranscript[];
       strategy: Strategy;
     };
     part5: Matching & {
-      transcripts: { title: string; text: string }[];
+      timecodes: Timecode[];
+      transcripts: TimedTranscript[];
       strategy: Strategy;
     };
     part6: {
+      timecodes: Timecode[];
       intro: string;
       rows: WordRow[];
       transcript: string;
+      transcriptAt: number;
       strategy: Strategy;
     };
   };
@@ -149,6 +164,9 @@ export type OgeVariant = {
     task2: {
       instruction: string;
       answerSec: number;
+      /** Расшифровка вступления и завершения опроса */
+      introText: string;
+      outroText: string;
       /** Отрезки записи с вопросами; первый включает вступление автоответчика */
       questions: { text: string; start: number; end: number; sample: string }[];
       outro: { start: number; end: number };
