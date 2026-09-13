@@ -15,6 +15,8 @@ export type SessionUser = {
   lastName: string;
   role: "ADMIN" | "STUDENT";
   level: "A1" | "A2" | "B1" | "B2" | "C1" | "C2" | null;
+  /** Открыта ли вкладка «ОГЭ» — у ученика её включает администратор */
+  ogeAccess: boolean;
 };
 
 const userSelect = {
@@ -25,6 +27,7 @@ const userSelect = {
   lastName: true,
   role: true,
   level: true,
+  ogeAccess: true,
 } as const;
 
 /** Создаёт сессию в БД и ставит httpOnly-куку */

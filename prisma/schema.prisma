@@ -59,6 +59,8 @@ model User {
   password  String // scrypt-хеш, см. lib/password.ts
   role      Role     @default(STUDENT)
   level     Level? // уровень английского, ставит администратор
+  /// Администратор открыл ученику вкладку «ОГЭ»; у администратора она есть всегда
+  ogeAccess Boolean  @default(false)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
@@ -74,6 +76,7 @@ model User {
   testAssignments     TestAssignment[]
   lessonTaskAnswers   LessonTaskAnswer[]
   homeworkSubmissions HomeworkSubmission[]
+  ogeAttempts         OgeAttempt[]
 
   @@index([role])
 }
@@ -384,6 +387,46 @@ model TestAttempt {
 
   @@index([userId])
   @@index([testId])
+}
+
+/// Выполнение варианта ОГЭ учеником. Сам вариант — задания, ответы и
+/// разбор — лежит в коде (lib/oge), здесь только работа ученика.
+model OgeAttempt {
+  id          String    @id @default(cuid())
+  userId      String
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  /// Идентификатор варианта, например «demo-2027»
+  variant     String
+  /// Ответы: { "1": "2", "5A": "3", "20": "went", "35": "текст письма" }
+  answers     Json?
+  /// Баллы преподавателя за развёрнутые ответы, см. lib/oge/scoring.ts
+  review      Json?
+  /// Общий комментарий преподавателя к работе
+  comment     String    @default("")
+  submittedAt DateTime?
+  checkedAt   DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  recordings OgeRecording[]
+
+  @@unique([userId, variant])
+}
+
+/// Запись устного ответа. Храним в базе: минута речи в opus — меньше
+/// полумегабайта, а внешнее хранилище пускает загружать только учителя.
+model OgeRecording {
+  id          String     @id @default(cuid())
+  attemptId   String
+  attempt     OgeAttempt @relation(fields: [attemptId], references: [id], onDelete: Cascade)
+  /// Задание устной части: «s1», «s2-1» … «s2-6», «s3»
+  taskKey     String
+  mimeType    String
+  data        Bytes
+  durationSec Int        @default(0)
+  createdAt   DateTime   @default(now())
+
+  @@unique([attemptId, taskKey])
 }
 
 /// Кэш ответов Cambridge Dictionary / резервных словарных API

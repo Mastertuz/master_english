@@ -10,6 +10,10 @@ import { AnswerComment } from "@/components/students/AnswerComment";
 import { AssignTest } from "@/components/students/AssignTest";
 import { StudentProfile } from "@/components/students/StudentProfile";
 import { GradeForm } from "@/components/students/GradeForm";
+import { OgeAccessForm } from "@/components/oge/OgeAccessForm";
+import { OGE_VARIANTS } from "@/lib/oge";
+import { TOTAL_MAX } from "@/lib/oge/scoring";
+import { STATUS_LABEL, STATUS_STYLE, summarize } from "@/lib/oge/summary";
 import { ConfirmSubmit } from "@/components/ui/ConfirmSubmit";
 import { SubmitButton } from "@/components/ui/SubmitButton";
 import { asBlocks, taskKey } from "@/lib/lesson-content";
@@ -34,6 +38,16 @@ export default async function StudentPage({
       lastName: true,
       level: true,
       createdAt: true,
+      ogeAccess: true,
+      ogeAttempts: {
+        select: {
+          variant: true,
+          answers: true,
+          review: true,
+          submittedAt: true,
+          checkedAt: true,
+        },
+      },
       _count: { select: { words: true, testResults: true, attempts: true } },
       assignments: {
         orderBy: { lesson: { number: "asc" } },
@@ -224,6 +238,58 @@ export default async function StudentPage({
             questions: test._count.questions,
           }))}
         />
+      </section>
+
+      <section className="card space-y-3 p-5">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <h2 className="text-[15px] font-semibold text-ink-900">ОГЭ</h2>
+            <p className="text-[13px] text-ink-500">
+              {student.ogeAccess
+                ? "Вкладка «ОГЭ» открыта: ученик решает варианты и смотрит разбор."
+                : "Вкладка «ОГЭ» у ученика скрыта."}
+            </p>
+          </div>
+          <OgeAccessForm userId={student.id} access={student.ogeAccess} />
+        </div>
+
+        {OGE_VARIANTS.map((variant) => {
+          const attempt =
+            student.ogeAttempts.find((item) => item.variant === variant.id) ?? null;
+          const summary = summarize(variant, attempt);
+
+          return (
+            <div
+              key={variant.id}
+              className="flex flex-wrap items-center gap-2 border-t border-ink-100 pt-3"
+            >
+              <span className="text-[14px] font-medium text-ink-900">
+                {variant.title}
+              </span>
+              <span className={`chip ${STATUS_STYLE[summary.status]}`}>
+                {STATUS_LABEL[summary.status]}
+              </span>
+              {summary.status === "checked" ? (
+                <span className="chip bg-emerald-50 text-emerald-700">
+                  {summary.total} из {TOTAL_MAX} · отметка {summary.mark}
+                </span>
+              ) : null}
+              {attempt ? (
+                <Link
+                  href={`/oge/${variant.id}?student=${student.id}`}
+                  prefetch
+                  className={
+                    summary.status === "submitted"
+                      ? "btn-primary btn-sm ml-auto"
+                      : "btn-ghost btn-sm ml-auto"
+                  }
+                >
+                  {summary.status === "submitted" ? "Проверить работу" : "Открыть работу"}
+                </Link>
+              ) : null}
+            </div>
+          );
+        })}
       </section>
 
       {assignedTests.length > 0 ? (

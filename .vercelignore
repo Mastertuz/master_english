@@ -5,6 +5,7 @@
 /video
 /audio
 /photos
+/oge
 
 # Локальное окружение и служебные папки
 /node_modules

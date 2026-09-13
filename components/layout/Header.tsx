@@ -16,6 +16,9 @@ const NAV = [
   { href: "/tests", label: "Тесты", icon: "📝" },
 ];
 
+/** Вкладка есть у администратора и у учеников, которым он её открыл */
+const OGE_NAV = { href: "/oge", label: "ОГЭ", icon: "🏅" };
+
 const ADMIN_NAV = [
   { href: "/students", label: "Ученики", icon: "🎓" },
   { href: "/admin", label: "Админка", icon: "🛠" },
@@ -38,7 +41,12 @@ export function Header({
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
-  const items = user.role === "ADMIN" ? [...NAV, ...ADMIN_NAV] : NAV;
+  const isAdmin = user.role === "ADMIN";
+  const items = [
+    ...NAV,
+    ...(isAdmin || user.ogeAccess ? [OGE_NAV] : []),
+    ...(isAdmin ? ADMIN_NAV : []),
+  ];
 
   // Любой переход закрывает и меню, и боковую панель.
   // Сброс делаем на рендере, а не в эффекте — иначе панель успевает
@@ -112,7 +120,9 @@ export function Header({
             Master<span className="text-brand-600">English</span>
           </Link>
 
-          <nav className="hidden flex-1 items-center gap-0.5 lg:flex">
+          {/* min-w-0: меню не должно распирать шапку — у администратора
+              девять пунктов, и на 1024px вся страница уезжала вбок */}
+          <nav className="hidden min-w-0 flex-1 items-center gap-0.5 lg:flex">
             {items.map((item) => (
               <Link
                 key={item.href}
@@ -124,7 +134,10 @@ export function Header({
                     : "text-ink-600 hover:bg-ink-100 hover:text-ink-900"
                 }`}
               >
-                <span aria-hidden>{item.icon}</span>
+                {/* Иконки — только на широких экранах, где хватает места */}
+                <span aria-hidden className="hidden xl:inline">
+                  {item.icon}
+                </span>
                 {item.label}
                 {item.href === "/dashboard" && newComments > 0 ? (
                   <Badge count={newComments} />
