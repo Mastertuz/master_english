@@ -246,7 +246,7 @@ async function fetchFreeDictionary(word: string) {
   }
 }
 
-async function translateToRussian(text: string): Promise<string> {
+export async function translateToRussian(text: string): Promise<string> {
   try {
     const response = await fetch(
       `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=en|ru`,

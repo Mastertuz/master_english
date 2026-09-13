@@ -10,11 +10,17 @@ import { AudioPlayer } from "@/components/ui/AudioPlayer";
 import { ConfirmSubmit } from "@/components/ui/ConfirmSubmit";
 import { Timecodes } from "@/components/ui/SeekButton";
 import { formatTime } from "@/lib/audio-seek";
-import { countWords, RECORDING_KEYS, type OgeAnswers } from "@/lib/oge/scoring";
+import {
+  countWords,
+  RECORDING_KEYS,
+  type OgeAnswers,
+  type OgeReview,
+} from "@/lib/oge/scoring";
 import type { TeacherNote, TeacherNotes } from "@/lib/oge/teacher";
 import type { TimedTranscript } from "@/lib/oge/types";
 import type { ExamGapLine, ExamView } from "@/lib/oge/view";
 import { ExamTimer } from "./ExamTimer";
+import { InlineGrading, ReviewedScore, useGrading, type Part } from "./Grading";
 import { ExplanationView, Transcript } from "./Razbor";
 import {
   Recorder,
@@ -46,6 +52,9 @@ type Ctx = {
   checks: CheckMap | null;
   /** Ответы, правила и тексты записей — только у преподавателя */
   teacher: TeacherNotes | null;
+  /** Баллы преподавателя за развёрнутые ответы и проверена ли работа */
+  review: OgeReview | null;
+  checked: boolean;
 };
 
 function writtenKeys(exam: ExamView): Record<Exclude<Tab, "speaking">, string[]> {
@@ -79,6 +88,8 @@ export function OgeRunner({
   readOnly,
   checks,
   teacher,
+  review,
+  checked,
   savedAt,
 }: {
   exam: ExamView;
@@ -89,6 +100,8 @@ export function OgeRunner({
   checks: CheckMap | null;
   /** Объяснения и тексты записей для администратора; ученику — null */
   teacher: TeacherNotes | null;
+  review: OgeReview | null;
+  checked: boolean;
   savedAt: string | null;
 }) {
   const [tab, setTab] = useState<Tab>("listening");
@@ -164,7 +177,7 @@ export function OgeRunner({
     });
   }
 
-  const ctx: Ctx = { answers, update, readOnly, checks, teacher };
+  const ctx: Ctx = { answers, update, readOnly, checks, teacher, review, checked };
   const keys = writtenKeys(exam);
   const filled = (list: string[]) =>
     list.filter((key) => (answers[key] ?? "").trim()).length;
@@ -241,6 +254,8 @@ export function OgeRunner({
         exam={exam}
         readOnly={readOnly}
         teacher={teacher}
+        review={review}
+        checked={checked}
         recordings={recordings}
         onRecording={setRecording}
         hidden={tab !== "speaking"}
@@ -418,16 +433,34 @@ function TeacherTranscripts({
 function SectionCard({
   title,
   note,
+  points,
+  auto = false,
   children,
 }: {
   title: string;
   note?: string;
+  /** Сколько баллов даёт задание: «по 1 баллу», «до 10 баллов» */
+  points?: string;
+  /** Баллы ставит автопроверка, иначе — преподаватель */
+  auto?: boolean;
   children: React.ReactNode;
 }) {
   return (
-    <div className="card space-y-4 p-5">
-      <div>
-        <h3 className="text-[16px] font-semibold text-ink-900">{title}</h3>
+    <div className="card min-w-0 space-y-4 p-5">
+      <div className="min-w-0">
+        <h3 className="break-words text-[16px] font-semibold text-ink-900">{title}</h3>
+        {points ? (
+          <div className="mt-1.5 flex flex-wrap gap-1.5">
+            <span className="chip bg-ink-100 text-ink-700">{points}</span>
+            <span
+              className={`chip ${
+                auto ? "bg-emerald-50 text-emerald-700" : "bg-amber-50 text-amber-700"
+              }`}
+            >
+              {auto ? "⚙️ баллы ставятся автоматически" : "✍️ баллы ставит преподаватель"}
+            </span>
+          </div>
+        ) : null}
         {note ? (
           <p className="mt-1 text-[14px] leading-relaxed text-ink-600">{note}</p>
         ) : null}
@@ -458,7 +491,9 @@ function Choice({
     <div className="rounded-xl border border-ink-200 p-4">
       <div className="flex items-start gap-2">
         <TaskNumber n={n} />
-        <p className="flex-1 text-[14.5px] leading-relaxed text-ink-800">{prompt}</p>
+        <p className="min-w-0 flex-1 break-words text-[14.5px] leading-relaxed text-ink-800">
+          {prompt}
+        </p>
         {check ? <Verdict points={check.points} max={check.max} /> : null}
       </div>
 
@@ -493,7 +528,7 @@ function Choice({
                 className="accent-brand-600"
               />
               <span className="font-medium text-ink-500">{optionValue})</span>
-              <span className="text-ink-800">{option}</span>
+              <span className="min-w-0 break-words text-ink-800">{option}</span>
               {check && correct ? (
                 <span className="ml-auto text-[12.5px] text-emerald-700">✓</span>
               ) : null}
@@ -635,7 +670,7 @@ function WordAnswer({ ctx, n }: { ctx: Ctx; n: number }) {
         autoComplete="off"
         autoCapitalize="off"
         spellCheck={false}
-        className={`field h-9 w-48 max-w-full py-1 ${tone}`}
+        className={`field h-8 w-40 max-w-full py-0.5 ${tone}`}
       />
       {check && !check.points ? (
         <span className="mt-0.5 text-[12px] leading-tight text-emerald-700">
@@ -651,25 +686,29 @@ function GapText({ ctx, lines }: { ctx: Ctx; lines: ExamGapLine[] }) {
     <div className="space-y-2.5">
       {lines.map((line, index) =>
         "n" in line ? (
-          <div
-            key={index}
-            className="grid gap-2 rounded-xl border border-ink-200 p-3 sm:grid-cols-[1fr_auto] sm:items-center"
-          >
-            <p className="text-[14.5px] leading-9 text-ink-800">
-              <TaskNumber n={line.n} /> {line.before} <WordAnswer ctx={ctx} n={line.n} />{" "}
-              {line.after}
-            </p>
-            <span className="chip h-fit justify-self-start bg-ink-100 font-semibold tracking-wide text-ink-800 sm:justify-self-end">
-              {line.word}
-            </span>
+          <div key={index} className="min-w-0 rounded-xl border border-ink-200 p-3">
+            {/* Номер, текст и слово-подсказка в своих колонках: перенесённая
+                строка текста не уходит под номер и не наезжает на подсказку */}
+            <div className="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-x-3 gap-y-1 sm:grid-cols-[auto_minmax(0,1fr)_auto]">
+              <span className="pt-2">
+                <TaskNumber n={line.n} />
+              </span>
+              <p className="min-w-0 break-words text-[14.5px] leading-10 text-ink-800">
+                {line.before} <WordAnswer ctx={ctx} n={line.n} /> {line.after}
+              </p>
+              <span className="chip col-start-2 h-fit justify-self-start bg-ink-100 font-semibold tracking-wide text-ink-800 sm:col-start-3 sm:mt-2">
+                {line.word}
+              </span>
+            </div>
             {ctx.teacher ? (
-              <div className="sm:col-span-2">
-                <TeacherNoteView note={ctx.teacher.answers[String(line.n)]} />
-              </div>
+              <TeacherNoteView note={ctx.teacher.answers[String(line.n)]} />
             ) : null}
           </div>
         ) : (
-          <p key={index} className="px-3 text-[14.5px] leading-relaxed text-ink-600">
+          <p
+            key={index}
+            className="break-words rounded-xl bg-ink-50/70 px-3 py-2 text-[14.5px] leading-relaxed text-ink-600"
+          >
             {line.text}
           </p>
         ),
@@ -695,7 +734,7 @@ function ListeningTab({ exam, ctx, hidden }: TabProps) {
         <Timecodes src={listening.audioUrl} items={listening.marks} />
       </SectionCard>
 
-      <SectionCard title="Задания 1–4" note={listening.part1.intro}>
+      <SectionCard title="Задания 1–4" note={listening.part1.intro} points="по 1 баллу" auto>
         <Timecodes src={listening.audioUrl} items={listening.part1.timecodes} />
         {listening.part1.questions.map((question) => (
           <Choice key={question.n} ctx={ctx} {...question} />
@@ -706,7 +745,12 @@ function ListeningTab({ exam, ctx, hidden }: TabProps) {
         />
       </SectionCard>
 
-      <SectionCard title="Задание 5" note={listening.part5.intro}>
+      <SectionCard
+        title="Задание 5"
+        note={listening.part5.intro}
+        points="до 5 баллов: минус 1 за каждую ошибку"
+        auto
+      >
         <Timecodes src={listening.audioUrl} items={listening.part5.timecodes} />
         <MatchingTable
           ctx={ctx}
@@ -722,7 +766,7 @@ function ListeningTab({ exam, ctx, hidden }: TabProps) {
         />
       </SectionCard>
 
-      <SectionCard title="Задания 6–11" note={listening.part6.intro}>
+      <SectionCard title="Задания 6–11" note={listening.part6.intro} points="по 1 баллу" auto>
         <Timecodes src={listening.audioUrl} items={listening.part6.timecodes} />
         <div className="divide-y divide-ink-100 rounded-xl border border-ink-200">
           {listening.part6.rows.map((row) => (
@@ -730,7 +774,7 @@ function ListeningTab({ exam, ctx, hidden }: TabProps) {
               key={row.n}
               className="flex flex-wrap items-center justify-between gap-2 p-3"
             >
-              <p className="text-[14.5px] text-ink-800">
+              <p className="min-w-0 break-words text-[14.5px] text-ink-800">
                 <TaskNumber n={row.n} /> {row.label}
               </p>
               <WordAnswer ctx={ctx} n={row.n} />
@@ -758,6 +802,8 @@ function ReadingTab({ exam, ctx, hidden }: TabProps) {
     <section hidden={hidden} className="space-y-5">
       <SectionCard
         title="Раздел 2. Чтение · задание 12"
+        points="до 6 баллов: минус 1 за каждую ошибку"
+        auto
         note={`Рекомендуемое время на раздел — 30 минут. ${part12.intro}`}
       >
         <div className="grid gap-3 md:grid-cols-2">
@@ -780,7 +826,7 @@ function ReadingTab({ exam, ctx, hidden }: TabProps) {
         />
       </SectionCard>
 
-      <SectionCard title="Задания 13–19" note={part13.intro}>
+      <SectionCard title="Задания 13–19" note={part13.intro} points="по 1 баллу" auto>
         <article className="rounded-xl bg-ink-50/80 p-5">
           <h4 className="text-center text-[16px] font-semibold text-ink-900">
             {part13.title}
@@ -806,11 +852,13 @@ function GrammarTab({ exam, ctx, hidden }: TabProps) {
     <section hidden={hidden} className="space-y-5">
       <SectionCard
         title="Раздел 3. Грамматика и лексика · задания 20–28"
+        points="по 1 баллу"
+        auto
         note={`Рекомендуемое время на раздел — 30 минут. ${part20.intro}`}
       >
         <GapText ctx={ctx} lines={part20.lines} />
       </SectionCard>
-      <SectionCard title="Задания 29–34" note={part29.intro}>
+      <SectionCard title="Задания 29–34" note={part29.intro} points="по 1 баллу" auto>
         <GapText ctx={ctx} lines={part29.lines} />
       </SectionCard>
       <p className="px-1 text-[13px] text-ink-500">
@@ -826,6 +874,7 @@ function WritingTab({ exam, ctx, hidden }: TabProps) {
   const key = String(writing.n);
   const text = ctx.answers[key] ?? "";
   const words = countWords(text);
+  const grading = useGrading();
 
   const [tone, hint] =
     words === 0
@@ -844,6 +893,7 @@ function WritingTab({ exam, ctx, hidden }: TabProps) {
     <section hidden={hidden} className="space-y-5">
       <SectionCard
         title="Раздел 4. Письмо · задание 35"
+        points="до 10 баллов по критериям К1–К4"
         note={`Рекомендуемое время — 30 минут. ${writing.intro}`}
       >
         <div className="rounded-xl border border-ink-200 bg-ink-50/80 p-4 text-[14.5px] text-ink-800">
@@ -897,6 +947,12 @@ function WritingTab({ exam, ctx, hidden }: TabProps) {
           />
         </div>
 
+        {grading ? (
+          <InlineGrading part="w35" words={words} />
+        ) : ctx.readOnly ? (
+          <ReviewedScore part="w35" words={words} review={ctx.review} checked={ctx.checked} />
+        ) : null}
+
         {ctx.teacher ? (
           <TeacherBox title={`план и образец ответа (${countWords(ctx.teacher.writing.sample)} слов)`}>
             <ol className="mt-1 list-decimal space-y-0.5 pl-5 text-[13.5px] text-ink-700">
@@ -916,6 +972,8 @@ function SpeakingTab({
   exam,
   readOnly,
   teacher,
+  review,
+  checked,
   recordings,
   onRecording,
   hidden,
@@ -923,12 +981,23 @@ function SpeakingTab({
   exam: ExamView;
   readOnly: boolean;
   teacher: TeacherNotes | null;
+  review: OgeReview | null;
+  checked: boolean;
   recordings: Record<string, RecordingInfo>;
   onRecording: (key: string, recording: RecordingInfo | null) => void;
   hidden: boolean;
 }) {
   const { speaking } = exam;
   const [autoRecord, setAutoRecord] = useState(true);
+  const grading = useGrading();
+
+  // Учитель выставляет баллы у задания, ученик видит их там же
+  const scoreFor = (part: Part) =>
+    grading ? (
+      <InlineGrading {...part} />
+    ) : readOnly ? (
+      <ReviewedScore {...part} review={review} checked={checked} />
+    ) : null;
   const recorders = useRef<Record<string, RecorderHandle | null>>({});
 
   return (
@@ -940,7 +1009,11 @@ function SpeakingTab({
           : "Ответы записываются с микрофона и сразу сохраняются. При первой записи браузер спросит разрешение на микрофон. Задание 2 удобнее выполнять в наушниках, чтобы вопрос не попал в запись."}
       </div>
 
-      <SectionCard title="Задание 1. Чтение вслух" note={speaking.task1.instruction}>
+      <SectionCard
+        title="Задание 1. Чтение вслух"
+        note={speaking.task1.instruction}
+        points="до 2 баллов"
+      >
         <blockquote className="rounded-xl bg-ink-50/80 p-5 text-[15.5px] leading-relaxed text-ink-900">
           {speaking.task1.text}
         </blockquote>
@@ -964,9 +1037,14 @@ function SpeakingTab({
           readOnly={readOnly}
           onChange={(recording) => onRecording("s1", recording)}
         />
+        {scoreFor({ part: "s1" })}
       </SectionCard>
 
-      <SectionCard title="Задание 2. Телефонный опрос" note={speaking.task2.instruction}>
+      <SectionCard
+        title="Задание 2. Телефонный опрос"
+        note={speaking.task2.instruction}
+        points="до 6 баллов: по 1 за полный ответ"
+      >
         {!readOnly ? (
           <label className="flex cursor-pointer items-center gap-2 text-[14px] text-ink-700">
             <input
@@ -1028,13 +1106,18 @@ function SpeakingTab({
                   readOnly={readOnly}
                   onChange={(recording) => onRecording(key, recording)}
                 />
+                {scoreFor({ part: "s2", index })}
               </div>
             );
           })}
         </div>
       </SectionCard>
 
-      <SectionCard title="Задание 3. Монолог" note={speaking.task3.instruction}>
+      <SectionCard
+        title="Задание 3. Монолог"
+        note={speaking.task3.instruction}
+        points="до 7 баллов по критериям К1–К3"
+      >
         <div className="rounded-xl bg-ink-50/80 p-4 text-[14.5px] text-ink-800">
           <p className="font-medium">Remember to say:</p>
           <ul className="mt-1 list-disc space-y-0.5 pl-5">
@@ -1053,6 +1136,7 @@ function SpeakingTab({
           readOnly={readOnly}
           onChange={(recording) => onRecording("s3", recording)}
         />
+        {scoreFor({ part: "s3" })}
         {teacher ? (
           <TeacherBox title="образец монолога">
             <div className="space-y-1">

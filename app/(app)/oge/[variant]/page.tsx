@@ -4,12 +4,11 @@ import {
   adminDeleteOgeAttemptAction,
   adminReopenOgeAction,
 } from "@/app/actions/oge";
-import { OgeReviewForm } from "@/components/oge/OgeReviewForm";
+import { GradingPanel, GradingProvider } from "@/components/oge/Grading";
 import { OgeRunner, type CheckMap } from "@/components/oge/OgeRunner";
 import { ConfirmSubmit } from "@/components/ui/ConfirmSubmit";
 import { getVariant, requireOgeUser } from "@/lib/oge";
 import {
-  countWords,
   SPEAKING_MAX,
   TOTAL_MAX,
   WRITING_MAX,
@@ -88,6 +87,22 @@ export default async function OgeVariantPage({
       },
     ]),
   );
+
+  const runner =
+    !reviewing || attempt ? (
+      <OgeRunner
+        key={attempt?.id ?? "empty"}
+        exam={examView(variant)}
+        initialAnswers={summary.answers}
+        initialRecordings={recordings}
+        readOnly={readOnly}
+        checks={checks}
+        teacher={user.role === "ADMIN" ? teacherNotes(variant) : null}
+        review={summary.review}
+        checked={Boolean(attempt?.checkedAt)}
+        savedAt={attempt?.updatedAt.toISOString() ?? null}
+      />
+    ) : null;
 
   return (
     <div className="space-y-6">
@@ -184,36 +199,25 @@ export default async function OgeVariantPage({
         </div>
       ) : null}
 
-      {!reviewing || attempt ? (
-        <OgeRunner
-          key={attempt?.id ?? "empty"}
-          exam={examView(variant)}
-          initialAnswers={summary.answers}
-          initialRecordings={recordings}
-          readOnly={readOnly}
-          checks={checks}
-          teacher={user.role === "ADMIN" ? teacherNotes(variant) : null}
-          savedAt={attempt?.updatedAt.toISOString() ?? null}
-        />
-      ) : null}
+      {!reviewing ? runner : null}
 
       {reviewing && attempt ? (
-        <section className="card space-y-5 p-5">
+        <GradingProvider review={summary.review}>
+          {runner}
+
+          <section className="card space-y-5 p-5">
           <div>
             <h2 className="text-[15px] font-semibold text-ink-900">Оценка преподавателя</h2>
             <p className="mt-1 text-[13px] text-ink-500">
-              Задания 1–34 проверены автоматически. Письмо и устную часть оцените
-              по критериям — подробности в разборе заданий.
+              Подробные критерии оценивания — в разборе заданий.
             </p>
           </div>
 
-          <OgeReviewForm
+          <GradingPanel
             attemptId={attempt.id}
-            review={summary.review}
             comment={attempt.comment}
             autoPoints={summary.auto}
             autoMax={summary.autoMax}
-            words={countWords(summary.answers["35"] ?? "")}
           />
 
           <div className="flex flex-wrap gap-2 border-t border-ink-100 pt-4">
@@ -242,7 +246,8 @@ export default async function OgeVariantPage({
               </ConfirmSubmit>
             </form>
           </div>
-        </section>
+          </section>
+        </GradingProvider>
       ) : null}
     </div>
   );

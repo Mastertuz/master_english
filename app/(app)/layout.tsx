@@ -1,3 +1,4 @@
+import { SelectionTranslator } from "@/components/dictionary/SelectionTranslator";
 import { Header } from "@/components/layout/Header";
 import { countNewComments } from "@/lib/notifications";
 import { requireUser } from "@/lib/session";
@@ -17,6 +18,8 @@ export default async function AppLayout({
     <div className="min-h-dvh">
       <Header user={user} newComments={newComments} />
       <main className="mx-auto max-w-6xl px-5 py-8">{children}</main>
+      {/* Выделил слово в любом тексте — получил перевод и кнопку «в словарь» */}
+      <SelectionTranslator />
     </div>
   );
 }

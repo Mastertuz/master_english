@@ -70,6 +70,60 @@ export async function addWordAction(
   return { ok: true, message: `Слово «${english}» добавлено` };
 }
 
+/**
+ * Слово из выделенного на странице текста — в собственный словарь.
+ * Доступно всем: ученик пополняет словарь сам, прямо во время чтения.
+ */
+export async function addWordFromTextAction(input: {
+  english: string;
+  russian: string;
+  partOfSpeech: string;
+  definition: string;
+  example: string;
+  transcription: string;
+  audioUrl: string;
+  source: string;
+}): Promise<{ ok: boolean; exists?: boolean; message: string }> {
+  const me = await getCurrentUser();
+  if (!me) return { ok: false, message: "Нужно войти в аккаунт" };
+
+  const english = normalizeWord(String(input.english ?? "")).slice(0, 60);
+  const russian = String(input.russian ?? "").trim().slice(0, 200);
+  if (!english || !russian) {
+    return { ok: false, message: "Нет перевода — добавьте слово вручную в словаре" };
+  }
+
+  const exists = await prisma.word.findUnique({
+    where: { userId_english: { userId: me.id, english } },
+    select: { id: true },
+  });
+  if (exists) {
+    return { ok: false, exists: true, message: `«${english}» уже есть в вашем словаре` };
+  }
+
+  const text = (value: unknown, limit: number) => String(value ?? "").trim().slice(0, limit);
+  const audioUrl = text(input.audioUrl, 500);
+
+  await prisma.word.create({
+    data: {
+      userId: me.id,
+      english,
+      russian,
+      partOfSpeech: text(input.partOfSpeech, 60),
+      definition: text(input.definition, 500),
+      example: text(input.example, 400),
+      transcription: text(input.transcription, 120),
+      audioUrl: audioUrl.startsWith("https://") ? audioUrl : "",
+      source: input.source === "cambridge" ? "cambridge" : "fallback",
+    },
+  });
+
+  revalidatePath("/dictionary");
+  revalidatePath("/training");
+  revalidatePath(`/students/${me.id}`);
+  return { ok: true, message: `«${english}» добавлено в словарь` };
+}
+
 export async function updateWordAction(
   _prev: WordState,
   formData: FormData,
