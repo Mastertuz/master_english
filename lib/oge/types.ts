@@ -149,6 +149,8 @@ export type OgeVariant = {
     /** Шаблон письма: готовые фразы для каждой части */
     template: { part: string; phrases: string }[];
     sample: string;
+    /** Второй образец — письмо, написанное по шаблону */
+    templateSample: string;
     strategy: Strategy;
   };
 

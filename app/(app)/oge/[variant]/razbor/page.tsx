@@ -357,6 +357,22 @@ export default async function RazborPage({
               </p>
             </div>
           ) : null}
+
+          {reveal ? (
+            <div className="rounded-xl border border-emerald-200 bg-emerald-50/50 p-4">
+              <p className="text-[12.5px] font-semibold uppercase tracking-wide text-emerald-700">
+                Пример готового письма по шаблону · {countWords(writing.templateSample)} слов
+              </p>
+              <p className="mt-1 text-[13px] text-ink-500">
+                Обращение, благодарность, ответы на три вопроса одним абзацем со
+                связками (Well, As for…, By the way), завершение и подпись — каждое
+                на своей строке.
+              </p>
+              <p className="mt-2 whitespace-pre-wrap text-[14.5px] leading-relaxed text-ink-800">
+                {writing.templateSample}
+              </p>
+            </div>
+          ) : null}
         </Block>
       </section>
 

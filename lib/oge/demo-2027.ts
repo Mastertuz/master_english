@@ -818,6 +818,8 @@ export const demo2027: OgeVariant = {
       { part: "Завершающая фраза", phrases: "Best wishes, / All the best, / Yours," },
       { part: "Подпись — только имя", phrases: "Alina" },
     ],
+    templateSample:
+      "Dear Mary,\nThanks for your recent e-mail. I’m always glad to hear from you.\n\nIn your email you asked me some questions. Well, I would recommend visiting small Russian towns like Suzdal and Veliky Novgorod because they have a rich history and there are many old buildings and interesting places to see. As for the best way to travel around Russia, I think long-distance trains are the best option. They are comfortable and you can see beautiful landscapes during the journey. By the way, I would prefer to live in a big city because there are more career opportunities and entertainment options.\n\nSorry, I have to go now. Write back soon.\n\nBest wishes,\nAlina",
     sample:
       "Dear Mary,\n\nThanks for your email! I was really glad to hear from you.\n\nYou asked me about small Russian towns. I would recommend visiting Suzdal and Myshkin. Suzdal is full of old churches and wooden houses, and Myshkin has an amazing Mouse Museum.\n\nAs for travelling, I think the best way to see Russia is by train, because it is comfortable and you can enjoy the views from the window.\n\nPersonally, I would prefer to live in a small town. Life there is calm, the air is fresh and people are friendly, although a big city offers more opportunities.\n\nSorry, I have to go now. Write back soon!\n\nBest wishes,\nAnna",
     strategy: {
