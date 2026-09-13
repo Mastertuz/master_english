@@ -1,10 +1,12 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
+import { after } from "next/server";
 import { lookupWord, normalizeWord } from "@/lib/dictionary";
 import { prisma } from "@/lib/prisma";
 import { getCurrentUser, requireUser } from "@/lib/session";
 import { collect, type FieldErrors } from "@/lib/validation";
+import { findWordImage } from "@/lib/word-image";
 
 export type WordState = {
   ok: boolean;
@@ -14,6 +16,25 @@ export type WordState = {
 
 function str(formData: FormData, key: string): string {
   return String(formData.get(key) ?? "").trim();
+}
+
+/**
+ * Фото подбираем уже после ответа, чтобы добавление слова не ждало
+ * Wikipedia. Картинку, поставленную вручную, не трогаем.
+ */
+function attachImageLater(
+  id: string,
+  word: { english: string; partOfSpeech: string; definition: string },
+  ownerId: string,
+) {
+  after(async () => {
+    const imageUrl = await findWordImage(word);
+    if (!imageUrl) return;
+    await prisma.word.updateMany({ where: { id, imageUrl: "" }, data: { imageUrl } });
+    revalidatePath("/dictionary");
+    revalidatePath("/training");
+    revalidatePath(`/students/${ownerId}`);
+  });
 }
 
 /** Слова в словарь добавляет администратор — своему аккаунту или ученику */
@@ -48,7 +69,7 @@ export async function addWordAction(
     };
   }
 
-  await prisma.word.create({
+  const created = await prisma.word.create({
     data: {
       userId: ownerId,
       english,
@@ -63,6 +84,7 @@ export async function addWordAction(
       source: str(formData, "source") || "manual",
     },
   });
+  if (!created.imageUrl) attachImageLater(created.id, created, ownerId);
 
   revalidatePath("/dictionary");
   revalidatePath("/training");
@@ -104,7 +126,7 @@ export async function addWordFromTextAction(input: {
   const text = (value: unknown, limit: number) => String(value ?? "").trim().slice(0, limit);
   const audioUrl = text(input.audioUrl, 500);
 
-  await prisma.word.create({
+  const created = await prisma.word.create({
     data: {
       userId: me.id,
       english,
@@ -117,6 +139,7 @@ export async function addWordFromTextAction(input: {
       source: input.source === "cambridge" ? "cambridge" : "fallback",
     },
   });
+  attachImageLater(created.id, created, me.id);
 
   revalidatePath("/dictionary");
   revalidatePath("/training");

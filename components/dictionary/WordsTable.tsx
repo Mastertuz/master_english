@@ -186,6 +186,15 @@ export function WordsTable({
                   <td className="px-4 py-3">
                     <div className="flex items-center gap-2">
                       <SpeakButton text={word.english} />
+                      {word.imageUrl ? (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img
+                          src={word.imageUrl}
+                          alt=""
+                          loading="lazy"
+                          className="h-11 w-11 shrink-0 rounded-lg border border-ink-200 object-cover"
+                        />
+                      ) : null}
                       <div>
                         <p className="font-medium text-ink-900">
                           {word.english}
