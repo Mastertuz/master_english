@@ -56,6 +56,11 @@ export function GrammarGuideView({
         <p className="mt-1 text-[14px] leading-relaxed text-ink-600">{guide.intro}</p>
       </div>
 
+      <p className="rounded-xl bg-ink-50 px-4 py-3 text-[14px] leading-relaxed text-ink-700">
+        <span className="font-semibold text-ink-900">⏱ Время: </span>
+        {guide.timing}
+      </p>
+
       <div className="rounded-xl border border-brand-200 bg-brand-50/60 p-4">
         <p className="text-[12.5px] font-semibold uppercase tracking-wide text-brand-700">
           Алгоритм для каждого пропуска
@@ -66,6 +71,14 @@ export function GrammarGuideView({
           ))}
         </ol>
       </div>
+
+      <Table
+        caption="Подсказки в тексте: что они означают"
+        table={{
+          head: ["Видите в предложении", "Что это значит"],
+          rows: guide.signals.map((item) => [item.signal, item.means]),
+        }}
+      />
 
       <div className="flex flex-wrap gap-1.5">
         {guide.sections.map((section, index) => (
@@ -148,6 +161,33 @@ export function GrammarGuideView({
         })}
       </div>
 
+      <div className="rounded-xl border border-emerald-200 bg-emerald-50/40 p-4">
+        <p className="text-[12.5px] font-semibold uppercase tracking-wide text-emerald-700">
+          Разбор на примере: как рассуждать
+        </p>
+        <p className="mt-1 text-[13.5px] text-ink-600">{guide.walkthrough.intro}</p>
+        <div className="mt-3 space-y-1 rounded-lg bg-white/70 px-4 py-3 text-[14.5px] leading-relaxed text-ink-900">
+          {guide.walkthrough.story.map((line) => (
+            <p key={line}>{line}</p>
+          ))}
+        </div>
+        <div className="mt-3 space-y-1.5">
+          {guide.walkthrough.gaps.map((gap) => (
+            <details
+              key={gap.n}
+              className="rounded-lg border border-ink-200 bg-white/60 px-3 py-2"
+            >
+              <summary className="cursor-pointer text-[14px] text-ink-900">
+                Пропуск {gap.n} · {gap.word}
+              </summary>
+              <p className="mt-1 text-[14px] leading-relaxed text-ink-700">
+                <b className="text-emerald-700">Ответ: {gap.answer}.</b> {gap.reasoning}
+              </p>
+            </details>
+          ))}
+        </div>
+      </div>
+
       <div className="rounded-xl border border-rose-200 bg-rose-50/50 p-4">
         <p className="text-[12.5px] font-semibold uppercase tracking-wide text-rose-700">
           Из-за чего теряют баллы
@@ -160,7 +200,7 @@ export function GrammarGuideView({
       </div>
 
       <p className="text-[12.5px] text-ink-400">
-        Разбор составлен по темам видео{" "}
+        Разбор составлен по видео и его расшифровке:{" "}
         <a
           href={guide.source.url}
           target="_blank"
