@@ -1,6 +1,7 @@
 "use client";
 
-import { useActionState, useMemo, useState } from "react";
+import { useActionState, useEffect, useMemo, useState } from "react";
+import { createPortal } from "react-dom";
 import {
   deleteWordAction,
   updateWordAction,
@@ -265,9 +266,26 @@ function EditDialog({
     null,
   );
 
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center overlay p-4">
-      <div className="card rise max-h-[90dvh] w-full max-w-lg overflow-y-auto p-6">
+  // Пока окно открыто, страница под ним не прокручивается, Esc закрывает
+  useEffect(() => {
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = previous;
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [onClose]);
+
+  // Порталом в body: карточка словаря с backdrop-blur и overflow-hidden
+  // становилась точкой отсчёта для fixed — окно оказывалось зажато внутри
+  // неё и не прокручивалось
+  return createPortal(
+    <div className="fixed inset-0 z-[100] flex items-center justify-center overflow-y-auto overlay p-4">
+      <div className="card rise max-h-[90dvh] w-full max-w-lg overflow-y-auto overscroll-contain p-6">
         <div className="mb-4 flex items-start justify-between gap-4">
           <h3 className="text-[16px] font-semibold text-ink-900">
             Редактирование слова
@@ -411,7 +429,8 @@ function EditDialog({
           </div>
         </form>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }
 
