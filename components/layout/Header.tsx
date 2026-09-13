@@ -121,21 +121,24 @@ export function Header({
           </Link>
 
           {/* min-w-0: меню не должно распирать шапку — у администратора
-              девять пунктов, и на 1024px вся страница уезжала вбок */}
-          <nav className="hidden min-w-0 flex-1 items-center gap-0.5 lg:flex">
+              девять пунктов, и на 1024px вся страница уезжала вбок.
+              mr-2 — зазор до переключателя темы */}
+          <nav className="mr-2 hidden min-w-0 flex-1 items-center gap-0.5 lg:flex">
             {items.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 prefetch
-                className={`inline-flex shrink-0 items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-[13.5px] font-medium transition ${
+                className={`inline-flex shrink-0 items-center gap-1.5 rounded-lg px-2 py-1.5 text-[13.5px] font-medium transition xl:px-2.5 ${
                   isActive(item.href)
                     ? "bg-brand-50 text-brand-700"
                     : "text-ink-600 hover:bg-ink-100 hover:text-ink-900"
                 }`}
               >
-                {/* Иконки — только на широких экранах, где хватает места */}
-                <span aria-hidden className="hidden xl:inline">
+                {/* Шапка ограничена шириной контейнера, и девять пунктов
+                    администратора с иконками не помещаются ни на каком экране —
+                    наезжают на переключатель темы. Иконки — только у ученика */}
+                <span aria-hidden className={isAdmin ? "hidden" : "hidden xl:inline"}>
                   {item.icon}
                 </span>
                 {item.label}
