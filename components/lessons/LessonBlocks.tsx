@@ -11,7 +11,7 @@ import { AnswerComment } from "@/components/students/AnswerComment";
 import { AudioPlayer } from "@/components/ui/AudioPlayer";
 import { VideoPlayer } from "@/components/ui/VideoPlayer";
 import { SpeakButton } from "@/components/ui/SpeakButton";
-import { isAnswerCorrect } from "@/lib/answer";
+import { isAnswerCorrect, stableOrder } from "@/lib/answer";
 import { taskKey, type LessonBlock, type LessonTask } from "@/lib/lesson-content";
 
 const BLOCK_STYLES: Record<string, string> = {
@@ -740,9 +740,9 @@ function PageField({
           className={`w-full rounded-md border-2 px-1 py-0.5 text-[13px] shadow-sm outline-none ${tone}`}
         >
           <option value="">—</option>
-          {options.map((option, i) => (
-            <option key={i} value={task.optionValues[i] ?? option}>
-              {option}
+          {stableOrder(task.id, options.length).map((i) => (
+            <option key={i} value={task.optionValues[i] ?? options[i]}>
+              {options[i]}
             </option>
           ))}
         </select>
@@ -820,7 +820,8 @@ function PracticeTask({
 
       {task.kind === "choice" ? (
         <div className="mt-3 grid gap-2 sm:grid-cols-2">
-          {task.options.map((label, i) => {
+          {stableOrder(task.id, task.options.length).map((i) => {
+            const label = task.options[i];
             const optionValue = task.optionValues[i] ?? label;
             const picked = value === optionValue;
             const isRight =

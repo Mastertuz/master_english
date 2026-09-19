@@ -12,7 +12,7 @@ import {
 import { ConfirmSubmit } from "@/components/ui/ConfirmSubmit";
 import { GradeForm } from "@/components/students/GradeForm";
 import { AudioPlayer } from "@/components/ui/AudioPlayer";
-import { isAnswerCorrect } from "@/lib/answer";
+import { isAnswerCorrect, stableOrder } from "@/lib/answer";
 
 export type HomeworkTaskView = {
   id: string;
@@ -518,7 +518,8 @@ function TaskCard({
 
       {task.options.length > 0 ? (
         <div className="mt-3 grid gap-2 sm:grid-cols-2">
-          {task.options.map((option, i) => {
+          {stableOrder(task.id, task.options.length).map((i) => {
+            const option = task.options[i];
             const picked = local?.value === option;
             const right = checked && isAnswerCorrect(option, task.answer);
 

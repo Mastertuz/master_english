@@ -6,7 +6,6 @@ import {
 } from "@/app/actions/lessons";
 import { unassignTestAction } from "@/app/actions/tests";
 import { AssignLesson } from "@/components/students/AssignLesson";
-import { AnswerComment } from "@/components/students/AnswerComment";
 import { AssignTest } from "@/components/students/AssignTest";
 import { StudentProfile } from "@/components/students/StudentProfile";
 import { GradeForm } from "@/components/students/GradeForm";
@@ -16,7 +15,6 @@ import { TOTAL_MAX } from "@/lib/oge/scoring";
 import { STATUS_LABEL, STATUS_STYLE, summarize } from "@/lib/oge/summary";
 import { ConfirmSubmit } from "@/components/ui/ConfirmSubmit";
 import { SubmitButton } from "@/components/ui/SubmitButton";
-import { asBlocks, taskKey } from "@/lib/lesson-content";
 import { prisma } from "@/lib/prisma";
 import { initialsOf, requireAdmin } from "@/lib/session";
 
@@ -115,19 +113,54 @@ export default async function StudentPage({
     },
   });
 
-  // Ответы на задания внутри уроков — в том числе поля поверх сканов
-  const lessonAnswers = await prisma.lessonTaskAnswer.findMany({
-    where: { userId: student.id },
-    orderBy: { updatedAt: "desc" },
+  // Домашние задания выданных уроков — считаем так же, как их видит ученик
+  const homework = await prisma.homework.findMany({
+    where: { lesson: { assignments: { some: { userId: student.id } } } },
+    orderBy: { lesson: { number: "asc" } },
     select: {
       id: true,
-      taskKey: true,
-      value: true,
-      isCorrect: true,
-      comment: true,
-      updatedAt: true,
-      lesson: { select: { id: true, number: true, topic: true, blocks: true } },
+      title: true,
+      dueDate: true,
+      lesson: { select: { number: true, topic: true } },
+      tasks: {
+        where: { hidden: false },
+        select: {
+          kind: true,
+          answers: {
+            where: { userId: student.id },
+            select: { isCorrect: true, grade: true, saved: true },
+          },
+        },
+      },
+      submissions: {
+        where: { userId: student.id },
+        select: { submittedAt: true },
+      },
     },
+  });
+
+  const homeworkRows = homework.map((item) => {
+    const submittedAt = item.submissions[0]?.submittedAt ?? null;
+    // Черновик, который ученик не сохранил, за ответ не считаем
+    const kept = (answer?: { saved: boolean }) =>
+      Boolean(answer) && (Boolean(submittedAt) || answer!.saved);
+
+    const total = item.tasks.length;
+    const done = item.tasks.filter((task) => kept(task.answers[0])).length;
+    const correct = item.tasks.filter(
+      (task) =>
+        task.kind !== "TEACHER" &&
+        kept(task.answers[0]) &&
+        task.answers[0]?.isCorrect === true,
+    ).length;
+    const waiting = item.tasks.filter(
+      (task) =>
+        task.kind === "TEACHER" &&
+        kept(task.answers[0]) &&
+        task.answers[0]?.grade == null,
+    ).length;
+
+    return { ...item, submittedAt, total, done, correct, waiting };
   });
 
   const answers = await prisma.homeworkAnswer.findMany({
@@ -347,70 +380,70 @@ export default async function StudentPage({
         </section>
       ) : null}
 
-      {lessonAnswers.length > 0 ? (
-        <section className="space-y-3">
-          <h2 className="text-[15px] font-semibold text-ink-900">
-            Работа в уроках ({lessonAnswers.length})
-          </h2>
-          <p className="text-[13px] text-ink-500">
-            Задания внутри уроков, включая поля на сканах учебника. Показан
-            последний ответ.
-          </p>
+      <section className="space-y-3">
+        <h2 className="text-[15px] font-semibold text-ink-900">
+          Домашние задания ({homeworkRows.length})
+        </h2>
 
+        {homeworkRows.length === 0 ? (
+          <div className="card p-6 text-center text-[14px] text-ink-500">
+            У выданных уроков пока нет домашних заданий.
+          </div>
+        ) : (
           <div className="card divide-y divide-ink-100">
-            {lessonAnswers.map((answer) => {
-              const task = findTask(answer.lesson.blocks, answer.taskKey);
+            {homeworkRows.map((item) => {
+              const status = item.submittedAt
+                ? {
+                    label: `✓ сдано ${item.submittedAt.toLocaleDateString("ru-RU")}`,
+                    style: "bg-emerald-50 text-emerald-700",
+                  }
+                : item.done > 0
+                  ? { label: "в процессе", style: "bg-amber-50 text-amber-700" }
+                  : { label: "не начато", style: "bg-ink-100 text-ink-600" };
 
               return (
-                <div key={answer.id} className="flex flex-wrap gap-3 p-4">
-                  <span
-                    className={`chip h-fit ${
-                      answer.isCorrect
-                        ? "bg-emerald-50 text-emerald-700"
-                        : "bg-rose-50 text-rose-700"
-                    }`}
-                  >
-                    {answer.isCorrect ? "верно" : "ошибка"}
-                  </span>
-
+                <div
+                  key={item.id}
+                  className="flex flex-wrap items-center justify-between gap-3 p-4"
+                >
                   <div className="min-w-0 flex-1">
-                    <p className="text-[13px] text-ink-400">
-                      Урок №{answer.lesson.number} · {answer.lesson.topic} ·{" "}
-                      {answer.updatedAt.toLocaleDateString("ru-RU")}
-                    </p>
-                    <p className="mt-0.5 text-[14px] text-ink-700">
-                      {task?.prompt || "Задание урока"}
-                    </p>
-                    <p className="mt-1 text-[14px]">
-                      <span className="text-ink-500">Ответ: </span>
-                      <span
-                        className={
-                          answer.isCorrect
-                            ? "font-medium text-emerald-700"
-                            : "font-medium text-rose-600"
-                        }
-                      >
-                        {answer.value || "— пусто —"}
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="chip bg-brand-50 text-brand-700">
+                        Урок №{item.lesson.number}
                       </span>
-                      {!answer.isCorrect && task?.answer ? (
-                        <span className="text-ink-500">
-                          {" "}
-                          · верно: {task.answer}
+                      <span className={`chip ${status.style}`}>{status.label}</span>
+                      {item.waiting > 0 ? (
+                        <span className="chip bg-amber-50 text-amber-700">
+                          ждёт проверки: {item.waiting}
                         </span>
                       ) : null}
+                      {item.dueDate && !item.submittedAt ? (
+                        <span className="text-[12.5px] text-ink-400">
+                          срок до {item.dueDate.toLocaleDateString("ru-RU")}
+                        </span>
+                      ) : null}
+                    </div>
+                    <p className="mt-1.5 text-[14.5px] font-medium text-ink-900">
+                      {item.title}
                     </p>
-
-                    <AnswerComment
-                      answerId={answer.id}
-                      comment={answer.comment}
-                    />
+                    <p className="text-[13px] text-ink-500">
+                      Выполнено {item.done} из {item.total} · верно {item.correct}
+                    </p>
                   </div>
+
+                  <Link
+                    href={`/homework/${item.id}?student=${student.id}`}
+                    prefetch
+                    className="btn-ghost btn-sm"
+                  >
+                    ДЗ с ответами
+                  </Link>
                 </div>
               );
             })}
           </div>
-        </section>
-      ) : null}
+        )}
+      </section>
 
       <section className="space-y-3">
         <h2 className="text-[15px] font-semibold text-ink-900">
@@ -606,14 +639,3 @@ function Stat({ label, value }: { label: string; value: number | string }) {
   );
 }
 
-/** Находит задание урока по ключу ответа: собственный id или позиция */
-function findTask(blocks: unknown, key: string) {
-  const parsed = asBlocks(blocks);
-
-  for (const [blockIndex, block] of parsed.entries()) {
-    for (const [taskIndex, task] of block.tasks.entries()) {
-      if (taskKey(blockIndex, taskIndex, task) === key) return task;
-    }
-  }
-  return null;
-}
