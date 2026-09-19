@@ -416,7 +416,8 @@ export type SensesResult = {
 };
 
 /** Меняется, когда меняется разбор, — старый кэш тогда перечитывается */
-const SENSES_VERSION = 1;
+// 2 — производные слова внутри статьи (achieve → achievable) разбираются отдельно
+const SENSES_VERSION = 2;
 const MAX_SENSES = 15;
 
 type Entry = { headword: string; pos: string; html: string };
@@ -458,6 +459,48 @@ function extractAudio(html: string): string {
   return match ? new URL(match[1], "https://dictionary.cambridge.org").toString() : "";
 }
 
+const RUNON_START = '<div class="pr runon drunon"';
+
+/**
+ * Производное слово, напечатанное внутри статьи: в статье «achieve» есть
+ * блок «achievable, adjective» со своими значениями. Возвращаем блок, в
+ * котором стоит значение, или null, если значение относится к самому слову.
+ */
+function runonAt(html: string, position: number): { word: string; pos: string; html: string } | null {
+  const start = html.lastIndexOf(RUNON_START, position);
+  if (start === -1) return null;
+  const next = html.indexOf(RUNON_START, start + RUNON_START.length);
+  const block = html.slice(start, next === -1 ? html.length : next);
+  const word = firstMatch(block, /<span class="w dw">([\s\S]*?)<\/span>/);
+  if (!word) return null;
+  return {
+    word,
+    pos: firstMatch(block, /<span class="pos dpos"[^>]*>([\s\S]*?)<\/span>/),
+    html: block,
+  };
+}
+
+/**
+ * Произношение производного слова. Блок с ним есть не в каждом разделе
+ * страницы, поэтому ищем по всей английской странице; чужое произношение
+ * (главного слова) не подставляем.
+ */
+function runonVoice(pages: string[], word: string) {
+  for (const page of pages) {
+    let at = page.indexOf(RUNON_START);
+    while (at !== -1) {
+      const runon = runonAt(page, at);
+      if (runon && runon.word.toLowerCase() === word.toLowerCase()) {
+        const transcription = extractTranscription(runon.html).replace(/·/g, ".");
+        const audioUrl = extractAudio(runon.html);
+        if (transcription || audioUrl) return { transcription, audioUrl };
+      }
+      at = page.indexOf(RUNON_START, at + RUNON_START.length);
+    }
+  }
+  return { transcription: "", audioUrl: "" };
+}
+
 /** Значения внутри одной статьи — каждое со своим определением и переводом */
 function sensesOf(entry: Entry) {
   const { html } = entry;
@@ -492,8 +535,11 @@ function sensesOf(entry: Entry) {
           )
         : "";
 
+    const runon = runonAt(html, start);
+
     return [
       {
+        runon: runon ? { word: runon.word, pos: runon.pos } : null,
         guideword,
         level: /epp-xref dxref ([ABC][12])/.exec(block)?.[1] ?? "",
         definition,
@@ -529,13 +575,26 @@ export function sensesFromPages(
         extractTranscription(voice?.html ?? "") || extractTranscription(entry.html);
       const audioUrl = extractAudio(voice?.html ?? "") || extractAudio(entry.html);
 
-      return sensesOf(entry).map((sense) => ({
-        word: (entry.headword || word).toLowerCase(),
-        partOfSpeech: entry.pos,
-        ...sense,
-        transcription: transcription ? `/${transcription}/` : "",
-        audioUrl,
-      }));
+      return sensesOf(entry).map(({ runon, ...sense }) => {
+        if (runon) {
+          // Своё слово, часть речи и произношение, а не главного слова
+          const own = runonVoice([englishHtml, russianHtml], runon.word);
+          return {
+            word: runon.word.toLowerCase(),
+            partOfSpeech: runon.pos || entry.pos,
+            ...sense,
+            transcription: own.transcription ? `/${own.transcription}/` : "",
+            audioUrl: own.audioUrl,
+          };
+        }
+        return {
+          word: (entry.headword || word).toLowerCase(),
+          partOfSpeech: entry.pos,
+          ...sense,
+          transcription: transcription ? `/${transcription}/` : "",
+          audioUrl,
+        };
+      });
     })
     .slice(0, MAX_SENSES);
 }

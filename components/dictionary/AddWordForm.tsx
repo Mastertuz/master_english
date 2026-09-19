@@ -112,11 +112,20 @@ export function AddWordForm({
   }
 
   function toggle(index: number) {
-    setSelected((prev) =>
-      prev.includes(index)
-        ? prev.filter((item) => item !== index)
-        : [...prev, index].sort((a, b) => a - b),
-    );
+    const word = result?.senses[index]?.word;
+    const current = selected.map((item) => result?.senses[item]?.word);
+
+    if (selected.includes(index)) {
+      setSelected(selected.filter((item) => item !== index));
+    } else if (word && current.some((item) => item !== word)) {
+      // В статье «achieve» есть и «achievable» — это другое слово, в одну
+      // карточку с «achieve» его не складываем, а выбираем отдельно
+      setSelected([index]);
+    } else {
+      setSelected([...selected, index].sort((a, b) => a - b));
+    }
+    // В словарь попадёт именно выбранное слово, а не то, что искали
+    if (word) setEnglish(word);
   }
 
   // Поля пересоздаются, когда меняется выбор значений
