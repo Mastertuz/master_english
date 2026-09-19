@@ -4,6 +4,7 @@ import type { Prisma } from "@prisma/client";
 import { revalidatePath } from "next/cache";
 import { canUseOge, getVariant } from "@/lib/oge";
 import { reviewFromFields, type OgeAnswers } from "@/lib/oge/scoring";
+import { checkTraining, getTrainingGroup, type TrainingCheck } from "@/lib/oge/training";
 import { prisma } from "@/lib/prisma";
 import { getCurrentUser } from "@/lib/session";
 
@@ -196,4 +197,23 @@ export async function adminDeleteOgeAttemptAction(
     refresh(attempt.variant);
     revalidatePath(`/students/${attempt.userId}`);
   }
+}
+
+/**
+ * Тренировка по группе заданий: проверяем ответы и отдаём разбор. Ничего не
+ * сохраняем — блок можно решать сколько угодно раз.
+ */
+export async function checkOgeTrainingAction(input: {
+  variant: string;
+  group: string;
+  answers: unknown;
+}): Promise<TrainingCheck | { error: string }> {
+  const user = await ogeUser();
+  if (!user) return { error: "Нет доступа к ОГЭ" };
+
+  const variant = getVariant(String(input.variant));
+  const group = getTrainingGroup(String(input.group));
+  if (!variant || !group) return { error: "Задание не найдено" };
+
+  return checkTraining(variant, group, cleanAnswers(input.answers));
 }

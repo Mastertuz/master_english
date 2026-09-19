@@ -2,6 +2,7 @@ import Link from "next/link";
 import { OgeAccessForm } from "@/components/oge/OgeAccessForm";
 import { OGE_VARIANTS, requireOgeUser } from "@/lib/oge";
 import { MARK_SCALE, TOTAL_MAX } from "@/lib/oge/scoring";
+import { TRAINING_GROUPS } from "@/lib/oge/training";
 import {
   fieldCount,
   STATUS_LABEL,
@@ -181,6 +182,45 @@ export default async function OgePage() {
           );
         })}
       </div>
+
+      <section className="space-y-3">
+        <div className="flex flex-wrap items-end justify-between gap-2">
+          <div>
+            <h2 className="text-[16px] font-semibold text-ink-900">
+              Тренировка по заданиям
+            </h2>
+            <p className="text-[13px] text-ink-500">
+              Отдельные группы заданий из всех вариантов — с проверкой и
+              разбором сразу после ответа
+            </p>
+          </div>
+        </div>
+
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {TRAINING_GROUPS.map((group) => (
+            <Link
+              key={group.id}
+              href={`/oge/training/${group.id}`}
+              prefetch
+              className="card rise flex flex-col p-4 transition hover:border-brand-300"
+            >
+              <div className="flex flex-wrap items-center gap-1.5">
+                <span className="chip bg-brand-600 font-semibold text-white">
+                  {group.tasks}
+                </span>
+                <span className="chip bg-ink-100 text-ink-600">{group.section}</span>
+              </div>
+              <h3 className="mt-2 text-[15px] font-semibold text-ink-900">{group.title}</h3>
+              <p className="mt-1 flex-1 text-[13.5px] leading-relaxed text-ink-600">
+                {group.description}
+              </p>
+              <p className="mt-3 text-[12.5px] text-ink-400">
+                Вариантов: {OGE_VARIANTS.length}
+              </p>
+            </Link>
+          ))}
+        </div>
+      </section>
 
       {isAdmin ? (
         <section className="space-y-3">

@@ -45,7 +45,7 @@ const TABS: { id: Tab; label: string; tasks: string }[] = [
   { id: "speaking", label: "Устная часть", tasks: "1–3" },
 ];
 
-type Ctx = {
+export type Ctx = {
   answers: OgeAnswers;
   update: (key: string, value: string) => void;
   readOnly: boolean;
@@ -55,6 +55,8 @@ type Ctx = {
   /** Баллы преподавателя за развёрнутые ответы и проверена ли работа */
   review: OgeReview | null;
   checked: boolean;
+  /** Заголовок блоков с ответом: в тренировке разбор видит и ученик */
+  noteHeading?: string;
 };
 
 function writtenKeys(exam: ExamView): Record<Exclude<Tab, "speaking">, string[]> {
@@ -350,7 +352,7 @@ export function OgeRunner({
 
 /* ─────────────────────────────── Элементы ─────────────────────────────── */
 
-function TaskNumber({ n }: { n: number | string }) {
+export function TaskNumber({ n }: { n: number | string }) {
   return (
     <span className="mr-1 inline-flex h-6 min-w-6 shrink-0 items-center justify-center rounded-md bg-brand-600 px-1.5 text-[12.5px] font-semibold text-white">
       {n}
@@ -373,17 +375,21 @@ function Verdict({ points, max }: { points: number; max: number }) {
 }
 
 /** Блок, который видит только преподаватель */
+const TEACHER_HEADING = "🔑 Для преподавателя";
+
 function TeacherBox({
   title,
+  heading = TEACHER_HEADING,
   children,
 }: {
   title: string;
+  heading?: string;
   children: React.ReactNode;
 }) {
   return (
     <div className="rounded-xl border border-amber-200 bg-amber-50/50 p-3 text-[14px] leading-relaxed text-ink-800">
       <p className="mb-1 text-[12.5px] font-semibold text-amber-700">
-        🔑 Для преподавателя · {title}
+        {heading} · {title}
       </p>
       {children}
     </div>
@@ -391,12 +397,20 @@ function TeacherBox({
 }
 
 /** Верный ответ с объяснением: почему, по какому правилу, где ловушка */
-function TeacherNoteView({ note, label }: { note?: TeacherNote; label?: string }) {
+export function TeacherNoteView({
+  note,
+  label,
+  heading = TEACHER_HEADING,
+}: {
+  note?: TeacherNote;
+  label?: string;
+  heading?: string;
+}) {
   if (!note) return null;
   return (
     <div className="mt-3 rounded-xl border border-amber-200 bg-amber-50/50 p-3">
       <p className="text-[12.5px] font-semibold text-amber-700">
-        🔑 Для преподавателя{label ? ` · ${label}` : ""} · верный ответ:{" "}
+        {heading}{label ? ` · ${label}` : ""} · верный ответ:{" "}
         <span className="text-emerald-700">{note.answer}</span>
       </p>
       <ExplanationView explanation={note.explanation} />
@@ -405,16 +419,18 @@ function TeacherNoteView({ note, label }: { note?: TeacherNote; label?: string }
 }
 
 /** Тексты записей с таймкодами — только преподавателю */
-function TeacherTranscripts({
+export function TeacherTranscripts({
   src,
   items,
+  heading,
 }: {
   src: string;
   items?: TimedTranscript[];
+  heading?: string;
 }) {
   if (!items?.length) return null;
   return (
-    <TeacherBox title="транскрипция записи">
+    <TeacherBox title="транскрипция записи" heading={heading}>
       <div className="mt-2 space-y-2">
         {items.map((item) => (
           <Transcript
@@ -470,7 +486,7 @@ function SectionCard({
   );
 }
 
-function Choice({
+export function Choice({
   ctx,
   n,
   prompt,
@@ -537,12 +553,12 @@ function Choice({
         })}
       </div>
 
-      <TeacherNoteView note={ctx.teacher?.answers[key]} />
+      <TeacherNoteView note={ctx.teacher?.answers[key]} heading={ctx.noteHeading} />
     </div>
   );
 }
 
-function MatchingTable({
+export function MatchingTable({
   ctx,
   n,
   letters,
@@ -635,13 +651,16 @@ function MatchingTable({
           {letters.map((letter) => (
             <TeacherNoteView
               key={letter}
+              heading={ctx.noteHeading}
               label={`${rowLabel} ${letter}`}
               note={ctx.teacher?.answers[`${n}${letter}`]}
             />
           ))}
           {ctx.teacher.extras[String(n)] ? (
             <p className="mt-3 rounded-xl border border-amber-200 bg-amber-50/50 p-3 text-[14px] text-ink-700">
-              <b className="text-amber-700">🔑 Лишний вариант:</b>{" "}
+              <b className="text-amber-700">
+                {ctx.noteHeading ?? TEACHER_HEADING} · лишний вариант:
+              </b>{" "}
               {ctx.teacher.extras[String(n)]}
             </p>
           ) : null}
@@ -651,7 +670,7 @@ function MatchingTable({
   );
 }
 
-function WordAnswer({ ctx, n }: { ctx: Ctx; n: number }) {
+export function WordAnswer({ ctx, n }: { ctx: Ctx; n: number }) {
   const key = String(n);
   const check = ctx.checks?.[key];
   const tone = check
@@ -681,7 +700,7 @@ function WordAnswer({ ctx, n }: { ctx: Ctx; n: number }) {
   );
 }
 
-function GapText({ ctx, lines }: { ctx: Ctx; lines: ExamGapLine[] }) {
+export function GapText({ ctx, lines }: { ctx: Ctx; lines: ExamGapLine[] }) {
   return (
     <div className="space-y-2.5">
       {lines.map((line, index) =>
@@ -701,7 +720,10 @@ function GapText({ ctx, lines }: { ctx: Ctx; lines: ExamGapLine[] }) {
               </span>
             </div>
             {ctx.teacher ? (
-              <TeacherNoteView note={ctx.teacher.answers[String(line.n)]} />
+              <TeacherNoteView
+                note={ctx.teacher.answers[String(line.n)]}
+                heading={ctx.noteHeading}
+              />
             ) : null}
           </div>
         ) : (
@@ -780,7 +802,10 @@ function ListeningTab({ exam, ctx, hidden }: TabProps) {
               <WordAnswer ctx={ctx} n={row.n} />
               {ctx.teacher ? (
                 <div className="w-full">
-                  <TeacherNoteView note={ctx.teacher.answers[String(row.n)]} />
+                  <TeacherNoteView
+                    note={ctx.teacher.answers[String(row.n)]}
+                    heading={ctx.noteHeading}
+                  />
                 </div>
               ) : null}
             </div>
