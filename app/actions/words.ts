@@ -37,17 +37,18 @@ function attachImageLater(
   });
 }
 
-/** Слова в словарь добавляет администратор — своему аккаунту или ученику */
+/**
+ * Добавление слова: ученик — только в свой словарь, администратор — в свой
+ * или в словарь ученика
+ */
 export async function addWordAction(
   _prev: WordState,
   formData: FormData,
 ): Promise<WordState> {
   const me = await requireUser();
-  if (me.role !== "ADMIN") {
-    return { ok: false, message: "Слова добавляет администратор" };
-  }
+  const isAdmin = me.role === "ADMIN";
 
-  const ownerId = str(formData, "userId") || me.id;
+  const ownerId = (isAdmin && str(formData, "userId")) || me.id;
   const english = normalizeWord(str(formData, "english"));
   const russian = str(formData, "russian");
 
@@ -80,7 +81,8 @@ export async function addWordAction(
       transcription: str(formData, "transcription"),
       partOfSpeech: str(formData, "partOfSpeech"),
       audioUrl: str(formData, "audioUrl"),
-      imageUrl: str(formData, "imageUrl"),
+      // картинку вручную ставит только администратор, ученику её подберём сами
+      imageUrl: isAdmin ? str(formData, "imageUrl") : "",
       source: str(formData, "source") || "manual",
     },
   });

@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { AddWordForm } from "@/components/dictionary/AddWordForm";
-import { WordLookup } from "@/components/dictionary/WordLookup";
 import { WordsTable, type WordRow } from "@/components/dictionary/WordsTable";
 import { prisma } from "@/lib/prisma";
 import { requireUser } from "@/lib/session";
@@ -64,16 +63,13 @@ export default async function DictionaryPage() {
         </Link>
       </div>
 
-      {isAdmin ? (
-        <AddWordForm
-          owners={students.map((student) => ({
-            id: student.id,
-            name: `${student.firstName} ${student.lastName}`,
-          }))}
-        />
-      ) : (
-        <WordLookup />
-      )}
+      <AddWordForm
+        owners={students.map((student) => ({
+          id: student.id,
+          name: `${student.firstName} ${student.lastName}`,
+        }))}
+        canSetImage={isAdmin}
+      />
 
       <WordsTable words={rows} canEdit={isAdmin} />
     </div>

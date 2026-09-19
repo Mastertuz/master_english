@@ -30,8 +30,17 @@ function mergeSenses(senses: DictionarySense[]) {
   };
 }
 
-/** Добавление слова — только для администратора */
-export function AddWordForm({ owners }: { owners: WordOwner[] }) {
+/**
+ * Поиск в Cambridge и добавление слова. Администратор выбирает, в чей
+ * словарь добавить, и может поставить картинку; ученик пополняет свой словарь.
+ */
+export function AddWordForm({
+  owners,
+  canSetImage,
+}: {
+  owners: WordOwner[];
+  canSetImage: boolean;
+}) {
   const [state, action] = useActionState<WordState, FormData>(
     addWordAction,
     null,
@@ -304,12 +313,14 @@ export function AddWordForm({ owners }: { owners: WordOwner[] }) {
           placeholder="/bʊk/"
         />
 
-        <UploadField
-          key={`img-${key}`}
-          label="Картинка для тренировки"
-          name="imageUrl"
-          hint="Ссылка или файл до 8 МБ — используется в режиме «карточка-картинка»"
-        />
+        {canSetImage ? (
+          <UploadField
+            key={`img-${key}`}
+            label="Картинка для тренировки"
+            name="imageUrl"
+            hint="Ссылка или файл до 8 МБ — используется в режиме «карточка-картинка». Если оставить пустым, фото подберётся само"
+          />
+        ) : null}
       </div>
 
       <input
