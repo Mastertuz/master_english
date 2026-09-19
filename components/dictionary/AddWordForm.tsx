@@ -128,6 +128,10 @@ export function AddWordForm({
     if (word) setEnglish(word);
   }
 
+  // Примеры меток для пояснения над списком — из найденных значений
+  const guide = result?.senses.find((sense) => sense.guideword)?.guideword.toLowerCase() ?? "";
+  const level = result?.senses.find((sense) => sense.level)?.level ?? "";
+
   // Поля пересоздаются, когда меняется выбор значений
   const key = `${saved}-${result?.word ?? ""}-${selected.join(".")}`;
 
@@ -187,6 +191,23 @@ export function AddWordForm({
               : ""}
             {result.source === "cambridge" ? "" : " · резервный словарь"}
           </p>
+          {guide || level ? (
+            <p className="text-[12.5px] text-ink-400">
+              {guide ? (
+                <>
+                  <span className="chip bg-amber-50 text-amber-700">{guide}</span>{" "}
+                  — подсказка Cambridge, о каком значении слова речь
+                  {level ? "; " : ""}
+                </>
+              ) : null}
+              {level ? (
+                <>
+                  <span className="chip bg-emerald-50 text-emerald-700">{level}</span>{" "}
+                  — уровень слова в этом значении (от A1 до C2)
+                </>
+              ) : null}
+            </p>
+          ) : null}
 
           {result.senses.map((sense, index) => (
             <SenseCard

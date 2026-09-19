@@ -4,6 +4,16 @@ import { SpeakButton } from "@/components/ui/SpeakButton";
 import type { DictionarySense } from "@/lib/dictionary";
 import { partOfSpeechRu } from "@/lib/part-of-speech";
 
+/** Уровни CEFR, как их отмечает Cambridge */
+const LEVELS: Record<string, string> = {
+  A1: "начальный",
+  A2: "элементарный",
+  B1: "средний",
+  B2: "выше среднего",
+  C1: "продвинутый",
+  C2: "в совершенстве",
+};
+
 /**
  * Одно значение слова из Cambridge: часть речи, подсказка к значению,
  * уровень, перевод, определение и пример. С onToggle карточку можно выбрать.
@@ -43,14 +53,17 @@ export function SenseCard({
             ) : null}
             {sense.guideword ? (
               <span
-                className="chip bg-amber-50 text-amber-700"
-                title="Подсказка Cambridge: к какому смыслу относится значение"
+                className="chip cursor-help bg-amber-50 text-amber-700"
+                title={`Подсказка Cambridge: это значение слова — «${sense.guideword.toLowerCase()}». Помогает отличить одно значение многозначного слова от другого`}
               >
                 {sense.guideword.toLowerCase()}
               </span>
             ) : null}
             {sense.level ? (
-              <span className="chip bg-emerald-50 text-emerald-700">
+              <span
+                className="chip cursor-help bg-emerald-50 text-emerald-700"
+                title={`Уровень слова в этом значении: ${sense.level} — ${LEVELS[sense.level] ?? ""}`}
+              >
                 {sense.level}
               </span>
             ) : null}
