@@ -18,6 +18,8 @@ export type TrainingWord = {
   partOfSpeech: string;
   imageUrl: string;
   audioUrl: string;
+  /** Урок, из которого пришло слово; свои слова — null */
+  lesson: { number: number; topic: string } | null;
 };
 
 export type Mode = "TRANSLATE" | "IMAGE" | "DEFINITION";

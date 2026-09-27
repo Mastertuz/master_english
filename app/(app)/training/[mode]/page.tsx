@@ -52,8 +52,17 @@ export default async function TrainingModePage({
       partOfSpeech: true,
       imageUrl: true,
       audioUrl: true,
+      // Тема урока, из которого пришло слово — по ней слова разложены по папкам
+      lessonWord: {
+        select: { lesson: { select: { number: true, topic: true } } },
+      },
     },
   });
+
+  const cards: TrainingWord[] = words.map(({ lessonWord, ...word }) => ({
+    ...word,
+    lesson: lessonWord?.lesson ?? null,
+  }));
 
   const lesson = lessonId ? await lessonWords(lessonId, user) : null;
 
@@ -92,7 +101,7 @@ export default async function TrainingModePage({
       </div>
       <TrainingSession
         mode={mode}
-        words={words as TrainingWord[]}
+        words={cards}
         preselectedIds={preselectedIds}
         lessonTopic={lesson?.topic ?? ""}
       />

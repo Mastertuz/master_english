@@ -478,7 +478,7 @@ function plural(n: number, one: string, few: string, many: string): string {
 }
 
 /** Кнопка фильтра по теме урока */
-function TopicButton({
+export function TopicButton({
   active,
   onClick,
   label,
