@@ -413,6 +413,10 @@ export type SensesResult = {
   word: string;
   source: string;
   senses: DictionarySense[];
+  /** Если искали по-русски: что ввёл пользователь («книга») */
+  query?: string;
+  /** Если искали по-русски: другие английские варианты («volume») */
+  alternatives?: string[];
 };
 
 /** Меняется, когда меняется разбор, — старый кэш тогда перечитывается */
@@ -685,4 +689,112 @@ export async function lookupSenses(raw: string): Promise<SensesResult | null> {
   }
 
   return { word, source, senses };
+}
+
+/* ─────────────────────── Поиск по-русски ─────────────────────── */
+
+/**
+ * В Cambridge нет русско-английского раздела (статья «книга» отдаёт 404), так
+ * что русское слово сначала переводим в английское, а дальше ищем как обычно.
+ */
+export function hasCyrillic(text: string): boolean {
+  return /[а-яё]/i.test(text);
+}
+
+const MAX_ALTERNATIVES = 5;
+
+/** Только английское слово или фраза: переводчик иногда возвращает то же русское */
+function toEnglishCandidate(raw: string): string {
+  const text = normalizeWord(raw).replace(/^to\s+(?=[a-z])/, "");
+  return /^[a-z][a-z'’\- ]*$/.test(text) && text.length <= 60 ? text : "";
+}
+
+/** Варианты от Google: перевод целиком, а у одиночных слов ещё и словарные значения */
+async function googleCandidates(text: string): Promise<string[]> {
+  try {
+    const response = await fetch(
+      "https://translate.googleapis.com/translate_a/single" +
+        `?client=gtx&sl=ru&tl=en&dt=t&dt=bd&q=${encodeURIComponent(text)}`,
+      { signal: AbortSignal.timeout(10_000) },
+    );
+    if (!response.ok) return [];
+
+    const data = (await response.json()) as [
+      [string, ...unknown[]][]?,
+      [string, string[], [string, string[], unknown, number?][]][]?,
+    ];
+
+    const whole = (data[0] ?? []).map((part) => part[0]).join("");
+    // Словарные значения идут по частям речи; внутри — по убыванию частотности
+    const detailed = (data[1] ?? [])
+      .filter((group) => group[0] !== "abbreviation")
+      .flatMap((group) => group[2] ?? [])
+      .sort((a, b) => (b[3] ?? 0) - (a[3] ?? 0))
+      .map((entry) => entry[0]);
+
+    return [whole, ...detailed];
+  } catch {
+    return [];
+  }
+}
+
+/** Запасной переводчик — тот же MyMemory, что и для английского → русского */
+async function myMemoryCandidates(text: string): Promise<string[]> {
+  try {
+    const response = await fetch(
+      `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=ru|en`,
+      { signal: AbortSignal.timeout(10_000) },
+    );
+    if (!response.ok) return [];
+
+    const data = (await response.json()) as {
+      responseData?: { translatedText?: string };
+      matches?: { translation?: string }[];
+    };
+    return [
+      data.responseData?.translatedText ?? "",
+      ...(data.matches ?? []).map((match) => match.translation ?? ""),
+    ];
+  } catch {
+    return [];
+  }
+}
+
+/** Английские варианты русского слова, самый вероятный первым */
+export async function russianToEnglish(raw: string): Promise<string[]> {
+  const text = normalizeWord(raw);
+  if (!text || text.length > 60) return [];
+
+  let candidates = await googleCandidates(text);
+  if (!candidates.some(toEnglishCandidate)) {
+    candidates = await myMemoryCandidates(text);
+  }
+
+  return [...new Set(candidates.map(toEnglishCandidate).filter(Boolean))].slice(
+    0,
+    MAX_ALTERNATIVES + 1,
+  );
+}
+
+/**
+ * Поиск по русскому слову: переводим в английские варианты и берём первый,
+ * который нашёлся в словаре. Остальные отдаём как подсказки — «книга» может
+ * значить и book, и volume.
+ */
+export async function lookupSensesByRussian(
+  raw: string,
+): Promise<SensesResult | null> {
+  const candidates = await russianToEnglish(raw);
+
+  for (const [index, candidate] of candidates.entries()) {
+    const found = await lookupSenses(candidate);
+    if (!found) continue;
+
+    return {
+      ...found,
+      query: normalizeWord(raw),
+      alternatives: candidates.filter((_, other) => other !== index),
+    };
+  }
+  return null;
 }

@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { lookupSenses } from "@/lib/dictionary";
+import { hasCyrillic, lookupSenses, lookupSensesByRussian } from "@/lib/dictionary";
 import { getCurrentUser } from "@/lib/session";
 
 /**
@@ -18,10 +18,18 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: "Не указано слово" }, { status: 400 });
   }
 
-  const result = await lookupSenses(word);
+  // Русское слово сначала переводится в английское: в Cambridge искать по-русски нельзя
+  const russian = hasCyrillic(word);
+  const result = russian
+    ? await lookupSensesByRussian(word)
+    : await lookupSenses(word);
   if (!result) {
     return NextResponse.json(
-      { error: "Слово не найдено ни в Cambridge, ни в резервных словарях" },
+      {
+        error: russian
+          ? "Не удалось подобрать английское слово. Проверьте написание или введите слово по-английски"
+          : "Слово не найдено ни в Cambridge, ни в резервных словарях",
+      },
       { status: 404 },
     );
   }

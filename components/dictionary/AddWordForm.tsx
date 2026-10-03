@@ -78,9 +78,11 @@ export function AddWordForm({
     return chosen.length ? mergeSenses(chosen) : null;
   }, [selected, result]);
 
-  async function lookup() {
-    const query = english.trim();
+  async function lookup(text?: string) {
+    const query = (text ?? english).trim();
     if (!query) return;
+    // Нажатие на вариант подставляет его в поле
+    if (text) setEnglish(query);
 
     setLoading(true);
     setLookupError(null);
@@ -141,9 +143,9 @@ export function AddWordForm({
         🌐 Поиск в Cambridge Dictionary и добавление слова
       </h2>
       <p className="mt-1 text-[13.5px] text-ink-500">
-        Введите слово и нажмите «Найти слово» — появятся все его значения из
-        Cambridge Dictionary. Отметьте нужные и добавьте, заполнять поля
-        вручную не нужно.
+        Введите слово по-английски или по-русски и нажмите «Найти в Cambridge» —
+        появятся все его значения из Cambridge Dictionary. Отметьте нужные и
+        добавьте, заполнять поля вручную не нужно.
       </p>
 
       <div className="mt-4 flex flex-col gap-2 sm:flex-row">
@@ -158,13 +160,13 @@ export function AddWordForm({
               void lookup();
             }
           }}
-          placeholder="например, book"
+          placeholder="например, book или книга"
           autoComplete="off"
           className={`field flex-1 ${state?.errors?.english ? "field-error" : ""}`}
         />
         <button
           type="button"
-          onClick={lookup}
+          onClick={() => void lookup()}
           disabled={loading}
           className="btn-ghost sm:w-44"
         >
@@ -191,6 +193,23 @@ export function AddWordForm({
               : ""}
             {result.source === "cambridge" ? "" : " · резервный словарь"}
           </p>
+          {result.query ? (
+            <p className="text-[13.5px] text-ink-500">
+              По запросу «{result.query}» показано слово <b>{result.word}</b>.
+              {result.alternatives?.length ? " Другие варианты: " : ""}
+              {result.alternatives?.map((alternative) => (
+                <button
+                  key={alternative}
+                  type="button"
+                  onClick={() => void lookup(alternative)}
+                  disabled={loading}
+                  className="chip mr-1.5 bg-brand-50 text-brand-700 hover:bg-brand-100"
+                >
+                  {alternative}
+                </button>
+              ))}
+            </p>
+          ) : null}
           {guide || level ? (
             <p className="text-[12.5px] text-ink-400">
               {guide ? (
