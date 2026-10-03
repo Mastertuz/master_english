@@ -142,16 +142,3 @@ export function CriteriaTable({ criteria }: { criteria: Criterion[] }) {
     </div>
   );
 }
-
-export function Locked({ href }: { href: string }) {
-  return (
-    <div className="rounded-xl border border-dashed border-ink-300 bg-ink-50/60 p-4 text-[14px] text-ink-600">
-      🔒 Правильные ответы, тексты записей, образцы и разбор каждого задания
-      откроются после того, как вы отправите вариант на проверку. Стратегии и
-      критерии оценивания доступны уже сейчас.{" "}
-      <a href={href} className="font-medium text-brand-700 hover:underline">
-        Перейти к варианту →
-      </a>
-    </div>
-  );
-}

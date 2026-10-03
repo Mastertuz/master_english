@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 import {
   AnswerCard,
   CriteriaTable,
-  Locked,
   StrategyCard,
   Transcript,
 } from "@/components/oge/Razbor";
@@ -21,7 +20,6 @@ import { getVariant, requireOgeUser } from "@/lib/oge";
 import { countWords, gapItems, MARK_SCALE } from "@/lib/oge/scoring";
 import { STRUCTURE } from "@/lib/oge/summary";
 import type { Explanation, GapLine, Matching } from "@/lib/oge/types";
-import { prisma } from "@/lib/prisma";
 
 const TOC = [
   { id: "listening", label: "Аудирование · 1–11" },
@@ -47,23 +45,13 @@ export default async function RazborPage({
   const variant = getVariant(id);
   if (!variant) notFound();
 
-  const attempt =
-    user.role === "ADMIN"
-      ? null
-      : await prisma.ogeAttempt.findUnique({
-          where: { userId_variant: { userId: user.id, variant: id } },
-          select: { submittedAt: true },
-        });
-
   const isAdmin = user.role === "ADMIN";
-  // Ученику ответы открываются только после отправки варианта,
-  // а тексты аудиозаписей не открываются вовсе — они для преподавателя
-  const reveal = isAdmin || Boolean(attempt?.submittedAt);
+  // Ответы и разбор доступны сразу, не дожидаясь проверки; тексты
+  // аудиозаписей не открываются ученику вовсе — они для преподавателя
   const withRule = (key: number | string, explanation: Explanation): Explanation => ({
     ...explanation,
     rule: variant.rules[String(key)] ?? explanation.rule,
   });
-  const examHref = `/oge/${variant.id}`;
   const { listening, reading, grammar, writing, speaking } = variant;
 
   return (
@@ -83,8 +71,6 @@ export default async function RazborPage({
           верен именно этот ответ
         </p>
       </div>
-
-      {!reveal ? <Locked href={examHref} /> : null}
 
       <div className="grid gap-4 lg:grid-cols-[1fr_1fr]">
         <nav className="card p-5">
@@ -125,40 +111,34 @@ export default async function RazborPage({
           Раздел 1. Аудирование · 15 баллов
         </h2>
 
-        {reveal ? (
-          <div className="card space-y-2 p-5">
-            <AudioPlayer src={listening.audioUrl} title="Запись к заданиям 1–11" />
-            <Timecodes src={listening.audioUrl} items={listening.marks} />
-          </div>
-        ) : null}
+        <div className="card space-y-2 p-5">
+          <AudioPlayer src={listening.audioUrl} title="Запись к заданиям 1–11" />
+          <Timecodes src={listening.audioUrl} items={listening.marks} />
+        </div>
 
         <Block title="Задания 1–4 · по 1 баллу" intro={listening.part1.intro}>
           <StrategyCard strategy={listening.part1.strategy} />
-          {reveal ? (
-            <>
-              <Timecodes src={listening.audioUrl} items={listening.part1.timecodes} />
-              {listening.part1.questions.map((question) => (
-                <AnswerCard
-                  key={question.n}
-                  n={question.n}
-                  title={question.prompt}
-                  answer={option(question.options, question.answer)}
-                  explanation={withRule(question.n, question.explanation)}
+          <Timecodes src={listening.audioUrl} items={listening.part1.timecodes} />
+          {listening.part1.questions.map((question) => (
+            <AnswerCard
+              key={question.n}
+              n={question.n}
+              title={question.prompt}
+              answer={option(question.options, question.answer)}
+              explanation={withRule(question.n, question.explanation)}
+            />
+          ))}
+          {isAdmin
+            ? listening.part1.transcripts.map((item) => (
+                <Transcript
+                  key={item.title}
+                  title={`🔑 Текст записи · ${item.title}`}
+                  text={item.text}
+                  src={listening.audioUrl}
+                  at={item.at}
                 />
-              ))}
-              {isAdmin
-                ? listening.part1.transcripts.map((item) => (
-                    <Transcript
-                      key={item.title}
-                      title={`🔑 Текст записи · ${item.title}`}
-                      text={item.text}
-                      src={listening.audioUrl}
-                      at={item.at}
-                    />
-                  ))
-                : null}
-            </>
-          ) : null}
+              ))
+            : null}
         </Block>
 
         <Block
@@ -167,52 +147,44 @@ export default async function RazborPage({
         >
           <OptionList options={listening.part5.options} />
           <StrategyCard strategy={listening.part5.strategy} />
-          {reveal ? (
-            <>
-              <Timecodes src={listening.audioUrl} items={listening.part5.timecodes} />
-              <MatchingAnswers
-                task={listening.part5}
-                label="Говорящий"
-                rules={variant.rules}
-              />
-              {isAdmin
-                ? listening.part5.transcripts.map((item) => (
-                    <Transcript
-                      key={item.title}
-                      title={`🔑 Текст записи · ${item.title}`}
-                      text={item.text}
-                      src={listening.audioUrl}
-                      at={item.at}
-                    />
-                  ))
-                : null}
-            </>
-          ) : null}
+          <Timecodes src={listening.audioUrl} items={listening.part5.timecodes} />
+          <MatchingAnswers
+            task={listening.part5}
+            label="Говорящий"
+            rules={variant.rules}
+          />
+          {isAdmin
+            ? listening.part5.transcripts.map((item) => (
+                <Transcript
+                  key={item.title}
+                  title={`🔑 Текст записи · ${item.title}`}
+                  text={item.text}
+                  src={listening.audioUrl}
+                  at={item.at}
+                />
+              ))
+            : null}
         </Block>
 
         <Block title="Задания 6–11 · по 1 баллу" intro={listening.part6.intro}>
           <StrategyCard strategy={listening.part6.strategy} />
-          {reveal ? (
-            <>
-              <Timecodes src={listening.audioUrl} items={listening.part6.timecodes} />
-              {listening.part6.rows.map((row) => (
-                <AnswerCard
-                  key={row.n}
-                  n={row.n}
-                  title={row.label}
-                  answer={row.answer.split(";").join(" / ")}
-                  explanation={withRule(row.n, row.explanation)}
-                />
-              ))}
-              {isAdmin ? (
-                <Transcript
-                  title="🔑 Текст записи · интервью"
-                  text={listening.part6.transcript}
-                  src={listening.audioUrl}
-                  at={listening.part6.transcriptAt}
-                />
-              ) : null}
-            </>
+          <Timecodes src={listening.audioUrl} items={listening.part6.timecodes} />
+          {listening.part6.rows.map((row) => (
+            <AnswerCard
+              key={row.n}
+              n={row.n}
+              title={row.label}
+              answer={row.answer.split(";").join(" / ")}
+              explanation={withRule(row.n, row.explanation)}
+            />
+          ))}
+          {isAdmin ? (
+            <Transcript
+              title="🔑 Текст записи · интервью"
+              text={listening.part6.transcript}
+              src={listening.audioUrl}
+              at={listening.part6.transcriptAt}
+            />
           ) : null}
         </Block>
       </section>
@@ -228,38 +200,30 @@ export default async function RazborPage({
         >
           <OptionList options={reading.part12.options} />
           <StrategyCard strategy={reading.part12.strategy} />
-          {reveal ? (
-            <>
-              <MatchingAnswers task={reading.part12} label="Текст" rules={variant.rules} />
-              <Transcript
-                title="Тексты A–F"
-                text={reading.part12.texts
-                  .map((text) => `${text.letter}. ${text.text}`)
-                  .join("\n\n")}
-              />
-            </>
-          ) : null}
+          <MatchingAnswers task={reading.part12} label="Текст" rules={variant.rules} />
+          <Transcript
+            title="Тексты A–F"
+            text={reading.part12.texts
+              .map((text) => `${text.letter}. ${text.text}`)
+              .join("\n\n")}
+          />
         </Block>
 
         <Block title="Задания 13–19 · по 1 баллу" intro={reading.part13.intro}>
           <StrategyCard strategy={reading.part13.strategy} />
-          {reveal ? (
-            <>
-              {reading.part13.statements.map((statement) => (
-                <AnswerCard
-                  key={statement.n}
-                  n={statement.n}
-                  title={statement.prompt}
-                  answer={option(statement.options, statement.answer)}
-                  explanation={withRule(statement.n, statement.explanation)}
-                />
-              ))}
-              <Transcript
-                title={`Текст «${reading.part13.title}»`}
-                text={reading.part13.paragraphs.join("\n\n")}
-              />
-            </>
-          ) : null}
+          {reading.part13.statements.map((statement) => (
+            <AnswerCard
+              key={statement.n}
+              n={statement.n}
+              title={statement.prompt}
+              answer={option(statement.options, statement.answer)}
+              explanation={withRule(statement.n, statement.explanation)}
+            />
+          ))}
+          <Transcript
+            title={`Текст «${reading.part13.title}»`}
+            text={reading.part13.paragraphs.join("\n\n")}
+          />
         </Block>
       </section>
 
@@ -272,17 +236,17 @@ export default async function RazborPage({
 
         <GrammarGuideView
           guide={grammarGuide}
-          taskLinks={reveal ? grammar.part20.guideTasks ?? null : null}
+          taskLinks={grammar.part20.guideTasks ?? null}
         />
 
         <Block title="Задания 20–28 · грамматика, по 1 баллу" intro={grammar.part20.intro}>
           <StrategyCard strategy={grammar.part20.strategy} />
-          {reveal ? <GapAnswers lines={grammar.part20.lines} rules={variant.rules} /> : null}
+          <GapAnswers lines={grammar.part20.lines} rules={variant.rules} />
         </Block>
 
         <Block title="Задания 29–34 · словообразование, по 1 баллу" intro={grammar.part29.intro}>
           <StrategyCard strategy={grammar.part29.strategy} />
-          {reveal ? <GapAnswers lines={grammar.part29.lines} rules={variant.rules} /> : null}
+          <GapAnswers lines={grammar.part29.lines} rules={variant.rules} />
         </Block>
       </section>
 
@@ -363,32 +327,28 @@ export default async function RazborPage({
 
           <StrategyCard strategy={writing.strategy} />
 
-          {reveal ? (
-            <div className="rounded-xl border border-emerald-200 bg-emerald-50/50 p-4">
-              <p className="text-[12.5px] font-semibold uppercase tracking-wide text-emerald-700">
-                Образец ответа · {countWords(writing.sample)} слов
-              </p>
-              <p className="mt-2 whitespace-pre-wrap text-[14.5px] leading-relaxed text-ink-800">
-                {writing.sample}
-              </p>
-            </div>
-          ) : null}
+          <div className="rounded-xl border border-emerald-200 bg-emerald-50/50 p-4">
+            <p className="text-[12.5px] font-semibold uppercase tracking-wide text-emerald-700">
+              Образец ответа · {countWords(writing.sample)} слов
+            </p>
+            <p className="mt-2 whitespace-pre-wrap text-[14.5px] leading-relaxed text-ink-800">
+              {writing.sample}
+            </p>
+          </div>
 
-          {reveal ? (
-            <div className="rounded-xl border border-emerald-200 bg-emerald-50/50 p-4">
-              <p className="text-[12.5px] font-semibold uppercase tracking-wide text-emerald-700">
-                Пример готового письма по шаблону · {countWords(writing.templateSample)} слов
-              </p>
-              <p className="mt-1 text-[13px] text-ink-500">
-                Обращение, благодарность, ответы на три вопроса одним абзацем со
-                связками (Well, As for…, By the way), завершение и подпись — каждое
-                на своей строке.
-              </p>
-              <p className="mt-2 whitespace-pre-wrap text-[14.5px] leading-relaxed text-ink-800">
-                {writing.templateSample}
-              </p>
-            </div>
-          ) : null}
+          <div className="rounded-xl border border-emerald-200 bg-emerald-50/50 p-4">
+            <p className="text-[12.5px] font-semibold uppercase tracking-wide text-emerald-700">
+              Пример готового письма по шаблону · {countWords(writing.templateSample)} слов
+            </p>
+            <p className="mt-1 text-[13px] text-ink-500">
+              Обращение, благодарность, ответы на три вопроса одним абзацем со
+              связками (Well, As for…, By the way), завершение и подпись — каждое
+              на своей строке.
+            </p>
+            <p className="mt-2 whitespace-pre-wrap text-[14.5px] leading-relaxed text-ink-800">
+              {writing.templateSample}
+            </p>
+          </div>
         </Block>
       </section>
 
@@ -426,48 +386,44 @@ export default async function RazborPage({
         <Block title="Задание 2 · диалог-расспрос, до 6 баллов" intro={speaking.task2.instruction}>
           <p className="text-[14px] text-ink-700">{speaking.task2.criteria}</p>
           <StrategyCard strategy={speaking.task2.strategy} />
-          {reveal ? (
-            <>
-              <AudioPlayer src={speaking.audioUrl} title="Запись телефонного опроса" />
-              <div className="flex flex-wrap items-center gap-1.5">
-                <span className="mr-1 text-[12.5px] text-ink-500">Таймкоды:</span>
-                {speaking.task2.questions.map((question, index) => (
-                  <SeekButton
-                    key={question.start}
-                    src={speaking.audioUrl}
-                    at={question.start}
-                    label={`Вопрос ${index + 1}`}
-                  />
-                ))}
-              </div>
-              {isAdmin ? (
-                <Transcript
-                  title="🔑 Транскрипция опроса"
-                  text={[
-                    speaking.task2.introText,
-                    ...speaking.task2.questions.map(
-                      (question) => `Electronic assistant: ${question.text}\nStudent: …`,
-                    ),
-                    speaking.task2.outroText,
-                  ].join("\n\n")}
-                  src={speaking.audioUrl}
-                  at={0}
-                />
-              ) : null}
-              {speaking.task2.questions.map((question, index) => (
-                <AnswerCard
-                  key={question.text}
-                  n={index + 1}
-                  title={isAdmin ? question.text : `Вопрос ${index + 1}`}
-                  answer="полный ответ"
-                  explanation={{
-                    proof: question.sample,
-                    why: "Образец: прямой ответ на вопрос и одна-две подробности. Ответ одним словом получил бы 0 баллов.",
-                  }}
-                />
-              ))}
-            </>
+          <AudioPlayer src={speaking.audioUrl} title="Запись телефонного опроса" />
+          <div className="flex flex-wrap items-center gap-1.5">
+            <span className="mr-1 text-[12.5px] text-ink-500">Таймкоды:</span>
+            {speaking.task2.questions.map((question, index) => (
+              <SeekButton
+                key={question.start}
+                src={speaking.audioUrl}
+                at={question.start}
+                label={`Вопрос ${index + 1}`}
+              />
+            ))}
+          </div>
+          {isAdmin ? (
+            <Transcript
+              title="🔑 Транскрипция опроса"
+              text={[
+                speaking.task2.introText,
+                ...speaking.task2.questions.map(
+                  (question) => `Electronic assistant: ${question.text}\nStudent: …`,
+                ),
+                speaking.task2.outroText,
+              ].join("\n\n")}
+              src={speaking.audioUrl}
+              at={0}
+            />
           ) : null}
+          {speaking.task2.questions.map((question, index) => (
+            <AnswerCard
+              key={question.text}
+              n={index + 1}
+              title={isAdmin ? question.text : `Вопрос ${index + 1}`}
+              answer="полный ответ"
+              explanation={{
+                proof: question.sample,
+                why: "Образец: прямой ответ на вопрос и одна-две подробности. Ответ одним словом получил бы 0 баллов.",
+              }}
+            />
+          ))}
         </Block>
 
         <Block title="Задание 3 · монолог, до 7 баллов" intro={speaking.task3.instruction}>
@@ -485,18 +441,16 @@ export default async function RazborPage({
             6–7 фраз дают не больше 1 балла по К1.
           </p>
           <StrategyCard strategy={speaking.task3.strategy} />
-          {reveal ? (
-            <div className="rounded-xl border border-emerald-200 bg-emerald-50/50 p-4">
-              <p className="text-[12.5px] font-semibold uppercase tracking-wide text-emerald-700">
-                Образец монолога
-              </p>
-              <div className="mt-2 space-y-1.5 text-[14.5px] leading-relaxed text-ink-800">
-                {speaking.task3.sample.split("\n").map((line) => (
-                  <p key={line}>{line}</p>
-                ))}
-              </div>
+          <div className="rounded-xl border border-emerald-200 bg-emerald-50/50 p-4">
+            <p className="text-[12.5px] font-semibold uppercase tracking-wide text-emerald-700">
+              Образец монолога
+            </p>
+            <div className="mt-2 space-y-1.5 text-[14.5px] leading-relaxed text-ink-800">
+              {speaking.task3.sample.split("\n").map((line) => (
+                <p key={line}>{line}</p>
+              ))}
             </div>
-          ) : null}
+          </div>
 
           <MonologueBankView />
           <HomelandIdeasView />
@@ -511,8 +465,6 @@ export default async function RazborPage({
         </h2>
         <VocabularyView />
       </section>
-
-      {!reveal ? <Locked href={examHref} /> : null}
     </div>
   );
 }
