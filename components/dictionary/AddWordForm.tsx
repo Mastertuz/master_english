@@ -46,6 +46,8 @@ export function AddWordForm({
     null,
   );
 
+  // Что напечатано в строке поиска — и что уйдёт в словарь (английское слово)
+  const [typed, setTyped] = useState("");
   const [english, setEnglish] = useState("");
   const [result, setResult] = useState<SensesResult | null>(null);
   const [selected, setSelected] = useState<number[]>([]);
@@ -67,6 +69,7 @@ export function AddWordForm({
     setResult(null);
     setSelected([]);
     setEnglish("");
+    setTyped("");
     setLookupError(null);
     setSaved((value) => value + 1);
   }, [state]);
@@ -79,10 +82,13 @@ export function AddWordForm({
   }, [selected, result]);
 
   async function lookup(text?: string) {
-    const query = (text ?? english).trim();
+    const query = (text ?? typed).trim();
     if (!query) return;
     // Нажатие на вариант подставляет его в поле
-    if (text) setEnglish(query);
+    if (text) {
+      setTyped(query);
+      setEnglish(query);
+    }
 
     setLoading(true);
     setLookupError(null);
@@ -104,8 +110,12 @@ export function AddWordForm({
       setResult(found);
       // Первое значение отмечаем сразу: чаще всего нужно именно оно
       setSelected(found.senses.length ? [0] : []);
-      // Cambridge приводит слово к начальной форме: booked → book
-      if (found.senses[0]?.word) setEnglish(found.senses[0].word);
+      // Cambridge приводит слово к начальной форме: booked → book. Русский
+      // запрос в строке поиска не трогаем — переводится только то, что уйдёт в словарь
+      if (found.senses[0]?.word) {
+        setEnglish(found.senses[0].word);
+        if (!found.query) setTyped(found.senses[0].word);
+      }
     } catch {
       setLookupError("Не удалось связаться со словарём. Проверьте интернет.");
     } finally {
@@ -127,7 +137,10 @@ export function AddWordForm({
       setSelected([...selected, index].sort((a, b) => a - b));
     }
     // В словарь попадёт именно выбранное слово, а не то, что искали
-    if (word) setEnglish(word);
+    if (word) {
+      setEnglish(word);
+      if (!result?.query) setTyped(word);
+    }
   }
 
   // Примеры меток для пояснения над списком — из найденных значений
@@ -150,9 +163,12 @@ export function AddWordForm({
 
       <div className="mt-4 flex flex-col gap-2 sm:flex-row">
         <input
-          name="english"
-          value={english}
-          onChange={(event) => setEnglish(event.target.value)}
+          id="english-search"
+          value={typed}
+          onChange={(event) => {
+            setTyped(event.target.value);
+            setEnglish(event.target.value);
+          }}
           onKeyDown={(event) => {
             // Enter ищет слово, а не отправляет пустую форму
             if (event.key === "Enter") {
@@ -372,6 +388,7 @@ export function AddWordForm({
         ) : null}
       </div>
 
+      <input type="hidden" name="english" value={english} />
       <input
         type="hidden"
         name="audioUrl"
