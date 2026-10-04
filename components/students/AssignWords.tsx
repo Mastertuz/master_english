@@ -5,13 +5,21 @@ import {
   clearAssignedWordsAction,
   setWordAssignedAction,
 } from "@/app/actions/words";
+import { TopicButton } from "@/components/dictionary/WordsTable";
 import { ConfirmSubmit } from "@/components/ui/ConfirmSubmit";
+
+/** Папки списка: как в словаре ученика, плюс «назначено» */
+const ALL = "all";
+const ASSIGNED = "assigned";
+const OWN = "own";
 
 export type StudentWord = {
   id: string;
   english: string;
   russian: string;
   assigned: boolean;
+  /** Урок, из которого слово попало в словарь; null — добавлено вручную */
+  lesson: { number: number; topic: string } | null;
 };
 
 /**
@@ -29,17 +37,39 @@ export function AssignWords({
     () => new Set(words.filter((word) => word.assigned).map((word) => word.id)),
   );
   const [query, setQuery] = useState("");
+  const [folder, setFolder] = useState<string>(ALL);
   const [, startTransition] = useTransition();
+
+  const topics = useMemo(() => {
+    const map = new Map<number, string>();
+    for (const word of words) {
+      if (word.lesson) map.set(word.lesson.number, word.lesson.topic);
+    }
+    return [...map.entries()].sort((a, b) => a[0] - b[0]);
+  }, [words]);
+
+  const own = words.filter((word) => !word.lesson).length;
 
   const visible = useMemo(() => {
     const needle = query.trim().toLowerCase();
-    if (!needle) return words;
-    return words.filter(
-      (word) =>
+
+    return words.filter((word) => {
+      const inFolder =
+        folder === ALL
+          ? true
+          : folder === ASSIGNED
+            ? assigned.has(word.id)
+            : folder === OWN
+              ? !word.lesson
+              : String(word.lesson?.number) === folder;
+      if (!inFolder) return false;
+      if (!needle) return true;
+      return (
         word.english.toLowerCase().includes(needle) ||
-        word.russian.toLowerCase().includes(needle),
-    );
-  }, [words, query]);
+        word.russian.toLowerCase().includes(needle)
+      );
+    });
+  }, [words, query, folder, assigned]);
 
   function toggle(word: StudentWord) {
     const value = !assigned.has(word.id);
@@ -98,9 +128,43 @@ export function AssignWords({
         ) : null}
       </div>
 
+      <div className="flex flex-wrap gap-2">
+        <TopicButton
+          active={folder === ALL}
+          onClick={() => setFolder(ALL)}
+          label={`Все (${words.length})`}
+        />
+        <TopicButton
+          active={folder === ASSIGNED}
+          onClick={() => setFolder(ASSIGNED)}
+          label={`📌 Назначено (${assigned.size})`}
+        />
+        {topics.map(([number, name]) => (
+          <TopicButton
+            key={number}
+            active={folder === String(number)}
+            onClick={() => setFolder(String(number))}
+            label={`№${number} · ${name} (${
+              words.filter((word) => word.lesson?.number === number).length
+            })`}
+          />
+        ))}
+        {own > 0 ? (
+          <TopicButton
+            active={folder === OWN}
+            onClick={() => setFolder(OWN)}
+            label={`Свои слова (${own})`}
+          />
+        ) : null}
+      </div>
+
       <div className="max-h-96 divide-y divide-ink-100 overflow-y-auto rounded-xl border border-ink-200">
         {visible.length === 0 ? (
-          <p className="p-4 text-center text-[14px] text-ink-500">Ничего не найдено.</p>
+          <p className="p-4 text-center text-[14px] text-ink-500">
+            {folder === ASSIGNED && !query.trim()
+              ? "Пока ничего не назначено."
+              : "Ничего не найдено."}
+          </p>
         ) : (
           visible.map((word) => (
             <label

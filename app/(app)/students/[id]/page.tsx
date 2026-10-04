@@ -119,7 +119,16 @@ export default async function StudentPage({
   const words = await prisma.word.findMany({
     where: { userId: student.id },
     orderBy: [{ assigned: "desc" }, { createdAt: "desc" }],
-    select: { id: true, english: true, russian: true, assigned: true },
+    select: {
+      id: true,
+      english: true,
+      russian: true,
+      assigned: true,
+      // Тема урока, из которого пришло слово — по ней работают папки-фильтры
+      lessonWord: {
+        select: { lesson: { select: { number: true, topic: true } } },
+      },
+    },
   });
 
   // Домашние задания выданных уроков — считаем так же, как их видит ученик
@@ -301,7 +310,13 @@ export default async function StudentPage({
           canSetImage
         />
         <div className="card p-5">
-          <AssignWords studentId={student.id} words={words} />
+          <AssignWords
+            studentId={student.id}
+            words={words.map(({ lessonWord, ...word }) => ({
+              ...word,
+              lesson: lessonWord?.lesson ?? null,
+            }))}
+          />
         </div>
       </section>
 
