@@ -21,6 +21,7 @@ export function TrainingSession({
   words,
   preselectedIds = [],
   lessonTopic = "",
+  presetLabel = "",
 }: {
   mode: Mode;
   words: TrainingWord[];
@@ -28,10 +29,13 @@ export function TrainingSession({
   preselectedIds?: string[];
   /** Тема урока, из которого пришли: показываем, что именно отмечено */
   lessonTopic?: string;
+  /** Откуда взят готовый набор, если не из урока: «назначенные к следующему уроку» */
+  presetLabel?: string;
 }) {
-  // Пришли из урока — берём ровно его слова, даже если их не нашлось ни одного:
-  // подставлять вместо них случайные было бы неожиданно
-  const fromLesson = lessonTopic.length > 0;
+  // Пришли с готовым набором — берём ровно его слова, даже если их не нашлось
+  // ни одного: подставлять вместо них случайные было бы неожиданно
+  const source = presetLabel || (lessonTopic ? `из урока «${lessonTopic}»` : "");
+  const fromLesson = source.length > 0;
 
   const [selected, setSelected] = useState<Set<string>>(() =>
     fromLesson
@@ -147,14 +151,14 @@ export function TrainingSession({
           {!fromLesson
             ? "По умолчанию выбраны те, которые вы давно не повторяли."
             : preselectedIds.length > 0
-              ? `Отмечены слова из урока «${lessonTopic}».`
+              ? `Отмечены слова ${source}.`
               : null}
         </p>
 
         {fromLesson && preselectedIds.length === 0 ? (
           <p className="mt-2 rounded-xl bg-amber-50 px-3 py-2 text-[13px] text-amber-700">
-            Слов из урока «{lessonTopic}» в вашем словаре пока нет — отметьте
-            нужные вручную или попросите преподавателя добавить их.
+            Слов {source} в этом режиме нет — отметьте нужные вручную или
+            попросите преподавателя добавить их.
           </p>
         ) : null}
 

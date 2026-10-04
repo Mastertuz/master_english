@@ -29,7 +29,7 @@ const MODES = [
 export default async function TrainingPage() {
   const user = await requireUser();
 
-  const [total, withImage, withDefinition, attempts, correct] =
+  const [total, withImage, withDefinition, attempts, correct, assigned] =
     await Promise.all([
       prisma.word.count({ where: { userId: user.id } }),
       prisma.word.count({
@@ -45,7 +45,18 @@ export default async function TrainingPage() {
       prisma.trainingAttempt.count({
         where: { userId: user.id, isCorrect: true },
       }),
+      // Назначенные преподавателем к следующему уроку — по режимам, где они годятся
+      prisma.word.findMany({
+        where: { userId: user.id, assigned: true },
+        select: { imageUrl: true, definition: true, definitionRu: true },
+      }),
     ]);
+
+  const assignedAvailable: Record<string, number> = {
+    translate: assigned.length,
+    image: assigned.filter((word) => word.imageUrl).length,
+    definition: assigned.filter((word) => word.definition || word.definitionRu).length,
+  };
 
   const available: Record<string, number> = {
     translate: total,
@@ -63,6 +74,28 @@ export default async function TrainingPage() {
           Три режима на выбор — перед стартом отмечаете слова из своего словаря
         </p>
       </div>
+
+      {assigned.length > 0 ? (
+        <section className="card border-amber-200 bg-amber-50/70 p-5">
+          <h2 className="text-[15px] font-semibold text-ink-900">
+            📌 Слова к следующему уроку ({assigned.length})
+          </h2>
+          <p className="mt-1 text-[13.5px] text-ink-600">
+            Их назначил преподаватель — они уже отмечены, остаётся выбрать режим.
+          </p>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {MODES.filter((mode) => assignedAvailable[mode.slug] > 0).map((mode) => (
+              <Link
+                key={mode.slug}
+                href={`/training/${mode.slug}?assigned=1`}
+                className="btn-primary btn-sm"
+              >
+                {mode.icon} {mode.title} · {assignedAvailable[mode.slug]}
+              </Link>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       <div className="grid gap-3 sm:grid-cols-3">
         <Stat label="Слов в словаре" value={total} />

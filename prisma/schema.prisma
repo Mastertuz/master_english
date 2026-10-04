@@ -306,6 +306,9 @@ model Word {
   lessonWordId String?
   lessonWord   LessonWord? @relation(fields: [lessonWordId], references: [id], onDelete: SetNull)
 
+  /// Преподаватель назначил слово к следующему уроку: у ученика для таких
+  /// слов есть отдельная кнопка тренировки
+  assigned      Boolean   @default(false)
   correctCount  Int       @default(0)
   wrongCount    Int       @default(0)
   lastTrainedAt DateTime?

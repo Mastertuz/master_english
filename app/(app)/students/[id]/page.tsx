@@ -7,6 +7,8 @@ import {
 import { unassignTestAction } from "@/app/actions/tests";
 import { AssignLesson } from "@/components/students/AssignLesson";
 import { AssignTest } from "@/components/students/AssignTest";
+import { AssignWords } from "@/components/students/AssignWords";
+import { AddWordForm } from "@/components/dictionary/AddWordForm";
 import { StudentProfile } from "@/components/students/StudentProfile";
 import { GradeForm } from "@/components/students/GradeForm";
 import { OgeAccessForm } from "@/components/oge/OgeAccessForm";
@@ -111,6 +113,13 @@ export default async function StudentPage({
       lesson: { select: { number: true } },
       _count: { select: { questions: true } },
     },
+  });
+
+  // Слова ученика: преподаватель отмечает, какие учить к следующему уроку
+  const words = await prisma.word.findMany({
+    where: { userId: student.id },
+    orderBy: [{ assigned: "desc" }, { createdAt: "desc" }],
+    select: { id: true, english: true, russian: true, assigned: true },
   });
 
   // Домашние задания выданных уроков — считаем так же, как их видит ученик
@@ -271,6 +280,29 @@ export default async function StudentPage({
             questions: test._count.questions,
           }))}
         />
+      </section>
+
+      <section className="space-y-3">
+        <div>
+          <h2 className="text-[15px] font-semibold text-ink-900">
+            Слова к следующему уроку
+          </h2>
+          <p className="mt-1 text-[13px] text-ink-500">
+            Отметьте слова, которые ученику нужно выучить. В его словаре появится
+            кнопка «Слова к следующему уроку» с отдельной тренировкой.
+          </p>
+        </div>
+        <AddWordForm
+          owners={[]}
+          fixedOwner={{
+            id: student.id,
+            name: `${student.firstName} ${student.lastName}`.trim(),
+          }}
+          canSetImage
+        />
+        <div className="card p-5">
+          <AssignWords studentId={student.id} words={words} />
+        </div>
       </section>
 
       <section className="card space-y-3 p-5">

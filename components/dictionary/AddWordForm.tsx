@@ -37,9 +37,12 @@ function mergeSenses(senses: DictionarySense[]) {
 export function AddWordForm({
   owners,
   canSetImage,
+  fixedOwner,
 }: {
   owners: WordOwner[];
   canSetImage: boolean;
+  /** Форма стоит на карточке ученика: слово всегда уходит ему */
+  fixedOwner?: WordOwner;
 }) {
   const [state, action] = useActionState<WordState, FormData>(
     addWordAction,
@@ -54,6 +57,9 @@ export function AddWordForm({
   const [lookupError, setLookupError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [open, setOpen] = useState(false);
+  // Чей словарь выбран: слово ученику можно сразу назначить к следующему уроку
+  const [owner, setOwner] = useState("");
+  const [assign, setAssign] = useState(Boolean(fixedOwner));
   // Растёт после каждого сохранения — по нему пересоздаём поля пустыми
   const [saved, setSaved] = useState(0);
 
@@ -71,8 +77,9 @@ export function AddWordForm({
     setEnglish("");
     setTyped("");
     setLookupError(null);
+    setAssign(Boolean(fixedOwner));
     setSaved((value) => value + 1);
-  }, [state]);
+  }, [state, fixedOwner]);
 
   const merged = useMemo(() => {
     const chosen = selected
@@ -194,6 +201,23 @@ export function AddWordForm({
         <p className="hint">{state.errors.english}</p>
       ) : null}
 
+      {fixedOwner ? (
+        <input type="hidden" name="userId" value={fixedOwner.id} />
+      ) : null}
+      {fixedOwner || owner ? (
+        <label className="mt-3 flex cursor-pointer items-center gap-2 text-[14px] text-ink-700">
+          <input
+            type="checkbox"
+            checked={assign}
+            onChange={(event) => setAssign(event.target.checked)}
+            className="h-4 w-4 accent-brand-600"
+          />
+          📌 Назначить к следующему уроку — слово появится у ученика в отдельной
+          тренировке
+          <input type="hidden" name="assigned" value={assign ? "1" : "0"} />
+        </label>
+      ) : null}
+
       {lookupError ? (
         <div className="mt-3">
           <Alert kind="error">{lookupError}</Alert>
@@ -312,12 +336,18 @@ export function AddWordForm({
       )}
 
       <div className={`mt-4 grid gap-4 ${open ? "" : "hidden"}`}>
-        {owners.length > 0 ? (
+        {owners.length > 0 && !fixedOwner ? (
           <div>
             <label className="label" htmlFor="userId">
               В чей словарь добавить
             </label>
-            <select id="userId" name="userId" className="field">
+            <select
+              id="userId"
+              name="userId"
+              value={owner}
+              onChange={(event) => setOwner(event.target.value)}
+              className="field"
+            >
               <option value="">Мой словарь</option>
               {owners.map((owner) => (
                 <option key={owner.id} value={owner.id}>

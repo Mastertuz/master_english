@@ -41,6 +41,7 @@ export default async function DictionaryPage() {
     audioUrl: word.audioUrl,
     correctCount: word.correctCount,
     wrongCount: word.wrongCount,
+    assigned: word.assigned,
     lesson: word.lessonWord
       ? {
           number: word.lessonWord.lesson.number,
@@ -48,6 +49,8 @@ export default async function DictionaryPage() {
         }
       : null,
   }));
+
+  const assignedCount = rows.filter((word) => word.assigned).length;
 
   return (
     <div className="space-y-6">
@@ -58,9 +61,20 @@ export default async function DictionaryPage() {
             Перевод, пример употребления и определение — из Cambridge Dictionary
           </p>
         </div>
-        <Link href="/training" prefetch className="btn-ghost">
-          🎯 Тренировать слова
-        </Link>
+        <div className="flex flex-wrap gap-2">
+          {assignedCount > 0 ? (
+            <Link
+              href="/training/translate?assigned=1"
+              prefetch
+              className="btn-primary"
+            >
+              📌 Слова к следующему уроку ({assignedCount})
+            </Link>
+          ) : null}
+          <Link href="/training" prefetch className="btn-ghost">
+            🎯 Тренировать слова
+          </Link>
+        </div>
       </div>
 
       <AddWordForm

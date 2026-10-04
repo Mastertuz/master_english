@@ -84,6 +84,8 @@ export async function addWordAction(
       // картинку вручную ставит только администратор, ученику её подберём сами
       imageUrl: isAdmin ? str(formData, "imageUrl") : "",
       source: str(formData, "source") || "manual",
+      // назначать слова к уроку может только преподаватель и только ученику
+      assigned: isAdmin && ownerId !== me.id && str(formData, "assigned") === "1",
     },
   });
   if (!created.imageUrl) attachImageLater(created.id, created, ownerId);
@@ -195,6 +197,40 @@ export async function updateWordAction(
   revalidatePath("/training");
   revalidatePath(`/students/${word.userId}`);
   return { ok: true, message: "Изменения сохранены" };
+}
+
+/** Преподаватель назначает слово ученика к следующему уроку или снимает назначение */
+export async function setWordAssignedAction(
+  wordId: string,
+  assigned: boolean,
+): Promise<void> {
+  const me = await requireUser();
+  if (me.role !== "ADMIN") return;
+
+  const word = await prisma.word.update({
+    where: { id: wordId },
+    data: { assigned },
+    select: { userId: true },
+  });
+
+  revalidatePath("/dictionary");
+  revalidatePath("/training");
+  revalidatePath(`/students/${word.userId}`);
+}
+
+/** После урока: снять назначение со всех слов ученика */
+export async function clearAssignedWordsAction(studentId: string): Promise<void> {
+  const me = await requireUser();
+  if (me.role !== "ADMIN") return;
+
+  await prisma.word.updateMany({
+    where: { userId: studentId, assigned: true },
+    data: { assigned: false },
+  });
+
+  revalidatePath("/dictionary");
+  revalidatePath("/training");
+  revalidatePath(`/students/${studentId}`);
 }
 
 export async function deleteWordAction(formData: FormData): Promise<void> {

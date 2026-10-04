@@ -16,14 +16,17 @@ export default async function TrainingModePage({
   searchParams,
 }: {
   params: Promise<{ mode: string }>;
-  /** ?lesson=<id> — прийти из урока с уже отмеченными словами */
-  searchParams: Promise<{ lesson?: string }>;
+  /**
+   * ?lesson=<id> — прийти из урока с уже отмеченными словами;
+   * ?assigned=1 — со словами, которые преподаватель назначил к следующему уроку
+   */
+  searchParams: Promise<{ lesson?: string; assigned?: string }>;
 }) {
   const { mode: slug } = await params;
   const mode = SLUGS[slug];
   if (!mode) notFound();
 
-  const { lesson: lessonId } = await searchParams;
+  const { lesson: lessonId, assigned } = await searchParams;
   const user = await requireUser();
 
   const where =
@@ -52,6 +55,7 @@ export default async function TrainingModePage({
       partOfSpeech: true,
       imageUrl: true,
       audioUrl: true,
+      assigned: true,
       // Тема урока, из которого пришло слово — по ней слова разложены по папкам
       lessonWord: {
         select: { lesson: { select: { number: true, topic: true } } },
@@ -71,8 +75,11 @@ export default async function TrainingModePage({
   const fromLesson = new Set(
     lesson?.words.map((word) => word.english.toLowerCase()) ?? [],
   );
+  const fromTeacher = assigned === "1";
   const preselectedIds = words
-    .filter((word) => fromLesson.has(word.english.toLowerCase()))
+    .filter((word) =>
+      fromTeacher ? word.assigned : fromLesson.has(word.english.toLowerCase()),
+    )
     .map((word) => word.id);
 
   return (
@@ -103,7 +110,8 @@ export default async function TrainingModePage({
         mode={mode}
         words={cards}
         preselectedIds={preselectedIds}
-        lessonTopic={lesson?.topic ?? ""}
+        lessonTopic={fromTeacher ? "" : (lesson?.topic ?? "")}
+        presetLabel={fromTeacher ? "к следующему уроку, назначенные преподавателем" : ""}
       />
     </div>
   );

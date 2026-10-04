@@ -16,6 +16,8 @@ import { UploadField } from "@/components/ui/UploadField";
 /** Значения фильтра, которые не являются номером урока */
 const ALL = "ALL";
 const OWN = "OWN";
+/** Слова, которые преподаватель назначил к следующему уроку */
+const ASSIGNED = "ASSIGNED";
 
 /** Для поиска по словарю: регистр и «ё» не важны */
 function normalize(text: string): string {
@@ -35,6 +37,8 @@ export type WordRow = {
   audioUrl: string;
   correctCount: number;
   wrongCount: number;
+  /** Преподаватель назначил слово к следующему уроку */
+  assigned: boolean;
   /** Урок, из которого слово попало в словарь; null — добавлено вручную */
   lesson: { number: number; topic: string } | null;
 };
@@ -62,12 +66,15 @@ export function WordsTable({
   }, [words]);
 
   const own = words.filter((word) => !word.lesson).length;
+  const assignedCount = words.filter((word) => word.assigned).length;
 
   const visible = useMemo(() => {
     const byTopic =
       topic === ALL
         ? words
-        : topic === OWN
+        : topic === ASSIGNED
+          ? words.filter((word) => word.assigned)
+          : topic === OWN
           ? words.filter((word) => !word.lesson)
           : words.filter((word) => String(word.lesson?.number) === topic);
 
@@ -125,6 +132,13 @@ export function WordsTable({
               onClick={() => setTopic(ALL)}
               label={`Все (${words.length})`}
             />
+            {assignedCount > 0 ? (
+              <TopicButton
+                active={topic === ASSIGNED}
+                onClick={() => setTopic(ASSIGNED)}
+                label={`📌 К следующему уроку (${assignedCount})`}
+              />
+            ) : null}
             {topics.map(([number, name]) => (
               <TopicButton
                 key={number}
@@ -207,6 +221,11 @@ export function WordsTable({
                         {word.partOfSpeech ? (
                           <span className="mt-1 inline-block rounded bg-ink-100 px-1.5 py-0.5 text-[11.5px] text-ink-500">
                             {partOfSpeechRu(word.partOfSpeech)}
+                          </span>
+                        ) : null}
+                        {word.assigned ? (
+                          <span className="ml-1 mt-1 inline-block rounded bg-amber-50 px-1.5 py-0.5 text-[11.5px] text-amber-700">
+                            📌 к уроку
                           </span>
                         ) : null}
                       </div>
