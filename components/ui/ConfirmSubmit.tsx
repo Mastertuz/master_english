@@ -19,6 +19,7 @@ export function ConfirmSubmit({
   message,
   confirmLabel = "Удалить",
   danger = true,
+  disabled = false,
 }: {
   children: React.ReactNode;
   className?: string;
@@ -29,6 +30,7 @@ export function ConfirmSubmit({
   message: string;
   confirmLabel?: string;
   danger?: boolean;
+  disabled?: boolean;
 }) {
   const button = useRef<HTMLButtonElement>(null);
   const [asking, setAsking] = useState(false);
@@ -55,7 +57,7 @@ export function ConfirmSubmit({
       <button
         ref={button}
         type="submit"
-        disabled={pending}
+        disabled={pending || disabled}
         onClick={(event) => {
           // Первое нажатие только открывает вопрос; отправит нас submit()
           if (asking) return;

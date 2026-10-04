@@ -317,19 +317,28 @@ export function HomeworkRunner({
             )}
 
             {submitted ? null : (
-              <button
-                type="button"
-                disabled={answered === 0 && visible.length > 0}
-                onClick={() =>
-                  startTransition(async () => {
-                    await submitHomeworkAction(homeworkId);
-                    router.refresh();
-                  })
-                }
-                className="btn-primary btn-sm"
+              <form
+                action={async () => {
+                  await submitHomeworkAction(homeworkId);
+                  router.refresh();
+                }}
               >
-                Отправить на проверку
-              </button>
+                <ConfirmSubmit
+                  className="btn-primary btn-sm"
+                  pendingLabel="Отправляем…"
+                  disabled={answered === 0 && visible.length > 0}
+                  danger={false}
+                  title="Отправить работу на проверку?"
+                  message={
+                    answered < visible.length
+                      ? `Выполнено ${answered} из ${visible.length} заданий. Преподаватель получит работу как есть — убедитесь, что ничего не забыли.`
+                      : "Преподаватель получит вашу работу и увидит все ответы."
+                  }
+                  confirmLabel="Отправить"
+                >
+                  Отправить на проверку
+                </ConfirmSubmit>
+              </form>
             )}
 
             <form
