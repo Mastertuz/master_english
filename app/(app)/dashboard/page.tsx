@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { newComments } from "@/lib/notifications";
+import { newComments, newSubmissions } from "@/lib/notifications";
 import { prisma } from "@/lib/prisma";
 import { requireUser } from "@/lib/session";
 
@@ -48,6 +48,7 @@ export default async function DashboardPage() {
   const scope = isAdmin ? {} : { assignments: { some: { userId: user.id } } };
 
   const comments = isAdmin ? [] : await newComments(user.id);
+  const submissions = isAdmin ? await newSubmissions() : [];
 
   const [lessons, words, recent, pendingHomework] = await Promise.all([
     prisma.lesson.count({ where: scope }),
@@ -101,6 +102,37 @@ export default async function DashboardPage() {
             : "Выберите, чем займётесь сегодня."}
         </p>
       </div>
+
+      {submissions.length > 0 ? (
+        <section className="card border-brand-200 bg-brand-50/70 p-5">
+          <h2 className="text-[15px] font-semibold text-ink-900">
+            📥 Ученики отправили домашние работы ({submissions.length})
+          </h2>
+
+          <div className="mt-3 space-y-2">
+            {submissions.map((notice) => (
+              <Link
+                key={notice.id}
+                href={notice.href}
+                prefetch
+                className="block rounded-xl border border-brand-200 bg-white px-4 py-3 transition hover:border-brand-300"
+              >
+                <p className="text-[12.5px] text-ink-400">
+                  {notice.at.toLocaleString("ru-RU", {
+                    day: "numeric",
+                    month: "long",
+                    hour: "2-digit",
+                    minute: "2-digit",
+                  })}
+                </p>
+                <p className="mt-0.5 text-[14.5px] text-ink-800">
+                  <b>{notice.student}</b> · {notice.title}
+                </p>
+              </Link>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       {comments.length > 0 ? (
         <section className="card border-amber-200 bg-amber-50/70 p-5">

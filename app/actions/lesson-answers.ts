@@ -199,6 +199,20 @@ export async function markHomeworkCommentsSeenAction(
   });
 }
 
+/** Преподаватель открыл отправленную работу ученика — она перестаёт быть новой */
+export async function markSubmissionSeenAction(
+  homeworkId: string,
+  studentId: string,
+): Promise<void> {
+  const user = await getCurrentUser();
+  if (user?.role !== "ADMIN") return;
+
+  await prisma.homeworkSubmission.updateMany({
+    where: { homeworkId, userId: studentId, seenByTeacherAt: null },
+    data: { seenByTeacherAt: new Date() },
+  });
+}
+
 /** Формулировка задания по ключу ответа — для письма и списка уведомлений */
 function findPrompt(blocks: unknown, key: string): string {
   for (const [blockIndex, block] of asBlocks(blocks).entries()) {

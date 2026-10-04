@@ -1,6 +1,6 @@
 import { SelectionTranslator } from "@/components/dictionary/SelectionTranslator";
 import { Header } from "@/components/layout/Header";
-import { countNewComments } from "@/lib/notifications";
+import { countNewComments, countNewSubmissions } from "@/lib/notifications";
 import { requireUser } from "@/lib/session";
 
 export default async function AppLayout({
@@ -10,13 +10,16 @@ export default async function AppLayout({
 }) {
   const user = await requireUser();
 
-  // Преподавателю сообщать не о чем: комментарии пишет он сам
-  const newComments =
-    user.role === "ADMIN" ? 0 : await countNewComments(user.id);
+  // Ученику — новые комментарии преподавателя, преподавателю — работы,
+  // которые ученики отправили на проверку
+  const notices =
+    user.role === "ADMIN"
+      ? await countNewSubmissions()
+      : await countNewComments(user.id);
 
   return (
     <div className="min-h-dvh">
-      <Header user={user} newComments={newComments} />
+      <Header user={user} notices={notices} />
       <main className="mx-auto max-w-6xl px-5 py-8">{children}</main>
       {/* Выделил слово в любом тексте — получил перевод и кнопку «в словарь» */}
       <SelectionTranslator />

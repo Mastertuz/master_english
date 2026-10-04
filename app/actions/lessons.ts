@@ -377,10 +377,13 @@ export async function submitHomeworkAction(homeworkId: string): Promise<void> {
   });
   if (!assigned && me.role !== "ADMIN") return;
 
+  // Работу самого преподавателя новой не считаем: сообщать ему не о чем
+  const seenByTeacherAt = me.role === "ADMIN" ? new Date() : null;
+
   await prisma.homeworkSubmission.upsert({
     where: { homeworkId_userId: { homeworkId, userId: me.id } },
-    create: { homeworkId, userId: me.id },
-    update: { submittedAt: new Date() },
+    create: { homeworkId, userId: me.id, seenByTeacherAt },
+    update: { submittedAt: new Date(), seenByTeacherAt },
   });
 
   revalidatePath(`/homework/${homeworkId}`);

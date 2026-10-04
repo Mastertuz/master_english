@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { logoutAction } from "@/app/actions/auth";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
@@ -30,18 +30,31 @@ function initialsOf(user: { firstName: string; lastName: string }) {
 
 export function Header({
   user,
-  newComments = 0,
+  notices = 0,
 }: {
   user: SessionUser;
-  /** Сколько новых комментариев преподавателя ждёт ученика */
-  newComments?: number;
+  /** Новое для пользователя: комментарии преподавателя у ученика, отправленные работы у преподавателя */
+  notices?: number;
 }) {
   const pathname = usePathname();
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
+  const router = useRouter();
   const isAdmin = user.role === "ADMIN";
+
+  // Ученик мог отправить работу, пока преподаватель сидит на странице:
+  // раз в минуту обновляем шапку, чтобы значок появился без перезагрузки
+  useEffect(() => {
+    if (!isAdmin) return;
+
+    const timer = setInterval(() => {
+      if (document.visibilityState === "visible") router.refresh();
+    }, 60_000);
+    return () => clearInterval(timer);
+  }, [isAdmin, router]);
+
   const items = [
     ...NAV,
     ...(isAdmin || user.ogeAccess ? [OGE_NAV] : []),
@@ -106,7 +119,7 @@ export function Header({
               <span className="absolute inset-x-0 top-0 h-0.5 rounded bg-current" />
               <span className="absolute inset-x-0 top-1.5 h-0.5 rounded bg-current" />
               <span className="absolute inset-x-0 top-3 h-0.5 rounded bg-current" />
-              {newComments > 0 ? (
+              {notices > 0 ? (
                 <span className="absolute -right-1.5 -top-1.5 h-2 w-2 rounded-full bg-rose-500 ring-2 ring-white" />
               ) : null}
             </span>
@@ -142,8 +155,8 @@ export function Header({
                   {item.icon}
                 </span>
                 {item.label}
-                {item.href === "/dashboard" && newComments > 0 ? (
-                  <Badge count={newComments} />
+                {item.href === "/dashboard" && notices > 0 ? (
+                  <Badge count={notices} />
                 ) : null}
               </Link>
             ))}
@@ -264,8 +277,8 @@ export function Header({
                   {item.icon}
                 </span>
                 {item.label}
-                {item.href === "/dashboard" && newComments > 0 ? (
-                  <Badge count={newComments} />
+                {item.href === "/dashboard" && notices > 0 ? (
+                  <Badge count={notices} />
                 ) : null}
               </Link>
             ))}
@@ -304,7 +317,7 @@ export function Header({
   );
 }
 
-/** Число новых комментариев рядом с пунктом меню */
+/** Число новых уведомлений рядом с пунктом меню */
 function Badge({ count }: { count: number }) {
   return (
     <span className="ml-1 inline-flex h-[18px] min-w-[18px] items-center justify-center rounded-full bg-rose-500 px-1 text-[11px] font-semibold text-white">

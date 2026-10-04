@@ -68,16 +68,18 @@ export default async function HomeworkPage({
   if (!homework) notFound();
   if (!isAdmin && homework.lesson.assignments.length === 0) notFound();
 
-  const submitted = Boolean(
-    await prisma.homeworkSubmission.findUnique({
-      where: { homeworkId_userId: { homeworkId: homework.id, userId: readerId } },
-      select: { id: true },
-    }),
-  );
+  const submission = await prisma.homeworkSubmission.findUnique({
+    where: { homeworkId_userId: { homeworkId: homework.id, userId: readerId } },
+    select: { seenByTeacherAt: true },
+  });
+  const submitted = Boolean(submission);
 
-  // Отметка «комментарий прочитан» — только про свои ответы
+  // Ученику — новые комментарии на его ответах, преподавателю при проверке —
+  // сама отправленная работа
   const unseenComments = student
-    ? 0
+    ? submission && !submission.seenByTeacherAt
+      ? 1
+      : 0
     : homework.tasks.filter(
         (task) => task.answers[0]?.comment && !task.answers[0]?.commentSeenAt,
       ).length;
@@ -149,7 +151,11 @@ export default async function HomeworkPage({
         </div>
       ) : null}
 
-      <SeenOnView homeworkId={homework.id} unseen={unseenComments} />
+      <SeenOnView
+        homeworkId={homework.id}
+        submissionOf={student?.id}
+        unseen={unseenComments}
+      />
 
       {tasks.length === 0 ? (
         <div className="card p-8 text-center text-[14px] text-ink-500">

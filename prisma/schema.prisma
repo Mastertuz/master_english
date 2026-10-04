@@ -214,6 +214,9 @@ model HomeworkSubmission {
   userId      String
   user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   submittedAt DateTime @default(now())
+  /// Когда преподаватель открыл работу; null — работа новая, о ней
+  /// напоминает значок в шапке. Повторная отправка снова делает её новой.
+  seenByTeacherAt DateTime?
 
   @@unique([homeworkId, userId])
   @@index([userId])

@@ -148,3 +148,50 @@ export async function notifyAboutComment(input: {
     );
   }
 }
+
+/* ─────────── Уведомления преподавателю: ученик отправил работу ─────────── */
+
+export type SubmissionNotice = {
+  id: string;
+  /** Работа ученика в режиме проверки */
+  href: string;
+  student: string;
+  title: string;
+  at: Date;
+};
+
+/**
+ * Новые отправленные домашние работы.
+ *
+ * Работа считается новой, пока преподаватель не открыл её на проверку:
+ * отметку ставит сама страница. Повторная отправка снова делает её новой.
+ */
+export async function newSubmissions(): Promise<SubmissionNotice[]> {
+  const rows = await prisma.homeworkSubmission.findMany({
+    where: { seenByTeacherAt: null },
+    orderBy: { submittedAt: "desc" },
+    take: 20,
+    select: {
+      id: true,
+      userId: true,
+      submittedAt: true,
+      user: { select: { firstName: true, lastName: true } },
+      homework: {
+        select: { id: true, title: true, lesson: { select: { number: true } } },
+      },
+    },
+  });
+
+  return rows.map((row) => ({
+    id: row.id,
+    href: `/homework/${row.homework.id}?student=${row.userId}`,
+    student: `${row.user.firstName} ${row.user.lastName}`.trim(),
+    title: `Урок №${row.homework.lesson.number} · ${row.homework.title}`,
+    at: row.submittedAt,
+  }));
+}
+
+/** Сколько новых работ ждёт преподавателя */
+export async function countNewSubmissions(): Promise<number> {
+  return prisma.homeworkSubmission.count({ where: { seenByTeacherAt: null } });
+}
