@@ -210,6 +210,8 @@ app/
 components/                    UI: шапка с боковым меню, формы, тренажёр, плеер
 lib/                           prisma, сессии, пароли, словарь, речь, контент урока
 content/lessons/               исходные HTML-уроки и lessons.json
+                               lesson5-extra-blocks.json — копия блоков и заданий урока №5
+                               (глаголы состояния, чтение, транскрипция); живут в базе, не в HTML
 books/                         учебники (PDF)
 public/audio/  public/uploads/ аудио уроков и загруженные файлы
 prisma/schema.prisma           схема БД

@@ -1,0 +1,1131 @@
+[
+  {
+    "after": "Правило 1: Past Continuous — что происходило в тот момент",
+    "block": {
+      "kind": "rule",
+      "text": "",
+      "rules": [
+        "С глаголами состояния не используем ни Present Continuous, ни Past Continuous, ни другие продолженные времена. ✗ I was knowing the answer. ✓ I knew the answer.",
+        "Прошлое состояние — это Past Simple: The room was small. I loved the view. We didn't understand the guide. Did you like the hotel?",
+        "Отрицание и вопрос — через did / didn't: I didn't want to leave. Did you remember your passport? Вариант «Were you wanting…?» неверен.",
+        "Состояние, которое длилось долго, тоже остаётся в Past Simple: I felt terrible all day. We lived in Spain for five years. Слова all day, for a week не требуют Continuous.",
+        "have to (должен) и have got (иметь) тоже не используются в Continuous: ✗ I was having to wake up early. ✓ I had to wake up early."
+      ],
+      "tasks": [
+        {
+          "w": 0,
+          "x": -1,
+          "y": -1,
+          "id": "2a-sv1-1",
+          "kind": "choice",
+          "answer": "loved",
+          "prompt": "Выберите верный вариант: I ___ the hotel — it was perfect.",
+          "options": [
+            "loved",
+            "was loving",
+            "was love",
+            "am loving"
+          ],
+          "explanation": "love — глагол состояния, в Continuous не ставится. О прошлом чувстве говорим Past Simple: loved.",
+          "optionValues": [
+            "loved",
+            "was loving",
+            "was love",
+            "am loving"
+          ]
+        },
+        {
+          "w": 0,
+          "x": -1,
+          "y": -1,
+          "id": "2a-sv1-2",
+          "kind": "choice",
+          "answer": "I knew the answer.",
+          "prompt": "Выберите верное предложение.",
+          "options": [
+            "I knew the answer.",
+            "I was knowing the answer.",
+            "I was know the answer.",
+            "I knowing the answer."
+          ],
+          "explanation": "know — состояние: Past Simple knew. Формы was knowing не существует.",
+          "optionValues": [
+            "I knew the answer.",
+            "I was knowing the answer.",
+            "I was know the answer.",
+            "I knowing the answer."
+          ]
+        },
+        {
+          "w": 0,
+          "x": -1,
+          "y": -1,
+          "id": "2a-sv1-3",
+          "kind": "fill",
+          "answer": "wanted",
+          "prompt": "Впишите глагол в Past Simple (want): We ___ to stay longer, but our flight was at 6 am.",
+          "options": [],
+          "explanation": "want — глагол состояния (желание), поэтому Past Simple: wanted.",
+          "optionValues": []
+        },
+        {
+          "w": 0,
+          "x": -1,
+          "y": -1,
+          "id": "2a-sv1-4",
+          "kind": "fill",
+          "answer": "didn't understand, did not understand",
+          "prompt": "Впишите отрицание в Past Simple (understand): I ___ the guide because he spoke too fast.",
+          "options": [],
+          "explanation": "understand — состояние. Отрицание строим через didn't + начальная форма: didn't understand.",
+          "optionValues": []
+        },
+        {
+          "w": 0,
+          "x": -1,
+          "y": -1,
+          "id": "2a-sv1-5",
+          "kind": "choice",
+          "answer": "Did you like the beach?",
+          "prompt": "Какой вопрос верен?",
+          "options": [
+            "Did you like the beach?",
+            "Were you liking the beach?",
+            "Was you like the beach?",
+            "Did you liked the beach?"
+          ],
+          "explanation": "Вопрос о состоянии — через did: Did you like…? После did глагол в начальной форме.",
+          "optionValues": [
+            "Did you like the beach?",
+            "Were you liking the beach?",
+            "Was you like the beach?",
+            "Did you liked the beach?"
+          ]
+        },
+        {
+          "w": 0,
+          "x": -1,
+          "y": -1,
+          "id": "2a-sv1-6",
+          "kind": "choice",
+          "answer": "belong",
+          "prompt": "Какой из этих глаголов обычно НЕ используется в Continuous?",
+          "options": [
+            "belong",
+            "swim",
+            "cook",
+            "read"
+          ],
+          "explanation": "belong (принадлежать) — состояние. Swim, cook, read — действия, их можно показать в процессе.",
+          "optionValues": [
+            "belong",
+            "swim",
+            "cook",
+            "read"
+          ]
+        }
+      ],
+      "title": "Глаголы состояния: что это и почему у них нет Continuous",
+      "vocab": [],
+      "hidden": false,
+      "sample": "",
+      "prompts": [
+        "like",
+        "love",
+        "hate",
+        "prefer",
+        "want",
+        "need",
+        "wish",
+        "know",
+        "understand",
+        "believe",
+        "remember",
+        "forget",
+        "mean",
+        "doubt",
+        "realise",
+        "think (= считать)",
+        "have (= иметь)",
+        "own",
+        "belong to",
+        "contain",
+        "include",
+        "see",
+        "hear",
+        "smell",
+        "taste",
+        "feel (= по ощущению)",
+        "look (= выглядеть)",
+        "seem",
+        "sound",
+        "be",
+        "cost",
+        "weigh",
+        "matter",
+        "depend on",
+        "fit",
+        "suit"
+      ],
+      "audioUrl": "",
+      "examples": [],
+      "formulas": [
+        "Группы глаголов состояния\n\n• Чувства и желания: like, love, hate, prefer, want, need, wish.\n• Мысли и знание: know, understand, believe, remember, forget, mean, doubt, realise, think в значении «считать».\n• Обладание и состав: have (иметь), own, belong to, contain, include.\n• Восприятие и впечатление: see, hear, smell, taste, feel, look (выглядеть), seem, sound.\n• Состояние и свойства: be, cost, weigh, matter, depend on, fit, suit.",
+        "Быстрая проверка\n\nЗадайте вопрос What was he doing? — на него отвечают действием: He was swimming. He was reading.\nСостояние так не отвечает: «What was he doing? — He was knowing the answer» звучит абсурдно. Если глагол так «не отвечает» — это состояние, и нужен Past Simple."
+      ],
+      "imageUrl": "",
+      "videoUrl": "",
+      "audioTitle": "",
+      "paragraphs": [
+        "Глаголы действия (action verbs) описывают то, что мы делаем: run, swim, read, cook. Глаголы состояния (stative verbs) описывают то, что мы чувствуем, знаем, имеем или чем являемся: love, know, want, have, be. Состояние — это не процесс, который идёт и вот-вот закончится, поэтому показывать его «в процессе» (Continuous) не нужно.",
+        "Рассказывая о поездке, мы постоянно их используем: The hotel was great, I didn't like the food, we knew nobody there, I wanted to go home. Все эти глаголы — в Past Simple, хотя состояние могло длиться целую неделю."
+      ],
+      "transcript": "",
+      "videoTitle": "",
+      "subtitlesUrl": ""
+    }
+  },
+  {
+    "after": "Глаголы состояния: что это и почему у них нет Continuous",
+    "block": {
+      "kind": "rule",
+      "text": "",
+      "rules": [
+        "Постепенное изменение или развитие: в живой речи возможен Continuous с understand и like — I was understanding more and more every week; I was liking the course more and more. Для экзаменов безопаснее Past Simple: I understood more and more.",
+        "Вежливые просьбы и осторожные высказывания: I was wondering if you could help me. I was hoping to speak to the manager. Здесь Past Continuous делает фразу мягче — это устойчивая модель, её не нужно путать с обычным правилом.",
+        "enjoy — не глагол состояния, поэтому I was enjoying the party — правильно. А вот like в этом значении лучше оставить в Past Simple: I liked the party.",
+        "В разговорной речи иногда слышно «I'm loving it» — это эмоция, которую хотят подчеркнуть. В заданиях и на экзаменах выбирайте Simple: I loved it."
+      ],
+      "tasks": [
+        {
+          "w": 0,
+          "x": -1,
+          "y": -1,
+          "id": "2a-sv2-1",
+          "kind": "choice",
+          "answer": "was thinking",
+          "prompt": "Выберите вариант: I ___ about our trip when Tom called.",
+          "options": [
+            "was thinking",
+            "thought",
+            "was think",
+            "am thinking"
+          ],
+          "explanation": "Здесь think — «размышлять», то есть процесс, и Continuous допустим. Это не «считать».",
+          "optionValues": [
+            "was thinking",
+            "thought",
+            "was think",
+            "am thinking"
+          ]
+        },
+        {
+          "w": 0,
+          "x": -1,
+          "y": -1,
+          "id": "2a-sv2-2",
+          "kind": "choice",
+          "answer": "thought",
+          "prompt": "Выберите вариант: I ___ the beach was too crowded, so we left.",
+          "options": [
+            "thought",
+            "was thinking",
+            "think",
+            "thinking"
+          ],
+          "explanation": "think в значении «считать, иметь мнение» — состояние, поэтому Past Simple: thought.",
+          "optionValues": [
+            "thought",
+            "was thinking",
+            "think",
+            "thinking"
+          ]
+        },
+        {
+          "w": 0,
+          "x": -1,
+          "y": -1,
+          "id": "2a-sv2-3",
+          "kind": "fill",
+          "answer": "were having",
+          "prompt": "Впишите have в нужной форме: We ___ breakfast on the terrace when it started to rain.",
+          "options": [],
+          "explanation": "have breakfast — это действие, а не «иметь», поэтому можно Past Continuous: were having.",
+          "optionValues": []
+        },
+        {
+          "w": 0,
+          "x": -1,
+          "y": -1,
+          "id": "2a-sv2-4",
+          "kind": "choice",
+          "answer": "had",
+          "prompt": "Выберите вариант: We ___ a very small room at the hotel.",
+          "options": [
+            "had",
+            "were having",
+            "have",
+            "are having"
+          ],
+          "explanation": "have в значении «иметь» — состояние: Past Simple had.",
+          "optionValues": [
+            "had",
+            "were having",
+            "have",
+            "are having"
+          ]
+        },
+        {
+          "w": 0,
+          "x": -1,
+          "y": -1,
+          "id": "2a-sv2-5",
+          "kind": "choice",
+          "answer": "tasted",
+          "prompt": "Выберите вариант: The soup ___ awful, so we left the restaurant.",
+          "options": [
+            "tasted",
+            "was tasting",
+            "taste",
+            "were tasting"
+          ],
+          "explanation": "Здесь taste — «иметь вкус», состояние: Past Simple tasted.",
+          "optionValues": [
+            "tasted",
+            "was tasting",
+            "taste",
+            "were tasting"
+          ]
+        },
+        {
+          "w": 0,
+          "x": -1,
+          "y": -1,
+          "id": "2a-sv2-6",
+          "kind": "choice",
+          "answer": "действие в процессе — повар пробовал суп",
+          "prompt": "Что значит предложение The chef was tasting the soup?",
+          "options": [
+            "действие в процессе — повар пробовал суп",
+            "состояние — суп имел вкус",
+            "постоянное свойство повара",
+            "вежливая просьба"
+          ],
+          "explanation": "taste как «пробовать» — глагол действия, поэтому Continuous возможен. Про вкус самого супа сказали бы The soup tasted salty.",
+          "optionValues": [
+            "действие в процессе — повар пробовал суп",
+            "состояние — суп имел вкус",
+            "постоянное свойство повара",
+            "вежливая просьба"
+          ]
+        }
+      ],
+      "title": "Глаголы состояния: исключения и глаголы с двумя значениями",
+      "vocab": [],
+      "hidden": false,
+      "sample": "",
+      "prompts": [],
+      "audioUrl": "",
+      "examples": [
+        "I was thinking about the trip when Tom asked me, “What did you think of the hotel?” — первое think: размышление (Continuous), второе: мнение (Simple).",
+        "We were having lunch when the guide arrived. We had a very small room at the hotel. — have как действие и have как «иметь»."
+      ],
+      "formulas": [
+        "Один глагол — два значения\n\nhave\n  состояние (иметь): We had a big room with a balcony. — Continuous нельзя\n  действие (завтракать, принимать душ, проводить время): We were having breakfast when the guide arrived. — можно\n\nthink\n  состояние (считать, иметь мнение): I thought the beach was too crowded.\n  действие (размышлять): I was thinking about our holiday when you called.\n\nsee\n  состояние (видеть): I saw a dolphin from the boat.\n  действие (встречаться, посещать): She was seeing the dentist at 5 pm.\n\nlook\n  состояние (выглядеть): The hotel looked fantastic.\n  действие (смотреть на): He was looking at the map.",
+        "Ещё примеры пар\n\ntaste / smell / feel\n  состояние: The soup tasted awful. The room smelled of smoke. The water felt cold.\n  действие: The chef was tasting the soup. She was smelling the flowers. The doctor was feeling his arm.\n\nweigh\n  состояние: My suitcase weighed 25 kilos.\n  действие: The clerk was weighing my suitcase.\n\nbe\n  состояние (какой человек): He was rude. — он грубый человек\n  поведение «сейчас, на этот момент»: He was being rude to the waiter. — он вёл себя грубо"
+      ],
+      "imageUrl": "",
+      "videoUrl": "",
+      "audioTitle": "",
+      "paragraphs": [
+        "Многие глаголы из списка имеют два значения: одно — состояние, другое — настоящее действие. Во втором значении Continuous разрешён. Поэтому главное правило — смотреть не на слово, а на значение."
+      ],
+      "transcript": "",
+      "videoTitle": "",
+      "subtitlesUrl": ""
+    }
+  },
+  {
+    "after": "Правило 2: when и while — прерванное действие",
+    "block": {
+      "kind": "rule",
+      "text": "",
+      "rules": [
+        "Не ставьте глагол состояния в Past Continuous только потому, что в предложении есть while: While we were waiting, I wanted to go home — wanted остаётся в Past Simple.",
+        "When I was young, I loved the sea. Здесь was — это Past Simple глагола be, а не Past Continuous (формы was loving нет).",
+        "Если у глагола два значения, определите, какое из них в предложении. have a shower, have lunch, think about (размышлять) — это действия, им подходит Continuous: I was having a shower. have a car, think that (считать) — состояния, только Simple: I had a car.",
+        "Ловушка в заданиях на выбор времени: сначала определите, глагол состояния это или нет. Если да — Past Simple, и подсказки когда/пока на выбор не влияют."
+      ],
+      "tasks": [
+        {
+          "w": 0,
+          "x": -1,
+          "y": -1,
+          "id": "2a-sv3-1",
+          "kind": "fill",
+          "answer": "was walking",
+          "prompt": "Впишите глагол в нужном времени (walk): I ___ along the beach when I realised I didn't have my phone.",
+          "options": [],
+          "explanation": "Длинное действие, которое прервал момент осознания: Past Continuous, was walking.",
+          "optionValues": []
+        },
+        {
+          "w": 0,
+          "x": -1,
+          "y": -1,
+          "id": "2a-sv3-2",
+          "kind": "fill",
+          "answer": "knew",
+          "prompt": "Впишите глагол в нужном времени (know): While we were sitting in the café, I ___ something was wrong.",
+          "options": [],
+          "explanation": "know — состояние. Даже рядом с while оно остаётся в Past Simple: knew.",
+          "optionValues": []
+        },
+        {
+          "w": 0,
+          "x": -1,
+          "y": -1,
+          "id": "2a-sv3-3",
+          "kind": "choice",
+          "answer": "didn't know",
+          "prompt": "Выберите вариант: She was waiting for the bus and she ___ what to do.",
+          "options": [
+            "didn't know",
+            "wasn't knowing",
+            "didn't knew",
+            "not knew"
+          ],
+          "explanation": "Фон — Past Continuous (was waiting), а состояние — Past Simple: didn't know.",
+          "optionValues": [
+            "didn't know",
+            "wasn't knowing",
+            "didn't knew",
+            "not knew"
+          ]
+        },
+        {
+          "w": 0,
+          "x": -1,
+          "y": -1,
+          "id": "2a-sv3-4",
+          "kind": "fill",
+          "answer": "was reading",
+          "prompt": "Впишите глагол в нужном времени (read): I ___ on the beach and I didn't notice the storm.",
+          "options": [],
+          "explanation": "Фон рассказа, процесс — Past Continuous: was reading. Событие didn't notice — Past Simple.",
+          "optionValues": []
+        },
+        {
+          "w": 0,
+          "x": -1,
+          "y": -1,
+          "id": "2a-sv3-5",
+          "kind": "choice",
+          "answer": "wanted",
+          "prompt": "Выберите вариант: While we were waiting at the airport, I ___ to go home.",
+          "options": [
+            "wanted",
+            "was wanting",
+            "want",
+            "wasn't wanting"
+          ],
+          "explanation": "want — состояние. Подсказка while не меняет это: wanted.",
+          "optionValues": [
+            "wanted",
+            "was wanting",
+            "want",
+            "wasn't wanting"
+          ]
+        },
+        {
+          "w": 0,
+          "x": -1,
+          "y": -1,
+          "id": "2a-sv3-6",
+          "kind": "choice",
+          "answer": "I was owning a small flat in Madrid.",
+          "prompt": "В каком предложении глагол состояния стоит НЕВЕРНО?",
+          "options": [
+            "I was owning a small flat in Madrid.",
+            "I was cooking dinner when she arrived.",
+            "We were walking home when it started to rain.",
+            "He was reading the menu."
+          ],
+          "explanation": "own — глагол состояния, нужен Past Simple: I owned a small flat. Остальные глаголы — действия.",
+          "optionValues": [
+            "I was owning a small flat in Madrid.",
+            "I was cooking dinner when she arrived.",
+            "We were walking home when it started to rain.",
+            "He was reading the menu."
+          ]
+        }
+      ],
+      "title": "Глаголы состояния, Past Simple и Past Continuous: как выбрать время",
+      "vocab": [],
+      "hidden": false,
+      "sample": "",
+      "prompts": [],
+      "audioUrl": "",
+      "examples": [
+        "The chef was tasting the soup. It tasted salty. — первое: действие в процессе, второе: впечатление.",
+        "I was reading on the beach and I didn't notice the storm. — was reading: фон (Continuous); didn't notice: событие (Simple)."
+      ],
+      "formulas": [
+        "Схема выбора времени в рассказе\n\n1. Событие, короткое действие, цепочка действий → Past Simple\n   He stood up, fell over and tried again.\n\n2. Действие в процессе в момент прошлого, фон рассказа → Past Continuous\n   It was raining and people were swimming in the sea.\n\n3. Состояние (чувство, мнение, обладание, впечатление) → Past Simple\n   I was hungry. I wanted a coffee. We liked the hotel.\n\n4. Глагол с двумя значениями → смотрим на смысл: действие — можно Continuous, состояние — только Simple.",
+        "Состояние и действие в одном предложении\n\nI was walking along the beach when I realised I didn't have my phone.\n    walking — длинное действие (Continuous); realised — момент (Simple); didn't have — состояние (Simple).\n\nWhile we were sitting in the café, I knew something was wrong.\n    sitting — процесс (Continuous); knew и was — состояния (Simple).\n\nShe was waiting for the bus and she didn't know what to do.\n    waiting — процесс (Continuous); didn't know — состояние (Simple)."
+      ],
+      "imageUrl": "",
+      "videoUrl": "",
+      "audioTitle": "",
+      "paragraphs": [
+        "Вспомним главную идею урока: Past Continuous рисует фон и процесс, а Past Simple рассказывает о событиях. Глагол состояния — не событие и не процесс, а характеристика момента: он почти всегда оказывается в Past Simple, даже если рядом стоят when или while."
+      ],
+      "transcript": "",
+      "videoTitle": "",
+      "subtitlesUrl": ""
+    }
+  },
+  {
+    "after": "Лексика: tourism",
+    "block": {
+      "kind": "rule",
+      "text": "",
+      "rules": [
+        "Слог — это один гласный звук с окружающими согласными. Сколько гласных звуков, столько и слогов: ho-tel (2), air-port (2), ad-ven-ture (3).",
+        "Ударение: в двусложных существительных и прилагательных чаще падает на первый слог (ˈairport, ˈholiday, ˈbeautiful), в двусложных глаголах — на второй (reˈlax, deˈcide, arˈrive). Исключения нужно запоминать: hoˈtel.",
+        "В безударных слогах гласная чаще всего превращается в короткое неясное /ə/ (шва): about /əˈbaʊt/, teacher /ˈtiːtʃər/, family /ˈfæməli/, banana /bəˈnænə/.",
+        "Если слово не подчиняется правилу — это исключение, которое нужно выучить: have /hæv/ (а не /heɪv/), come /kʌm/, love /lʌv/, give /ɡɪv/, some /sʌm/, put /pʊt/."
+      ],
+      "tasks": [
+        {
+          "w": 0,
+          "x": -1,
+          "y": -1,
+          "id": "2a-rd1-1",
+          "kind": "choice",
+          "answer": "открытый - гласная как в алфавите",
+          "prompt": "Слово go: какой это слог и как читается гласная?",
+          "options": [
+            "открытый - гласная как в алфавите",
+            "закрытый - краткий звук",
+            "открытый - краткий звук",
+            "закрытый - как в алфавите"
+          ],
+          "explanation": "Слог оканчивается на гласную, поэтому она читается как в алфавите: go /ɡoʊ/.",
+          "optionValues": [
+            "открытый - гласная как в алфавите",
+            "закрытый - краткий звук",
+            "открытый - краткий звук",
+            "закрытый - как в алфавите"
+          ]
+        },
+        {
+          "w": 0,
+          "x": -1,
+          "y": -1,
+          "id": "2a-rd1-2",
+          "kind": "choice",
+          "answer": "bite",
+          "prompt": "Какое слово читается с долгим /aɪ/, как в алфавите?",
+          "options": [
+            "bite",
+            "bit",
+            "bin",
+            "big"
+          ],
+          "explanation": "В слове bite после гласной стоит немая e: i читается /aɪ/. В bit, bin, big слог закрытый — звук краткий.",
+          "optionValues": [
+            "bite",
+            "bit",
+            "bin",
+            "big"
+          ]
+        },
+        {
+          "w": 0,
+          "x": -1,
+          "y": -1,
+          "id": "2a-rd1-3",
+          "kind": "choice",
+          "answer": "чтобы гласная осталась краткой",
+          "prompt": "Почему в слове hopping две буквы p?",
+          "options": [
+            "чтобы гласная осталась краткой",
+            "чтобы гласная стала долгой",
+            "это ошибка написания",
+            "так пишутся все слова на -ing"
+          ],
+          "explanation": "Удвоенная согласная закрывает слог: hopping /ˈhɑːpɪŋ/. Без удвоения было бы hoping /ˈhoʊpɪŋ/ — «надеясь».",
+          "optionValues": [
+            "чтобы гласная осталась краткой",
+            "чтобы гласная стала долгой",
+            "это ошибка написания",
+            "так пишутся все слова на -ing"
+          ]
+        },
+        {
+          "w": 0,
+          "x": -1,
+          "y": -1,
+          "id": "2a-rd1-4",
+          "kind": "choice",
+          "answer": "на втором слоге",
+          "prompt": "На каком слоге ударение в слове hotel?",
+          "options": [
+            "на втором слоге",
+            "на первом слоге",
+            "на третьем слоге",
+            "ударения нет"
+          ],
+          "explanation": "hotel /hoʊˈtel/ — исключение из правила для существительных: ударение на втором слоге.",
+          "optionValues": [
+            "на втором слоге",
+            "на первом слоге",
+            "на третьем слоге",
+            "ударения нет"
+          ]
+        },
+        {
+          "w": 0,
+          "x": -1,
+          "y": -1,
+          "id": "2a-rd1-5",
+          "kind": "fill",
+          "answer": "bite",
+          "prompt": "Продолжите ряд: hat — hate, pet — Pete, bit — ___ (долгое /aɪ/ благодаря немой e).",
+          "options": [],
+          "explanation": "bit /bɪt/ — bite /baɪt/: добавили немую e, и гласная стала читаться как в алфавите.",
+          "optionValues": []
+        },
+        {
+          "w": 0,
+          "x": -1,
+          "y": -1,
+          "id": "2a-rd1-6",
+          "kind": "choice",
+          "answer": "have",
+          "prompt": "Какое слово НЕ подчиняется правилу немой e (гласная читается кратко)?",
+          "options": [
+            "have",
+            "make",
+            "time",
+            "home"
+          ],
+          "explanation": "have /hæv/ — исключение: несмотря на немую e, гласная краткая. Такие слова (give, come, love) учим отдельно.",
+          "optionValues": [
+            "have",
+            "make",
+            "time",
+            "home"
+          ]
+        }
+      ],
+      "title": "Как читать слова: слоги и гласные",
+      "vocab": [],
+      "hidden": false,
+      "sample": "",
+      "prompts": [],
+      "audioUrl": "",
+      "examples": [],
+      "formulas": [
+        "Четыре типа чтения ударной гласной\n\nТип 1 — открытый слог (гласная на конце): читается как в алфавите.\n    no /noʊ/ · me /miː/ · hi /haɪ/ · go · she · my\n\nТип 2 — закрытый слог (гласная + согласная): краткий звук.\n    cat /kæt/ · bed /bed/ · sit /sɪt/ · hot /hɑːt/ · cup /kʌp/\n\nТип 3 — гласная + согласная + немое e: гласная читается как в алфавите, e не звучит.\n    make /meɪk/ · these /ðiːz/ · time /taɪm/ · home /hoʊm/ · use /juːz/\n\nТип 4 — гласная + r: звук меняется.\n    ar /ɑːr/: car, park · or /ɔːr/: for, airport · er, ir, ur /ɜːr/: her, bird, turn",
+        "Пары, где всё решает немая e\n\nhat /hæt/ — hate /heɪt/ · pet /pet/ — Pete /piːt/ · bit /bɪt/ — bite /baɪt/\nnot /nɑːt/ — note /noʊt/ · cut /kʌt/ — cute /kjuːt/ · tub /tʌb/ — tube /tuːb/",
+        "Удвоенная согласная = краткая гласная\n\nhop → hopping /ˈhɑːpɪŋ/ (закрытый слог, краткий звук)\nhope → hoping /ˈhoʊpɪŋ/ (немая e пропала, гласная осталась долгой)\nstop → stopped · begin → beginning · plan → planned\nЭто же правило объясняет, почему при добавлении -ing и -ed согласная иногда удваивается."
+      ],
+      "imageUrl": "",
+      "videoUrl": "",
+      "audioTitle": "",
+      "paragraphs": [
+        "Английское написание и произношение часто не совпадают, но у чтения есть система. Сначала смотрим, какой перед нами слог — открытый или закрытый, потом ищем знакомые сочетания букв (следующий блок) и окончания (блок после него). Правила работают в большинстве слов; исключения нужно запоминать как слова."
+      ],
+      "transcript": "",
+      "videoTitle": "",
+      "subtitlesUrl": ""
+    }
+  },
+  {
+    "after": "Как читать слова: слоги и гласные",
+    "block": {
+      "kind": "rule",
+      "text": "",
+      "rules": [
+        "Всегда сначала ищите сочетание, а потом читайте остальные буквы: в слове night нужно увидеть igh, а не читать n-i-g-h-t по буквам.",
+        "Сочетание ough читается по-разному, такие слова учим по одному: through /θruː/, though /ðoʊ/, thought /θɔːt/, enough /ɪˈnʌf/, cough /kɔːf/, tough /tʌf/, bought /bɔːt/.",
+        "Если сомневаетесь, как читается слово, откройте его в словаре приложения: рядом есть значок динамика и транскрипция."
+      ],
+      "tasks": [
+        {
+          "w": 0,
+          "x": -1,
+          "y": -1,
+          "id": "2a-rd2-1",
+          "kind": "choice",
+          "answer": "θ",
+          "prompt": "Какой звук обозначает сочетание th в слове think?",
+          "options": [
+            "θ",
+            "ð",
+            "t",
+            "s"
+          ],
+          "explanation": "В think и three th — глухой звук /θ/ (язык между зубами). Звонкий /ð/ — в this, that, the.",
+          "optionValues": [
+            "θ",
+            "ð",
+            "t",
+            "s"
+          ]
+        },
+        {
+          "w": 0,
+          "x": -1,
+          "y": -1,
+          "id": "2a-rd2-2",
+          "kind": "choice",
+          "answer": "laugh",
+          "prompt": "В каком слове gh читается как /f/?",
+          "options": [
+            "laugh",
+            "night",
+            "daughter",
+            "high"
+          ],
+          "explanation": "laugh /læf/ — исключение. В night, daughter, high сочетание gh не читается.",
+          "optionValues": [
+            "laugh",
+            "night",
+            "daughter",
+            "high"
+          ]
+        },
+        {
+          "w": 0,
+          "x": -1,
+          "y": -1,
+          "id": "2a-rd2-3",
+          "kind": "choice",
+          "answer": "know",
+          "prompt": "В каком слове первая буква НЕ читается?",
+          "options": [
+            "know",
+            "kitchen",
+            "king",
+            "key"
+          ],
+          "explanation": "Сочетание kn в начале слова читается /n/: know /noʊ/, knee, knife. В остальных словах k читается.",
+          "optionValues": [
+            "know",
+            "kitchen",
+            "king",
+            "key"
+          ]
+        },
+        {
+          "w": 0,
+          "x": -1,
+          "y": -1,
+          "id": "2a-rd2-4",
+          "kind": "fill",
+          "answer": "phone",
+          "prompt": "Впишите слово: оно пишется с ph, читается /foʊn/, и им звонят друзьям.",
+          "options": [],
+          "explanation": "ph читается /f/: phone /foʊn/, photo, alphabet.",
+          "optionValues": []
+        },
+        {
+          "w": 0,
+          "x": -1,
+          "y": -1,
+          "id": "2a-rd2-5",
+          "kind": "choice",
+          "answer": "s",
+          "prompt": "Как читается буква c в слове city?",
+          "options": [
+            "s",
+            "k",
+            "ʃ",
+            "tʃ"
+          ],
+          "explanation": "Перед e, i, y буква c читается /s/: city, centre, cycle. В остальных случаях — /k/: cat, cost.",
+          "optionValues": [
+            "s",
+            "k",
+            "ʃ",
+            "tʃ"
+          ]
+        },
+        {
+          "w": 0,
+          "x": -1,
+          "y": -1,
+          "id": "2a-rd2-6",
+          "kind": "choice",
+          "answer": "food",
+          "prompt": "В каком слове oo читается долго, как /uː/?",
+          "options": [
+            "food",
+            "book",
+            "good",
+            "look"
+          ],
+          "explanation": "food /fuːd/ — долгий звук. В book, good, look — краткий /ʊ/.",
+          "optionValues": [
+            "food",
+            "book",
+            "good",
+            "look"
+          ]
+        }
+      ],
+      "title": "Сочетания букв: как читать гласные и согласные пары",
+      "vocab": [],
+      "hidden": false,
+      "sample": "",
+      "prompts": [],
+      "audioUrl": "",
+      "examples": [],
+      "formulas": [
+        "Сочетания гласных\n\nee, ea → /iː/: see, meet, tea, beach\n    ea также /e/: head, bread, breakfast · и /eɪ/: great, break, steak\nai, ay → /eɪ/: rain, wait, day, stay\noa, ow на конце слова → /oʊ/: boat, coat, know, slow, show\nou, ow → /aʊ/: house, out, town, brown, how, now\n    ou также /ʌ/: country, young, double · и /uː/: you, group\noo → /uː/: food, school, pool · краткое /ʊ/: book, look, good, foot\noi, oy → /ɔɪ/: coin, enjoy, boy\nau, aw → /ɔː/: autumn, saw, draw\nie → /iː/: field, piece · /aɪ/ в коротких словах: pie, lie, tie\nei, ey → /eɪ/: eight, they, grey · /iː/: receive, key\nigh → /aɪ/: high, night, light (gh не читается)\nue, ew → /uː/: blue, true, grew",
+        "Согласные пары\n\nth → /θ/ глухой, язык между зубами: think, three, month, thanks\n     → /ð/ звонкий: this, that, the, mother, weather\nsh → /ʃ/: ship, fish, shop\nch → /tʃ/: chair, lunch, beach\n     → /k/ в некоторых словах: school, Christmas, stomach\n     → /ʃ/ во французских словах: machine, chef\nph → /f/: phone, photo, alphabet\nck → /k/: back, black, pocket\nqu → /kw/: question, quick, quiet\nng → /ŋ/ — один звук, g не читается отдельно: sing, long, thing\nnk → /ŋk/: think, bank, thank\nwh → /w/: what, when, where, while (кроме who /huː/ и whole /hoʊl/)",
+        "Немые буквы\n\nk перед n: know, knee, knife · w перед r: write, wrong, wrist\nb после m: climb, bomb, comb · b перед t: doubt\ngh: night, thought, daughter (не читается); но laugh /læf/, enough /ɪˈnʌf/, tough /tʌf/ — здесь gh = /f/\nl: walk, talk, half, could · t: listen, castle · h: hour, honest · g перед n: sign, foreign",
+        "Одна буква — два звука\n\nc → /s/ перед e, i, y: city, centre, cycle · иначе /k/: cat, cost, class\ng → /dʒ/ перед e, i, y: gym, giant, page · иначе /ɡ/: go, game, get\n    исключения: get, give, girl, together\ns → /z/ между гласными: easy, music, please · /ʒ/ в -sion после гласной: vision, television\nti, ci, ssi перед гласной → /ʃ/: station, information, special, permission\nx → /ks/: taxi, six · /ɡz/ перед ударной гласной: exam, example"
+      ],
+      "imageUrl": "",
+      "videoUrl": "",
+      "audioTitle": "",
+      "paragraphs": [
+        "Многие буквы читаются не по отдельности, а группами. Выучив десяток сочетаний, вы сможете правильно прочитать большинство незнакомых слов."
+      ],
+      "transcript": "",
+      "videoTitle": "",
+      "subtitlesUrl": ""
+    }
+  },
+  {
+    "after": "Сочетания букв: как читать гласные и согласные пары",
+    "block": {
+      "kind": "rule",
+      "text": "",
+      "rules": [
+        "Прилагательные из урока: bored /bɔːrd/, tired /ˈtaɪərd/, worried /ˈwɜːrid/, surprised /sərˈpraɪzd/ — окончание -ed читается /d/; а в excited /ɪkˈsaɪtɪd/ и disappointed /ˌdɪsəˈpɔɪntɪd/ после t и d — /ɪd/.",
+        "Прилагательные на -ing: boring /ˈbɔːrɪŋ/, exciting /ɪkˈsaɪtɪŋ/, tiring /ˈtaɪərɪŋ/, amazing /əˈmeɪzɪŋ/ — окончание читается /ɪŋ/, а ударение остаётся на том же слоге, что в основе.",
+        "Слово не меняет ударение при добавлении -ed, -s, -ing, -ly, -ful: ˈvisit → ˈvisited, deˈcide → deˈciding. А при добавлении -tion, -ic, -ity ударение может сместиться: ˈphotograph → phoˈtography.",
+        "Если вы не уверены, как читать окончание, определите последний звук основы (не букву) и сравните с таблицей."
+      ],
+      "tasks": [
+        {
+          "w": 0,
+          "x": -1,
+          "y": -1,
+          "id": "2a-rd3-1",
+          "kind": "choice",
+          "answer": "t",
+          "prompt": "Как читается окончание -ed в слове worked?",
+          "options": [
+            "t",
+            "d",
+            "ɪd",
+            "не читается"
+          ],
+          "explanation": "Перед -ed стоит глухой звук /k/, поэтому окончание глухое: worked /wɜːrkt/.",
+          "optionValues": [
+            "t",
+            "d",
+            "ɪd",
+            "не читается"
+          ]
+        },
+        {
+          "w": 0,
+          "x": -1,
+          "y": -1,
+          "id": "2a-rd3-2",
+          "kind": "choice",
+          "answer": "ɪd",
+          "prompt": "Как читается окончание -ed в слове wanted?",
+          "options": [
+            "ɪd",
+            "t",
+            "d",
+            "не читается"
+          ],
+          "explanation": "После звуков /t/ и /d/ окончание -ed читается как отдельный слог /ɪd/: wanted /ˈwɑːntɪd/.",
+          "optionValues": [
+            "ɪd",
+            "t",
+            "d",
+            "не читается"
+          ]
+        },
+        {
+          "w": 0,
+          "x": -1,
+          "y": -1,
+          "id": "2a-rd3-3",
+          "kind": "choice",
+          "answer": "d",
+          "prompt": "Как читается окончание -ed в слове played?",
+          "options": [
+            "d",
+            "t",
+            "ɪd",
+            "не читается"
+          ],
+          "explanation": "После гласных и звонких звуков -ed читается /d/: played /pleɪd/.",
+          "optionValues": [
+            "d",
+            "t",
+            "ɪd",
+            "не читается"
+          ]
+        },
+        {
+          "w": 0,
+          "x": -1,
+          "y": -1,
+          "id": "2a-rd3-4",
+          "kind": "choice",
+          "answer": "ɪz",
+          "prompt": "Как читается окончание -es в слове watches?",
+          "options": [
+            "ɪz",
+            "s",
+            "z",
+            "ʃ"
+          ],
+          "explanation": "После шипящих и свистящих звуков (/tʃ/, /ʃ/, /s/, /z/, /dʒ/) добавляется слог /ɪz/: watches /ˈwɑːtʃɪz/.",
+          "optionValues": [
+            "ɪz",
+            "s",
+            "z",
+            "ʃ"
+          ]
+        },
+        {
+          "w": 0,
+          "x": -1,
+          "y": -1,
+          "id": "2a-rd3-5",
+          "kind": "choice",
+          "answer": "z",
+          "prompt": "Как читается окончание -s в слове loves?",
+          "options": [
+            "z",
+            "s",
+            "ɪz",
+            "не читается"
+          ],
+          "explanation": "Перед -s стоит звонкий звук /v/, поэтому окончание звонкое: loves /lʌvz/.",
+          "optionValues": [
+            "z",
+            "s",
+            "ɪz",
+            "не читается"
+          ]
+        },
+        {
+          "w": 0,
+          "x": -1,
+          "y": -1,
+          "id": "2a-rd3-6",
+          "kind": "choice",
+          "answer": "tʃər",
+          "prompt": "Как читается окончание -ture в слове adventure?",
+          "options": [
+            "tʃər",
+            "tjuːr",
+            "ʃər",
+            "kər"
+          ],
+          "explanation": "Окончание -ture читается /tʃər/: adventure /ədˈventʃər/, picture, culture.",
+          "optionValues": [
+            "tʃər",
+            "tjuːr",
+            "ʃər",
+            "kər"
+          ]
+        }
+      ],
+      "title": "Окончания: -ed, -s / -es, -ing и частые суффиксы",
+      "vocab": [],
+      "hidden": false,
+      "sample": "",
+      "prompts": [],
+      "audioUrl": "",
+      "examples": [],
+      "formulas": [
+        "Окончание -ed (Past Simple и причастия): три варианта\n\n/t/ — после глухих звуков /p, k, f, s, ʃ, tʃ, θ/\n    worked /wɜːrkt/ · stopped /stɑːpt/ · laughed /læft/ · missed /mɪst/ · washed /wɑːʃt/ · watched /wɑːtʃt/\n\n/d/ — после звонких согласных и всех гласных\n    played /pleɪd/ · called /kɔːld/ · arrived /əˈraɪvd/ · enjoyed /ɪnˈdʒɔɪd/ · listened /ˈlɪsənd/ · travelled /ˈtrævəld/\n\n/ɪd/ — только после звуков /t/ и /d/\n    wanted /ˈwɑːntɪd/ · needed /ˈniːdɪd/ · decided /dɪˈsaɪdɪd/ · visited /ˈvɪzɪtɪd/ · started /ˈstɑːrtɪd/",
+        "Окончание -s / -es (множественное число, he/she/it, притяжательное)\n\n/s/ — после глухих /p, t, k, f, θ/\n    cats /kæts/ · books /bʊks/ · stops /stɑːps/ · works /wɜːrks/ · laughs /læfs/\n\n/z/ — после звонких и гласных\n    dogs /dɔːɡz/ · plays /pleɪz/ · days /deɪz/ · travels /ˈtrævəlz/ · loves /lʌvz/\n\n/ɪz/ — после шипящих и свистящих /s, z, ʃ, ʒ, tʃ, dʒ/\n    buses /ˈbʌsɪz/ · boxes /ˈbɑːksɪz/ · washes /ˈwɑːʃɪz/ · watches /ˈwɑːtʃɪz/ · changes /ˈtʃeɪndʒɪz/ · places /ˈpleɪsɪz/\n\nИсключения: says /sez/ · does /dʌz/ · goes /ɡoʊz/ · has /hæz/",
+        "Окончания, которые образуют новые слова\n\n-tion /ʃən/: station, information, vacation · после s читается /tʃən/: question /ˈkwestʃən/, suggestion\n-sion /ʒən/ после гласной: television, decision, vision · /ʃən/ в -ssion: permission, discussion\n-ture /tʃər/: adventure, picture, culture, temperature\n-sure /ʒər/: pleasure, measure, treasure\n-ous /əs/: famous /ˈfeɪməs/, dangerous /ˈdeɪndʒərəs/, enormous /ɪˈnɔːrməs/\n-age /ɪdʒ/: village, luggage, message, package · исключения: garage, massage\n-le /əl/: table, little, people /ˈpiːpəl/ · -tle: castle, bottle\n-ible / -able /əbəl/: possible /ˈpɑːsəbəl/, terrible /ˈterəbəl/, reasonable\n-ful /fəl/, -less /ləs/: beautiful /ˈbjuːtəfəl/, careful, useful, homeless\n-er, -or /ər/: teacher /ˈtiːtʃər/, traveller /ˈtrævələr/, visitor\n-ly /li/: slowly /ˈsloʊli/, really /ˈriːəli/\n-ing /ɪŋ/: going, swimming — g не читается отдельно"
+      ],
+      "imageUrl": "",
+      "videoUrl": "",
+      "audioTitle": "",
+      "paragraphs": [
+        "Окончания читаются по строгим правилам, и многие ошибки в чтении — это ошибки именно здесь. Главное правило: выбор звука зависит от последнего ЗВУКА слова, а не от последней буквы. Например, laughed заканчивается на d, но читается /læft/, потому что перед -ed стоит звук /f/."
+      ],
+      "transcript": "",
+      "videoTitle": "",
+      "subtitlesUrl": ""
+    }
+  },
+  {
+    "after": "Окончания: -ed, -s / -es, -ing и частые суффиксы",
+    "block": {
+      "kind": "rule",
+      "text": "",
+      "rules": [
+        "Ударение при добавлении суффиксов может перемещаться: ˈphotograph /ˈfoʊtəɡræf/ — phoˈtography /fəˈtɑːɡrəfi/ — ˌphotoˈgraphic. Всегда смотрите, где стоит ˈ в нужной форме слова.",
+        "В американской транскрипции r читается всегда: car /kɑːr/. В британской r произносится только перед гласной следующего слова: car park, но car /kɑː/.",
+        "Не пытайтесь читать транскрипцию по-русски: /ʃiːp/ — не «шип», а долгий «ши-и-п». Слушайте слово в приложении и повторяйте.",
+        "Практика: возьмите 5 новых слов урока, найдите их в словаре, прочитайте транскрипцию вслух, затем нажмите на динамик и сравните со своим вариантом."
+      ],
+      "tasks": [
+        {
+          "w": 0,
+          "x": -1,
+          "y": -1,
+          "id": "2a-rd4-1",
+          "kind": "choice",
+          "answer": "главное ударение перед слогом",
+          "prompt": "Что означает знак ˈ в транскрипции?",
+          "options": [
+            "главное ударение перед слогом",
+            "долгий звук",
+            "граница слога",
+            "необязательный звук"
+          ],
+          "explanation": "Знак ˈ стоит перед ударным слогом: /ˈhɑːlədeɪ/ — ударение на первом слоге.",
+          "optionValues": [
+            "главное ударение перед слогом",
+            "долгий звук",
+            "граница слога",
+            "необязательный звук"
+          ]
+        },
+        {
+          "w": 0,
+          "x": -1,
+          "y": -1,
+          "id": "2a-rd4-2",
+          "kind": "choice",
+          "answer": "звук долгий",
+          "prompt": "Что означает двоеточие ː после гласной?",
+          "options": [
+            "звук долгий",
+            "звук краткий",
+            "ударение",
+            "звук не читается"
+          ],
+          "explanation": "ː — знак долготы: /siː/ see читается долго, /sɪ/ — коротко. Долгота меняет смысл слова.",
+          "optionValues": [
+            "звук долгий",
+            "звук краткий",
+            "ударение",
+            "звук не читается"
+          ]
+        },
+        {
+          "w": 0,
+          "x": -1,
+          "y": -1,
+          "id": "2a-rd4-3",
+          "kind": "choice",
+          "answer": "sheep",
+          "prompt": "Какое слово произносится /ʃiːp/?",
+          "options": [
+            "sheep",
+            "ship",
+            "shop",
+            "sleep"
+          ],
+          "explanation": "/ʃiːp/ — долгий /iː/: sheep. С коротким /ɪ/ было бы ship /ʃɪp/.",
+          "optionValues": [
+            "sheep",
+            "ship",
+            "shop",
+            "sleep"
+          ]
+        },
+        {
+          "w": 0,
+          "x": -1,
+          "y": -1,
+          "id": "2a-rd4-4",
+          "kind": "choice",
+          "answer": "на втором слоге",
+          "prompt": "На каком слоге ударение в слове adventure /ədˈventʃər/?",
+          "options": [
+            "на втором слоге",
+            "на первом слоге",
+            "на третьем слоге",
+            "ударения нет"
+          ],
+          "explanation": "Знак ˈ стоит перед ven: əd-ˈven-tʃər. Первый слог — неясный.",
+          "optionValues": [
+            "на втором слоге",
+            "на первом слоге",
+            "на третьем слоге",
+            "ударения нет"
+          ]
+        },
+        {
+          "w": 0,
+          "x": -1,
+          "y": -1,
+          "id": "2a-rd4-5",
+          "kind": "fill",
+          "answer": "шва, schwa",
+          "prompt": "Как называется неясный безударный звук /ə/? Впишите одно слово (по-русски или по-английски).",
+          "options": [],
+          "explanation": "/ə/ называется шва (schwa). Это самый частый звук английского языка: about /əˈbaʊt/, teacher /ˈtiːtʃər/.",
+          "optionValues": []
+        },
+        {
+          "w": 0,
+          "x": -1,
+          "y": -1,
+          "id": "2a-rd4-6",
+          "kind": "choice",
+          "answer": "й",
+          "prompt": "Какой звук обозначает знак j в транскрипции /juː/ (you)?",
+          "options": [
+            "й",
+            "дж",
+            "ж",
+            "х"
+          ],
+          "explanation": "Знак /j/ — это русский звук «й»: you /juː/, yes /jes/. Звук «дж» обозначается /dʒ/: job.",
+          "optionValues": [
+            "й",
+            "дж",
+            "ж",
+            "х"
+          ]
+        }
+      ],
+      "title": "Как читать транскрипцию",
+      "vocab": [],
+      "hidden": false,
+      "sample": "",
+      "prompts": [],
+      "audioUrl": "",
+      "examples": [],
+      "formulas": [
+        "Знаки, которые не являются звуками\n\n/ˈ/ — главное ударение; стоит перед ударным слогом: /ˈhɑːlədeɪ/ — ударение на первом слоге.\n/ˌ/ — побочное ударение, слабее главного: /ˌɪntərˈnæʃənəl/ international.\n/ː/ — долгота предыдущего звука: /siː/ see (долгий) и /sɪ/ — короткий.\n/./ — граница слога в словаре: /ˈtʊr.ɪ.zəm/ tourism.\n/ə/ — шва, неясный безударный звук: /əˈbaʊt/ about.",
+        "Гласные звуки\n\nКраткие: /ɪ/ sit · /e/ bed · /æ/ cat · /ʌ/ cup · /ʊ/ book · /ə/ about · /ɒ/ hot (UK; в US здесь /ɑː/)\nДолгие (с двоеточием): /iː/ see · /ɑː/ car · /ɔː/ saw · /uː/ food · /ɜːr/ bird\nДифтонги (два звука в одном слоге, как движение): /eɪ/ day · /aɪ/ time · /ɔɪ/ boy · /aʊ/ now · /oʊ/ go · /ɪər/ here · /eər/ care · /ʊər/ tour\n\nДолгота меняет смысл слова:\nsit /sɪt/ — seat /siːt/ · ship /ʃɪp/ — sheep /ʃiːp/ · full /fʊl/ — fool /fuːl/ · live /lɪv/ — leave /liːv/",
+        "Согласные, которых нет в русском языке или которые читаются иначе\n\n/θ/ think, /ð/ this — кончик языка между зубами: первый глухой, второй звонкий.\n/ŋ/ sing — «н» задней частью языка, звука г нет.\n/w/ we — губы округлены; это не русское «в».\n/v/ very — зубы касаются нижней губы; не путайте с /w/ west.\n/h/ how — лёгкий выдох без хрипоты.\n/r/ red — язык не касается нёба и не «рычит».\n/j/ yes — это русское «й»: you /juː/, а не «дью».\n/tʃ/ chair · /dʒ/ job · /ʃ/ ship · /ʒ/ vision — шипящие, как в русском, но без смягчения.\nСогласные /p, b, t, d, k, g, f, s, z, m, n, l/ похожи на русские, но всегда твёрдые: /t/ — это «т», а не «ть».",
+        "Как читать транскрипцию: 4 шага\n\n1. Найдите знак ˈ — это ударный слог. Его произносим громче и длиннее.\n2. Читайте звук за звуком слева направо и не думайте о написании слова.\n3. Видите ː — тяните звук. Видите два знака подряд (eɪ, aɪ, oʊ) — это один слог с движением.\n4. Безударные слоги с /ə/ произносите быстро и неясно.\n\nПримеры разбора\nadventure /ədˈventʃər/ — əd-ˈven-tʃər: ударение на втором слоге, первый слог неясный.\ntourism /ˈtʊrɪzəm/ — ˈtʊr-ɪ-zəm: ударение на первом слоге, на конце неясный /əm/.\nluggage /ˈlʌɡɪdʒ/ — ˈlʌɡ-ɪdʒ: -age читается /ɪdʒ/, а не «эйдж».\nexcited /ɪkˈsaɪtɪd/ — ik-ˈsaɪ-tɪd: ударение на втором слоге, -ed после t читается /ɪd/."
+      ],
+      "imageUrl": "",
+      "videoUrl": "",
+      "audioTitle": "",
+      "paragraphs": [
+        "Транскрипция — это запись звуков слова между косыми чертами или в квадратных скобках. Один знак обозначает один звук, и он всегда читается одинаково, даже если буквы в слове подсказывают другое. В Cambridge Dictionary для каждого слова даны два варианта: британский (UK) и американский (US). В нашем приложении показывается американский, потому что и озвучка американская."
+      ],
+      "transcript": "",
+      "videoTitle": "",
+      "subtitlesUrl": ""
+    }
+  }
+]
