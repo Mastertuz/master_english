@@ -1592,7 +1592,7 @@
      {
       "section": "5. Лексика: travel experiences",
       "kind": "FILL",
-      "prompt": "Впишите слово по-английски (за границей — 1 слово, начинается на a): Have you ever lived ___?",
+      "prompt": "Впишите слово по-английски (за границей — 1 слово): Have you ever lived ___?",
       "text": "",
       "audioUrl": "",
       "transcript": "",
@@ -1620,7 +1620,7 @@
      {
       "section": "5. Лексика: travel experiences",
       "kind": "FILL",
-      "prompt": "Впишите глагол по-английски (обменять — 1 слово, начинается на e): I need to ___ some money before the trip.",
+      "prompt": "Впишите глагол по-английски (обменять — 1 слово): I need to ___ some money before the trip.",
       "text": "",
       "audioUrl": "",
       "transcript": "",
@@ -3278,7 +3278,7 @@
      {
       "section": "5. Лексика: plans and city break",
       "kind": "FILL",
-      "prompt": "Впишите слово по-английски (маршрут, план поездки — 1 слово, начинается на i): Let's plan our ___ — where are we going to go each day?",
+      "prompt": "Впишите слово по-английски (маршрут, план поездки — 1 слово): Let's plan our ___ — where are we going to go each day?",
       "text": "",
       "audioUrl": "",
       "transcript": "",
@@ -3292,7 +3292,7 @@
      {
       "section": "5. Лексика: plans and city break",
       "kind": "FILL",
-      "prompt": "Впишите слово по-английски (заранее — 1 слово, начинается на a): It's cheaper if you book the tickets in ___.",
+      "prompt": "Впишите слово по-английски (заранее — 1 слово): It's cheaper if you book the tickets in ___.",
       "text": "",
       "audioUrl": "",
       "transcript": "",
