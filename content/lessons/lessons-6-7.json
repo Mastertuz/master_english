@@ -1,0 +1,3475 @@
+{
+ "lessons": [
+  {
+   "number": 6,
+   "topic": "Have you ever…? Present Perfect: опыт и новости",
+   "description": "Present Perfect для рассказа об опыте и свежих новостях: формы глагола, ever / never / just / already / yet, been и gone, выбор между Present Perfect и Past Simple.",
+   "goal": "Рассказать о своём опыте путешествий (Have you ever…?) и о том, что уже сделано или ещё нет, не путая Present Perfect и Past Simple",
+   "durationMin": 60,
+   "level": "B1",
+   "bookTitle": "",
+   "bookRef": "",
+   "timeline": [
+    {
+     "time": "0–6",
+     "title": "Повторение",
+     "note": "Past Continuous и глаголы состояния из урока 5"
+    },
+    {
+     "time": "6–12",
+     "title": "Разогрев",
+     "note": "Have you ever…? Ваш опыт путешествий"
+    },
+    {
+     "time": "12–22",
+     "title": "Чтение",
+     "note": "Kate's travel blog: Portugal"
+    },
+    {
+     "time": "22–34",
+     "title": "Грамматика 1",
+     "note": "Present Perfect: форма, причастие V3, опыт"
+    },
+    {
+     "time": "34–46",
+     "title": "Грамматика 2",
+     "note": "ever, never, just, already, yet; been и gone; Present Perfect или Past Simple"
+    },
+    {
+     "time": "46–52",
+     "title": "Произношение",
+     "note": "слабые формы have / has и причастия"
+    },
+    {
+     "time": "52–60",
+     "title": "Говорение",
+     "note": "Расскажите о своём опыте"
+    }
+   ],
+   "blocks": [
+    {
+     "kind": "rule",
+     "title": "Повторение урока 5: Past Continuous и глаголы состояния",
+     "paragraphs": [
+      "Быстро вспомним прошлое занятие: что происходило в тот момент и какие глаголы не ставятся в Continuous."
+     ],
+     "formulas": [],
+     "rules": [
+      "was / were + глагол с -ing — действие в процессе в момент прошлого: At 9 pm I was packing my suitcase.",
+      "Длинное действие + короткое, которое его прервало: I was walking along the beach when I found a wallet.",
+      "Глаголы состояния (know, like, want, have в значении «иметь») — только Past Simple: We didn't like the hotel."
+     ],
+     "examples": [],
+     "prompts": [],
+     "vocab": [],
+     "audioUrl": "",
+     "audioTitle": "",
+     "videoUrl": "",
+     "videoTitle": "",
+     "subtitlesUrl": "",
+     "sample": "",
+     "transcript": "",
+     "imageUrl": "",
+     "hidden": false,
+     "text": "",
+     "tasks": [
+      {
+       "id": "l6-rev-1",
+       "kind": "fill",
+       "prompt": "Впишите глагол в нужном времени (walk): I ___ along the beach when I found a wallet.",
+       "options": [],
+       "optionValues": [],
+       "answer": "was walking",
+       "explanation": "Длинное действие, которое прервало короткое: Past Continuous, was walking.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l6-rev-2",
+       "kind": "fill",
+       "prompt": "Впишите отрицание в Past Simple (like): We ___ the hotel because it was noisy.",
+       "options": [],
+       "optionValues": [],
+       "answer": "didn't like, did not like",
+       "explanation": "like — глагол состояния, поэтому Past Simple: didn't like.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l6-rev-3",
+       "kind": "choice",
+       "prompt": "Выберите вариант: While we ___ for the bus, it started to rain.",
+       "options": [
+        "were waiting",
+        "waited",
+        "was waiting",
+        "are waiting"
+       ],
+       "optionValues": [
+        "were waiting",
+        "waited",
+        "was waiting",
+        "are waiting"
+       ],
+       "answer": "were waiting",
+       "explanation": "Фон, длинное действие — Past Continuous. Подлежащее we — were.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l6-rev-4",
+       "kind": "choice",
+       "prompt": "Выберите вариант: Sorry, I ___ you. I thought you were somebody else.",
+       "options": [
+        "didn't recognise",
+        "wasn't recognising",
+        "don't recognise",
+        "haven't recognise"
+       ],
+       "optionValues": [
+        "didn't recognise",
+        "wasn't recognising",
+        "don't recognise",
+        "haven't recognise"
+       ],
+       "answer": "didn't recognise",
+       "explanation": "recognise — состояние, Past Simple. Формы wasn't recognising не существует.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      }
+     ]
+    },
+    {
+     "kind": "speaking",
+     "title": "Разогрев: ваш опыт путешествий",
+     "paragraphs": [
+      "Обсудите с преподавателем по-английски. Отвечайте полными предложениями и добавляйте подробности."
+     ],
+     "formulas": [],
+     "rules": [],
+     "examples": [],
+     "prompts": [
+      "Have you ever been abroad? Where have you been?",
+      "What is the most interesting place you have ever visited?",
+      "Have you ever missed a plane or a train? What happened?",
+      "What is something you have never done but would like to try?"
+     ],
+     "vocab": [],
+     "audioUrl": "",
+     "audioTitle": "",
+     "videoUrl": "",
+     "videoTitle": "",
+     "subtitlesUrl": "",
+     "sample": "Yes, I have. I've been to Turkey twice and to Georgia once. The most interesting place I've ever visited is Istanbul: it has an incredible mix of old and modern. I've never missed a plane, but I once missed the last bus home, so I had to walk for an hour! I've never tried surfing, but I'd love to - maybe next summer.",
+     "transcript": "",
+     "imageUrl": "",
+     "hidden": false,
+     "text": "",
+     "tasks": []
+    },
+    {
+     "kind": "reading",
+     "title": "Чтение: Kate's travel blog",
+     "paragraphs": [
+      "Прочитайте запись из блога. Обратите внимание, где автор использует Present Perfect, а где — Past Simple."
+     ],
+     "formulas": [],
+     "rules": [],
+     "examples": [],
+     "prompts": [],
+     "vocab": [],
+     "audioUrl": "",
+     "audioTitle": "",
+     "videoUrl": "",
+     "videoTitle": "",
+     "subtitlesUrl": "",
+     "sample": "",
+     "transcript": "",
+     "imageUrl": "",
+     "hidden": false,
+     "text": "Kate's travel blog: three weeks in Portugal\n\nI've been in Portugal for three weeks, and I've already done a lot of things that I've never done before. I've eaten fresh sardines on the beach, I've learned a few words of Portuguese and I've taken the famous yellow tram in Lisbon. I haven't tried surfing yet, but my friend Rita says she will teach me next weekend.\n\nLast Tuesday we travelled to Porto by train. It took three hours and the views were wonderful. In Porto we visited an old bookshop and then we walked along the river. Rita has lived in Porto all her life, so she has shown me all her favourite places.\n\nI have just come back from a small village in the mountains, and I'm tired but happy. Have you ever been to Portugal? If you haven't, I'm sure you will love it. I haven't found anything that I dislike - except the hills, which are very steep!",
+     "tasks": [
+      {
+       "id": "l6-rd-1",
+       "kind": "choice",
+       "prompt": "Прочитайте текст и выберите ответ: How long has Kate been in Portugal?",
+       "options": [
+        "three weeks",
+        "one week",
+        "three months",
+        "three days"
+       ],
+       "optionValues": [
+        "three weeks",
+        "one week",
+        "three months",
+        "three days"
+       ],
+       "answer": "three weeks",
+       "explanation": "В тексте: I've been in Portugal for three weeks.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l6-rd-2",
+       "kind": "choice",
+       "prompt": "Что Кейт ещё НЕ пробовала? Выберите: Which of these has Kate not tried yet?",
+       "options": [
+        "surfing",
+        "eating sardines",
+        "riding the yellow tram",
+        "learning Portuguese"
+       ],
+       "optionValues": [
+        "surfing",
+        "eating sardines",
+        "riding the yellow tram",
+        "learning Portuguese"
+       ],
+       "answer": "surfing",
+       "explanation": "I haven't tried surfing yet — yet стоит в конце отрицания.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l6-rd-3",
+       "kind": "choice",
+       "prompt": "Выберите ответ: How did Kate and Rita travel to Porto?",
+       "options": [
+        "by train",
+        "by bus",
+        "by plane",
+        "by car"
+       ],
+       "optionValues": [
+        "by train",
+        "by bus",
+        "by plane",
+        "by car"
+       ],
+       "answer": "by train",
+       "explanation": "Last Tuesday we travelled to Porto by train.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l6-rd-4",
+       "kind": "fill",
+       "prompt": "Впишите слово из текста: Rita has ___ in Porto all her life.",
+       "options": [],
+       "optionValues": [],
+       "answer": "lived",
+       "explanation": "Rita has lived in Porto all her life — Present Perfect: has + V3.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l6-rd-5",
+       "kind": "fill",
+       "prompt": "Впишите слово из текста («только что»): Kate has ___ come back from a village in the mountains.",
+       "options": [],
+       "optionValues": [],
+       "answer": "just",
+       "explanation": "I have just come back — just стоит между have и V3.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l6-rd-6",
+       "kind": "choice",
+       "prompt": "Выберите ответ: What does Kate dislike in Portugal?",
+       "options": [
+        "the hills",
+        "the food",
+        "the weather",
+        "the trains"
+       ],
+       "optionValues": [
+        "the hills",
+        "the food",
+        "the weather",
+        "the trains"
+       ],
+       "answer": "the hills",
+       "explanation": "I haven't found anything that I dislike - except the hills.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      }
+     ]
+    },
+    {
+     "kind": "rule",
+     "title": "Правило 1: Present Perfect — форма и опыт",
+     "paragraphs": [
+      "Present Perfect связывает прошлое с настоящим: важно не когда это случилось, а что есть к сегодняшнему дню — опыт или результат. По-русски мы говорим «был», «видел», «пробовал», а по-английски здесь нужны have / has и причастие глагола."
+     ],
+     "formulas": [
+      "Форма\n\n+  I / you / we / they have ('ve) + V3 · he / she / it has ('s) + V3\n    I have visited Lisbon. · She has tried surfing.\n−  have not (haven't) / has not (hasn't) + V3\n    We haven't been to Spain.\n?  Have / Has + подлежащее + V3?\n    Have you ever eaten sushi? — Yes, I have. / No, I haven't.",
+      "Когда нужен Present Perfect: опыт\n\nHave you ever been abroad? — Yes, I have. I've been to Turkey twice.\nI've never seen the sea. · She has visited ten countries.\n\never — «когда-либо», в вопросах; never — «никогда», в утверждениях. Оба слова стоят между have и V3."
+     ],
+     "rules": [
+      "Present Perfect = have / has + причастие (V3). У правильных глаголов V3 совпадает с V2: visit — visited, travel — travelled. У неправильных — своя форма: see — saw — seen.",
+      "Вопрос об опыте начинаем с Have you ever + V3…? Короткий ответ: Yes, I have. / No, I haven't.",
+      "Опыт без точного времени — Present Perfect: I've been to Italy. Как только называем время, переходим на Past Simple: I went to Italy in 2019.",
+      "С he / she / it — has: He has never flown. Не «He have never flown»."
+     ],
+     "examples": [],
+     "prompts": [],
+     "vocab": [],
+     "audioUrl": "",
+     "audioTitle": "",
+     "videoUrl": "",
+     "videoTitle": "",
+     "subtitlesUrl": "",
+     "sample": "",
+     "transcript": "",
+     "imageUrl": "",
+     "hidden": false,
+     "text": "",
+     "tasks": [
+      {
+       "id": "l6-pp-1",
+       "kind": "fill",
+       "prompt": "Впишите have или has: She ___ visited ten countries.",
+       "options": [],
+       "optionValues": [],
+       "answer": "has",
+       "explanation": "С подлежащим she нужен has.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l6-pp-2",
+       "kind": "fill",
+       "prompt": "Впишите причастие (see): I have never ___ the sea.",
+       "options": [],
+       "optionValues": [],
+       "answer": "seen",
+       "explanation": "see — saw — seen. После have нужна третья форма.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l6-pp-3",
+       "kind": "choice",
+       "prompt": "Выберите правильный вопрос об опыте.",
+       "options": [
+        "Have you ever tried Japanese food?",
+        "Have you ever try Japanese food?",
+        "Has you ever tried Japanese food?",
+        "Are you ever tried Japanese food?"
+       ],
+       "optionValues": [
+        "Have you ever tried Japanese food?",
+        "Have you ever try Japanese food?",
+        "Has you ever tried Japanese food?",
+        "Are you ever tried Japanese food?"
+       ],
+       "answer": "Have you ever tried Japanese food?",
+       "explanation": "Have + you + ever + V3: после have — третья форма (tried).",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l6-pp-4",
+       "kind": "fill",
+       "prompt": "Впишите отрицание (be): We ___ to Spain.",
+       "options": [],
+       "optionValues": [],
+       "answer": "haven't been, have not been",
+       "explanation": "Отрицание: haven't + V3. Причастие be — been.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l6-pp-5",
+       "kind": "fill",
+       "prompt": "Впишите короткий ответ: Have you ever eaten snails? — No, I ___.",
+       "options": [],
+       "optionValues": [],
+       "answer": "haven't, have not",
+       "explanation": "В коротком отрицательном ответе повторяем have: No, I haven't.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l6-pp-6",
+       "kind": "choice",
+       "prompt": "В каком предложении ошибка?",
+       "options": [
+        "He have never flown.",
+        "She has visited Rome.",
+        "They have seen the sea.",
+        "I have never tried sushi."
+       ],
+       "optionValues": [
+        "He have never flown.",
+        "She has visited Rome.",
+        "They have seen the sea.",
+        "I have never tried sushi."
+       ],
+       "answer": "He have never flown.",
+       "explanation": "С he нужен has: He has never flown.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      }
+     ]
+    },
+    {
+     "kind": "rule",
+     "title": "Три формы глагола: правильные и неправильные",
+     "paragraphs": [
+      "Чтобы собрать Present Perfect, нужно знать третью форму глагола (V3, причастие). Правильные глаголы изменяются по одному правилу, неправильные придётся выучить."
+     ],
+     "formulas": [
+      "Правильные глаголы: V3 = V2 = V + -ed\n\nvisit — visited — visited\ntravel — travelled — travelled\ntry — tried — tried\nstop — stopped — stopped",
+      "Неправильные глаголы (V1 — V2 — V3)\n\nbe — was / were — been\ngo — went — gone\nsee — saw — seen\neat — ate — eaten\ntake — took — taken\ndo — did — done\nwrite — wrote — written\ndrive — drove — driven\nfly — flew — flown\nswim — swam — swum\nbuy — bought — bought\nfind — found — found\nmake — made — made\nmeet — met — met\nlose — lost — lost\nhave — had — had\nread — read — read (пишется одинаково, читается по-разному)"
+     ],
+     "rules": [
+      "Группа 1: V2 и V3 совпадают — buy, find, make, meet, lose, have. Достаточно выучить одну форму.",
+      "Группа 2: все три формы разные — go, see, eat, take, write, drive, fly. Учите по цепочке: go — went — gone.",
+      "Группа 3: все три формы одинаковые — cut, put, read (читается /red/ в V2 и V3), hit.",
+      "Если сомневаетесь, найдите глагол в словаре приложения: там показаны все три формы."
+     ],
+     "examples": [],
+     "prompts": [],
+     "vocab": [],
+     "audioUrl": "",
+     "audioTitle": "",
+     "videoUrl": "",
+     "videoTitle": "",
+     "subtitlesUrl": "",
+     "sample": "",
+     "transcript": "",
+     "imageUrl": "",
+     "hidden": false,
+     "text": "",
+     "tasks": [
+      {
+       "id": "l6-v3-1",
+       "kind": "fill",
+       "prompt": "Впишите причастие (eat): Have you ever ___ octopus?",
+       "options": [],
+       "optionValues": [],
+       "answer": "eaten",
+       "explanation": "eat — ate — eaten.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l6-v3-2",
+       "kind": "fill",
+       "prompt": "Впишите причастие (write): She has ___ three postcards.",
+       "options": [],
+       "optionValues": [],
+       "answer": "written",
+       "explanation": "write — wrote — written.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l6-v3-3",
+       "kind": "fill",
+       "prompt": "Впишите причастие (drive): I have never ___ a bus.",
+       "options": [],
+       "optionValues": [],
+       "answer": "driven",
+       "explanation": "drive — drove — driven.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l6-v3-4",
+       "kind": "fill",
+       "prompt": "Впишите причастие (buy): We have just ___ the tickets.",
+       "options": [],
+       "optionValues": [],
+       "answer": "bought",
+       "explanation": "buy — bought — bought.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l6-v3-5",
+       "kind": "choice",
+       "prompt": "Выберите причастие глагола fly.",
+       "options": [
+        "flown",
+        "flew",
+        "flied",
+        "flyed"
+       ],
+       "optionValues": [
+        "flown",
+        "flew",
+        "flied",
+        "flyed"
+       ],
+       "answer": "flown",
+       "explanation": "fly — flew — flown. Вторая форма (flew) после have не подходит.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l6-v3-6",
+       "kind": "fill",
+       "prompt": "Впишите причастие (lose): Oh no! I have ___ my passport.",
+       "options": [],
+       "optionValues": [],
+       "answer": "lost",
+       "explanation": "lose — lost — lost.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      }
+     ]
+    },
+    {
+     "kind": "rule",
+     "title": "Правило 2: ever, never, just, already, yet; been и gone",
+     "paragraphs": [
+      "У Present Perfect есть слова-спутники: они показывают, что мы говорим об опыте или о свежих новостях."
+     ],
+     "formulas": [
+      "Слова-спутники Present Perfect\n\never — «когда-либо», в вопросах: Have you ever flown?\nnever — «никогда»: I've never flown.\njust — «только что», перед V3: I've just arrived.\nalready — «уже», перед V3 или в конце: She has already left. / She has left already.\nyet — «ещё (не)» / «уже?», в конце вопроса и отрицания: Have you packed yet? — I haven't packed yet.",
+      "been и gone\n\nHe has been to Rome. — он был в Риме и вернулся.\nHe has gone to Rome. — он уехал в Рим и сейчас там (или в пути).\n\nО своём опыте мы говорим с been: Have you ever been to Rome? — не «gone»."
+     ],
+     "rules": [
+      "just, already, ever, never стоят между have / has и V3; yet — в конце предложения.",
+      "В утверждениях — already, в вопросах и отрицаниях — yet: She has already called. · Has she called yet? · She hasn't called yet.",
+      "been to — побывал и вернулся, gone to — уехал и ещё не вернулся.",
+      "С just / already / yet говорим о свежих новостях, результат которых виден сейчас: I've lost my keys (и не могу войти)."
+     ],
+     "examples": [],
+     "prompts": [],
+     "vocab": [],
+     "audioUrl": "",
+     "audioTitle": "",
+     "videoUrl": "",
+     "videoTitle": "",
+     "subtitlesUrl": "",
+     "sample": "",
+     "transcript": "",
+     "imageUrl": "",
+     "hidden": false,
+     "text": "",
+     "tasks": [
+      {
+       "id": "l6-ey-1",
+       "kind": "choice",
+       "prompt": "Выберите слово: Have you packed your suitcase ___?",
+       "options": [
+        "yet",
+        "already",
+        "just",
+        "ever"
+       ],
+       "optionValues": [
+        "yet",
+        "already",
+        "just",
+        "ever"
+       ],
+       "answer": "yet",
+       "explanation": "В вопросе о том, сделано ли что-то к этому моменту, — yet в конце.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l6-ey-2",
+       "kind": "fill",
+       "prompt": "Впишите слово («только что»): I've ___ arrived — I'm still at the airport.",
+       "options": [],
+       "optionValues": [],
+       "answer": "just",
+       "explanation": "just — «только что», стоит между have и V3.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l6-ey-3",
+       "kind": "choice",
+       "prompt": "Выберите вариант: Anna isn't here. She has ___ to the airport.",
+       "options": [
+        "gone",
+        "been",
+        "went",
+        "go"
+       ],
+       "optionValues": [
+        "gone",
+        "been",
+        "went",
+        "go"
+       ],
+       "answer": "gone",
+       "explanation": "Анны здесь нет — она уехала и ещё не вернулась: has gone.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l6-ey-4",
+       "kind": "choice",
+       "prompt": "Выберите вариант: I've ___ to Spain twice. I love it there.",
+       "options": [
+        "been",
+        "gone",
+        "went",
+        "go"
+       ],
+       "optionValues": [
+        "been",
+        "gone",
+        "went",
+        "go"
+       ],
+       "answer": "been",
+       "explanation": "О своём опыте — been: я там был (и вернулся).",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l6-ey-5",
+       "kind": "fill",
+       "prompt": "Впишите слово («ещё не»): We haven't booked the hotel ___.",
+       "options": [],
+       "optionValues": [],
+       "answer": "yet",
+       "explanation": "В отрицании «ещё не» — yet в конце.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l6-ey-6",
+       "kind": "choice",
+       "prompt": "В каком предложении слово стоит правильно?",
+       "options": [
+        "She has already finished her homework.",
+        "She already has finished her homework.",
+        "She has finished already her homework.",
+        "She has finished her already homework."
+       ],
+       "optionValues": [
+        "She has already finished her homework.",
+        "She already has finished her homework.",
+        "She has finished already her homework.",
+        "She has finished her already homework."
+       ],
+       "answer": "She has already finished her homework.",
+       "explanation": "already стоит между has и V3 (или в самом конце: …her homework already).",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      }
+     ]
+    },
+    {
+     "kind": "rule",
+     "title": "Правило 3: Present Perfect или Past Simple",
+     "paragraphs": [
+      "Главный вопрос: сказано ли, когда это произошло? Если время названо — это уже Past Simple."
+     ],
+     "formulas": [
+      "Как выбрать\n\nPast Simple — время названо или понятно: yesterday, last week, in 2019, two days ago, when I was a child, What time…?\n  I visited Lisbon last summer. · We saw a great film yesterday.\n\nPresent Perfect — время не названо или важен результат сейчас: ever, never, just, already, yet, so far, this week.\n  I've visited Lisbon. (когда — неважно) · I've lost my phone. (и сейчас его нет)",
+      "Одна история — два времени\n\nI've been to Portugal. (опыт, время не важно)\nI went there last summer. (уточняем, когда — Past Simple)\nWe took a lot of photos. (подробности — Past Simple)\n\nПравило: начинаем с Present Perfect, а подробности рассказываем в Past Simple."
+     ],
+     "rules": [
+      "С yesterday, last year, ago, in + год, when + Past Simple и в вопросе When did you…? Present Perfect не используем: ✗ I have seen him yesterday. ✓ I saw him yesterday.",
+      "Вопрос Have you ever…? — о жизни в целом, а уточняющие вопросы — в Past Simple: Have you ever been to Italy? — Yes, I have. — When did you go? — Last May.",
+      "Результат важен сейчас — Present Perfect: She has broken her leg (она сейчас в гипсе). Событие в прошлом и всё закончилось — Past Simple: She broke her leg last year.",
+      "today, this week, this year: если период ещё не закончился, говорим Present Perfect (I've had three coffees today)."
+     ],
+     "examples": [],
+     "prompts": [],
+     "vocab": [],
+     "audioUrl": "",
+     "audioTitle": "",
+     "videoUrl": "",
+     "videoTitle": "",
+     "subtitlesUrl": "",
+     "sample": "",
+     "transcript": "",
+     "imageUrl": "",
+     "hidden": false,
+     "text": "",
+     "tasks": [
+      {
+       "id": "l6-ps-1",
+       "kind": "choice",
+       "prompt": "Выберите вариант: I ___ to Italy last summer.",
+       "options": [
+        "went",
+        "have been",
+        "have gone",
+        "go"
+       ],
+       "optionValues": [
+        "went",
+        "have been",
+        "have gone",
+        "go"
+       ],
+       "answer": "went",
+       "explanation": "last summer — время названо, нужен Past Simple: went.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l6-ps-2",
+       "kind": "fill",
+       "prompt": "Впишите причастие (ride): Have you ever ___ a horse?",
+       "options": [],
+       "optionValues": [],
+       "answer": "ridden",
+       "explanation": "ride — rode — ridden. Вопрос об опыте — Present Perfect.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l6-ps-3",
+       "kind": "choice",
+       "prompt": "Выберите вариант: I ___ my keys two days ago.",
+       "options": [
+        "lost",
+        "have lost",
+        "was losing",
+        "am losing"
+       ],
+       "optionValues": [
+        "lost",
+        "have lost",
+        "was losing",
+        "am losing"
+       ],
+       "answer": "lost",
+       "explanation": "two days ago — время названо: Past Simple.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l6-ps-4",
+       "kind": "fill",
+       "prompt": "Впишите глагол в Past Simple (see): I ___ that film last week.",
+       "options": [],
+       "optionValues": [],
+       "answer": "saw",
+       "explanation": "last week — Past Simple: see — saw.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l6-ps-5",
+       "kind": "choice",
+       "prompt": "Продолжите диалог: Have you ever been to Prague? — Yes I have. ___",
+       "options": [
+        "I went there two years ago.",
+        "I have gone there two years ago.",
+        "I have been there two years ago.",
+        "I go there two years ago."
+       ],
+       "optionValues": [
+        "I went there two years ago.",
+        "I have gone there two years ago.",
+        "I have been there two years ago.",
+        "I go there two years ago."
+       ],
+       "answer": "I went there two years ago.",
+       "explanation": "Уточняем, когда это было, — Past Simple: went. С two years ago Present Perfect не используется.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l6-ps-6",
+       "kind": "choice",
+       "prompt": "В каком предложении ошибка?",
+       "options": [
+        "I have seen him yesterday.",
+        "I saw him yesterday.",
+        "I've never seen him.",
+        "Have you seen him today?"
+       ],
+       "optionValues": [
+        "I have seen him yesterday.",
+        "I saw him yesterday.",
+        "I've never seen him.",
+        "Have you seen him today?"
+       ],
+       "answer": "I have seen him yesterday.",
+       "explanation": "С yesterday нужен Past Simple: I saw him yesterday.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      }
+     ]
+    },
+    {
+     "kind": "vocab",
+     "title": "Лексика: travel experiences",
+     "paragraphs": [
+      "Слова для рассказа об опыте путешествий. Их можно сразу использовать с Present Perfect: I've never been abroad. · I've just bought a guidebook."
+     ],
+     "formulas": [],
+     "rules": [],
+     "examples": [],
+     "prompts": [],
+     "vocab": [
+      {
+       "en": "abroad",
+       "ru": "за границей"
+      },
+      {
+       "en": "landmark",
+       "ru": "достопримечательность, знаковое место"
+      },
+      {
+       "en": "backpacking",
+       "ru": "путешествие с рюкзаком"
+      },
+      {
+       "en": "journey",
+       "ru": "поездка, путь"
+      },
+      {
+       "en": "view",
+       "ru": "вид"
+      },
+      {
+       "en": "local",
+       "ru": "местный; местный житель"
+      },
+      {
+       "en": "tourist attraction",
+       "ru": "туристическая достопримечательность"
+      },
+      {
+       "en": "get lost",
+       "ru": "заблудиться"
+      },
+      {
+       "en": "miss a flight",
+       "ru": "опоздать на рейс"
+      },
+      {
+       "en": "exchange money",
+       "ru": "обменять деньги"
+      },
+      {
+       "en": "passport",
+       "ru": "паспорт"
+      },
+      {
+       "en": "guidebook",
+       "ru": "путеводитель"
+      }
+     ],
+     "audioUrl": "",
+     "audioTitle": "",
+     "videoUrl": "",
+     "videoTitle": "",
+     "subtitlesUrl": "",
+     "sample": "",
+     "transcript": "",
+     "imageUrl": "",
+     "hidden": false,
+     "text": "",
+     "tasks": []
+    },
+    {
+     "kind": "rule",
+     "title": "Произношение: слабые формы have / has и причастия",
+     "paragraphs": [
+      "В быстрой речи have и has почти не слышны, зато хорошо слышны причастия. Русская подсказка в скобках — приблизительное чтение; точные звуки показывает транскрипция."
+     ],
+     "formulas": [
+      "Слабые формы\n\nI've /aɪv/ (айв) · you've /juːv/ (юв) · we've /wiːv/ (вив) · they've /ðeɪv/ (зэйв) · he's /hiːz/ (хиз) · she's /ʃiːz/ (шиз)\nhaven't /ˈhævənt/ (хэ́вэнт) · hasn't /ˈhæzənt/ (хэ́зэнт)\n\nВ коротком ответе have читается полностью: Yes, I have! /hæv/ (хэв)",
+      "Причастия, которые легко прочитать неправильно\n\nbeen /bɪn/ (бин) · gone /ɡɔːn/ (гон) · done /dʌn/ (дан) · seen /siːn/ (син)\neaten /ˈiːtn/ (и́тн) · written /ˈrɪtn/ (ри́тн) · driven /ˈdrɪvn/ (дри́вн) · flown /floʊn/ (флоун)\nread /red/ (рэд) — в Present Perfect читается так же, как в Past Simple, не /riːd/",
+      "Окончание -ed у правильных причастий\n\n/t/ после глухих: stopped /stɑːpt/ (стапт), watched /wɑːtʃt/ (уачт)\n/d/ после звонких и гласных: travelled /ˈtrævəld/ (трэ́вэлд), tried /traɪd/ (трайд)\n/ɪd/ после t и d: visited /ˈvɪzɪtɪd/ (ви́зитид), wanted /ˈwɑːntɪd/ (уа́нтид)"
+     ],
+     "rules": [],
+     "examples": [],
+     "prompts": [],
+     "vocab": [],
+     "audioUrl": "",
+     "audioTitle": "",
+     "videoUrl": "",
+     "videoTitle": "",
+     "subtitlesUrl": "",
+     "sample": "",
+     "transcript": "",
+     "imageUrl": "",
+     "hidden": false,
+     "text": "",
+     "tasks": [
+      {
+       "id": "l6-pr-1",
+       "kind": "choice",
+       "prompt": "Как читается окончание -ed в слове visited?",
+       "options": [
+        "ɪd",
+        "t",
+        "d",
+        "не читается"
+       ],
+       "optionValues": [
+        "ɪd",
+        "t",
+        "d",
+        "не читается"
+       ],
+       "answer": "ɪd",
+       "explanation": "После звука /t/ окончание -ed — отдельный слог /ɪd/: visited /ˈvɪzɪtɪd/ (ви́зитид).",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l6-pr-2",
+       "kind": "choice",
+       "prompt": "Как читается окончание -ed в слове stopped?",
+       "options": [
+        "t",
+        "d",
+        "ɪd",
+        "не читается"
+       ],
+       "optionValues": [
+        "t",
+        "d",
+        "ɪd",
+        "не читается"
+       ],
+       "answer": "t",
+       "explanation": "Перед -ed стоит глухой звук /p/, поэтому окончание глухое: stopped /stɑːpt/ (стапт).",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l6-pr-3",
+       "kind": "choice",
+       "prompt": "Как читается слово read в предложении I've read this book?",
+       "options": [
+        "red",
+        "reed",
+        "rid",
+        "raid"
+       ],
+       "optionValues": [
+        "red",
+        "reed",
+        "rid",
+        "raid"
+       ],
+       "answer": "red",
+       "explanation": "Причастие read пишется как V1, а читается /red/ (рэд), как и V2.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l6-pr-4",
+       "kind": "choice",
+       "prompt": "Какое слово читается /ɡɔːn/ (гон)?",
+       "options": [
+        "gone",
+        "done",
+        "been",
+        "seen"
+       ],
+       "optionValues": [
+        "gone",
+        "done",
+        "been",
+        "seen"
+       ],
+       "answer": "gone",
+       "explanation": "gone /ɡɔːn/ (гон). done читается /dʌn/ (дан), been — /bɪn/ (бин), seen — /siːn/ (син).",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l6-pr-5",
+       "kind": "choice",
+       "prompt": "Как обычно звучит I've в быстрой речи?",
+       "options": [
+        "айв",
+        "хэв",
+        "ив",
+        "айф"
+       ],
+       "optionValues": [
+        "айв",
+        "хэв",
+        "ив",
+        "айф"
+       ],
+       "answer": "айв",
+       "explanation": "I've /aɪv/ (айв): have теряет звук h и сливается с I.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      }
+     ]
+    },
+    {
+     "kind": "speaking",
+     "title": "Говорение: расскажите о своём опыте",
+     "paragraphs": [
+      "Расскажите партнёру о пяти вещах, которые вы делали или никогда не делали. Затем выберите одну и расскажите подробности в Past Simple."
+     ],
+     "formulas": [],
+     "rules": [],
+     "examples": [],
+     "prompts": [
+      "Ask three questions: Have you ever…?",
+      "Start with Present Perfect, give the details in Past Simple.",
+      "Use just, already or yet at least once.",
+      "Ask a follow-up question: When did you go? Who did you go with?"
+     ],
+     "vocab": [],
+     "audioUrl": "",
+     "audioTitle": "",
+     "videoUrl": "",
+     "videoTitle": "",
+     "subtitlesUrl": "",
+     "sample": "I've been to Turkey twice. I went there for the first time in 2019 with my family: we stayed in a small hotel near the sea and visited some old ruins. I've never been to Italy, but I'd love to go. I haven't planned the trip yet, but I've already saved some money. Have you ever been abroad? — Where did you go? — Who did you go with?",
+     "transcript": "",
+     "imageUrl": "",
+     "hidden": false,
+     "text": "",
+     "tasks": []
+    }
+   ],
+   "words": [
+    {
+     "english": "abroad",
+     "russian": "за границей",
+     "partOfSpeech": "adverb",
+     "transcription": "/əˈbrɔːd/",
+     "example": "Have you ever lived abroad?",
+     "definition": "in or to a foreign country",
+     "definitionRu": "в другую страну или в другой стране",
+     "audioUrl": "",
+     "imageUrl": "",
+     "order": 0
+    },
+    {
+     "english": "landmark",
+     "russian": "достопримечательность, знаковое место",
+     "partOfSpeech": "noun",
+     "transcription": "/ˈlændmɑːrk/",
+     "example": "The old tower is the most famous landmark in the city.",
+     "definition": "a building or place that is easy to recognize and well known",
+     "definitionRu": "известное здание или место, которое легко узнать",
+     "audioUrl": "",
+     "imageUrl": "",
+     "order": 1
+    },
+    {
+     "english": "backpacking",
+     "russian": "путешествие с рюкзаком",
+     "partOfSpeech": "noun",
+     "transcription": "/ˈbækˌpækɪŋ/",
+     "example": "We went backpacking in Portugal last summer.",
+     "definition": "travelling with a small bag on your back, usually cheaply",
+     "definitionRu": "путешествие с рюкзаком, обычно недорогое",
+     "audioUrl": "",
+     "imageUrl": "",
+     "order": 2
+    },
+    {
+     "english": "journey",
+     "russian": "поездка, путь",
+     "partOfSpeech": "noun",
+     "transcription": "/ˈdʒɜːrni/",
+     "example": "The journey from Lisbon to Porto takes three hours.",
+     "definition": "an act of travelling from one place to another",
+     "definitionRu": "поездка из одного места в другое",
+     "audioUrl": "",
+     "imageUrl": "",
+     "order": 3
+    },
+    {
+     "english": "view",
+     "russian": "вид",
+     "partOfSpeech": "noun",
+     "transcription": "/vjuː/",
+     "example": "The view from the top of the hill was wonderful.",
+     "definition": "everything you can see from a particular place",
+     "definitionRu": "всё, что можно увидеть с определённого места",
+     "audioUrl": "",
+     "imageUrl": "",
+     "order": 4
+    },
+    {
+     "english": "local",
+     "russian": "местный; местный житель",
+     "partOfSpeech": "adjective",
+     "transcription": "/ˈloʊkəl/",
+     "example": "We ate at a small local restaurant.",
+     "definition": "connected with a particular area or town",
+     "definitionRu": "относящийся к определённому району или городу",
+     "audioUrl": "",
+     "imageUrl": "",
+     "order": 5
+    },
+    {
+     "english": "tourist attraction",
+     "russian": "туристическая достопримечательность",
+     "partOfSpeech": "noun",
+     "transcription": "",
+     "example": "The castle is the city's biggest tourist attraction.",
+     "definition": "a place that many tourists visit",
+     "definitionRu": "место, которое посещает много туристов",
+     "audioUrl": "",
+     "imageUrl": "",
+     "order": 6
+    },
+    {
+     "english": "get lost",
+     "russian": "заблудиться",
+     "partOfSpeech": "verb",
+     "transcription": "",
+     "example": "We got lost in the old town and asked a local for help.",
+     "definition": "to not know where you are or how to get to a place",
+     "definitionRu": "не знать, где ты находишься и как пройти",
+     "audioUrl": "",
+     "imageUrl": "",
+     "order": 7
+    },
+    {
+     "english": "miss a flight",
+     "russian": "опоздать на рейс",
+     "partOfSpeech": "verb",
+     "transcription": "",
+     "example": "I've never missed a flight, but I almost did last year.",
+     "definition": "to arrive too late to catch a plane",
+     "definitionRu": "прийти слишком поздно, чтобы успеть на самолёт",
+     "audioUrl": "",
+     "imageUrl": "",
+     "order": 8
+    },
+    {
+     "english": "exchange money",
+     "russian": "обменять деньги",
+     "partOfSpeech": "verb",
+     "transcription": "",
+     "example": "You can exchange money at the airport.",
+     "definition": "to change money from one currency to another",
+     "definitionRu": "поменять деньги одной страны на деньги другой",
+     "audioUrl": "",
+     "imageUrl": "",
+     "order": 9
+    },
+    {
+     "english": "passport",
+     "russian": "паспорт",
+     "partOfSpeech": "noun",
+     "transcription": "/ˈpæspɔːrt/",
+     "example": "Have you got your passport with you?",
+     "definition": "an official document that you need to travel to other countries",
+     "definitionRu": "официальный документ для поездок в другие страны",
+     "audioUrl": "",
+     "imageUrl": "",
+     "order": 10
+    },
+    {
+     "english": "guidebook",
+     "russian": "путеводитель",
+     "partOfSpeech": "noun",
+     "transcription": "/ˈɡaɪdbʊk/",
+     "example": "I've bought a guidebook to Lisbon.",
+     "definition": "a book that gives information to visitors about a place",
+     "definitionRu": "книга с информацией для туристов о каком-то месте",
+     "audioUrl": "",
+     "imageUrl": "",
+     "order": 11
+    }
+   ],
+   "homework": {
+    "title": "Домашнее задание к уроку 6",
+    "intro": "Present Perfect: опыт и новости — формы глагола, ever / never / just / already / yet, been и gone, выбор между Present Perfect и Past Simple.",
+    "tasks": [
+     {
+      "section": "1. Present Perfect: форма",
+      "kind": "FILL",
+      "prompt": "Впишите have или has: My brother ___ never travelled abroad.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [],
+      "answer": "has",
+      "explanation": "С подлежащим my brother (он) — has.",
+      "rule": "",
+      "hidden": false,
+      "order": 0
+     },
+     {
+      "section": "1. Present Perfect: форма",
+      "kind": "FILL",
+      "prompt": "Впишите причастие (visit): We have ___ three countries this year.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [],
+      "answer": "visited",
+      "explanation": "visit — visited: у правильных глаголов V3 = V + -ed.",
+      "rule": "",
+      "hidden": false,
+      "order": 1
+     },
+     {
+      "section": "1. Present Perfect: форма",
+      "kind": "FILL",
+      "prompt": "Впишите отрицание (try): I ___ sushi.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [],
+      "answer": "haven't tried, have not tried",
+      "explanation": "Отрицание: haven't + V3.",
+      "rule": "",
+      "hidden": false,
+      "order": 2
+     },
+     {
+      "section": "1. Present Perfect: форма",
+      "kind": "FILL",
+      "prompt": "Впишите причастие (be): Have you ever ___ to Egypt?",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [],
+      "answer": "been",
+      "explanation": "be — was / were — been.",
+      "rule": "",
+      "hidden": false,
+      "order": 3
+     },
+     {
+      "section": "1. Present Perfect: форма",
+      "kind": "CHOICE",
+      "prompt": "Выберите правильный вопрос.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [
+       "Has she ever visited London?",
+       "Does she ever visited London?",
+       "Have she ever visited London?",
+       "Is she ever visited London?"
+      ],
+      "answer": "Has she ever visited London?",
+      "explanation": "Has she ever visited London? — Has + she + ever + V3.",
+      "rule": "",
+      "hidden": false,
+      "order": 4
+     },
+     {
+      "section": "1. Present Perfect: форма",
+      "kind": "CHOICE",
+      "prompt": "Выберите правильный короткий ответ: Have you ever flown in a helicopter?",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [
+       "No I haven't.",
+       "No I don't.",
+       "No I didn't.",
+       "No I wasn't."
+      ],
+      "answer": "No I haven't.",
+      "explanation": "Короткий ответ повторяет have: No, I haven't.",
+      "rule": "",
+      "hidden": false,
+      "order": 5
+     },
+     {
+      "section": "2. Неправильные глаголы",
+      "kind": "FILL",
+      "prompt": "Впишите причастие (take): She has ___ a lot of photos.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [],
+      "answer": "taken",
+      "explanation": "take — took — taken.",
+      "rule": "",
+      "hidden": false,
+      "order": 6
+     },
+     {
+      "section": "2. Неправильные глаголы",
+      "kind": "FILL",
+      "prompt": "Впишите причастие (do): Have you ___ your homework yet?",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [],
+      "answer": "done",
+      "explanation": "do — did — done.",
+      "rule": "",
+      "hidden": false,
+      "order": 7
+     },
+     {
+      "section": "2. Неправильные глаголы",
+      "kind": "FILL",
+      "prompt": "Впишите причастие (swim): I have never ___ in the sea.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [],
+      "answer": "swum",
+      "explanation": "swim — swam — swum.",
+      "rule": "",
+      "hidden": false,
+      "order": 8
+     },
+     {
+      "section": "2. Неправильные глаголы",
+      "kind": "FILL",
+      "prompt": "Впишите причастие (meet): We have just ___ a very interesting man.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [],
+      "answer": "met",
+      "explanation": "meet — met — met.",
+      "rule": "",
+      "hidden": false,
+      "order": 9
+     },
+     {
+      "section": "2. Неправильные глаголы",
+      "kind": "CHOICE",
+      "prompt": "Выберите причастие глагола go.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [
+       "gone",
+       "went",
+       "goed",
+       "going"
+      ],
+      "answer": "gone",
+      "explanation": "go — went — gone.",
+      "rule": "",
+      "hidden": false,
+      "order": 10
+     },
+     {
+      "section": "3. Ever, never, just, already, yet",
+      "kind": "FILL",
+      "prompt": "Впишите слово («никогда»): I have ___ been to Asia.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [],
+      "answer": "never",
+      "explanation": "never стоит между have и V3.",
+      "rule": "",
+      "hidden": false,
+      "order": 11
+     },
+     {
+      "section": "3. Ever, never, just, already, yet",
+      "kind": "FILL",
+      "prompt": "Впишите слово («только что»): He has ___ left the hotel.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [],
+      "answer": "just",
+      "explanation": "just — «только что», между have и V3.",
+      "rule": "",
+      "hidden": false,
+      "order": 12
+     },
+     {
+      "section": "3. Ever, never, just, already, yet",
+      "kind": "FILL",
+      "prompt": "Впишите слово («ещё не»): They haven't arrived ___.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [],
+      "answer": "yet",
+      "explanation": "В отрицании yet стоит в конце.",
+      "rule": "",
+      "hidden": false,
+      "order": 13
+     },
+     {
+      "section": "3. Ever, never, just, already, yet",
+      "kind": "CHOICE",
+      "prompt": "Выберите вариант: Mum isn't at home. She has ___ to the shop.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [
+       "gone",
+       "been",
+       "went",
+       "go"
+      ],
+      "answer": "gone",
+      "explanation": "Мамы нет дома — она ушла и ещё не вернулась: has gone.",
+      "rule": "",
+      "hidden": false,
+      "order": 14
+     },
+     {
+      "section": "3. Ever, never, just, already, yet",
+      "kind": "CHOICE",
+      "prompt": "Выберите вариант: I've ___ to Paris three times — it's my favourite city.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [
+       "been",
+       "gone",
+       "went",
+       "go"
+      ],
+      "answer": "been",
+      "explanation": "Опыт — been: я там был и вернулся.",
+      "rule": "",
+      "hidden": false,
+      "order": 15
+     },
+     {
+      "section": "3. Ever, never, just, already, yet",
+      "kind": "CHOICE",
+      "prompt": "Выберите слово («когда-либо»): Have you ___ been to a concert abroad?",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [
+       "ever",
+       "just",
+       "yet",
+       "already"
+      ],
+      "answer": "ever",
+      "explanation": "ever — «когда-либо», в вопросе об опыте.",
+      "rule": "",
+      "hidden": false,
+      "order": 16
+     },
+     {
+      "section": "4. Present Perfect или Past Simple",
+      "kind": "CHOICE",
+      "prompt": "Выберите вариант: We ___ to the museum yesterday.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [
+       "went",
+       "have been",
+       "have gone",
+       "go"
+      ],
+      "answer": "went",
+      "explanation": "yesterday — время названо, нужен Past Simple.",
+      "rule": "",
+      "hidden": false,
+      "order": 17
+     },
+     {
+      "section": "4. Present Perfect или Past Simple",
+      "kind": "CHOICE",
+      "prompt": "Выберите вариант: I ___ that actor.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [
+       "have never seen",
+       "never saw",
+       "did never see",
+       "was never seeing"
+      ],
+      "answer": "have never seen",
+      "explanation": "never — опыт, Present Perfect.",
+      "rule": "",
+      "hidden": false,
+      "order": 18
+     },
+     {
+      "section": "4. Present Perfect или Past Simple",
+      "kind": "CHOICE",
+      "prompt": "Выберите вариант: She ___ her phone in the taxi last night.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [
+       "lost",
+       "has lost",
+       "was losing",
+       "is losing"
+      ],
+      "answer": "lost",
+      "explanation": "last night — время названо, Past Simple.",
+      "rule": "",
+      "hidden": false,
+      "order": 19
+     },
+     {
+      "section": "4. Present Perfect или Past Simple",
+      "kind": "FILL",
+      "prompt": "Впишите глагол в нужном времени (see): I ___ him last Monday.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [],
+      "answer": "saw",
+      "explanation": "last Monday — Past Simple: see — saw.",
+      "rule": "",
+      "hidden": false,
+      "order": 20
+     },
+     {
+      "section": "4. Present Perfect или Past Simple",
+      "kind": "FILL",
+      "prompt": "Впишите глагол в нужном времени (finish): She has already ___ her homework.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [],
+      "answer": "finished",
+      "explanation": "already + have / has + V3: finished.",
+      "rule": "",
+      "hidden": false,
+      "order": 21
+     },
+     {
+      "section": "4. Present Perfect или Past Simple",
+      "kind": "FILL",
+      "prompt": "Впишите глагол в нужном времени (go): We ___ to Italy in 2019.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [],
+      "answer": "went",
+      "explanation": "in 2019 — время названо, Past Simple: went.",
+      "rule": "",
+      "hidden": false,
+      "order": 22
+     },
+     {
+      "section": "5. Лексика: travel experiences",
+      "kind": "FILL",
+      "prompt": "Впишите слово: Have you ever lived ___? (за границей)",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [],
+      "answer": "abroad",
+      "explanation": "abroad — «за границей», без предлога.",
+      "rule": "",
+      "hidden": false,
+      "order": 23
+     },
+     {
+      "section": "5. Лексика: travel experiences",
+      "kind": "FILL",
+      "prompt": "Впишите слово: We got ___ in the old town and asked a local for help.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [],
+      "answer": "lost",
+      "explanation": "get lost — заблудиться; в прошлом — got lost.",
+      "rule": "",
+      "hidden": false,
+      "order": 24
+     },
+     {
+      "section": "5. Лексика: travel experiences",
+      "kind": "FILL",
+      "prompt": "Впишите слово: I need to ___ some money before the trip. (обменять)",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [],
+      "answer": "exchange",
+      "explanation": "exchange money — обменять деньги.",
+      "rule": "",
+      "hidden": false,
+      "order": 25
+     },
+     {
+      "section": "5. Лексика: travel experiences",
+      "kind": "CHOICE",
+      "prompt": "Выберите слово: The ___ from the top of the hill was wonderful.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [
+       "view",
+       "guidebook",
+       "journey",
+       "passport"
+      ],
+      "answer": "view",
+      "explanation": "view — вид.",
+      "rule": "",
+      "hidden": false,
+      "order": 26
+     },
+     {
+      "section": "5. Лексика: travel experiences",
+      "kind": "CHOICE",
+      "prompt": "Выберите слово: I've just bought a ___ to Lisbon — it tells you about the best places.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [
+       "guidebook",
+       "landmark",
+       "passport",
+       "journey"
+      ],
+      "answer": "guidebook",
+      "explanation": "guidebook — путеводитель.",
+      "rule": "",
+      "hidden": false,
+      "order": 27
+     },
+     {
+      "section": "6. Чтение: weekend in Edinburgh",
+      "kind": "READING",
+      "prompt": "Прочитайте текст и выберите ответ: Why did Tom go to Edinburgh?",
+      "text": "Tom's weekend in Edinburgh\n\nTom has never been to Scotland, so last weekend he decided to visit Edinburgh. He has wanted to see the old castle for years, and now he has finally seen it. He took a train on Friday evening and arrived at his hostel at ten o'clock. The next morning he walked up a hill called Arthur's Seat. It was very windy, but the view was fantastic. In the afternoon he tried haggis for the first time - he says it wasn't bad!\n\nTom hasn't bought any souvenirs yet, because he is going to do that on Sunday. He has already sent three postcards to his friends. He has just texted his sister: 'I've had the best weekend ever!'",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [
+       "he wanted to see the old castle",
+       "he had a business meeting",
+       "his sister lives there",
+       "he was learning Scottish history"
+      ],
+      "answer": "he wanted to see the old castle",
+      "explanation": "В тексте: He has wanted to see the old castle for years.",
+      "rule": "",
+      "hidden": false,
+      "order": 28
+     },
+     {
+      "section": "6. Чтение: weekend in Edinburgh",
+      "kind": "FILL",
+      "prompt": "Прочитайте текст выше и впишите слово: Tom has ___ sent three postcards to his friends.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [],
+      "answer": "already",
+      "explanation": "He has already sent three postcards.",
+      "rule": "",
+      "hidden": false,
+      "order": 29
+     },
+     {
+      "section": "6. Чтение: weekend in Edinburgh",
+      "kind": "FILL",
+      "prompt": "Прочитайте текст выше и впишите слово: Tom hasn't bought any souvenirs ___.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [],
+      "answer": "yet",
+      "explanation": "Tom hasn't bought any souvenirs yet.",
+      "rule": "",
+      "hidden": false,
+      "order": 30
+     },
+     {
+      "section": "6. Чтение: weekend in Edinburgh",
+      "kind": "CHOICE",
+      "prompt": "Прочитайте текст выше. What did Tom do on Saturday morning?",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [
+       "he walked up a hill",
+       "he took a train",
+       "he bought souvenirs",
+       "he sent postcards"
+      ],
+      "answer": "he walked up a hill",
+      "explanation": "The next morning he walked up a hill called Arthur's Seat.",
+      "rule": "",
+      "hidden": false,
+      "order": 31
+     },
+     {
+      "section": "6. Чтение: weekend in Edinburgh",
+      "kind": "CHOICE",
+      "prompt": "Прочитайте текст выше. Why hasn't Tom bought any souvenirs?",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [
+       "he is going to buy them on Sunday",
+       "he doesn't like souvenirs",
+       "the shops were closed",
+       "he has no money"
+      ],
+      "answer": "he is going to buy them on Sunday",
+      "explanation": "Tom hasn't bought any souvenirs yet, because he is going to do that on Sunday.",
+      "rule": "",
+      "hidden": false,
+      "order": 32
+     },
+     {
+      "section": "7. Письмо: мой опыт путешествий",
+      "kind": "TEACHER",
+      "prompt": "Напишите сообщение другу на английском (7–9 предложений): расскажите о своём опыте путешествий. Начните с Present Perfect (I've been to…), подробности расскажите в Past Simple. Используйте never, just, already или yet минимум три раза.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [],
+      "answer": "",
+      "explanation": "Hi Anna! I've been to a lot of places, but my favourite trip was to Turkey. I've been there twice. The first time I went with my family in 2019: we stayed in a small hotel near the sea and visited some old ruins. I've never tried scuba diving, but I've already decided to do it next summer. I haven't booked the trip yet, because I'm waiting for my holiday dates. Have you ever been to Turkey? Write soon!",
+      "rule": "7–9 предложений",
+      "hidden": false,
+      "order": 33
+     },
+     {
+      "section": "8. Говорение: расспросите друга",
+      "kind": "TEACHER",
+      "prompt": "Подготовьте устный диалог на 1–1,5 минуты: вы расспрашиваете друга о его опыте. Задайте три вопроса Have you ever…? и один уточняющий вопрос в Past Simple (When did you…?). Здесь запишите план и свои ответы.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [],
+      "answer": "",
+      "explanation": "Have you ever been abroad? — Yes, I have. I've been to Georgia and Turkey. — When did you go to Georgia? — Two years ago, in the summer. Have you ever tried surfing? — No, I haven't, but I'd like to. Have you ever missed a flight? — Yes, I have! Last year I missed a flight to Sochi, so I had to wait for the next one for five hours.",
+      "rule": "3 вопроса + 1 уточняющий",
+      "hidden": false,
+      "order": 34
+     }
+    ]
+   }
+  },
+  {
+   "number": 7,
+   "topic": "Planning ahead: планы и прогнозы",
+   "description": "Будущее в английском: Present Continuous для договорённостей, be going to для планов и намерений, will для решений на ходу, обещаний и прогнозов, if / when / as soon as + Present Simple.",
+   "goal": "Рассказать о своих планах и договорённостях и сделать прогноз, выбрав между Present Continuous, be going to и will",
+   "durationMin": 60,
+   "level": "B1",
+   "bookTitle": "",
+   "bookRef": "",
+   "timeline": [
+    {
+     "time": "0–6",
+     "title": "Повторение",
+     "note": "Present Perfect из урока 6"
+    },
+    {
+     "time": "6–12",
+     "title": "Разогрев",
+     "note": "Ваши планы на выходные и на лето"
+    },
+    {
+     "time": "12–22",
+     "title": "Чтение",
+     "note": "Plans for the weekend: переписка друзей"
+    },
+    {
+     "time": "22–32",
+     "title": "Грамматика 1",
+     "note": "Present Continuous и be going to: планы"
+    },
+    {
+     "time": "32–42",
+     "title": "Грамматика 2",
+     "note": "will: решение, обещание, прогноз"
+    },
+    {
+     "time": "42–48",
+     "title": "Грамматика 3",
+     "note": "if, when, as soon as + Present Simple"
+    },
+    {
+     "time": "48–54",
+     "title": "Произношение",
+     "note": "gonna, 'll и won't"
+    },
+    {
+     "time": "54–60",
+     "title": "Говорение",
+     "note": "План идеальных выходных"
+    }
+   ],
+   "blocks": [
+    {
+     "kind": "rule",
+     "title": "Повторение урока 6: Present Perfect",
+     "paragraphs": [
+      "Вспомним Present Perfect: опыт и свежие новости."
+     ],
+     "formulas": [],
+     "rules": [
+      "have / has + V3: I've been to Spain. She has never flown.",
+      "ever — в вопросах, never — в утверждениях, just — «только что», already — «уже», yet — «ещё не» (в конце).",
+      "Время названо (yesterday, last year, in 2019) — Past Simple: I went to Spain in 2019."
+     ],
+     "examples": [],
+     "prompts": [],
+     "vocab": [],
+     "audioUrl": "",
+     "audioTitle": "",
+     "videoUrl": "",
+     "videoTitle": "",
+     "subtitlesUrl": "",
+     "sample": "",
+     "transcript": "",
+     "imageUrl": "",
+     "hidden": false,
+     "text": "",
+     "tasks": [
+      {
+       "id": "l7-rev-1",
+       "kind": "fill",
+       "prompt": "Впишите причастие (visit): Have you ever ___ Spain?",
+       "options": [],
+       "optionValues": [],
+       "answer": "visited",
+       "explanation": "Вопрос об опыте: Have you ever + V3.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l7-rev-2",
+       "kind": "choice",
+       "prompt": "Выберите слово: We haven't booked the hotel ___.",
+       "options": [
+        "yet",
+        "ever",
+        "just",
+        "never"
+       ],
+       "optionValues": [
+        "yet",
+        "ever",
+        "just",
+        "never"
+       ],
+       "answer": "yet",
+       "explanation": "В отрицании «ещё не» — yet в конце.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l7-rev-3",
+       "kind": "choice",
+       "prompt": "Выберите вариант: I ___ to London in 2018.",
+       "options": [
+        "went",
+        "have been",
+        "have gone",
+        "go"
+       ],
+       "optionValues": [
+        "went",
+        "have been",
+        "have gone",
+        "go"
+       ],
+       "answer": "went",
+       "explanation": "in 2018 — время названо, нужен Past Simple.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l7-rev-4",
+       "kind": "fill",
+       "prompt": "Впишите причастие (write): I have just ___ an email to the hotel.",
+       "options": [],
+       "optionValues": [],
+       "answer": "written",
+       "explanation": "write — wrote — written.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      }
+     ]
+    },
+    {
+     "kind": "speaking",
+     "title": "Разогрев: ваши планы",
+     "paragraphs": [
+      "Обсудите с преподавателем по-английски. Используйте разные способы говорить о будущем."
+     ],
+     "formulas": [],
+     "rules": [],
+     "examples": [],
+     "prompts": [
+      "What are you doing this weekend?",
+      "What are you going to do next summer?",
+      "Do you make plans in advance or decide at the last moment?",
+      "Is there a trip you are looking forward to?"
+     ],
+     "vocab": [],
+     "audioUrl": "",
+     "audioTitle": "",
+     "videoUrl": "",
+     "videoTitle": "",
+     "subtitlesUrl": "",
+     "sample": "This weekend I'm meeting my friends on Saturday - we're going to the cinema. On Sunday I'm going to stay at home and relax. Next summer I'm going to visit my cousin in Kazan: I've already bought the tickets. I usually make plans in advance, because I don't like surprises, but sometimes I decide at the last moment. I'm really looking forward to my summer trip.",
+     "transcript": "",
+     "imageUrl": "",
+     "hidden": false,
+     "text": "",
+     "tasks": []
+    },
+    {
+     "kind": "reading",
+     "title": "Чтение: Plans for the weekend",
+     "paragraphs": [
+      "Прочитайте переписку друзей. Найдите все предложения о будущем и определите, в каком времени они стоят."
+     ],
+     "formulas": [],
+     "rules": [],
+     "examples": [],
+     "prompts": [],
+     "vocab": [],
+     "audioUrl": "",
+     "audioTitle": "",
+     "videoUrl": "",
+     "videoTitle": "",
+     "subtitlesUrl": "",
+     "sample": "",
+     "transcript": "",
+     "imageUrl": "",
+     "hidden": false,
+     "text": "Plans for the weekend (a group chat)\n\nMia: Hi Alex! Are you free next weekend?\nAlex: I'm afraid not. On Saturday I'm visiting my grandparents - they're cooking a big family lunch.\nMia: That sounds nice! And what are you going to do on Sunday?\nAlex: Nothing special. I'm going to sleep late and I'll probably watch a film.\nMia: Why don't you come to Edinburgh with us? Tom has already booked the train tickets, and we're staying in a small hostel near the castle. We're leaving at 7 am on Sunday.\nAlex: 7 am! That's very early. But it sounds great - I'll come! I'll set three alarms.\nMia: Fantastic! Tom is going to bring a guidebook, and I'm going to make a list of places to visit. If the weather is good, we'll have a picnic in the park.\nAlex: Perfect. As soon as I get home from my grandparents on Saturday, I'll pack my bag.",
+     "tasks": [
+      {
+       "id": "l7-rd-1",
+       "kind": "choice",
+       "prompt": "Прочитайте текст и выберите ответ: What is Alex doing on Saturday?",
+       "options": [
+        "visiting his grandparents",
+        "travelling to Edinburgh",
+        "working",
+        "meeting Tom"
+       ],
+       "optionValues": [
+        "visiting his grandparents",
+        "travelling to Edinburgh",
+        "working",
+        "meeting Tom"
+       ],
+       "answer": "visiting his grandparents",
+       "explanation": "On Saturday I'm visiting my grandparents.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l7-rd-2",
+       "kind": "choice",
+       "prompt": "Выберите ответ: What time are they leaving on Sunday?",
+       "options": [
+        "7 am",
+        "7 pm",
+        "9 am",
+        "noon"
+       ],
+       "optionValues": [
+        "7 am",
+        "7 pm",
+        "9 am",
+        "noon"
+       ],
+       "answer": "7 am",
+       "explanation": "We're leaving at 7 am on Sunday.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l7-rd-3",
+       "kind": "choice",
+       "prompt": "Выберите ответ: Who has already booked the train tickets?",
+       "options": [
+        "Tom",
+        "Mia",
+        "Alex",
+        "nobody"
+       ],
+       "optionValues": [
+        "Tom",
+        "Mia",
+        "Alex",
+        "nobody"
+       ],
+       "answer": "Tom",
+       "explanation": "Tom has already booked the train tickets.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l7-rd-4",
+       "kind": "fill",
+       "prompt": "Впишите слово из текста: Alex says: «It sounds great - I ___ come!»",
+       "options": [],
+       "optionValues": [],
+       "answer": "will, 'll, ll",
+       "explanation": "I'll come = I will come. Алекс решает прямо сейчас, в момент разговора.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l7-rd-5",
+       "kind": "fill",
+       "prompt": "Впишите слово из текста: If the weather is good, we ___ have a picnic in the park.",
+       "options": [],
+       "optionValues": [],
+       "answer": "will, 'll, ll",
+       "explanation": "После if стоит Present Simple (is), а в главной части — will: we'll have.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l7-rd-6",
+       "kind": "choice",
+       "prompt": "Почему Алекс говорит I'll come (will), а не I'm going to come?",
+       "options": [
+        "он решает в момент разговора",
+        "он давно это запланировал",
+        "он предсказывает погоду",
+        "это расписание поездов"
+       ],
+       "optionValues": [
+        "он решает в момент разговора",
+        "он давно это запланировал",
+        "он предсказывает погоду",
+        "это расписание поездов"
+       ],
+       "answer": "он решает в момент разговора",
+       "explanation": "Решение принято сейчас, в ответ на приглашение, поэтому will.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      }
+     ]
+    },
+    {
+     "kind": "rule",
+     "title": "Правило 1: Present Continuous и be going to — планы",
+     "paragraphs": [
+      "Для планов в английском есть две частые формы. Present Continuous говорит о договорённости (всё уже организовано), be going to — о намерении и о прогнозе, который виден по фактам."
+     ],
+     "formulas": [
+      "Present Continuous: договорённость\n\nI'm meeting Anna at 7 pm tonight. (столик заказан)\nWe're flying to Rome on Friday. (билеты куплены)\nОбычно есть время или место: tomorrow, at 7, on Friday.",
+      "be going to + V1: план, намерение\n\n+  I'm going to learn Spanish. · She's going to start a new job.\n−  I'm not going to take the exam. · They aren't going to come.\n?  Are you going to travel this summer? — Yes, I am. / No, I'm not.\n\nПрогноз по фактам: Look at those clouds! It's going to rain."
+     ],
+     "rules": [
+      "Present Continuous — договорённость с точным временем или местом: I'm seeing the dentist at 4 pm.",
+      "be going to — намерение, которое появилось раньше момента речи: I'm going to save money for a trip.",
+      "Когда прогноз опирается на то, что мы видим сейчас, — только be going to: Look out! You're going to fall!",
+      "После going to — глагол в начальной форме: She's going to study law. Не «going to studying»."
+     ],
+     "examples": [],
+     "prompts": [],
+     "vocab": [],
+     "audioUrl": "",
+     "audioTitle": "",
+     "videoUrl": "",
+     "videoTitle": "",
+     "subtitlesUrl": "",
+     "sample": "",
+     "transcript": "",
+     "imageUrl": "",
+     "hidden": false,
+     "text": "",
+     "tasks": [
+      {
+       "id": "l7-gt-1",
+       "kind": "choice",
+       "prompt": "Выберите предложение: вы видите чёрные тучи.",
+       "options": [
+        "It's going to rain.",
+        "It rains.",
+        "It's raining tomorrow.",
+        "It will to rain."
+       ],
+       "optionValues": [
+        "It's going to rain.",
+        "It rains.",
+        "It's raining tomorrow.",
+        "It will to rain."
+       ],
+       "answer": "It's going to rain.",
+       "explanation": "Прогноз по тому, что мы видим сейчас — be going to.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l7-gt-2",
+       "kind": "fill",
+       "prompt": "Впишите be going to (visit): We ___ my grandparents next weekend.",
+       "options": [],
+       "optionValues": [],
+       "answer": "are going to visit, 're going to visit, re going to visit",
+       "explanation": "be going to + глагол: we are going to visit.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l7-gt-3",
+       "kind": "fill",
+       "prompt": "Впишите Present Continuous (meet): I ___ Anna at 7 pm tonight — we've already booked a table.",
+       "options": [],
+       "optionValues": [],
+       "answer": "am meeting, 'm meeting, m meeting",
+       "explanation": "Договорённость с точным временем — Present Continuous: am meeting.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l7-gt-4",
+       "kind": "choice",
+       "prompt": "Какое предложение подходит для запланированной встречи в конкретное время?",
+       "options": [
+        "I'm meeting my boss at 9 am tomorrow.",
+        "I'm meet my boss at 9 am tomorrow.",
+        "I meeting my boss at 9 am tomorrow.",
+        "I'll meeting my boss at 9 am tomorrow."
+       ],
+       "optionValues": [
+        "I'm meeting my boss at 9 am tomorrow.",
+        "I'm meet my boss at 9 am tomorrow.",
+        "I meeting my boss at 9 am tomorrow.",
+        "I'll meeting my boss at 9 am tomorrow."
+       ],
+       "answer": "I'm meeting my boss at 9 am tomorrow.",
+       "explanation": "Present Continuous: am / is / are + глагол с -ing.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l7-gt-5",
+       "kind": "fill",
+       "prompt": "Впишите отрицание be going to (take): I ___ the exam — I'm too busy.",
+       "options": [],
+       "optionValues": [],
+       "answer": "'m not going to take, am not going to take, m not going to take",
+       "explanation": "Отрицание: am not going to + V1.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l7-gt-6",
+       "kind": "choice",
+       "prompt": "В каком предложении ошибка?",
+       "options": [
+        "She is going to studying medicine.",
+        "He's going to learn French.",
+        "We're going to stay at a hostel.",
+        "They aren't going to come."
+       ],
+       "optionValues": [
+        "She is going to studying medicine.",
+        "He's going to learn French.",
+        "We're going to stay at a hostel.",
+        "They aren't going to come."
+       ],
+       "answer": "She is going to studying medicine.",
+       "explanation": "После going to нужна начальная форма: going to study.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      }
+     ]
+    },
+    {
+     "kind": "rule",
+     "title": "Правило 2: will — решение, обещание, прогноз",
+     "paragraphs": [
+      "will нужен, когда мы решаем прямо сейчас, что-то обещаем или предлагаем, а также когда высказываем своё мнение о будущем."
+     ],
+     "formulas": [
+      "Форма\n\n+  I / you / he / she / it / we / they will ('ll) + V1\n−  will not (won't) + V1\n?  Will you…? — Yes, I will. / No, I won't.\n\nI'll call you tonight. · It won't be easy. · Will you help me?",
+      "Когда will\n\n1) Решение в момент речи: It's cold. I'll close the window.\n2) Обещание и предложение: I'll write to you every week. I'll carry your bag.\n3) Прогноз, мнение: I think it will be a great trip. You'll love Prague.\n\nСлова-спутники: I think, I'm sure, I hope, probably (стоит после will: It will probably rain), might — «может быть»."
+     ],
+     "rules": [
+      "Решили только что — will; решили раньше — going to: — Мы забыли молоко. — I'll buy some. / I'm going to buy milk after work (уже решено).",
+      "won't = will not: Don't worry, I won't tell anyone.",
+      "Мнение о будущем: I think + will. Если уверенности нет, используйте might: It might rain.",
+      "После will — глагол в начальной форме без to: I'll help you. Не «I will to help»."
+     ],
+     "examples": [],
+     "prompts": [],
+     "vocab": [],
+     "audioUrl": "",
+     "audioTitle": "",
+     "videoUrl": "",
+     "videoTitle": "",
+     "subtitlesUrl": "",
+     "sample": "",
+     "transcript": "",
+     "imageUrl": "",
+     "hidden": false,
+     "text": "",
+     "tasks": [
+      {
+       "id": "l7-wl-1",
+       "kind": "choice",
+       "prompt": "Выберите слово: — I can't open this bag. — Wait, I ___ help you.",
+       "options": [
+        "will",
+        "have",
+        "am",
+        "was"
+       ],
+       "optionValues": [
+        "will",
+        "have",
+        "am",
+        "was"
+       ],
+       "answer": "will",
+       "explanation": "Решение и предложение помощи в момент речи — will.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l7-wl-2",
+       "kind": "fill",
+       "prompt": "Впишите will или won't: Don't worry, I ___ tell anyone.",
+       "options": [],
+       "optionValues": [],
+       "answer": "won't, will not",
+       "explanation": "Обещание не говорить — отрицание: won't.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l7-wl-3",
+       "kind": "choice",
+       "prompt": "Выберите предложение с мнением о будущем.",
+       "options": [
+        "I think it will be a great trip.",
+        "I think it is being a great trip.",
+        "I think it has be a great trip.",
+        "I think it will to be a great trip."
+       ],
+       "optionValues": [
+        "I think it will be a great trip.",
+        "I think it is being a great trip.",
+        "I think it has be a great trip.",
+        "I think it will to be a great trip."
+       ],
+       "answer": "I think it will be a great trip.",
+       "explanation": "I think + will + V1.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l7-wl-4",
+       "kind": "fill",
+       "prompt": "Впишите глагол с will (rain): It's cloudy. It probably ___ tomorrow.",
+       "options": [],
+       "optionValues": [],
+       "answer": "will rain, 'll rain, ll rain",
+       "explanation": "probably стоит после will: It will probably rain; в нашем пропуске — will rain.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l7-wl-5",
+       "kind": "choice",
+       "prompt": "Выберите вариант: — We've got no bread. — Oh, I forgot! I ___ some now.",
+       "options": [
+        "will buy",
+        "have bought",
+        "was buying",
+        "buys"
+       ],
+       "optionValues": [
+        "will buy",
+        "have bought",
+        "was buying",
+        "buys"
+       ],
+       "answer": "will buy",
+       "explanation": "Решение в момент разговора — will + V1.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l7-wl-6",
+       "kind": "choice",
+       "prompt": "Выберите предложение с обещанием.",
+       "options": [
+        "I promise I will write every week.",
+        "I promise I will to write every week.",
+        "I promise I writing every week.",
+        "I promise I am write every week."
+       ],
+       "optionValues": [
+        "I promise I will write every week.",
+        "I promise I will to write every week.",
+        "I promise I writing every week.",
+        "I promise I am write every week."
+       ],
+       "answer": "I promise I will write every week.",
+       "explanation": "Обещание: will + V1 без to.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      }
+     ]
+    },
+    {
+     "kind": "rule",
+     "title": "Правило 3: if, when, as soon as — после них Present Simple",
+     "paragraphs": [
+      "Это самая частая ошибка с будущим: после if, when, as soon as, before, after и until мы не ставим will, даже если речь о будущем."
+     ],
+     "formulas": [
+      "If + Present Simple, will + V1\n\nIf it rains, we'll stay at the hostel.\n✗ If it will rain, we'll stay at the hostel.",
+      "when, as soon as, before, after, until + Present Simple\n\nWhen I arrive, I'll text you.\nAs soon as we get the tickets, we'll tell you.\nI'll wait here until you finish.\nWill в главной части, Present Simple — после союза."
+     ],
+     "rules": [
+      "После if, when, as soon as, before, after, until — Present Simple, даже если речь о будущем.",
+      "will ставим только в главной части: When she calls, I'll tell her.",
+      "Если придаточная часть стоит первой, после неё ставим запятую: If you come, we'll be happy.",
+      "As soon as — «как только»; until — «пока не»; before — «до того, как»."
+     ],
+     "examples": [],
+     "prompts": [],
+     "vocab": [],
+     "audioUrl": "",
+     "audioTitle": "",
+     "videoUrl": "",
+     "videoTitle": "",
+     "subtitlesUrl": "",
+     "sample": "",
+     "transcript": "",
+     "imageUrl": "",
+     "hidden": false,
+     "text": "",
+     "tasks": [
+      {
+       "id": "l7-if-1",
+       "kind": "fill",
+       "prompt": "Впишите глагол в нужной форме (rain): If it ___ tomorrow, we'll stay at home.",
+       "options": [],
+       "optionValues": [],
+       "answer": "rains",
+       "explanation": "После if — Present Simple: it rains.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l7-if-2",
+       "kind": "fill",
+       "prompt": "Впишите глагол в нужной форме (arrive): I'll call you when I ___ at the hotel.",
+       "options": [],
+       "optionValues": [],
+       "answer": "arrive",
+       "explanation": "После when — Present Simple: I arrive.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l7-if-3",
+       "kind": "choice",
+       "prompt": "Выберите вариант: As soon as we ___ the tickets, we'll tell you.",
+       "options": [
+        "get",
+        "will get",
+        "are getting",
+        "got"
+       ],
+       "optionValues": [
+        "get",
+        "will get",
+        "are getting",
+        "got"
+       ],
+       "answer": "get",
+       "explanation": "После as soon as — Present Simple.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l7-if-4",
+       "kind": "choice",
+       "prompt": "В каком предложении ошибка?",
+       "options": [
+        "We will be happy if you will come.",
+        "We will be happy if you come.",
+        "I'll tell her when she calls.",
+        "We'll lock the door before we leave."
+       ],
+       "optionValues": [
+        "We will be happy if you will come.",
+        "We will be happy if you come.",
+        "I'll tell her when she calls.",
+        "We'll lock the door before we leave."
+       ],
+       "answer": "We will be happy if you will come.",
+       "explanation": "После if не нужен will: …if you come.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l7-if-5",
+       "kind": "fill",
+       "prompt": "Впишите глагол в нужной форме (finish): I'll wait here until you ___.",
+       "options": [],
+       "optionValues": [],
+       "answer": "finish",
+       "explanation": "После until — Present Simple: you finish.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l7-if-6",
+       "kind": "choice",
+       "prompt": "Закончите предложение: If I miss the flight, ___",
+       "options": [
+        "I'll take the next one.",
+        "I took the next one.",
+        "I would to take the next one.",
+        "I taking the next one."
+       ],
+       "optionValues": [
+        "I'll take the next one.",
+        "I took the next one.",
+        "I would to take the next one.",
+        "I taking the next one."
+       ],
+       "answer": "I'll take the next one.",
+       "explanation": "В главной части — will + V1.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      }
+     ]
+    },
+    {
+     "kind": "vocab",
+     "title": "Лексика: plans and city break",
+     "paragraphs": [
+      "Слова для планирования поездки. Попробуйте составить с каждым предложение о будущем."
+     ],
+     "formulas": [],
+     "rules": [],
+     "examples": [],
+     "prompts": [],
+     "vocab": [
+      {
+       "en": "itinerary",
+       "ru": "маршрут, план поездки"
+      },
+      {
+       "en": "hostel",
+       "ru": "хостел"
+      },
+      {
+       "en": "departure",
+       "ru": "отправление, вылет"
+      },
+      {
+       "en": "day trip",
+       "ru": "однодневная поездка"
+      },
+      {
+       "en": "check out",
+       "ru": "выписаться из отеля"
+      },
+      {
+       "en": "forecast",
+       "ru": "прогноз"
+      },
+      {
+       "en": "pack",
+       "ru": "собирать вещи, упаковывать"
+      },
+      {
+       "en": "look forward to",
+       "ru": "с нетерпением ждать"
+      },
+      {
+       "en": "make up your mind",
+       "ru": "принять решение"
+      },
+      {
+       "en": "be about to",
+       "ru": "вот-вот собираться что-то сделать"
+      },
+      {
+       "en": "in advance",
+       "ru": "заранее"
+      },
+      {
+       "en": "arrange",
+       "ru": "организовывать, договариваться"
+      }
+     ],
+     "audioUrl": "",
+     "audioTitle": "",
+     "videoUrl": "",
+     "videoTitle": "",
+     "subtitlesUrl": "",
+     "sample": "",
+     "transcript": "",
+     "imageUrl": "",
+     "hidden": false,
+     "text": "",
+     "tasks": []
+    },
+    {
+     "kind": "rule",
+     "title": "Произношение: gonna, 'll и won't",
+     "paragraphs": [
+      "В живой речи будущее звучит короче, чем пишется. Русская подсказка в скобках — приблизительное чтение; точные звуки показывает транскрипция."
+     ],
+     "formulas": [
+      "going to в быстрой речи\n\nI'm going to /aɪm ˈɡoʊɪŋ tə/ (айм го́уинг тэ) → I'm gonna /aɪm ˈɡʌnə/ (айм га́нэ)\nWhat are you going to do? → What are you gonna do?\n«gonna» — разговорная форма: в письме и на экзамене пишем going to.",
+      "'ll — краткая форма will\n\nI'll /aɪl/ (айл) · you'll /juːl/ (юл) · he'll /hiːl/ (хил) · we'll /wiːl/ (вил) · they'll /ðeɪl/ (зэйл)\nwon't /woʊnt/ (воунт) — не путайте с want /wɑːnt/ (уант)",
+      "Слова урока: ударение\n\nitinerary /aɪˈtɪnəreri/ (айти́нэрэри) — ударение на втором слоге\narrange /əˈreɪndʒ/ (эрэ́йндж) — на втором слоге\ndeparture /dɪˈpɑːrtʃər/ (дипа́ртчэр) — на втором слоге\nforecast /ˈfɔːrkæst/ (фо́ркэст) — на первом слоге\nhostel /ˈhɑːstl/ (ха́стл) — на первом слоге"
+     ],
+     "rules": [],
+     "examples": [],
+     "prompts": [],
+     "vocab": [],
+     "audioUrl": "",
+     "audioTitle": "",
+     "videoUrl": "",
+     "videoTitle": "",
+     "subtitlesUrl": "",
+     "sample": "",
+     "transcript": "",
+     "imageUrl": "",
+     "hidden": false,
+     "text": "",
+     "tasks": [
+      {
+       "id": "l7-pr-1",
+       "kind": "choice",
+       "prompt": "Как в быстрой речи часто звучит going to?",
+       "options": [
+        "gonna",
+        "goner",
+        "going two",
+        "gone to"
+       ],
+       "optionValues": [
+        "gonna",
+        "goner",
+        "going two",
+        "gone to"
+       ],
+       "answer": "gonna",
+       "explanation": "going to → gonna /ˈɡʌnə/ (га́нэ): так говорят, но пишем going to.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l7-pr-2",
+       "kind": "choice",
+       "prompt": "Какое слово читается /woʊnt/ (воунт)?",
+       "options": [
+        "won't",
+        "want",
+        "went",
+        "wait"
+       ],
+       "optionValues": [
+        "won't",
+        "want",
+        "went",
+        "wait"
+       ],
+       "answer": "won't",
+       "explanation": "won't /woʊnt/ (воунт) — отрицание от will. want читается /wɑːnt/ (уант).",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l7-pr-3",
+       "kind": "choice",
+       "prompt": "Как читается I'll?",
+       "options": [
+        "айл",
+        "ил",
+        "хэл",
+        "эл"
+       ],
+       "optionValues": [
+        "айл",
+        "ил",
+        "хэл",
+        "эл"
+       ],
+       "answer": "айл",
+       "explanation": "I'll /aɪl/ (айл): will сокращается до 'll.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l7-pr-4",
+       "kind": "choice",
+       "prompt": "На каком слоге ударение в слове arrange?",
+       "options": [
+        "на втором слоге",
+        "на первом слоге",
+        "на третьем слоге",
+        "ударения нет"
+       ],
+       "optionValues": [
+        "на втором слоге",
+        "на первом слоге",
+        "на третьем слоге",
+        "ударения нет"
+       ],
+       "answer": "на втором слоге",
+       "explanation": "arrange /əˈreɪndʒ/ (эрэ́йндж): знак ˈ стоит перед reɪndʒ.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      },
+      {
+       "id": "l7-pr-5",
+       "kind": "choice",
+       "prompt": "На каком слоге ударение в слове itinerary?",
+       "options": [
+        "на втором слоге",
+        "на первом слоге",
+        "на последнем слоге",
+        "ударения нет"
+       ],
+       "optionValues": [
+        "на втором слоге",
+        "на первом слоге",
+        "на последнем слоге",
+        "ударения нет"
+       ],
+       "answer": "на втором слоге",
+       "explanation": "itinerary /aɪˈtɪnəreri/ (айти́нэрэри): ударение на tɪn.",
+       "x": -1,
+       "y": -1,
+       "w": 0
+      }
+     ]
+    },
+    {
+     "kind": "speaking",
+     "title": "Говорение: план идеальных выходных",
+     "paragraphs": [
+      "Расскажите о своих планах на ближайшие выходные и о поездке, которую хотите совершить. Используйте все три способа говорить о будущем."
+     ],
+     "formulas": [],
+     "rules": [],
+     "examples": [],
+     "prompts": [
+      "Use the Present Continuous for what is already arranged: I'm meeting… on Saturday.",
+      "Use be going to for your plans: I'm going to…",
+      "Use will for a prediction or a promise: I think it will be fun. I'll send you photos.",
+      "Say one sentence with if or when: If the weather is good, we'll…"
+     ],
+     "vocab": [],
+     "audioUrl": "",
+     "audioTitle": "",
+     "videoUrl": "",
+     "videoTitle": "",
+     "subtitlesUrl": "",
+     "sample": "This weekend I'm meeting my friends on Saturday - we're going to a concert. On Sunday I'm going to go to the park with my sister. Next summer I'm going to travel to Georgia: I've already bought the tickets. I think it will be a wonderful trip. If the weather is good, we'll go hiking in the mountains. As soon as I get home, I'll send you some photos.",
+     "transcript": "",
+     "imageUrl": "",
+     "hidden": false,
+     "text": "",
+     "tasks": []
+    }
+   ],
+   "words": [
+    {
+     "english": "itinerary",
+     "russian": "маршрут, план поездки",
+     "partOfSpeech": "noun",
+     "transcription": "/aɪˈtɪnəreri/",
+     "example": "Let's make an itinerary before we go.",
+     "definition": "a plan of a journey, with the places you will visit",
+     "definitionRu": "план поездки с местами, которые вы посетите",
+     "audioUrl": "",
+     "imageUrl": "",
+     "order": 0
+    },
+    {
+     "english": "hostel",
+     "russian": "хостел",
+     "partOfSpeech": "noun",
+     "transcription": "/ˈhɑːstl/",
+     "example": "We're staying in a small hostel near the castle.",
+     "definition": "a cheap place to stay, often with shared rooms",
+     "definitionRu": "недорогое место для ночлега, часто с общими комнатами",
+     "audioUrl": "",
+     "imageUrl": "",
+     "order": 1
+    },
+    {
+     "english": "departure",
+     "russian": "отправление, вылет",
+     "partOfSpeech": "noun",
+     "transcription": "/dɪˈpɑːrtʃər/",
+     "example": "The departure time is 7 am.",
+     "definition": "the time when a plane, train or bus leaves",
+     "definitionRu": "время, когда уходит самолёт, поезд или автобус",
+     "audioUrl": "",
+     "imageUrl": "",
+     "order": 2
+    },
+    {
+     "english": "day trip",
+     "russian": "однодневная поездка",
+     "partOfSpeech": "noun",
+     "transcription": "",
+     "example": "We're going on a day trip to the coast.",
+     "definition": "a short journey where you go somewhere and come back the same day",
+     "definitionRu": "короткая поездка, из которой возвращаются в тот же день",
+     "audioUrl": "",
+     "imageUrl": "",
+     "order": 3
+    },
+    {
+     "english": "check out",
+     "russian": "выписаться из отеля",
+     "partOfSpeech": "verb",
+     "transcription": "",
+     "example": "We have to check out before 11 am.",
+     "definition": "to leave a hotel after paying",
+     "definitionRu": "покинуть отель, расплатившись",
+     "audioUrl": "",
+     "imageUrl": "",
+     "order": 4
+    },
+    {
+     "english": "forecast",
+     "russian": "прогноз",
+     "partOfSpeech": "noun",
+     "transcription": "/ˈfɔːrkæst/",
+     "example": "The weather forecast says it will rain tomorrow.",
+     "definition": "a statement about what will happen in the future",
+     "definitionRu": "заявление о том, что произойдёт в будущем",
+     "audioUrl": "",
+     "imageUrl": "",
+     "order": 5
+    },
+    {
+     "english": "pack",
+     "russian": "собирать вещи, упаковывать",
+     "partOfSpeech": "verb",
+     "transcription": "/pæk/",
+     "example": "I haven't packed my bag yet.",
+     "definition": "to put things into a bag or suitcase for a journey",
+     "definitionRu": "складывать вещи в сумку или чемодан для поездки",
+     "audioUrl": "",
+     "imageUrl": "",
+     "order": 6
+    },
+    {
+     "english": "look forward to",
+     "russian": "с нетерпением ждать",
+     "partOfSpeech": "verb",
+     "transcription": "",
+     "example": "I'm really looking forward to the trip.",
+     "definition": "to feel happy about something that is going to happen",
+     "definitionRu": "радоваться тому, что скоро произойдёт",
+     "audioUrl": "",
+     "imageUrl": "",
+     "order": 7
+    },
+    {
+     "english": "make up your mind",
+     "russian": "принять решение",
+     "partOfSpeech": "verb",
+     "transcription": "",
+     "example": "I can't make up my mind where to go.",
+     "definition": "to decide something",
+     "definitionRu": "решить что-то",
+     "audioUrl": "",
+     "imageUrl": "",
+     "order": 8
+    },
+    {
+     "english": "be about to",
+     "russian": "вот-вот собираться что-то сделать",
+     "partOfSpeech": "verb",
+     "transcription": "",
+     "example": "Hurry up! The train is about to leave.",
+     "definition": "to be going to do something very soon",
+     "definitionRu": "вот-вот сделать что-то",
+     "audioUrl": "",
+     "imageUrl": "",
+     "order": 9
+    },
+    {
+     "english": "in advance",
+     "russian": "заранее",
+     "partOfSpeech": "adverb",
+     "transcription": "",
+     "example": "It's cheaper if you book in advance.",
+     "definition": "before a particular time or event",
+     "definitionRu": "до определённого времени или события",
+     "audioUrl": "",
+     "imageUrl": "",
+     "order": 10
+    },
+    {
+     "english": "arrange",
+     "russian": "организовывать, договариваться",
+     "partOfSpeech": "verb",
+     "transcription": "/əˈreɪndʒ/",
+     "example": "I've arranged to meet Anna at seven.",
+     "definition": "to plan or organize something",
+     "definitionRu": "планировать или организовывать что-то",
+     "audioUrl": "",
+     "imageUrl": "",
+     "order": 11
+    }
+   ],
+   "homework": {
+    "title": "Домашнее задание к уроку 7",
+    "intro": "Планы и прогнозы: Present Continuous и be going to, will, if / when / as soon as + Present Simple и лексика для планирования поездки.",
+    "tasks": [
+     {
+      "section": "1. Present Continuous и be going to",
+      "kind": "FILL",
+      "prompt": "Впишите be going to (visit): My parents ___ Kazan in July.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [],
+      "answer": "are going to visit, 're going to visit, re going to visit",
+      "explanation": "be going to + V1: are going to visit.",
+      "rule": "",
+      "hidden": false,
+      "order": 0
+     },
+     {
+      "section": "1. Present Continuous и be going to",
+      "kind": "FILL",
+      "prompt": "Впишите Present Continuous (fly): We ___ to Rome on Friday — the tickets are booked.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [],
+      "answer": "are flying, 're flying, re flying",
+      "explanation": "Договорённость с точным временем: are flying.",
+      "rule": "",
+      "hidden": false,
+      "order": 1
+     },
+     {
+      "section": "1. Present Continuous и be going to",
+      "kind": "FILL",
+      "prompt": "Впишите отрицание be going to (cook): I ___ tonight — let's order a pizza.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [],
+      "answer": "'m not going to cook, am not going to cook, m not going to cook",
+      "explanation": "Отрицание: am not going to + V1.",
+      "rule": "",
+      "hidden": false,
+      "order": 2
+     },
+     {
+      "section": "1. Present Continuous и be going to",
+      "kind": "CHOICE",
+      "prompt": "Выберите вариант: Look out! That car ___ hit the wall!",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [
+       "is going to",
+       "will to",
+       "is",
+       "has"
+      ],
+      "answer": "is going to",
+      "explanation": "Прогноз по тому, что мы видим сейчас — be going to.",
+      "rule": "",
+      "hidden": false,
+      "order": 3
+     },
+     {
+      "section": "1. Present Continuous и be going to",
+      "kind": "CHOICE",
+      "prompt": "Выберите предложение о договорённости на конкретное время.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [
+       "I'm seeing the dentist at 4 pm tomorrow.",
+       "I'm see the dentist at 4 pm tomorrow.",
+       "I seeing the dentist at 4 pm tomorrow.",
+       "I'll seeing the dentist at 4 pm tomorrow."
+      ],
+      "answer": "I'm seeing the dentist at 4 pm tomorrow.",
+      "explanation": "Present Continuous: am / is / are + глагол с -ing.",
+      "rule": "",
+      "hidden": false,
+      "order": 4
+     },
+     {
+      "section": "1. Present Continuous и be going to",
+      "kind": "CHOICE",
+      "prompt": "В каком предложении ошибка?",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [
+       "They are going to arriving at six.",
+       "She's going to study law.",
+       "We're going to move house.",
+       "I'm not going to tell him."
+      ],
+      "answer": "They are going to arriving at six.",
+      "explanation": "После going to — начальная форма: going to arrive.",
+      "rule": "",
+      "hidden": false,
+      "order": 5
+     },
+     {
+      "section": "2. Will: решение, обещание, прогноз",
+      "kind": "FILL",
+      "prompt": "Впишите will или won't: Don't worry. I ___ forget your birthday.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [],
+      "answer": "won't, will not",
+      "explanation": "Обещание не забыть — won't.",
+      "rule": "",
+      "hidden": false,
+      "order": 6
+     },
+     {
+      "section": "2. Will: решение, обещание, прогноз",
+      "kind": "FILL",
+      "prompt": "Впишите глагол с will (be): I think the trip ___ great fun.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [],
+      "answer": "will be, 'll be, ll be",
+      "explanation": "Мнение о будущем: I think + will + V1.",
+      "rule": "",
+      "hidden": false,
+      "order": 7
+     },
+     {
+      "section": "2. Will: решение, обещание, прогноз",
+      "kind": "FILL",
+      "prompt": "Впишите глагол с will (help): It's heavy! Wait, I ___ you.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [],
+      "answer": "will help, 'll help, ll help",
+      "explanation": "Предложение помощи в момент речи — will.",
+      "rule": "",
+      "hidden": false,
+      "order": 8
+     },
+     {
+      "section": "2. Will: решение, обещание, прогноз",
+      "kind": "CHOICE",
+      "prompt": "Выберите слово: — It's really hot in here. — I ___ open the window.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [
+       "will",
+       "opened",
+       "opening",
+       "to open"
+      ],
+      "answer": "will",
+      "explanation": "Решение в момент разговора — will.",
+      "rule": "",
+      "hidden": false,
+      "order": 9
+     },
+     {
+      "section": "2. Will: решение, обещание, прогноз",
+      "kind": "CHOICE",
+      "prompt": "Выберите предложение с мнением о будущем.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [
+       "I think she will pass the exam.",
+       "I think she will to pass the exam.",
+       "I think she will passing the exam.",
+       "I think she pass the exam."
+      ],
+      "answer": "I think she will pass the exam.",
+      "explanation": "I think + will + V1.",
+      "rule": "",
+      "hidden": false,
+      "order": 10
+     },
+     {
+      "section": "2. Will: решение, обещание, прогноз",
+      "kind": "CHOICE",
+      "prompt": "Выберите слово: I'm sure you ___ love this city.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [
+       "will",
+       "are",
+       "were",
+       "has"
+      ],
+      "answer": "will",
+      "explanation": "Уверенный прогноз — will.",
+      "rule": "",
+      "hidden": false,
+      "order": 11
+     },
+     {
+      "section": "3. If, when, as soon as",
+      "kind": "FILL",
+      "prompt": "Впишите глагол в нужной форме (be): If the weather ___ good tomorrow, we'll go to the beach.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [],
+      "answer": "is",
+      "explanation": "После if — Present Simple: is.",
+      "rule": "",
+      "hidden": false,
+      "order": 12
+     },
+     {
+      "section": "3. If, when, as soon as",
+      "kind": "FILL",
+      "prompt": "Впишите глагол в нужной форме (arrive): I'll phone you as soon as I ___ at the airport.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [],
+      "answer": "arrive",
+      "explanation": "После as soon as — Present Simple.",
+      "rule": "",
+      "hidden": false,
+      "order": 13
+     },
+     {
+      "section": "3. If, when, as soon as",
+      "kind": "FILL",
+      "prompt": "Впишите глагол в нужной форме (finish): We'll wait here until you ___.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [],
+      "answer": "finish",
+      "explanation": "После until — Present Simple.",
+      "rule": "",
+      "hidden": false,
+      "order": 14
+     },
+     {
+      "section": "3. If, when, as soon as",
+      "kind": "FILL",
+      "prompt": "Впишите отрицание (have): If we ___ enough money, we won't go on holiday.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [],
+      "answer": "don't have, do not have",
+      "explanation": "После if — Present Simple; отрицание — don't have.",
+      "rule": "",
+      "hidden": false,
+      "order": 15
+     },
+     {
+      "section": "3. If, when, as soon as",
+      "kind": "CHOICE",
+      "prompt": "Выберите вариант: When I ___ home, I'll send you the photos.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [
+       "get",
+       "will get",
+       "am getting",
+       "got"
+      ],
+      "answer": "get",
+      "explanation": "После when — Present Simple.",
+      "rule": "",
+      "hidden": false,
+      "order": 16
+     },
+     {
+      "section": "3. If, when, as soon as",
+      "kind": "CHOICE",
+      "prompt": "В каком предложении ошибка?",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [
+       "We'll stay in if it will rain.",
+       "We'll stay in if it rains.",
+       "We'll start when he arrives.",
+       "I'll tell you as soon as I know."
+      ],
+      "answer": "We'll stay in if it will rain.",
+      "explanation": "После if не нужен will: …if it rains.",
+      "rule": "",
+      "hidden": false,
+      "order": 17
+     },
+     {
+      "section": "4. Все формы будущего вместе",
+      "kind": "CHOICE",
+      "prompt": "Выберите вариант: I've booked the tickets. We ___ to Paris on Saturday.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [
+       "are flying",
+       "flew",
+       "have flown",
+       "flying"
+      ],
+      "answer": "are flying",
+      "explanation": "Билеты куплены — договорённость, Present Continuous.",
+      "rule": "",
+      "hidden": false,
+      "order": 18
+     },
+     {
+      "section": "4. Все формы будущего вместе",
+      "kind": "CHOICE",
+      "prompt": "Выберите вариант: — What are your plans for the summer? — I ___ learn to surf. I've already signed up for lessons.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [
+       "am going to",
+       "will",
+       "am",
+       "was"
+      ],
+      "answer": "am going to",
+      "explanation": "План, принятый заранее — be going to.",
+      "rule": "",
+      "hidden": false,
+      "order": 19
+     },
+     {
+      "section": "4. Все формы будущего вместе",
+      "kind": "CHOICE",
+      "prompt": "Выберите вариант: — The phone's ringing! — I ___ answer it.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [
+       "will",
+       "am going",
+       "have",
+       "was"
+      ],
+      "answer": "will",
+      "explanation": "Решение в момент речи — will.",
+      "rule": "",
+      "hidden": false,
+      "order": 20
+     },
+     {
+      "section": "4. Все формы будущего вместе",
+      "kind": "FILL",
+      "prompt": "Впишите Present Continuous (go): I ___ to the cinema tonight. I've got the tickets in my bag.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [],
+      "answer": "am going, 'm going, m going",
+      "explanation": "Договорённость: am going.",
+      "rule": "",
+      "hidden": false,
+      "order": 21
+     },
+     {
+      "section": "4. Все формы будущего вместе",
+      "kind": "FILL",
+      "prompt": "Впишите отрицание с will (be): Don't worry, I ___ late.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [],
+      "answer": "won't be, will not be",
+      "explanation": "Обещание — won't be.",
+      "rule": "",
+      "hidden": false,
+      "order": 22
+     },
+     {
+      "section": "5. Лексика: plans and city break",
+      "kind": "FILL",
+      "prompt": "Впишите слово: Let's plan our ___ — where are we going to go each day? (маршрут)",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [],
+      "answer": "itinerary",
+      "explanation": "itinerary — маршрут, план поездки.",
+      "rule": "",
+      "hidden": false,
+      "order": 23
+     },
+     {
+      "section": "5. Лексика: plans and city break",
+      "kind": "FILL",
+      "prompt": "Впишите слово: It's cheaper if you book the tickets in ___. (заранее)",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [],
+      "answer": "advance",
+      "explanation": "in advance — заранее.",
+      "rule": "",
+      "hidden": false,
+      "order": 24
+     },
+     {
+      "section": "5. Лексика: plans and city break",
+      "kind": "FILL",
+      "prompt": "Впишите слово: We have to ___ out of the hotel before 11 am. (выписаться)",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [],
+      "answer": "check",
+      "explanation": "check out — выписаться из отеля.",
+      "rule": "",
+      "hidden": false,
+      "order": 25
+     },
+     {
+      "section": "5. Лексика: plans and city break",
+      "kind": "CHOICE",
+      "prompt": "Выберите слово: What's the weather ___ for tomorrow?",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [
+       "forecast",
+       "itinerary",
+       "hostel",
+       "departure"
+      ],
+      "answer": "forecast",
+      "explanation": "weather forecast — прогноз погоды.",
+      "rule": "",
+      "hidden": false,
+      "order": 26
+     },
+     {
+      "section": "5. Лексика: plans and city break",
+      "kind": "CHOICE",
+      "prompt": "Выберите слово: I'm really ___ to the trip. (с нетерпением жду)",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [
+       "looking forward",
+       "looking for",
+       "looking at",
+       "looking after"
+      ],
+      "answer": "looking forward",
+      "explanation": "look forward to — с нетерпением ждать.",
+      "rule": "",
+      "hidden": false,
+      "order": 27
+     },
+     {
+      "section": "6. Чтение: Sarah's summer plans",
+      "kind": "READING",
+      "prompt": "Прочитайте текст и выберите ответ: Where is Sarah going this summer?",
+      "text": "Sarah's plans for the summer\n\nSarah is 24 and she works in a travel agency in Moscow. This summer she is going to take a long holiday for the first time. She has already decided to go to Georgia, and she's flying to Tbilisi on 3 July - the ticket is booked. She's staying with a friend for the first week, and then she's going to travel around the country by train. She hasn't planned the whole trip yet.\n\n'I'll probably visit the mountains,' she says, 'but I'll decide when I get there.' Sarah is looking forward to trying the local food, and she thinks she will love it. If it isn't too hot, she is going to go hiking in the mountains.",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [
+       "Georgia",
+       "Turkey",
+       "Italy",
+       "Spain"
+      ],
+      "answer": "Georgia",
+      "explanation": "She has already decided to go to Georgia.",
+      "rule": "",
+      "hidden": false,
+      "order": 28
+     },
+     {
+      "section": "6. Чтение: Sarah's summer plans",
+      "kind": "FILL",
+      "prompt": "Прочитайте текст выше и впишите слово: Sarah is ___ to Tbilisi on 3 July.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [],
+      "answer": "flying",
+      "explanation": "She's flying to Tbilisi on 3 July — Present Continuous для договорённости.",
+      "rule": "",
+      "hidden": false,
+      "order": 29
+     },
+     {
+      "section": "6. Чтение: Sarah's summer plans",
+      "kind": "FILL",
+      "prompt": "Прочитайте текст выше и впишите слово: She hasn't planned the whole trip ___.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [],
+      "answer": "yet",
+      "explanation": "She hasn't planned the whole trip yet.",
+      "rule": "",
+      "hidden": false,
+      "order": 30
+     },
+     {
+      "section": "6. Чтение: Sarah's summer plans",
+      "kind": "CHOICE",
+      "prompt": "Прочитайте текст выше. What is Sarah going to do after the first week?",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [
+       "travel around the country by train",
+       "stay with her friend",
+       "go back to Moscow",
+       "work in a travel agency"
+      ],
+      "answer": "travel around the country by train",
+      "explanation": "She's staying with a friend for the first week, and then she's going to travel around the country by train.",
+      "rule": "",
+      "hidden": false,
+      "order": 31
+     },
+     {
+      "section": "6. Чтение: Sarah's summer plans",
+      "kind": "CHOICE",
+      "prompt": "Прочитайте текст выше. When will Sarah decide where to go in the mountains?",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [
+       "when she gets there",
+       "before she leaves",
+       "when she comes back",
+       "she has already decided"
+      ],
+      "answer": "when she gets there",
+      "explanation": "I'll decide when I get there.",
+      "rule": "",
+      "hidden": false,
+      "order": 32
+     },
+     {
+      "section": "7. Письмо: мои планы",
+      "kind": "TEACHER",
+      "prompt": "Напишите сообщение другу на английском (7–9 предложений): расскажите о своих планах на ближайшие выходные и на лето. Используйте все три способа говорить о будущем: Present Continuous (договорённость), be going to (план), will (прогноз или обещание) и одно предложение с if или when.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [],
+      "answer": "",
+      "explanation": "Hi Ben! This weekend I'm meeting my friends on Saturday - we're going to see a film. On Sunday I'm going to visit my grandparents: they're cooking a big lunch. Next summer I'm going to travel to Georgia with my sister. We've already bought the tickets, and we're flying on 3 July. I think it will be a wonderful trip! If the weather is good, we'll go hiking in the mountains. As soon as I get back, I'll send you some photos. Write soon!",
+      "rule": "7–9 предложений",
+      "hidden": false,
+      "order": 33
+     },
+     {
+      "section": "8. Говорение: планы на выходные",
+      "kind": "TEACHER",
+      "prompt": "Подготовьте устный рассказ на 1–1,5 минуты: «Мои идеальные выходные». Используйте Present Continuous, be going to, will и if / when. Здесь запишите план.",
+      "text": "",
+      "audioUrl": "",
+      "transcript": "",
+      "options": [],
+      "answer": "",
+      "explanation": "My perfect weekend starts on Friday evening: I'm meeting my friends for dinner. On Saturday I'm going to get up late and have a long breakfast. Then I'm going to visit a new museum - I've already bought the ticket. I think it will be really interesting. If the weather is nice, we'll have a picnic in the park. On Sunday I'll relax at home. When I wake up, I'll make pancakes!",
+      "rule": "План из 6–8 фраз",
+      "hidden": false,
+      "order": 34
+     }
+    ]
+   }
+  }
+ ]
+}
