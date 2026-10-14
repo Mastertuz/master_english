@@ -262,7 +262,7 @@
       {
        "id": "l6-rd-4",
        "kind": "fill",
-       "prompt": "Впишите слово из текста: Rita has ___ in Porto all her life.",
+       "prompt": "Впишите слово из текста (live): Rita has ___ in Porto all her life.",
        "options": [],
        "optionValues": [],
        "answer": "lived",
@@ -1518,7 +1518,7 @@
       "transcript": "",
       "options": [
        "have never seen",
-       "never saw",
+       "never see",
        "did never see",
        "was never seeing"
       ],
@@ -1592,7 +1592,7 @@
      {
       "section": "5. Лексика: travel experiences",
       "kind": "FILL",
-      "prompt": "Впишите слово: Have you ever lived ___? (за границей)",
+      "prompt": "Впишите слово по-английски (за границей — 1 слово, начинается на a): Have you ever lived ___?",
       "text": "",
       "audioUrl": "",
       "transcript": "",
@@ -1606,7 +1606,7 @@
      {
       "section": "5. Лексика: travel experiences",
       "kind": "FILL",
-      "prompt": "Впишите слово: We got ___ in the old town and asked a local for help.",
+      "prompt": "Впишите слово (get lost — «заблудиться»; нужна форма после got, 1 слово): We got ___ in the old town and asked a local for help.",
       "text": "",
       "audioUrl": "",
       "transcript": "",
@@ -1620,7 +1620,7 @@
      {
       "section": "5. Лексика: travel experiences",
       "kind": "FILL",
-      "prompt": "Впишите слово: I need to ___ some money before the trip. (обменять)",
+      "prompt": "Впишите глагол по-английски (обменять — 1 слово, начинается на e): I need to ___ some money before the trip.",
       "text": "",
       "audioUrl": "",
       "transcript": "",
@@ -1691,7 +1691,7 @@
      {
       "section": "6. Чтение: weekend in Edinburgh",
       "kind": "FILL",
-      "prompt": "Прочитайте текст выше и впишите слово: Tom has ___ sent three postcards to his friends.",
+      "prompt": "Прочитайте текст выше и впишите слово («уже»): Tom has ___ sent three postcards to his friends.",
       "text": "",
       "audioUrl": "",
       "transcript": "",
@@ -1705,7 +1705,7 @@
      {
       "section": "6. Чтение: weekend in Edinburgh",
       "kind": "FILL",
-      "prompt": "Прочитайте текст выше и впишите слово: Tom hasn't bought any souvenirs ___.",
+      "prompt": "Прочитайте текст выше и впишите слово («ещё»): Tom hasn't bought any souvenirs ___.",
       "text": "",
       "audioUrl": "",
       "transcript": "",
@@ -3278,7 +3278,7 @@
      {
       "section": "5. Лексика: plans and city break",
       "kind": "FILL",
-      "prompt": "Впишите слово: Let's plan our ___ — where are we going to go each day? (маршрут)",
+      "prompt": "Впишите слово по-английски (маршрут, план поездки — 1 слово, начинается на i): Let's plan our ___ — where are we going to go each day?",
       "text": "",
       "audioUrl": "",
       "transcript": "",
@@ -3292,7 +3292,7 @@
      {
       "section": "5. Лексика: plans and city break",
       "kind": "FILL",
-      "prompt": "Впишите слово: It's cheaper if you book the tickets in ___. (заранее)",
+      "prompt": "Впишите слово по-английски (заранее — 1 слово, начинается на a): It's cheaper if you book the tickets in ___.",
       "text": "",
       "audioUrl": "",
       "transcript": "",
@@ -3306,7 +3306,7 @@
      {
       "section": "5. Лексика: plans and city break",
       "kind": "FILL",
-      "prompt": "Впишите слово: We have to ___ out of the hotel before 11 am. (выписаться)",
+      "prompt": "Впишите слово (check out — «выписаться из отеля»; нужно первое слово): We have to ___ out of the hotel before 11 am.",
       "text": "",
       "audioUrl": "",
       "transcript": "",
@@ -3377,7 +3377,7 @@
      {
       "section": "6. Чтение: Sarah's summer plans",
       "kind": "FILL",
-      "prompt": "Прочитайте текст выше и впишите слово: Sarah is ___ to Tbilisi on 3 July.",
+      "prompt": "Прочитайте текст выше и впишите слово (fly в Present Continuous): Sarah is ___ to Tbilisi on 3 July.",
       "text": "",
       "audioUrl": "",
       "transcript": "",
@@ -3391,7 +3391,7 @@
      {
       "section": "6. Чтение: Sarah's summer plans",
       "kind": "FILL",
-      "prompt": "Прочитайте текст выше и впишите слово: She hasn't planned the whole trip ___.",
+      "prompt": "Прочитайте текст выше и впишите слово («ещё»): She hasn't planned the whole trip ___.",
       "text": "",
       "audioUrl": "",
       "transcript": "",
