@@ -205,7 +205,11 @@ export default async function StudentPage({
     },
   });
 
-  const teacherAnswers = answers.filter((item) => item.task.kind === "TEACHER");
+  // В списке остаются только непроверенные: как только выставлена оценка,
+  // ответ пропадает отсюда (работу по-прежнему можно открыть из списка ДЗ)
+  const teacherAnswers = answers.filter(
+    (item) => item.task.kind === "TEACHER" && item.grade == null,
+  );
   const autoAnswers = answers.filter((item) => item.task.kind !== "TEACHER");
   const correct = autoAnswers.filter((item) => item.isCorrect).length;
 
@@ -598,7 +602,7 @@ export default async function StudentPage({
 
         {teacherAnswers.length === 0 ? (
           <div className="card p-6 text-center text-[14px] text-ink-500">
-            Развёрнутых ответов пока нет.
+            Ответов, ждущих проверки, нет.
           </div>
         ) : (
           teacherAnswers.map((answer) => (
