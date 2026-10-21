@@ -979,13 +979,21 @@ function WritingTab({ exam, ctx, hidden }: TabProps) {
         ) : null}
 
         {ctx.teacher ? (
-          <TeacherBox title={`план и образец ответа (${countWords(ctx.teacher.writing.sample)} слов)`}>
+          <TeacherBox
+            title={
+              ctx.teacher.writing.sample
+                ? `план и образец ответа (${countWords(ctx.teacher.writing.sample)} слов)`
+                : "план ответа"
+            }
+          >
             <ol className="mt-1 list-decimal space-y-0.5 pl-5 text-[13.5px] text-ink-700">
               {ctx.teacher.writing.plan.map((step) => (
                 <li key={step}>{step}</li>
               ))}
             </ol>
-            <p className="mt-3 whitespace-pre-wrap">{ctx.teacher.writing.sample}</p>
+            {ctx.teacher.writing.sample ? (
+              <p className="mt-3 whitespace-pre-wrap">{ctx.teacher.writing.sample}</p>
+            ) : null}
           </TeacherBox>
         ) : null}
       </SectionCard>
@@ -1042,7 +1050,7 @@ function SpeakingTab({
         <blockquote className="rounded-xl bg-ink-50/80 p-5 text-[15.5px] leading-relaxed text-ink-900">
           {speaking.task1.text}
         </blockquote>
-        {teacher ? (
+        {teacher?.speaking.hardWords.length ? (
           <TeacherBox title="трудные места для чтения вслух">
             <ul className="mt-1 space-y-0.5 text-[13.5px]">
               {teacher.speaking.hardWords.map((item) => (
@@ -1113,11 +1121,19 @@ function SpeakingTab({
                 </div>
                 {/* На экзамене вопрос звучит только в записи — текст видит учитель */}
                 {teacher ? (
-                  <TeacherBox title={`вопрос ${index + 1} и образец ответа`}>
+                  <TeacherBox
+                    title={
+                      teacher.speaking.task2.samples[index]
+                        ? `вопрос ${index + 1} и образец ответа`
+                        : `вопрос ${index + 1}`
+                    }
+                  >
                     <p className="font-medium text-ink-900">{question.text}</p>
-                    <p className="mt-1 text-ink-700">
-                      {teacher.speaking.task2.samples[index]}
-                    </p>
+                    {teacher.speaking.task2.samples[index] ? (
+                      <p className="mt-1 text-ink-700">
+                        {teacher.speaking.task2.samples[index]}
+                      </p>
+                    ) : null}
                   </TeacherBox>
                 ) : null}
                 <Recorder
@@ -1162,7 +1178,7 @@ function SpeakingTab({
           onChange={(recording) => onRecording("s3", recording)}
         />
         {scoreFor({ part: "s3" })}
-        {teacher ? (
+        {teacher?.speaking.task3Sample ? (
           <TeacherBox title="образец монолога">
             <div className="space-y-1">
               {teacher.speaking.task3Sample.split("\n").map((line) => (

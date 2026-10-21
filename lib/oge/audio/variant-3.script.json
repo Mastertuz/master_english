@@ -1,0 +1,107 @@
+{
+  "voices": {
+    "Vet": "Eddy (English (UK))",
+    "Tom": "Reed (English (UK))",
+    "Ann": "Flo (English (UK))",
+    "Presenter": "Rocko (English (UK))",
+    "Interviewer": "Sandy (English (UK))",
+    "Respondent": "Grandpa (English (UK))",
+    "Assistant": "Samantha"
+  },
+  "part1": [
+    {
+      "title": "Text A",
+      "voice": "Sandy (English (UK))",
+      "text": "Dear friends! Today, in our book shop you have a chance to win a free masterclass on storytelling. Yes, a famous writer will be explaining to you the secrets of how to write a good story. To win this wonderful prize, you need to take part in a quest and answer questions about our bookshop, which is the oldest in our town and has a great history. Apart from the main prize, we are offering a special discount card to all our loyal customers who take part in the quest."
+    },
+    {
+      "title": "Text B",
+      "voice": "Shelley (English (UK))",
+      "text": "Hi, Jack, it’s Mia. Look, I need your help. My dog has gone missing and we are looking for him everywhere. He must be somewhere nearby. That’s why I’m calling all my friends, just in case someone has seen a black Labrador with a grey collar. Our neighbours have already called me about a grey dog whose breed they could not distinguish. And a girl informed me about a beautiful golden retriever which was not mine either. If you happen to see a black one, call me at once!"
+    },
+    {
+      "title": "Text C",
+      "lines": [
+        { "who": "Vet", "text": "Oh, this is a nice puppy. What’s wrong with him?" },
+        { "who": "Tom", "text": "I don’t know. He has refused any food since yesterday morning. And he doesn’t want to play." },
+        { "who": "Vet", "text": "I see. Let me take his temperature... Right. He’s running a temperature. And it looks like an insect bite... Yes. I can see it now that it has been bitten by a bug. Which may be dangerous. Did you walk him in the wood or in the park?" },
+        { "who": "Tom", "text": "We were in the park a few days ago. I collected my kids and we enjoyed a long walk in the park, together with the puppy, of course. He ran a lot chasing the butterflies and the birds. Now the children worry a lot and keep asking me how they can help their puppy." }
+      ]
+    },
+    {
+      "title": "Text D",
+      "lines": [
+        { "who": "Ann", "text": "Look, Tom, any idea what it is? Let’s ask the museum guide." },
+        { "who": "Tom", "text": "No need. There’s the information below the exhibit, it says it’s an ancient musical instrument. If you are interested, you can look it up in the encyclopedia." },
+        { "who": "Ann", "text": "In fact, I don’t often read encyclopedias. I prefer fiction. Especially in French. It’s fun and good for learning." },
+        { "who": "Tom", "text": "Do you learn French at school?" },
+        { "who": "Ann", "text": "Yes. I’m good at it. I can even write poetry in French." },
+        { "who": "Tom", "text": "Impressive." },
+        { "who": "Ann", "text": "From next week I’m going to take a Spanish course too. Frankly, I would prefer Italian, but there are no vacancies in the Italian group." },
+        { "who": "Tom", "text": "You can take it later." }
+      ]
+    }
+  ],
+  "part5": {
+    "presenter": "Good afternoon. Today we have asked 5 people to give us a short interview and share their opinions about their school life. Now we would like to present their opinions to you.",
+    "speakers": [
+      {
+        "title": "Speaker A",
+        "voice": "Flo (English (UK))",
+        "text": "We’ve always lived in this town and I go to the school where my mother learnt. She says that the school has changed a lot since her time, but we have found out that some things are still the same. Like my mother’s class, we have a special day at the end of the month when we wish happy birthday to our classmates who were born in that month. Before the New Year, we write our New Year Resolutions and display them on the walls in the classroom. My mum and I both like it."
+      },
+      {
+        "title": "Speaker B",
+        "voice": "Reed (English (UK))",
+        "text": "I don’t mind school, I even like it. But still, from the beginning of the academic year, I start thinking about the holidays. We have Christmas, Easter and summer holidays. My favourite holidays are in winter, because it’s Christmas time with lots of fun and presents. I also like the summer holidays because they are the longest. We usually go for family holidays in summer and we start planning them a good time ahead."
+      },
+      {
+        "title": "Speaker C",
+        "voice": "Sandy (English (UK))",
+        "text": "Last year I had to change my school because we’d moved house. I felt a bit nervous at the beginning, but my new classmates welcomed me very warmly. They were really nice and helpful. I think I’m lucky to have them around. We have fun together — go cycling and play in the park. When I need someone to look after my rabbit, when my family leaves for a holiday, my classmates are always there for me. I hope our friendship will not end when we finish school."
+      },
+      {
+        "title": "Speaker D",
+        "voice": "Eddy (English (UK))",
+        "text": "We go to school five days a week. It’s a place where we spend lots of our time. Naturally, it would be nice to keep this place nice, tidy and safe. That’s why there are several laws that we observe — we should respect our teachers, we should respect each other and we should respect the school’s property. Only the students can enter the building and the grounds of the school. When we want to bring friends from another school to our school event, we ask our teacher for permission."
+      },
+      {
+        "title": "Speaker E",
+        "voice": "Shelley (English (UK))",
+        "text": "School is not only about learning though, certainly, the lessons take most of our time there. But we also have lots of other things to do. At our school, we enjoy sports games in our playground and our school theatre. We also have a dance group which is so good that they perform not only at our school parties but also at the town’s events. I really think that anyone can find an exciting hobby at school. At least, our school is the right place for that."
+      }
+    ]
+  },
+  "part6": [
+    { "who": "Interviewer", "text": "Thank you for agreeing to take part in our survey." },
+    { "who": "Respondent", "text": "I’m always glad to have a nice conversation. Especially now, when I’m on holiday. I’m in your city for the first time and I like it very much." },
+    { "who": "Interviewer", "text": "You are a tourist then. And where are you from?" },
+    { "who": "Respondent", "text": "From Scotland. I was born there and have lived all my life there. Have you ever been to Scotland?" },
+    { "who": "Interviewer", "text": "Not yet. I’ve been to Ireland and Wales..." },
+    { "who": "Respondent", "text": "You should see it. The best season to visit Scotland is summer of course, though my favourite time there is spring. But I’ve got my personal reasons to love spring." },
+    { "who": "Interviewer", "text": "What are they, if I may ask?" },
+    { "who": "Respondent", "text": "Of course you may! It’s because of my job. I’m a gardener and spring is the most important time for me. A new beginning — the whole year depends on it. I look after many gardens in our town and I make a living from it." },
+    { "who": "Interviewer", "text": "Is it a well-paid job? Oh, sorry, that’s not a proper question to ask." },
+    { "who": "Respondent", "text": "Don’t worry. It’s perfectly fine with me. The job of a gardener is less well-paid of course than the job of a surgeon or a banker or a top manager. But I like it. I’m 70 already but I feel happy and optimistic..." },
+    { "who": "Interviewer", "text": "Probably because all your life you’ve been doing the job you enjoy." },
+    { "who": "Respondent", "text": "Exactly." },
+    { "who": "Interviewer", "text": "Amazing. What else do you like except gardening? Do you like singing or painting or collecting minerals?" },
+    { "who": "Respondent", "text": "If you mean a hobby, in my case it’s certainly fishing. My wife says that a hobby is something you cannot make money from but you spend lots of money on it. I often buy rods, hooks and wobblers but I seldom catch enough fish to cook supper. It doesn’t matter much to me of course. I will be going fishing anyway." },
+    { "who": "Interviewer", "text": "And what do you like to eat, except for the fish you never catch?" },
+    { "who": "Respondent", "text": "My favourite dish is the pies my wife bakes. She makes them with different fillings and I love all of them. Thank God, I work a lot and in the open air. Otherwise I would be as fat as a pumpkin." },
+    { "who": "Interviewer", "text": "You are kidding! But, yes, I have to admit that homemade pies are something I can never resist either." },
+    { "who": "Respondent", "text": "That’s it!" }
+  ],
+  "speaking": {
+    "intro": "Hello! It’s the electronic assistant of the radio studio City Life. We kindly ask you to take part in our survey. We need to find out how teenagers feel about school. Please answer six questions. The survey is anonymous — you don’t have to give your name. So, let’s get started.",
+    "questions": [
+      "How many classes do you have a day?",
+      "What is your favourite subject? Why do you like it?",
+      "Are there any school subjects you don’t like? What are they?",
+      "What sports activities do you have at school?",
+      "How much time does it take you to do your homework?",
+      "What would you recommend to a student who spends too much time on his or her homework?"
+    ],
+    "outro": "That is the end of the survey. Thank you very much for your cooperation."
+  }
+}

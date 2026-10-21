@@ -149,6 +149,14 @@ export default async function OgePage() {
                     Заполнено {summary.answered} из {fieldCount(variant)}
                   </span>
                 ) : null}
+                {variant.origin?.synthAudio ? (
+                  <span
+                    className="chip bg-amber-50 text-amber-700"
+                    title="Запись озвучена синтезатором речи, а не диктором экзамена"
+                  >
+                    Озвучка синтезатором
+                  </span>
+                ) : null}
               </div>
 
               <h2 className="mt-3 text-[17px] font-semibold text-ink-900">

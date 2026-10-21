@@ -70,6 +70,16 @@ export default async function RazborPage({
           Что проверяет каждое задание, как его выполнять, где ловушки и почему
           верен именно этот ответ
         </p>
+        {variant.origin ? (
+          <p className="mt-3 rounded-xl border border-amber-200 bg-amber-50/60 px-4 py-3 text-[14px] leading-relaxed text-ink-700">
+            Вариант взят из сборника типовых вариантов: в книге есть задания и
+            ключи, но нет пояснений, поэтому здесь верные ответы, тексты и
+            критерии оценивания. Подробный разбор с пояснениями — в демоверсии.
+            {variant.origin.synthAudio
+              ? " Запись к заданиям озвучена синтезатором речи: это не оригинальная запись экзамена."
+              : ""}
+          </p>
+        ) : null}
       </div>
 
       <div className="grid gap-4 lg:grid-cols-[1fr_1fr]">
@@ -299,7 +309,7 @@ export default async function RazborPage({
             </p>
             <p className="mt-1 text-[13.5px] text-ink-600">
               Каждая часть — с новой строки. Имя в обращении берите из письма-стимула
-              (в этом варианте — Mary), подпись — только своё имя. Через «/»
+              (в этом варианте — {writing.email.from.split("@")[0]}), подпись — только своё имя. Через «/»
               даны варианты: выберите один.
             </p>
             <ol className="mt-3 space-y-2">
@@ -327,6 +337,8 @@ export default async function RazborPage({
 
           <StrategyCard strategy={writing.strategy} />
 
+          {writing.sample ? (
+            <>
           <div className="rounded-xl border border-emerald-200 bg-emerald-50/50 p-4">
             <p className="text-[12.5px] font-semibold uppercase tracking-wide text-emerald-700">
               Образец ответа · {countWords(writing.sample)} слов
@@ -349,6 +361,8 @@ export default async function RazborPage({
               {writing.templateSample}
             </p>
           </div>
+            </>
+          ) : null}
         </Block>
       </section>
 
@@ -361,6 +375,7 @@ export default async function RazborPage({
           <blockquote className="rounded-xl bg-ink-50/80 p-4 text-[15px] leading-relaxed text-ink-900">
             {speaking.task1.text}
           </blockquote>
+          {speaking.task1.hardWords.length ? (
           <div className="overflow-x-auto">
             <table className="w-full min-w-[420px] text-left text-[14px]">
               <thead>
@@ -379,6 +394,7 @@ export default async function RazborPage({
               </tbody>
             </table>
           </div>
+          ) : null}
           <p className="text-[14px] text-ink-700">{speaking.task1.criteria}</p>
           <StrategyCard strategy={speaking.task1.strategy} />
         </Block>
@@ -418,10 +434,14 @@ export default async function RazborPage({
               n={index + 1}
               title={isAdmin ? question.text : `Вопрос ${index + 1}`}
               answer="полный ответ"
-              explanation={{
-                proof: question.sample,
-                why: "Образец: прямой ответ на вопрос и одна-две подробности. Ответ одним словом получил бы 0 баллов.",
-              }}
+              explanation={
+                question.sample
+                  ? {
+                      proof: question.sample,
+                      why: "Образец: прямой ответ на вопрос и одна-две подробности. Ответ одним словом получил бы 0 баллов.",
+                    }
+                  : { why: "" }
+              }
             />
           ))}
         </Block>
@@ -441,6 +461,7 @@ export default async function RazborPage({
             6–7 фраз дают не больше 1 балла по К1.
           </p>
           <StrategyCard strategy={speaking.task3.strategy} />
+          {speaking.task3.sample ? (
           <div className="rounded-xl border border-emerald-200 bg-emerald-50/50 p-4">
             <p className="text-[12.5px] font-semibold uppercase tracking-wide text-emerald-700">
               Образец монолога
@@ -451,6 +472,7 @@ export default async function RazborPage({
               ))}
             </div>
           </div>
+          ) : null}
 
           <MonologueBankView />
           <HomelandIdeasView />

@@ -3,6 +3,8 @@ import type { Criterion, Explanation, Strategy } from "@/lib/oge/types";
 
 /** Что проверяет задание, как его выполнять и где ошибаются */
 export function StrategyCard({ strategy }: { strategy: Strategy }) {
+  // У вариантов из сборника стратегий нет — карточку не рисуем
+  if (!strategy.steps.length && !strategy.mistakes.length) return null;
   return (
     <div className="grid gap-3 md:grid-cols-2">
       <div className="rounded-xl border border-brand-200 bg-brand-50/60 p-4">
@@ -31,6 +33,9 @@ export function StrategyCard({ strategy }: { strategy: Strategy }) {
 }
 
 export function ExplanationView({ explanation }: { explanation: Explanation }) {
+  if (!explanation.why && !explanation.proof && !explanation.rule && !explanation.trap) {
+    return null;
+  }
   return (
     <div className="mt-2 space-y-1.5 text-[14px] leading-relaxed">
       {explanation.proof ? (
@@ -38,7 +43,7 @@ export function ExplanationView({ explanation }: { explanation: Explanation }) {
           {explanation.proof}
         </blockquote>
       ) : null}
-      <p className="text-ink-800">{explanation.why}</p>
+      {explanation.why ? <p className="text-ink-800">{explanation.why}</p> : null}
       {explanation.rule ? (
         <p className="rounded-lg bg-brand-50/70 px-3 py-2 text-ink-800">
           <span className="font-semibold text-brand-700">Правило: </span>
