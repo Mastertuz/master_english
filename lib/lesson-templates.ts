@@ -306,6 +306,8 @@ export type HomeworkTaskDraft = {
   rule: string;
   /** Скрыто от ученика: задание видит только преподаватель */
   hidden: boolean;
+  /** Личное задание одного ученика (только в личной версии работы) */
+  personal?: boolean;
 };
 
 export function emptyHomeworkTask(

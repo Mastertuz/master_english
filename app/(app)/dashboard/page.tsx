@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { effectiveTasks, overridesFor, tasksFor } from "@/lib/homework-personal";
 import { newComments, newSubmissions } from "@/lib/notifications";
 import { prisma } from "@/lib/prisma";
 import { requireUser } from "@/lib/session";
@@ -50,7 +51,7 @@ export default async function DashboardPage() {
   const comments = isAdmin ? [] : await newComments(user.id);
   const submissions = isAdmin ? await newSubmissions() : [];
 
-  const [lessons, words, recent, pendingHomework] = await Promise.all([
+  const [lessons, words, recent, homeworkTasks] = await Promise.all([
     prisma.lesson.count({ where: scope }),
     prisma.word.count({ where: { userId: user.id } }),
     prisma.lesson.findMany({
@@ -61,23 +62,30 @@ export default async function DashboardPage() {
     }),
     /**
      * Невыполненные задания считаем так же, как счётчик внутри работы:
-     * только автопроверяемые и не скрытые, а черновик за ответ не идёт —
-     * он пропадёт при следующем заходе.
+     * только не скрытые (с учётом личных правок ученика), а черновик
+     * за ответ не идёт — он пропадёт при следующем заходе.
      */
-    prisma.homeworkTask.count({
-      where: {
-        homework: { lesson: scope },
-        hidden: false,
-        OR: [
-          { answers: { none: { userId: user.id } } },
-          {
-            answers: { some: { userId: user.id, saved: false } },
-            homework: { submissions: { none: { userId: user.id } } },
-          },
-        ],
+    prisma.homeworkTask.findMany({
+      where: { homework: { lesson: scope }, ...tasksFor(user.id) },
+      select: {
+        order: true,
+        hidden: true,
+        forUserId: true,
+        overrides: overridesFor(user.id),
+        answers: { where: { userId: user.id }, select: { saved: true } },
+        homework: {
+          select: { submissions: { where: { userId: user.id }, select: { id: true } } },
+        },
       },
     }),
   ]);
+
+  const pendingHomework = effectiveTasks(homeworkTasks).filter((task) => {
+    if (task.hidden) return false;
+    const answer = task.answers[0];
+    if (!answer) return true;
+    return !answer.saved && task.homework.submissions.length === 0;
+  }).length;
 
   const sections = isAdmin
     ? [

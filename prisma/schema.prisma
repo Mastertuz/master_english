@@ -67,7 +67,7 @@ model User {
   sessions            Session[]
   resetCodes          PasswordResetCode[]
   assignments         LessonAssignment[]
-  authoredLessons     Lesson[]             @relation("LessonAuthor")
+  authoredLessons     Lesson[]               @relation("LessonAuthor")
   words               Word[]
   tests               Test[]
   attempts            TrainingAttempt[]
@@ -77,6 +77,9 @@ model User {
   lessonTaskAnswers   LessonTaskAnswer[]
   homeworkSubmissions HomeworkSubmission[]
   ogeAttempts         OgeAttempt[]
+  lessonVersions      LessonStudentVersion[]
+  homeworkOverrides   HomeworkTaskOverride[]
+  personalTasks       HomeworkTask[]         @relation("PersonalTasks")
 
   @@index([role])
 }
@@ -128,11 +131,12 @@ model Lesson {
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 
-  assignments LessonAssignment[]
-  words       LessonWord[]
-  homework    Homework?
-  tests       Test[]
-  taskAnswers LessonTaskAnswer[]
+  assignments     LessonAssignment[]
+  words           LessonWord[]
+  homework        Homework?
+  studentVersions LessonStudentVersion[]
+  tests           Test[]
+  taskAnswers     LessonTaskAnswer[]
 
   @@index([level])
 }
@@ -181,6 +185,22 @@ model LessonAssignment {
   @@index([userId])
 }
 
+/// Личная версия урока для одного ученика: блоки и тайминг, отличающиеся от
+/// общих. Создаётся копией общей версии и дальше живёт сама по себе.
+model LessonStudentVersion {
+  id        String   @id @default(cuid())
+  lessonId  String
+  lesson    Lesson   @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  blocks    Json
+  timeline  Json?
+  updatedAt DateTime @updatedAt
+
+  @@unique([lessonId, userId])
+  @@index([userId])
+}
+
 /// Словарь урока — общий, копируется ученику при назначении
 model LessonWord {
   id            String @id @default(cuid())
@@ -208,12 +228,12 @@ model LessonWord {
 /// До отправки ответы при каждом заходе начинаются с чистого листа,
 /// после отправки сохраняются и больше не сбрасываются сами.
 model HomeworkSubmission {
-  id          String   @id @default(cuid())
-  homeworkId  String
-  homework    Homework @relation(fields: [homeworkId], references: [id], onDelete: Cascade)
-  userId      String
-  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  submittedAt DateTime @default(now())
+  id              String    @id @default(cuid())
+  homeworkId      String
+  homework        Homework  @relation(fields: [homeworkId], references: [id], onDelete: Cascade)
+  userId          String
+  user            User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  submittedAt     DateTime  @default(now())
   /// Когда преподаватель открыл работу; null — работа новая, о ней
   /// напоминает значок в шапке. Повторная отправка снова делает её новой.
   seenByTeacherAt DateTime?
@@ -257,10 +277,31 @@ model HomeworkTask {
   rule        String   @default("")
   /// Скрыто от ученика: задание видит только преподаватель
   hidden      Boolean  @default(false)
+  /// Личное задание одного ученика; null — общее задание для всех
+  forUserId   String?
+  forUser     User?    @relation("PersonalTasks", fields: [forUserId], references: [id], onDelete: Cascade)
 
-  answers HomeworkAnswer[]
+  answers   HomeworkAnswer[]
+  overrides HomeworkTaskOverride[]
 
   @@index([homeworkId])
+  @@index([forUserId])
+}
+
+/// Личные правки общего задания для одного ученика. В patch лежат только
+/// отличающиеся поля (prompt, answer, options, hidden…) — остальное берётся
+/// из общего задания, поэтому правки общего задания доходят и до этого ученика.
+model HomeworkTaskOverride {
+  id        String       @id @default(cuid())
+  taskId    String
+  task      HomeworkTask @relation(fields: [taskId], references: [id], onDelete: Cascade)
+  userId    String
+  user      User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  patch     Json
+  updatedAt DateTime     @updatedAt
+
+  @@unique([taskId, userId])
+  @@index([userId])
 }
 
 model HomeworkAnswer {

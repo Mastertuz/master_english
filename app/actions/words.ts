@@ -218,6 +218,30 @@ export async function setWordAssignedAction(
   revalidatePath(`/students/${word.userId}`);
 }
 
+/** Назначить (или убрать назначение) сразу нескольким словам ученика */
+export async function setWordsAssignedAction(
+  studentId: string,
+  wordIds: string[],
+  assigned: boolean,
+): Promise<{ ok: boolean; changed: number }> {
+  const me = await requireUser();
+  if (me.role !== "ADMIN") return { ok: false, changed: 0 };
+
+  const ids = wordIds.filter(Boolean);
+  if (ids.length === 0) return { ok: true, changed: 0 };
+
+  // userId в условии: нельзя через чужой id затронуть слова другого ученика
+  const { count } = await prisma.word.updateMany({
+    where: { id: { in: ids }, userId: studentId },
+    data: { assigned },
+  });
+
+  revalidatePath("/dictionary");
+  revalidatePath("/training");
+  revalidatePath(`/students/${studentId}`);
+  return { ok: true, changed: count };
+}
+
 /** После урока: снять назначение со всех слов ученика */
 export async function clearAssignedWordsAction(studentId: string): Promise<void> {
   const me = await requireUser();

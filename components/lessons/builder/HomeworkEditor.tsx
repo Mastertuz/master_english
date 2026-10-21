@@ -20,14 +20,48 @@ export type HomeworkDraft = {
   tasks: HomeworkTaskDraft[];
 };
 
+/** Поля, по которым задание считается «изменённым для ученика» */
+const COMPARED: (keyof HomeworkTaskDraft)[] = [
+  "section",
+  "prompt",
+  "text",
+  "audioUrl",
+  "transcript",
+  "options",
+  "answer",
+  "explanation",
+  "rule",
+  "hidden",
+];
+
+function differsFrom(task: HomeworkTaskDraft, base: HomeworkTaskDraft | undefined) {
+  if (!base) return false;
+  return COMPARED.some(
+    (key) => JSON.stringify(task[key]) !== JSON.stringify(base[key]),
+  );
+}
+
 export function HomeworkEditor({
   homework,
   onChange,
+  personal = false,
+  baseTasks = [],
 }: {
   homework: HomeworkDraft;
   onChange: (homework: HomeworkDraft) => void;
+  /** Правим работу только для одного ученика, а не для всех */
+  personal?: boolean;
+  /** Общие задания: с ними сравниваем, что изменено для ученика */
+  baseTasks?: HomeworkTaskDraft[];
 }) {
   const tasks = homework.tasks;
+  const baseById = new Map(baseTasks.map((task) => [task.id, task]));
+
+  /** Новые задания в личной версии — личные задания ученика */
+  const fresh = (task: HomeworkTaskDraft): HomeworkTaskDraft =>
+    personal ? { ...task, personal: true } : task;
+
+  const sections = [...new Set(tasks.map((task) => task.section))];
 
   function setTasks(next: HomeworkTaskDraft[]) {
     onChange({ ...homework, tasks: next });
@@ -53,20 +87,48 @@ export function HomeworkEditor({
 
   return (
     <div className="space-y-5">
-      <div className="grid gap-4 sm:grid-cols-2">
-        <TextField
-          label="Название работы"
-          value={homework.title}
-          onChange={(title) => onChange({ ...homework, title })}
-          placeholder="Домашнее задание к уроку 1"
-        />
-        <TextField
-          label="Вступление"
-          value={homework.intro}
-          onChange={(intro) => onChange({ ...homework, intro })}
-          placeholder="Выполните задания до следующего занятия"
-        />
-      </div>
+      {personal ? (
+        <p className="rounded-xl bg-amber-50 px-3 py-2 text-[13px] text-amber-800">
+          Вы правите работу только для этого ученика. Название и вступление
+          общие. Общие задания можно изменить или скрыть у ученика, а новые
+          задания станут его личными.
+        </p>
+      ) : (
+        <div className="grid gap-4 sm:grid-cols-2">
+          <TextField
+            label="Название работы"
+            value={homework.title}
+            onChange={(title) => onChange({ ...homework, title })}
+            placeholder="Домашнее задание к уроку 1"
+          />
+          <TextField
+            label="Вступление"
+            value={homework.intro}
+            onChange={(intro) => onChange({ ...homework, intro })}
+            placeholder="Выполните задания до следующего занятия"
+          />
+        </div>
+      )}
+
+      {sections.length > 1 ? (
+        <div>
+          <p className="label">Разделы работы</p>
+          <div className="flex flex-wrap gap-1.5">
+            {sections.map((section, i) => (
+              <a
+                key={`${section}-${i}`}
+                href={`#hw-section-${i}`}
+                className="rounded-full border border-ink-200 bg-white px-3 py-1 text-[12.5px] text-ink-600 transition hover:border-brand-400 hover:text-brand-700"
+              >
+                {section || "Без раздела"}{" "}
+                <span className="text-ink-400">
+                  {tasks.filter((task) => task.section === section).length}
+                </span>
+              </a>
+            ))}
+          </div>
+        </div>
+      ) : null}
 
       <div>
         <p className="label">Добавить задание из шаблона</p>
@@ -75,7 +137,7 @@ export function HomeworkEditor({
             <button
               key={template.id}
               type="button"
-              onClick={() => setTasks([...tasks, template.build()])}
+              onClick={() => setTasks([...tasks, fresh(template.build())])}
               title={template.hint}
               className="cursor-pointer rounded-full border border-ink-200 bg-white px-3 py-1.5 text-[13px] font-medium text-ink-600 transition hover:border-brand-400 hover:text-brand-700"
             >
@@ -84,7 +146,7 @@ export function HomeworkEditor({
           ))}
           <button
             type="button"
-            onClick={() => setTasks([...tasks, emptyHomeworkTask()])}
+            onClick={() => setTasks([...tasks, fresh(emptyHomeworkTask())])}
             className="cursor-pointer rounded-full border border-dashed border-ink-300 px-3 py-1.5 text-[13px] font-medium text-ink-500 transition hover:border-brand-400 hover:text-brand-700"
           >
             + Пустое задание
@@ -107,7 +169,10 @@ export function HomeworkEditor({
             return (
             <div key={task.id ?? `new-${index}`}>
             {startsSection ? (
-              <div className="mb-2 mt-4 flex flex-wrap items-center justify-between gap-2 first:mt-0">
+              <div
+                id={`hw-section-${sections.indexOf(task.section)}`}
+                className="mb-2 mt-4 flex scroll-mt-[190px] flex-wrap items-center justify-between gap-2 first:mt-0"
+              >
                 <p className="text-[13.5px] font-semibold text-ink-700">
                   {task.section || "Без раздела"}
                   <span className="ml-2 font-normal text-ink-400">
@@ -150,7 +215,20 @@ export function HomeworkEditor({
                     {task.id ? "" : " · новое"}
                   </span>
                   {task.hidden ? (
-                    <span className="chip bg-ink-100 text-ink-500">скрыто</span>
+                    <span className="chip bg-ink-100 text-ink-500">
+                      {personal ? "скрыто у ученика" : "скрыто"}
+                    </span>
+                  ) : null}
+                  {personal && task.personal ? (
+                    <span className="chip bg-amber-50 text-amber-700">
+                      личное задание
+                    </span>
+                  ) : null}
+                  {personal && !task.personal &&
+                  differsFrom(task, baseById.get(task.id)) ? (
+                    <span className="chip bg-amber-50 text-amber-700">
+                      изменено для ученика
+                    </span>
                   ) : null}
                 </div>
 
@@ -187,8 +265,13 @@ export function HomeworkEditor({
                     ↓
                   </IconButton>
                   <IconButton
-                    title="Удалить задание"
+                    title={
+                      personal && !task.personal
+                        ? "Общее задание нельзя удалить: скройте его у ученика"
+                        : "Удалить задание"
+                    }
                     onClick={() => setTasks(tasks.filter((_, i) => i !== index))}
+                    disabled={personal && !task.personal}
                     danger
                   >
                     ✕

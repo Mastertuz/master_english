@@ -20,6 +20,8 @@ export type TrainingWord = {
   audioUrl: string;
   /** Урок, из которого пришло слово; свои слова — null */
   lesson: { number: number; topic: string } | null;
+  /** Преподаватель назначил слово к следующему уроку */
+  assigned?: boolean;
 };
 
 export type Mode = "TRANSLATE" | "IMAGE" | "DEFINITION";

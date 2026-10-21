@@ -5,6 +5,7 @@ import {
   type HomeworkTaskView,
 } from "@/components/homework/HomeworkRunner";
 import { SeenOnView } from "@/components/notifications/SeenOnView";
+import { effectiveTasks, overridesFor, tasksFor } from "@/lib/homework-personal";
 import { prisma } from "@/lib/prisma";
 import { requireUser } from "@/lib/session";
 
@@ -45,9 +46,12 @@ export default async function HomeworkPage({
           assignments: { where: { userId: user.id }, select: { id: true } },
         },
       },
+      // Общие задания и личные задания того, чью работу открыли
       tasks: {
+        where: tasksFor(readerId),
         orderBy: { order: "asc" },
         include: {
+          overrides: overridesFor(readerId),
           answers: {
             where: { userId: readerId },
             select: {
@@ -68,6 +72,9 @@ export default async function HomeworkPage({
   if (!homework) notFound();
   if (!isAdmin && homework.lesson.assignments.length === 0) notFound();
 
+  // Личные правки преподавателя для этого ученика накладываются на общие задания
+  const allTasks = effectiveTasks(homework.tasks);
+
   const submission = await prisma.homeworkSubmission.findUnique({
     where: { homeworkId_userId: { homeworkId: homework.id, userId: readerId } },
     select: { seenByTeacherAt: true },
@@ -80,7 +87,7 @@ export default async function HomeworkPage({
     ? submission && !submission.seenByTeacherAt
       ? 1
       : 0
-    : homework.tasks.filter(
+    : allTasks.filter(
         (task) => task.answers[0]?.comment && !task.answers[0]?.commentSeenAt,
       ).length;
 
@@ -91,8 +98,8 @@ export default async function HomeworkPage({
    */
   const visible =
     isAdmin && !student
-      ? homework.tasks
-      : homework.tasks.filter((task) => !task.hidden);
+      ? allTasks
+      : allTasks.filter((task) => !task.hidden);
 
   const tasks: HomeworkTaskView[] = visible.map((task) => ({
     id: task.id,

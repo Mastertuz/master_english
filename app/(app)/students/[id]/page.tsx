@@ -17,6 +17,7 @@ import { TOTAL_MAX } from "@/lib/oge/scoring";
 import { STATUS_LABEL, STATUS_STYLE, summarize } from "@/lib/oge/summary";
 import { ConfirmSubmit } from "@/components/ui/ConfirmSubmit";
 import { SubmitButton } from "@/components/ui/SubmitButton";
+import { effectiveTasks, overridesFor, tasksFor } from "@/lib/homework-personal";
 import { prisma } from "@/lib/prisma";
 import { initialsOf, requireAdmin } from "@/lib/session";
 
@@ -140,10 +141,16 @@ export default async function StudentPage({
       title: true,
       dueDate: true,
       lesson: { select: { number: true, topic: true } },
+      // Общие задания и личные задания ученика; скрытые (в том числе только
+      // для него) в статистику не идут
       tasks: {
-        where: { hidden: false },
+        where: tasksFor(student.id),
         select: {
           kind: true,
+          hidden: true,
+          order: true,
+          forUserId: true,
+          overrides: overridesFor(student.id),
           answers: {
             where: { userId: student.id },
             select: { isCorrect: true, grade: true, saved: true },
@@ -163,15 +170,16 @@ export default async function StudentPage({
     const kept = (answer?: { saved: boolean }) =>
       Boolean(answer) && (Boolean(submittedAt) || answer!.saved);
 
-    const total = item.tasks.length;
-    const done = item.tasks.filter((task) => kept(task.answers[0])).length;
-    const correct = item.tasks.filter(
+    const tasks = effectiveTasks(item.tasks).filter((task) => !task.hidden);
+    const total = tasks.length;
+    const done = tasks.filter((task) => kept(task.answers[0])).length;
+    const correct = tasks.filter(
       (task) =>
         task.kind !== "TEACHER" &&
         kept(task.answers[0]) &&
         task.answers[0]?.isCorrect === true,
     ).length;
-    const waiting = item.tasks.filter(
+    const waiting = tasks.filter(
       (task) =>
         task.kind === "TEACHER" &&
         kept(task.answers[0]) &&

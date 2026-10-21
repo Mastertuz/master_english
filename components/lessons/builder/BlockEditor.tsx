@@ -49,6 +49,8 @@ export function BlockEditor({
   block,
   index,
   total,
+  collapsed = false,
+  onToggleCollapsed,
   onChange,
   onMove,
   onRemove,
@@ -56,6 +58,9 @@ export function BlockEditor({
   block: LessonBlock;
   index: number;
   total: number;
+  /** Блок свёрнут: видна только шапка с названием */
+  collapsed?: boolean;
+  onToggleCollapsed?: () => void;
   onChange: (block: LessonBlock) => void;
   onMove: (direction: -1 | 1) => void;
   onRemove: () => void;
@@ -68,8 +73,20 @@ export function BlockEditor({
 
   return (
     <div className="rounded-2xl border border-ink-200 bg-ink-50/60 p-4">
-      <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
-        <div className="flex items-center gap-2">
+      <div
+        className={`flex flex-wrap items-center justify-between gap-2 ${
+          collapsed ? "" : "mb-3"
+        }`}
+      >
+        <div className="flex min-w-0 items-center gap-2">
+          {onToggleCollapsed ? (
+            <IconButton
+              title={collapsed ? "Развернуть блок" : "Свернуть блок"}
+              onClick={onToggleCollapsed}
+            >
+              {collapsed ? "▸" : "▾"}
+            </IconButton>
+          ) : null}
           <span className="chip bg-brand-50 text-brand-700">
             {BLOCK_LABELS[block.kind]}
           </span>
@@ -78,6 +95,16 @@ export function BlockEditor({
           </span>
           {block.hidden ? (
             <span className="chip bg-ink-100 text-ink-500">скрыт</span>
+          ) : null}
+          {collapsed ? (
+            <span className="min-w-0 truncate text-[14px] font-medium text-ink-800">
+              {block.title || "Без названия"}
+              {block.tasks.length > 0 ? (
+                <span className="ml-2 font-normal text-ink-400">
+                  · заданий: {block.tasks.length}
+                </span>
+              ) : null}
+            </span>
           ) : null}
         </div>
 
@@ -119,6 +146,7 @@ export function BlockEditor({
         </div>
       </div>
 
+      {collapsed ? null : (
       <div className="space-y-4">
         <TextField
           label="Заголовок блока"
@@ -279,6 +307,7 @@ export function BlockEditor({
           />
         ) : null}
       </div>
+      )}
     </div>
   );
 }

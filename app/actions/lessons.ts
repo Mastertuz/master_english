@@ -4,6 +4,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { after } from "next/server";
 import { isAnswerCorrect } from "@/lib/answer";
+import { asPatch, overridesFor } from "@/lib/homework-personal";
 import { isLevel } from "@/lib/lesson-content";
 import { notifyAboutComment } from "@/lib/notifications";
 import { prisma } from "@/lib/prisma";
@@ -225,17 +226,29 @@ export async function answerHomeworkAction(input: {
 }): Promise<{ ok: boolean; isCorrect: boolean | null; explanation: string }> {
   const me = await requireUser();
 
-  const task = await prisma.homeworkTask.findUnique({
+  const found = await prisma.homeworkTask.findUnique({
     where: { id: input.taskId },
     select: {
       id: true,
       kind: true,
       answer: true,
       explanation: true,
+      forUserId: true,
+      overrides: overridesFor(me.id),
       homework: { select: { lessonId: true } },
     },
   });
-  if (!task) return { ok: false, isCorrect: null, explanation: "" };
+  // Личное задание другого ученика — не наше
+  if (!found || (found.forUserId && found.forUserId !== me.id)) {
+    return { ok: false, isCorrect: null, explanation: "" };
+  }
+  // Проверяем по тому, что видит этот ученик: с учётом личных правок
+  const patch = found.overrides[0] ? asPatch(found.overrides[0].patch) : {};
+  const task = {
+    ...found,
+    answer: patch.answer ?? found.answer,
+    explanation: patch.explanation ?? found.explanation,
+  };
 
   // Ученик отвечает только на задания назначенного ему урока
   const assigned = await prisma.lessonAssignment.findUnique({

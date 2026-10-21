@@ -20,6 +20,7 @@ export function ConfirmSubmit({
   confirmLabel = "Удалить",
   danger = true,
   disabled = false,
+  formId,
 }: {
   children: React.ReactNode;
   className?: string;
@@ -31,6 +32,8 @@ export function ConfirmSubmit({
   confirmLabel?: string;
   danger?: boolean;
   disabled?: boolean;
+  /** id формы, если кнопка стоит не внутри неё (атрибут form) */
+  formId?: string;
 }) {
   const button = useRef<HTMLButtonElement>(null);
   const [asking, setAsking] = useState(false);
@@ -57,6 +60,7 @@ export function ConfirmSubmit({
       <button
         ref={button}
         type="submit"
+        form={formId}
         disabled={pending || disabled}
         onClick={(event) => {
           // Первое нажатие только открывает вопрос; отправит нас submit()

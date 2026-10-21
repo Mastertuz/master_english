@@ -15,6 +15,8 @@ const DEFAULT_PICK = 40;
 /** Папки, как в словаре: все слова, урок по номеру или свои слова */
 const ALL = "all";
 const OWN = "own";
+/** Слова, которые преподаватель назначил к следующему уроку */
+const ASSIGNED = "assigned";
 
 export function TrainingSession({
   mode,
@@ -64,6 +66,7 @@ export function TrainingSession({
   }, [words]);
 
   const ownCount = words.filter((word) => !word.lesson).length;
+  const assignedCount = words.filter((word) => word.assigned).length;
 
   const visible = useMemo(() => {
     const needle = query.trim().toLowerCase();
@@ -71,9 +74,11 @@ export function TrainingSession({
       const inTopic =
         topic === ALL
           ? true
-          : topic === OWN
-            ? !word.lesson
-            : String(word.lesson?.number) === topic;
+          : topic === ASSIGNED
+            ? Boolean(word.assigned)
+            : topic === OWN
+              ? !word.lesson
+              : String(word.lesson?.number) === topic;
       if (!inTopic) return false;
       if (!needle) return true;
       return (
@@ -170,13 +175,20 @@ export function TrainingSession({
           className="field mt-4"
         />
 
-        {topics.length > 0 ? (
+        {topics.length > 0 || assignedCount > 0 ? (
           <div className="mt-3 flex flex-wrap gap-2">
             <TopicButton
               active={topic === ALL}
               onClick={() => setTopic(ALL)}
               label={`Все (${words.length})`}
             />
+            {assignedCount > 0 ? (
+              <TopicButton
+                active={topic === ASSIGNED}
+                onClick={() => setTopic(ASSIGNED)}
+                label={`📌 К следующему уроку (${assignedCount})`}
+              />
+            ) : null}
             {topics.map(([number, name]) => (
               <TopicButton
                 key={number}

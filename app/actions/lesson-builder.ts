@@ -1,7 +1,9 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { asBlocks, asTimeline, taskKey } from "@/lib/lesson-content";
+import { redirect } from "next/navigation";
+import { asBlocks, asTimeline, taskKey, type LessonBlock } from "@/lib/lesson-content";
+import { PATCH_KEYS, type TaskPatch } from "@/lib/homework-personal";
 import type { HomeworkTaskDraft } from "@/lib/lesson-templates";
 import { prisma } from "@/lib/prisma";
 import { getCurrentUser } from "@/lib/session";
@@ -60,35 +62,14 @@ export async function saveLessonContentAction(
     return { ok: false, message: "Не удалось прочитать содержимое урока" };
   }
 
-  // asBlocks/asTimeline заодно чистят структуру от лишних полей.
-  // Тайминг переписываем только если он пришёл: иначе форма без этого поля
-  // молча стёрла бы расписание занятия.
+  const studentId = String(formData.get("studentId") ?? "");
+  if (studentId) {
+    return savePersonal(lesson.id, lesson.number, studentId, payload);
+  }
+
   // Заданиям без id выдаём его при первом же сохранении: по нему потом
   // находятся ответы учеников
-  const parsed = asBlocks(payload.blocks);
-  const renamed: { from: string; to: string }[] = [];
-
-  const blocks = parsed.map((block, blockIndex) => ({
-    ...block,
-    tasks: block.tasks.map((task, taskIndex) => {
-      if (task.id) return task;
-
-      const id = Math.random().toString(36).slice(2, 10);
-      renamed.push({ from: taskKey(blockIndex, taskIndex, task), to: id });
-      return { ...task, id };
-    }),
-  }));
-
-  // Ответы, записанные до появления id, переносим на новый ключ — иначе
-  // работа ученика отвязалась бы от задания
-  for (const { from, to } of renamed) {
-    await prisma.lessonTaskAnswer
-      .updateMany({
-        where: { lessonId, taskKey: from },
-        data: { taskKey: to },
-      })
-      .catch(() => undefined);
-  }
+  const blocks = await prepareBlocks(payload.blocks, lessonId);
 
   await prisma.lesson.update({
     where: { id: lessonId },
@@ -205,6 +186,268 @@ async function saveHomework(
   // Удалённые в конструкторе задания уносят с собой ответы учеников —
   // об этом предупреждает сам конструктор
   await prisma.homeworkTask.deleteMany({
-    where: { homeworkId: homework.id, id: { notIn: kept.length ? kept : ["-"] } },
+    where: {
+      homeworkId: homework.id,
+      forUserId: null,
+      id: { notIn: kept.length ? kept : ["-"] },
+    },
   });
+}
+
+/**
+ * Приводит блоки к безопасному виду (asBlocks чистит лишние поля) и выдаёт id
+ * заданиям, у которых его ещё нет. Ответы, записанные до появления id,
+ * переносим на новый ключ — иначе работа ученика отвязалась бы от задания.
+ * Для личной версии переносим ответы только этого ученика.
+ */
+async function prepareBlocks(
+  raw: unknown,
+  lessonId: string,
+  onlyUserId?: string,
+): Promise<LessonBlock[]> {
+  const parsed = asBlocks(raw);
+  const renamed: { from: string; to: string }[] = [];
+
+  const blocks = parsed.map((block, blockIndex) => ({
+    ...block,
+    tasks: block.tasks.map((task, taskIndex) => {
+      if (task.id) return task;
+
+      const id = Math.random().toString(36).slice(2, 10);
+      renamed.push({ from: taskKey(blockIndex, taskIndex, task), to: id });
+      return { ...task, id };
+    }),
+  }));
+
+  for (const { from, to } of renamed) {
+    await prisma.lessonTaskAnswer
+      .updateMany({
+        where: { lessonId, taskKey: from, ...(onlyUserId ? { userId: onlyUserId } : {}) },
+        data: { taskKey: to },
+      })
+      .catch(() => undefined);
+  }
+  return blocks;
+}
+
+/* ───────────────────── Личная версия для одного ученика ───────────────────── */
+
+const FIELDS = [...PATCH_KEYS] as const;
+
+type TaskRow = {
+  id: string;
+  order: number;
+  section: string;
+  prompt: string;
+  text: string;
+  audioUrl: string;
+  transcript: string;
+  options: string[];
+  answer: string;
+  explanation: string;
+  rule: string;
+  hidden: boolean;
+};
+
+/** Что в черновике отличается от общего задания — это и есть личная правка */
+function diffFromBase(base: TaskRow, draft: HomeworkTaskDraft): TaskPatch {
+  const patch: TaskPatch = {};
+  const clean = {
+    section: draft.section?.trim() ?? "",
+    prompt: draft.prompt?.trim() ?? "",
+    text: draft.text?.trim() ?? "",
+    audioUrl: draft.audioUrl?.trim() ?? "",
+    transcript: draft.transcript?.trim() ?? "",
+    options: (draft.options ?? []).map((o) => o.trim()).filter(Boolean),
+    answer: draft.answer?.trim() ?? "",
+    explanation: draft.explanation?.trim() ?? "",
+    rule: draft.rule?.trim() ?? "",
+    hidden: draft.hidden === true,
+  };
+
+  for (const key of FIELDS) {
+    const mine = clean[key];
+    const theirs = base[key];
+    const same = Array.isArray(mine)
+      ? JSON.stringify(mine) === JSON.stringify(theirs)
+      : mine === theirs;
+    if (!same) (patch as Record<string, unknown>)[key] = mine;
+  }
+  return patch;
+}
+
+/** Сохраняет правки для одного ученика: блоки и тайминг урока и его домашнюю работу */
+async function savePersonal(
+  lessonId: string,
+  lessonNumber: number,
+  studentId: string,
+  payload: Payload,
+): Promise<BuilderState> {
+  const student = await prisma.user.findUnique({
+    where: { id: studentId },
+    select: { id: true, role: true, firstName: true, lastName: true },
+  });
+  if (!student || student.role !== "STUDENT") {
+    return { ok: false, message: "Ученик не найден" };
+  }
+
+  const blocks = await prepareBlocks(payload.blocks, lessonId, studentId);
+  const timeline =
+    payload.timeline === undefined ? undefined : asTimeline(payload.timeline);
+
+  await prisma.lessonStudentVersion.upsert({
+    where: { lessonId_userId: { lessonId, userId: studentId } },
+    create: { lessonId, userId: studentId, blocks, ...(timeline ? { timeline } : {}) },
+    update: { blocks, ...(timeline ? { timeline } : {}) },
+  });
+
+  await savePersonalHomework(lessonId, studentId, payload.homework ?? null);
+
+  revalidatePath(`/lessons/${lessonId}`);
+  revalidatePath("/homework");
+  revalidatePath(`/students/${studentId}`);
+
+  const name = `${student.firstName} ${student.lastName}`.trim();
+  return {
+    ok: true,
+    message: `Личная версия урока №${lessonNumber} для ученика «${name}» сохранена`,
+  };
+}
+
+async function savePersonalHomework(
+  lessonId: string,
+  studentId: string,
+  input: Payload["homework"],
+) {
+  const homework = await prisma.homework.findUnique({
+    where: { lessonId },
+    select: { id: true },
+  });
+  if (!homework || !input) return;
+
+  const common = await prisma.homeworkTask.findMany({
+    where: { homeworkId: homework.id, forUserId: null },
+    select: {
+      id: true,
+      order: true,
+      section: true,
+      prompt: true,
+      text: true,
+      audioUrl: true,
+      transcript: true,
+      options: true,
+      answer: true,
+      explanation: true,
+      rule: true,
+      hidden: true,
+    },
+  });
+  const byId = new Map(common.map((task) => [task.id, task]));
+  const drafts = input.tasks ?? [];
+
+  // Общие задания: сохраняем только отличия от общей версии
+  for (const draft of drafts) {
+    const base = draft.id && !draft.personal ? byId.get(draft.id) : undefined;
+    if (!base) continue;
+
+    const patch = diffFromBase(base, draft);
+    if (Object.keys(patch).length === 0) {
+      await prisma.homeworkTaskOverride
+        .deleteMany({ where: { taskId: base.id, userId: studentId } })
+        .catch(() => undefined);
+    } else {
+      await prisma.homeworkTaskOverride.upsert({
+        where: { taskId_userId: { taskId: base.id, userId: studentId } },
+        create: { taskId: base.id, userId: studentId, patch },
+        update: { patch },
+      });
+    }
+  }
+
+  // Личные задания: создаём, обновляем, лишние убираем
+  const mine = await prisma.homeworkTask.findMany({
+    where: { homeworkId: homework.id, forUserId: studentId },
+    select: { id: true },
+  });
+  const mineIds = new Set(mine.map((task) => task.id));
+  const kept: string[] = [];
+  let lastCommonOrder = 0;
+
+  for (const draft of drafts) {
+    const base = draft.id && !draft.personal ? byId.get(draft.id) : undefined;
+    if (base) {
+      lastCommonOrder = base.order;
+      continue;
+    }
+    if (!draft.personal || !draft.prompt?.trim()) continue;
+
+    const data = {
+      section: draft.section?.trim() ?? "",
+      kind: asKind(draft.kind),
+      prompt: draft.prompt.trim(),
+      text: draft.text?.trim() ?? "",
+      audioUrl: draft.audioUrl?.trim() ?? "",
+      transcript: draft.transcript?.trim() ?? "",
+      options: (draft.options ?? []).map((o) => o.trim()).filter(Boolean),
+      answer: draft.answer?.trim() ?? "",
+      explanation: draft.explanation?.trim() ?? "",
+      rule: draft.rule?.trim() ?? "",
+      hidden: draft.hidden === true,
+      // Встаёт после общих заданий с тем же номером
+      order: lastCommonOrder,
+    };
+
+    if (draft.id && mineIds.has(draft.id)) {
+      await prisma.homeworkTask.update({ where: { id: draft.id }, data });
+      kept.push(draft.id);
+    } else {
+      const created = await prisma.homeworkTask.create({
+        data: { ...data, homeworkId: homework.id, forUserId: studentId },
+        select: { id: true },
+      });
+      kept.push(created.id);
+    }
+  }
+
+  await prisma.homeworkTask.deleteMany({
+    where: {
+      homeworkId: homework.id,
+      forUserId: studentId,
+      id: { notIn: kept.length ? kept : ["-"] },
+    },
+  });
+}
+
+/**
+ * Возвращает ученику общую версию: удаляет его личную версию урока и/или
+ * личные правки домашней работы (вместе с личными заданиями и ответами на них).
+ */
+export async function resetStudentVersionAction(formData: FormData): Promise<void> {
+  const me = await getCurrentUser();
+  if (!me || me.role !== "ADMIN") return;
+
+  const lessonId = String(formData.get("lessonId") ?? "");
+  const studentId = String(formData.get("studentId") ?? "");
+  const what = String(formData.get("what") ?? "all");
+  if (!lessonId || !studentId) return;
+
+  if (what === "all" || what === "lesson") {
+    await prisma.lessonStudentVersion.deleteMany({ where: { lessonId, userId: studentId } });
+  }
+  if (what === "all" || what === "homework") {
+    const homework = await prisma.homework.findUnique({ where: { lessonId }, select: { id: true } });
+    if (homework) {
+      await prisma.homeworkTaskOverride.deleteMany({
+        where: { userId: studentId, task: { homeworkId: homework.id } },
+      });
+      await prisma.homeworkTask.deleteMany({
+        where: { homeworkId: homework.id, forUserId: studentId },
+      });
+    }
+  }
+
+  revalidatePath(`/lessons/${lessonId}`);
+  revalidatePath("/homework");
+  revalidatePath(`/students/${studentId}`);
+  redirect(`/lessons/${lessonId}/edit?student=${studentId}`);
 }

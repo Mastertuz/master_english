@@ -6,6 +6,7 @@ import { LessonForm } from "@/components/lessons/LessonForm";
 import { SeenOnView } from "@/components/notifications/SeenOnView";
 import { SpeakButton } from "@/components/ui/SpeakButton";
 import { SubmitButton } from "@/components/ui/SubmitButton";
+import { effectiveTasks, overridesFor, tasksFor } from "@/lib/homework-personal";
 import { asBlocks, asTimeline } from "@/lib/lesson-content";
 import { listBooks } from "@/lib/books";
 import { partOfSpeechRu } from "@/lib/part-of-speech";
@@ -35,14 +36,7 @@ export default async function LessonPage({
           _count: { select: { questions: true } },
         },
       },
-      homework: {
-        select: {
-          id: true,
-          title: true,
-          // Считаем отдельно: ученику скрытые задания не достаются
-          tasks: { select: { hidden: true } },
-        },
-      },
+      homework: { select: { id: true, title: true } },
       assignments: {
         where: { userId: user.id },
         select: { id: true, completedAt: true },
@@ -108,8 +102,27 @@ export default async function LessonPage({
     ? `${student.firstName} ${student.lastName}`.trim()
     : "";
 
-  // Сколько заданий увидит ученик и сколько от него скрыто
-  const homeworkTasks = lesson.homework?.tasks ?? [];
+  // Личная версия урока: если преподаватель правил урок для этого ученика,
+  // он видит свои блоки и свой тайминг, а не общие
+  const version = await prisma.lessonStudentVersion.findUnique({
+    where: { lessonId_userId: { lessonId: lesson.id, userId: readerId } },
+    select: { blocks: true, timeline: true },
+  });
+
+  // Сколько заданий увидит ученик и сколько от него скрыто: с его личными правками
+  const homeworkTasks = lesson.homework
+    ? effectiveTasks(
+        await prisma.homeworkTask.findMany({
+          where: { homeworkId: lesson.homework.id, ...tasksFor(readerId) },
+          select: {
+            order: true,
+            hidden: true,
+            forUserId: true,
+            overrides: overridesFor(readerId),
+          },
+        }),
+      )
+    : [];
   const hiddenTasks = homeworkTasks.filter((task) => task.hidden).length;
   const openTasks = homeworkTasks.length - hiddenTasks;
 
@@ -119,10 +132,12 @@ export default async function LessonPage({
   // Образцы развёрнутых ответов ученику не отдаём вовсе: LessonBlocks —
   // клиентский компонент, и всё, что мы ему передали, видно в исходниках
   // страницы, даже если на экране оно не нарисовано
-  const blocks = asBlocks(lesson.blocks).map((block) =>
+  const blocks = asBlocks(version?.blocks ?? lesson.blocks).map((block) =>
     isAdmin ? block : { ...block, sample: "" },
   );
-  const timeline = asTimeline(lesson.timeline);
+  const timeline = asTimeline(
+    version ? (version.timeline ?? lesson.timeline) : lesson.timeline,
+  );
 
   return (
     <div className="space-y-6">
@@ -248,6 +263,7 @@ export default async function LessonPage({
           <p className="text-[14px] text-amber-900">
             Урок с ответами ученика: <b>{studentName}</b>. Под заданиями можно
             оставить комментарий.
+            {version ? " У ученика личная версия урока — вы видите именно её." : ""}
           </p>
           <Link href={`/students/${student.id}`} className="btn-ghost btn-sm">
             ← К карточке ученика

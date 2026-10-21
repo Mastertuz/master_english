@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { effectiveTasks, overridesFor, tasksFor } from "@/lib/homework-personal";
 import { prisma } from "@/lib/prisma";
 import { requireUser } from "@/lib/session";
 
@@ -16,12 +17,16 @@ export default async function HomeworkListPage() {
       title: true,
       intro: true,
       lesson: { select: { id: true, number: true, topic: true, level: true } },
-      // Скрытые задания в счётчик ученика не идут — он их не видит
+      // Общие задания и личные задания этого ученика; скрытые (в том числе
+      // скрытые только для него) в счётчик ученика не идут — он их не видит
       tasks: {
-        where: isAdmin ? {} : { hidden: false },
+        where: tasksFor(user.id),
         select: {
           kind: true,
           hidden: true,
+          order: true,
+          forUserId: true,
+          overrides: overridesFor(user.id),
           answers: {
             where: { userId: user.id },
             select: { isCorrect: true, grade: true, saved: true },
@@ -65,7 +70,8 @@ export default async function HomeworkListPage() {
             const kept = (answer?: { saved: boolean }) =>
               Boolean(answer) && (submitted || answer!.saved);
 
-            const visible = item.tasks.filter((task) => !task.hidden);
+            const tasks = effectiveTasks(item.tasks);
+            const visible = tasks.filter((task) => !task.hidden);
             const total = visible.length;
             const done = visible.filter((task) => kept(task.answers[0])).length;
             const correct = visible.filter(
@@ -74,7 +80,7 @@ export default async function HomeworkListPage() {
                 kept(task.answers[0]) &&
                 task.answers[0]?.isCorrect === true,
             ).length;
-            const waiting = item.tasks.filter(
+            const waiting = tasks.filter(
               (task) =>
                 task.kind === "TEACHER" &&
                 !task.hidden &&
