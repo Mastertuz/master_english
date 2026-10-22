@@ -1,0 +1,156 @@
+{
+  "clips": [
+    {
+      "id": "lesson-8/jobs",
+      "gap": 0.6,
+      "parts": [
+        {
+          "voice": "bm_daniel",
+          "text": "Speaker one."
+        },
+        {
+          "voice": "bf_emma",
+          "text": "I work as a lifeguard at a swimming pool. I have to be at the pool at seven in the morning, and I mustn't leave my chair when people are swimming. We don't have to wear a uniform, but we must wear a whistle. I can't use my phone during work, but I can swim in my lunch break."
+        },
+        {
+          "voice": "bm_daniel",
+          "text": "Speaker two."
+        },
+        {
+          "voice": "bm_lewis",
+          "text": "I'm a chef in a small Italian restaurant. In the kitchen we have to wash our hands every half an hour, and we must wear a white hat. I don't have to work on Mondays, because the restaurant is closed. The hardest thing is that I can't sit down for ten hours!"
+        },
+        {
+          "voice": "bm_daniel",
+          "text": "Speaker three."
+        },
+        {
+          "voice": "bf_alice",
+          "text": "I'm a primary school teacher. I have to prepare lessons every evening, and I must be polite to parents. Children mustn't run in the corridors, so I have to watch them in the breaks. The good thing is that I don't have to work in the summer. We have long holidays."
+        }
+      ]
+    },
+    {
+      "id": "lesson-8/first-day",
+      "gap": 0.7,
+      "parts": [
+        {
+          "voice": "bm_george",
+          "text": "Welcome to Blue Wave Café, Tom. Let me explain the rules. You have to arrive ten minutes before your shift, and you must wear the blue uniform."
+        },
+        {
+          "voice": "bm_lewis",
+          "text": "Do I have to bring my own apron?"
+        },
+        {
+          "voice": "bm_george",
+          "text": "No, you don't have to. We give you one. But you mustn't use your phone in the kitchen. If you want to call someone, you can do it in your break."
+        },
+        {
+          "voice": "bm_lewis",
+          "text": "How long is the break?"
+        },
+        {
+          "voice": "bm_george",
+          "text": "Thirty minutes. You can have a free lunch, but you can't take food home."
+        },
+        {
+          "voice": "bm_lewis",
+          "text": "OK. And what about weekends?"
+        },
+        {
+          "voice": "bm_george",
+          "text": "You have to work every second Saturday, but you don't have to work on Sundays. Next week you will probably start at nine."
+        },
+        {
+          "voice": "bm_lewis",
+          "text": "Great. I think I'll enjoy it."
+        }
+      ]
+    },
+    {
+      "id": "lesson-9/advice",
+      "gap": 0.7,
+      "parts": [
+        {
+          "voice": "bm_lewis",
+          "text": "Hi Anna, you look tired. What's the matter?"
+        },
+        {
+          "voice": "bf_emma",
+          "text": "I didn't sleep well. I have an English speaking exam on Friday and I'm really nervous."
+        },
+        {
+          "voice": "bm_lewis",
+          "text": "Oh, I understand. What are you worried about?"
+        },
+        {
+          "voice": "bf_emma",
+          "text": "I always forget words when I speak, and my pronunciation isn't good."
+        },
+        {
+          "voice": "bm_lewis",
+          "text": "Well, you should practise every day. Why don't you record yourself on your phone and listen to it?"
+        },
+        {
+          "voice": "bf_emma",
+          "text": "That's a good idea. But I don't have much time. I have football training on Tuesday and Thursday."
+        },
+        {
+          "voice": "bm_lewis",
+          "text": "You'd better not miss the training, you need sport. But you could study for ten minutes before bed."
+        },
+        {
+          "voice": "bf_emma",
+          "text": "OK. And what about sleep? Tonight I'm going to stay up and study."
+        },
+        {
+          "voice": "bm_lewis",
+          "text": "No, don't do that! You shouldn't stay up late. Go to bed early, and try not to drink coffee."
+        },
+        {
+          "voice": "bf_emma",
+          "text": "You're right. Thanks, Max. Shall we practise together tomorrow after school?"
+        },
+        {
+          "voice": "bm_lewis",
+          "text": "Sure! Let's meet at four at the library."
+        }
+      ]
+    },
+    {
+      "id": "lesson-9/radio",
+      "gap": 0.7,
+      "parts": [
+        {
+          "voice": "bf_isabella",
+          "text": "Welcome to Teen Talk. Our first caller today is Kate. Kate, what's your problem?"
+        },
+        {
+          "voice": "bf_alice",
+          "text": "Hello. My problem is that I'm always tired in the morning. I go to bed at midnight because I play computer games, and then I can't get up for school."
+        },
+        {
+          "voice": "bf_isabella",
+          "text": "I see. Well, Kate, you should turn off your computer at ten o'clock. And don't play games in bed. Why don't you read a book instead?"
+        },
+        {
+          "voice": "bf_alice",
+          "text": "I've tried, but I don't like reading."
+        },
+        {
+          "voice": "bf_isabella",
+          "text": "Then listen to music or a podcast. And you'd better not drink cola in the evening, because it has a lot of sugar."
+        },
+        {
+          "voice": "bf_alice",
+          "text": "OK. Shall I put my phone in another room?"
+        },
+        {
+          "voice": "bf_isabella",
+          "text": "Good idea! That's the best advice today. Thank you for calling, Kate."
+        }
+      ]
+    }
+  ]
+}

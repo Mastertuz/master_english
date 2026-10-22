@@ -4,9 +4,9 @@
  *   npx tsx --env-file=.env scripts/import-lessons-file.ts content/lessons/lessons-8-9.json
  *
  * Урок ищется по номеру. Если он уже есть, блоки и слова обновляются, а домашнее
- * задание пересобирается (личные задания учеников и их ответы не трогаются:
- * удаляются только общие задания, forUserId = null). Соединение одно — удалённый
- * пулер базы плохо переносит прогрев нескольких.
+ * задание пересобирается: личные задания учеников и их ответы не трогаются (удаляются
+ * только общие задания, forUserId = null). Слова, которых нет в файле, удаляются.
+ * Соединение одно — удалённый пулер базы плохо переносит прогрев нескольких.
  */
 import "dotenv/config";
 import { readFile } from "node:fs/promises";
@@ -112,6 +112,11 @@ async function main() {
           update: fields,
         });
       }
+
+      // Слов, которых больше нет в файле, в уроке быть не должно (у учеников копии остаются)
+      await prisma.lessonWord.deleteMany({
+        where: { lessonId: lesson.id, english: { notIn: (raw.words ?? []).map((word) => word.english) } },
+      });
 
       const homeworkRaw = raw.homework;
       if (homeworkRaw?.tasks?.length) {
