@@ -250,10 +250,10 @@
             {
               "id": "l8-rd-3",
               "kind": "fill",
-              "prompt": "Впишите слово из текста: Visitors ___ touch the animals in the zoo.",
+              "prompt": "Впишите модальный глагол со значением «нельзя» (как в тексте): Visitors ___ touch the animals in the zoo.",
               "options": [],
               "optionValues": [],
-              "answer": "can't, cannot, can not",
+              "answer": "can't, cannot, can not, mustn't, must not",
               "explanation": "Visitors can't touch the animals — правило запрещает.",
               "x": -1,
               "y": -1,
@@ -262,7 +262,7 @@
             {
               "id": "l8-rd-4",
               "kind": "fill",
-              "prompt": "Впишите слово из текста (не обязательно): Daniel ___ work at weekends, but he often does.",
+              "prompt": "Впишите модальный глагол со значением «не обязан» (о Daniel, он): Daniel ___ work at weekends, but he often does.",
               "options": [],
               "optionValues": [],
               "answer": "doesn't have to, does not have to",
@@ -440,7 +440,7 @@
             {
               "id": "l8-mh-6",
               "kind": "fill",
-              "prompt": "Впишите слово: ___ you have to get up early on Sundays?",
+              "prompt": "Впишите вспомогательное слово (do, does или did): ___ you have to get up early on Sundays?",
               "options": [],
               "optionValues": [],
               "answer": "do",
@@ -476,7 +476,7 @@
             {
               "id": "l8-ls-1",
               "kind": "choice",
-              "prompt": "Где работает первый говорящий?",
+              "prompt": "Прослушайте запись. Где работает первый говорящий?",
               "options": [
                 "at a swimming pool",
                 "in a restaurant",
@@ -498,7 +498,7 @@
             {
               "id": "l8-ls-2",
               "kind": "choice",
-              "prompt": "Во сколько первый говорящий должен начинать работу?",
+              "prompt": "Прослушайте запись. Во сколько первый говорящий должен начинать работу?",
               "options": [
                 "7 am",
                 "8 am",
@@ -520,10 +520,10 @@
             {
               "id": "l8-ls-3",
               "kind": "fill",
-              "prompt": "Впишите слово: The lifeguard ___ use her phone during work.",
+              "prompt": "Прослушайте запись. Впишите модальный глагол со значением «нельзя, не разрешено»: The lifeguard ___ use her phone during work.",
               "options": [],
               "optionValues": [],
-              "answer": "can't, cannot, can not",
+              "answer": "can't, cannot, can not, mustn't, must not",
               "explanation": "I can't use my phone during work.",
               "x": -1,
               "y": -1,
@@ -532,7 +532,7 @@
             {
               "id": "l8-ls-4",
               "kind": "choice",
-              "prompt": "Что повар обязан надевать?",
+              "prompt": "Прослушайте запись. Что повар обязан надевать?",
               "options": [
                 "a white hat",
                 "a red uniform",
@@ -554,7 +554,7 @@
             {
               "id": "l8-ls-5",
               "kind": "choice",
-              "prompt": "Почему повар не обязан работать по понедельникам?",
+              "prompt": "Прослушайте запись. Почему повар не обязан работать по понедельникам?",
               "options": [
                 "The restaurant is closed",
                 "He is on holiday",
@@ -576,7 +576,7 @@
             {
               "id": "l8-ls-6",
               "kind": "fill",
-              "prompt": "Впишите слово: The teacher ___ work in the summer — there are long holidays.",
+              "prompt": "Прослушайте запись. Впишите модальный глагол со значением «не обязана» (о the teacher, она): The teacher ___ work in the summer — there are long holidays.",
               "options": [],
               "optionValues": [],
               "answer": "doesn't have to, does not have to",
@@ -665,7 +665,7 @@
             {
               "id": "l8-mn-3",
               "kind": "fill",
-              "prompt": "Впишите mustn't: You ___ run in the corridor — it's dangerous.",
+              "prompt": "Впишите mustn't или don't have to: You ___ run in the corridor — it's dangerous.",
               "options": [],
               "optionValues": [],
               "answer": "mustn't, must not",
@@ -677,7 +677,7 @@
             {
               "id": "l8-mn-4",
               "kind": "fill",
-              "prompt": "Впишите don't have to: It's Sunday, so I ___ get up early.",
+              "prompt": "Впишите mustn't или don't have to: It's Sunday, so I ___ get up early.",
               "options": [],
               "optionValues": [],
               "answer": "don't have to, do not have to",
@@ -809,7 +809,7 @@
             {
               "id": "l8-wm-3",
               "kind": "fill",
-              "prompt": "Впишите will probably: Many people ___ work from home in 2040.",
+              "prompt": "Впишите будущее время со словом probably («скорее всего»): Many people ___ work from home in 2040.",
               "options": [],
               "optionValues": [],
               "answer": "will probably",
@@ -821,7 +821,7 @@
             {
               "id": "l8-wm-4",
               "kind": "fill",
-              "prompt": "Впишите might not (exist): Some jobs ___ in twenty years.",
+              "prompt": "Впишите отрицание с might + глагол exist («возможно, не будут существовать»): Some jobs ___ in twenty years.",
               "options": [],
               "optionValues": [],
               "answer": "might not exist",
@@ -999,7 +999,7 @@
             {
               "id": "l8-pr-2",
               "kind": "choice",
-              "prompt": "Какая форма звучит ударно и с полным звуком /æ/?",
+              "prompt": "Какая из этих форм в потоке речи звучит ударно, с полным звуком /æ/?",
               "options": [
                 "can't",
                 "can",
@@ -1268,7 +1268,7 @@
           {
             "section": "1. Must и have to",
             "kind": "FILL",
-            "prompt": "Впишите must: Passengers ___ keep their passports in a safe place.",
+            "prompt": "Впишите must или mustn't: Passengers ___ keep their passports in a safe place.",
             "text": "",
             "audioUrl": "",
             "transcript": "",
@@ -1386,7 +1386,7 @@
           {
             "section": "2. Mustn't, don't have to, can и can't",
             "kind": "FILL",
-            "prompt": "Впишите doesn't have to: My dad ___ work on Sundays.",
+            "prompt": "Впишите mustn't или doesn't have to (папе не нужно, но можно): My dad ___ work on Sundays.",
             "text": "",
             "audioUrl": "",
             "transcript": "",
@@ -1419,7 +1419,7 @@
           {
             "section": "2. Mustn't, don't have to, can и can't",
             "kind": "FILL",
-            "prompt": "Впишите mustn't: Children ___ play near the river — it's dangerous.",
+            "prompt": "Впишите mustn't или don't have to: Children ___ play near the river — it's dangerous.",
             "text": "",
             "audioUrl": "",
             "transcript": "",
@@ -1490,7 +1490,7 @@
           {
             "section": "3. Will, might и probably: прогнозы",
             "kind": "FILL",
-            "prompt": "Впишите might not (finish): I ___ the project today — I'm very tired.",
+            "prompt": "Впишите отрицание с might + глагол finish («возможно, не закончу»): I ___ the project today — I'm very tired.",
             "text": "",
             "audioUrl": "",
             "transcript": "",
@@ -1504,7 +1504,7 @@
           {
             "section": "3. Will, might и probably: прогнозы",
             "kind": "CHOICE",
-            "prompt": "Выберите вариант: It's possible that he ___ the job.",
+            "prompt": "Выберите вариант («возможно, он получит работу»): It's possible that he ___ the job.",
             "text": "",
             "audioUrl": "",
             "transcript": "",
@@ -1523,7 +1523,7 @@
           {
             "section": "3. Will, might и probably: прогнозы",
             "kind": "FILL",
-            "prompt": "Впишите will probably: Teachers ___ use tablets more and more.",
+            "prompt": "Впишите будущее время со словом probably («скорее всего»): Teachers ___ use tablets more and more.",
             "text": "",
             "audioUrl": "",
             "transcript": "",
@@ -1556,7 +1556,7 @@
           {
             "section": "3. Will, might и probably: прогнозы",
             "kind": "FILL",
-            "prompt": "Впишите won't: Don't worry. The exam ___ be difficult. (я уверен)",
+            "prompt": "Впишите will или won't: Don't worry. The exam ___ be difficult. (я уверен, что нет)",
             "text": "",
             "audioUrl": "",
             "transcript": "",
@@ -1693,7 +1693,7 @@
           {
             "section": "5. Аудирование: первый день на работе",
             "kind": "LISTENING",
-            "prompt": "Прослушайте запись и впишите слово: Tom mustn't use his phone in the ___.",
+            "prompt": "Прослушайте запись и впишите название места (1 слово): Tom mustn't use his phone in the ___.",
             "text": "",
             "audioUrl": "",
             "transcript": "",
@@ -1759,7 +1759,7 @@
           {
             "section": "6. Чтение: Sunny Beach Hotel",
             "kind": "FILL",
-            "prompt": "Прочитайте текст выше и впишите слово (не нужно): Receptionists ___ have a qualification.",
+            "prompt": "Прочитайте текст выше. Впишите модальный глагол со значением «не обязаны» (о receptionists): Receptionists ___ have a qualification.",
             "text": "",
             "audioUrl": "",
             "transcript": "",
@@ -1773,7 +1773,7 @@
           {
             "section": "6. Чтение: Sunny Beach Hotel",
             "kind": "FILL",
-            "prompt": "Прочитайте текст выше и впишите слово (нельзя): Lifeguards ___ leave their place on the beach.",
+            "prompt": "Прочитайте текст выше. Впишите модальный глагол со значением «нельзя»: Lifeguards ___ leave their place on the beach.",
             "text": "",
             "audioUrl": "",
             "transcript": "",
@@ -1995,7 +1995,7 @@
             {
               "id": "l9-rev-4",
               "kind": "fill",
-              "prompt": "Впишите doesn't have to: Tom ___ come with us — it's his choice.",
+              "prompt": "Впишите mustn't или doesn't have to: Tom ___ come with us — it's his choice.",
               "options": [],
               "optionValues": [],
               "answer": "doesn't have to, does not have to",
@@ -2103,7 +2103,7 @@
             {
               "id": "l9-rd-3",
               "kind": "fill",
-              "prompt": "Впишите слово из текста: You ___ try to remember twenty words at once.",
+              "prompt": "Впишите модальный глагол совета со значением «не стоит» (как в тексте): You ___ try to remember twenty words at once.",
               "options": [],
               "optionValues": [],
               "answer": "shouldn't, should not",
@@ -2115,7 +2115,7 @@
             {
               "id": "l9-rd-4",
               "kind": "fill",
-              "prompt": "Впишите слово из текста: You ___ to keep a small notebook with you.",
+              "prompt": "Впишите слово, которое стоит перед to (совет «вам стоит»; как в тексте): You ___ to keep a small notebook with you.",
               "options": [],
               "optionValues": [],
               "answer": "ought",
@@ -2203,7 +2203,7 @@
             {
               "id": "l9-im-1",
               "kind": "choice",
-              "prompt": "Выберите совет: You have a headache.",
+              "prompt": "У друга болит голова. Выберите правильный совет:",
               "options": [
                 "Take a rest and drink water.",
                 "Don't to take a rest.",
@@ -2225,7 +2225,7 @@
             {
               "id": "l9-im-2",
               "kind": "fill",
-              "prompt": "Впишите should (see): You've had this cough for weeks. You ___ a doctor.",
+              "prompt": "Впишите совет «вам стоит» (should + глагол see): You've had this cough for weeks. You ___ a doctor.",
               "options": [],
               "optionValues": [],
               "answer": "should see",
@@ -2237,7 +2237,7 @@
             {
               "id": "l9-im-3",
               "kind": "fill",
-              "prompt": "Впишите shouldn't (eat): You ___ so many sweets — they're bad for your teeth.",
+              "prompt": "Впишите совет «не стоит» (shouldn't + глагол eat): You ___ so many sweets — they're bad for your teeth.",
               "options": [],
               "optionValues": [],
               "answer": "shouldn't eat, should not eat",
@@ -2249,7 +2249,7 @@
             {
               "id": "l9-im-4",
               "kind": "choice",
-              "prompt": "Выберите вариант: ___ late for the interview!",
+              "prompt": "Выберите вариант («не опаздывайте на собеседование»): ___ late for the interview!",
               "options": [
                 "Don't be",
                 "Not be",
@@ -2271,7 +2271,7 @@
             {
               "id": "l9-im-5",
               "kind": "fill",
-              "prompt": "Впишите ought to (apologise): You were rude. You ___ to her.",
+              "prompt": "Впишите совет «вам стоит» (ought + to + глагол apologise): You were rude. You ___ to her.",
               "options": [],
               "optionValues": [],
               "answer": "ought to apologise, ought to apologize",
@@ -2283,7 +2283,7 @@
             {
               "id": "l9-im-6",
               "kind": "fill",
-              "prompt": "Впишите had better (take): It's raining. You ___ an umbrella.",
+              "prompt": "Впишите совет «лучше бы» (had better + глагол take): It's raining. You ___ an umbrella.",
               "options": [],
               "optionValues": [],
               "answer": "'d better take, had better take, d better take",
@@ -2319,7 +2319,7 @@
             {
               "id": "l9-ls-1",
               "kind": "choice",
-              "prompt": "О чём волнуется Анна?",
+              "prompt": "Прослушайте запись. О чём волнуется Анна?",
               "options": [
                 "a speaking exam",
                 "a football match",
@@ -2341,7 +2341,7 @@
             {
               "id": "l9-ls-2",
               "kind": "choice",
-              "prompt": "Когда у неё экзамен?",
+              "prompt": "Прослушайте запись. Когда у Анны экзамен?",
               "options": [
                 "on Friday",
                 "on Tuesday",
@@ -2363,7 +2363,7 @@
             {
               "id": "l9-ls-3",
               "kind": "choice",
-              "prompt": "Что Макс советует делать каждый день?",
+              "prompt": "Прослушайте запись. Что Макс советует делать каждый день?",
               "options": [
                 "practise speaking",
                 "play football",
@@ -2385,7 +2385,7 @@
             {
               "id": "l9-ls-4",
               "kind": "fill",
-              "prompt": "Впишите слово: Max says: «You ___ stay up late.»",
+              "prompt": "Прослушайте запись. Впишите модальный глагол совета «не стоит»: Max says: «You ___ stay up late.»",
               "options": [],
               "optionValues": [],
               "answer": "shouldn't, should not",
@@ -2397,7 +2397,7 @@
             {
               "id": "l9-ls-5",
               "kind": "fill",
-              "prompt": "Впишите слово, которым Анна предлагает позаниматься вместе: ___ we practise together tomorrow?",
+              "prompt": "Прослушайте запись. Впишите слово, которым Анна предлагает позаниматься вместе («Давайте…?»): ___ we practise together tomorrow?",
               "options": [],
               "optionValues": [],
               "answer": "shall",
@@ -2409,7 +2409,7 @@
             {
               "id": "l9-ls-6",
               "kind": "choice",
-              "prompt": "Где они встретятся?",
+              "prompt": "Прослушайте запись. Где они встретятся?",
               "options": [
                 "at the library",
                 "at school",
@@ -2486,7 +2486,7 @@
             {
               "id": "l9-ph-2",
               "kind": "choice",
-              "prompt": "Выберите вариант: ___ you call her and say sorry?",
+              "prompt": "Выберите вариант (совет «Почему бы тебе не…?»): ___ you call her and say sorry?",
               "options": [
                 "Why don't",
                 "Why not to",
@@ -2508,7 +2508,7 @@
             {
               "id": "l9-ph-3",
               "kind": "fill",
-              "prompt": "Впишите слово: How ___ going for a walk?",
+              "prompt": "Впишите слово для предложения «Как насчёт прогулки?»: How ___ going for a walk?",
               "options": [],
               "optionValues": [],
               "answer": "about",
@@ -2520,7 +2520,7 @@
             {
               "id": "l9-ph-4",
               "kind": "fill",
-              "prompt": "Впишите слово: ___ I help you with your bags?",
+              "prompt": "Впишите слово, которым предлагают помощь («Давайте я…?»): ___ I help you with your bags?",
               "options": [],
               "optionValues": [],
               "answer": "shall",
@@ -2652,7 +2652,7 @@
             {
               "id": "l9-pp-3",
               "kind": "fill",
-              "prompt": "Впишите предлог: It depends ___ the weather.",
+              "prompt": "Впишите предлог (depend ___ = «зависеть от»): It depends ___ the weather.",
               "options": [],
               "optionValues": [],
               "answer": "on",
@@ -2664,7 +2664,7 @@
             {
               "id": "l9-pp-4",
               "kind": "fill",
-              "prompt": "Впишите предлог: Please listen ___ me carefully.",
+              "prompt": "Впишите предлог (listen ___ = «слушать кого-то»): Please listen ___ me carefully.",
               "options": [],
               "optionValues": [],
               "answer": "to",
@@ -3109,7 +3109,7 @@
           {
             "section": "1. Imperative, should, ought to, had better",
             "kind": "CHOICE",
-            "prompt": "Выберите совет: You're always tired in the morning.",
+            "prompt": "Другу всегда хочется спать по утрам. Выберите правильный совет (повелительное наклонение):",
             "text": "",
             "audioUrl": "",
             "transcript": "",
@@ -3128,7 +3128,7 @@
           {
             "section": "1. Imperative, should, ought to, had better",
             "kind": "FILL",
-            "prompt": "Впишите should (take): You look stressed. You ___ a few days off.",
+            "prompt": "Впишите совет «вам стоит» (should + глагол take): You look stressed. You ___ a few days off.",
             "text": "",
             "audioUrl": "",
             "transcript": "",
@@ -3142,7 +3142,7 @@
           {
             "section": "1. Imperative, should, ought to, had better",
             "kind": "FILL",
-            "prompt": "Впишите shouldn't (spend): You ___ so much time on your phone.",
+            "prompt": "Впишите совет «не стоит» (shouldn't + глагол spend): You ___ so much time on your phone.",
             "text": "",
             "audioUrl": "",
             "transcript": "",
@@ -3156,7 +3156,7 @@
           {
             "section": "1. Imperative, should, ought to, had better",
             "kind": "CHOICE",
-            "prompt": "Выберите вариант: ___ nervous. Everything will be fine!",
+            "prompt": "Выберите вариант («не нервничай»): ___ nervous. Everything will be fine!",
             "text": "",
             "audioUrl": "",
             "transcript": "",
@@ -3175,7 +3175,7 @@
           {
             "section": "1. Imperative, should, ought to, had better",
             "kind": "FILL",
-            "prompt": "Впишите ought to (see): That cough is terrible. You ___ a doctor.",
+            "prompt": "Впишите совет «вам стоит» (ought + to + глагол see): That cough is terrible. You ___ a doctor.",
             "text": "",
             "audioUrl": "",
             "transcript": "",
@@ -3189,7 +3189,7 @@
           {
             "section": "1. Imperative, should, ought to, had better",
             "kind": "FILL",
-            "prompt": "Впишите had better (not wait): You ___ until the last day to start the project.",
+            "prompt": "Впишите совет «лучше не» (had better not + глагол wait): You ___ until the last day to start the project.",
             "text": "",
             "audioUrl": "",
             "transcript": "",
@@ -3222,7 +3222,7 @@
           {
             "section": "2. Совет, просьба о совете, предложение",
             "kind": "FILL",
-            "prompt": "Впишите слово: Why ___ you ask your teacher for help?",
+            "prompt": "Впишите слово для совета «Почему бы тебе не…?»: Why ___ you ask your teacher for help?",
             "text": "",
             "audioUrl": "",
             "transcript": "",
@@ -3236,7 +3236,7 @@
           {
             "section": "2. Совет, просьба о совете, предложение",
             "kind": "FILL",
-            "prompt": "Впишите слово: How ___ having dinner at my place?",
+            "prompt": "Впишите слово для предложения «Как насчёт…?»: How ___ having dinner at my place?",
             "text": "",
             "audioUrl": "",
             "transcript": "",
@@ -3288,7 +3288,7 @@
           {
             "section": "2. Совет, просьба о совете, предложение",
             "kind": "CHOICE",
-            "prompt": "Выберите вариант: What do you think I ___ do?",
+            "prompt": "Выберите вариант (просим совета): What do you think I ___ do?",
             "text": "",
             "audioUrl": "",
             "transcript": "",
@@ -3326,7 +3326,7 @@
           {
             "section": "3. Глаголы с предлогами",
             "kind": "FILL",
-            "prompt": "Впишите предлог: I'm looking ___ a new flat.",
+            "prompt": "Впишите предлог (look ___ = «искать»): I'm looking ___ a new flat.",
             "text": "",
             "audioUrl": "",
             "transcript": "",
@@ -3340,7 +3340,7 @@
           {
             "section": "3. Глаголы с предлогами",
             "kind": "FILL",
-            "prompt": "Впишите предлог: It depends ___ you.",
+            "prompt": "Впишите предлог (depend ___ = «зависеть от»): It depends ___ you.",
             "text": "",
             "audioUrl": "",
             "transcript": "",
@@ -3392,7 +3392,7 @@
           {
             "section": "3. Глаголы с предлогами",
             "kind": "FILL",
-            "prompt": "Впишите предлог: I don't agree ___ you.",
+            "prompt": "Впишите предлог (agree ___ = «соглашаться с»): I don't agree ___ you.",
             "text": "",
             "audioUrl": "",
             "transcript": "",
@@ -3529,7 +3529,7 @@
           {
             "section": "5. Аудирование: радиопередача Teen Talk",
             "kind": "LISTENING",
-            "prompt": "Прослушайте запись и впишите время по-английски (1 слово): The presenter says: turn off your computer at ___ o'clock.",
+            "prompt": "Прослушайте запись и впишите число словом по-английски (1 слово): The presenter says: turn off your computer at ___ o'clock.",
             "text": "",
             "audioUrl": "",
             "transcript": "",
@@ -3543,7 +3543,7 @@
           {
             "section": "5. Аудирование: радиопередача Teen Talk",
             "kind": "LISTENING",
-            "prompt": "Прослушайте запись и впишите слово: You'd better not drink ___ in the evening.",
+            "prompt": "Прослушайте запись и впишите название напитка (1 слово): You'd better not drink ___ in the evening.",
             "text": "",
             "audioUrl": "",
             "transcript": "",
@@ -3595,7 +3595,7 @@
           {
             "section": "6. Чтение: письмо в рубрику советов",
             "kind": "FILL",
-            "prompt": "Прочитайте текст выше и впишите слово: You ___ talk to Lisa and tell her how you feel.",
+            "prompt": "Прочитайте текст выше. Впишите модальный глагол совета «стоит» (как в тексте): You ___ talk to Lisa and tell her how you feel.",
             "text": "",
             "audioUrl": "",
             "transcript": "",
@@ -3628,7 +3628,7 @@
           {
             "section": "6. Чтение: письмо в рубрику советов",
             "kind": "FILL",
-            "prompt": "Прочитайте текст выше и впишите слово: If she says sorry, you ___ to forgive her.",
+            "prompt": "Прочитайте текст выше. Впишите слово, которое стоит перед to (совет «вам стоит»): If she says sorry, you ___ to forgive her.",
             "text": "",
             "audioUrl": "",
             "transcript": "",
