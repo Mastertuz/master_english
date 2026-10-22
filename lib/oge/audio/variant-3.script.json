@@ -1,22 +1,22 @@
 {
   "voices": {
-    "Vet": "Eddy (English (UK))",
-    "Tom": "Reed (English (UK))",
-    "Ann": "Flo (English (UK))",
-    "Presenter": "Rocko (English (UK))",
-    "Interviewer": "Sandy (English (UK))",
-    "Respondent": "Grandpa (English (UK))",
-    "Assistant": "Samantha"
+    "Vet": "bm_fable",
+    "Tom": "bm_lewis",
+    "Ann": "bf_emma",
+    "Presenter": "bm_lewis",
+    "Interviewer": "bf_isabella",
+    "Respondent": "bm_george",
+    "Assistant": "af_heart"
   },
   "part1": [
     {
       "title": "Text A",
-      "voice": "Sandy (English (UK))",
+      "voice": "bf_isabella",
       "text": "Dear friends! Today, in our book shop you have a chance to win a free masterclass on storytelling. Yes, a famous writer will be explaining to you the secrets of how to write a good story. To win this wonderful prize, you need to take part in a quest and answer questions about our bookshop, which is the oldest in our town and has a great history. Apart from the main prize, we are offering a special discount card to all our loyal customers who take part in the quest."
     },
     {
       "title": "Text B",
-      "voice": "Shelley (English (UK))",
+      "voice": "bf_alice",
       "text": "Hi, Jack, it’s Mia. Look, I need your help. My dog has gone missing and we are looking for him everywhere. He must be somewhere nearby. That’s why I’m calling all my friends, just in case someone has seen a black Labrador with a grey collar. Our neighbours have already called me about a grey dog whose breed they could not distinguish. And a girl informed me about a beautiful golden retriever which was not mine either. If you happen to see a black one, call me at once!"
     },
     {
@@ -47,27 +47,27 @@
     "speakers": [
       {
         "title": "Speaker A",
-        "voice": "Flo (English (UK))",
+        "voice": "bf_emma",
         "text": "We’ve always lived in this town and I go to the school where my mother learnt. She says that the school has changed a lot since her time, but we have found out that some things are still the same. Like my mother’s class, we have a special day at the end of the month when we wish happy birthday to our classmates who were born in that month. Before the New Year, we write our New Year Resolutions and display them on the walls in the classroom. My mum and I both like it."
       },
       {
         "title": "Speaker B",
-        "voice": "Reed (English (UK))",
+        "voice": "bm_lewis",
         "text": "I don’t mind school, I even like it. But still, from the beginning of the academic year, I start thinking about the holidays. We have Christmas, Easter and summer holidays. My favourite holidays are in winter, because it’s Christmas time with lots of fun and presents. I also like the summer holidays because they are the longest. We usually go for family holidays in summer and we start planning them a good time ahead."
       },
       {
         "title": "Speaker C",
-        "voice": "Sandy (English (UK))",
+        "voice": "bf_isabella",
         "text": "Last year I had to change my school because we’d moved house. I felt a bit nervous at the beginning, but my new classmates welcomed me very warmly. They were really nice and helpful. I think I’m lucky to have them around. We have fun together — go cycling and play in the park. When I need someone to look after my rabbit, when my family leaves for a holiday, my classmates are always there for me. I hope our friendship will not end when we finish school."
       },
       {
         "title": "Speaker D",
-        "voice": "Eddy (English (UK))",
+        "voice": "bm_fable",
         "text": "We go to school five days a week. It’s a place where we spend lots of our time. Naturally, it would be nice to keep this place nice, tidy and safe. That’s why there are several laws that we observe — we should respect our teachers, we should respect each other and we should respect the school’s property. Only the students can enter the building and the grounds of the school. When we want to bring friends from another school to our school event, we ask our teacher for permission."
       },
       {
         "title": "Speaker E",
-        "voice": "Shelley (English (UK))",
+        "voice": "bf_alice",
         "text": "School is not only about learning though, certainly, the lessons take most of our time there. But we also have lots of other things to do. At our school, we enjoy sports games in our playground and our school theatre. We also have a dance group which is so good that they perform not only at our school parties but also at the town’s events. I really think that anyone can find an exciting hobby at school. At least, our school is the right place for that."
       }
     ]

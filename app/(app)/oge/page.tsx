@@ -152,9 +152,9 @@ export default async function OgePage() {
                 {variant.origin?.synthAudio ? (
                   <span
                     className="chip bg-amber-50 text-amber-700"
-                    title="Запись озвучена синтезатором речи, а не диктором экзамена"
+                    title="Запись озвучена нейросетевым голосом, а не диктором экзамена"
                   >
-                    Озвучка синтезатором
+                    Озвучка нейросетью
                   </span>
                 ) : null}
               </div>

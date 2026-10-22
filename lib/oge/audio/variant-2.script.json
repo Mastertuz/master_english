@@ -1,23 +1,23 @@
 {
   "voices": {
-    "Mia": "Flo (English (UK))",
-    "Alex": "Reed (English (UK))",
-    "Manager": "Eddy (English (UK))",
-    "Ben": "Rocko (English (UK))",
-    "Presenter": "Rocko (English (UK))",
-    "Interviewer": "Sandy (English (UK))",
-    "Respondent": "Rocko (English (UK))",
-    "Assistant": "Samantha"
+    "Mia": "bf_emma",
+    "Alex": "bm_lewis",
+    "Manager": "bm_george",
+    "Ben": "bm_fable",
+    "Presenter": "bm_fable",
+    "Interviewer": "bf_isabella",
+    "Respondent": "bm_fable",
+    "Assistant": "af_heart"
   },
   "part1": [
     {
       "title": "Text A",
-      "voice": "Sandy (English (UK))",
+      "voice": "bf_isabella",
       "text": "Dear customers! We’d like to remind you that today, each of you can get a large bar of milk chocolate absolutely free. All you need to do is to buy three different products in our fruit and vegetables department. Please mind that dairy products like milk, cheese and cream, as well as meat products, like bacon or sausages, do not count. Visit our greengrocer’s, choose three tasty and healthy products there and get a bar of chocolate! Hurry — the number of chocolate bars is limited!"
     },
     {
       "title": "Text B",
-      "voice": "Shelley (English (UK))",
+      "voice": "bf_alice",
       "text": "Hi, Mum! I’m just calling to say that I’m going to be home a bit later than usual. You know, we wrote a test in the morning and I think I did it successfully. After that, we decided to go to the cinema, as a whole class. A new film is on. I tried to contact you earlier, but the line was busy. You were having a conversation. I hope you won’t be angry with me that I’ve gone to the cinema without your permission. I have to mute my phone now and I’ll call as soon as I can."
     },
     {
@@ -50,27 +50,27 @@
     "speakers": [
       {
         "title": "Speaker A",
-        "voice": "Flo (English (UK))",
+        "voice": "bf_emma",
         "text": "I was born in this town and have lived here all my life. It is situated along the river and there is a wonderful view of the water from my room. It is a lovely place to live in — very green and peaceful. There are few cars, as most people prefer bicycles, which is logical — the town is so small, you don’t need a car. You can cycle or walk wherever you want... For me, it’s the best place in the world though some of my friends dream of living in a big city."
       },
       {
         "title": "Speaker B",
-        "voice": "Reed (English (UK))",
+        "voice": "bm_lewis",
         "text": "I love my hometown. Historians say that it was founded more than 500 years ago. There were a few small houses, a mill and a church. There are several streets where you can still see traditional one- and two-storey houses and visit a history museum in the old mill. Now it’s a fast-developing industrial city. It has an electric power station that supplies the whole region, and a unique medical equipment manufacturing site."
       },
       {
         "title": "Speaker C",
-        "voice": "Sandy (English (UK))",
+        "voice": "bf_isabella",
         "text": "My hometown is popular with tourists because of our cultural and historical events. For example, our annual autumn fair always attracts lots of people. We have been holding it since the 19th century, and it lasts for five days. The locals and tourists take part in different fair activities, win prizes, dance and enjoy the delicious food and fun games. Some people wear traditional costumes, which makes the whole event very colourful. Children and grandparents play games together!"
       },
       {
         "title": "Speaker D",
-        "voice": "Eddy (English (UK))",
+        "voice": "bm_george",
         "text": "I live in a big modern city with more than five million people. It’s not usually a problem to find a place to spend my free time. There are a lot of theatres, cinemas, clubs and other cultural and entertainment attractions. There’s always a wide choice of sports facilities and the career opportunities are good, which is very important for young people like my friends and me. I have a lot of friends and we often spend time together."
       },
       {
         "title": "Speaker E",
-        "voice": "Shelley (English (UK))",
+        "voice": "bf_alice",
         "text": "You know, we took a part in a city design competition recently. It was about how our town might look in fifty years’ time. My friends and I are interested in the city architecture and took it as a professional challenge. In our project, our town is based on smart technologies and artificial intelligence. It is very clean and green, only eco-friendly construction materials are used and there are no petrol cars in the streets. To me, it looks beautiful and we hope the jury will say the same."
       }
     ]
