@@ -214,6 +214,9 @@ content/lessons/               исходные HTML-уроки и lessons.json
                                (глаголы состояния, чтение, транскрипция); живут в базе, не в HTML
                                lessons-6-7.json — копия уроков 6 и 7 (Present Perfect; планы и will),
                                их слов и домашних заданий; живут в базе, не в HTML
+                               lessons-8-9.json — копия уроков 8 и 9 (must / have to / should; Passive Voice),
+                               слов и домашних заданий. Загрузка в базу:
+                               npx tsx --env-file=.env scripts/import-lessons-file.ts content/lessons/lessons-8-9.json
 books/                         учебники (PDF)
 public/audio/  public/uploads/ аудио уроков и загруженные файлы
 prisma/schema.prisma           схема БД

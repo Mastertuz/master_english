@@ -1,0 +1,3386 @@
+{
+  "lessons": [
+    {
+      "number": 8,
+      "topic": "You must / You should: правила и советы",
+      "description": "Модальные глаголы необходимости и совета: must и have to, mustn't и don't have to, should / ought to / had better, may и might; had to и will have to для прошедшего и будущего.",
+      "goal": "Рассказать о правилах и обязанностях (в аэропорту, в школе, на работе) и дать совет путешественнику, не путая mustn't и don't have to",
+      "durationMin": 60,
+      "level": "B1",
+      "bookTitle": "",
+      "bookRef": "",
+      "timeline": [
+        {
+          "time": "0–6",
+          "title": "Повторение",
+          "note": "Планы и прогнозы из урока 7"
+        },
+        {
+          "time": "6–12",
+          "title": "Разогрев",
+          "note": "Правила в вашей жизни"
+        },
+        {
+          "time": "12–22",
+          "title": "Чтение",
+          "note": "Tom's first trip to Japan"
+        },
+        {
+          "time": "22–32",
+          "title": "Грамматика 1",
+          "note": "must и have to: необходимость"
+        },
+        {
+          "time": "32–42",
+          "title": "Грамматика 2",
+          "note": "mustn't и don't have to"
+        },
+        {
+          "time": "42–48",
+          "title": "Грамматика 3",
+          "note": "should, ought to, had better; may и might"
+        },
+        {
+          "time": "48–54",
+          "title": "Произношение",
+          "note": "слабые формы have to, should; ударение в словах урока"
+        },
+        {
+          "time": "54–60",
+          "title": "Говорение",
+          "note": "Совет путешественнику"
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "rule",
+          "title": "Повторение урока 7: планы и прогнозы",
+          "paragraphs": [
+            "Вспомним три способа говорить о будущем из прошлого урока."
+          ],
+          "formulas": [],
+          "rules": [
+            "Present Continuous — договорённость: I'm flying to Rome on Friday.",
+            "be going to — намерение и прогноз по фактам: I'm going to learn Spanish. Look at the clouds! It's going to rain.",
+            "will — решение на ходу, обещание, прогноз; после if / when — Present Simple: If it rains, we'll stay at home."
+          ],
+          "examples": [],
+          "prompts": [],
+          "vocab": [],
+          "audioUrl": "",
+          "audioTitle": "",
+          "videoUrl": "",
+          "videoTitle": "",
+          "subtitlesUrl": "",
+          "sample": "",
+          "transcript": "",
+          "imageUrl": "",
+          "hidden": false,
+          "text": "",
+          "tasks": [
+            {
+              "id": "l8-rev-1",
+              "kind": "choice",
+              "prompt": "Выберите вариант: Look at the sky! It ___ rain.",
+              "options": [
+                "is going to",
+                "will to",
+                "is",
+                "has"
+              ],
+              "optionValues": [
+                "is going to",
+                "will to",
+                "is",
+                "has"
+              ],
+              "answer": "is going to",
+              "explanation": "Прогноз по тому, что видим сейчас — be going to.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l8-rev-2",
+              "kind": "fill",
+              "prompt": "Впишите will или won't: — I can't carry this bag. — Don't worry, I ___ help you.",
+              "options": [],
+              "optionValues": [],
+              "answer": "will, 'll, ll",
+              "explanation": "Решение в момент разговора — will.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l8-rev-3",
+              "kind": "choice",
+              "prompt": "Выберите вариант: If it ___ tomorrow, we'll stay at home.",
+              "options": [
+                "rains",
+                "will rain",
+                "would rain",
+                "rained"
+              ],
+              "optionValues": [
+                "rains",
+                "will rain",
+                "would rain",
+                "rained"
+              ],
+              "answer": "rains",
+              "explanation": "После if — Present Simple: rains.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l8-rev-4",
+              "kind": "fill",
+              "prompt": "Впишите Present Continuous (leave): Our train ___ at 8 am tomorrow — I've already bought the tickets.",
+              "options": [],
+              "optionValues": [],
+              "answer": "is leaving, 's leaving, s leaving",
+              "explanation": "Договорённость с точным временем — Present Continuous: is leaving.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            }
+          ]
+        },
+        {
+          "kind": "speaking",
+          "title": "Разогрев: правила в вашей жизни",
+          "paragraphs": [
+            "Обсудите с преподавателем по-английски. Используйте must, have to и mustn't."
+          ],
+          "formulas": [],
+          "rules": [],
+          "examples": [],
+          "prompts": [
+            "What rules do you have to follow at school or at work?",
+            "What mustn't you do in a museum or on a plane?",
+            "What do you have to do before a long trip?",
+            "What advice would you give to a friend who is travelling abroad for the first time?"
+          ],
+          "vocab": [],
+          "audioUrl": "",
+          "audioTitle": "",
+          "videoUrl": "",
+          "videoTitle": "",
+          "subtitlesUrl": "",
+          "sample": "At school I have to wear a uniform and I must be on time for every lesson. I mustn't use my phone during lessons. At the weekend I don't have to get up early, so I usually sleep until ten. Before a long trip I have to buy tickets and pack my bag. My advice to a friend who is going abroad for the first time is: you should check your passport and you'd better not forget your charger.",
+          "transcript": "",
+          "imageUrl": "",
+          "hidden": false,
+          "text": "",
+          "tasks": []
+        },
+        {
+          "kind": "reading",
+          "title": "Чтение: Tom's first trip to Japan",
+          "paragraphs": [
+            "Прочитайте письмо. Найдите все модальные глаголы (must, have to, should…) и определите, что они выражают: необходимость, запрет или совет."
+          ],
+          "formulas": [],
+          "rules": [],
+          "examples": [],
+          "prompts": [],
+          "vocab": [],
+          "audioUrl": "",
+          "audioTitle": "",
+          "videoUrl": "",
+          "videoTitle": "",
+          "subtitlesUrl": "",
+          "sample": "",
+          "transcript": "",
+          "imageUrl": "",
+          "hidden": false,
+          "text": "Tom's first trip to Japan (an email to a friend)\n\nHi Ben,\n\nI'm in Tokyo at last! The trip was great, but I had to do a lot of things before I left. First, I had to apply for a visa, and I had to wait two weeks for it. At the airport I had to show my passport three times, and I mustn't forget my boarding pass - I almost lost it!\n\nHere everything is very polite and clean. You have to take off your shoes when you enter a house or a small restaurant. You mustn't eat or drink while you're walking in the street - people think it's rude. You don't have to tip in restaurants: it's not usual in Japan, and the waiters may even refuse to take your money.\n\nMy Japanese friend Yuki gave me some advice. She says I should buy a rail pass, because it's cheaper than separate tickets. I should also learn a few polite phrases - people will be happy if I try. And I'd better not travel at rush hour: the trains are terribly crowded!\n\nTomorrow we're going to visit a temple. We have to get up early, so I must go to bed now.\n\nWrite soon!\nTom",
+          "tasks": [
+            {
+              "id": "l8-rd-1",
+              "kind": "choice",
+              "prompt": "Прочитайте текст и выберите ответ: What did Tom have to do before he left?",
+              "options": [
+                "apply for a visa",
+                "buy a rail pass",
+                "learn Japanese",
+                "book a temple tour"
+              ],
+              "optionValues": [
+                "apply for a visa",
+                "buy a rail pass",
+                "learn Japanese",
+                "book a temple tour"
+              ],
+              "answer": "apply for a visa",
+              "explanation": "First, I had to apply for a visa.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l8-rd-2",
+              "kind": "choice",
+              "prompt": "Выберите ответ: How long did Tom have to wait for his visa?",
+              "options": [
+                "two weeks",
+                "two days",
+                "two months",
+                "one week"
+              ],
+              "optionValues": [
+                "two weeks",
+                "two days",
+                "two months",
+                "one week"
+              ],
+              "answer": "two weeks",
+              "explanation": "I had to wait two weeks for it.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l8-rd-3",
+              "kind": "choice",
+              "prompt": "Выберите ответ: What mustn't people do in the street in Japan?",
+              "options": [
+                "eat or drink while walking",
+                "wear shoes",
+                "take photos",
+                "use a phone"
+              ],
+              "optionValues": [
+                "eat or drink while walking",
+                "wear shoes",
+                "take photos",
+                "use a phone"
+              ],
+              "answer": "eat or drink while walking",
+              "explanation": "You mustn't eat or drink while you're walking in the street - это считается невежливым.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l8-rd-4",
+              "kind": "fill",
+              "prompt": "Впишите слово из текста: In Japan you ___ tip in restaurants — it's not usual.",
+              "options": [],
+              "optionValues": [],
+              "answer": "don't have to, do not have to",
+              "explanation": "Чаевые не нужны, но и не запрещены — don't have to.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l8-rd-5",
+              "kind": "fill",
+              "prompt": "Впишите слово из текста: Yuki says: «I ___ buy a rail pass, because it's cheaper.»",
+              "options": [],
+              "optionValues": [],
+              "answer": "should",
+              "explanation": "Совет — should.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l8-rd-6",
+              "kind": "choice",
+              "prompt": "Выберите ответ: Why must Tom go to bed early?",
+              "options": [
+                "They have to get up early tomorrow",
+                "He has a problem with his visa",
+                "The temple is closed",
+                "He is ill"
+              ],
+              "optionValues": [
+                "They have to get up early tomorrow",
+                "He has a problem with his visa",
+                "The temple is closed",
+                "He is ill"
+              ],
+              "answer": "They have to get up early tomorrow",
+              "explanation": "We have to get up early, so I must go to bed now.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            }
+          ]
+        },
+        {
+          "kind": "rule",
+          "title": "Правило 1: must и have to — необходимость",
+          "paragraphs": [
+            "Must и have to переводятся «должен», но используются по-разному. Must — личное решение говорящего или строгое правило, have to — внешняя необходимость: расписание, закон, начальник. У must нет прошедшего и будущего — их заменяет have to."
+          ],
+          "formulas": [
+            "must + V1: сильная необходимость\n\n+  You must show your passport.\n?  Must I fill in this form? (в вопросах чаще: Do I have to fill in…?)\nПосле must — глагол без to: You must go. Не «must to go».",
+            "have to / has to + V1: внешняя необходимость\n\n+  I have to wear a uniform. · She has to get up early.\n?  Do you have to wear a uniform? — Yes, I do. / No, I don't.\nПрошедшее: had to — Yesterday I had to wait for two hours.\nБудущее: will have to — Next year you will have to pass an exam."
+          ],
+          "rules": [
+            "must — решение говорящего или строгое правило: You must be at the gate at 7. I must call my mum.",
+            "have to — необходимость «извне»: расписание, закон, начальник: I have to work on Saturday. He has to wear a helmet.",
+            "У must нет прошедшего времени: вчера — had to: Yesterday I had to wait for two hours. Не «I musted».",
+            "В будущем — will have to: Next year you will have to pass an exam."
+          ],
+          "examples": [],
+          "prompts": [],
+          "vocab": [],
+          "audioUrl": "",
+          "audioTitle": "",
+          "videoUrl": "",
+          "videoTitle": "",
+          "subtitlesUrl": "",
+          "sample": "",
+          "transcript": "",
+          "imageUrl": "",
+          "hidden": false,
+          "text": "",
+          "tasks": [
+            {
+              "id": "l8-mh-1",
+              "kind": "choice",
+              "prompt": "Выберите слово: Passengers ___ show their passports at the border.",
+              "options": [
+                "must",
+                "musts",
+                "to must",
+                "must to"
+              ],
+              "optionValues": [
+                "must",
+                "musts",
+                "to must",
+                "must to"
+              ],
+              "answer": "must",
+              "explanation": "После must — глагол без to и без окончания.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l8-mh-2",
+              "kind": "fill",
+              "prompt": "Впишите have to или has to: My sister ___ get up at 6 am on school days.",
+              "options": [],
+              "optionValues": [],
+              "answer": "has to",
+              "explanation": "С подлежащим she — has to.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l8-mh-3",
+              "kind": "fill",
+              "prompt": "Впишите have to в прошедшем времени: Yesterday we ___ wait for two hours at the airport.",
+              "options": [],
+              "optionValues": [],
+              "answer": "had to",
+              "explanation": "Прошедшее время от have to — had to.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l8-mh-4",
+              "kind": "choice",
+              "prompt": "Выберите вариант: Next year I ___ take the exam.",
+              "options": [
+                "will have to",
+                "will must",
+                "must to",
+                "had to"
+              ],
+              "optionValues": [
+                "will have to",
+                "will must",
+                "must to",
+                "had to"
+              ],
+              "answer": "will have to",
+              "explanation": "У must нет будущего — will have to.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l8-mh-5",
+              "kind": "choice",
+              "prompt": "В каком предложении ошибка?",
+              "options": [
+                "I musted call my boss yesterday.",
+                "She has to wear a uniform.",
+                "We must be on time.",
+                "He had to wait."
+              ],
+              "optionValues": [
+                "I musted call my boss yesterday.",
+                "She has to wear a uniform.",
+                "We must be on time.",
+                "He had to wait."
+              ],
+              "answer": "I musted call my boss yesterday.",
+              "explanation": "У must нет прошедшего времени: надо I had to call.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l8-mh-6",
+              "kind": "fill",
+              "prompt": "Впишите слово: ___ you have to get up early on Sundays?",
+              "options": [],
+              "optionValues": [],
+              "answer": "do",
+              "explanation": "Вопрос с have to строится с do / does: Do you have to…?",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            }
+          ]
+        },
+        {
+          "kind": "rule",
+          "title": "Правило 2: mustn't и don't have to — не одно и то же",
+          "paragraphs": [
+            "Эти два выражения звучат похоже, но значат разное: mustn't — «нельзя» (запрет), don't have to — «не нужно» (можно не делать, но и делать не запрещено)."
+          ],
+          "formulas": [
+            "mustn't + V1: запрет\n\nYou mustn't take photos in the museum. (нельзя)\nYou mustn't be late for the flight. (нельзя опаздывать)",
+            "don't / doesn't have to + V1: не нужно\n\nYou don't have to pay — it's free. (платить не нужно)\nShe doesn't have to wear a tie. (галстук не обязателен)\nПрошедшее: didn't have to — Yesterday I didn't have to get up early."
+          ],
+          "rules": [
+            "mustn't — действие запрещено, делать нельзя: You mustn't use your phone during the exam.",
+            "don't have to — действие не обязательно, но не запрещено: You don't have to book a table, there are lots of free ones.",
+            "needn't — почти то же, что don't have to, но звучит чуть формальнее: You needn't come early.",
+            "Не переводите don't have to как «нельзя» — это самая частая ошибка."
+          ],
+          "examples": [],
+          "prompts": [],
+          "vocab": [],
+          "audioUrl": "",
+          "audioTitle": "",
+          "videoUrl": "",
+          "videoTitle": "",
+          "subtitlesUrl": "",
+          "sample": "",
+          "transcript": "",
+          "imageUrl": "",
+          "hidden": false,
+          "text": "",
+          "tasks": [
+            {
+              "id": "l8-mn-1",
+              "kind": "choice",
+              "prompt": "Знак «No photos». Выберите вариант: You ___ take photos here.",
+              "options": [
+                "mustn't",
+                "don't have to",
+                "needn't to",
+                "haven't to"
+              ],
+              "optionValues": [
+                "mustn't",
+                "don't have to",
+                "needn't to",
+                "haven't to"
+              ],
+              "answer": "mustn't",
+              "explanation": "Фотографировать запрещено — mustn't.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l8-mn-2",
+              "kind": "choice",
+              "prompt": "Вход бесплатный. Выберите вариант: You ___ pay to enter.",
+              "options": [
+                "don't have to",
+                "mustn't",
+                "can't to",
+                "not must"
+              ],
+              "optionValues": [
+                "don't have to",
+                "mustn't",
+                "can't to",
+                "not must"
+              ],
+              "answer": "don't have to",
+              "explanation": "Платить не нужно — don't have to.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l8-mn-3",
+              "kind": "fill",
+              "prompt": "Впишите mustn't: You ___ run in the corridor — it's dangerous.",
+              "options": [],
+              "optionValues": [],
+              "answer": "mustn't, must not",
+              "explanation": "Бегать нельзя — запрет.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l8-mn-4",
+              "kind": "fill",
+              "prompt": "Впишите don't have to: It's Sunday, so I ___ get up early.",
+              "options": [],
+              "optionValues": [],
+              "answer": "don't have to, do not have to",
+              "explanation": "Вставать рано не нужно — нет необходимости.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l8-mn-5",
+              "kind": "choice",
+              "prompt": "Какое предложение значит «Можно не приходить»?",
+              "options": [
+                "You don't have to come.",
+                "You mustn't come.",
+                "You must come.",
+                "You can't to come."
+              ],
+              "optionValues": [
+                "You don't have to come.",
+                "You mustn't come.",
+                "You must come.",
+                "You can't to come."
+              ],
+              "answer": "You don't have to come.",
+              "explanation": "Don't have to — «не обязательно».",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l8-mn-6",
+              "kind": "choice",
+              "prompt": "Выберите вариант: He ___ wear a suit — it's a casual party.",
+              "options": [
+                "doesn't have to",
+                "mustn't",
+                "don't have to",
+                "hasn't to"
+              ],
+              "optionValues": [
+                "doesn't have to",
+                "mustn't",
+                "don't have to",
+                "hasn't to"
+              ],
+              "answer": "doesn't have to",
+              "explanation": "С he — doesn't have to.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            }
+          ]
+        },
+        {
+          "kind": "rule",
+          "title": "Правило 3: should, ought to, had better — советы; may и might — возможность",
+          "paragraphs": [
+            "Для советов используем should и ought to; had better — настойчивый совет с предупреждением о последствиях. Для возможности — may и might: «может быть»."
+          ],
+          "formulas": [
+            "should / ought to + V1: совет\n\n+  You should drink more water. · You ought to see a doctor.\n−  You shouldn't eat so much sugar.\n?  Should I take an umbrella? — Yes, you should.\n\nhad better + V1: «лучше бы» (иначе будут проблемы)\nYou'd better hurry, or you'll miss the train. · You'd better not be late.",
+            "may / might + V1: возможность\n\nIt may rain later. · He might be at home.\nmight — чуть менее вероятно, чем may.\nОтрицание: She may not come. · I might not have time."
+          ],
+          "rules": [
+            "should — самый частый способ дать совет: You should try the local food.",
+            "ought to — то же, что should, но звучит чуть книжнее: You ought to apologise.",
+            "had better (you'd better) — совет с предупреждением; отрицание — had better not: You'd better not forget your passport!",
+            "may / might + V1 — предположение «возможно»: We might go to the beach if the weather is nice."
+          ],
+          "examples": [],
+          "prompts": [],
+          "vocab": [],
+          "audioUrl": "",
+          "audioTitle": "",
+          "videoUrl": "",
+          "videoTitle": "",
+          "subtitlesUrl": "",
+          "sample": "",
+          "transcript": "",
+          "imageUrl": "",
+          "hidden": false,
+          "text": "",
+          "tasks": [
+            {
+              "id": "l8-sh-1",
+              "kind": "choice",
+              "prompt": "Выберите совет: You look tired. You ___ go to bed early.",
+              "options": [
+                "should",
+                "may to",
+                "have",
+                "ought"
+              ],
+              "optionValues": [
+                "should",
+                "may to",
+                "have",
+                "ought"
+              ],
+              "answer": "should",
+              "explanation": "Совет — should + V1.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l8-sh-2",
+              "kind": "fill",
+              "prompt": "Впишите ought to (see): You have a terrible cough. You ___ a doctor.",
+              "options": [],
+              "optionValues": [],
+              "answer": "ought to see",
+              "explanation": "ought to + V1.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l8-sh-3",
+              "kind": "fill",
+              "prompt": "Впишите 'd better not (be): You ___ late for the interview!",
+              "options": [],
+              "optionValues": [],
+              "answer": "'d better not be, had better not be, d better not be",
+              "explanation": "Отрицание — had better not + V1.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l8-sh-4",
+              "kind": "choice",
+              "prompt": "Выберите вариант (возможность): Take an umbrella. It ___ rain this afternoon.",
+              "options": [
+                "might",
+                "must to",
+                "should to",
+                "has to"
+              ],
+              "optionValues": [
+                "might",
+                "must to",
+                "should to",
+                "has to"
+              ],
+              "answer": "might",
+              "explanation": "Возможность — might / may + V1.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l8-sh-5",
+              "kind": "choice",
+              "prompt": "В каком предложении ошибка?",
+              "options": [
+                "You should to see this film.",
+                "You should see this film.",
+                "She shouldn't worry.",
+                "We ought to go."
+              ],
+              "optionValues": [
+                "You should to see this film.",
+                "You should see this film.",
+                "She shouldn't worry.",
+                "We ought to go."
+              ],
+              "answer": "You should to see this film.",
+              "explanation": "После should — глагол без to.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l8-sh-6",
+              "kind": "fill",
+              "prompt": "Впишите shouldn't: You ___ eat so much chocolate — it's bad for your teeth.",
+              "options": [],
+              "optionValues": [],
+              "answer": "shouldn't, should not",
+              "explanation": "Совет не делать — shouldn't.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            }
+          ]
+        },
+        {
+          "kind": "vocab",
+          "title": "Лексика: travel rules and advice",
+          "paragraphs": [
+            "Слова для разговора о правилах в поездке. Составьте с каждым предложение с must, have to или should."
+          ],
+          "formulas": [],
+          "rules": [],
+          "examples": [],
+          "prompts": [],
+          "vocab": [
+            {
+              "en": "customs",
+              "ru": "таможня"
+            },
+            {
+              "en": "luggage",
+              "ru": "багаж"
+            },
+            {
+              "en": "boarding pass",
+              "ru": "посадочный талон"
+            },
+            {
+              "en": "security check",
+              "ru": "досмотр, проверка безопасности"
+            },
+            {
+              "en": "fine",
+              "ru": "штраф"
+            },
+            {
+              "en": "visa",
+              "ru": "виза"
+            },
+            {
+              "en": "insurance",
+              "ru": "страховка"
+            },
+            {
+              "en": "queue",
+              "ru": "очередь"
+            },
+            {
+              "en": "delay",
+              "ru": "задержка"
+            },
+            {
+              "en": "refund",
+              "ru": "возврат денег"
+            },
+            {
+              "en": "compulsory",
+              "ru": "обязательный"
+            },
+            {
+              "en": "allowed",
+              "ru": "разрешённый"
+            }
+          ],
+          "audioUrl": "",
+          "audioTitle": "",
+          "videoUrl": "",
+          "videoTitle": "",
+          "subtitlesUrl": "",
+          "sample": "",
+          "transcript": "",
+          "imageUrl": "",
+          "hidden": false,
+          "text": "",
+          "tasks": []
+        },
+        {
+          "kind": "rule",
+          "title": "Произношение: слабые формы have to, should и краткие отрицания",
+          "paragraphs": [
+            "В живой речи модальные глаголы звучат короче, чем пишутся. Русская подсказка в скобках — приблизительное чтение; точные звуки показывает транскрипция."
+          ],
+          "formulas": [
+            "have to и has to в быстрой речи\n\nI have to go /aɪ ˈhæf tə ɡoʊ/ (ай хэ́ф тэ го́у) — have to звучит как «хэфтэ»\nShe has to work /ʃi ˈhæs tə wɜːrk/ (ши хэ́с тэ уёрк) — has to звучит как «хэстэ»\nshould /ʃʊd/ (шуд) — буква l не читается",
+            "Краткие отрицания: последняя t почти не слышна\n\nmustn't /ˈmʌsnt/ (ма́снт) — первая t не читается\nshouldn't /ˈʃʊdnt/ (шу́днт)\ndon't have to /doʊnt ˈhæf tə/ (до́унт хэ́ф тэ) · doesn't have to /ˈdʌznt ˈhæf tə/ (да́знт хэ́ф тэ)",
+            "Слова урока: ударение\n\ncustoms /ˈkʌstəmz/ (ка́стэмз) — на первом слоге\nluggage /ˈlʌɡɪdʒ/ (ла́гидж) — на первом слоге\ninsurance /ɪnˈʃʊrəns/ (иншу́рэнс) — на втором слоге\ncompulsory /kəmˈpʌlsəri/ (кэмпа́лсэри) — на втором слоге\nrefund /ˈriːfʌnd/ (ри́фанд) — на первом слоге (существительное)\ndelay /dɪˈleɪ/ (дилэ́й) — на втором слоге"
+          ],
+          "rules": [],
+          "examples": [],
+          "prompts": [],
+          "vocab": [],
+          "audioUrl": "",
+          "audioTitle": "",
+          "videoUrl": "",
+          "videoTitle": "",
+          "subtitlesUrl": "",
+          "sample": "",
+          "transcript": "",
+          "imageUrl": "",
+          "hidden": false,
+          "text": "",
+          "tasks": [
+            {
+              "id": "l8-pr-1",
+              "kind": "choice",
+              "prompt": "Как в быстрой речи часто звучит have to в предложении I have to go?",
+              "options": [
+                "hafta",
+                "have two",
+                "haffed",
+                "heav tu"
+              ],
+              "optionValues": [
+                "hafta",
+                "have two",
+                "haffed",
+                "heav tu"
+              ],
+              "answer": "hafta",
+              "explanation": "have to → hafta /ˈhæftə/ (хэ́фтэ): так говорят, но пишем have to.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l8-pr-2",
+              "kind": "choice",
+              "prompt": "В каком слове буква l не читается?",
+              "options": [
+                "should",
+                "shell",
+                "still",
+                "fill"
+              ],
+              "optionValues": [
+                "should",
+                "shell",
+                "still",
+                "fill"
+              ],
+              "answer": "should",
+              "explanation": "should /ʃʊd/ (шуд): l не читается.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l8-pr-3",
+              "kind": "choice",
+              "prompt": "В каком слове ударение на втором слоге?",
+              "options": [
+                "insurance",
+                "customs",
+                "luggage",
+                "refund"
+              ],
+              "optionValues": [
+                "insurance",
+                "customs",
+                "luggage",
+                "refund"
+              ],
+              "answer": "insurance",
+              "explanation": "insurance /ɪnˈʃʊrəns/ (иншу́рэнс). Остальные — на первом слоге.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l8-pr-4",
+              "kind": "choice",
+              "prompt": "Какое слово читается /ˈmʌsnt/ (ма́снт)?",
+              "options": [
+                "mustn't",
+                "must",
+                "most",
+                "mist"
+              ],
+              "optionValues": [
+                "mustn't",
+                "must",
+                "most",
+                "mist"
+              ],
+              "answer": "mustn't",
+              "explanation": "mustn't /ˈmʌsnt/ (ма́снт): первая t не читается.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l8-pr-5",
+              "kind": "choice",
+              "prompt": "Где ударение в слове compulsory?",
+              "options": [
+                "на втором слоге",
+                "на первом слоге",
+                "на третьем слоге",
+                "на последнем слоге"
+              ],
+              "optionValues": [
+                "на втором слоге",
+                "на первом слоге",
+                "на третьем слоге",
+                "на последнем слоге"
+              ],
+              "answer": "на втором слоге",
+              "explanation": "compulsory /kəmˈpʌlsəri/ (кэмпа́лсэри): ударение на втором слоге.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            }
+          ]
+        },
+        {
+          "kind": "speaking",
+          "title": "Говорение: совет путешественнику",
+          "paragraphs": [
+            "Дайте совет другу, который впервые летит в другую страну. Используйте must / have to, mustn't, don't have to и should."
+          ],
+          "formulas": [],
+          "rules": [],
+          "examples": [],
+          "prompts": [
+            "What do you have to do at the airport before you board the plane?",
+            "What mustn't you take in your hand luggage?",
+            "What don't you have to do when you travel inside your own country?",
+            "What advice would you give to a friend who is going abroad for the first time?"
+          ],
+          "vocab": [],
+          "audioUrl": "",
+          "audioTitle": "",
+          "videoUrl": "",
+          "videoTitle": "",
+          "subtitlesUrl": "",
+          "sample": "Before you fly, you have to check in and go through the security check. You must show your passport and boarding pass. You mustn't take big bottles of liquid in your hand luggage. If you travel inside Russia, you don't have to show a visa or go through customs. My advice is: you should arrive at the airport three hours before the flight, and you'd better not pack your passport in your suitcase! You should also buy travel insurance - it may save you a lot of money.",
+          "transcript": "",
+          "imageUrl": "",
+          "hidden": false,
+          "text": "",
+          "tasks": []
+        }
+      ],
+      "words": [
+        {
+          "english": "customs",
+          "russian": "таможня",
+          "partOfSpeech": "noun",
+          "transcription": "/ˈkʌstəmz/",
+          "example": "We went through customs without any problems.",
+          "definition": "the place at an airport where officers check what you bring into a country",
+          "definitionRu": "место в аэропорту, где проверяют, что вы ввозите в страну",
+          "audioUrl": "",
+          "imageUrl": "",
+          "order": 0
+        },
+        {
+          "english": "luggage",
+          "russian": "багаж",
+          "partOfSpeech": "noun",
+          "transcription": "/ˈlʌɡɪdʒ/",
+          "example": "My luggage was lost at the airport.",
+          "definition": "bags and cases that you take with you when you travel",
+          "definitionRu": "сумки и чемоданы, которые вы берёте в поездку",
+          "audioUrl": "",
+          "imageUrl": "",
+          "order": 1
+        },
+        {
+          "english": "boarding pass",
+          "russian": "посадочный талон",
+          "partOfSpeech": "noun",
+          "transcription": "/ˈbɔːrdɪŋ pæs/",
+          "example": "Please show your boarding pass at the gate.",
+          "definition": "a card that you show to get on a plane",
+          "definitionRu": "карточка, которую показывают, чтобы сесть в самолёт",
+          "audioUrl": "",
+          "imageUrl": "",
+          "order": 2
+        },
+        {
+          "english": "security check",
+          "russian": "досмотр, проверка безопасности",
+          "partOfSpeech": "noun",
+          "transcription": "/sɪˈkjʊrəti tʃek/",
+          "example": "The security check took twenty minutes.",
+          "definition": "a check of people and bags for safety, for example at an airport",
+          "definitionRu": "проверка людей и сумок в целях безопасности, например в аэропорту",
+          "audioUrl": "",
+          "imageUrl": "",
+          "order": 3
+        },
+        {
+          "english": "fine",
+          "russian": "штраф",
+          "partOfSpeech": "noun",
+          "transcription": "/faɪn/",
+          "example": "You must pay a fine if you park here.",
+          "definition": "money that you must pay as a punishment",
+          "definitionRu": "деньги, которые нужно заплатить в качестве наказания",
+          "audioUrl": "",
+          "imageUrl": "",
+          "order": 4
+        },
+        {
+          "english": "visa",
+          "russian": "виза",
+          "partOfSpeech": "noun",
+          "transcription": "/ˈviːzə/",
+          "example": "Do I need a visa for Japan?",
+          "definition": "an official document that allows you to enter a country",
+          "definitionRu": "официальный документ, который разрешает въезд в страну",
+          "audioUrl": "",
+          "imageUrl": "",
+          "order": 5
+        },
+        {
+          "english": "insurance",
+          "russian": "страховка",
+          "partOfSpeech": "noun",
+          "transcription": "/ɪnˈʃʊrəns/",
+          "example": "You should buy travel insurance.",
+          "definition": "an agreement in which you pay money so that a company will pay if something is lost or damaged",
+          "definitionRu": "договор, по которому компания возместит ущерб, если что-то потеряется или сломается",
+          "audioUrl": "",
+          "imageUrl": "",
+          "order": 6
+        },
+        {
+          "english": "queue",
+          "russian": "очередь",
+          "partOfSpeech": "noun",
+          "transcription": "/kjuː/",
+          "example": "There was a long queue at passport control.",
+          "definition": "a line of people waiting for something",
+          "definitionRu": "очередь из людей, которые чего-то ждут",
+          "audioUrl": "",
+          "imageUrl": "",
+          "order": 7
+        },
+        {
+          "english": "delay",
+          "russian": "задержка",
+          "partOfSpeech": "noun",
+          "transcription": "/dɪˈleɪ/",
+          "example": "Our flight had a two-hour delay.",
+          "definition": "a situation in which something happens later than planned",
+          "definitionRu": "ситуация, когда что-то происходит позже, чем планировалось",
+          "audioUrl": "",
+          "imageUrl": "",
+          "order": 8
+        },
+        {
+          "english": "refund",
+          "russian": "возврат денег",
+          "partOfSpeech": "noun",
+          "transcription": "/ˈriːfʌnd/",
+          "example": "We asked for a refund for the cancelled flight.",
+          "definition": "money that is given back to you, for example when you return something",
+          "definitionRu": "деньги, которые вам возвращают, например за возвращённый товар",
+          "audioUrl": "",
+          "imageUrl": "",
+          "order": 9
+        },
+        {
+          "english": "compulsory",
+          "russian": "обязательный",
+          "partOfSpeech": "adjective",
+          "transcription": "/kəmˈpʌlsəri/",
+          "example": "Wearing a seat belt is compulsory.",
+          "definition": "something that you must do by law or by rule",
+          "definitionRu": "то, что нужно делать по закону или по правилу",
+          "audioUrl": "",
+          "imageUrl": "",
+          "order": 10
+        },
+        {
+          "english": "allowed",
+          "russian": "разрешённый",
+          "partOfSpeech": "adjective",
+          "transcription": "/əˈlaʊd/",
+          "example": "Pets are not allowed in the hotel.",
+          "definition": "if something is allowed, you are permitted to do it",
+          "definitionRu": "если что-то разрешено, это можно делать",
+          "audioUrl": "",
+          "imageUrl": "",
+          "order": 11
+        }
+      ],
+      "homework": {
+        "title": "Домашнее задание к уроку 8",
+        "intro": "Правила и советы: must и have to, mustn't и don't have to, should / ought to / had better, may и might, лексика для путешествия.",
+        "tasks": [
+          {
+            "section": "1. Must и have to",
+            "kind": "FILL",
+            "prompt": "Впишите must: Passengers ___ keep their passports in a safe place.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [],
+            "answer": "must",
+            "explanation": "Строгое правило — must + V1.",
+            "rule": "",
+            "hidden": false,
+            "order": 0
+          },
+          {
+            "section": "1. Must и have to",
+            "kind": "FILL",
+            "prompt": "Впишите have to или has to: My brother ___ wear a uniform at work.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [],
+            "answer": "has to",
+            "explanation": "С подлежащим he — has to.",
+            "rule": "",
+            "hidden": false,
+            "order": 1
+          },
+          {
+            "section": "1. Must и have to",
+            "kind": "CHOICE",
+            "prompt": "Выберите вариант: I'm sorry, I can't come. I ___ finish my project tonight.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [
+              "have to",
+              "must to",
+              "has to",
+              "having to"
+            ],
+            "answer": "have to",
+            "explanation": "С I — have to.",
+            "rule": "",
+            "hidden": false,
+            "order": 2
+          },
+          {
+            "section": "1. Must и have to",
+            "kind": "FILL",
+            "prompt": "Впишите have to в прошедшем времени: When I was a child, I ___ go to bed at 8 pm.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [],
+            "answer": "had to",
+            "explanation": "Прошедшее время от have to — had to.",
+            "rule": "",
+            "hidden": false,
+            "order": 3
+          },
+          {
+            "section": "1. Must и have to",
+            "kind": "CHOICE",
+            "prompt": "Выберите вариант: Next month she ___ move to a new flat.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [
+              "will have to",
+              "will must",
+              "must to",
+              "musts"
+            ],
+            "answer": "will have to",
+            "explanation": "У must нет будущего — will have to.",
+            "rule": "",
+            "hidden": false,
+            "order": 4
+          },
+          {
+            "section": "1. Must и have to",
+            "kind": "CHOICE",
+            "prompt": "Выберите слово: ___ you have to work on Saturdays?",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [
+              "Do",
+              "Does",
+              "Are",
+              "Must"
+            ],
+            "answer": "Do",
+            "explanation": "Вопрос с have to и подлежащим you — Do you have to…?",
+            "rule": "",
+            "hidden": false,
+            "order": 5
+          },
+          {
+            "section": "2. Mustn't и don't have to",
+            "kind": "CHOICE",
+            "prompt": "Выберите вариант: Look at the sign «No entry». You ___ go in.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [
+              "mustn't",
+              "don't have to",
+              "needn't to",
+              "have not to"
+            ],
+            "answer": "mustn't",
+            "explanation": "Вход запрещён — mustn't.",
+            "rule": "",
+            "hidden": false,
+            "order": 6
+          },
+          {
+            "section": "2. Mustn't и don't have to",
+            "kind": "FILL",
+            "prompt": "Впишите doesn't have to: My dad ___ work on Sundays.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [],
+            "answer": "doesn't have to, does not have to",
+            "explanation": "В воскресенье работать не нужно — doesn't have to.",
+            "rule": "",
+            "hidden": false,
+            "order": 7
+          },
+          {
+            "section": "2. Mustn't и don't have to",
+            "kind": "CHOICE",
+            "prompt": "Выберите вариант: You ___ buy a ticket — the museum is free today.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [
+              "don't have to",
+              "mustn't",
+              "must not to",
+              "can't to"
+            ],
+            "answer": "don't have to",
+            "explanation": "Платить не нужно — don't have to.",
+            "rule": "",
+            "hidden": false,
+            "order": 8
+          },
+          {
+            "section": "2. Mustn't и don't have to",
+            "kind": "FILL",
+            "prompt": "Впишите mustn't: Children ___ play near the river — it's dangerous.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [],
+            "answer": "mustn't, must not",
+            "explanation": "Запрет — mustn't.",
+            "rule": "",
+            "hidden": false,
+            "order": 9
+          },
+          {
+            "section": "2. Mustn't и don't have to",
+            "kind": "CHOICE",
+            "prompt": "Что значит предложение «You don't have to wait»?",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [
+              "Ждать не нужно",
+              "Ждать нельзя",
+              "Нужно подождать",
+              "Вы не умеете ждать"
+            ],
+            "answer": "Ждать не нужно",
+            "explanation": "Don't have to — «не нужно».",
+            "rule": "",
+            "hidden": false,
+            "order": 10
+          },
+          {
+            "section": "2. Mustn't и don't have to",
+            "kind": "CHOICE",
+            "prompt": "Выберите вариант: Yesterday was a holiday, so we ___ get up early.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [
+              "didn't have to",
+              "mustn't",
+              "don't have to",
+              "hadn't to"
+            ],
+            "answer": "didn't have to",
+            "explanation": "Вчера — прошедшее время: didn't have to.",
+            "rule": "",
+            "hidden": false,
+            "order": 11
+          },
+          {
+            "section": "3. Should, ought to, had better, may и might",
+            "kind": "CHOICE",
+            "prompt": "Выберите вариант: You've got a headache. You ___ take a pill.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [
+              "should",
+              "are should",
+              "must to",
+              "may to"
+            ],
+            "answer": "should",
+            "explanation": "Совет — should + V1.",
+            "rule": "",
+            "hidden": false,
+            "order": 12
+          },
+          {
+            "section": "3. Should, ought to, had better, may и might",
+            "kind": "FILL",
+            "prompt": "Впишите ought to (visit): If you go to Kazan, you ___ the Kremlin.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [],
+            "answer": "ought to visit",
+            "explanation": "ought to + V1.",
+            "rule": "",
+            "hidden": false,
+            "order": 13
+          },
+          {
+            "section": "3. Should, ought to, had better, may и might",
+            "kind": "FILL",
+            "prompt": "Впишите shouldn't: You ___ drink coffee late at night — you won't sleep.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [],
+            "answer": "shouldn't, should not",
+            "explanation": "Совет не делать — shouldn't.",
+            "rule": "",
+            "hidden": false,
+            "order": 14
+          },
+          {
+            "section": "3. Should, ought to, had better, may и might",
+            "kind": "CHOICE",
+            "prompt": "Выберите вариант: It's cloudy. It ___ rain later, so take an umbrella.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [
+              "might",
+              "should to",
+              "has to",
+              "ought"
+            ],
+            "answer": "might",
+            "explanation": "Возможность — might + V1.",
+            "rule": "",
+            "hidden": false,
+            "order": 15
+          },
+          {
+            "section": "3. Should, ought to, had better, may и might",
+            "kind": "FILL",
+            "prompt": "Впишите had better (hurry): We ___, or we'll miss the bus.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [],
+            "answer": "'d better hurry, had better hurry, d better hurry",
+            "explanation": "had better + V1: настойчивый совет.",
+            "rule": "",
+            "hidden": false,
+            "order": 16
+          },
+          {
+            "section": "3. Should, ought to, had better, may и might",
+            "kind": "CHOICE",
+            "prompt": "В каком предложении ошибка?",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [
+              "You'd better to take a taxi.",
+              "You should take a taxi.",
+              "You ought to take a taxi.",
+              "You might take a taxi."
+            ],
+            "answer": "You'd better to take a taxi.",
+            "explanation": "После had better — глагол без to.",
+            "rule": "",
+            "hidden": false,
+            "order": 17
+          },
+          {
+            "section": "4. Все модальные глаголы вместе",
+            "kind": "CHOICE",
+            "prompt": "Выберите вариант: Passengers ___ use phones during take-off — it's forbidden.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [
+              "mustn't",
+              "don't have to",
+              "needn't",
+              "shouldn't to"
+            ],
+            "answer": "mustn't",
+            "explanation": "Запрещено — mustn't.",
+            "rule": "",
+            "hidden": false,
+            "order": 18
+          },
+          {
+            "section": "4. Все модальные глаголы вместе",
+            "kind": "CHOICE",
+            "prompt": "Выберите вариант: You ___ bring your own towel — the hotel gives you one.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [
+              "don't have to",
+              "mustn't",
+              "must",
+              "ought"
+            ],
+            "answer": "don't have to",
+            "explanation": "Нет необходимости — don't have to.",
+            "rule": "",
+            "hidden": false,
+            "order": 19
+          },
+          {
+            "section": "4. Все модальные глаголы вместе",
+            "kind": "FILL",
+            "prompt": "Впишите mustn't или don't have to: You ___ forget your passport — you can't fly without it.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [],
+            "answer": "mustn't, must not",
+            "explanation": "Забывать паспорт нельзя — mustn't.",
+            "rule": "",
+            "hidden": false,
+            "order": 20
+          },
+          {
+            "section": "4. Все модальные глаголы вместе",
+            "kind": "CHOICE",
+            "prompt": "Выберите лучший совет. «I have a terrible toothache.»",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [
+              "You should see a dentist.",
+              "You mustn't see a dentist.",
+              "You don't have to see a dentist.",
+              "You might to see a dentist."
+            ],
+            "answer": "You should see a dentist.",
+            "explanation": "Совет — should.",
+            "rule": "",
+            "hidden": false,
+            "order": 21
+          },
+          {
+            "section": "4. Все модальные глаголы вместе",
+            "kind": "FILL",
+            "prompt": "Впишите have to в нужной форме: Last week the flight was cancelled, so we ___ stay in the hotel for a night.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [],
+            "answer": "had to",
+            "explanation": "Прошедшее время — had to.",
+            "rule": "",
+            "hidden": false,
+            "order": 22
+          },
+          {
+            "section": "5. Лексика: travel rules and advice",
+            "kind": "FILL",
+            "prompt": "Впишите слово по-английски (посадочный — 1 слово): You must show your ___ pass at the gate.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [],
+            "answer": "boarding",
+            "explanation": "boarding pass — посадочный талон.",
+            "rule": "",
+            "hidden": false,
+            "order": 23
+          },
+          {
+            "section": "5. Лексика: travel rules and advice",
+            "kind": "FILL",
+            "prompt": "Впишите слово по-английски (багаж — 1 слово): I can't find my ___ — I think it's lost.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [],
+            "answer": "luggage, baggage",
+            "explanation": "luggage — багаж.",
+            "rule": "",
+            "hidden": false,
+            "order": 24
+          },
+          {
+            "section": "5. Лексика: travel rules and advice",
+            "kind": "CHOICE",
+            "prompt": "Выберите слово: If you park here, you must pay a ___.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [
+              "fine",
+              "visa",
+              "queue",
+              "refund"
+            ],
+            "answer": "fine",
+            "explanation": "fine — штраф.",
+            "rule": "",
+            "hidden": false,
+            "order": 25
+          },
+          {
+            "section": "5. Лексика: travel rules and advice",
+            "kind": "CHOICE",
+            "prompt": "Выберите слово: Our flight was two hours late — a long ___.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [
+              "delay",
+              "refund",
+              "insurance",
+              "customs"
+            ],
+            "answer": "delay",
+            "explanation": "delay — задержка.",
+            "rule": "",
+            "hidden": false,
+            "order": 26
+          },
+          {
+            "section": "5. Лексика: travel rules and advice",
+            "kind": "CHOICE",
+            "prompt": "Выберите слово: Wearing a helmet is ___ for cyclists in this city — it's the law.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [
+              "compulsory",
+              "optional",
+              "allowed",
+              "free"
+            ],
+            "answer": "compulsory",
+            "explanation": "compulsory — обязательный.",
+            "rule": "",
+            "hidden": false,
+            "order": 27
+          },
+          {
+            "section": "6. Чтение: Green Hill Hostel",
+            "kind": "READING",
+            "prompt": "Прочитайте текст и выберите ответ: What do guests have to show at the reception?",
+            "text": "Welcome to Green Hill Hostel (rules for guests)\n\nThank you for choosing Green Hill Hostel! Please read our rules.\n\nCheck-in is after 2 pm. You have to show your passport at the reception, and you must fill in a short form. Breakfast is included, so you don't have to pay for it, but you have to book dinner in advance.\n\nYou mustn't smoke inside the building, and you mustn't make noise after 10 pm. Visitors are not allowed in the rooms. Guests have to take off their shoes in the hall, and they should keep their valuable things in the lockers.\n\nYou'd better not leave your luggage in the corridor. You ought to check out before 11 am. If you want to stay longer, you may ask the manager - you might get a late check-out for a small fee.\n\nWe hope you will have a wonderful stay!",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [
+              "their passport",
+              "a train ticket",
+              "a student card",
+              "their insurance"
+            ],
+            "answer": "their passport",
+            "explanation": "You have to show your passport at the reception.",
+            "rule": "",
+            "hidden": false,
+            "order": 28
+          },
+          {
+            "section": "6. Чтение: Green Hill Hostel",
+            "kind": "FILL",
+            "prompt": "Прочитайте текст выше и впишите слово (платить за завтрак не нужно): You ___ pay for breakfast.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [],
+            "answer": "don't have to, do not have to",
+            "explanation": "Breakfast is included, so you don't have to pay for it.",
+            "rule": "",
+            "hidden": false,
+            "order": 29
+          },
+          {
+            "section": "6. Чтение: Green Hill Hostel",
+            "kind": "FILL",
+            "prompt": "Прочитайте текст выше и впишите слово (шуметь после 22:00 нельзя): Guests ___ make noise after 10 pm.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [],
+            "answer": "mustn't, must not",
+            "explanation": "You mustn't make noise after 10 pm.",
+            "rule": "",
+            "hidden": false,
+            "order": 30
+          },
+          {
+            "section": "6. Чтение: Green Hill Hostel",
+            "kind": "CHOICE",
+            "prompt": "Прочитайте текст выше. Before what time should guests check out?",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [
+              "11 am",
+              "2 pm",
+              "10 pm",
+              "noon"
+            ],
+            "answer": "11 am",
+            "explanation": "You ought to check out before 11 am.",
+            "rule": "",
+            "hidden": false,
+            "order": 31
+          },
+          {
+            "section": "6. Чтение: Green Hill Hostel",
+            "kind": "CHOICE",
+            "prompt": "Прочитайте текст выше. Where should guests keep their valuable things?",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [
+              "in the lockers",
+              "at the reception",
+              "in the corridor",
+              "in the hall"
+            ],
+            "answer": "in the lockers",
+            "explanation": "They should keep their valuable things in the lockers.",
+            "rule": "",
+            "hidden": false,
+            "order": 32
+          },
+          {
+            "section": "7. Письмо: совет другу",
+            "kind": "TEACHER",
+            "prompt": "Напишите сообщение другу на английском (7–9 предложений): он впервые летит в другую страну. Расскажите, что он должен сделать в аэропорту (must или have to), чего нельзя делать (mustn't), что делать не обязательно (don't have to) и дайте два совета (should или had better).",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [],
+            "answer": "",
+            "explanation": "Hi Max! Here is my advice for your first flight. At the airport you have to check in and go through the security check. You must show your passport and boarding pass. You mustn't take big bottles of water in your hand luggage. You don't have to arrive five hours before the flight, but you should come about three hours early. You'd better not put your passport in your suitcase! Also, you should buy travel insurance - it may be useful. Have a great trip and write to me soon!",
+            "rule": "7–9 предложений",
+            "hidden": false,
+            "order": 33
+          },
+          {
+            "section": "8. Говорение: подготовка к поездке",
+            "kind": "TEACHER",
+            "prompt": "Подготовьте устный совет на 1–1,5 минуты: «Как подготовиться к поездке». Используйте must или have to, mustn't, don't have to, should и might. Здесь запишите план.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [],
+            "answer": "",
+            "explanation": "Before a trip you have to do several things. First, you must check your passport and buy tickets. If you travel abroad, you may need a visa. You mustn't forget to pack your charger. You don't have to take many clothes: you can wash them there. You should buy travel insurance, and you'd better not carry a lot of cash. The weather might change, so take a warm jacket. Finally, you should tell your family where you are going.",
+            "rule": "План из 6–8 фраз",
+            "hidden": false,
+            "order": 34
+          }
+        ]
+      }
+    },
+    {
+      "number": 9,
+      "topic": "Famous places: Passive Voice — страдательный залог",
+      "description": "Страдательный залог: Present и Past Simple Passive (be + V3), пассив с will, can, must и в Present Perfect, вопросы и отрицания, by и with. Рассказ о достопримечательностях.",
+      "goal": "Рассказать о знаменитом месте, не называя того, кто его построил, и правильно образовать пассив в изученных формах",
+      "durationMin": 60,
+      "level": "B1",
+      "bookTitle": "",
+      "bookRef": "",
+      "timeline": [
+        {
+          "time": "0–6",
+          "title": "Повторение",
+          "note": "Правила и советы из урока 8"
+        },
+        {
+          "time": "6–12",
+          "title": "Разогрев",
+          "note": "Знаменитые места"
+        },
+        {
+          "time": "12–22",
+          "title": "Чтение",
+          "note": "Saint Basil's Cathedral"
+        },
+        {
+          "time": "22–32",
+          "title": "Грамматика 1",
+          "note": "Present и Past Simple Passive: be + V3"
+        },
+        {
+          "time": "32–42",
+          "title": "Грамматика 2",
+          "note": "Passive с will, can, must и в Present Perfect"
+        },
+        {
+          "time": "42–48",
+          "title": "Грамматика 3",
+          "note": "вопросы, отрицания, by и with"
+        },
+        {
+          "time": "48–54",
+          "title": "Произношение",
+          "note": "окончание -ed и ударение в словах урока"
+        },
+        {
+          "time": "54–60",
+          "title": "Говорение",
+          "note": "Рассказ о достопримечательности"
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "rule",
+          "title": "Повторение урока 8: правила и советы",
+          "paragraphs": [
+            "Вспомним модальные глаголы из прошлого урока."
+          ],
+          "formulas": [],
+          "rules": [
+            "must / have to — необходимость; mustn't — нельзя; don't have to — не нужно.",
+            "should / ought to / had better — совет; may / might — возможность.",
+            "have to меняется по временам: had to (прошедшее), will have to (будущее)."
+          ],
+          "examples": [],
+          "prompts": [],
+          "vocab": [],
+          "audioUrl": "",
+          "audioTitle": "",
+          "videoUrl": "",
+          "videoTitle": "",
+          "subtitlesUrl": "",
+          "sample": "",
+          "transcript": "",
+          "imageUrl": "",
+          "hidden": false,
+          "text": "",
+          "tasks": [
+            {
+              "id": "l9-rev-1",
+              "kind": "choice",
+              "prompt": "Выберите вариант: You ___ smoke here. It's forbidden.",
+              "options": [
+                "mustn't",
+                "don't have to",
+                "needn't to",
+                "shouldn't to"
+              ],
+              "optionValues": [
+                "mustn't",
+                "don't have to",
+                "needn't to",
+                "shouldn't to"
+              ],
+              "answer": "mustn't",
+              "explanation": "Запрещено — mustn't.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l9-rev-2",
+              "kind": "fill",
+              "prompt": "Впишите have to в прошедшем времени: Last year she ___ move to another city.",
+              "options": [],
+              "optionValues": [],
+              "answer": "had to",
+              "explanation": "Прошедшее время от have to — had to.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l9-rev-3",
+              "kind": "choice",
+              "prompt": "Выберите вариант: I can't sleep at night. — You ___ drink less coffee.",
+              "options": [
+                "should",
+                "are should",
+                "must to",
+                "ought"
+              ],
+              "optionValues": [
+                "should",
+                "are should",
+                "must to",
+                "ought"
+              ],
+              "answer": "should",
+              "explanation": "Совет — should + V1.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l9-rev-4",
+              "kind": "fill",
+              "prompt": "Впишите doesn't have to: Tom ___ come with us — it's his choice.",
+              "options": [],
+              "optionValues": [],
+              "answer": "doesn't have to, does not have to",
+              "explanation": "Это не обязательно — doesn't have to.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            }
+          ]
+        },
+        {
+          "kind": "speaking",
+          "title": "Разогрев: знаменитые места",
+          "paragraphs": [
+            "Обсудите с преподавателем по-английски. Старайтесь использовать was built, was founded, is visited."
+          ],
+          "formulas": [],
+          "rules": [],
+          "examples": [],
+          "prompts": [
+            "What is the most famous place in your city or country?",
+            "Who was it built by? When was it built?",
+            "Have you ever been to a famous castle, museum or monument?",
+            "What would you show to a foreign tourist in your town?"
+          ],
+          "vocab": [],
+          "audioUrl": "",
+          "audioTitle": "",
+          "videoUrl": "",
+          "videoTitle": "",
+          "subtitlesUrl": "",
+          "sample": "The most famous place in my city is the old fortress on the hill. It was built in the 16th century to protect the town. Today it is used as a museum, and it is visited by many tourists. I have been there with my school class, and I really liked the view from the tower. If a foreign tourist came to my town, I would show them the fortress first.",
+          "transcript": "",
+          "imageUrl": "",
+          "hidden": false,
+          "text": "",
+          "tasks": []
+        },
+        {
+          "kind": "reading",
+          "title": "Чтение: Saint Basil's Cathedral",
+          "paragraphs": [
+            "Прочитайте текст. Найдите все предложения в страдательном залоге (be + V3) и подчеркните их."
+          ],
+          "formulas": [],
+          "rules": [],
+          "examples": [],
+          "prompts": [],
+          "vocab": [],
+          "audioUrl": "",
+          "audioTitle": "",
+          "videoUrl": "",
+          "videoTitle": "",
+          "subtitlesUrl": "",
+          "sample": "",
+          "transcript": "",
+          "imageUrl": "",
+          "hidden": false,
+          "text": "Saint Basil's Cathedral\n\nSaint Basil's Cathedral is one of the most famous buildings in Russia. It stands on Red Square in Moscow and is known all over the world for its colourful domes.\n\nThe cathedral was built between 1555 and 1561. It was ordered by Ivan the Terrible, who wanted to celebrate the capture of the city of Kazan. The cathedral is made of brick and white stone, and it consists of nine churches: eight of them are placed around the ninth, the tallest one, in the centre.\n\nOver the centuries the cathedral has been restored several times. Today it is used as a museum, and services are held there only on special days. Every year the cathedral is visited by millions of tourists, and the whole of Red Square is protected by UNESCO as a World Heritage Site. It will certainly be admired by new generations of visitors.",
+          "tasks": [
+            {
+              "id": "l9-rd-1",
+              "kind": "choice",
+              "prompt": "Прочитайте текст и выберите ответ: When was Saint Basil's Cathedral built?",
+              "options": [
+                "between 1555 and 1561",
+                "in the 19th century",
+                "in 1812",
+                "in 1990"
+              ],
+              "optionValues": [
+                "between 1555 and 1561",
+                "in the 19th century",
+                "in 1812",
+                "in 1990"
+              ],
+              "answer": "between 1555 and 1561",
+              "explanation": "The cathedral was built between 1555 and 1561.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l9-rd-2",
+              "kind": "choice",
+              "prompt": "Выберите ответ: Who ordered the cathedral to be built?",
+              "options": [
+                "Ivan the Terrible",
+                "Peter the Great",
+                "Napoleon",
+                "UNESCO"
+              ],
+              "optionValues": [
+                "Ivan the Terrible",
+                "Peter the Great",
+                "Napoleon",
+                "UNESCO"
+              ],
+              "answer": "Ivan the Terrible",
+              "explanation": "It was ordered by Ivan the Terrible.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l9-rd-3",
+              "kind": "choice",
+              "prompt": "Выберите ответ: Why was the cathedral built?",
+              "options": [
+                "to celebrate the capture of Kazan",
+                "to protect Moscow",
+                "to be a museum",
+                "to teach students"
+              ],
+              "optionValues": [
+                "to celebrate the capture of Kazan",
+                "to protect Moscow",
+                "to be a museum",
+                "to teach students"
+              ],
+              "answer": "to celebrate the capture of Kazan",
+              "explanation": "He wanted to celebrate the capture of the city of Kazan.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l9-rd-4",
+              "kind": "fill",
+              "prompt": "Впишите слово из текста: The cathedral is ___ of brick and white stone.",
+              "options": [],
+              "optionValues": [],
+              "answer": "made",
+              "explanation": "is made of — «сделан из»: пассив от make.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l9-rd-5",
+              "kind": "fill",
+              "prompt": "Впишите слово из текста (visit): Every year the cathedral is ___ by millions of tourists.",
+              "options": [],
+              "optionValues": [],
+              "answer": "visited",
+              "explanation": "is visited by — настоящее время пассива.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l9-rd-6",
+              "kind": "choice",
+              "prompt": "Выберите ответ: How many churches does the cathedral consist of?",
+              "options": [
+                "nine",
+                "eight",
+                "twelve",
+                "five"
+              ],
+              "optionValues": [
+                "nine",
+                "eight",
+                "twelve",
+                "five"
+              ],
+              "answer": "nine",
+              "explanation": "It consists of nine churches.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            }
+          ]
+        },
+        {
+          "kind": "rule",
+          "title": "Правило 1: Present и Past Simple Passive",
+          "paragraphs": [
+            "Пассив (страдательный залог) используют, когда важнее, что сделали с предметом, а кто это сделал — неважно или неизвестно. Образуется так: be + V3 (третья форма глагола)."
+          ],
+          "formulas": [
+            "Passive: be + V3\n\nPresent Simple: am / is / are + V3 — English is spoken here. · These cars are made in Germany.\nPast Simple: was / were + V3 — The cathedral was built in 1561. · The windows were broken.\nby + исполнитель (если он нужен): The book was written by Tolstoy.",
+            "Из актива в пассив\n\nActive:  Ivan the Terrible ordered the cathedral.\nPassive: The cathedral was ordered by Ivan the Terrible.\nОбъект действия выходит на первое место, глагол становится be + V3 в том же времени, исполнитель уходит в конец с by."
+          ],
+          "rules": [
+            "Пассив нужен, когда важнее объект действия: Red Square is visited by millions of people.",
+            "Время задаёт глагол be: настоящее — am / is / are, прошедшее — was / were.",
+            "Глагол — только V3. У правильных V3 = V1 + ed (painted, visited), неправильные нужно знать: build — built, make — made, write — written.",
+            "Исполнителя с by часто не называют: English is spoken in many countries. (кем — неважно)"
+          ],
+          "examples": [],
+          "prompts": [],
+          "vocab": [],
+          "audioUrl": "",
+          "audioTitle": "",
+          "videoUrl": "",
+          "videoTitle": "",
+          "subtitlesUrl": "",
+          "sample": "",
+          "transcript": "",
+          "imageUrl": "",
+          "hidden": false,
+          "text": "",
+          "tasks": [
+            {
+              "id": "l9-ps-1",
+              "kind": "choice",
+              "prompt": "Выберите вариант: The Eiffel Tower ___ in 1889.",
+              "options": [
+                "was built",
+                "is built",
+                "built",
+                "was build"
+              ],
+              "optionValues": [
+                "was built",
+                "is built",
+                "built",
+                "was build"
+              ],
+              "answer": "was built",
+              "explanation": "Прошедшее время — was + V3.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l9-ps-2",
+              "kind": "fill",
+              "prompt": "Впишите is или are: Russian ___ spoken in many countries.",
+              "options": [],
+              "optionValues": [],
+              "answer": "is",
+              "explanation": "Russian — единственное число: is spoken.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l9-ps-3",
+              "kind": "fill",
+              "prompt": "Впишите страдательный залог (make) в Present Simple: These souvenirs ___ in Russia.",
+              "options": [],
+              "optionValues": [],
+              "answer": "are made",
+              "explanation": "souvenirs — множественное число: are made.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l9-ps-4",
+              "kind": "choice",
+              "prompt": "Выберите правильный пассив к предложению «Leo Tolstoy wrote War and Peace».",
+              "options": [
+                "War and Peace was written by Leo Tolstoy.",
+                "War and Peace is written by Leo Tolstoy.",
+                "War and Peace wrote by Leo Tolstoy.",
+                "War and Peace was wrote by Leo Tolstoy."
+              ],
+              "optionValues": [
+                "War and Peace was written by Leo Tolstoy.",
+                "War and Peace is written by Leo Tolstoy.",
+                "War and Peace wrote by Leo Tolstoy.",
+                "War and Peace was wrote by Leo Tolstoy."
+              ],
+              "answer": "War and Peace was written by Leo Tolstoy.",
+              "explanation": "Past Simple Passive: was + V3 (write — wrote — written).",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l9-ps-5",
+              "kind": "fill",
+              "prompt": "Впишите страдательный залог (paint) в Past Simple: The walls of the old church ___ white last year.",
+              "options": [],
+              "optionValues": [],
+              "answer": "were painted",
+              "explanation": "walls — множественное число, прошедшее время: were painted.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l9-ps-6",
+              "kind": "choice",
+              "prompt": "В каком предложении ошибка?",
+              "options": [
+                "The castle built in 1200.",
+                "The castle was built in 1200.",
+                "Many castles are visited by tourists.",
+                "These books were written by students."
+              ],
+              "optionValues": [
+                "The castle built in 1200.",
+                "The castle was built in 1200.",
+                "Many castles are visited by tourists.",
+                "These books were written by students."
+              ],
+              "answer": "The castle built in 1200.",
+              "explanation": "В пассиве нужен be: The castle was built.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            }
+          ]
+        },
+        {
+          "kind": "rule",
+          "title": "Правило 2: Passive с will, can, must и в Present Perfect",
+          "paragraphs": [
+            "Пассив можно образовать и в других формах: меняется только первая часть (be, will be, has been), а V3 остаётся."
+          ],
+          "formulas": [
+            "Passive в разных формах\n\nwill: will be + V3 — The bridge will be opened next year.\nмодальные: can / must / should be + V3 — Tickets can be bought online. · Shoes must be taken off.\nPresent Perfect: has / have been + V3 — The castle has been restored.",
+            "Сравните: актив и пассив\n\nThey will open the bridge. → The bridge will be opened.\nYou can buy tickets online. → Tickets can be bought online.\nThey have restored the castle. → The castle has been restored."
+          ],
+          "rules": [
+            "После will и модальных глаголов — be + V3, be в начальной форме: It must be done. Не «must be do».",
+            "В Present Perfect — have / has been + V3: The roof has been repaired.",
+            "Модальные глаголы прошлого урока тоже работают в пассиве: Pets mustn't be taken into the hotel.",
+            "В объявлениях и правилах пассив встречается постоянно: Smoking is not allowed. Photos may be taken without a flash."
+          ],
+          "examples": [],
+          "prompts": [],
+          "vocab": [],
+          "audioUrl": "",
+          "audioTitle": "",
+          "videoUrl": "",
+          "videoTitle": "",
+          "subtitlesUrl": "",
+          "sample": "",
+          "transcript": "",
+          "imageUrl": "",
+          "hidden": false,
+          "text": "",
+          "tasks": [
+            {
+              "id": "l9-pm-1",
+              "kind": "choice",
+              "prompt": "Выберите вариант: The new museum ___ next month.",
+              "options": [
+                "will be opened",
+                "will opened",
+                "will be open",
+                "is will open"
+              ],
+              "optionValues": [
+                "will be opened",
+                "will opened",
+                "will be open",
+                "is will open"
+              ],
+              "answer": "will be opened",
+              "explanation": "will + be + V3.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l9-pm-2",
+              "kind": "fill",
+              "prompt": "Впишите страдательный залог с can (see): The whole city ___ from the tower.",
+              "options": [],
+              "optionValues": [],
+              "answer": "can be seen",
+              "explanation": "can + be + V3.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l9-pm-3",
+              "kind": "fill",
+              "prompt": "Впишите Present Perfect Passive (repair): The old bridge ___ already.",
+              "options": [],
+              "optionValues": [],
+              "answer": "has been repaired",
+              "explanation": "has / have been + V3.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l9-pm-4",
+              "kind": "choice",
+              "prompt": "Выберите вариант: Shoes ___ at the entrance.",
+              "options": [
+                "must be taken off",
+                "must take off",
+                "must be took off",
+                "must been taken off"
+              ],
+              "optionValues": [
+                "must be taken off",
+                "must take off",
+                "must be took off",
+                "must been taken off"
+              ],
+              "answer": "must be taken off",
+              "explanation": "must + be + V3.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l9-pm-5",
+              "kind": "fill",
+              "prompt": "Впишите страдательный залог с should (keep): These documents ___ in a safe place.",
+              "options": [],
+              "optionValues": [],
+              "answer": "should be kept",
+              "explanation": "should + be + V3 (keep — kept — kept).",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l9-pm-6",
+              "kind": "choice",
+              "prompt": "Выберите вариант: A lot of money ___ on this project so far.",
+              "options": [
+                "has been spent",
+                "has spent",
+                "have been spend",
+                "is spent"
+              ],
+              "optionValues": [
+                "has been spent",
+                "has spent",
+                "have been spend",
+                "is spent"
+              ],
+              "answer": "has been spent",
+              "explanation": "so far — Present Perfect; money — неисчисляемое, has been + V3.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            }
+          ]
+        },
+        {
+          "kind": "rule",
+          "title": "Правило 3: вопросы, отрицания, by и with",
+          "paragraphs": [
+            "В вопросах глагол be выходит на первое место, в отрицаниях not стоит после be. Если исполнитель неизвестен или неважен, by не пишут."
+          ],
+          "formulas": [
+            "Отрицание и вопрос в Passive\n\n−  The museum isn't visited in winter. · The letter wasn't sent.\n?  Is English spoken here? — Yes, it is.\n?  When was the cathedral built? — In 1561.\n?  Who was the bridge designed by? — By a famous engineer.",
+            "by или with?\n\nby — тот, кто действует: The picture was painted by an artist.\nwith — инструмент: The picture was painted with oil paints.\nИсполнитель неважен — by не нужен: The door was locked."
+          ],
+          "rules": [
+            "Вопрос: be + подлежащее + V3: Was the castle built in the 12th century?",
+            "Отрицание: be + not + V3: The tickets were not sold online.",
+            "by — исполнитель (кто?), with — инструмент (чем?): The letter was written by Anna with a blue pen.",
+            "Если исполнитель неизвестен или неважен, by пропускают: My bike was stolen. (кем — неизвестно)"
+          ],
+          "examples": [],
+          "prompts": [],
+          "vocab": [],
+          "audioUrl": "",
+          "audioTitle": "",
+          "videoUrl": "",
+          "videoTitle": "",
+          "subtitlesUrl": "",
+          "sample": "",
+          "transcript": "",
+          "imageUrl": "",
+          "hidden": false,
+          "text": "",
+          "tasks": [
+            {
+              "id": "l9-pq-1",
+              "kind": "choice",
+              "prompt": "Выберите вариант: ___ the castle built?",
+              "options": [
+                "When was",
+                "When did",
+                "When is",
+                "When were"
+              ],
+              "optionValues": [
+                "When was",
+                "When did",
+                "When is",
+                "When were"
+              ],
+              "answer": "When was",
+              "explanation": "Вопрос в пассиве: be + подлежащее + V3.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l9-pq-2",
+              "kind": "fill",
+              "prompt": "Впишите was или were: ___ the tickets sold online?",
+              "options": [],
+              "optionValues": [],
+              "answer": "were",
+              "explanation": "tickets — множественное число: Were the tickets sold?",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l9-pq-3",
+              "kind": "fill",
+              "prompt": "Впишите wasn't или weren't: The shops ___ open last Sunday.",
+              "options": [],
+              "optionValues": [],
+              "answer": "weren't, were not",
+              "explanation": "shops — множественное число, прошедшее время: weren't.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l9-pq-4",
+              "kind": "choice",
+              "prompt": "Выберите слово: The picture was painted ___ a famous artist.",
+              "options": [
+                "by",
+                "with",
+                "from",
+                "of"
+              ],
+              "optionValues": [
+                "by",
+                "with",
+                "from",
+                "of"
+              ],
+              "answer": "by",
+              "explanation": "by — исполнитель действия.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l9-pq-5",
+              "kind": "choice",
+              "prompt": "Выберите слово: The letter was written ___ a blue pen.",
+              "options": [
+                "with",
+                "by",
+                "from",
+                "at"
+              ],
+              "optionValues": [
+                "with",
+                "by",
+                "from",
+                "at"
+              ],
+              "answer": "with",
+              "explanation": "with — инструмент, которым действуют.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l9-pq-6",
+              "kind": "fill",
+              "prompt": "Впишите is или are: Pets ___ not allowed in the museum.",
+              "options": [],
+              "optionValues": [],
+              "answer": "are",
+              "explanation": "pets — множественное число: are not allowed.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            }
+          ]
+        },
+        {
+          "kind": "vocab",
+          "title": "Лексика: sightseeing and history",
+          "paragraphs": [
+            "Слова для рассказа о достопримечательностях. Составьте с каждым предложение в страдательном залоге, где это возможно."
+          ],
+          "formulas": [],
+          "rules": [],
+          "examples": [],
+          "prompts": [],
+          "vocab": [
+            {
+              "en": "monument",
+              "ru": "памятник"
+            },
+            {
+              "en": "castle",
+              "ru": "замок"
+            },
+            {
+              "en": "ancient",
+              "ru": "древний"
+            },
+            {
+              "en": "found",
+              "ru": "основывать (город, организацию)"
+            },
+            {
+              "en": "heritage",
+              "ru": "наследие"
+            },
+            {
+              "en": "ruins",
+              "ru": "руины"
+            },
+            {
+              "en": "statue",
+              "ru": "статуя"
+            },
+            {
+              "en": "restore",
+              "ru": "восстанавливать, реставрировать"
+            },
+            {
+              "en": "admire",
+              "ru": "восхищаться"
+            },
+            {
+              "en": "century",
+              "ru": "век"
+            },
+            {
+              "en": "fortress",
+              "ru": "крепость"
+            },
+            {
+              "en": "damage",
+              "ru": "повреждать"
+            }
+          ],
+          "audioUrl": "",
+          "audioTitle": "",
+          "videoUrl": "",
+          "videoTitle": "",
+          "subtitlesUrl": "",
+          "sample": "",
+          "transcript": "",
+          "imageUrl": "",
+          "hidden": false,
+          "text": "",
+          "tasks": []
+        },
+        {
+          "kind": "rule",
+          "title": "Произношение: окончание -ed у V3 и ударение в словах урока",
+          "paragraphs": [
+            "Окончание -ed в причастиях читается по-разному. Русская подсказка в скобках — приблизительное чтение; точные звуки показывает транскрипция."
+          ],
+          "formulas": [
+            "Окончание -ed: три варианта\n\n«т» после глухих звуков: washed /wɑːʃt/ (уо́шт), watched /wɑːtʃt/ (уо́чт)\n«д» после звонких звуков и гласных: used /juːzd/ (юзд), opened /ˈoʊpənd/ (о́упэнд)\n«ид» после t и d: visited /ˈvɪzɪtɪd/ (ви́зитид), founded /ˈfaʊndɪd/ (фа́ундид), painted /ˈpeɪntɪd/ (пэ́йнтид)",
+            "Неправильные V3 читаются по-своему\n\nbuilt /bɪlt/ (билт) · made /meɪd/ (мэйд) · written /ˈrɪtn/ (ри́тн) · known /noʊn/ (ноун) · taken /ˈteɪkən/ (тэ́йкэн) · seen /siːn/ (син)",
+            "Слова урока: ударение\n\nmonument /ˈmɑːnjumənt/ (ма́ньюмэнт) — на первом слоге\nancient /ˈeɪnʃənt/ (э́йншнт) — на первом слоге\nrestore /rɪˈstɔːr/ (ристо́р) — на втором слоге\nadmire /ədˈmaɪər/ (эдма́йэр) — на втором слоге\nheritage /ˈherɪtɪdʒ/ (хе́ритидж) — на первом слоге\ncentury /ˈsentʃəri/ (се́нчури) — на первом слоге"
+          ],
+          "rules": [],
+          "examples": [],
+          "prompts": [],
+          "vocab": [],
+          "audioUrl": "",
+          "audioTitle": "",
+          "videoUrl": "",
+          "videoTitle": "",
+          "subtitlesUrl": "",
+          "sample": "",
+          "transcript": "",
+          "imageUrl": "",
+          "hidden": false,
+          "text": "",
+          "tasks": [
+            {
+              "id": "l9-pr-1",
+              "kind": "choice",
+              "prompt": "Как читается окончание -ed в слове visited?",
+              "options": [
+                "как «ид»",
+                "как «т»",
+                "как «д»",
+                "не читается"
+              ],
+              "optionValues": [
+                "как «ид»",
+                "как «т»",
+                "как «д»",
+                "не читается"
+              ],
+              "answer": "как «ид»",
+              "explanation": "После t и d окончание -ed читается «ид»: visited /ˈvɪzɪtɪd/ (ви́зитид).",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l9-pr-2",
+              "kind": "choice",
+              "prompt": "Как читается окончание -ed в слове washed?",
+              "options": [
+                "как «т»",
+                "как «д»",
+                "как «ид»",
+                "не читается"
+              ],
+              "optionValues": [
+                "как «т»",
+                "как «д»",
+                "как «ид»",
+                "не читается"
+              ],
+              "answer": "как «т»",
+              "explanation": "После глухого звука окончание читается «т»: washed /wɑːʃt/ (уо́шт).",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l9-pr-3",
+              "kind": "choice",
+              "prompt": "В каком слове ударение на втором слоге?",
+              "options": [
+                "restore",
+                "monument",
+                "ancient",
+                "heritage"
+              ],
+              "optionValues": [
+                "restore",
+                "monument",
+                "ancient",
+                "heritage"
+              ],
+              "answer": "restore",
+              "explanation": "restore /rɪˈstɔːr/ (ристо́р). Остальные — на первом слоге.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l9-pr-4",
+              "kind": "choice",
+              "prompt": "Как читается окончание -ed в слове opened?",
+              "options": [
+                "как «д»",
+                "как «т»",
+                "как «ид»",
+                "не читается"
+              ],
+              "optionValues": [
+                "как «д»",
+                "как «т»",
+                "как «ид»",
+                "не читается"
+              ],
+              "answer": "как «д»",
+              "explanation": "После звонкого звука окончание читается «д»: opened /ˈoʊpənd/ (о́упэнд).",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            },
+            {
+              "id": "l9-pr-5",
+              "kind": "choice",
+              "prompt": "Какое слово читается /ˈrɪtn/ (ри́тн)?",
+              "options": [
+                "written",
+                "ridden",
+                "rotten",
+                "wrote"
+              ],
+              "optionValues": [
+                "written",
+                "ridden",
+                "rotten",
+                "wrote"
+              ],
+              "answer": "written",
+              "explanation": "written /ˈrɪtn/ (ри́тн) — V3 от write.",
+              "x": -1,
+              "y": -1,
+              "w": 0
+            }
+          ]
+        },
+        {
+          "kind": "speaking",
+          "title": "Говорение: расскажите о достопримечательности",
+          "paragraphs": [
+            "Расскажите о знаменитом месте. Используйте страдательный залог: was built, was founded, is visited, can be seen."
+          ],
+          "formulas": [],
+          "rules": [],
+          "examples": [],
+          "prompts": [
+            "What is the place called and where is it?",
+            "When was it built and who was it built by?",
+            "What is it used for today?",
+            "Why should tourists visit it?"
+          ],
+          "vocab": [],
+          "audioUrl": "",
+          "audioTitle": "",
+          "videoUrl": "",
+          "videoTitle": "",
+          "subtitlesUrl": "",
+          "sample": "I'd like to tell you about the Peter and Paul Fortress in Saint Petersburg. It was founded in 1703, at the very beginning of the city's history. The fortress was built on an island in the Neva River. Today it is used as a museum, and many events are held there. Every day a cannon is fired at noon. Millions of tourists visit it every year, and the cathedral spire inside can be seen from far away. I think everybody should visit it, because you can learn a lot about the history of the city.",
+          "transcript": "",
+          "imageUrl": "",
+          "hidden": false,
+          "text": "",
+          "tasks": []
+        }
+      ],
+      "words": [
+        {
+          "english": "monument",
+          "russian": "памятник",
+          "partOfSpeech": "noun",
+          "transcription": "/ˈmɑːnjumənt/",
+          "example": "This monument was built in memory of the soldiers.",
+          "definition": "a building or statue built to remember a person or an event",
+          "definitionRu": "здание или статуя, построенные в память о человеке или событии",
+          "audioUrl": "",
+          "imageUrl": "",
+          "order": 0
+        },
+        {
+          "english": "castle",
+          "russian": "замок",
+          "partOfSpeech": "noun",
+          "transcription": "/ˈkæsl/",
+          "example": "The castle was built on a high hill.",
+          "definition": "a large old building with thick walls, built to protect people from enemies",
+          "definitionRu": "большое старинное здание с толстыми стенами, построенное для защиты от врагов",
+          "audioUrl": "",
+          "imageUrl": "",
+          "order": 1
+        },
+        {
+          "english": "ancient",
+          "russian": "древний",
+          "partOfSpeech": "adjective",
+          "transcription": "/ˈeɪnʃənt/",
+          "example": "Ancient Egyptians built the pyramids.",
+          "definition": "very old, from a long time ago",
+          "definitionRu": "очень старый, из давних времён",
+          "audioUrl": "",
+          "imageUrl": "",
+          "order": 2
+        },
+        {
+          "english": "found",
+          "russian": "основывать (город, организацию)",
+          "partOfSpeech": "verb",
+          "transcription": "/faʊnd/",
+          "example": "Saint Petersburg was founded in 1703.",
+          "definition": "to start a city or an organization",
+          "definitionRu": "создать город или организацию",
+          "audioUrl": "",
+          "imageUrl": "",
+          "order": 3
+        },
+        {
+          "english": "heritage",
+          "russian": "наследие",
+          "partOfSpeech": "noun",
+          "transcription": "/ˈherɪtɪdʒ/",
+          "example": "The old town is a World Heritage Site.",
+          "definition": "buildings and traditions that are passed from past generations",
+          "definitionRu": "здания и традиции, которые передаются от прошлых поколений",
+          "audioUrl": "",
+          "imageUrl": "",
+          "order": 4
+        },
+        {
+          "english": "ruins",
+          "russian": "руины",
+          "partOfSpeech": "noun",
+          "transcription": "/ˈruːɪnz/",
+          "example": "We visited the ruins of an ancient temple.",
+          "definition": "the broken parts of an old building that has fallen down",
+          "definitionRu": "обломки старого здания, которое разрушилось",
+          "audioUrl": "",
+          "imageUrl": "",
+          "order": 5
+        },
+        {
+          "english": "statue",
+          "russian": "статуя",
+          "partOfSpeech": "noun",
+          "transcription": "/ˈstætʃuː/",
+          "example": "The statue was made of bronze.",
+          "definition": "a figure of a person or an animal made of stone or metal",
+          "definitionRu": "фигура человека или животного из камня или металла",
+          "audioUrl": "",
+          "imageUrl": "",
+          "order": 6
+        },
+        {
+          "english": "restore",
+          "russian": "восстанавливать, реставрировать",
+          "partOfSpeech": "verb",
+          "transcription": "/rɪˈstɔːr/",
+          "example": "The palace was restored after the war.",
+          "definition": "to repair something old so that it looks like it did before",
+          "definitionRu": "починить что-то старое так, чтобы оно выглядело как раньше",
+          "audioUrl": "",
+          "imageUrl": "",
+          "order": 7
+        },
+        {
+          "english": "admire",
+          "russian": "восхищаться",
+          "partOfSpeech": "verb",
+          "transcription": "/ədˈmaɪər/",
+          "example": "Tourists admire the beautiful view from the tower.",
+          "definition": "to look at something with pleasure and respect",
+          "definitionRu": "смотреть на что-то с удовольствием и уважением",
+          "audioUrl": "",
+          "imageUrl": "",
+          "order": 8
+        },
+        {
+          "english": "century",
+          "russian": "век",
+          "partOfSpeech": "noun",
+          "transcription": "/ˈsentʃəri/",
+          "example": "The church was built in the 17th century.",
+          "definition": "a period of one hundred years",
+          "definitionRu": "период в сто лет",
+          "audioUrl": "",
+          "imageUrl": "",
+          "order": 9
+        },
+        {
+          "english": "fortress",
+          "russian": "крепость",
+          "partOfSpeech": "noun",
+          "transcription": "/ˈfɔːrtrəs/",
+          "example": "The fortress was used to protect the city.",
+          "definition": "a strong building used to defend a place",
+          "definitionRu": "прочное здание для обороны места",
+          "audioUrl": "",
+          "imageUrl": "",
+          "order": 10
+        },
+        {
+          "english": "damage",
+          "russian": "повреждать",
+          "partOfSpeech": "verb",
+          "transcription": "/ˈdæmɪdʒ/",
+          "example": "The roof was damaged by the storm.",
+          "definition": "to harm or break something",
+          "definitionRu": "повредить или сломать что-то",
+          "audioUrl": "",
+          "imageUrl": "",
+          "order": 11
+        }
+      ],
+      "homework": {
+        "title": "Домашнее задание к уроку 9",
+        "intro": "Страдательный залог: Present и Past Simple Passive, пассив с will, can, must и в Present Perfect, вопросы, отрицания, by и with; лексика для рассказа о достопримечательностях.",
+        "tasks": [
+          {
+            "section": "1. Present и Past Simple Passive",
+            "kind": "FILL",
+            "prompt": "Впишите is или are: Coffee ___ grown in Brazil.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [],
+            "answer": "is",
+            "explanation": "Coffee — единственное число: is grown.",
+            "rule": "",
+            "hidden": false,
+            "order": 0
+          },
+          {
+            "section": "1. Present и Past Simple Passive",
+            "kind": "FILL",
+            "prompt": "Впишите was или were: The Hermitage ___ founded in 1764.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [],
+            "answer": "was",
+            "explanation": "Прошедшее время, единственное число: was founded.",
+            "rule": "",
+            "hidden": false,
+            "order": 1
+          },
+          {
+            "section": "1. Present и Past Simple Passive",
+            "kind": "CHOICE",
+            "prompt": "Выберите вариант: These pictures ___ by a young artist last year.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [
+              "were painted",
+              "painted",
+              "are painted",
+              "was painted"
+            ],
+            "answer": "were painted",
+            "explanation": "last year — прошедшее время, pictures — множественное: were painted.",
+            "rule": "",
+            "hidden": false,
+            "order": 2
+          },
+          {
+            "section": "1. Present и Past Simple Passive",
+            "kind": "FILL",
+            "prompt": "Впишите страдательный залог (make) в Past Simple: This chair ___ of wood in 1900.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [],
+            "answer": "was made",
+            "explanation": "Past Simple Passive: was made.",
+            "rule": "",
+            "hidden": false,
+            "order": 3
+          },
+          {
+            "section": "1. Present и Past Simple Passive",
+            "kind": "CHOICE",
+            "prompt": "Выберите вариант: Football ___ all over the world.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [
+              "is played",
+              "plays",
+              "is play",
+              "are played"
+            ],
+            "answer": "is played",
+            "explanation": "Football — единственное число: is played.",
+            "rule": "",
+            "hidden": false,
+            "order": 4
+          },
+          {
+            "section": "1. Present и Past Simple Passive",
+            "kind": "CHOICE",
+            "prompt": "Выберите пассив к предложению «Alexander Pushkin wrote this poem».",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [
+              "This poem was written by Alexander Pushkin.",
+              "This poem is written by Alexander Pushkin.",
+              "This poem wrote by Alexander Pushkin.",
+              "This poem was wrote by Alexander Pushkin."
+            ],
+            "answer": "This poem was written by Alexander Pushkin.",
+            "explanation": "Past Simple Passive: was + V3 (written).",
+            "rule": "",
+            "hidden": false,
+            "order": 5
+          },
+          {
+            "section": "2. Неправильные глаголы в пассиве",
+            "kind": "FILL",
+            "prompt": "Впишите третью форму глагола (build): The Great Wall of China was ___ over many centuries.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [],
+            "answer": "built",
+            "explanation": "build — built — built.",
+            "rule": "",
+            "hidden": false,
+            "order": 6
+          },
+          {
+            "section": "2. Неправильные глаголы в пассиве",
+            "kind": "FILL",
+            "prompt": "Впишите третью форму глагола (write): This novel was ___ in 1869.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [],
+            "answer": "written",
+            "explanation": "write — wrote — written.",
+            "rule": "",
+            "hidden": false,
+            "order": 7
+          },
+          {
+            "section": "2. Неправильные глаголы в пассиве",
+            "kind": "FILL",
+            "prompt": "Впишите третью форму глагола (take): This photo was ___ in Paris.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [],
+            "answer": "taken",
+            "explanation": "take — took — taken.",
+            "rule": "",
+            "hidden": false,
+            "order": 8
+          },
+          {
+            "section": "2. Неправильные глаголы в пассиве",
+            "kind": "CHOICE",
+            "prompt": "Выберите вариант: My bike ___ yesterday. I'm very upset.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [
+              "was stolen",
+              "stole",
+              "was stole",
+              "is stolen"
+            ],
+            "answer": "was stolen",
+            "explanation": "steal — stole — stolen; yesterday — Past Simple: was stolen.",
+            "rule": "",
+            "hidden": false,
+            "order": 9
+          },
+          {
+            "section": "2. Неправильные глаголы в пассиве",
+            "kind": "CHOICE",
+            "prompt": "Выберите вариант: A lot of cars ___ in this factory.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [
+              "are made",
+              "is made",
+              "make",
+              "are make"
+            ],
+            "answer": "are made",
+            "explanation": "cars — множественное число: are made.",
+            "rule": "",
+            "hidden": false,
+            "order": 10
+          },
+          {
+            "section": "2. Неправильные глаголы в пассиве",
+            "kind": "FILL",
+            "prompt": "Впишите третью форму глагола (give): The prize was ___ to the best student.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [],
+            "answer": "given",
+            "explanation": "give — gave — given.",
+            "rule": "",
+            "hidden": false,
+            "order": 11
+          },
+          {
+            "section": "3. Passive с will, can, must и Present Perfect",
+            "kind": "FILL",
+            "prompt": "Впишите страдательный залог с will (open): The new library ___ next week.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [],
+            "answer": "will be opened",
+            "explanation": "will + be + V3.",
+            "rule": "",
+            "hidden": false,
+            "order": 12
+          },
+          {
+            "section": "3. Passive с will, can, must и Present Perfect",
+            "kind": "FILL",
+            "prompt": "Впишите страдательный залог с can (see): The mountains ___ from my window.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [],
+            "answer": "can be seen",
+            "explanation": "can + be + V3.",
+            "rule": "",
+            "hidden": false,
+            "order": 13
+          },
+          {
+            "section": "3. Passive с will, can, must и Present Perfect",
+            "kind": "CHOICE",
+            "prompt": "Выберите вариант: The old church ___ restored several times.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [
+              "has been",
+              "has",
+              "have been",
+              "was been"
+            ],
+            "answer": "has been",
+            "explanation": "Present Perfect Passive: has been + V3.",
+            "rule": "",
+            "hidden": false,
+            "order": 14
+          },
+          {
+            "section": "3. Passive с will, can, must и Present Perfect",
+            "kind": "CHOICE",
+            "prompt": "Выберите вариант: Children under 12 ___ without an adult.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [
+              "mustn't be left",
+              "mustn't leave",
+              "mustn't be leave",
+              "don't must be left"
+            ],
+            "answer": "mustn't be left",
+            "explanation": "must + be + V3: mustn't be left.",
+            "rule": "",
+            "hidden": false,
+            "order": 15
+          },
+          {
+            "section": "3. Passive с will, can, must и Present Perfect",
+            "kind": "FILL",
+            "prompt": "Впишите Present Perfect Passive (finish): The bridge ___ at last.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [],
+            "answer": "has been finished",
+            "explanation": "has been + V3.",
+            "rule": "",
+            "hidden": false,
+            "order": 16
+          },
+          {
+            "section": "3. Passive с will, can, must и Present Perfect",
+            "kind": "CHOICE",
+            "prompt": "Выберите вариант: Tickets ___ at the entrance.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [
+              "can be bought",
+              "can buy",
+              "can be buy",
+              "can been bought"
+            ],
+            "answer": "can be bought",
+            "explanation": "can + be + V3.",
+            "rule": "",
+            "hidden": false,
+            "order": 17
+          },
+          {
+            "section": "4. Вопросы, отрицания, by и with",
+            "kind": "CHOICE",
+            "prompt": "Выберите вопрос: ___ this book written by?",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [
+              "Who was",
+              "Who did",
+              "Who is",
+              "Who were"
+            ],
+            "answer": "Who was",
+            "explanation": "Вопрос в Past Simple Passive: Who was this book written by?",
+            "rule": "",
+            "hidden": false,
+            "order": 18
+          },
+          {
+            "section": "4. Вопросы, отрицания, by и with",
+            "kind": "FILL",
+            "prompt": "Впишите wasn't: The window ___ broken by me — it was already broken.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [],
+            "answer": "wasn't, was not",
+            "explanation": "Отрицание в Past Simple Passive: wasn't + V3.",
+            "rule": "",
+            "hidden": false,
+            "order": 19
+          },
+          {
+            "section": "4. Вопросы, отрицания, by и with",
+            "kind": "CHOICE",
+            "prompt": "Выберите слово: The soup was eaten ___ a spoon.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [
+              "with",
+              "by",
+              "from",
+              "on"
+            ],
+            "answer": "with",
+            "explanation": "with — инструмент.",
+            "rule": "",
+            "hidden": false,
+            "order": 20
+          },
+          {
+            "section": "4. Вопросы, отрицания, by и with",
+            "kind": "FILL",
+            "prompt": "Впишите is или are: ___ cars made in this city?",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [],
+            "answer": "are",
+            "explanation": "cars — множественное число: Are cars made…?",
+            "rule": "",
+            "hidden": false,
+            "order": 21
+          },
+          {
+            "section": "4. Вопросы, отрицания, by и with",
+            "kind": "CHOICE",
+            "prompt": "Выберите слово: This song was sung ___ a famous singer.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [
+              "by",
+              "with",
+              "from",
+              "at"
+            ],
+            "answer": "by",
+            "explanation": "by — исполнитель действия.",
+            "rule": "",
+            "hidden": false,
+            "order": 22
+          },
+          {
+            "section": "5. Лексика: sightseeing and history",
+            "kind": "FILL",
+            "prompt": "Впишите слово по-английски (замок — 1 слово): The ___ stands on a high hill above the river.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [],
+            "answer": "castle",
+            "explanation": "castle — замок.",
+            "rule": "",
+            "hidden": false,
+            "order": 23
+          },
+          {
+            "section": "5. Лексика: sightseeing and history",
+            "kind": "FILL",
+            "prompt": "Впишите слово по-английски (век — 1 слово): The church was built in the 17th ___.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [],
+            "answer": "century",
+            "explanation": "century — век.",
+            "rule": "",
+            "hidden": false,
+            "order": 24
+          },
+          {
+            "section": "5. Лексика: sightseeing and history",
+            "kind": "CHOICE",
+            "prompt": "Выберите слово: We visited the ___ of an ancient temple.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [
+              "ruins",
+              "statue",
+              "fortress",
+              "heritage"
+            ],
+            "answer": "ruins",
+            "explanation": "ruins — руины.",
+            "rule": "",
+            "hidden": false,
+            "order": 25
+          },
+          {
+            "section": "5. Лексика: sightseeing and history",
+            "kind": "CHOICE",
+            "prompt": "Выберите слово: The palace was badly damaged in the war, but it has been ___.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [
+              "restored",
+              "admired",
+              "founded",
+              "damaged"
+            ],
+            "answer": "restored",
+            "explanation": "restore — восстанавливать.",
+            "rule": "",
+            "hidden": false,
+            "order": 26
+          },
+          {
+            "section": "5. Лексика: sightseeing and history",
+            "kind": "CHOICE",
+            "prompt": "Выберите слово: Saint Petersburg was ___ in 1703.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [
+              "founded",
+              "found",
+              "finded",
+              "fund"
+            ],
+            "answer": "founded",
+            "explanation": "found — founded — founded: основать.",
+            "rule": "",
+            "hidden": false,
+            "order": 27
+          },
+          {
+            "section": "6. Чтение: The Eiffel Tower",
+            "kind": "READING",
+            "prompt": "Прочитайте текст и выберите ответ: Why was the Eiffel Tower built?",
+            "text": "The Eiffel Tower\n\nThe Eiffel Tower is the most famous symbol of Paris. It was built for the World's Fair of 1889 and was named after the engineer Gustave Eiffel, whose company designed and built it. At first many Parisians didn't like the tower, and it was planned to take it down after twenty years. But it was used as a radio tower, so it was saved.\n\nThe tower is made of iron and is about 330 metres high. For forty years it was the tallest building in the world. The tower is repainted every seven years, and about sixty tonnes of paint are used. Every year millions of tourists are taken to the top by lifts, and from there the whole city can be seen. Evenings are the best time for a visit, because the tower is lit up and sparkles every hour.",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [
+              "for the World's Fair of 1889",
+              "to celebrate a war",
+              "as a radio tower",
+              "as a hotel"
+            ],
+            "answer": "for the World's Fair of 1889",
+            "explanation": "It was built for the World's Fair of 1889.",
+            "rule": "",
+            "hidden": false,
+            "order": 28
+          },
+          {
+            "section": "6. Чтение: The Eiffel Tower",
+            "kind": "FILL",
+            "prompt": "Прочитайте текст выше и впишите слово (name): The tower was ___ after the engineer Gustave Eiffel.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [],
+            "answer": "named",
+            "explanation": "was named after — «назвали в честь».",
+            "rule": "",
+            "hidden": false,
+            "order": 29
+          },
+          {
+            "section": "6. Чтение: The Eiffel Tower",
+            "kind": "FILL",
+            "prompt": "Прочитайте текст выше и впишите слово (repaint): The tower is ___ every seven years.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [],
+            "answer": "repainted",
+            "explanation": "is repainted — Present Simple Passive.",
+            "rule": "",
+            "hidden": false,
+            "order": 30
+          },
+          {
+            "section": "6. Чтение: The Eiffel Tower",
+            "kind": "CHOICE",
+            "prompt": "Прочитайте текст выше. Why was the tower saved?",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [
+              "It was used as a radio tower.",
+              "People started to love it.",
+              "It was moved to another city.",
+              "It was painted white."
+            ],
+            "answer": "It was used as a radio tower.",
+            "explanation": "But it was used as a radio tower, so it was saved.",
+            "rule": "",
+            "hidden": false,
+            "order": 31
+          },
+          {
+            "section": "6. Чтение: The Eiffel Tower",
+            "kind": "CHOICE",
+            "prompt": "Прочитайте текст выше. When does the tower sparkle?",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [
+              "every hour in the evening",
+              "only on Sundays",
+              "once a year",
+              "never"
+            ],
+            "answer": "every hour in the evening",
+            "explanation": "The tower is lit up and sparkles every hour.",
+            "rule": "",
+            "hidden": false,
+            "order": 32
+          },
+          {
+            "section": "7. Письмо: знаменитое место",
+            "kind": "TEACHER",
+            "prompt": "Напишите короткий рассказ на английском (7–9 предложений) о знаменитом месте вашего города или страны. Используйте страдательный залог: was built или was founded, is visited, has been restored, can be seen, и слова урока.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [],
+            "answer": "",
+            "explanation": "Hi Anna! I'd like to tell you about the Kazan Kremlin. It is one of the most famous places in Tatarstan. Its white stone walls were built in the 16th century, after Kazan was captured by Ivan the Terrible. The Kremlin is now protected by UNESCO as a World Heritage Site. The Kul Sharif Mosque was opened in 2005, and it can be seen from far away. The old towers have been restored several times, and today the Kremlin is visited by millions of tourists. A lot of interesting museums can be found inside. If you come to Kazan, you will be taken to the Kremlin first!",
+            "rule": "7–9 предложений",
+            "hidden": false,
+            "order": 33
+          },
+          {
+            "section": "8. Говорение: достопримечательность",
+            "kind": "TEACHER",
+            "prompt": "Подготовьте устный рассказ на 1–1,5 минуты о достопримечательности. Используйте страдательный залог и слова урока. Здесь запишите план.",
+            "text": "",
+            "audioUrl": "",
+            "transcript": "",
+            "options": [],
+            "answer": "",
+            "explanation": "I'd like to talk about the Hermitage in Saint Petersburg. It was founded in 1764 by Catherine the Great as a private collection. Today it is one of the biggest museums in the world. The Winter Palace, where the museum is located, was built in the 18th century and has been restored many times. Millions of works of art are kept there, and they can't be seen in one day. The museum is visited by millions of people every year. If you ever go to Saint Petersburg, you should visit it.",
+            "rule": "План из 6–8 фраз",
+            "hidden": false,
+            "order": 34
+          }
+        ]
+      }
+    }
+  ]
+}
