@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { TestRunner } from "@/components/tests/TestRunner";
 import { prisma } from "@/lib/prisma";
+import { SELF_STUDY_TEST_TITLES } from "@/lib/self-study-access";
 import { requireUser } from "@/lib/session";
 import { testAccessWhere } from "@/lib/test-access";
 
@@ -39,9 +40,15 @@ export default async function TestPage({
             ← Вернуться в урок №{test.lesson.number}
           </Link>
         ) : null}
-        <Link href="/tests" prefetch className="btn-ghost btn-sm">
-          Все тесты
-        </Link>
+        {SELF_STUDY_TEST_TITLES.includes(test.title) ? (
+          <Link href="/plan#tests" prefetch className="btn-ghost btn-sm">
+            ← Мой английский
+          </Link>
+        ) : (
+          <Link href="/tests" prefetch className="btn-ghost btn-sm">
+            Все тесты
+          </Link>
+        )}
       </div>
 
       <div>

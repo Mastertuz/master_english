@@ -12,12 +12,14 @@ import {
   TYPICAL_ERRORS,
   WEEK,
 } from "@/lib/self-study";
-import { canUseSelfStudy } from "@/lib/self-study-access";
+import { prisma } from "@/lib/prisma";
+import { canUseSelfStudy, SELF_STUDY_TEST_TITLES } from "@/lib/self-study-access";
 import { requireUser } from "@/lib/session";
 
 const TOC = [
   { id: "goal", label: "Цель" },
   { id: "plan", label: "План на 24 недели" },
+  { id: "tests", label: "Тесты и уроки" },
   { id: "week", label: "Неделя и день" },
   { id: "techniques", label: "Техники" },
   { id: "resources", label: "Учебники и материалы" },
@@ -30,6 +32,25 @@ export default async function PlanPage() {
   // Раздел личный: только владельцу, а не всем администраторам
   const user = await requireUser();
   if (!canUseSelfStudy(user)) redirect("/dashboard");
+
+  // Личные тесты: на общей странице «Тесты» их нет, всё собрано здесь
+  const tests = await prisma.test.findMany({
+    where: { title: { in: SELF_STUDY_TEST_TITLES } },
+    orderBy: { createdAt: "asc" },
+    select: {
+      id: true,
+      title: true,
+      description: true,
+      level: true,
+      _count: { select: { questions: true } },
+      attempts: {
+        where: { userId: user.id },
+        orderBy: { finishedAt: "desc" },
+        take: 5,
+        select: { score: true, total: true, finishedAt: true },
+      },
+    },
+  });
 
   return (
     <div className="space-y-8">
@@ -67,6 +88,71 @@ export default async function PlanPage() {
           Четыре этапа: диагностика, база, беглость, экзаменный режим. Отмечайте выполненное галочками.
         </p>
         <StudyChecklist phases={PHASES} />
+      </section>
+
+      <section id="tests" className="scroll-mt-24 space-y-3">
+        <h2 className="text-xl font-semibold text-ink-900">Тесты и уроки</h2>
+        <p className="text-[14.5px] leading-relaxed text-ink-600">
+          Всё, что относится к вашему обучению, лежит здесь, а не в общих разделах «Тесты» и «Уроки».
+        </p>
+
+        <div className="grid gap-3 md:grid-cols-2">
+          {tests.map((test) => {
+            const last = test.attempts[0];
+            return (
+              <div key={test.id} className="card flex flex-col p-5">
+                <div className="flex flex-wrap gap-1.5">
+                  <span className="chip bg-brand-50 text-brand-700">Тест</span>
+                  {test.level ? (
+                    <span className="chip bg-emerald-50 text-emerald-700">{test.level}</span>
+                  ) : null}
+                </div>
+                <h3 className="mt-3 text-[16px] font-semibold text-ink-900">{test.title}</h3>
+                {test.description ? (
+                  <p className="mt-1.5 flex-1 text-[13.5px] leading-relaxed text-ink-600">
+                    {test.description}
+                  </p>
+                ) : (
+                  <div className="flex-1" />
+                )}
+                <p className="mt-3 text-[13px] text-ink-500">
+                  {test._count.questions} вопросов
+                  {last && last.total > 0
+                    ? ` · последний результат ${last.score} из ${last.total} (${Math.round((last.score / last.total) * 100)}%)`
+                    : " · ещё не пройден"}
+                </p>
+                {test.attempts.length > 1 ? (
+                  <p className="mt-1 text-[12.5px] text-ink-400">
+                    Предыдущие:{" "}
+                    {test.attempts
+                      .slice(1)
+                      .map((attempt) => `${attempt.score}/${attempt.total}`)
+                      .join(", ")}
+                  </p>
+                ) : null}
+                <div className="mt-4 flex gap-2">
+                  <Link href={`/tests/${test.id}`} prefetch className="btn-primary btn-sm flex-1">
+                    {last ? "Пройти снова" : "Начать"}
+                  </Link>
+                  <Link href={`/tests/${test.id}/edit`} prefetch className="btn-ghost btn-sm">
+                    Изменить
+                  </Link>
+                </div>
+              </div>
+            );
+          })}
+
+          <div className="card flex flex-col border-dashed p-5">
+            <div className="flex flex-wrap gap-1.5">
+              <span className="chip bg-ink-100 text-ink-600">Уроки</span>
+            </div>
+            <h3 className="mt-3 text-[16px] font-semibold text-ink-900">Ваши уроки появятся здесь</h3>
+            <p className="mt-1.5 flex-1 text-[13.5px] leading-relaxed text-ink-600">
+              Когда вы пришлёте учебники для плана, уроки и задания по ним будут собраны на этой странице,
+              отдельно от уроков учеников.
+            </p>
+          </div>
+        </div>
       </section>
 
       <section id="week" className="scroll-mt-24 space-y-3">

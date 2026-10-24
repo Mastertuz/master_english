@@ -4,6 +4,7 @@ import { GenerateTestForm } from "@/components/tests/GenerateTestForm";
 import { TestBuilder } from "@/components/tests/TestBuilder";
 import { ConfirmSubmit } from "@/components/ui/ConfirmSubmit";
 import { prisma } from "@/lib/prisma";
+import { SELF_STUDY_TEST_TITLES } from "@/lib/self-study-access";
 import { requireUser } from "@/lib/session";
 import { testAccessWhere } from "@/lib/test-access";
 
@@ -11,7 +12,8 @@ export default async function TestsPage() {
   const user = await requireUser();
   const isAdmin = user.role === "ADMIN";
 
-  const where = testAccessWhere(user);
+  // Личные тесты владельца раздела «Мой английский» показываются на его странице
+  const where = { AND: [testAccessWhere(user), { NOT: { title: { in: SELF_STUDY_TEST_TITLES } } }] };
 
   const [tests, lessons] = await Promise.all([
     prisma.test.findMany({
