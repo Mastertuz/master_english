@@ -33,6 +33,7 @@ export function buildDeck(): DeckCard[] {
   return cards;
 }
 
+import { PHRASE_DEFINITIONS } from "./phrase-defs";
 import { DEFINITIONS, WEEK_ONE_WORDS, cleanEnglish, type WordCard } from "./vocab-defs";
 import type { EmpowerUnit } from "./types";
 
@@ -52,7 +53,8 @@ export function unitPool(unit: EmpowerUnit): WordCard[] {
       en: cleanEnglish(en),
       ru,
       example: "",
-      definition: "",
+      // Определения «из сборника» только у того, чего нет в Cambridge; остальное подтягивается оттуда при тренировке
+      definition: PHRASE_DEFINITIONS[cleanEnglish(en)] ?? "",
       unit: unit.n,
     })),
   );

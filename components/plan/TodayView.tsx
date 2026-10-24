@@ -171,7 +171,6 @@ function WordsList({ info }: { info: NonNullable<DayTask["words"]> }) {
       }
     }
   }
-  const hasDefinitions = cards.some((card) => card.definition);
 
   return (
     <div className="mt-3 space-y-3">
@@ -194,13 +193,11 @@ function WordsList({ info }: { info: NonNullable<DayTask["words"]> }) {
             ▶ Тренировать: слово и перевод
           </button>
         </form>
-        {hasDefinitions ? (
-          <form action={startPlanTrainingAction.bind(null, info.week, info.fromDay, info.day, "definition")}>
-            <button type="submit" className="btn-ghost btn-sm">
-              💡 Тренировать: слово по определению
-            </button>
-          </form>
-        ) : null}
+        <form action={startPlanTrainingAction.bind(null, info.week, info.fromDay, info.day, "definition")}>
+          <button type="submit" className="btn-ghost btn-sm">
+            💡 Тренировать: слово по определению
+          </button>
+        </form>
       </div>
       <p className="text-[12.5px] text-ink-400">
         Слова попадают в ваш словарь и открываются в обычном тренажёре сайта: ответы проверяются, ошибки учитываются в статистике.

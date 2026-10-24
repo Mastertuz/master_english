@@ -7,6 +7,7 @@ import { canUseSelfStudy } from "@/lib/self-study-access";
 import { getCurrentUser } from "@/lib/session";
 import { dayWords } from "@/lib/study/deck";
 import { UNITS } from "@/lib/study/units";
+import { enrichFromCambridge } from "@/lib/study/definitions";
 import { acceptVariants } from "@/lib/study/vocab-defs";
 
 /**
@@ -35,20 +36,36 @@ export async function startPlanTrainingAction(
   }
 
   const english = cards.map((card) => card.en);
-  for (const card of cards) {
+
+  // Определения: свои есть у слов юнитов, для остальных ищем в Cambridge (результат кэшируется в базе)
+  const extra = await Promise.all(cards.map((card) => (card.definition ? null : enrichFromCambridge(card))));
+
+  for (const [index, card] of cards.entries()) {
+    const found = extra[index];
+    const definition = card.definition || found?.definition || "";
     const data = {
       russian: acceptVariants(card.ru),
-      example: card.example,
-      definition: card.definition,
-      definitionRu: card.definition ? card.ru : "",
+      example: card.example || found?.example || "",
+      definition,
+      definitionRu: definition ? card.ru : "",
+      transcription: found?.transcription ?? "",
+      partOfSpeech: found?.partOfSpeech ?? "",
+      audioUrl: found?.audioUrl ?? "",
       source: "plan",
     };
-    await prisma.word.upsert({
+    const existing = await prisma.word.findUnique({
       where: { userId_english: { userId: user.id, english: card.en } },
-      create: { userId: user.id, english: card.en, assigned: true, ...data },
-      // Слово уже есть в словаре: свой перевод и статистику не трогаем
-      update: { assigned: true },
+      select: { id: true, definition: true },
     });
+    if (!existing) {
+      await prisma.word.create({ data: { userId: user.id, english: card.en, assigned: true, ...data } });
+    } else {
+      // Своё слово не трогаем, но недостающее определение дополняем
+      await prisma.word.update({
+        where: { id: existing.id },
+        data: existing.definition ? { assigned: true } : { assigned: true, definition: data.definition, definitionRu: data.definitionRu },
+      });
+    }
   }
 
   // Прежний выбор снимаем: в «назначенных» остаются только слова этого занятия
