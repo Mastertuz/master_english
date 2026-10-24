@@ -216,6 +216,16 @@ export function Header({
                     <span aria-hidden>👤</span> Профиль
                   </Link>
 
+                  {isAdmin ? (
+                    <Link
+                      href="/plan"
+                      prefetch
+                      className="flex items-center gap-2 rounded-lg px-3 py-2 text-[14px] text-ink-700 transition hover:bg-ink-100"
+                    >
+                      <span aria-hidden>🚀</span> Мой английский
+                    </Link>
+                  ) : null}
+
                   <form action={logoutAction}>
                     <button
                       type="submit"
