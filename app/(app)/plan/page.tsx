@@ -16,7 +16,18 @@ import { prisma } from "@/lib/prisma";
 import { canUseSelfStudy, SELF_STUDY_TEST_TITLES } from "@/lib/self-study-access";
 import { requireUser } from "@/lib/session";
 
+const SECTIONS = [
+  { href: "/plan/today", icon: "☀️", title: "Сегодня", text: "Задания дня из расписания на 24 недели" },
+  { href: "/plan/speaking", icon: "🎙", title: "Говорение", text: "Прогулка по квартире, мышление вслух, роли, экзамен" },
+  { href: "/plan/units", icon: "📘", title: "Empower C1", text: "10 юнитов: записи, шэдоуинг, слова, письмо" },
+  { href: "/plan/grammar", icon: "🧩", title: "Грамматика", text: "Упражнения по вашим ошибкам и по юнитам" },
+  { href: "/plan/vocab", icon: "🗂", title: "Слова", text: "Карточки с интервальным повторением" },
+  { href: "/plan/writing", icon: "✍️", title: "Письмо", text: "Эссе, отчёт, отзыв, письмо-заявка" },
+  { href: "/plan/errors", icon: "🎯", title: "Ошибки", text: "Журнал и повторение по интервалам" },
+];
+
 const TOC = [
+  { id: "sections", label: "Разделы" },
   { id: "goal", label: "Цель" },
   { id: "plan", label: "План на 24 недели" },
   { id: "tests", label: "Тесты и уроки" },
@@ -69,6 +80,29 @@ export default async function PlanPage() {
           </a>
         ))}
       </nav>
+
+      <section id="sections" className="scroll-mt-24 space-y-3">
+        <h2 className="text-xl font-semibold text-ink-900">Весь план на платформе</h2>
+        <p className="text-[14.5px] leading-relaxed text-ink-600">
+          Начните с раздела «Сегодня»: он покажет, что делать именно сегодня, и сам откроет нужные упражнения. Книги (Empower C1 и Vocabulary in Use) лежат у вас на
+          компьютере: задания из них даны на странице юнита, а аудио и упражнения с проверкой — здесь.
+        </p>
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {SECTIONS.map((item, index) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              prefetch
+              className={`card flex flex-col p-4 transition hover:border-brand-300 ${index === 0 ? "border-brand-500 bg-brand-50/50" : ""}`}
+            >
+              <p className="text-[15.5px] font-semibold text-ink-900">
+                <span aria-hidden>{item.icon}</span> {item.title}
+              </p>
+              <p className="mt-1 text-[13.5px] leading-relaxed text-ink-600">{item.text}</p>
+            </Link>
+          ))}
+        </div>
+      </section>
 
       <section id="goal" className="card scroll-mt-24 space-y-3 p-5">
         <h2 className="text-xl font-semibold text-ink-900">{GOAL.title}</h2>
@@ -142,15 +176,23 @@ export default async function PlanPage() {
             );
           })}
 
-          <div className="card flex flex-col border-dashed p-5">
+          <div className="card flex flex-col p-5">
             <div className="flex flex-wrap gap-1.5">
-              <span className="chip bg-ink-100 text-ink-600">Уроки</span>
+              <span className="chip bg-brand-50 text-brand-700">Уроки</span>
+              <span className="chip bg-emerald-50 text-emerald-700">C1</span>
             </div>
-            <h3 className="mt-3 text-[16px] font-semibold text-ink-900">Ваши уроки появятся здесь</h3>
+            <h3 className="mt-3 text-[16px] font-semibold text-ink-900">Empower C1: десять юнитов</h3>
             <p className="mt-1.5 flex-1 text-[13.5px] leading-relaxed text-ink-600">
-              Когда вы пришлёте учебники для плана, уроки и задания по ним будут собраны на этой странице,
-              отдельно от уроков учеников.
+              Ваши личные уроки: страницы книги, 30 настоящих записей с вопросами и текстом, слова, письменные задания и грамматика. Отдельно от уроков учеников.
             </p>
+            <div className="mt-4 flex gap-2">
+              <Link href="/plan/units" prefetch className="btn-primary btn-sm flex-1">
+                Открыть юниты
+              </Link>
+              <Link href="/plan/grammar" prefetch className="btn-ghost btn-sm">
+                Грамматика
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -258,7 +300,7 @@ export default async function PlanPage() {
 
       <section id="site" className="scroll-mt-24 space-y-3">
         <h2 className="text-xl font-semibold text-ink-900">Как использовать сайт</h2>
-        <div className="grid gap-3 md:grid-cols-3">
+        <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
           {PLATFORM_TIPS.map((tip) => (
             <Link
               key={tip.href}

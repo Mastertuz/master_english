@@ -219,7 +219,7 @@ export function Header({
 
                   {canUseSelfStudy(user) ? (
                     <Link
-                      href="/plan"
+                      href="/plan/today"
                       prefetch
                       className="flex items-center gap-2 rounded-lg px-3 py-2 text-[14px] text-ink-700 transition hover:bg-ink-100"
                     >

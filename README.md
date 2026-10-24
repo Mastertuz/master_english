@@ -218,6 +218,13 @@ content/lessons/               исходные HTML-уроки и lessons.json
                                слов и домашних заданий; записи Track 05.xx и 06.xx — public/audio/empower/unit5, unit6
                                (из папки audio/, она в .gitignore). Загрузка в базу:
                                npx tsx --env-file=.env scripts/import-lessons-file.ts content/lessons/lessons-8-9.json
+lib/study/                     личный раздел «Мой английский» (виден только владельцу, см. lib/self-study-access.ts):
+                               расписание на 24 недели (schedule.ts), задания на говорение (speaking-*.ts),
+                               грамматика (drills-*.ts), юниты Empower C1 (units-*.ts), письмо (writing.ts).
+                               Записи с реплик для шэдоуинга: lib/study/cues/, аудио: public/audio/empower-c1/ —
+                               готовит scripts/prepare_empower_c1.py из папки audio/ (она в .gitignore).
+                               Прогресс, ошибки, карточки и записи речи хранятся в браузере (localStorage, IndexedDB), не в базе
+components/plan/               интерфейс раздела: «Сегодня», запись речи, упражнения, карточки, журнал ошибок
 books/                         учебники (PDF)
 public/audio/  public/uploads/ аудио уроков и загруженные файлы
 prisma/schema.prisma           схема БД
