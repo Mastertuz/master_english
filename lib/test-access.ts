@@ -1,4 +1,5 @@
 import type { Prisma } from "@prisma/client";
+import { canUseSelfStudy, SELF_STUDY_TEST_TITLES } from "./self-study-access";
 import type { SessionUser } from "./session";
 
 /**
@@ -13,9 +14,15 @@ import type { SessionUser } from "./session";
  * у ученика не задан, свободные тесты доступны все — фильтровать не по чему.
  */
 export function testAccessWhere(user: SessionUser): Prisma.TestWhereInput {
-  if (user.role === "ADMIN") return {};
+  // Личные тесты владельца раздела «Мой английский» не видит никто другой
+  if (canUseSelfStudy(user)) return {};
+  const notPersonal: Prisma.TestWhereInput = {
+    NOT: { title: { in: SELF_STUDY_TEST_TITLES } },
+  };
+  if (user.role === "ADMIN") return notPersonal;
 
   return {
+    ...notPersonal,
     OR: [
       // выдан ученику лично
       { assignments: { some: { userId: user.id } } },

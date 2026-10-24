@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { StudyChecklist } from "@/components/admin/StudyChecklist";
 import {
   DAILY_RULES,
@@ -11,7 +12,8 @@ import {
   TYPICAL_ERRORS,
   WEEK,
 } from "@/lib/self-study";
-import { requireAdmin } from "@/lib/session";
+import { canUseSelfStudy } from "@/lib/self-study-access";
+import { requireUser } from "@/lib/session";
 
 const TOC = [
   { id: "goal", label: "Цель" },
@@ -25,7 +27,9 @@ const TOC = [
 ];
 
 export default async function PlanPage() {
-  await requireAdmin();
+  // Раздел личный: только владельцу, а не всем администраторам
+  const user = await requireUser();
+  if (!canUseSelfStudy(user)) redirect("/dashboard");
 
   return (
     <div className="space-y-8">
@@ -33,7 +37,7 @@ export default async function PlanPage() {
         <h1 className="page-title">Мой английский: план роста</h1>
         <p className="mt-1 text-[14.5px] text-ink-500">
           Личный план преподавателя: от уровня между B2 и C1 к уверенному C1 с заделом на C2. Страница
-          видна только администратору.
+          видна только вам.
         </p>
       </div>
 

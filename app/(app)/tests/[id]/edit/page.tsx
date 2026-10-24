@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { TestBuilder } from "@/components/tests/TestBuilder";
 import { prisma } from "@/lib/prisma";
+import { canUseSelfStudy, SELF_STUDY_TEST_TITLES } from "@/lib/self-study-access";
 import { requireAdmin } from "@/lib/session";
 
 export default async function TestEditPage({
@@ -10,7 +11,7 @@ export default async function TestEditPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  await requireAdmin();
+  const user = await requireAdmin();
 
   const [test, lessons] = await Promise.all([
     prisma.test.findUnique({
@@ -33,7 +34,8 @@ export default async function TestEditPage({
     }),
   ]);
 
-  if (!test) notFound();
+  // личный тест открывается для правки только владельцу
+  if (!test || (SELF_STUDY_TEST_TITLES.includes(test.title) && !canUseSelfStudy(user))) notFound();
 
   return (
     <div className="space-y-5">

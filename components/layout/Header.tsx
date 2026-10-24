@@ -5,6 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { logoutAction } from "@/app/actions/auth";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
+import { canUseSelfStudy } from "@/lib/self-study-access";
 import type { SessionUser } from "@/lib/session";
 
 const NAV = [
@@ -216,7 +217,7 @@ export function Header({
                     <span aria-hidden>👤</span> Профиль
                   </Link>
 
-                  {isAdmin ? (
+                  {canUseSelfStudy(user) ? (
                     <Link
                       href="/plan"
                       prefetch

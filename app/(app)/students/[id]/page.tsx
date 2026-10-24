@@ -13,6 +13,7 @@ import { StudentProfile } from "@/components/students/StudentProfile";
 import { GradeForm } from "@/components/students/GradeForm";
 import { OgeAccessForm } from "@/components/oge/OgeAccessForm";
 import { OGE_VARIANTS } from "@/lib/oge";
+import { SELF_STUDY_TEST_TITLES } from "@/lib/self-study-access";
 import { TOTAL_MAX } from "@/lib/oge/scoring";
 import { STATUS_LABEL, STATUS_STYLE, summarize } from "@/lib/oge/summary";
 import { ConfirmSubmit } from "@/components/ui/ConfirmSubmit";
@@ -105,7 +106,11 @@ export default async function StudentPage({
   const assignedTestIds = assignedTests.map((item) => item.test.id);
 
   const availableTests = await prisma.test.findMany({
-    where: { id: { notIn: assignedTestIds.length ? assignedTestIds : ["-"] } },
+    where: {
+      id: { notIn: assignedTestIds.length ? assignedTestIds : ["-"] },
+      // личные тесты владельца раздела «Мой английский» ученикам не выдаются
+      NOT: { title: { in: SELF_STUDY_TEST_TITLES } },
+    },
     orderBy: { createdAt: "desc" },
     select: {
       id: true,

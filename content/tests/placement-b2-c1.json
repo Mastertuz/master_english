@@ -1,0 +1,480 @@
+{
+  "title": "Тест уровня B2–C1",
+  "description": "43 вопроса: грамматика и Use of English, словарь, идиомы, регистр и два коротких текста. Вопросы идут от уверенного B2 к C1. Результат: 0–17 — B2; 18–28 — уверенный B2 и переход к C1; 29–36 — C1; 37–43 — сильный C1 и выше.",
+  "level": "C1",
+  "questions": [
+    {
+      "text": "If I ___ you, I would accept the offer.",
+      "options": [
+        "were",
+        "am",
+        "would be",
+        "will be"
+      ],
+      "correct": 0,
+      "explanation": "Условное предложение 2-го типа: в нереальном условии после if используется were (If I were you…)."
+    },
+    {
+      "text": "She suggested ___ the meeting until next week.",
+      "options": [
+        "to postpone",
+        "that postponing",
+        "postponing",
+        "postpone"
+      ],
+      "correct": 2,
+      "explanation": "После suggest идёт -ing (suggested postponing) или that-клауза, но не инфинитив с to."
+    },
+    {
+      "text": "By the time we arrived, the film ___.",
+      "options": [
+        "has already started",
+        "already started",
+        "was already starting",
+        "had already started"
+      ],
+      "correct": 3,
+      "explanation": "Действие произошло раньше другого действия в прошлом (arrived) — Past Perfect."
+    },
+    {
+      "text": "I'd rather you ___ smoke in here.",
+      "options": [
+        "don't",
+        "didn't",
+        "won't",
+        "wouldn't"
+      ],
+      "correct": 1,
+      "explanation": "После I'd rather + подлежащее используется Past Simple, когда речь о настоящем или будущем: I'd rather you didn't."
+    },
+    {
+      "text": "He's the man ___ car was stolen last week.",
+      "options": [
+        "whom",
+        "who",
+        "whose",
+        "which"
+      ],
+      "correct": 2,
+      "explanation": "Whose выражает принадлежность: чья машина."
+    },
+    {
+      "text": "The report ___ by Friday, so please don't worry.",
+      "options": [
+        "is finishing",
+        "would have finished",
+        "will have finished",
+        "will have been finished"
+      ],
+      "correct": 3,
+      "explanation": "Будущее совершённое пассивное: отчёт будет закончен к пятнице (will have been finished)."
+    },
+    {
+      "text": "I wish I ___ more time to prepare yesterday.",
+      "options": [
+        "had had",
+        "had",
+        "would have",
+        "have had"
+      ],
+      "correct": 0,
+      "explanation": "Сожаление о прошлом: wish + Past Perfect (had had)."
+    },
+    {
+      "text": "You ___ have seen him at the party — he was in Paris that week.",
+      "options": [
+        "needn't",
+        "mustn't",
+        "shouldn't",
+        "can't"
+      ],
+      "correct": 3,
+      "explanation": "Невозможность в прошлом: can't have + V3 (не мог видеть)."
+    },
+    {
+      "text": "She apologised ___ late.",
+      "options": [
+        "of being",
+        "for being",
+        "to be",
+        "being"
+      ],
+      "correct": 1,
+      "explanation": "После apologise for идёт -ing: apologised for being late."
+    },
+    {
+      "text": "Not until I got home ___ that I'd lost my keys.",
+      "options": [
+        "realised I",
+        "I did realise",
+        "I realised",
+        "did I realise"
+      ],
+      "correct": 3,
+      "explanation": "После Not until в начале предложения — инверсия: did I realise."
+    },
+    {
+      "text": "The film was so boring that I ___ asleep.",
+      "options": [
+        "nearly fell",
+        "almost fallen",
+        "was nearly fall",
+        "nearly falling"
+      ],
+      "correct": 0,
+      "explanation": "Nearly + Past Simple: чуть не заснул."
+    },
+    {
+      "text": "Could you ___ me a favour?",
+      "options": [
+        "take",
+        "do",
+        "give",
+        "make"
+      ],
+      "correct": 1,
+      "explanation": "Устойчивое сочетание: do someone a favour."
+    },
+    {
+      "text": "I'm afraid I can't ___ up with his behaviour any longer.",
+      "options": [
+        "come",
+        "put",
+        "keep",
+        "take"
+      ],
+      "correct": 1,
+      "explanation": "Фразовый глагол put up with — мириться, терпеть."
+    },
+    {
+      "text": "We need to ___ the problem before it gets worse.",
+      "options": [
+        "hold",
+        "tackle",
+        "catch",
+        "reach"
+      ],
+      "correct": 1,
+      "explanation": "Tackle a problem — взяться за решение проблемы."
+    },
+    {
+      "text": "Despite ___ hard, she failed the exam.",
+      "options": [
+        "studying",
+        "she studied",
+        "of studying",
+        "to study"
+      ],
+      "correct": 0,
+      "explanation": "После despite — -ing или существительное, без of."
+    },
+    {
+      "text": "Hardly ___ the building when the alarm went off.",
+      "options": [
+        "we entered",
+        "we had entered",
+        "did we enter",
+        "had we entered"
+      ],
+      "correct": 3,
+      "explanation": "После Hardly в начале предложения — инверсия и Past Perfect: Hardly had we entered…"
+    },
+    {
+      "text": "I'd have called you if I ___ your number.",
+      "options": [
+        "had known",
+        "knew",
+        "have known",
+        "would know"
+      ],
+      "correct": 0,
+      "explanation": "Условное предложение 3-го типа: if + Past Perfect, would have + V3."
+    },
+    {
+      "text": "It's high time you ___ about your future.",
+      "options": [
+        "are thinking",
+        "thought",
+        "will think",
+        "think"
+      ],
+      "correct": 1,
+      "explanation": "It's high time + Past Simple: давно пора подумать."
+    },
+    {
+      "text": "The new law is expected ___ into force next month.",
+      "options": [
+        "coming",
+        "to come",
+        "that it comes",
+        "come"
+      ],
+      "correct": 1,
+      "explanation": "Конструкция is expected + to + V: ожидается, что закон вступит в силу."
+    },
+    {
+      "text": "She is said ___ five languages.",
+      "options": [
+        "that she speaks",
+        "to speak",
+        "to be spoken",
+        "speaking"
+      ],
+      "correct": 1,
+      "explanation": "Конструкция is said + to + V: говорят, что она знает пять языков."
+    },
+    {
+      "text": "Neither the manager nor the employees ___ aware of the change.",
+      "options": [
+        "has been",
+        "were",
+        "was",
+        "is"
+      ],
+      "correct": 1,
+      "explanation": "При neither…nor глагол согласуется с ближайшим подлежащим (employees — множественное): were."
+    },
+    {
+      "text": "Had it not been for your help, we ___ the deadline.",
+      "options": [
+        "would miss",
+        "would have missed",
+        "will miss",
+        "had missed"
+      ],
+      "correct": 1,
+      "explanation": "Инверсия вместо if в условном 3-го типа: Had it not been for… — would have + V3."
+    },
+    {
+      "text": "He insisted ___ paying for the meal.",
+      "options": [
+        "for",
+        "at",
+        "on",
+        "in"
+      ],
+      "correct": 2,
+      "explanation": "Insist on + -ing."
+    },
+    {
+      "text": "I'm not used to ___ so early.",
+      "options": [
+        "get up",
+        "getting up",
+        "be getting up",
+        "got up"
+      ],
+      "correct": 1,
+      "explanation": "Be used to + -ing: не привык вставать."
+    },
+    {
+      "text": "The task proved far ___ difficult than we had expected.",
+      "options": [
+        "more",
+        "most",
+        "much",
+        "the more"
+      ],
+      "correct": 0,
+      "explanation": "Сравнительная степень с усилением far: far more difficult than."
+    },
+    {
+      "text": "The plane failed to ___ off because of the fog.",
+      "options": [
+        "take",
+        "put",
+        "go",
+        "get"
+      ],
+      "correct": 0,
+      "explanation": "Take off — взлетать."
+    },
+    {
+      "text": "He showed great ___ in difficult circumstances.",
+      "options": [
+        "determined",
+        "determine",
+        "determinedly",
+        "determination"
+      ],
+      "correct": 3,
+      "explanation": "После great нужно существительное: determination."
+    },
+    {
+      "text": "Under no circumstances ___ the door open.",
+      "options": [
+        "you leave",
+        "leave you",
+        "you should leave",
+        "should you leave"
+      ],
+      "correct": 3,
+      "explanation": "После Under no circumstances — инверсия: should you leave."
+    },
+    {
+      "text": "The more you practise, ___ you will become.",
+      "options": [
+        "the more fluent",
+        "fluent",
+        "the most fluent",
+        "more fluent"
+      ],
+      "correct": 0,
+      "explanation": "Конструкция the more…, the more…: the more fluent."
+    },
+    {
+      "text": "The house, ___ roof was damaged in the storm, has been repaired.",
+      "options": [
+        "whose",
+        "of which",
+        "whom",
+        "which"
+      ],
+      "correct": 0,
+      "explanation": "Whose + существительное: чья крыша."
+    },
+    {
+      "text": "He denied ___ the money.",
+      "options": [
+        "take",
+        "taking",
+        "to take",
+        "having to take"
+      ],
+      "correct": 1,
+      "explanation": "После deny — -ing: denied taking."
+    },
+    {
+      "text": "Little ___ she know that a surprise party was being prepared.",
+      "options": [
+        "was",
+        "has",
+        "does",
+        "did"
+      ],
+      "correct": 3,
+      "explanation": "После Little в начале предложения — инверсия: Little did she know…"
+    },
+    {
+      "text": "It's not worth crying over spilt ___.",
+      "options": [
+        "milk",
+        "wine",
+        "water",
+        "tea"
+      ],
+      "correct": 0,
+      "explanation": "Идиома crying over spilt milk — переживать о том, что уже не исправить."
+    },
+    {
+      "text": "I'm feeling a bit under the ___ today.",
+      "options": [
+        "weather",
+        "cloud",
+        "sun",
+        "rain"
+      ],
+      "correct": 0,
+      "explanation": "Идиома under the weather — нездоровится."
+    },
+    {
+      "text": "To ___ the ice at the party, he told a joke.",
+      "options": [
+        "crack",
+        "melt",
+        "smash",
+        "break"
+      ],
+      "correct": 3,
+      "explanation": "Идиома break the ice — разрядить обстановку."
+    },
+    {
+      "text": "Which sentence is the most formal?",
+      "options": [
+        "Just wanted to check out the job thing.",
+        "I'm writing to ask about the job.",
+        "I am writing to enquire about the vacancy.",
+        "Can you tell me about the job?"
+      ],
+      "correct": 2,
+      "explanation": "Формальный регистр: полные формы (I am), enquire и vacancy вместо ask и job."
+    },
+    {
+      "text": "She has a reputation ___ being very strict.",
+      "options": [
+        "with",
+        "for",
+        "as",
+        "of"
+      ],
+      "correct": 1,
+      "explanation": "Reputation for + -ing."
+    },
+    {
+      "text": "He didn't turn up. He ___ the message.",
+      "options": [
+        "shouldn't get",
+        "needn't have got",
+        "mustn't have got",
+        "can't have got"
+      ],
+      "correct": 3,
+      "explanation": "Логичный вывод о прошлом: can't have got — вероятно, не получил."
+    },
+    {
+      "text": "I wish you ___ so loudly; I'm trying to concentrate.",
+      "options": [
+        "didn't talk",
+        "wouldn't talk",
+        "hadn't talked",
+        "won't talk"
+      ],
+      "correct": 1,
+      "explanation": "Wish + would выражает раздражение чужим поведением в настоящем."
+    },
+    {
+      "text": "The explanation was so ___ that nobody could understand it.",
+      "options": [
+        "concise",
+        "convoluted",
+        "explicit",
+        "lucid"
+      ],
+      "correct": 1,
+      "explanation": "Convoluted — запутанный: именно поэтому никто не понял. Остальные слова означают «чёткий, ясный»."
+    },
+    {
+      "text": "It's ___ that prices will rise again next year.",
+      "options": [
+        "casual",
+        "habitual",
+        "inevitable",
+        "eventual"
+      ],
+      "correct": 2,
+      "explanation": "Inevitable — неизбежный; остальные слова по смыслу не подходят."
+    },
+    {
+      "text": "The museum's director, who has been in post for only six months, has already announced sweeping changes, much to the dismay of long-serving staff. How do the long-serving staff feel?",
+      "options": [
+        "indifferent",
+        "grateful",
+        "dismayed",
+        "delighted"
+      ],
+      "correct": 2,
+      "explanation": "Much to the dismay of — к огорчению (долго работающих сотрудников)."
+    },
+    {
+      "text": "Contrary to popular belief, goldfish can remember things for months. What do many people believe about goldfish?",
+      "options": [
+        "They have very short memories.",
+        "They cannot swim well.",
+        "They are very intelligent.",
+        "They live for a very long time."
+      ],
+      "correct": 0,
+      "explanation": "Contrary to popular belief — вопреки распространённому мнению: люди думают, что у рыбок короткая память."
+    }
+  ]
+}
