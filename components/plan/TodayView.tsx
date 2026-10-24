@@ -2,15 +2,19 @@
 
 import Link from "next/link";
 import { useRef, useState } from "react";
+import { startPlanTrainingAction } from "@/app/actions/plan-words";
+import { SpeakButton } from "@/components/ui/SpeakButton";
+import { dayWords } from "@/lib/study/deck";
 import { drillById } from "@/lib/study/drills";
-import { WEEKS, dayPlan, type DayKind, type DayTask } from "@/lib/study/schedule";
+import { WEEKS, dayPlan as buildDayPlan, type DayKind, type DayTask } from "@/lib/study/schedule";
 import { speakingTask } from "@/lib/study/speaking";
+import { UNITS } from "@/lib/study/units";
+import { VIDEOS } from "@/lib/study/videos";
 import {
   addDays,
   diffDays,
   exportState,
   importState,
-  mondayOf,
   todayIso,
   useHydrated,
   useStudy,
@@ -18,7 +22,8 @@ import {
   type StudyState,
 } from "./study-store";
 
-const SHORT_DAYS = ["ПН", "ВТ", "СР", "ЧТ", "ПТ", "СБ", "ВС"];
+const wordCount = (week: number, day: number) => dayWords(week, day, UNITS).length;
+const dayPlan = (week: (typeof WEEKS)[number], day: number) => buildDayPlan(week, day, wordCount);
 
 const ICONS: Record<DayKind, string> = {
   cards: "🗂",
@@ -71,19 +76,18 @@ function streak(state: StudyState, today: string): number {
 function StartCard() {
   const [, update] = useStudy();
   const today = todayIso();
-  // С четверга по воскресенье проще начать с ближайшего понедельника, чем с уже прошедшей недели
-  const [date, setDate] = useState(() => (diffDays(mondayOf(today), today) >= 3 ? addDays(mondayOf(today), 7) : today));
+  const [date, setDate] = useState(today);
 
   function start() {
-    update((old) => ({ ...old, startDate: mondayOf(date) }));
+    update((old) => ({ ...old, startDate: date }));
   }
 
   return (
     <section className="card mx-auto max-w-xl space-y-4 p-6">
       <h2 className="text-[20px] font-semibold text-ink-900">Начать план на 24 недели</h2>
       <p className="text-[14.5px] leading-relaxed text-ink-700">
-        Выберите дату старта. Неделя плана считается с понедельника, поэтому начало сдвинется на понедельник выбранной недели. Сегодняшний день, список заданий
-        на неделю и прогресс будут считаться отсюда.
+        Выберите день, который станет «Днём 1». План не привязан к дням недели: у каждого из 168 дней своя задача, и день 1 начинается с той даты, которую вы выберете.
+        Проще всего начать сегодня.
       </p>
       <label className="block">
         <span className="text-[13px] text-ink-500">Дата старта</span>
@@ -120,9 +124,9 @@ function Backup() {
   }
 
   function changeStart() {
-    const value = window.prompt("Новая дата старта (ГГГГ-ММ-ДД). Прогресс останется, но недели пересчитаются.");
+    const value = window.prompt("Новая дата первого дня (ГГГГ-ММ-ДД). Прогресс останется, но дни пересчитаются.");
     if (value && /^\d{4}-\d{2}-\d{2}$/.test(value)) {
-      update((old) => ({ ...old, startDate: mondayOf(value) }));
+      update((old) => ({ ...old, startDate: value }));
     }
   }
 
@@ -141,8 +145,11 @@ function Backup() {
           <button type="button" onClick={() => input.current?.click()} className="btn-ghost btn-sm">
             ⬆ Загрузить копию
           </button>
+          <button type="button" onClick={() => update((old) => ({ ...old, startDate: todayIso() }))} className="btn-ghost btn-sm">
+            ▶ Сегодня — день 1
+          </button>
           <button type="button" onClick={changeStart} className="btn-ghost btn-sm">
-            📅 Изменить дату старта
+            📅 Изменить дату первого дня
           </button>
           <input ref={input} type="file" accept="application/json" hidden onChange={(event) => upload(event.target.files?.[0])} />
         </div>
@@ -150,6 +157,55 @@ function Backup() {
         <p className="text-[12.5px] text-ink-500">Записи голоса в копию не входят: они лежат в браузере отдельно.</p>
       </div>
     </details>
+  );
+}
+
+function WordsList({ info }: { info: NonNullable<DayTask["words"]> }) {
+  const seen = new Set<string>();
+  const cards = [];
+  for (let day = info.fromDay; day <= info.day; day += 1) {
+    for (const card of dayWords(info.week, day, UNITS)) {
+      if (!seen.has(card.id)) {
+        seen.add(card.id);
+        cards.push(card);
+      }
+    }
+  }
+  const hasDefinitions = cards.some((card) => card.definition);
+
+  return (
+    <div className="mt-3 space-y-3">
+      <ul className="divide-y divide-ink-100 rounded-xl border border-ink-200 bg-white">
+        {cards.map((card) => (
+          <li key={card.id} className="flex items-start gap-3 px-3 py-2.5">
+            <SpeakButton text={card.en.replace(/\s*\/\s*/g, ", ")} />
+            <div className="min-w-0">
+              <p className="text-[15px] font-medium text-ink-900">
+                {card.en} <span className="font-normal text-ink-500">— {card.ru}</span>
+              </p>
+              {card.example ? <p className="text-[13.5px] italic text-ink-500">{card.example}</p> : null}
+            </div>
+          </li>
+        ))}
+      </ul>
+      <div className="flex flex-wrap gap-2">
+        <form action={startPlanTrainingAction.bind(null, info.week, info.fromDay, info.day, "translate")}>
+          <button type="submit" className="btn-primary btn-sm">
+            ▶ Тренировать: слово и перевод
+          </button>
+        </form>
+        {hasDefinitions ? (
+          <form action={startPlanTrainingAction.bind(null, info.week, info.fromDay, info.day, "definition")}>
+            <button type="submit" className="btn-ghost btn-sm">
+              💡 Тренировать: слово по определению
+            </button>
+          </form>
+        ) : null}
+      </div>
+      <p className="text-[12.5px] text-ink-400">
+        Слова попадают в ваш словарь и открываются в обычном тренажёре сайта: ответы проверяются, ошибки учитываются в статистике.
+      </p>
+    </div>
   );
 }
 
@@ -172,14 +228,31 @@ function TaskRow({ task, done, auto, onToggle }: { task: DayTask; done: boolean;
           {task.title}
         </p>
         {task.detail ? <p className="mt-0.5 text-[13.5px] leading-relaxed text-ink-600">{task.detail}</p> : null}
-        <p className="mt-1 text-[12.5px] text-ink-400">
+        {task.steps ? (
+          <ol className="mt-2 list-decimal space-y-0.5 pl-5 text-[13.5px] leading-relaxed text-ink-700">
+            {task.steps.map((step) => (
+              <li key={step}>{step}</li>
+            ))}
+          </ol>
+        ) : null}
+        {task.words ? <WordsList info={task.words} /> : null}
+        <p className="mt-1.5 text-[12.5px] text-ink-400">
           ≈ {task.minutes} мин{auto ? " · выполнено на платформе" : ""}
         </p>
       </div>
-      {task.href ? (
-        <Link href={task.href} className={`${done ? "btn-ghost" : "btn-primary"} btn-sm shrink-0`}>
-          {done ? "Открыть снова" : "Открыть"}
-        </Link>
+      {task.href || task.external ? (
+        <div className="flex shrink-0 flex-col gap-2">
+          {task.href ? (
+            <Link href={task.href} className={`${done ? "btn-ghost" : "btn-primary"} btn-sm`}>
+              {done ? "Открыть снова" : "Открыть задание"}
+            </Link>
+          ) : null}
+          {task.external ? (
+            <a href={task.external.href} target="_blank" rel="noopener noreferrer" className="btn-ghost btn-sm">
+              ↗ {task.external.label}
+            </a>
+          ) : null}
+        </div>
       ) : null}
     </li>
   );
@@ -202,8 +275,8 @@ export function TodayView() {
         <section className="card space-y-3 p-6">
           <h1 className="text-[20px] font-semibold text-ink-900">План начнётся {new Date(state.startDate).toLocaleDateString("ru-RU")}</h1>
           <p className="text-[14.5px] text-ink-700">Хотите начать сегодня?</p>
-          <button type="button" onClick={() => update((old) => ({ ...old, startDate: mondayOf(today) }))} className="btn-primary self-start">
-            Начать с этой недели
+          <button type="button" onClick={() => update((old) => ({ ...old, startDate: today }))} className="btn-primary self-start">
+            Начать сегодня (день 1)
           </button>
         </section>
         <Backup />
@@ -266,7 +339,7 @@ export function TodayView() {
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
           <p className="text-[13px] font-medium uppercase tracking-wide text-brand-700">
-            Неделя {weekNo} из {WEEKS.length}
+            Сегодня день {Math.max(1, diffDays(state.startDate, today) + 1)} из {WEEKS.length * 7} · неделя {weekNo} из {WEEKS.length}
           </p>
           <h1 className="page-title">{week.title}</h1>
           <p className="mt-1 max-w-3xl text-[14.5px] leading-relaxed text-ink-600">{week.focus}</p>
@@ -300,7 +373,7 @@ export function TodayView() {
               }`}
             >
               <span className="text-[13px] font-semibold">
-                {SHORT_DAYS[index]}
+                День {plan.number}
                 {date === today ? " · сегодня" : ""}
               </span>
               <span className={`text-[12px] ${active ? "text-white/80" : "text-ink-500"}`}>{plan.focus}</span>
@@ -315,7 +388,7 @@ export function TodayView() {
       <section className="space-y-3">
         <div className="flex flex-wrap items-baseline justify-between gap-2">
           <h2 className="text-xl font-semibold text-ink-900">
-            {day.name}, {new Date(dayDate).toLocaleDateString("ru-RU", { day: "numeric", month: "long" })}: {day.focus}
+            {day.name} · {new Date(dayDate).toLocaleDateString("ru-RU", { weekday: "long", day: "numeric", month: "long" })}: {day.focus}
           </h2>
           <p className="text-[13.5px] text-ink-500">
             Сделано {doneCount} из {day.tasks.length} · ≈ {doneMinutes} из {totalMinutes} мин
@@ -338,6 +411,12 @@ export function TodayView() {
             <Link href={`/plan/units/${week.unit}`} className="rounded-xl border border-ink-200 p-3 hover:border-brand-300">
               <p className="text-[12.5px] text-ink-500">Юнит</p>
               <p className="text-[14.5px] font-medium text-ink-900">Empower C1, юнит {week.unit}</p>
+            </Link>
+          ) : null}
+          {VIDEOS[week.n] ? (
+            <Link href={`/plan/video/${VIDEOS[week.n].id}`} className="rounded-xl border border-ink-200 p-3 hover:border-brand-300">
+              <p className="text-[12.5px] text-ink-500">Видео недели</p>
+              <p className="text-[14.5px] font-medium text-ink-900">{VIDEOS[week.n].title}</p>
             </Link>
           ) : null}
           {week.drills.map((id) => (

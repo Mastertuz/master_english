@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import type { WritingTask } from "@/lib/study/types";
 import { clock } from "./LocalRecorder";
+import { SubmitForReview } from "./SubmitForReview";
 import { todayIso, useHydrated, useStudy } from "./study-store";
 import { useCountdown } from "./useCountdown";
 
@@ -156,6 +157,15 @@ function Editor({ task, initial }: { task: WritingTask; initial: string }) {
           Совет: найденные ошибки добавьте в «Журнал ошибок» (кнопка «Добавить свою ошибку»), чтобы они возвращались на повторение.
         </p>
       </section>
+
+      <SubmitForReview
+        taskId={task.id}
+        title={task.title}
+        prompt={task.task}
+        text={text}
+        kind="writing"
+        minWords={Math.round(target * 0.6)}
+      />
 
       {task.sample ? (
         <section className="card space-y-3 p-5">

@@ -1,6 +1,7 @@
 import { drillById } from "./drills";
 import { speakingTask } from "./speaking";
 import { unitByNumber } from "./units";
+import { VIDEOS } from "./videos";
 import { weeklyWriting } from "./writing";
 
 /**
@@ -32,9 +33,15 @@ export type DayTask = {
   href?: string;
   /** Ключ в state.done: когда задание выполнено на платформе, оно отмечается само */
   auto?: string;
+  /** Внешняя ссылка (открывается в новой вкладке), например видео */
+  external?: { label: string; href: string };
+  /** Слова дня: показываются списком, а тренировка запускается кнопками */
+  words?: { week: number; day: number; fromDay: number };
+  /** Шаги задания списком: что именно сделать по порядку */
+  steps?: string[];
 };
 
-export type DayPlan = { name: string; focus: string; tasks: DayTask[] };
+export type DayPlan = { number: number; name: string; focus: string; tasks: DayTask[] };
 
 export type WeekPlan = {
   n: number;
@@ -51,7 +58,16 @@ export type WeekPlan = {
   immersion: string;
 };
 
-export const DAY_NAMES = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"];
+/** Ритм недели: у каждого из семи дней своя задача, независимо от дня календаря */
+export const DAY_FOCUS = [
+  "Грамматика и словарь",
+  "Аудирование",
+  "Говорение",
+  "Чтение и словарь",
+  "Письмо",
+  "Видео и погружение",
+  "Повторение",
+];
 
 type Half = {
   drills: [string, string];
@@ -302,7 +318,7 @@ function drillTask(id: string, slot: string, minutes = 15): DayTask {
     id: `${slot}-drill-${id}`,
     kind: "drill",
     title: drill ? `Упражнения: ${drill.title}` : "Упражнения",
-    detail: "Прочитайте правило и пройдите 12 заданий. Ошибки сами попадут в журнал.",
+    detail: "Прочитайте правило, пройдите задания. Ошибки сами попадут в журнал ошибок.",
     minutes,
     href: `/plan/grammar/${id}`,
   };
@@ -314,330 +330,325 @@ function speakTask(id: string, slot: string): DayTask {
     id: `${slot}-speak-${id}`,
     kind: "speak",
     title: task ? `Говорение: ${task.title}` : "Говорение",
-    detail: task ? `Запись примерно ${task.minutes} мин, затем самопроверка и образец.` : undefined,
+    detail: task
+      ? `Прочитайте задание, подготовьтесь ${task.prepSec ? `${task.prepSec} секунд` : "без подготовки"}, запишите ответ примерно на ${task.minutes} мин, прослушайте и отметьте самопроверку.`
+      : undefined,
     minutes: SPEAK_MIN,
     href: `/plan/speaking/${id}`,
     auto: `sp:${id}`,
   };
 }
 
-const CARDS = (slot: string): DayTask => ({
-  id: `${slot}-cards`,
-  kind: "cards",
-  title: "Карточки: слова и фразы",
-  detail: "Повторение по интервалам: новые и просроченные карточки.",
-  minutes: 10,
-  href: "/plan/vocab",
-});
+/** Слова дня: тренировка на основном сайте (translate / definition) */
+function wordsTask(week: number, dayIndex: number, slot: string, count: number): DayTask {
+  const review = dayIndex >= 6;
+  return {
+    id: `${slot}-words`,
+    kind: "cards",
+    title: review ? `Слова недели: повторение (${count})` : `Слова дня: ${count} новых`,
+    detail: review
+      ? "Повторите все слова недели в тренажёре: перевод, потом определение."
+      : "Прочитайте слова, послушайте произношение и потренируйтесь в тренажёре: перевод в обе стороны и определение по-английски.",
+    minutes: 10,
+    words: { week, day: dayIndex, fromDay: review ? 0 : dayIndex },
+  };
+}
 
 const ERRORS = (slot: string, minutes = 10): DayTask => ({
   id: `${slot}-errors`,
   kind: "errors",
   title: "Журнал ошибок: повторить то, что пора",
+  detail: "Откройте журнал и нажмите «Повторить сейчас». Если пусто, пройдите любое упражнение по грамматике.",
   minutes,
   href: "/plan/errors",
 });
 
-/** Расписание дня: dayIndex 0 — понедельник */
-export function dayPlan(week: WeekPlan, dayIndex: number): DayPlan {
+function videoTask(week: WeekPlan, slot: string): DayTask | null {
+  const video = VIDEOS[week.n];
+  if (!video) return null;
+  return {
+    id: `${slot}-video`,
+    kind: "immerse",
+    title: `Видео: «${video.title}», ${video.speaker}`,
+    detail: `${video.why} Посмотрите с английскими субтитрами, выпишите фразы, напишите краткое содержание (100–130 слов) и отправьте на проверку.`,
+    minutes: 50,
+    href: `/plan/video/${video.id}`,
+    auto: `vd:${video.id}`,
+    external: { label: "Открыть видео на TED", href: video.url },
+    steps: [
+      "Посмотрите доклад целиком с английскими субтитрами",
+      "Посмотрите второй раз и выпишите 5–8 фраз",
+      "Закройте видео и напишите краткое содержание 100–130 слов своими словами",
+      "Ответьте вслух на три вопроса под видео (запись)",
+      "Отправьте текст на проверку: кнопка внизу страницы задания",
+    ],
+  };
+}
+
+/** Расписание дня: dayIndex 0 — первый день недели (день 1, 8, 15…) */
+export function dayPlan(week: WeekPlan, dayIndex: number, wordCount?: (week: number, day: number) => number): DayPlan {
   const slot = `w${week.n}-d${dayIndex}`;
+  const number = (week.n - 1) * 7 + dayIndex + 1;
+  const words = wordsTask(week.n, dayIndex, slot, wordCount ? wordCount(week.n, dayIndex) : 3);
   const unit = week.unit ? unitByNumber(week.unit) : undefined;
   const first = week.half === 1;
-  const lessons = unit ? unit.lessons : [];
-  const byId = (id: string) => lessons.find((item) => item.id === id);
+  const byId = (id: string) => unit?.lessons.find((item) => item.id === id);
   const trackFor = (position: number) => unit?.tracks[position];
   const unitHref = unit ? `/plan/units/${unit.n}` : "/plan/units";
+  const focus = DAY_FOCUS[dayIndex];
+  const name = `День ${number}`;
+  const done = (tasks: (DayTask | null)[]) => ({ number, name, focus, tasks: tasks.filter(Boolean) as DayTask[] });
 
-  // Недели вне юнитов: диагностика и экзаменный режим
-  if (!unit) return specialDay(week, dayIndex, slot);
-
-  const lessonLabel = (ids: string[]) =>
-    ids
-      .map((id) => byId(id))
-      .filter(Boolean)
-      .map((lesson) => `${lesson!.id} (${lesson!.pages})`)
-      .join(", ");
+  if (!unit) return specialDay(week, dayIndex, slot, words, number, name, focus);
 
   switch (dayIndex) {
     case 0: {
-      const mainLesson = first ? byId(`${unit.n}A`) : byId(`${unit.n}C`);
-      return {
-        name: DAY_NAMES[0],
-        focus: "Грамматика и словарь",
-        tasks: [
-          CARDS(slot),
-          {
-            id: `${slot}-book`,
-            kind: "book",
-            title: `Empower C1 · урок ${mainLesson?.id}: ${mainLesson?.title}`,
-            detail: `Откройте Student's Book, ${mainLesson?.pages}. ${mainLesson?.grammar ? `Грамматика: ${mainLesson.grammar}. ` : ""}Сделайте упражнения урока (ключей в Student's Book нет, поэтому грамматику закрепите упражнениями на платформе).`,
-            minutes: 25,
-            href: unitHref,
-          },
-          drillTask(week.drills[0], slot),
-        ],
-      };
+      const lesson = first ? byId(`${unit.n}A`) : byId(`${unit.n}C`);
+      return done([
+        words,
+        {
+          id: `${slot}-book`,
+          kind: "book",
+          title: `Empower C1, урок ${lesson?.id}: ${lesson?.title}`,
+          detail: `Student's Book, ${lesson?.pages}. ${lesson?.grammar ? `${lesson.grammar}. ` : ""}Прочитайте тексты и сделайте все упражнения урока. Ключей в книге нет, поэтому грамматику закрепите упражнением ниже.`,
+          minutes: 30,
+          href: unitHref,
+          steps: [
+            `Откройте Student's Book на ${lesson?.pages}`,
+            "Сделайте упражнения по порядку, слова подчёркивайте карандашом",
+            "Добавьте в слова дня три фразы, которые вам пригодятся (запишите их в заметках)",
+          ],
+        },
+        drillTask(week.drills[0], slot),
+      ]);
     }
     case 1: {
       const track = first ? trackFor(0) : trackFor(2);
-      return {
-        name: DAY_NAMES[1],
-        focus: "Аудирование",
-        tasks: [
-          CARDS(slot),
-          {
-            id: `${slot}-listen`,
-            kind: "listen",
-            title: track ? `Запись ${track.track.replace("-", ".")}: ${track.title}` : "Аудирование",
-            detail: "Сначала слушайте без текста и отвечайте на вопросы. Потом читайте текст и повторяйте фразы вслух. В конце перескажите запись.",
-            minutes: 30,
-            href: `${unitHref}#track-${track?.track}`,
-            auto: track ? `ls:${track.track}` : undefined,
-          },
-        ],
-      };
+      return done([
+        words,
+        {
+          id: `${slot}-listen`,
+          kind: "listen",
+          title: track ? `Запись ${track.track.replace("-", ".")}: ${track.title}` : "Аудирование",
+          detail: `${track?.where ?? ""}. Сначала слушайте без текста и отвечайте на вопросы, потом читайте текст и повторяйте фразы вслух, в конце перескажите запись.`,
+          minutes: 35,
+          href: `${unitHref}#track-${track?.track}`,
+          auto: track ? `ls:${track.track}` : undefined,
+          steps: [
+            "Послушайте запись один раз без текста и ответьте на вопросы",
+            "Откройте текст и послушайте ещё раз, следя глазами",
+            "Выберите 3 фразы и повторите их вслух с повтором ⟳",
+            "Перескажите запись за 1–2 минуты (запись голоса)",
+          ],
+        },
+      ]);
     }
     case 2:
-      return {
-        name: DAY_NAMES[2],
-        focus: "Говорение",
-        tasks: [CARDS(slot), speakTask(week.speaking[0], slot), speakTask(week.speaking[1], `${slot}b`)],
-      };
+      return done([words, speakTask(week.speaking[0], slot), speakTask(week.speaking[1], `${slot}b`)]);
     case 3: {
-      const mainLesson = first ? byId(`${unit.n}B`) : byId(`${unit.n}D`);
-      return {
-        name: DAY_NAMES[3],
-        focus: "Чтение и словарь",
-        tasks: [
-          CARDS(slot),
-          {
-            id: `${slot}-read`,
-            kind: "read",
-            title: `Чтение: ${week.reading ?? "статья урока"}`,
-            detail: `Empower C1, урок ${mainLesson?.id}, ${mainLesson?.pages}. Прочитайте текст, сделайте задания и выпишите 5 фраз (с примером) в «Слова» или в журнал.`,
-            minutes: 25,
-          },
-          ...(week.viu
-            ? [
-                {
-                  id: `${slot}-viu`,
-                  kind: "book" as const,
-                  title: `Vocabulary in Use: юнит ${week.viu.unit} «${week.viu.title}»`,
-                  detail: `PDF, стр. ${week.viu.pdf}. Левая страница: слова и фразы, правая: упражнения; ответы сверьте по Answer key.`,
-                  minutes: 20,
-                },
-              ]
-            : []),
-          drillTask(week.drills[1], slot, 10),
-        ],
-      };
+      const lesson = first ? byId(`${unit.n}B`) : byId(`${unit.n}D`);
+      return done([
+        words,
+        {
+          id: `${slot}-read`,
+          kind: "read",
+          title: `Чтение: ${week.reading ?? "статья урока"}`,
+          detail: `Empower C1, урок ${lesson?.id}, ${lesson?.pages}. Прочитайте текст, сделайте задания и выпишите 5 фраз с примером.`,
+          minutes: 25,
+          href: unitHref,
+        },
+        ...(week.viu
+          ? [
+              {
+                id: `${slot}-viu`,
+                kind: "book" as const,
+                title: `Vocabulary in Use: юнит ${week.viu.unit} «${week.viu.title}»`,
+                detail: `PDF «English Vocabulary in Use Upper-Intermediate», стр. ${week.viu.pdf}. Слева слова и фразы, справа упражнения; ответы сверьте в Answer key в конце книги.`,
+                minutes: 20,
+              },
+            ]
+          : []),
+        drillTask(week.drills[1], slot, 10),
+      ]);
     }
     case 4: {
       const track = unit.tracks[first ? 0 : 1];
       const task = first ? weeklyWriting(week.n, track?.title ?? unit.title) : unit.writing;
-      return {
-        name: DAY_NAMES[4],
-        focus: "Письмо",
-        tasks: [
-          CARDS(slot),
-          {
-            id: `${slot}-write`,
-            kind: "write",
-            title: `${first ? "Короткий текст" : "Письмо"}: ${task.title}`,
-            detail: `${task.type}, ${task.words}. Пишите на платформе, без словаря, затем проверьте по списку и сравните с образцом.`,
-            minutes: first ? 25 : 40,
-            href: `/plan/writing/${task.id}`,
-            auto: `wr:${task.id}`,
-          },
-          ERRORS(slot, 5),
-        ],
-      };
+      return done([
+        words,
+        {
+          id: `${slot}-write`,
+          kind: "write",
+          title: `${first ? "Короткий текст" : "Письмо"}: ${task.title}`,
+          detail: `${task.type}, ${task.words}. Пишите на платформе без словаря, проверьте по списку и отправьте на проверку.`,
+          minutes: first ? 25 : 40,
+          href: `/plan/writing/${task.id}`,
+          auto: `wr:${task.id}`,
+          steps: [
+            "Прочитайте задание и план",
+            "Напишите текст за отведённое время без словаря",
+            "Проверьте по списку и отправьте на проверку",
+          ],
+        },
+        ERRORS(slot, 5),
+      ]);
     }
     case 5: {
       const track = trackFor(1);
-      return {
-        name: DAY_NAMES[5],
-        focus: "Погружение",
-        tasks: [
-          {
-            id: `${slot}-shadow`,
-            kind: "listen",
-            title: track ? `Шэдоуинг: запись ${track.track.replace("-", ".")}, «${track.title}»` : "Шэдоуинг",
-            detail: "Прослушайте две-три фразы из записи и повторяйте за диктором с повтором фразы (значок ⟳), пока не получится в том же темпе.",
-            minutes: 15,
-            href: `${unitHref}#track-${track?.track}`,
-          },
-          {
-            id: `${slot}-immerse`,
-            kind: "immerse",
-            title: "Свободное погружение",
-            detail: week.immersion,
-            minutes: 45,
-          },
-          {
-            id: `${slot}-talk`,
-            kind: "speak",
-            title: "Разговор на английском",
-            detail: "Урок с учеником целиком на английском или разговор с партнёром (italki, друг): 30 минут. Запомните три фразы, которых не хватило.",
-            minutes: 30,
-          },
-        ],
-      };
+      return done([
+        words,
+        videoTask(week, slot),
+        {
+          id: `${slot}-shadow`,
+          kind: "listen",
+          title: track ? `Шэдоуинг: запись ${track.track.replace("-", ".")}, «${track.title}»` : "Шэдоуинг",
+          detail: "Выберите отрывок на 30–60 секунд и повторяйте за диктором вслух с повтором фразы, пока не получится в том же темпе. 10–15 минут.",
+          minutes: 15,
+          href: `${unitHref}#track-${track?.track}`,
+        },
+        {
+          id: `${slot}-talk`,
+          kind: "speak",
+          title: "Разговор на английском (30 минут)",
+          detail: "Урок с учеником целиком на английском или разговор с партнёром (italki, друг). Запишите три фразы, которых не хватило.",
+          minutes: 30,
+        },
+      ]);
     }
     default:
-      return {
-        name: DAY_NAMES[6],
-        focus: "Повторение и планирование",
-        tasks: [
-          ERRORS(slot, 20),
-          speakTask(week.speaking[2], slot),
-          {
-            id: `${slot}-plan`,
-            kind: "review",
-            title: "Итог недели и план следующей",
-            detail: `Просмотрите «Журнал ошибок» и список слов недели. ${lessonLabel(first ? [`${unit.n}A`, `${unit.n}B`] : [`${unit.n}C`, `${unit.n}D`, "R"])}: если что-то не доделали, перенесите на следующую неделю.`,
-            minutes: 10,
-            href: "/plan/today",
-          },
-        ],
-      };
+      return done([
+        words,
+        ERRORS(slot, 20),
+        speakTask(week.speaking[2], slot),
+        {
+          id: `${slot}-plan`,
+          kind: "review",
+          title: "Итог недели",
+          detail: `Просмотрите журнал ошибок и слова недели. Что не доделали, перенесите на следующую неделю.${week.n < 24 ? ` Завтра начинается неделя ${week.n + 1}.` : ""}`,
+          minutes: 10,
+          href: "/plan/today",
+        },
+      ]);
   }
 }
 
-function specialDay(week: WeekPlan, dayIndex: number, slot: string): DayPlan {
+function specialDay(
+  week: WeekPlan,
+  dayIndex: number,
+  slot: string,
+  words: DayTask,
+  number: number,
+  name: string,
+  focus: string,
+): DayPlan {
   const diagnostic = week.n === 1;
   const final = week.n === 24;
+  const done = (tasks: (DayTask | null)[]) => ({ number, name, focus, tasks: tasks.filter(Boolean) as DayTask[] });
 
   switch (dayIndex) {
     case 0:
-      return {
-        name: DAY_NAMES[0],
-        focus: diagnostic ? "Разобрать ошибки теста" : "Грамматика",
-        tasks: [
-          CARDS(slot),
-          diagnostic
-            ? {
-                id: `${slot}-test`,
-                kind: "test",
-                title: "Разбор теста B2–C1",
-                detail: "Если ещё не прошли тест, пройдите (43 вопроса). Затем прочитайте объяснения ко всем ошибкам и добавьте их в журнал.",
-                minutes: 30,
-                href: "/plan#tests",
-              }
-            : drillTask(week.drills[0], slot, 25),
-          drillTask(diagnostic ? week.drills[0] : week.drills[1], `${slot}b`),
-        ],
-      };
+      return done([
+        words,
+        diagnostic
+          ? {
+              id: `${slot}-test`,
+              kind: "test",
+              title: "Тест B2–C1: разбор ошибок",
+              detail: "Если ещё не прошли тест, пройдите (43 вопроса). Потом перенесите свои ошибки в журнал: кнопка «Добавить мои 12 ошибок из теста».",
+              minutes: 30,
+              href: "/plan#tests",
+              steps: ["Пройдите тест или откройте результат", "Прочитайте объяснение к каждой ошибке", "Откройте журнал ошибок и добавьте 12 ошибок из теста"],
+            }
+          : drillTask(week.drills[0], slot, 25),
+        drillTask(diagnostic ? week.drills[0] : week.drills[1], `${slot}b`),
+      ]);
     case 1:
-      return {
-        name: DAY_NAMES[1],
-        focus: "Аудирование",
-        tasks: [
-          CARDS(slot),
-          {
-            id: `${slot}-listen`,
-            kind: "listen",
-            title: diagnostic ? "Первое знакомство: запись 1.06 с интервью" : "Повторите записи, где у вас было меньше всего верных ответов",
-            detail: diagnostic
-              ? "Послушайте запись из юнита 1 сначала без текста, потом с текстом."
-              : "Откройте любой юнит и снова пройдите запись, в которой были ошибки. Цель: ответить без подсказок.",
-            minutes: 30,
-            href: diagnostic ? "/plan/units/1#track-01-06" : "/plan/units",
-          },
-        ],
-      };
+      return done([
+        words,
+        {
+          id: `${slot}-listen`,
+          kind: "listen",
+          title: diagnostic ? "Знакомство с записями: запись 1.06, интервью" : "Повторите записи с наименьшим результатом",
+          detail: diagnostic
+            ? "Послушайте запись из юнита 1 сначала без текста, потом с текстом, и ответьте на вопросы."
+            : "Откройте юнит и пройдите запись, в которой было меньше всего верных ответов. Цель: ответить без подсказок.",
+          minutes: 30,
+          href: diagnostic ? "/plan/units/1#track-01-06" : "/plan/units",
+          auto: diagnostic ? "ls:01-06" : undefined,
+        },
+      ]);
     case 2:
-      return {
-        name: DAY_NAMES[2],
-        focus: "Говорение",
-        tasks: [CARDS(slot), speakTask(week.speaking[0], slot), speakTask(week.speaking[1], `${slot}b`)],
-      };
+      return done([words, speakTask(week.speaking[0], slot), speakTask(week.speaking[1], `${slot}b`)]);
     case 3:
-      return {
-        name: DAY_NAMES[3],
-        focus: "Чтение",
-        tasks: [
-          CARDS(slot),
-          {
-            id: `${slot}-read`,
-            kind: "read",
-            title: diagnostic ? "Статья для чтения: Guardian Long Read или BBC Future" : "Reading and Use of English: тренировка в экзаменном темпе",
-            detail: diagnostic
-              ? "Одна статья 1000–1500 слов; выпишите 5 естественных выражений."
-              : "Если есть сборник Cambridge C1 Advanced, сделайте Reading and Use of English за 90 минут; иначе возьмите длинную статью и ответьте на вопросы к ней.",
-            minutes: diagnostic ? 30 : 60,
-          },
-          drillTask(week.drills[2] ?? week.drills[0], slot, 15),
-        ],
-      };
+      return done([
+        words,
+        {
+          id: `${slot}-read`,
+          kind: "read",
+          title: diagnostic ? "Статья для чтения: The Guardian Long Read или BBC Future" : "Reading and Use of English: тренировка в экзаменном темпе",
+          detail: diagnostic
+            ? "Выберите одну статью на 1000–1500 слов по теме, которая вам интересна. Выпишите 5 естественных выражений."
+            : "Если есть сборник Cambridge C1 Advanced, сделайте Reading and Use of English за 90 минут. Иначе возьмите длинную статью и ответьте на вопросы к ней.",
+          minutes: diagnostic ? 30 : 60,
+        },
+        drillTask(week.drills[2] ?? week.drills[0], slot, 15),
+      ]);
     case 4: {
-      const task = diagnostic ? { id: "w-diag", title: "Диагностическое эссе", type: "Opinion essay", words: "220–260 слов" } : final ? { id: "w-final", title: "Итоговое эссе", type: "Discussion essay", words: "240–280 слов" } : { id: "w-u5", title: "Эссе-мнение (повторить за время)", type: "Opinion essay", words: "250–280 слов" };
-      return {
-        name: DAY_NAMES[4],
-        focus: "Письмо",
-        tasks: [
-          CARDS(slot),
-          {
-            id: `${slot}-write`,
-            kind: "write",
-            title: `${task.title}`,
-            detail: `${task.type}, ${task.words}. Ровно 40 минут, без словаря.${final ? " Затем сравните с эссе недели 1." : ""}`,
-            minutes: 45,
-            href: `/plan/writing/${task.id}`,
-            auto: `wr:${task.id}`,
-          },
-          ERRORS(slot, 5),
-        ],
-      };
+      const task = diagnostic
+        ? { id: "w-diag", title: "Диагностическое эссе", type: "Opinion essay", words: "220–260 слов" }
+        : final
+          ? { id: "w-final", title: "Итоговое эссе", type: "Discussion essay", words: "240–280 слов" }
+          : { id: "w-u5", title: "Эссе-мнение: повторите за время", type: "Opinion essay", words: "250–280 слов" };
+      return done([
+        words,
+        {
+          id: `${slot}-write`,
+          kind: "write",
+          title: task.title,
+          detail: `${task.type}, ${task.words}. Ровно 40 минут, без словаря.${final ? " Потом сравните с эссе недели 1." : ""} Отправьте на проверку.`,
+          minutes: 45,
+          href: `/plan/writing/${task.id}`,
+          auto: `wr:${task.id}`,
+        },
+        ERRORS(slot, 5),
+      ]);
     }
     case 5:
-      return {
-        name: DAY_NAMES[5],
-        focus: "Погружение",
-        tasks: [
-          {
-            id: `${slot}-immerse`,
-            kind: "immerse",
-            title: "Свободное погружение",
-            detail: week.immersion,
-            minutes: 60,
-          },
-          {
-            id: `${slot}-talk`,
-            kind: "speak",
-            title: "Разговор на английском",
-            detail: "30 минут с носителем, сильным репетитором или другом. Запишите (с согласия), потом послушайте.",
-            minutes: 30,
-          },
-        ],
-      };
+      return done([
+        words,
+        videoTask(week, slot),
+        {
+          id: `${slot}-talk`,
+          kind: "speak",
+          title: "Разговор на английском (30 минут)",
+          detail: "С носителем, сильным репетитором или другом. Запишите (с согласия) и послушайте.",
+          minutes: 30,
+        },
+      ]);
     default:
-      return {
-        name: DAY_NAMES[6],
-        focus: final ? "Итоги" : "Повторение и планирование",
-        tasks: [
-          ERRORS(slot, 20),
-          speakTask(week.speaking[2], slot),
-          final
-            ? {
-                id: `${slot}-test`,
-                kind: "test",
-                title: "Контрольный тест B2–C1: сравните с результатом недели 1",
-                detail: "Пройдите тот же тест ещё раз. Сравните число баллов и составьте план на следующие месяцы (C1 → C2 или узкая профессиональная тема).",
-                minutes: 30,
-                href: "/plan#tests",
-              }
-            : {
-                id: `${slot}-plan`,
-                kind: "review",
-                title: diagnostic ? "Поставить цель и срок" : "Итог недели и план следующей",
-                detail: diagnostic
-                  ? "Определите: сдаёте ли Cambridge C1 или IELTS, или просто контрольный тест через 24 недели. Нажмите «Начать план» на странице «Сегодня»."
-                  : "Просмотрите журнал ошибок и список слов. Что не получилось, перенесите на следующую неделю.",
-                minutes: 10,
-                href: "/plan/today",
-              },
-        ],
-      };
+      return done([
+        words,
+        ERRORS(slot, 20),
+        speakTask(week.speaking[2], slot),
+        final
+          ? {
+              id: `${slot}-test`,
+              kind: "test",
+              title: "Контрольный тест B2–C1: сравните с результатом недели 1",
+              detail: "Пройдите тот же тест ещё раз, сравните число баллов и составьте план на следующие месяцы (C1 → C2 или узкая профессиональная тема).",
+              minutes: 30,
+              href: "/plan#tests",
+            }
+          : {
+              id: `${slot}-plan`,
+              kind: "review",
+              title: diagnostic ? "Поставить цель и срок" : "Итог недели",
+              detail: diagnostic
+                ? "Решите: сдаёте ли Cambridge C1 или IELTS, или просто контрольный тест через 24 недели. Запишите цель и дату."
+                : "Просмотрите журнал ошибок и слова недели. Что не получилось, перенесите на следующую неделю.",
+              minutes: 10,
+              href: "/plan/today",
+            },
+      ]);
   }
 }

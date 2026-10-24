@@ -224,6 +224,8 @@ lib/study/                     личный раздел «Мой английс
                                Записи с реплик для шэдоуинга: lib/study/cues/, аудио: public/audio/empower-c1/ —
                                готовит scripts/prepare_empower_c1.py из папки audio/ (она в .gitignore).
                                Прогресс, ошибки, карточки и записи речи хранятся в браузере (localStorage, IndexedDB), не в базе
+self-study-inbox/              работы, отправленные на проверку (в .gitignore): <дата>__<задание>.json и рядом
+                               .review.json с отзывом проверяющего (поля см. lib/study/inbox.ts); работает локально
 components/plan/               интерфейс раздела: «Сегодня», запись речи, упражнения, карточки, журнал ошибок
 books/                         учебники (PDF)
 public/audio/  public/uploads/ аудио уроков и загруженные файлы
