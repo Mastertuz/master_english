@@ -71,6 +71,9 @@ export default async function DictionaryPage() {
               📌 Слова к следующему уроку ({assignedCount})
             </Link>
           ) : null}
+          <Link href="/dictionary/decks" prefetch className="btn-ghost">
+            📚 Готовые наборы
+          </Link>
           <Link href="/training" prefetch className="btn-ghost">
             🎯 Тренировать слова
           </Link>

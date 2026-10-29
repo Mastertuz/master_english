@@ -4,6 +4,7 @@ import { type Mode, type TrainingWord } from "@/components/training/Trainer";
 import { TrainingSession } from "@/components/training/TrainingSession";
 import { prisma } from "@/lib/prisma";
 import { requireUser } from "@/lib/session";
+import { deckById } from "@/lib/word-decks";
 
 const SLUGS: Record<string, Mode> = {
   translate: "TRANSLATE",
@@ -18,15 +19,17 @@ export default async function TrainingModePage({
   params: Promise<{ mode: string }>;
   /**
    * ?lesson=<id> — прийти из урока с уже отмеченными словами;
-   * ?assigned=1 — со словами, которые преподаватель назначил к следующему уроку
+   * ?assigned=1 — со словами, которые преподаватель назначил к следующему уроку;
+   * ?deck=<id> — со словами готового набора, который добавлен в словарь
    */
-  searchParams: Promise<{ lesson?: string; assigned?: string }>;
+  searchParams: Promise<{ lesson?: string; assigned?: string; deck?: string }>;
 }) {
   const { mode: slug } = await params;
   const mode = SLUGS[slug];
   if (!mode) notFound();
 
-  const { lesson: lessonId, assigned } = await searchParams;
+  const { lesson: lessonId, assigned, deck: deckId } = await searchParams;
+  const deck = deckId ? deckById(deckId) : undefined;
   const user = await requireUser();
 
   const where =
@@ -56,6 +59,7 @@ export default async function TrainingModePage({
       imageUrl: true,
       audioUrl: true,
       assigned: true,
+      source: true,
       // Тема урока, из которого пришло слово — по ней слова разложены по папкам
       lessonWord: {
         select: { lesson: { select: { number: true, topic: true } } },
@@ -78,7 +82,11 @@ export default async function TrainingModePage({
   const fromTeacher = assigned === "1";
   const preselectedIds = words
     .filter((word) =>
-      fromTeacher ? word.assigned : fromLesson.has(word.english.toLowerCase()),
+      deck
+        ? word.source === `deck:${deck.id}`
+        : fromTeacher
+          ? word.assigned
+          : fromLesson.has(word.english.toLowerCase()),
     )
     .map((word) => word.id);
 
@@ -98,20 +106,34 @@ export default async function TrainingModePage({
             <span className="text-ink-300">·</span>
           </>
         ) : null}
+        {deck ? (
+          <>
+            <Link href={`/dictionary/decks/${deck.id}`} prefetch className="text-ink-500 hover:text-ink-800">
+              ← К набору «{deck.title}»
+            </Link>
+            <span className="text-ink-300">·</span>
+          </>
+        ) : null}
         <Link
           href="/training"
           prefetch
           className="text-ink-500 hover:text-ink-800"
         >
-          {lesson ? "Все режимы тренировки" : "← Все режимы"}
+          {lesson || deck ? "Все режимы тренировки" : "← Все режимы"}
         </Link>
       </div>
       <TrainingSession
         mode={mode}
         words={cards}
         preselectedIds={preselectedIds}
-        lessonTopic={fromTeacher ? "" : (lesson?.topic ?? "")}
-        presetLabel={fromTeacher ? "к следующему уроку, назначенные преподавателем" : ""}
+        lessonTopic={fromTeacher || deck ? "" : (lesson?.topic ?? "")}
+        presetLabel={
+          deck
+            ? `из набора «${deck.title}»`
+            : fromTeacher
+              ? "к следующему уроку, назначенные преподавателем"
+              : ""
+        }
       />
     </div>
   );
