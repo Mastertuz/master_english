@@ -13,6 +13,8 @@ import {
   type AudioMarks,
   type AudioScript,
 } from "./book";
+import { withExplanations } from "./explain";
+import { variant2Explained } from "./variant-2-explained";
 import type { OgeVariant } from "./types";
 
 const audio = marks as AudioMarks;
@@ -20,9 +22,9 @@ const text = script as AudioScript;
 
 /**
  * Вариант 2 из сборника «ОГЭ. Типовые экзаменационные варианты».
- * Задания, ключи и тексты записей — из книги; запись озвучена нейросетью.
+ * Задания, ключи и тексты записей — из книги; запись озвучена нейросетью, разбор — variant-2-explained.ts.
  */
-export const variant2: OgeVariant = {
+const variant2Base: OgeVariant = {
   id: "variant-2",
   title: "Вариант 2",
   subtitle:
@@ -289,3 +291,6 @@ export const variant2: OgeVariant = {
     },
   },
 };
+
+/** Условия и ключи из книги плюс разбор каждого ответа */
+export const variant2: OgeVariant = withExplanations(variant2Base, variant2Explained);
