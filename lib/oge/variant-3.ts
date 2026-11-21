@@ -16,6 +16,7 @@ import {
 import { withExplanations } from "./explain";
 import { variant3Explained } from "./variant-3-explained";
 import type { OgeVariant } from "./types";
+import { WRITING_SAMPLES } from "./writing-samples";
 
 const audio = marks as AudioMarks;
 const text = script as AudioScript;
@@ -250,6 +251,7 @@ const variant3Base: OgeVariant = {
     template: COMMON.writing.template,
     sample: "",
     templateSample: "",
+    samples: WRITING_SAMPLES["variant-3"],
     strategy: NO_STRATEGY,
   },
 

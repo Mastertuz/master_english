@@ -22,7 +22,7 @@ export type TeacherNotes = {
     part5: TimedTranscript[];
     part6: TimedTranscript[];
   };
-  writing: { sample: string; plan: string[] };
+  writing: { sample: string; plan: string[]; samples: { title: string; text: string }[] };
   speaking: {
     hardWords: { word: string; tip: string }[];
     task2: { intro: string; outro: string; samples: string[] };
@@ -100,7 +100,7 @@ export function teacherNotes(variant: OgeVariant): TeacherNotes {
         },
       ],
     },
-    writing: { sample: writing.sample, plan: writing.plan },
+    writing: { sample: writing.sample, plan: writing.plan, samples: writing.samples ?? [] },
     speaking: {
       hardWords: speaking.task1.hardWords,
       task2: {

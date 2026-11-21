@@ -225,7 +225,7 @@ export function checkTraining(
     ),
     // Образцы письма и устных ответов к группе не относятся — не отдаём
     notes: {
-      writing: { sample: "", plan: [] },
+      writing: { sample: "", plan: [], samples: [] },
       speaking: { hardWords: [], task2: { intro: "", outro: "", samples: [] }, task3Sample: "" },
       answers: pick(all.answers),
       extras: pick(all.extras),

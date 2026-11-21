@@ -167,6 +167,8 @@ export type OgeVariant = {
     sample: string;
     /** Второй образец — письмо, написанное по шаблону */
     templateSample: string;
+    /** Ещё несколько образцов с другими ответами и разным уровнем языка */
+    samples?: { title: string; text: string }[];
     strategy: Strategy;
   };
 

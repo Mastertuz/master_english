@@ -361,6 +361,23 @@ export default async function RazborPage({
               {writing.templateSample}
             </p>
           </div>
+
+          {writing.samples?.length ? (
+            <div className="space-y-3">
+              <p className="text-[13.5px] text-ink-600">
+                Ещё {writing.samples.length} образца с другими ответами и разным уровнем языка. Выбирайте то, что ближе к вашей жизни, но не заучивайте целиком:
+                на экзамене нужны ваши собственные ответы на вопросы друга.
+              </p>
+              {writing.samples.map((item, index) => (
+                <details key={item.title} className="rounded-xl border border-emerald-200 bg-emerald-50/50 p-4">
+                  <summary className="cursor-pointer text-[13.5px] font-semibold text-emerald-700">
+                    Образец {index + 3} · {item.title} · {countWords(item.text)} слов
+                  </summary>
+                  <p className="mt-2 whitespace-pre-wrap text-[14.5px] leading-relaxed text-ink-800">{item.text}</p>
+                </details>
+              ))}
+            </div>
+          ) : null}
             </>
           ) : null}
         </Block>

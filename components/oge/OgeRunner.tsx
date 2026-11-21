@@ -994,6 +994,14 @@ function WritingTab({ exam, ctx, hidden }: TabProps) {
             {ctx.teacher.writing.sample ? (
               <p className="mt-3 whitespace-pre-wrap">{ctx.teacher.writing.sample}</p>
             ) : null}
+            {ctx.teacher.writing.samples.map((item) => (
+              <details key={item.title} className="mt-3">
+                <summary className="cursor-pointer text-[13px] font-semibold">
+                  Ещё образец · {item.title} ({countWords(item.text)} слов)
+                </summary>
+                <p className="mt-1 whitespace-pre-wrap">{item.text}</p>
+              </details>
+            ))}
           </TeacherBox>
         ) : null}
       </SectionCard>
