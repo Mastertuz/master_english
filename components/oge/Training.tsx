@@ -99,10 +99,10 @@ export function TrainingBlock({
       <p className="break-words text-[14px] leading-relaxed text-ink-600">{view.intro}</p>
 
       {"audio" in view && view.audio ? (
-        <div className="space-y-2">
+        <>
           <AudioPlayer src={view.audio.src} title={`Запись к заданиям ${tasks}`} sticky />
           <Timecodes src={view.audio.src} items={view.audio.timecodes} />
-        </div>
+        </>
       ) : null}
 
       <Tasks view={view} ctx={ctx} />

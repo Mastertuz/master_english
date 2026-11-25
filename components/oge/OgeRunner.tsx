@@ -191,7 +191,7 @@ export function OgeRunner({
   return (
     <div className="space-y-5">
       {!readOnly ? (
-        <div className="card sticky top-[4.5rem] z-30 flex flex-wrap items-center gap-3 p-3">
+        <div data-sticky-top className="card sticky top-[4.5rem] z-30 flex flex-wrap items-center gap-3 p-3">
           <span className="text-[13.5px] text-ink-500">
             {status === "saving"
               ? "Сохраняем…"
@@ -752,9 +752,11 @@ function ListeningTab({ exam, ctx, hidden }: TabProps) {
         title="Раздел 1. Аудирование"
         note="Рекомендуемое время — 30 минут. На экзамене запись идёт без остановок: каждый текст звучит дважды, паузы на ответ уже внутри записи."
       >
-        <AudioPlayer src={listening.audioUrl} title="Запись к заданиям 1–11" sticky />
         <Timecodes src={listening.audioUrl} items={listening.marks} />
       </SectionCard>
+
+      {/* Не в карточке: плеер едет вниз по всему разделу */}
+      <AudioPlayer src={listening.audioUrl} title="Запись к заданиям 1–11" sticky />
 
       <SectionCard title="Задания 1–4" note={listening.part1.intro} points="по 1 баллу" auto>
         <Timecodes src={listening.audioUrl} items={listening.part1.timecodes} />

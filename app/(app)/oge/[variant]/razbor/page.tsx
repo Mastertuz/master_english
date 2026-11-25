@@ -121,8 +121,9 @@ export default async function RazborPage({
           Раздел 1. Аудирование · 15 баллов
         </h2>
 
+        {/* Не в карточке: плеер едет вниз по всему разделу */}
+        <AudioPlayer src={listening.audioUrl} title="Запись к заданиям 1–11" sticky />
         <div className="card space-y-2 p-5">
-          <AudioPlayer src={listening.audioUrl} title="Запись к заданиям 1–11" sticky />
           <Timecodes src={listening.audioUrl} items={listening.marks} />
         </div>
 

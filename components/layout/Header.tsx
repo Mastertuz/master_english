@@ -107,7 +107,7 @@ export function Header({
 
   return (
     <>
-      <header className="sticky top-0 z-40 border-b border-ink-200 bg-white/95 backdrop-blur">
+      <header data-sticky-top className="sticky top-0 z-40 border-b border-ink-200 bg-white/95 backdrop-blur">
         <div className="mx-auto flex h-16 max-w-6xl items-center gap-3 px-4 sm:px-5">
           <button
             type="button"
