@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useImperativeHandle, useRef, useState } from "react";
+import { ConfirmSubmit } from "@/components/ui/ConfirmSubmit";
 import { rememberRecording } from "@/lib/recording-audio";
 import { RecordingPlayer, recordingKey } from "./RecordingPlayer";
 
@@ -234,11 +235,16 @@ export function Recorder({
 
   async function remove() {
     if (!recording) return;
-    const response = await fetch(`/api/oge/recordings/${recording.id}`, {
-      method: "DELETE",
-    });
-    if (response.ok) onChange(null);
-    else setError("Не удалось удалить запись");
+    setError(null);
+    try {
+      const response = await fetch(`/api/oge/recordings/${recording.id}`, {
+        method: "DELETE",
+      });
+      if (response.ok) onChange(null);
+      else setError("Не удалось удалить запись");
+    } catch {
+      setError("Не удалось удалить запись. Проверьте интернет.");
+    }
   }
 
   // Задание 2: запись стартует сама, когда закончился вопрос
@@ -309,13 +315,16 @@ export function Recorder({
               🎙 {recording ? "Перезаписать" : "Записать сразу"} (до {clock(maxSec)})
             </button>
             {recording ? (
-              <button
-                type="button"
-                onClick={remove}
-                className="btn-ghost btn-sm text-rose-600"
-              >
-                Удалить запись
-              </button>
+              <form action={remove}>
+                <ConfirmSubmit
+                  className="btn-ghost btn-sm text-rose-600"
+                  pendingLabel="Удаляем…"
+                  title="Удалить запись?"
+                  message={`Ответ длительностью ${clock(recording.durationSec)} будет удалён без возможности восстановления.`}
+                >
+                  Удалить запись
+                </ConfirmSubmit>
+              </form>
             ) : null}
           </div>
         </div>
