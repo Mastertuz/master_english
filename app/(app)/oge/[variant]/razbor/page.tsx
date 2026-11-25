@@ -122,7 +122,16 @@ export default async function RazborPage({
         </h2>
 
         {/* Не в карточке: плеер едет вниз по всему разделу */}
-        <AudioPlayer src={listening.audioUrl} title="Запись к заданиям 1–11" sticky />
+        <AudioPlayer
+          src={listening.audioUrl}
+          title="Запись к заданиям 1–11"
+          sticky
+          timecodes={[
+            { label: "Задания 1–4", items: listening.part1.timecodes },
+            { label: "Задание 5", items: listening.part5.timecodes },
+            { label: "Задания 6–11", items: listening.part6.timecodes },
+          ]}
+        />
         <div className="card space-y-2 p-5">
           <Timecodes src={listening.audioUrl} items={listening.marks} />
         </div>
@@ -420,7 +429,20 @@ export default async function RazborPage({
         <Block title="Задание 2 · диалог-расспрос, до 6 баллов" intro={speaking.task2.instruction}>
           <p className="text-[14px] text-ink-700">{speaking.task2.criteria}</p>
           <StrategyCard strategy={speaking.task2.strategy} />
-          <AudioPlayer src={speaking.audioUrl} title="Запись телефонного опроса" sticky />
+          <AudioPlayer
+            src={speaking.audioUrl}
+            title="Запись телефонного опроса"
+            sticky
+            timecodes={[
+              {
+                label: "Опрос",
+                items: speaking.task2.questions.map((question, index) => ({
+                  label: `Вопрос ${index + 1}`,
+                  at: question.start,
+                })),
+              },
+            ]}
+          />
           <div className="flex flex-wrap items-center gap-1.5">
             <span className="mr-1 text-[12.5px] text-ink-500">Таймкоды:</span>
             {speaking.task2.questions.map((question, index) => (

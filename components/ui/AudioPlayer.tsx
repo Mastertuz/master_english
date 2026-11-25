@@ -1,11 +1,30 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { AUDIO_SEEK_EVENT, type AudioSeekDetail } from "@/lib/audio-seek";
+import { SeekButton } from "@/components/ui/SeekButton";
+import {
+  AUDIO_SEEK_EVENT,
+  seekAudio,
+  type AudioSeekDetail,
+} from "@/lib/audio-seek";
 
 /** Длительность бывает NaN или Infinity, пока метаданные не прочитаны */
 function safeDuration(value: number): number {
   return Number.isFinite(value) && value > 0 ? value : 0;
+}
+
+/** Таймкоды одной части записи: «Задания 1–4» → Text A, Text B… */
+export type TimecodeGroup = {
+  label: string;
+  items: { label: string; at: number }[];
+};
+
+/** Последняя метка, до которой запись уже дошла; после перемотки время бывает чуть меньше метки */
+function reached(starts: number[], current: number): number {
+  return Math.max(
+    0,
+    starts.findLastIndex((at) => at <= current + 0.3),
+  );
 }
 
 /**
@@ -13,6 +32,7 @@ function safeDuration(value: number): number {
  *
  * Со sticky плеер после запуска записи едет вниз вместе со страницей — под шапкой
  * и другими закреплёнными панелями (они помечены data-sticky-top) — до конца записи.
+ * Пока он закреплён, в нём видны таймкоды той части записи, которая сейчас звучит.
  * Едет он в пределах родителя, поэтому родителем должен быть весь раздел с заданиями,
  * а не маленькая карточка. position: fixed тут не годится: у .card есть backdrop-filter,
  * и fixed внутри неё считается от карточки, а не от экрана.
@@ -21,12 +41,16 @@ export function AudioPlayer({
   src,
   title,
   sticky = false,
+  timecodes,
 }: {
   src: string;
   title?: string;
   sticky?: boolean;
+  /** Таймкоды для закреплённого плеера */
+  timecodes?: TimecodeGroup[];
 }) {
   const audioRef = useRef<HTMLAudioElement>(null);
+  const codesRef = useRef<HTMLDivElement>(null);
   const [playing, setPlaying] = useState(false);
   // Запись запускали и она ещё не закончилась: именно тогда плеер можно закрепить
   const [engaged, setEngaged] = useState(false);
@@ -177,15 +201,71 @@ export function AudioPlayer({
 
   const pinned = sticky && engaged;
 
+  const groups = pinned ? (timecodes ?? []) : [];
+  const groupIndex = reached(
+    groups.map((group) => group.items[0]?.at ?? 0),
+    current,
+  );
+  const codes = groups[groupIndex]?.items ?? [];
+  const codeIndex = reached(
+    codes.map((code) => code.at),
+    current,
+  );
+
+  // На телефоне таймкоды в одну прокручиваемую строку: держим на виду тот, что звучит.
+  // Двигаем саму строку, а не scrollIntoView: он прокрутил бы и страницу
+  useEffect(() => {
+    const row = codesRef.current;
+    const button = row?.querySelector<HTMLElement>('[aria-current="true"]');
+    if (!row || !button) return;
+    row.scrollTo({ left: button.offsetLeft - row.offsetLeft - 8 });
+  }, [pinned, groupIndex, codeIndex]);
+
   return (
     <div
-      className={`rounded-xl border border-ink-200 p-4 ${
-        pinned ? "sticky z-20 bg-white shadow-xl" : "bg-ink-50/70"
+      className={`rounded-xl border border-ink-200 ${
+        pinned
+          ? "sticky z-20 bg-white p-3 shadow-xl sm:p-4"
+          : "bg-ink-50/70 p-4"
       }`}
       style={pinned ? { top } : undefined}
     >
       {title ? (
-        <p className="mb-3 text-[13.5px] font-medium text-ink-700">{title}</p>
+        <div
+          className={`flex-wrap items-center gap-x-3 gap-y-2 ${
+            groups.length > 0 ? "mb-2 sm:mb-3" : "mb-3"
+          } ${
+            /* На телефоне закреплённый плеер без заголовка: экономим высоту */
+            groups.length === 1 ? "hidden sm:flex" : "flex"
+          }`}
+        >
+          <p
+            className={`text-[13.5px] font-medium text-ink-700 ${
+              groups.length > 0 ? "hidden sm:block" : ""
+            }`}
+          >
+            {title}
+          </p>
+          {groups.length > 1 ? (
+            <div className="flex gap-1.5 sm:ml-auto">
+              {groups.map((group, index) => (
+                <button
+                  key={group.label}
+                  type="button"
+                  onClick={() => seekAudio(src, group.items[0]?.at ?? 0)}
+                  aria-pressed={index === groupIndex}
+                  className={`cursor-pointer whitespace-nowrap rounded-lg border px-2 py-1 text-[12.5px] transition ${
+                    index === groupIndex
+                      ? "border-brand-500 bg-brand-50 text-brand-700"
+                      : "border-transparent bg-ink-100 text-ink-700 hover:bg-ink-200"
+                  }`}
+                >
+                  {group.label}
+                </button>
+              ))}
+            </div>
+          ) : null}
+        </div>
       ) : null}
 
       <audio ref={audioRef} src={src} preload="metadata" />
@@ -264,6 +344,26 @@ export function AudioPlayer({
           duration === 0 ? "cursor-default opacity-50" : "cursor-pointer"
         }`}
       />
+
+      {codes.length > 0 ? (
+        <div
+          ref={codesRef}
+          className="mt-2 flex items-center gap-1.5 overflow-x-auto sm:flex-wrap"
+        >
+          <span className="mr-1 hidden text-[12.5px] text-ink-500 sm:inline">
+            Таймкоды:
+          </span>
+          {codes.map((code, index) => (
+            <SeekButton
+              key={`${code.at}-${code.label}`}
+              src={src}
+              at={code.at}
+              label={code.label}
+              active={index === codeIndex}
+            />
+          ))}
+        </div>
+      ) : null}
     </div>
   );
 }

@@ -7,17 +7,25 @@ export function SeekButton({
   src,
   at,
   label,
+  active = false,
 }: {
   src: string;
   at: number;
   label?: string;
+  /** Сейчас звучит именно это место */
+  active?: boolean;
 }) {
   return (
     <button
       type="button"
       onClick={() => seekAudio(src, at)}
       title="Перейти к этому месту записи"
-      className="inline-flex cursor-pointer items-center gap-1.5 rounded-lg border border-ink-200 px-2 py-1 text-[12.5px] text-ink-700 transition hover:border-brand-300 hover:bg-brand-50 hover:text-brand-700"
+      aria-current={active ? "true" : undefined}
+      className={`inline-flex shrink-0 cursor-pointer items-center gap-1.5 whitespace-nowrap rounded-lg border px-2 py-1 text-[12.5px] transition hover:border-brand-300 hover:bg-brand-50 hover:text-brand-700 ${
+        active
+          ? "border-brand-500 bg-brand-50 text-brand-700"
+          : "border-ink-200 text-ink-700"
+      }`}
     >
       <span aria-hidden className="text-[10px] text-brand-600">▶</span>
       <span className="font-medium tabular-nums">{formatTime(at)}</span>

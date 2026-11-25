@@ -756,7 +756,16 @@ function ListeningTab({ exam, ctx, hidden }: TabProps) {
       </SectionCard>
 
       {/* Не в карточке: плеер едет вниз по всему разделу */}
-      <AudioPlayer src={listening.audioUrl} title="Запись к заданиям 1–11" sticky />
+      <AudioPlayer
+        src={listening.audioUrl}
+        title="Запись к заданиям 1–11"
+        sticky
+        timecodes={[
+          { label: "Задания 1–4", items: listening.part1.timecodes },
+          { label: "Задание 5", items: listening.part5.timecodes },
+          { label: "Задания 6–11", items: listening.part6.timecodes },
+        ]}
+      />
 
       <SectionCard title="Задания 1–4" note={listening.part1.intro} points="по 1 баллу" auto>
         <Timecodes src={listening.audioUrl} items={listening.part1.timecodes} />
