@@ -6,7 +6,7 @@
  * Исходный формат строки набора: «слово | перевод | часть речи | пример».
  * Части речи: n v adj adv prep conj pron det modal aux num excl phr pv idiom col.
  */
-export type DeckGroup = "frequency" | "phrases" | "topic";
+export type DeckGroup = "frequency" | "level" | "phrases" | "topic";
 
 export type DeckItem = {
   english: string;

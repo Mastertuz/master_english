@@ -218,8 +218,8 @@ content/lessons/               исходные HTML-уроки и lessons.json
                                слов и домашних заданий; записи Track 05.xx и 06.xx — public/audio/empower/unit5, unit6
                                (из папки audio/, она в .gitignore). Загрузка в базу:
                                npx tsx --env-file=.env scripts/import-lessons-file.ts content/lessons/lessons-8-9.json
-lib/word-decks/                готовые наборы слов для словаря всех пользователей (частотные слова, фразы,
-                               слова по темам): строки «слово | перевод | часть речи | пример» в *.ts;
+lib/word-decks/                готовые наборы слов для словаря всех пользователей (частотные слова, слова по уровням
+                               A2–C1, фразы, слова по темам): строки «слово | перевод | часть речи | пример» в *.ts;
                                страница /dictionary/decks; scripts/prefill-deck-definitions.ts подтягивает
                                определения Cambridge в кэш
 lib/study/                     личный раздел «Мой английский» (виден только владельцу, см. lib/self-study-access.ts):

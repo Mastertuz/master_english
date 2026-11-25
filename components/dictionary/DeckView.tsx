@@ -6,7 +6,8 @@ import { useMemo, useState, useTransition } from "react";
 import { addDeckWordsAction } from "@/app/actions/decks";
 import { SpeakButton } from "@/components/ui/SpeakButton";
 import { partOfSpeechRu } from "@/lib/part-of-speech";
-import { deckWordKey, type Deck } from "@/lib/word-decks";
+import { deckWordKey, wordsLabel } from "@/lib/word-decks/key";
+import type { Deck } from "@/lib/word-decks/types";
 
 /** Страница набора: список слов, выбор нужных и добавление в личный словарь */
 export function DeckView({ deck, added }: { deck: Deck; added: string[] }) {
@@ -52,7 +53,7 @@ export function DeckView({ deck, added }: { deck: Deck; added: string[] }) {
         </Link>
         <div className="mt-2 flex flex-wrap gap-2">
           <span className="chip bg-brand-50 text-brand-700">{deck.level}</span>
-          <span className="chip bg-ink-100 text-ink-600">{deck.items.length} слов</span>
+          <span className="chip bg-ink-100 text-ink-600">{wordsLabel(deck.items.length)}</span>
         </div>
         <h1 className="page-title mt-2">
           <span aria-hidden>{deck.icon}</span> {deck.title}

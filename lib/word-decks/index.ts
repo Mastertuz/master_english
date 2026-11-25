@@ -1,9 +1,14 @@
 import { FREQUENCY_DECKS } from "./frequency";
+import { LEVEL_DECKS } from "./levels";
+import { ADVANCED_PHRASE_DECKS } from "./phrases-c1";
 import { PHRASE_DECKS } from "./phrases";
 import { TOPIC_DECKS_A } from "./topics-a";
 import { TOPIC_DECKS_B } from "./topics-b";
+import { TOPIC_DECKS_C } from "./topics-c";
+import { TOPIC_DECKS_D } from "./topics-d";
 import type { Deck, DeckGroup, DeckItem, DeckSource } from "./types";
 
+export { deckWordKey } from "./key";
 export type { Deck, DeckGroup, DeckItem } from "./types";
 
 /** Короткие обозначения частей речи → как их хранит словарь (по Cambridge) */
@@ -48,9 +53,13 @@ function parse(source: DeckSource): Deck {
 
 export const DECKS: Deck[] = [
   ...FREQUENCY_DECKS,
+  ...LEVEL_DECKS,
   ...PHRASE_DECKS,
+  ...ADVANCED_PHRASE_DECKS,
   ...TOPIC_DECKS_A,
   ...TOPIC_DECKS_B,
+  ...TOPIC_DECKS_C,
+  ...TOPIC_DECKS_D,
 ].map(parse);
 
 export function deckById(id: string): Deck | undefined {
@@ -64,6 +73,11 @@ export const DECK_GROUPS: { id: DeckGroup; title: string; text: string }[] = [
     text: "Основа словаря: слова, которые встречаются в речи и текстах чаще всего. Начинайте отсюда.",
   },
   {
+    id: "level",
+    title: "Слова по уровням: от A2 до C1",
+    text: "Глаголы, существительные, прилагательные и наречия каждого уровня. Выберите свой и двигайтесь дальше.",
+  },
+  {
     id: "phrases",
     title: "Фразы, фразовые глаголы и идиомы",
     text: "Готовые обороты для разговора и письма: то, без чего речь звучит неестественно.",
@@ -74,8 +88,3 @@ export const DECK_GROUPS: { id: DeckGroup; title: string; text: string }[] = [
     text: "Лексика по жизненным ситуациям: путешествие, работа, здоровье, технологии и другое.",
   },
 ];
-
-/** Как слово хранится в словаре: так же, как при ручном добавлении (строчными) */
-export function deckWordKey(english: string): string {
-  return english.trim().toLowerCase().replace(/\s+/g, " ");
-}

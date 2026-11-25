@@ -2,8 +2,11 @@ import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import { requireUser } from "@/lib/session";
 import { DECKS, DECK_GROUPS, deckWordKey } from "@/lib/word-decks";
+import { wordsLabel } from "@/lib/word-decks/key";
 
 const LEVELS = ["A1", "A2", "B1", "B2", "C1", "C2"];
+/** Уровни, для которых есть наборы */
+const FILTERS = ["A1", "A2", "B1", "B2", "C1"];
 
 /** «A2–B1» подходит ученику уровня A2 или B1, а также тем, кто ровно между ними */
 function suits(level: string, userLevel: string | null): boolean {
@@ -13,8 +16,9 @@ function suits(level: string, userLevel: string | null): boolean {
   return index >= LEVELS.indexOf(from) && index <= LEVELS.indexOf(to ?? from);
 }
 
-export default async function DecksPage() {
-  const user = await requireUser();
+export default async function DecksPage({ searchParams }: { searchParams: Promise<{ level?: string }> }) {
+  const [user, params] = await Promise.all([requireUser(), searchParams]);
+  const level = params.level && FILTERS.includes(params.level) ? params.level : null;
   const words = await prisma.word.findMany({ where: { userId: user.id }, select: { english: true } });
   const have = new Set(words.map((word) => word.english));
 
@@ -32,8 +36,27 @@ export default async function DecksPage() {
         </p>
       </div>
 
+      <nav aria-label="Уровень" className="flex flex-wrap items-center gap-1.5">
+        {[null, ...FILTERS].map((item) => (
+          <Link
+            key={item ?? "all"}
+            href={item ? `/dictionary/decks?level=${item}` : "/dictionary/decks"}
+            scroll={false}
+            aria-current={item === level ? "page" : undefined}
+            className={`rounded-lg border px-3 py-1.5 text-[13.5px] transition ${
+              item === level
+                ? "border-brand-500 bg-brand-50 text-brand-700"
+                : "border-ink-200 text-ink-700 hover:border-brand-300"
+            }`}
+          >
+            {item ?? "Все уровни"}
+          </Link>
+        ))}
+      </nav>
+
       {DECK_GROUPS.map((group) => {
-        const decks = DECKS.filter((deck) => deck.group === group.id);
+        const decks = DECKS.filter((deck) => deck.group === group.id && (!level || suits(deck.level, level)));
+        if (decks.length === 0) return null;
         return (
           <section key={group.id} className="space-y-3">
             <div>
@@ -54,7 +77,7 @@ export default async function DecksPage() {
                   >
                     <div className="flex flex-wrap items-center gap-1.5">
                       <span className="chip bg-brand-50 text-brand-700">{deck.level}</span>
-                      <span className="chip bg-ink-100 text-ink-600">{deck.items.length} слов</span>
+                      <span className="chip bg-ink-100 text-ink-600">{wordsLabel(deck.items.length)}</span>
                       {fit ? <span className="chip bg-emerald-50 text-emerald-700">для вашего уровня</span> : null}
                     </div>
                     <p className="mt-2 text-[15.5px] font-semibold leading-snug text-ink-900">
