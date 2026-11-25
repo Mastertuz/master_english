@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useImperativeHandle, useRef, useState } from "react";
+import { rememberRecording } from "@/lib/recording-audio";
+import { RecordingPlayer, recordingKey } from "./RecordingPlayer";
 
 export type RecordingInfo = { id: string; durationSec: number; createdAt: string };
 export type RecorderHandle = { start: () => void };
@@ -22,27 +24,6 @@ function pickMimeType(): string {
 export function clock(seconds: number): string {
   const whole = Math.max(0, Math.ceil(seconds));
   return `${Math.floor(whole / 60)}:${String(whole % 60).padStart(2, "0")}`;
-}
-
-/** Прослушивание сохранённой записи — и ученику, и учителю */
-export function RecordingPlayer({ recording }: { recording: RecordingInfo }) {
-  return (
-    <div className="space-y-1">
-      {/*
-        Нативный плеер: у записей из MediaRecorder в webm нет длительности
-        в заголовке, и собственный ползунок AudioPlayer там не работает.
-      */}
-      <audio
-        controls
-        preload="metadata"
-        src={`/api/oge/recordings/${recording.id}?v=${encodeURIComponent(recording.createdAt)}`}
-        className="w-full"
-      />
-      <p className="text-[12.5px] text-ink-400">
-        Длительность ответа: {clock(recording.durationSec)}
-      </p>
-    </div>
-  );
 }
 
 /**
@@ -168,7 +149,9 @@ export function Recorder({
         return;
       }
       setPending(null);
-      onChange(data as RecordingInfo);
+      const saved = data as RecordingInfo;
+      rememberRecording(recordingKey(saved), blob);
+      onChange(saved);
     } catch {
       setError("Не удалось отправить запись. Проверьте интернет.");
       setPending({ blob, duration });
