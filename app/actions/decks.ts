@@ -6,6 +6,7 @@ import { requireUser } from "@/lib/session";
 import { lookupTerm } from "@/lib/study/definitions";
 import { acceptVariants } from "@/lib/study/vocab-defs";
 import { deckById, deckWordKey } from "@/lib/word-decks";
+import { ownDefinition } from "@/lib/word-decks/definitions";
 
 export type AddDeckResult = { ok: boolean; added: number; skipped: number; message: string };
 
@@ -13,7 +14,8 @@ export type AddDeckResult = { ok: boolean; added: number; skipped: number; messa
  * Готовый набор слов — в личный словарь пользователя (любой роли). Уже имеющиеся слова
  * не трогаем: ни перевод, ни статистику. Определение, транскрипция и озвучка берутся из
  * кэша Cambridge, если слово там уже есть (кэш пополняется скриптом prefill-deck-definitions
- * и обычными поисками по словарю).
+ * и обычными поисками по словарю). Определения фраз, которых в Cambridge нет или которые там
+ * о другом, — свои (lib/word-decks/definitions.ts).
  */
 export async function addDeckWordsAction(deckId: string, only?: string[]): Promise<AddDeckResult> {
   const me = await requireUser();
@@ -44,7 +46,7 @@ export async function addDeckWordsAction(deckId: string, only?: string[]): Promi
     data: fresh.map((item) => {
       const term = lookupTerm(item.english);
       const entry = term ? byWord.get(term) : undefined;
-      const definition = entry?.definition ?? "";
+      const definition = ownDefinition(item.english) ?? entry?.definition ?? "";
       return {
         userId: me.id,
         english: deckWordKey(item.english),

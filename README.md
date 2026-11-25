@@ -221,7 +221,7 @@ content/lessons/               исходные HTML-уроки и lessons.json
 lib/word-decks/                готовые наборы слов для словаря всех пользователей (частотные слова, слова по уровням
                                A2–C1, фразы, слова по темам): строки «слово | перевод | часть речи | пример» в *.ts;
                                страница /dictionary/decks; scripts/prefill-deck-definitions.ts подтягивает
-                               определения Cambridge в кэш
+                               определения Cambridge в кэш; свои определения фраз — lib/word-decks/definitions.ts
 lib/study/                     личный раздел «Мой английский» (виден только владельцу, см. lib/self-study-access.ts):
                                расписание на 24 недели (schedule.ts), задания на говорение (speaking-*.ts),
                                грамматика (drills-*.ts), юниты Empower C1 (units-*.ts), письмо (writing.ts).
