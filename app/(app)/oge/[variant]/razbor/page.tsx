@@ -122,7 +122,7 @@ export default async function RazborPage({
         </h2>
 
         <div className="card space-y-2 p-5">
-          <AudioPlayer src={listening.audioUrl} title="Запись к заданиям 1–11" />
+          <AudioPlayer src={listening.audioUrl} title="Запись к заданиям 1–11" sticky />
           <Timecodes src={listening.audioUrl} items={listening.marks} />
         </div>
 
@@ -419,7 +419,7 @@ export default async function RazborPage({
         <Block title="Задание 2 · диалог-расспрос, до 6 баллов" intro={speaking.task2.instruction}>
           <p className="text-[14px] text-ink-700">{speaking.task2.criteria}</p>
           <StrategyCard strategy={speaking.task2.strategy} />
-          <AudioPlayer src={speaking.audioUrl} title="Запись телефонного опроса" />
+          <AudioPlayer src={speaking.audioUrl} title="Запись телефонного опроса" sticky />
           <div className="flex flex-wrap items-center gap-1.5">
             <span className="mr-1 text-[12.5px] text-ink-500">Таймкоды:</span>
             {speaking.task2.questions.map((question, index) => (

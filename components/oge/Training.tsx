@@ -100,7 +100,7 @@ export function TrainingBlock({
 
       {"audio" in view && view.audio ? (
         <div className="space-y-2">
-          <AudioPlayer src={view.audio.src} title={`Запись к заданиям ${tasks}`} />
+          <AudioPlayer src={view.audio.src} title={`Запись к заданиям ${tasks}`} sticky />
           <Timecodes src={view.audio.src} items={view.audio.timecodes} />
         </div>
       ) : null}

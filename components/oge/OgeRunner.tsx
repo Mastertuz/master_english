@@ -752,7 +752,7 @@ function ListeningTab({ exam, ctx, hidden }: TabProps) {
         title="Раздел 1. Аудирование"
         note="Рекомендуемое время — 30 минут. На экзамене запись идёт без остановок: каждый текст звучит дважды, паузы на ответ уже внутри записи."
       >
-        <AudioPlayer src={listening.audioUrl} title="Запись к заданиям 1–11" />
+        <AudioPlayer src={listening.audioUrl} title="Запись к заданиям 1–11" sticky />
         <Timecodes src={listening.audioUrl} items={listening.marks} />
       </SectionCard>
 
