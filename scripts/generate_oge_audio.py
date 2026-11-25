@@ -33,7 +33,9 @@ os.makedirs(out_dir, exist_ok=True)
 
 import espeakng_loader  # noqa: E402
 
-data_parent = os.path.dirname(espeakng_loader.get_data_path())
+# espeak обрезает длинные пути к данным: если venv лежит глубоко, положите на него короткую
+# ссылку (ln -s <папка espeakng_loader> /tmp/ek) и укажите её в ESPEAK_PARENT
+data_parent = os.environ.get("ESPEAK_PARENT") or os.path.dirname(espeakng_loader.get_data_path())
 ctypes.cdll.LoadLibrary(espeakng_loader.get_library_path()).espeak_ng_InitializePath.argtypes = [ctypes.c_char_p]
 
 from kokoro_onnx import Kokoro  # noqa: E402

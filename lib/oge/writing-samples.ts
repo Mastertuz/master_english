@@ -60,4 +60,46 @@ export const WRITING_SAMPLES: Record<string, WritingSample[]> = {
       text: "Dear Julia,\n\nThank you for your email. I was really glad to hear from you.\n\nI’m also looking forward to the weekend! On a typical school day, I get up at half past six, go to school by metro and have six or seven lessons. After school I have lunch and rest for an hour. It is a good way to relax.\n\nIt usually takes me about two hours to do my homework, but before tests it can take longer.\n\nIn my free time I love swimming, and I’m learning to cook. Last Sunday I baked a cake with my mum.\n\nWrite back soon!\n\nBest wishes,\nArtem",
     },
   ],
+  "variant-4": [
+    {
+      title: "Режим дня и здоровая еда: спокойное письмо",
+      text: "Dear Sue,\n\nThanks for your email! I was sorry to hear that you felt sick. I hope you are better now.\n\nOn weekdays I usually go to bed at about ten o’clock, because I have to get up at seven for school. At weekends I stay up a bit later, until eleven.\n\nI eat fast food only once or twice a month, for example, when I go to the cinema with my friends. I prefer home cooking, because it is healthier and tastier.\n\nTo stay healthy, I do morning exercises, walk a lot and eat fruit and vegetables every day.\n\nWrite back soon!\n\nBest wishes,\nAnna",
+    },
+    {
+      title: "Честно про вредные привычки",
+      text: "Dear Sue,\n\nThank you for your message. I’m sorry that you missed the party, but I’m glad you feel better.\n\nTo be honest, I go to bed late, usually after midnight, because I like chatting with my friends online. In the morning I feel tired, so I should change this habit.\n\nI have fast food about twice a week, mostly burgers and chips after school. I know it is not very healthy.\n\nBut I play football three times a week, and I never skip breakfast. I think that helps me stay fit. I will try to go to bed earlier.\n\nWrite back soon!\n\nBest wishes,\nDima",
+    },
+    {
+      title: "Короткие простые фразы (уровень B1)",
+      text: "Dear Sue,\n\nThank you for your email. I am sorry you were ill.\n\nI go to bed at nine thirty. I get up at seven and go to school. I think sleep is very important for health.\n\nI eat fast food very rarely, maybe once a month. My mother cooks tasty soup and fish at home, and I like it more.\n\nI want to be healthy, so I do sport and drink a lot of water. I also walk with my dog every evening. It is good for me.\n\nI hope you will be well soon.\n\nWrite back soon!\n\nBest wishes,\nOlga",
+    },
+  ],
+  "variant-5": [
+    {
+      title: "Люблю дарить подарки",
+      text: "Dear Jane,\n\nThanks for your email! Happy birthday! I’m glad you had a great time.\n\nI get presents not very often, usually on my birthday and at New Year. Sometimes my parents give me something nice for good marks.\n\nI prefer giving presents, because I like to see people’s happy faces. I always think about what my friend wants and try to make a surprise.\n\nThe best present I’ve ever got is a guitar from my grandparents. I got it two years ago, and now I play it every evening. I was so happy that I could not sleep.\n\nWrite back soon!\n\nBest wishes,\nKatya",
+    },
+    {
+      title: "Предпочитаю получать подарки",
+      text: "Dear Jane,\n\nThank you for your letter. I’m glad that your birthday was fun and you got nice presents.\n\nI get presents several times a year: on my birthday, at New Year and sometimes just for no reason.\n\nTo tell the truth, I prefer getting presents, because it is always a pleasant surprise. Giving presents is difficult for me. I never know what to choose.\n\nThe best present I’ve ever got is a bike. My parents gave it to me when I was twelve, and I still ride it every weekend with my friends. It was the best birthday for me.\n\nWrite back soon!\n\nBest wishes,\nIvan",
+    },
+    {
+      title: "Короткие простые фразы (уровень B1)",
+      text: "Dear Jane,\n\nThank you for your email. I am happy that you had a good birthday.\n\nI get presents two or three times a year. I get them on my birthday and at New Year.\n\nI like giving presents more. When my mum opens my present, she smiles, and I feel happy too. Last week I made a card for my friend, and she liked it very much.\n\nMy best present is a big book about space. I got it from my father. I read it many times and I want to be an astronaut. It is my favourite thing.\n\nWrite back soon!\n\nBest wishes,\nMasha",
+    },
+  ],
+  "variant-6": [
+    {
+      title: "Свободного времени мало, но хотелось бы новое увлечение",
+      text: "Dear Duncan,\n\nThanks for your email! The article you read sounds very interesting.\n\nI don’t have much free time, because I have a lot of homework and I go to a music school. So I try to organise my time wisely.\n\nWhen I have a free hour, I usually read books, walk in the park or meet my friends. At weekends I like to ride my bike.\n\nOne day I would like to try rock climbing. I think it is exciting and good for health. I think it is important to rest, because tired people cannot study well.\n\nWrite back soon!\n\nBest wishes,\nSasha",
+    },
+    {
+      title: "Достаточно времени: спорт и друзья",
+      text: "Dear Duncan,\n\nThank you for your message. I read about effective free time too, and I agree with the article.\n\nYes, I think I have enough free time, because I do my homework quickly and plan my day. I have about three hours every day.\n\nI usually play basketball with my friends, watch films and chat online. On Sundays I go to my grandparents’ house.\n\nI would like to try diving. I have never been to the sea, but I’ve always dreamed of seeing fish and corals under the water. I think a good plan helps me a lot.\n\nWrite back soon!\n\nBest wishes,\nNikita",
+    },
+    {
+      title: "Короткие простые фразы (уровень B1)",
+      text: "Dear Duncan,\n\nThank you for your email. It is a good idea to organise free time wisely.\n\nI have not got much free time. I go to school, then I do my homework and help my mother at home. But I have free time at weekends.\n\nI like drawing and listening to music in my free time. Sometimes I go to the cinema with my friends. We watch comedies and eat popcorn.\n\nI want to try horse riding one day. I love animals, and I think riding a horse is fun. I hope you also have time for hobbies.\n\nWrite back soon!\n\nBest wishes,\nElena",
+    },
+  ],
 };

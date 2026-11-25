@@ -1,0 +1,250 @@
+{
+  "voices": {
+    "Tom": "bm_lewis",
+    "Amy": "bf_emma",
+    "Emma": "bf_alice",
+    "Paul": "bm_george",
+    "Presenter": "bm_lewis",
+    "Interviewer": "bm_lewis",
+    "Respondent": "bf_alice",
+    "Assistant": "af_heart"
+  },
+  "part1": [
+    {
+      "title": "Text A",
+      "voice": "bf_isabella",
+      "text": "Hi, everyone! I’d like to remind you about our picnic on Saturday. We are getting together on the bank of the lake. All the food, water and everything necessary for the games will be delivered by the organisers — please, don’t worry about that. All you need to have with you is some anti-mosquito spray and a coat in case the weather changes. Do not forget the spray as, due to the wet and warm weather we’ve been having, there may be lots of mosquitoes there."
+    },
+    {
+      "title": "Text B",
+      "voice": "bf_alice",
+      "text": "Hi, Mum! I’m calling to ask you a favour. My friend, Nancy, is coming to get her computer back. She only bought it yesterday and I helped her to install all the necessary apps. And now she needs it urgently. Could you give her the computer, please? I’m afraid I won’t be home in time for her visit. It must be on the shelf above my writing desk. Yes, I know there’s a mess there, and it’s impossible to find anything in my room, but please! I’ll tidy up the room when I’m back. I promise! See you!"
+    },
+    {
+      "title": "Text C",
+      "lines": [
+        {
+          "who": "Tom",
+          "text": "Hi Amy! You look so worried. Is everything alright?"
+        },
+        {
+          "who": "Amy",
+          "text": "Oh, Tom, hi! Yes, everything’s better than alright! We are going to the mountains tomorrow."
+        },
+        {
+          "who": "Tom",
+          "text": "To the mountains? For a skiing holiday?"
+        },
+        {
+          "who": "Amy",
+          "text": "Yes! Are you jealous?"
+        },
+        {
+          "who": "Tom",
+          "text": "It looks like I have a good reason to feel envious. I’ve never been to a ski resort."
+        },
+        {
+          "who": "Amy",
+          "text": "Neither have I."
+        },
+        {
+          "who": "Tom",
+          "text": "So, you are leaving tomorrow... By plane or by train?"
+        },
+        {
+          "who": "Amy",
+          "text": "In fact, my mum and I prefer trains. But it would take too long and the holidays are short. To save time, we are travelling by air."
+        },
+        {
+          "who": "Tom",
+          "text": "Right. We usually enjoy travelling by car but it’s definitely not an option for you."
+        },
+        {
+          "who": "Amy",
+          "text": "No, it’s not."
+        }
+      ]
+    },
+    {
+      "title": "Text D",
+      "lines": [
+        {
+          "who": "Emma",
+          "text": "Hi, Paul! I never would have expected to come across an old classmate like this... in the centre of Rome."
+        },
+        {
+          "who": "Paul",
+          "text": "Emma! Is that you? I haven’t seen you since our farewell school party. What are you doing here? Working? Learning? Or are you just a tourist?"
+        },
+        {
+          "who": "Emma",
+          "text": "Actually, I wanted to find a job here. A friend of mine told me they’ve got a vacancy for a columnist at their journal. But it didn’t work out."
+        },
+        {
+          "who": "Paul",
+          "text": "What? Why?"
+        },
+        {
+          "who": "Emma",
+          "text": "I was too slow. They’ve already given the job to another person."
+        },
+        {
+          "who": "Paul",
+          "text": "Pity."
+        },
+        {
+          "who": "Emma",
+          "text": "Never mind. And you? What are you doing here?"
+        },
+        {
+          "who": "Paul",
+          "text": "Teaching English. I work with young learners. They are amazing."
+        },
+        {
+          "who": "Emma",
+          "text": "Really?"
+        }
+      ]
+    }
+  ],
+  "part5": {
+    "presenter": "Good afternoon. Today we have asked 5 people to give us a short interview and share their opinions about family houses and their designs. Now we would like to present their opinions to you.",
+    "speakers": [
+      {
+        "title": "Speaker A",
+        "voice": "bf_emma",
+        "text": "I was about seven when I saw this old house for the first time. It used to belong to my grandparents, but it’s been sold and resold several times since then. Amusingly, the main reason why people are still interested in buying it is the rumours that my great-grandfather hid some treasure somewhere in the house. It’s hard to believe, but each time the new owners of the house call me and ask me to help in their search. There’s a belief that the treasure can only reveal itself to a member of the family."
+      },
+      {
+        "title": "Speaker B",
+        "voice": "bm_lewis",
+        "text": "Several years ago, my uncle moved to the country because of his hobby. He is fond of gardening. Colourful flowers — daffodils, tulips, roses, sunflowers and lilies — blossom in his garden from early spring till late autumn. Though his house was built more than 30 years ago, it is eco-friendly and independent in terms of energy supply. Being an engineer, my uncle filled it with different electronic household devices. His lifestyle reminds me of some science fiction novels, where all the household chores are performed by clever electronic robot installations."
+      },
+      {
+        "title": "Speaker C",
+        "voice": "bf_alice",
+        "text": "The house in the remote village has belonged to our family for a century and a half. My grandfather and my dad were born there and it’s a piece of our history but... I was offered a job in the city, and commuting every day was absolutely exhausting. At first I tried to read on the train but it didn’t help much. I still felt that I was wasting my life commuting. Now I live in a small flat in the city and my treasure of a house is left unattended. I’m considering the prospect of selling it."
+      },
+      {
+        "title": "Speaker D",
+        "voice": "bm_george",
+        "text": "A year ago, I lost my job in the city and moved to the country. I inherited this country house from my grandparents, who were far from ordinary people. Inside you can see furniture made from single logs of wood. It’s a real treasure. It was made by some of my ancestors centuries ago but it looks awesome! I bought all the other decor to match this furniture. That’s why my house looks like a museum. It’s... maybe too traditional but definitely unusual."
+      },
+      {
+        "title": "Speaker E",
+        "voice": "bf_isabella",
+        "text": "Due to my job, I have to change cities and even countries quite often. Each time I go to a new place, I rent an apartment and each time my home looks different. Except for my armchair. It may sound silly but wherever I move, I drag this old armchair with me. It’s so cosy that it makes me feel at home anywhere. Back from work, I sit in it and enjoy reading adventure and detective stories. And when I have a permanent home of my own, my armchair will settle down there too."
+      }
+    ]
+  },
+  "part6": [
+    {
+      "who": "Interviewer",
+      "text": "I’m really grateful to you for agreeing to take part in our survey."
+    },
+    {
+      "who": "Respondent",
+      "text": "Oh, it’s OK. It won’t take me long I hope — I’ll be late for my class."
+    },
+    {
+      "who": "Interviewer",
+      "text": "No, it won’t. You are heading to school, I understand."
+    },
+    {
+      "who": "Respondent",
+      "text": "Right. We are getting ready for our exams and I can’t be late."
+    },
+    {
+      "who": "Interviewer",
+      "text": "It’s nice to see that, at your age, you are taking study so seriously."
+    },
+    {
+      "who": "Respondent",
+      "text": "I’m fifteen and I’m old enough to understand that education is important. And exams too. We’ve already passed Maths and English. They were not difficult but my next exam is in Chemistry and it’s going to be tough."
+    },
+    {
+      "who": "Interviewer",
+      "text": "Do you find Chemistry very difficult?"
+    },
+    {
+      "who": "Respondent",
+      "text": "Yes. It’s the most challenging subject for me. But it’s the most interesting too. And I know that it’s going to be useful for my future job."
+    },
+    {
+      "who": "Interviewer",
+      "text": "Which means you’ve already made your career choice, haven’t you?"
+    },
+    {
+      "who": "Respondent",
+      "text": "Yes. I want to be a surgeon."
+    },
+    {
+      "who": "Interviewer",
+      "text": "A surgeon? Are you saying you want to work in a hospital and to operate on patients?"
+    },
+    {
+      "who": "Respondent",
+      "text": "Exactly."
+    },
+    {
+      "who": "Interviewer",
+      "text": "Wow. It’s one of the most respected professions in the world. I sincerely wish you success in your dream career."
+    },
+    {
+      "who": "Respondent",
+      "text": "Thank you."
+    },
+    {
+      "who": "Interviewer",
+      "text": "You study hard, and what do you do in your free time? Any hobbies, like collecting coins or painting?"
+    },
+    {
+      "who": "Respondent",
+      "text": "Painting. I like it and I’m pretty good at it. Some of my paintings are displayed at our school art exhibition."
+    },
+    {
+      "who": "Interviewer",
+      "text": "Impressive. And what about music?"
+    },
+    {
+      "who": "Respondent",
+      "text": "Frankly, I don’t have time for it. And I don’t play any musical instruments — I don’t care for music, to be honest."
+    },
+    {
+      "who": "Interviewer",
+      "text": "How about sports then? Do you play any?"
+    },
+    {
+      "who": "Respondent",
+      "text": "I regularly go jogging. I got this habit from my dad. When I was small, he took me jogging every day whatever the weather was. We lived in Canada at that time and it was freezing in winter."
+    },
+    {
+      "who": "Interviewer",
+      "text": "In Canada? Is that your native country?"
+    },
+    {
+      "who": "Respondent",
+      "text": "Yes. Both my parents come from Canada and I was born there but since primary school we’ve been moving a lot. We’ve lived in France, Germany and even Egypt."
+    },
+    {
+      "who": "Interviewer",
+      "text": "Did you find Egypt an exotic place?"
+    },
+    {
+      "who": "Respondent",
+      "text": "Well, yes..."
+    }
+  ],
+  "speaking": {
+    "intro": "Hello! It’s the electronic assistant of the Youth Magazine. We kindly ask you to take part in our survey. We need to find out how students feel about school holidays. Please answer six questions. The survey is anonymous — you don’t have to give your name. So, let’s get started.",
+    "questions": [
+      "How old are you?",
+      "What holidays do you have at school?",
+      "What holidays are your favourite? Why?",
+      "How much time on average do you spend online a day when you are on holiday?",
+      "What do you usually do during your holidays?",
+      "What would you recommend to a teenager who feels bored during the holidays?"
+    ],
+    "outro": "That is the end of the survey. Thank you very much for your cooperation."
+  }
+}

@@ -1,0 +1,218 @@
+{
+  "voices": {
+    "Jim": "bm_george",
+    "Bess": "bf_emma",
+    "Lisa": "bf_isabella",
+    "Nick": "bm_lewis",
+    "Presenter": "bm_lewis",
+    "Interviewer": "bm_lewis",
+    "Respondent": "bf_alice",
+    "Assistant": "af_heart"
+  },
+  "part1": [
+    {
+      "title": "Text A",
+      "voice": "bf_isabella",
+      "text": "Dear students! Before the end of the academic term, we want to make sure you are perfectly ready for your final exams. If you need any help preparing for any of your language exams, please apply to the secretary in the staff room to schedule the time for the consultation. If you don’t feel confident about any subject from the science block, feel free to apply directly to the headteacher. In case you need any additional training for taking a computer-based exam, apply to your IT teacher."
+    },
+    {
+      "title": "Text B",
+      "voice": "bf_alice",
+      "text": "Hi, Jane! It’s Emma. Sorry for troubling you, but it looks like only you are able to help me. I’ve already called Paul, but he isn’t answering — he’s probably in his Web design lesson at the moment. I also wanted to call Alice but remembered that she must be in the library now, getting ready for her Literature contest. Anyway, I can’t solve the maths problem from page 55. I’ve really tried hard but in vain. Call me back, please, so we can work it out together."
+    },
+    {
+      "title": "Text C",
+      "lines": [
+        {
+          "who": "Jim",
+          "text": "Hi, Bess! Why are you here? Is anything wrong with someone from your family?"
+        },
+        {
+          "who": "Bess",
+          "text": "Yes, it’s my younger brother. He’s got pneumonia."
+        },
+        {
+          "who": "Jim",
+          "text": "Oh, I’m sorry to hear that."
+        },
+        {
+          "who": "Bess",
+          "text": "He is much better now and they’ll let him home in a couple of days I think. Why are you and these guys here? With those costumes you look like you’re organising some entertainment."
+        },
+        {
+          "who": "Jim",
+          "text": "Yes, sort of. We are giving a concert here. We just want to make children a little bit happier and forget about their illnesses for a while."
+        },
+        {
+          "who": "Bess",
+          "text": "Wonderful idea."
+        },
+        {
+          "who": "Jim",
+          "text": "Sorry, but I need to see the administration and confirm the time — so as not to mess up the treatment procedures."
+        }
+      ]
+    },
+    {
+      "title": "Text D",
+      "lines": [
+        {
+          "who": "Lisa",
+          "text": "Nick, look! This picture is so lovely!"
+        },
+        {
+          "who": "Nick",
+          "text": "Which one?"
+        },
+        {
+          "who": "Lisa",
+          "text": "That one. The artist painted our town in the last century. The place seems familiar, doesn’t it?"
+        },
+        {
+          "who": "Nick",
+          "text": "Yeah, probably you are right. It looks like the narrow street in the centre. With the old coffee shop. We were there once, remember?"
+        },
+        {
+          "who": "Lisa",
+          "text": "Yes. I want to buy it right now. Before someone else does it. We can hang it up in our living room. It will look lovely there!"
+        },
+        {
+          "who": "Nick",
+          "text": "I don’t think that’s possible."
+        },
+        {
+          "who": "Lisa",
+          "text": "Why not? Is it very expensive, do you think?"
+        },
+        {
+          "who": "Nick",
+          "text": "It’s not a question of the price. All the pictures displayed here are not for sale. They belong to the local museum."
+        }
+      ]
+    }
+  ],
+  "part5": {
+    "presenter": "Good afternoon. Today we have asked 5 people to give us a short interview and share their opinions about tests and exams. Now we would like to present their opinions to you.",
+    "speakers": [
+      {
+        "title": "Speaker A",
+        "voice": "bf_emma",
+        "text": "Most students do not like exams and would be happy to avoid them. But I do not believe a successful learning process is possible without tests and exams. I’m positive that the aim of the test or exam is not to punish you, but to show your progress and to find the weak points, if there are any. In other words, tests and exams help the teachers measure the students’ progress and the grades can show what they need to improve."
+      },
+      {
+        "title": "Speaker B",
+        "voice": "bm_lewis",
+        "text": "Though I was good at German, I failed my test. My grades were low and I was very upset. Trying to support me, my older brother, a University student, said that the poor grades did not mean that I didn’t know German. They showed that I did not have the necessary exam skills. That’s why it is important to get ready for a test or exam correctly. It means to use different techniques to revise the material, look at past papers or sample papers and strictly observe the format of a test."
+      },
+      {
+        "title": "Speaker C",
+        "voice": "bf_alice",
+        "text": "I believe that it’s ok to feel nervous and anxious before an exam. But if you want to get high grades for your test or exam, you should remember a few things. First, don’t revise all the material you’ve learned the night before the exam. It’s important to have a good sleep to be able to concentrate on your exam tasks. Set two alarms in the morning so that you don’t worry about oversleeping. Second: have a walk before you get into the classroom — it’ll help you feel more relaxed."
+      },
+      {
+        "title": "Speaker D",
+        "voice": "bm_george",
+        "text": "Psychologists say that if we want to get an impressive academic result, we should not study all the time. This means that hard monotonous work cannot guarantee us success in an exam. Indeed if you learn day and night before your exam, you don’t improve but lower your chance of passing it successfully. You should study in short spells, and change activities to get your brains to stay active. Let walks or sports activities interrupt your learning process."
+      },
+      {
+        "title": "Speaker E",
+        "voice": "bf_isabella",
+        "text": "You know, I went to a special seminar on how to gain the best possible result in an exam. And I remember some of the tips the teachers gave us there. Here they are. Listen to the examiner very carefully and follow all their instructions. Before you start, look through the whole exam paper. If you do not know the answer to a task, skip it and go back to it when the others are done. Observe the time limits for each task. Leave some time to recheck your work."
+      }
+    ]
+  },
+  "part6": [
+    {
+      "who": "Interviewer",
+      "text": "Excuse me, could you take part in our survey?"
+    },
+    {
+      "who": "Respondent",
+      "text": "Of course I can! I’m a bit early for work and I’ve got some time to spare."
+    },
+    {
+      "who": "Interviewer",
+      "text": "I thought you were at college or at school still."
+    },
+    {
+      "who": "Respondent",
+      "text": "No, I’m nineteen and I’ve got a job already. Today is my second working day in the hairdresser’s salon."
+    },
+    {
+      "who": "Interviewer",
+      "text": "Oh, you’ve just started your career as a hairdresser? Congratulations! How was your first day?"
+    },
+    {
+      "who": "Respondent",
+      "text": "Successful! The clients were happy. My colleagues said that I’m very good at hairstyling."
+    },
+    {
+      "who": "Interviewer",
+      "text": "I don’t often meet people who sound so happy about their job."
+    },
+    {
+      "who": "Respondent",
+      "text": "Yes, I feel happy. But I still have to learn a great deal — not only about hairstyling but about communication. And I want to learn a few languages."
+    },
+    {
+      "who": "Interviewer",
+      "text": "Are they important?"
+    },
+    {
+      "who": "Respondent",
+      "text": "Of course! I work with multinational clients. Yesterday there were two Chinese ladies, one Spanish girl and one German girl."
+    },
+    {
+      "who": "Interviewer",
+      "text": "What language are you planning to start with?"
+    },
+    {
+      "who": "Respondent",
+      "text": "Spanish. It’s widely spoken but it’s not as difficult as Chinese."
+    },
+    {
+      "who": "Interviewer",
+      "text": "Yeah, I agree. A friend of mine wanted to work in a Chinese restaurant but wasn’t able to learn the names of the dishes! Do you like Chinese food by the way?"
+    },
+    {
+      "who": "Respondent",
+      "text": "Well, I don’t mind their soups and fish and noodles but all those are a bit too spicy for me. I prefer pasta. It’s the dish which I really like and have most often."
+    },
+    {
+      "who": "Interviewer",
+      "text": "I like it too. We often go to the pasta restaurant on Friday. As a family outing."
+    },
+    {
+      "who": "Respondent",
+      "text": "We do the same on Wednesday. Because mum usually works on Fridays and Saturdays till late and Wednesday is her day off. I’ve asked for a day off on Wednesday too. Not to ruin the family tradition."
+    },
+    {
+      "who": "Interviewer",
+      "text": "It’s nice to have a day off in the middle of the week, isn’t it? To assign some time for the family, friends, hobbies. Do you pursue a hobby by the way?"
+    },
+    {
+      "who": "Respondent",
+      "text": "I went to Drama Club when I was at school. Then I tried origami."
+    },
+    {
+      "who": "Interviewer",
+      "text": "Paper folding?"
+    },
+    {
+      "who": "Respondent",
+      "text": "Exactly. But I don’t do either of them anymore. Now I enjoy singing and I’m experimenting with different vocal techniques. So, we can say that I’ve taken up singing as a hobby."
+    }
+  ],
+  "speaking": {
+    "intro": "Hello! It’s the electronic assistant of the new TV Channel. We kindly ask you to take part in our survey. We need to find out how people feel about watching TV. Please answer six questions. The survey is anonymous — you don’t have to give your name. So, let’s get started.",
+    "questions": [
+      "What do you like to do in your free time?",
+      "How many hours a day on average do you watch TV?",
+      "What film genres do you prefer?",
+      "What is your favourite film? Why do you like it?",
+      "What educational TV project would you make if you had the chance?",
+      "Would you like to be a famous actor or not? Why?"
+    ],
+    "outro": "That is the end of the survey. Thank you very much for your cooperation."
+  }
+}

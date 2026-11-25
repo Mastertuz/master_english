@@ -1,0 +1,202 @@
+{
+  "voices": {
+    "Nora": "bf_emma",
+    "Mark": "bm_george",
+    "Ken": "bm_lewis",
+    "Alice": "bf_isabella",
+    "Presenter": "bm_lewis",
+    "Interviewer": "bf_isabella",
+    "Respondent": "bm_george",
+    "Assistant": "af_heart"
+  },
+  "part1": [
+    {
+      "title": "Text A",
+      "voice": "bf_isabella",
+      "text": "Dear friends! We’re happy to inform you about the impressive achievements of our students in the national language competition. The awards ceremony is to be held tomorrow, on Friday, at 5 p.m. in the main building of the school. This ceremony is going to be the first event in a chain of events to honour our winners. On Saturday we are hosting a linguistic conference which you’ll certainly enjoy, and on Sunday we are throwing a grand party to celebrate our success."
+    },
+    {
+      "title": "Text B",
+      "voice": "bf_alice",
+      "text": "Hi, Dad! Sorry for troubling you. Could you pick me up from school a little bit earlier today? Don’t worry, I’m perfectly well, it’s just that we are not going to have the last two lessons today. I don’t know the reason why — we were not told. If you are busy and are not able to come, it’s not a problem — I’ll be waiting for you in the library. I have a lot of work to do there anyway. Just call me and let me know your plans. Hope to hear from you soon!"
+    },
+    {
+      "title": "Text C",
+      "lines": [
+        {
+          "who": "Nora",
+          "text": "Getting back to your college, Mark, what’re you going to do after graduation? Become a doctor, like your dad?"
+        },
+        {
+          "who": "Mark",
+          "text": "No, not a doctor. I’ve never wanted to be in medicine."
+        },
+        {
+          "who": "Nora",
+          "text": "What then?"
+        },
+        {
+          "who": "Mark",
+          "text": "Well, my major is construction engineering. It’s about designing and building highways, bridges, railways; mainly in terms of how to calculate everything so that the construction won’t collapse in case of a storm or earthquake."
+        },
+        {
+          "who": "Nora",
+          "text": "Sounds impressive."
+        },
+        {
+          "who": "Mark",
+          "text": "I got interested in it when my mum worked on the article for her magazine about a shopping centre that collapsed because a crucial mistake was made in the calculations."
+        }
+      ]
+    },
+    {
+      "title": "Text D",
+      "lines": [
+        {
+          "who": "Ken",
+          "text": "Hi, Alice! Why are you so wet? Is it raining outdoors?"
+        },
+        {
+          "who": "Alice",
+          "text": "It was. It came from nowhere, very brief but heavy. And now, look through the window — it’s sunny again."
+        },
+        {
+          "who": "Ken",
+          "text": "It often happens here in spring. The typical spring weather is very unstable — it may be sunny and quiet, then the wind comes, a shower, and then the sun again."
+        },
+        {
+          "who": "Alice",
+          "text": "For me, it’s the best type of weather. Changeable and unpredictable. I hate it when we have a long succession of rainy days in the autumn. Or constant heat in the summer."
+        },
+        {
+          "who": "Ken",
+          "text": "Yeah. Spring is my favourite too. It’s a pity so little of it is left. Soon the grass will not look so fresh anymore."
+        }
+      ]
+    }
+  ],
+  "part5": {
+    "presenter": "Good afternoon. Today we have asked 5 people to give us a short interview and share their opinions about environmental problems. Now we would like to present their opinions to you.",
+    "speakers": [
+      {
+        "title": "Speaker A",
+        "voice": "bf_emma",
+        "text": "There are a lot of different environmental problems that we encounter. Unfortunately, most of them are provoked by people’s industrial activity and now they are threatening to make our life really harsh. One of the most serious problems is that the average temperature on the planet is rising. The ice-caps are melting, the level of the ocean is getting higher and soon it may cover coastal villages, cities and even whole countries. If we want to survive, we have to stop this process."
+      },
+      {
+        "title": "Speaker B",
+        "voice": "bm_lewis",
+        "text": "Right, people talk about environmental problems a lot nowadays. But we have to admit that the problem of most big cities, where it’s hard to breathe is mainly our own fault. We want to make our life very comfortable, but the number of cars is constantly rising. When they get stuck in traffic jams, the amount of gases emitted into the atmosphere increases several times. I believe we should use cars less if we want the environment to be healthy."
+      },
+      {
+        "title": "Speaker C",
+        "voice": "bf_alice",
+        "text": "We’ve got used to modern conveniences. We want to have electricity, gas, central heating and running water in our houses. But we also need to realise that all that affects the environment and we need to be very economical with energy and water."
+      },
+      {
+        "title": "Speaker D",
+        "voice": "bm_george",
+        "text": "I love big cities and would like to live all my life in a busy place with large shopping centres and theatres and concert halls. However, doctors say that the city is not a very good place for my daughter — she gets ill too often here. The polluted environment is the main reason. The thing is that we live in one of the busiest streets. The traffic is very heavy there and there are often huge traffic jams. So we are moving to the country soon."
+      },
+      {
+        "title": "Speaker E",
+        "voice": "bf_isabella",
+        "text": "Lots of people like seaside holidays. It’s a really great way to escape from our everyday routine. However, we sometimes do great harm to the ocean and marine animals. It happens when careless tourists on ocean cruises or beach holiday makers eat packaged food and throw plastic cups, plates and polyethylene packaging into the water. Marine animals can mistake the rubbish for food and swallow it. It can cause death to dolphins, seals, turtles and even sharks."
+      }
+    ]
+  },
+  "part6": [
+    {
+      "who": "Interviewer",
+      "text": "Thank you for agreeing to take part in our survey."
+    },
+    {
+      "who": "Respondent",
+      "text": "My pleasure. Are we going to talk about our last game?"
+    },
+    {
+      "who": "Interviewer",
+      "text": "I beg your pardon?"
+    },
+    {
+      "who": "Respondent",
+      "text": "Oh, sorry! I thought you were a reporter from the local newspaper. We got through to the semi-final yesterday, and the reporters have rushed to interview the players, the coach, the club manager and doctor, whoever."
+    },
+    {
+      "who": "Interviewer",
+      "text": "Congratulations then! You are the manager of the club, aren’t you?"
+    },
+    {
+      "who": "Respondent",
+      "text": "No. I’m a coach. I train these heroes who won the most challenging football game yesterday."
+    },
+    {
+      "who": "Interviewer",
+      "text": "You sound so passionate about your job. How old are you, if you don’t mind telling me?"
+    },
+    {
+      "who": "Respondent",
+      "text": "No, I don’t. I’m forty. Fifteen years of which I’ve been working as a coach for the club. I don’t only train our leading players. I work with all ages and levels."
+    },
+    {
+      "who": "Interviewer",
+      "text": "Fantastic! And the team you train..."
+    },
+    {
+      "who": "Respondent",
+      "text": "Oh, I really didn’t expect them to win! We got back from a match in Turkey only yesterday. And before Turkey we had played in Greece and Macedonia. But my team are really tough guys!"
+    },
+    {
+      "who": "Interviewer",
+      "text": "They certainly are. Are you going to celebrate?"
+    },
+    {
+      "who": "Respondent",
+      "text": "There’s no time for long celebrations. We need to get ready for the final."
+    },
+    {
+      "who": "Interviewer",
+      "text": "Oh."
+    },
+    {
+      "who": "Respondent",
+      "text": "But of course we had a party yesterday. Lots of pizza — our favourite dish ever. Normally I consume eggs, milk, greens — all sorts of healthy foods. But yesterday was a special day and I allowed pizza. There was a jazz band, a rock band and they even got me to play the piano."
+    },
+    {
+      "who": "Interviewer",
+      "text": "Do you play the piano?"
+    },
+    {
+      "who": "Respondent",
+      "text": "What makes you so surprised? It happened accidentally in fact. My parents wanted me to learn the guitar and my sister — the piano. One day we swapped instruments, just for fun. And we liked them. Now she plays the guitar and I play the piano!"
+    },
+    {
+      "who": "Interviewer",
+      "text": "An amazing story. Hard to believe."
+    },
+    {
+      "who": "Respondent",
+      "text": "Yes. But I have to be off now. I need to take my dog from my friend’s place."
+    },
+    {
+      "who": "Interviewer",
+      "text": "Was he taking care of your dog while you were busy?"
+    },
+    {
+      "who": "Respondent",
+      "text": "Yes. He’s got a cat and a couple of parrots himself and in spite of that he agreed to help me — an amazing person!"
+    }
+  ],
+  "speaking": {
+    "intro": "Hello! It’s the electronic assistant of the new health magazine Healthy Lifestyle. We want to devote one of our issues to healthy eating habits. We kindly ask you to take part in our survey. Please answer six questions. The survey is anonymous — you don’t have to give your name. So, let’s get started.",
+    "questions": [
+      "How many meals do you have a day? Which meals do you have?",
+      "Which meal is the most important of the day in your opinion?",
+      "What do you eat for lunch in your school canteen?",
+      "How do you feel about fast food?",
+      "Do you think it is important for everyone to have good cooking skills?",
+      "What would you recommend to a teenager to stay fit and healthy?"
+    ],
+    "outro": "That is the end of the survey. Thank you very much for your cooperation."
+  }
+}
